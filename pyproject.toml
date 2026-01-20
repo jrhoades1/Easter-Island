@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "easter-island-scraper"
 version = "1.0.0"
-description = "A web scraper for collecting Rapa Nui language data for linguistic analysis"
+description = "A web scraper and glyph cataloger for Easter Island linguistic and Rongorongo analysis"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 authors = [
     {name = "Tracy"}
 ]
-keywords = ["rapa-nui", "easter-island", "linguistics", "web-scraper", "polynesian"]
+keywords = ["rapa-nui", "easter-island", "linguistics", "web-scraper", "polynesian", "rongorongo", "glyph", "computer-vision"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
@@ -30,6 +30,10 @@ dependencies = [
     "requests>=2.31.0",
     "beautifulsoup4>=4.12.0",
     "lxml>=4.9.0",
+    "opencv-python>=4.8.0",
+    "numpy>=1.24.0",
+    "Pillow>=10.0.0",
+    "scikit-learn>=1.3.0",
 ]
 
 [project.optional-dependencies]
@@ -46,10 +50,11 @@ Issues = "https://github.com/yourusername/easter-island-scraper/issues"
 [project.scripts]
 scrape-language = "language_scraper:main"
 scrape-easter-island = "scraper:main"
+catalog-glyphs = "glyph_cataloger:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["models*", "parsers*"]
+include = ["models*", "parsers*", "processors*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

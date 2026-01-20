@@ -99,3 +99,28 @@ POS_MAPPING = {
     "part": "particle",
     "part.": "particle",
 }
+
+# Glyph cataloger configuration
+GLYPH_CONFIG = {
+    # Input/output directories
+    "input_dir": os.path.join(BASE_DIR, "input", "tablets"),
+    "output_dir": os.path.join(BASE_DIR, "output"),
+    "output_file": "rongorongo_lexicon.json",
+
+    # Whether to save individual glyph images
+    "save_glyph_images": True,
+
+    # Image processing parameters
+    "processing": {
+        "min_contour_area": 100,      # Minimum pixels for a valid glyph
+        "max_contour_area": 50000,    # Maximum pixels for a valid glyph
+        "bbox_padding": 5,            # Padding around detected glyphs
+        "line_merge_threshold": 20,   # Vertical distance to merge into same line
+    },
+
+    # Clustering parameters
+    "clustering": {
+        "eps": 0.5,                   # DBSCAN epsilon (distance threshold)
+        "min_samples": 2,             # Minimum samples for a cluster
+    },
+}

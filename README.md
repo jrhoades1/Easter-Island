@@ -1,13 +1,23 @@
-# Easter Island Language Scraper
+# Easter Island Research Tools
 
-A Python web scraper for collecting Rapa Nui language data from multiple online sources for linguistic analysis.
+A Python toolkit for Easter Island linguistic and archaeological research, featuring:
+- **Language Scraper** - Collects Rapa Nui language data from multiple online sources
+- **Glyph Cataloger** - Uses computer vision to identify and catalog Rongorongo glyphs
 
 ## Features
 
-- **Multi-source scraping** - Collects data from Wikipedia, IDS, ASJP, Glosbe, and Omniglot
-- **Structured output** - JSON format with translations, IPA, part of speech, and metadata
-- **Deduplication** - Merges entries from multiple sources automatically
-- **Extensible** - Modular parser architecture for adding new sources
+### Language Scraper
+- Multi-source scraping from Wikipedia, IDS, ASJP, Glosbe, and Omniglot
+- Structured JSON output with translations, IPA, part of speech, and metadata
+- Automatic deduplication across sources
+- Modular parser architecture for adding new sources
+
+### Glyph Cataloger
+- Computer vision-based glyph detection from tablet images
+- Feature extraction using Hu moments for shape analysis
+- DBSCAN clustering to identify similar glyphs
+- Unique ID assignment (G001, G002, ...) for each glyph type
+- Lexicon output with frequency counts and positional analysis
 
 ## Installation
 
@@ -34,6 +44,20 @@ python language_scraper.py
 
 Output is saved to `output/rapa_nui_language.json`.
 
+### Catalog Rongorongo Glyphs
+
+```bash
+# Place tablet images in the input directory
+cp my_tablet_scans/*.jpg input/tablets/
+
+# Run the glyph cataloger
+python glyph_cataloger.py
+```
+
+Output:
+- `output/rongorongo_lexicon.json` - Glyph lexicon with clusters and statistics
+- `output/glyphs/` - Extracted individual glyph images
+
 ### Scrape General Easter Island Content
 
 ```bash
@@ -42,9 +66,9 @@ python scraper.py
 
 Output is saved to `output/easter_island.json`.
 
-## Output Format
+## Output Formats
 
-The language scraper produces JSON with the following structure:
+### Language Scraper Output
 
 ```json
 {
@@ -52,76 +76,99 @@ The language scraper produces JSON with the following structure:
   "version": "1.0.0",
   "language": {
     "name": "Rapa Nui",
-    "native_name": "Vananga rapa nui",
     "iso_639_3": "rap",
-    "glottocode": "rapa1244",
     "family": "Austronesian > Polynesian > Eastern"
   },
   "statistics": {
     "total_entries": 39,
-    "sources_scraped": 5,
-    "entries_by_pos": {"numeral": 20, "pronoun": 10}
+    "sources_scraped": 5
   },
   "entries": [
     {
       "word": "tahi",
-      "normalized": "tahi",
       "translations": [{"language": "en", "text": "1 (cardinal)"}],
-      "part_of_speech": "numeral",
-      "metadata": {
-        "source_url": "https://en.wikipedia.org/wiki/Rapa_Nui_language",
-        "source_name": "Wikipedia",
-        "scraped_at": "2024-01-19T10:30:00.000000",
-        "confidence": "medium"
-      }
+      "part_of_speech": "numeral"
     }
-  ],
-  "sources": [
-    {"url": "...", "name": "Wikipedia", "entries_contributed": 30}
   ]
 }
 ```
 
-## Data Sources
+### Glyph Cataloger Output
 
-| Source | URL | Content |
-|--------|-----|---------|
-| Wikipedia | en.wikipedia.org/wiki/Rapa_Nui_language | Numerals, pronouns, grammar tables |
-| IDS | ids.clld.org | Intercontinental Dictionary Series |
-| ASJP | asjp.clld.org | Core vocabulary wordlist |
-| Glosbe | glosbe.com/en/rap | Community translations |
-| Omniglot | omniglot.com/writing/rapanui.htm | Phrases and alphabet |
+```json
+{
+  "version": "1.0.0",
+  "created_at": "2024-01-20T10:00:00.000000",
+  "source_images": ["tablet_a.jpg", "tablet_b.jpg"],
+  "total_glyphs_detected": 1247,
+  "unique_glyph_types": 412,
+  "clusters": [
+    {
+      "cluster_id": "G001",
+      "frequency": 47,
+      "representative_image": "output/glyphs/G001_representative.png",
+      "positions": {
+        "line_distribution": {"1": 12, "2": 15, "3": 8},
+        "avg_position_in_line": 0.35,
+        "common_neighbors": ["G042", "G108"]
+      }
+    }
+  ],
+  "statistics": {
+    "avg_glyphs_per_line": 14.2,
+    "most_frequent_glyphs": ["G001", "G042", "G108"],
+    "hapax_legomena": 89
+  }
+}
+```
 
 ## Project Structure
 
 ```
-easter-island-scraper/
-├── language_scraper.py    # Main language scraping script
-├── scraper.py             # General Easter Island scraper
-├── config.py              # Configuration and URLs
+easter-island/
+├── language_scraper.py     # Rapa Nui language scraping
+├── glyph_cataloger.py      # Rongorongo glyph cataloging
+├── scraper.py              # General Easter Island scraper
+├── config.py               # Configuration settings
 ├── models/
-│   └── language.py        # LanguageEntry dataclass
+│   ├── language.py         # Language entry dataclass
+│   └── glyphs.py           # Glyph data models
 ├── parsers/
-│   └── language/          # Site-specific parsers
-│       ├── base.py        # Base parser class
-│       ├── wikipedia.py   # Wikipedia parser
-│       ├── ids.py         # IDS parser
-│       └── ...
+│   └── language/           # Site-specific language parsers
+├── processors/
+│   └── glyph_processor.py  # CV processing pipeline
+├── input/
+│   └── tablets/            # Input tablet images
 ├── tests/
-│   ├── fixtures/          # Saved HTML for testing
-│   ├── test_parsers.py    # Parser unit tests
-│   ├── test_models.py     # Model tests
-│   └── test_integration.py
-└── output/                # Scraped data (gitignored)
+│   ├── fixtures/           # Test data
+│   ├── test_parsers.py     # Parser tests
+│   ├── test_glyph_*.py     # Glyph cataloger tests
+│   └── ...
+└── output/                 # Generated data (gitignored)
 ```
+
+## Configuration
+
+Edit `config.py` to customize:
+
+### Language Scraper
+- `LANGUAGE_CONFIG["rapa_nui"]["urls"]` - Source URLs to scrape
+
+### Glyph Cataloger
+- `GLYPH_CONFIG["processing"]` - Detection parameters (contour area, padding)
+- `GLYPH_CONFIG["clustering"]` - DBSCAN parameters (eps, min_samples)
 
 ## Running Tests
 
 ```bash
+# Run all tests
 python -m unittest discover -s tests -v
+
+# Run only glyph cataloger tests
+python -m unittest discover -s tests -p "test_glyph*.py" -v
 ```
 
-## Adding New Sources
+## Adding New Language Sources
 
 1. Create a new parser in `parsers/language/`:
 
@@ -143,6 +190,12 @@ class MyParser(BaseLanguageParser):
 2. Register in `parsers/language/__init__.py`
 3. Add URL to `config.py` under `LANGUAGE_CONFIG`
 
+## Dependencies
+
+- **Web scraping**: requests, beautifulsoup4, lxml
+- **Computer vision**: opencv-python, numpy, Pillow
+- **Machine learning**: scikit-learn
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
@@ -151,3 +204,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 - Rapa Nui language data sourced from publicly available linguistic databases
 - Built for linguistic research and language preservation efforts
+- Rongorongo glyph analysis designed to support decipherment research
