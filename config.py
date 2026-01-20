@@ -124,3 +124,79 @@ GLYPH_CONFIG = {
         "min_samples": 2,             # Minimum samples for a cluster
     },
 }
+
+# Cross-referencer configuration
+CROSS_REFERENCE_CONFIG = {
+    "output_file": "cross_reference_lexicon.json",
+    "annotations_file": "shape_annotations.yaml",
+    "generate_report": True,
+    "report_file": "cross_reference_report.md",
+}
+
+# Shape category to semantic domain mapping for cross-referencing
+# Maps visual glyph categories to linguistic semantic domains
+SHAPE_SEMANTIC_MAPPING = {
+    "avian": {
+        "semantic_categories": ["animals", "nature"],
+        "proto_roots": ["*manu (bird)", "*lupe (pigeon)", "*kura (red feather)"],
+        "rapa_nui_words": ["manu", "manutara", "kura"],
+        "description": "Bird-like forms including frigate birds, chickens, and generic avian shapes",
+    },
+    "anthropomorphic": {
+        "semantic_categories": ["body", "kinship", "social"],
+        "proto_roots": ["*tangata (person)", "*mata (face/eye)", "*rima (hand)", "*waka (body)"],
+        "rapa_nui_words": ["tangata", "mata", "rima", "hatu", "ariki"],
+        "description": "Human figures, body parts, and personified forms",
+    },
+    "phytomorphic": {
+        "semantic_categories": ["agriculture", "nature", "food"],
+        "proto_roots": ["*rakau (tree/wood)", "*kumara (sweet potato)", "*taro"],
+        "rapa_nui_words": ["rakau", "kumara", "taro", "toromiro", "maika"],
+        "description": "Plant forms including trees, crops, and vegetation",
+    },
+    "ichthyomorphic": {
+        "semantic_categories": ["animals", "food", "nature"],
+        "proto_roots": ["*ika (fish)", "*honu (turtle)", "*feke (octopus)"],
+        "rapa_nui_words": ["ika", "honu", "heke", "kahi", "mahore"],
+        "description": "Fish and marine life forms",
+    },
+    "geometric": {
+        "semantic_categories": ["quantity", "space", "time"],
+        "proto_roots": ["*tahi (one)", "*rua (two)", "*toru (three)", "*ha (four)"],
+        "rapa_nui_words": ["tahi", "rua", "toru", "ha", "rima", "ono", "hitu", "varu"],
+        "description": "Abstract geometric shapes potentially representing numbers or spatial concepts",
+    },
+    "composite": {
+        "semantic_categories": ["culture", "social", "action"],
+        "proto_roots": [],
+        "rapa_nui_words": [],
+        "description": "Combined elements that may represent complex concepts or actions",
+    },
+    "undetermined": {
+        "semantic_categories": [],
+        "proto_roots": [],
+        "rapa_nui_words": [],
+        "description": "Glyphs that cannot be visually classified into other categories",
+    },
+}
+
+# Confidence level thresholds for cross-references
+# Maps confidence level names to (min, max) score ranges
+# Upper bound is exclusive except for "strong" which includes 1.0
+CONFIDENCE_LEVELS = {
+    "speculative": (0.0, 0.25),   # Weak evidence, purely hypothetical
+    "tentative": (0.25, 0.50),    # Some supporting evidence
+    "plausible": (0.50, 0.75),    # Multiple lines of evidence
+    "strong": (0.75, 1.01),       # Strong converging evidence (rare for Rongorongo)
+}
+
+# Evidence type weights for computing overall confidence
+# Weights should sum to 1.0
+EVIDENCE_WEIGHTS = {
+    "shape_semantic": 0.40,    # Visual category matches semantic domain
+    "frequency": 0.15,         # Common glyph matches common word
+    "positional": 0.15,        # Position pattern correlation
+    "neighbor": 0.10,          # Co-occurrence with similar neighbors
+    "published": 0.15,         # From Rongorongo scholarship
+    "manual": 0.05,            # Expert annotation
+}

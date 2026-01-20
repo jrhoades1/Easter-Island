@@ -1,0 +1,28 @@
+# Sample shape annotations for Rongorongo glyphs
+# These are hypothetical classifications for demonstration purposes
+# Real classifications would require expert analysis of actual glyph images
+
+G001:
+  category: avian
+  confidence: 0.8
+  subcategory: generic_bird
+  visual_features: [wings, tail]
+
+G002:
+  category: anthropomorphic
+  confidence: 0.7
+  visual_features: [standing_figure]
+
+G003:
+  category: geometric
+  confidence: 0.6
+
+G004:
+  category: ichthyomorphic
+  confidence: 0.7
+  visual_features: [fish_shape]
+
+G005:
+  category: phytomorphic
+  confidence: 0.6
+  visual_features: [leaf_shape]
