@@ -1,24 +1,51 @@
-# Web scraping and HTTP requests
-requests>=2.31.0
+# =============================================================================
+# Easter Island Project - Requirements
+# =============================================================================
+# A web scraper and glyph cataloger for Easter Island linguistic and
+# Rongorongo analysis combining computer vision, web scraping, and LLM agents.
+#
+# Usage:
+#   pip install -r requirements.txt           # Core dependencies only
+#   pip install -r requirements.txt[dev]      # With dev tools (use pyproject.toml)
+#   pip install -r requirements.txt[llm]      # With LLM providers (use pyproject.toml)
+#
+# Python version: 3.10+
+# =============================================================================
 
-# HTML/XML parsing
-beautifulsoup4>=4.12.0
-lxml>=4.9.0
+# -----------------------------------------------------------------------------
+# Web Scraping & HTTP
+# -----------------------------------------------------------------------------
+requests>=2.31.0              # HTTP client for web scraping
+beautifulsoup4>=4.12.0        # HTML/XML parsing
+lxml>=4.9.0                   # Fast XML/HTML parser (BeautifulSoup backend)
+urllib3>=2.0.0                # HTTP library with SSL/TLS support
 
-# SSL/TLS handling
-urllib3>=2.0.0
+# -----------------------------------------------------------------------------
+# Computer Vision & Image Processing
+# -----------------------------------------------------------------------------
+opencv-python>=4.8.0          # Image processing, contour detection, feature extraction
+numpy>=1.24.0                 # Numerical computing, array operations
+Pillow>=10.0.0                # Image manipulation and format conversion
 
-# Computer vision and image processing
-opencv-python>=4.8.0
-numpy>=1.24.0
-Pillow>=10.0.0
+# -----------------------------------------------------------------------------
+# Machine Learning
+# -----------------------------------------------------------------------------
+scikit-learn>=1.3.0           # DBSCAN clustering for glyph similarity analysis
 
-# Machine learning (clustering)
-scikit-learn>=1.3.0
+# -----------------------------------------------------------------------------
+# Data Serialization
+# -----------------------------------------------------------------------------
+PyYAML>=6.0                   # YAML parsing for shape annotations
 
-# YAML parsing (for shape annotations)
-PyYAML>=6.0
+# -----------------------------------------------------------------------------
+# LLM Providers (Optional - uncomment as needed)
+# -----------------------------------------------------------------------------
+# anthropic>=0.18.0           # Anthropic Claude API client
+# openai>=1.12.0              # OpenAI GPT API client
 
-# LLM providers (optional - install as needed)
-anthropic>=0.18.0
-openai>=1.12.0
+# -----------------------------------------------------------------------------
+# Development & Testing (Optional - uncomment for development)
+# -----------------------------------------------------------------------------
+# pytest>=7.0.0               # Testing framework
+# pytest-cov>=4.0.0           # Code coverage reporting
+# ruff>=0.1.0                 # Linting and formatting
