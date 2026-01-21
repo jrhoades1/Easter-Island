@@ -200,3 +200,71 @@ EVIDENCE_WEIGHTS = {
     "published": 0.15,         # From Rongorongo scholarship
     "manual": 0.05,            # Expert annotation
 }
+
+# LLM Agent configuration
+LLM_CONFIG = {
+    "default_provider": "mock",  # "anthropic", "openai", or "mock"
+    "cache_dir": os.path.join(BASE_DIR, ".cache", "llm"),
+    "cache_ttl_hours": 24,
+    "max_cache_entries": 1000,
+
+    # Provider-specific settings
+    "anthropic": {
+        "model": "claude-3-5-sonnet-20241022",
+        "max_tokens": 4096,
+        "temperature": 0.0,
+    },
+    "openai": {
+        "model": "gpt-4o",
+        "max_tokens": 4096,
+        "temperature": 0.0,
+    },
+}
+
+# Polynesian corpora configuration for lexical validation
+POLYNESIAN_CORPORA_CONFIG = {
+    "maori": {
+        "name": "Maori",
+        "iso_639_3": "mri",
+        "family": "Austronesian > Polynesian > Eastern > Maori",
+        "urls": [
+            "https://maoridictionary.co.nz/",
+        ],
+    },
+    "hawaiian": {
+        "name": "Hawaiian",
+        "iso_639_3": "haw",
+        "family": "Austronesian > Polynesian > Eastern > Hawaiian",
+        "urls": [
+            "https://wehewehe.org/",
+        ],
+    },
+    "tahitian": {
+        "name": "Tahitian",
+        "iso_639_3": "tah",
+        "family": "Austronesian > Polynesian > Eastern > Tahitic",
+        "urls": [
+            "https://farevanaa.pf/dictionnaire.php",
+        ],
+    },
+}
+
+# Agent-specific configuration
+AGENT_CONFIG = {
+    "segmentation": {
+        "analyze_ligatures": True,
+        "analyze_damage": True,
+        "output_file": "segmentation_results.json",
+    },
+    "pattern_mining": {
+        "max_ngram": 5,
+        "min_pattern_frequency": 2,
+        "similarity_threshold": 0.7,
+        "output_file": "pattern_mining_results.json",
+    },
+    "lexical_validation": {
+        "min_cognate_languages": 2,
+        "confidence_boost": 0.15,
+        "output_file": "lexical_validation_results.json",
+    },
+}

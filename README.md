@@ -4,6 +4,7 @@ A Python toolkit for Easter Island linguistic and archaeological research, featu
 - **Language Scraper** - Collects Rapa Nui language data from multiple online sources
 - **Glyph Cataloger** - Uses computer vision to identify and catalog Rongorongo glyphs
 - **Cross-Referencer** - Creates symbolic links between glyphs and Proto-Polynesian linguistic roots
+- **LLM Agents** - AI-powered analysis for segmentation, pattern mining, and lexical validation
 
 ## Features
 
@@ -98,6 +99,42 @@ python scraper.py
 ```
 
 Output is saved to `output/easter_island.json`.
+
+### Run LLM Agents
+
+The toolkit includes three LLM-powered agents for advanced analysis:
+
+```bash
+# Glyph Segmentation - LLM-guided boundary decisions
+python run_agent.py segmentation --image input/tablets/tablet_a.jpg
+
+# Pattern Mining - Discover n-gram sequences and structural patterns
+python run_agent.py pattern-mining --lexicon output/rongorongo_lexicon.json
+
+# Lexical Validation - Validate against Polynesian corpora
+python run_agent.py lexical-validation --cross-refs output/cross_reference_lexicon.json
+```
+
+Agent options:
+```bash
+# Use different LLM providers
+python run_agent.py pattern-mining --lexicon output/rongorongo_lexicon.json --provider anthropic
+python run_agent.py pattern-mining --lexicon output/rongorongo_lexicon.json --provider openai
+
+# Specify model
+python run_agent.py segmentation --image tablet.jpg --provider anthropic --model claude-3-opus-20240229
+
+# Disable caching
+python run_agent.py lexical-validation --cross-refs output/cross_reference_lexicon.json --no-cache
+
+# Show verbose output
+python run_agent.py pattern-mining --lexicon output/rongorongo_lexicon.json --verbose
+```
+
+Output files:
+- `output/segmentation_results.json` - Refined glyph boundaries with LLM decisions
+- `output/pattern_mining_results.json` - N-gram patterns, structural analysis, visual clusters
+- `output/lexical_validation_results.json` - Validated cross-references with cognate evidence
 
 ## Output Formats
 
@@ -200,6 +237,7 @@ easter-island/
 ├── language_scraper.py       # Rapa Nui language scraping
 ├── glyph_cataloger.py        # Rongorongo glyph cataloging
 ├── cross_referencer.py       # Symbolic cross-referencing
+├── run_agent.py              # LLM agent CLI
 ├── scraper.py                # General Easter Island scraper
 ├── config.py                 # Configuration settings
 ├── models/
@@ -208,9 +246,21 @@ easter-island/
 │   └── cross_reference.py    # Cross-reference models
 ├── parsers/
 │   └── language/             # Site-specific language parsers
+│       ├── maori_parser.py   # Maori dictionary parser
+│       ├── hawaiian_parser.py # Hawaiian dictionary parser
+│       └── tahitian_parser.py # Tahitian dictionary parser
 ├── processors/
 │   ├── glyph_processor.py    # CV processing pipeline
 │   └── cross_reference_processor.py  # Semantic matching
+├── agents/                   # LLM-powered analysis agents
+│   ├── base/                 # Agent infrastructure
+│   │   ├── llm_provider.py   # Abstract LLM interface
+│   │   ├── agent.py          # Base agent class
+│   │   ├── cache.py          # Response caching
+│   │   └── providers/        # LLM provider implementations
+│   ├── segmentation/         # Glyph segmentation agent
+│   ├── pattern_mining/       # Pattern discovery agent
+│   └── lexical_validation/   # Cognate validation agent
 ├── input/
 │   ├── tablets/              # Input tablet images
 │   └── shape_annotations.yaml  # Optional manual annotations
@@ -219,6 +269,7 @@ easter-island/
 │   ├── test_parsers.py       # Parser tests
 │   ├── test_glyph_*.py       # Glyph cataloger tests
 │   ├── test_cross_reference_*.py  # Cross-referencer tests
+│   ├── test_agents_base.py   # Agent infrastructure tests
 │   └── ...
 └── output/                   # Generated data (gitignored)
 ```
@@ -303,6 +354,7 @@ class MyParser(BaseLanguageParser):
 - **Computer vision**: opencv-python, numpy, Pillow
 - **Machine learning**: scikit-learn
 - **YAML parsing**: PyYAML
+- **LLM providers** (optional): anthropic, openai
 
 ## License
 

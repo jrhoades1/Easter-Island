@@ -1,4 +1,4 @@
-"""Language-specific parsers for Rapa Nui and other languages."""
+"""Language-specific parsers for Rapa Nui and other Polynesian languages."""
 
 from .base import BaseLanguageParser
 from .asjp import ASJPParser
@@ -6,6 +6,9 @@ from .ids import IDSParser
 from .glosbe import GlosbeParser
 from .omniglot import OmniglotParser
 from .wikipedia import WikipediaLanguageParser
+from .maori_parser import MaoriDictionaryParser
+from .hawaiian_parser import HawaiianDictionaryParser
+from .tahitian_parser import TahitianDictionaryParser
 
 # Parser registry - maps URL patterns to parser instances
 _PARSERS = [
@@ -14,6 +17,9 @@ _PARSERS = [
     GlosbeParser(),
     OmniglotParser(),
     WikipediaLanguageParser(),
+    MaoriDictionaryParser(),
+    HawaiianDictionaryParser(),
+    TahitianDictionaryParser(),
 ]
 
 
@@ -32,5 +38,8 @@ __all__ = [
     "GlosbeParser",
     "OmniglotParser",
     "WikipediaLanguageParser",
+    "MaoriDictionaryParser",
+    "HawaiianDictionaryParser",
+    "TahitianDictionaryParser",
     "get_language_parser",
 ]
