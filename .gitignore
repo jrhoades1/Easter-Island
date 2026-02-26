@@ -15,3 +15,9 @@ output/
 # OS
 .DS_Store
 Thumbs.db
+
+# DSF runtime data
+data/*.db
+data/*.db-journal
+memory/logs/
+.tmp/
