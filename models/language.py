@@ -1,9 +1,9 @@
 """Data models for language entries."""
 
-from dataclasses import dataclass, field, asdict
-from typing import Optional
-from datetime import datetime
 import unicodedata
+from dataclasses import dataclass, field
+from datetime import datetime
+from typing import Optional
 
 
 @dataclass

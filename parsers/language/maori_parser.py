@@ -1,7 +1,8 @@
 """Parser for Maori dictionary data."""
 
-from .base import BaseLanguageParser
 from models.language import LanguageEntry
+
+from .base import BaseLanguageParser
 
 
 class MaoriDictionaryParser(BaseLanguageParser):

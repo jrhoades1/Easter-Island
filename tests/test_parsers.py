@@ -7,12 +7,11 @@ import unittest
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from parsers.language.wikipedia import WikipediaLanguageParser
-from parsers.language.ids import IDSParser
 from parsers.language.asjp import ASJPParser
 from parsers.language.glosbe import GlosbeParser
+from parsers.language.ids import IDSParser
 from parsers.language.omniglot import OmniglotParser
-
+from parsers.language.wikipedia import WikipediaLanguageParser
 
 FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 

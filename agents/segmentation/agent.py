@@ -6,7 +6,7 @@ from typing import Optional
 
 from ..base import BaseAgent, LLMCache, LLMProvider
 from .boundary_analyzer import AmbiguousBoundary, BoundaryAnalyzer
-from .damage_assessor import DamagedRegion, DamageAssessor
+from .damage_assessor import DamageAssessor, DamagedRegion
 from .ligature_detector import LigatureCandidate, LigatureDetector
 
 
@@ -247,7 +247,7 @@ class GlyphSegmentationAgent(BaseAgent):
                 1 for s in segmentation_results if s["method"] == "llm_assisted"
             ),
             "boundaries_analyzed": len(boundary_decisions),
-            "ligatures_found": sum(1 for l in ligature_analysis if l["is_ligature"]),
+            "ligatures_found": sum(1 for lig in ligature_analysis if lig["is_ligature"]),
             "damaged_regions": len(damage_assessments),
         }
 

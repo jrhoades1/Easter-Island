@@ -1,7 +1,7 @@
 """N-gram analysis for glyph sequences."""
 
 from collections import Counter
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
 from ..base import LLMMessage, LLMProvider, LLMResponse

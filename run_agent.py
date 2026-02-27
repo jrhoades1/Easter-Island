@@ -16,18 +16,24 @@ Options:
     --verbose                          Show detailed progress
 """
 
+from __future__ import annotations
+
 import argparse
 import json
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 # Import agents
-from agents import LLMProviderFactory, LLMCache
-from agents.base.providers import MockProvider, AnthropicProvider, OpenAIProvider
-from agents.segmentation import GlyphSegmentationAgent
-from agents.pattern_mining import PatternMiningAgent
+from agents import LLMCache, LLMProviderFactory
+
+if TYPE_CHECKING:
+    from agents import LLMProvider
+from agents.base.providers import MockProvider
 from agents.lexical_validation import LexicalValidationAgent
+from agents.pattern_mining import PatternMiningAgent
+from agents.segmentation import GlyphSegmentationAgent
 
 
 def load_json(path: str) -> dict:
@@ -43,7 +49,7 @@ def save_json(data: dict, path: str) -> None:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def create_provider(args) -> "LLMProvider":
+def create_provider(args) -> LLMProvider:
     """Create LLM provider based on arguments."""
     provider_name = args.provider
 

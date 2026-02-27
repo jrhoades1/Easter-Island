@@ -130,7 +130,7 @@ class TestEndToEndPipeline(unittest.TestCase):
 
     def test_output_json_created(self):
         """Test that lexicon JSON file is created."""
-        from models.glyphs import GlyphCluster, LexiconStatistics, RongorongoLexicon
+        from models.glyphs import GlyphCluster
 
         lexicon = RongorongoLexicon(
             source_images=["tablet_a.png"],
@@ -147,7 +147,7 @@ class TestEndToEndPipeline(unittest.TestCase):
 
     def test_output_json_valid(self):
         """Test that JSON output is valid and parseable."""
-        from models.glyphs import GlyphCluster, RongorongoLexicon
+        from models.glyphs import GlyphCluster
 
         lexicon = RongorongoLexicon(source_images=["tablet.png"])
         lexicon.add_cluster(GlyphCluster("G001", ["a", "b"]))
@@ -189,7 +189,6 @@ class TestEndToEndPipeline(unittest.TestCase):
 
     def test_representative_images_saved(self):
         """Test that cluster representative images are saved."""
-        from models.glyphs import GlyphCluster
         from processors.glyph_processor import GlyphProcessor
 
         tablet = create_tablet_image([["circle", "circle"]])
@@ -331,7 +330,7 @@ class TestOutputValidation(unittest.TestCase):
 
     def test_lexicon_total_matches_sum(self):
         """Test that total_glyphs_detected matches sum of frequencies."""
-        from models.glyphs import GlyphCluster, RongorongoLexicon
+        from models.glyphs import GlyphCluster
 
         lexicon = RongorongoLexicon()
         lexicon.add_cluster(GlyphCluster("G001", ["a", "b", "c"]))  # 3
@@ -344,7 +343,7 @@ class TestOutputValidation(unittest.TestCase):
 
     def test_cluster_ids_unique(self):
         """Test that there are no duplicate cluster IDs."""
-        from models.glyphs import GlyphCluster, RongorongoLexicon
+        from models.glyphs import GlyphCluster
 
         lexicon = RongorongoLexicon()
         lexicon.add_cluster(GlyphCluster("G001", ["a"]))

@@ -9,7 +9,6 @@ from models.glyphs import (
     GlyphCluster,
     GlyphInstance,
     GlyphPosition,
-    LexiconStatistics,
     PositionStats,
     RongorongoLexicon,
 )

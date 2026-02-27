@@ -1,7 +1,7 @@
 """Processor for creating symbolic cross-references between glyphs and linguistic roots."""
 
 import os
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 
 import yaml
@@ -14,7 +14,6 @@ from config import (
 from models.cross_reference import (
     CrossReference,
     CrossReferenceLexicon,
-    CrossReferenceStatistics,
     EvidenceItem,
     EvidenceType,
     GlyphSemanticProfile,

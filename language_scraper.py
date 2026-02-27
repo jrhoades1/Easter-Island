@@ -83,7 +83,7 @@ def scrape_language_data() -> dict:
     lang_config = config.LANGUAGE_CONFIG["rapa_nui"]
     all_entries: list[LanguageEntry] = []
 
-    print(f"Starting Rapa Nui language scraper...")
+    print("Starting Rapa Nui language scraper...")
     print(f"Sources to scrape: {len(lang_config['urls'])}")
     print()
 

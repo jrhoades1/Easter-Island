@@ -1,7 +1,8 @@
 """Parser for ASJP (Automated Similarity Judgment Program) database."""
 
+from models.language import Etymology, LanguageEntry
+
 from .base import BaseLanguageParser
-from models.language import LanguageEntry, Etymology
 
 
 class ASJPParser(BaseLanguageParser):

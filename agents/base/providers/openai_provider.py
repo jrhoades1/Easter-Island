@@ -6,7 +6,6 @@ from typing import Optional
 
 from ..llm_provider import LLMMessage, LLMProvider, LLMProviderFactory, LLMResponse
 
-
 # Pricing per 1M tokens (as of 2024)
 OPENAI_PRICING = {
     "gpt-4o": {"input": 5.00, "output": 15.00},

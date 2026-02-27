@@ -12,10 +12,9 @@ import json
 import os
 import sys
 from datetime import datetime
-from pathlib import Path
 
 from config import GLYPH_CONFIG
-from models.glyphs import GlyphCluster, GlyphInstance, LexiconStatistics, RongorongoLexicon
+from models.glyphs import GlyphInstance, LexiconStatistics, RongorongoLexicon
 from processors.glyph_processor import GlyphProcessor, ProcessorConfig
 
 

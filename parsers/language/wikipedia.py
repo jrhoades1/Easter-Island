@@ -1,8 +1,8 @@
 """Parser for Wikipedia Rapa Nui language pages."""
 
-import re
-from .base import BaseLanguageParser
 from models.language import LanguageEntry
+
+from .base import BaseLanguageParser
 
 
 class WikipediaLanguageParser(BaseLanguageParser):

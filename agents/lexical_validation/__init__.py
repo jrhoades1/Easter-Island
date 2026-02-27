@@ -4,9 +4,9 @@ from .agent import LexicalValidationAgent
 from .cognate_finder import CognateFinder
 from .etymology_verifier import EtymologyVerifier
 from .historical_validator import (
-    HistoricalValidator,
-    HistoricalValidationResult,
     HistoricalContext,
+    HistoricalValidationResult,
+    HistoricalValidator,
     Inconsistency,
     InconsistencyType,
 )

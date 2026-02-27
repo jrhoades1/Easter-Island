@@ -6,7 +6,6 @@ from typing import Optional
 
 from ..llm_provider import LLMMessage, LLMProvider, LLMProviderFactory, LLMResponse
 
-
 # Pricing per 1M tokens (as of 2024)
 ANTHROPIC_PRICING = {
     "claude-3-opus-20240229": {"input": 15.00, "output": 75.00},

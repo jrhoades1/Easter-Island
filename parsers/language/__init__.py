@@ -1,14 +1,14 @@
 """Language-specific parsers for Rapa Nui and other Polynesian languages."""
 
-from .base import BaseLanguageParser
 from .asjp import ASJPParser
-from .ids import IDSParser
+from .base import BaseLanguageParser
 from .glosbe import GlosbeParser
-from .omniglot import OmniglotParser
-from .wikipedia import WikipediaLanguageParser
-from .maori_parser import MaoriDictionaryParser
 from .hawaiian_parser import HawaiianDictionaryParser
+from .ids import IDSParser
+from .maori_parser import MaoriDictionaryParser
+from .omniglot import OmniglotParser
 from .tahitian_parser import TahitianDictionaryParser
+from .wikipedia import WikipediaLanguageParser
 
 # Parser registry - maps URL patterns to parser instances
 _PARSERS = [

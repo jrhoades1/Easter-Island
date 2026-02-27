@@ -13,7 +13,7 @@ from models.cross_reference import (
     ShapeTag,
 )
 from models.glyphs import GlyphCluster, PositionStats, RongorongoLexicon
-from models.language import LanguageEntry, Translation, Etymology
+from models.language import Etymology, LanguageEntry, Translation
 from processors.cross_reference_processor import (
     ConfidenceCalculator,
     CrossReferenceProcessor,

@@ -6,8 +6,8 @@ from typing import Optional
 
 from ..base import BaseAgent, LLMCache, LLMProvider
 from .ngram_analyzer import NgramAnalyzer, NgramPattern
-from .structural_patterns import StructuralPatternAnalyzer, StructuralPattern
-from .visual_clustering import GlyphFeatures, VisualClusterAnalyzer, VisualCluster
+from .structural_patterns import StructuralPattern, StructuralPatternAnalyzer
+from .visual_clustering import GlyphFeatures, VisualCluster, VisualClusterAnalyzer
 
 
 class PatternMiningAgent(BaseAgent):

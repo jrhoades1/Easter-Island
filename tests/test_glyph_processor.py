@@ -7,7 +7,7 @@ import unittest
 import cv2
 import numpy as np
 
-from models.glyphs import BoundingBox, GlyphInstance, GlyphPosition
+from models.glyphs import BoundingBox, GlyphInstance
 from processors.glyph_processor import GlyphProcessor, ProcessorConfig
 
 

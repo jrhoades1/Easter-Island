@@ -1,8 +1,10 @@
 """Parser for Glosbe online dictionary."""
 
 import re
-from .base import BaseLanguageParser
+
 from models.language import LanguageEntry
+
+from .base import BaseLanguageParser
 
 
 class GlosbeParser(BaseLanguageParser):

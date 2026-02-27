@@ -20,7 +20,7 @@ from datetime import datetime
 from config import CROSS_REFERENCE_CONFIG, GLYPH_CONFIG, LANGUAGE_CONFIG, OUTPUT_DIR
 from models.cross_reference import CrossReferenceLexicon
 from models.glyphs import RongorongoLexicon
-from models.language import LanguageEntry, Translation, Etymology, Metadata
+from models.language import Etymology, LanguageEntry, Metadata, Translation
 from processors.cross_reference_processor import CrossReferenceProcessor, ProcessorConfig
 
 

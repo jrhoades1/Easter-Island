@@ -319,7 +319,7 @@ class HistoricalValidator:
             return None
 
         type_info = HistoricalContext.KNOWN_TEXT_TYPES.get(text_type, {})
-        expected_patterns = type_info.get("expected_patterns", [])
+        _expected_patterns = type_info.get("expected_patterns", [])
 
         # Check position data
         positions = glyph_profile.get("positions", {})
@@ -431,7 +431,7 @@ Provide a brief analysis (2-3 sentences) and rate confidence (low/medium/high)."
         total = len(results)
         avg_score = sum(r.consistency_score for r in results) / total if total else 0
 
-        report.append(f"## Summary\n")
+        report.append("## Summary\n")
         report.append(f"- Total references: {total}")
         report.append(f"- Consistent: {consistent} ({100*consistent/total:.1f}%)")
         report.append(f"- Average consistency score: {avg_score:.2f}\n")

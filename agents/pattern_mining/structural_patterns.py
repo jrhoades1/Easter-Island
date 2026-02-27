@@ -234,7 +234,7 @@ Provide interpretations while acknowledging uncertainty."""
             )
 
         avg = sum(lengths) / len(lengths)
-        variance = sum((l - avg) ** 2 for l in lengths) / len(lengths)
+        variance = sum((length - avg) ** 2 for length in lengths) / len(lengths)
 
         # Find common starters/enders
         starters: Counter[str] = Counter()

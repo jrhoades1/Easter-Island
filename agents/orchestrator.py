@@ -4,9 +4,9 @@ import json
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Optional, Callable
+from typing import Callable, Optional
 
-from .base import BaseAgent, LLMProvider, LLMCache
+from .base import BaseAgent, LLMCache, LLMProvider
 
 
 @dataclass
@@ -389,12 +389,12 @@ class AgentOrchestrator:
         """
         lines = [
             f"# Refinement Cycle Report: {cycle.cycle_id}",
-            f"",
+            "",
             f"**Started:** {cycle.started_at.strftime('%Y-%m-%d %H:%M:%S')}",
             f"**Completed:** {cycle.completed_at.strftime('%Y-%m-%d %H:%M:%S') if cycle.completed_at else 'In progress'}",
             f"**Iterations:** {len(cycle.iterations)}",
             f"**Converged:** {cycle.convergence_metrics.get('converged', False)}",
-            f"",
+            "",
             "## Final Confidence Scores",
             "",
         ]
@@ -424,7 +424,7 @@ class AgentOrchestrator:
                 lines.append(f"- Output: {report.output_summary}")
 
                 if report.changes_made:
-                    lines.append(f"- Changes:")
+                    lines.append("- Changes:")
                     for change in report.changes_made[:5]:
                         lines.append(f"  - {change}")
                     if len(report.changes_made) > 5:

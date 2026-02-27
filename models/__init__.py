@@ -1,16 +1,16 @@
 """Data models for Easter Island scraper."""
 
-from .language import LanguageEntry, Translation, Example
 from .cross_reference import (
-    ShapeCategory,
-    EvidenceType,
-    ShapeTag,
-    EvidenceItem,
     CrossReference,
-    GlyphSemanticProfile,
-    CrossReferenceStatistics,
     CrossReferenceLexicon,
+    CrossReferenceStatistics,
+    EvidenceItem,
+    EvidenceType,
+    GlyphSemanticProfile,
+    ShapeCategory,
+    ShapeTag,
 )
+from .language import Example, LanguageEntry, Translation
 
 __all__ = [
     "LanguageEntry",

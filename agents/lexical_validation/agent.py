@@ -5,8 +5,8 @@ from pathlib import Path
 from typing import Optional
 
 from ..base import BaseAgent, LLMCache, LLMProvider
-from .cognate_finder import CognateFinder, CognateSet, PolynesianWord
-from .etymology_verifier import EtymologyVerifier, EtymologyVerification
+from .cognate_finder import CognateFinder, PolynesianWord
+from .etymology_verifier import EtymologyVerifier
 
 
 class LexicalValidationAgent(BaseAgent):

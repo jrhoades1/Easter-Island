@@ -2,14 +2,13 @@
 
 import unittest
 
+from agents.base.providers import MockProvider
 from agents.lexical_validation.historical_validator import (
-    HistoricalValidator,
-    HistoricalValidationResult,
     HistoricalContext,
-    Inconsistency,
+    HistoricalValidationResult,
+    HistoricalValidator,
     InconsistencyType,
 )
-from agents.base.providers import MockProvider
 
 
 class TestHistoricalContext(unittest.TestCase):

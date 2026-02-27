@@ -1,22 +1,21 @@
 """Integration tests for the full language scraper."""
 
+import json
 import os
 import sys
-import json
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 # Add project root to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from language_scraper import (
-    deduplicate_entries,
-    compute_statistics,
     collect_source_attribution,
+    compute_statistics,
+    deduplicate_entries,
     scrape_language_data,
 )
-from models.language import LanguageEntry, Translation, Metadata
-
+from models.language import LanguageEntry, Metadata, Translation
 
 FIXTURES_DIR = os.path.join(os.path.dirname(__file__), "fixtures")
 

@@ -1,7 +1,8 @@
 """Parser for Omniglot language resource pages."""
 
-from .base import BaseLanguageParser
 from models.language import LanguageEntry
+
+from .base import BaseLanguageParser
 
 
 class OmniglotParser(BaseLanguageParser):

@@ -5,16 +5,16 @@ import unittest
 from datetime import datetime
 from pathlib import Path
 
+from agents.base import BaseAgent
+from agents.base.providers import MockProvider
 from agents.chunked_processor import (
-    ChunkedProcessor,
     ChunkedProcessingResult,
+    ChunkedProcessor,
     ChunkResult,
     IterativeConfidenceReporter,
     create_cross_reference_aggregator,
     create_pattern_mining_aggregator,
 )
-from agents.base import BaseAgent, LLMMessage
-from agents.base.providers import MockProvider
 
 
 class SimpleProcessingAgent(BaseAgent):

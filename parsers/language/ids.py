@@ -1,8 +1,8 @@
 """Parser for IDS (Intercontinental Dictionary Series) database."""
 
-from .base import BaseLanguageParser
 from models.language import LanguageEntry
 
+from .base import BaseLanguageParser
 
 # IDS semantic category mapping
 IDS_CATEGORIES = {

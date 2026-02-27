@@ -445,7 +445,7 @@ class GlyphProcessor:
                 cluster_map[label].append(instance)
 
         # Create GlyphCluster objects, sorted by frequency (most common first)
-        sorted_labels = sorted(cluster_map.keys(), key=lambda l: -len(cluster_map[l]))
+        sorted_labels = sorted(cluster_map.keys(), key=lambda label: -len(cluster_map[label]))
         clusters = []
 
         for i, label in enumerate(sorted_labels):

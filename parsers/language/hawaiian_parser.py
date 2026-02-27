@@ -1,7 +1,8 @@
 """Parser for Hawaiian dictionary data."""
 
-from .base import BaseLanguageParser
 from models.language import LanguageEntry
+
+from .base import BaseLanguageParser
 
 
 class HawaiianDictionaryParser(BaseLanguageParser):
