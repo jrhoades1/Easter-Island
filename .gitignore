@@ -21,3 +21,4 @@ data/*.db
 data/*.db-journal
 memory/logs/
 .tmp/
+nul
