@@ -13,6 +13,7 @@ A computational approach to analyzing the undeciphered Rongorongo script of East
 - [Installation](#installation)
 - [Quick Start](#quick-start)
 - [Glyph Detection & Cataloging](#glyph-detection--cataloging)
+- [Statistical Corpus Analysis](#statistical-corpus-analysis)
 - [Shape-Semantic Mappings](#shape-semantic-mappings)
 - [Cross-Referencing with Proto-Polynesian](#cross-referencing-with-proto-polynesian)
 - [LLM-Powered Analysis Agents](#llm-powered-analysis-agents)
@@ -265,6 +266,57 @@ CLUSTERING = {
   }
 }
 ```
+
+---
+
+## Statistical Corpus Analysis
+
+The image-based pipeline above re-derives a glyph catalog from photographs,
+which is error-prone. When a *transliterated* corpus is available — tablets
+already encoded by scholars as glyph-code sequences (e.g. the Barthel
+numbering system) — the statistical layer analyzes it directly, resting on the
+field's accepted readings rather than on computer-vision guesses.
+
+This layer is deliberately **descriptive, not interpretive**. It reports the
+statistical structure of the script and makes *no* claim about what any glyph
+means. Structural statistics are the part of computational Rongorongo work
+that can be done honestly while the script remains undeciphered.
+
+### Transliteration Format (`.rrt`)
+
+Plain-text, line-oriented. Place files in `data/corpus/` (see
+`data/corpus/SOURCES.md` for the full spec and where to obtain a real corpus):
+
+```
+@tablet C            # start a tablet, short code "C"
+@name Mamari         # common name (optional)
+@side recto          # side label (optional)
+@synthetic           # mark as non-attested test data (optional)
+Ca1: 1 2 6 700 8     # "<line_id>: <space-separated glyph tokens>"
+Ca2: 6-700 8 1 2     # "6-700" is a ligature (fused glyphs 6 and 700)
+```
+
+### Running the Analysis
+
+```bash
+python corpus_stats.py --corpus data/corpus/ --output output/
+```
+
+This produces `output/corpus_statistics.json` and a console report covering:
+
+| Metric | What it measures |
+|--------|------------------|
+| **Sign frequency** | Rank-ordered glyph counts and relative frequencies |
+| **Zipf correlation** | Whether the distribution is language-like (near -1.0) |
+| **Hapax legomena** | Glyphs occurring exactly once |
+| **Type/token ratio** | Sign-inventory richness |
+| **N-grams (2-5)** | Recurring glyph sequences |
+| **Repeated sequences** | Maximal recurring spans — candidate formulae / parallelism |
+| **Positional distribution** | Per-glyph line-initial / medial / final tendencies |
+
+> **Note**: The repository ships only `data/corpus/sample_synthetic.rrt`, which
+> contains **invented, non-attested data** for pipeline testing. Every run on
+> synthetic data is flagged as such in the output.
 
 ---
 
@@ -610,19 +662,26 @@ Notes: Multiple valid interpretations possible. The repetition of G001
 ```
 Easter-Island/
 ├── glyph_cataloger.py          # Main glyph detection CLI
+├── corpus_stats.py             # Statistical corpus analysis CLI
 ├── cross_referencer.py         # Cross-reference generator CLI
 ├── language_scraper.py         # Rapa Nui vocabulary scraper
 ├── run_agent.py                # LLM agent runner CLI
 ├── scraper.py                  # Easter Island Wikipedia scraper
 ├── config.py                   # Configuration and mappings
 │
+├── data/
+│   └── corpus/                 # Transliterated (.rrt) corpus + SOURCES.md
+│
 ├── models/
 │   ├── glyphs.py               # BoundingBox, GlyphInstance, GlyphCluster, RongorongoLexicon
+│   ├── corpus.py               # CorpusLine, Tablet, RongorongoCorpus (transliterated text)
 │   ├── language.py             # LanguageEntry, Translation, Etymology
 │   └── cross_reference.py      # CrossReference, GlyphSemanticProfile, ShapeTag
 │
 ├── processors/
 │   ├── glyph_processor.py      # CV detection pipeline (OpenCV, DBSCAN)
+│   ├── corpus_loader.py        # .rrt transliteration file parser
+│   ├── corpus_statistics.py    # Descriptive corpus statistics engine
 │   └── cross_reference_processor.py  # Evidence-based semantic linking
 │
 ├── parsers/language/           # Web scrapers for linguistic data

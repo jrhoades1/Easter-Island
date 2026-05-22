@@ -1,5 +1,6 @@
 """Data models for Easter Island scraper."""
 
+from .corpus import CorpusLine, RongorongoCorpus, Tablet
 from .language import LanguageEntry, Translation, Example
 from .cross_reference import (
     ShapeCategory,
@@ -13,6 +14,9 @@ from .cross_reference import (
 )
 
 __all__ = [
+    "CorpusLine",
+    "RongorongoCorpus",
+    "Tablet",
     "LanguageEntry",
     "Translation",
     "Example",

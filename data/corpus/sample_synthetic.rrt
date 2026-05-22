@@ -1,0 +1,41 @@
+# =====================================================================
+#  SYNTHETIC SAMPLE CORPUS  --  NOT REAL RONGORONGO DATA
+# =====================================================================
+#  This file exists only so the corpus-statistics pipeline can be run
+#  and tested without a genuine corpus present. The glyph codes and
+#  sequences below are INVENTED. They are NOT transliterations of any
+#  real artifact and must never be used for research conclusions.
+#
+#  Every tablet here is marked '@synthetic' so analysis output flags it.
+#
+#  To analyze real data, place genuine .rrt transliterations in this
+#  directory. See SOURCES.md for where to obtain a real corpus and the
+#  expected file format.
+# =====================================================================
+
+@tablet SYN-A
+@name Synthetic Sample A
+@side recto
+@synthetic
+Aa1: 1 2 6 6 700 8 1 2 6 9
+Aa2: 1 2 6 700 8 4 4 11 6 1
+Aa3: 6-700 8 1 2 6 6 700 8 3 1
+Aa4: 1 2 6 12 13 6 700 8 1 9
+Aa5: 1 2 6 6 700 8 14 6 1 2
+
+@tablet SYN-B
+@name Synthetic Sample B
+@side recto
+@synthetic
+Ba1: 6 1 2 6 700 8 6 1 2 6
+Ba2: 8 1 2 6 6-700 8 1 9 6 1
+Ba3: 1 2 6 700 8 1 2 6 700 8
+Ba4: 15 6 16 1 2 6 6 700 17
+
+@tablet SYN-C
+@name Synthetic Sample C
+@side verso
+@synthetic
+Ca1: 1 2 6 700 8 20 21 6 1 2
+Ca2: 6 700 8 1 2 6 22 6 700 8
+Ca3: 1 9 6 6 700 8 1 2 6 9
