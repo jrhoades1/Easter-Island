@@ -227,7 +227,8 @@
     "other_tablet_hrefs": [],
     "other_tablet_kohaumotu_urls": [
       "http://kohaumotu.org/Rongorongo/A/Aa.html",
-      "http://kohaumotu.org/Rongorongo/A/Ab.html"
+      "http://kohaumotu.org/Rongorongo/A/Ab.html",
+      "http://kohaumotu.org/Rongorongo/B/Br.html"
     ],
     "index_html": {
       "href": "index.html",
@@ -242,6 +243,8 @@
       "http://kohaumotu.org/Rongorongo/A/Aa.html",
       "http://kohaumotu.org/Rongorongo/A/Ab.html",
       "http://kohaumotu.org/Rongorongo/A/index.html",
+      "http://kohaumotu.org/Rongorongo/B/Br.html",
+      "http://kohaumotu.org/Rongorongo/B/index.html",
       "http://kohaumotu.org/Rongorongo/C/Ca.html",
       "http://kohaumotu.org/Rongorongo/C/Ca07.html",
       "http://kohaumotu.org/Rongorongo/C/Cb.html",
@@ -252,7 +255,7 @@
       "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
       "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
     ],
-    "cited_url_tablet_letters": ["A", "C"],
+    "cited_url_tablet_letters": ["A", "B", "C"],
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
@@ -509,6 +512,44 @@
     "slot3_600_count": 32,
     "motif_hits": 2,
     "other_below_hamming_9": 30
+  },
+  "tablet_b_aruku_kurenga_recto": {
+    "cycle": 43,
+    "result": "br_html_vendored",
+    "id": "tablet_b_aruku_kurenga_recto",
+    "tablet": "B",
+    "name": "Aruku-Kurenga",
+    "selection": "first_non_a_c_with_barthel_numbers",
+    "preferred": "B",
+    "catalog": "http://kohaumotu.org/Rongorongo/",
+    "tablets_page": "http://kohaumotu.org/Rongorongo/tablets.html",
+    "tablet_index": "http://kohaumotu.org/Rongorongo/B/index.html",
+    "source_page": "http://kohaumotu.org/Rongorongo/B/Br.html",
+    "vendored_html": "tests/fixtures/aruku_br_html/Br.html",
+    "html_bytes": 7591,
+    "lines": ["Br1", "Br2", "Br3", "Br4", "Br5", "Br6", "Br7", "Br8", "Br9", "Br10"],
+    "stem_count": 560,
+    "stem_counts_by_line": [56, 51, 58, 53, 54, 68, 57, 61, 55, 47],
+    "guy_8stem_delimiter": false,
+    "guy_8stem_delimiter_freq": 0,
+    "guy_8stem_delimiter_spans": [],
+    "motif_9gram": false,
+    "motif_10gram": false,
+    "motif_ab_9gram": false,
+    "sandwich_004_600_004": false,
+    "sandwich_004_600_004_freq": 0,
+    "longest_n": 6,
+    "longest_tokens": ["384", "003", "001", "470", "091", "450"],
+    "longest_freq": 2,
+    "longest_spans": [["Br4", 16, 22], ["Br4", 25, 31]],
+    "eightgram_count": 0,
+    "top_8gram": null,
+    "top_8gram_freq": 0,
+    "top_8gram_is_guy_delimiter": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "image_track": "parked"
   },
   "cb_5gram_ca_cross": {
     "cycle": 34,

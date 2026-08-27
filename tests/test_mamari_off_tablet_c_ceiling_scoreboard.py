@@ -105,6 +105,7 @@ STANDING_OTHER_TABLET_HREFS = ()
 STANDING_OTHER_TABLET_URLS = (
     "http://kohaumotu.org/Rongorongo/A/Aa.html",
     "http://kohaumotu.org/Rongorongo/A/Ab.html",
+    "http://kohaumotu.org/Rongorongo/B/Br.html",
 )
 STANDING_RESULT = "tablet_c_corpus_ceiling"
 STANDING_VENDABLE_TABLETS = ("C",)
@@ -113,6 +114,8 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/Rongorongo/A/Aa.html",
     "http://kohaumotu.org/Rongorongo/A/Ab.html",
     "http://kohaumotu.org/Rongorongo/A/index.html",
+    "http://kohaumotu.org/Rongorongo/B/Br.html",
+    "http://kohaumotu.org/Rongorongo/B/index.html",
     "http://kohaumotu.org/Rongorongo/C/Ca.html",
     "http://kohaumotu.org/Rongorongo/C/Ca07.html",
     "http://kohaumotu.org/Rongorongo/C/Cb.html",
@@ -123,8 +126,8 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
     "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
 )
-STANDING_CITED_TABLET_LETTERS = ("A", "C")
-STANDING_VENDORED_BARTHEL_PAGES = ("Aa.html", "Ab.html", "Ca.html", "Cb.html")
+STANDING_CITED_TABLET_LETTERS = ("A", "B", "C")
+STANDING_VENDORED_BARTHEL_PAGES = ("Aa.html", "Ab.html", "Br.html", "Ca.html", "Cb.html")
 STANDING_INDEX_KIND = "same_folder_contents"
 STANDING_INDEX_DIFFERENT_TABLET = False
 STANDING_INDEX_VENDORED = False
@@ -278,7 +281,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cited_kohaumotu_urls_are_tablet_c_or_license(self):
-        """Navbar-era sources stay C. Cycles 36/38 cite A from the parent catalog."""
+        """Navbar-era sources stay C. Cycles 36/38 cite A; cycle 43 cites B."""
         self.assertEqual(self.cited_urls, STANDING_CITED_KOHAUMOTU_URLS)
         letters = tuple(
             sorted(
@@ -294,14 +297,14 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         for url in self.cited_urls:
             self.assertTrue(url.startswith("http://kohaumotu.org/"))
             letter = tablet_letter_from_ref(url)
-            self.assertIn(letter, (None, "A", "C"), url)
+            self.assertIn(letter, (None, "A", "B", "C"), url)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_no_other_tablet_html_was_vendored(self):
-        """Ca.html / Cb.html plus cycle-36 Aa.html and cycle-38 Ab.html."""
+        """Ca.html / Cb.html plus cycle-36 Aa.html, cycle-38 Ab.html, cycle-43 Br.html."""
         fixtures = Path(__file__).parent / "fixtures"
         barthel_pages = tuple(
-            sorted(path.name for path in fixtures.glob("**/*[A-Z][ab].html"))
+            sorted(path.name for path in fixtures.glob("**/*[A-Z][abrv].html"))
         )
         self.assertEqual(barthel_pages, STANDING_VENDORED_BARTHEL_PAGES)
         self.assertTrue(CA_HTML_PATH.is_file())
