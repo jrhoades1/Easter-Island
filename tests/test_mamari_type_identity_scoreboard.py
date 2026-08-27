@@ -24,7 +24,7 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 10 standing lock (cycle 9 + inconsistent-type split).
+# Cycle 11 standing lock (cycle 10 + remaining 2-stem IDs kept).
 # Cycle 9 was 83/62 / mixed 3-gram. Cycle 4 was 67 types. Cycle 3 was 75/58.
 # Cycle 2 was 65 types. Cycle 1 signed lock was 71.
 STANDING_INSTANCES_PER_STRIP = {

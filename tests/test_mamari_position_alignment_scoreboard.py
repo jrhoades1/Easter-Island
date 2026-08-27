@@ -281,7 +281,7 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
         )
 
     def test_standing_counts_unchanged(self):
-        """Cycle 10 snapshot: 83/66 / 43+40, mixed 2-gram."""
+        """Cycle 11 snapshot: 83/66 / 43+40, mixed 2-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
