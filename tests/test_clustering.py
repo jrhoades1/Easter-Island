@@ -705,6 +705,20 @@ class TestInconsistentTypeSplit(unittest.TestCase):
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
+    def test_three_member_consistent_type_stays_merged(self):
+        """Cycle 11: remaining multi-member types stay typed when gates pass."""
+        ramp = [float(i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=ramp)
+        c = self._split("c", "three.gif", [0.9] + [0.0] * 6, profile=ramp)
+        self.assertTrue(passes_type_consistency_gates(a, b))
+        self.assertTrue(passes_type_consistency_gates(a, c))
+        self.assertTrue(passes_type_consistency_gates(b, c))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b, c])
+        ids = {inst.cluster_id for inst in clustered}
+        self.assertEqual(len(ids), 1, ids)
+
     def test_transitive_overmerge_is_split(self):
         """A–B and B–C merge; A–C is Hu-far. A and C must not share an ID."""
         ramp = [float(i) for i in range(32)]

@@ -3,7 +3,10 @@
 Cycle 9 locked G009/G004/G003 each to multiple published stems on the
 mixed 3-gram. Cycle 10 splits over-merged split-fragment types using
 instance Hu / profile (no Barthel in the splitter). The 3-gram is gone.
-The remaining mixed 2-gram is still multi-stem:
+
+Cycle 11 re-applies those same gates to the remaining 2-stem IDs
+(G003, G008). Every member pair passes Hu < 2.0 and profile r ≥ 0.85,
+so the shared IDs stay. Honest remainder:
 
     Ca8 [8:10]  G003 G008 = 008 078
     Ca8 [19:21] G003 G008 = 670 008
@@ -56,6 +59,8 @@ STANDING_GLYPH_STEM_MULTIMAP = {
     "G008": ("008", "078"),
 }
 STANDING_INCONSISTENT_GLYPHS = ("G003", "G008")
+STANDING_G003_MEMBER_COUNT = 3
+STANDING_G008_MEMBER_COUNT = 2
 CYCLE9_3GRAM_TRIPLES = (
     ("Ca8", 7, 10, ("G009", "G004", "G003"), ("670", "008", "078")),
     ("Ca8", 18, 21, ("G009", "G004", "G003"), ("041", "670", "008")),
@@ -223,7 +228,7 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
             self.instances, self.image_lines, self.published_lines
         )
 
-    def test_cycle10_snapshot(self):
+    def test_cycle11_snapshot(self):
         """PR snapshot: 83/66 / 43+40, mixed 2-gram, no 8-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
@@ -256,9 +261,9 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
     def test_g00n_stem_inconsistency_is_standing_truth(self):
         """Fewer multi-stem G00n IDs than cycle 9; inconsistency remains.
 
-        G003 is 008 and 670; G008 is 008 and 078. The former G009 pair
-        (Ca8[7] vs Ca8[18], r=0.742) was split and is not in the mixed
-        hits. If a later change makes every G00n map to a single stem,
+        Cycle 11 re-checked G003 and G008 with the same Hu/profile
+        gates. Features say keep, so both still map to two stems.
+        If a later change makes every G00n map to a single stem,
         update this table — do not silently drop the assertion.
         """
         s = self.score
@@ -273,7 +278,7 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_ca8_conflicting_positions_split_only_when_dissimilar(self):
-        """Ca8[7] vs [18] fails profile r; [8]/[19] and [9]/[20] stay typed."""
+        """Ca8[7] vs [18] fails profile r; remaining 2-stem IDs stay typed."""
         ca8 = ca7_ca8_instances(self.instances)[1]
         left, right = ca8[7], ca8[18]
         self.assertLess(_hu_distance(left, right), 2.0)
@@ -284,6 +289,35 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertTrue(passes_type_consistency_gates(ca8[9], ca8[20]))
         self.assertEqual(ca8[8].cluster_id, ca8[19].cluster_id)
         self.assertEqual(ca8[9].cluster_id, ca8[20].cluster_id)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_remaining_two_stem_ids_pass_consistency_gates(self):
+        """Cycle 11: apply the same Hu/profile split to G003 and G008.
+
+        All member pairs pass, so the splitter keeps the shared IDs.
+        Do not force a split when features say keep.
+        """
+        by_id: dict[str, list] = {glyph_id: [] for glyph_id in STANDING_INCONSISTENT_GLYPHS}
+        for inst in self.instances:
+            if inst.cluster_id in by_id:
+                by_id[inst.cluster_id].append(inst)
+        self.assertEqual(len(by_id["G003"]), STANDING_G003_MEMBER_COUNT)
+        self.assertEqual(len(by_id["G008"]), STANDING_G008_MEMBER_COUNT)
+        for glyph_id, members in by_id.items():
+            self.assertTrue(all(inst.from_ligature_split for inst in members), glyph_id)
+            for i, left in enumerate(members):
+                for right in members[i + 1 :]:
+                    self.assertLess(_hu_distance(left, right), 2.0, glyph_id)
+                    self.assertGreaterEqual(
+                        profile_correlation(left.ink_profile, right.ink_profile),
+                        0.85,
+                        glyph_id,
+                    )
+                    self.assertTrue(
+                        passes_type_consistency_gates(left, right),
+                        glyph_id,
+                    )
+                    self.assertEqual(left.cluster_id, right.cluster_id)
         self.assertEqual(self.provider.get_call_history(), [])
 
 

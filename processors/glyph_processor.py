@@ -91,7 +91,9 @@ class ProcessorConfig:
     # After allograph stitches, un-merge split-fragment types whose members
     # fail the cycle 7–8 honest pair test (unsigned Hu >= 2.0 or column-ink
     # r < 0.85). Union-find can stitch first/middle/last ligature slots
-    # through a chain; this pass splits those instances back apart. Does
+    # through a chain; this pass splits those instances back apart. Cycle
+    # 11 re-applies the same gates to remaining multi-member split-fragment
+    # types; pairs that pass keep a shared ID (do not force a split). Does
     # not read Barthel stems. False keeps the cycle-9 lock.
     split_inconsistent_types: bool = True
 
@@ -1034,7 +1036,8 @@ class GlyphProcessor:
         3-part valley split can share an ID through a chain even when the
         endpoints are dissimilar. Re-partition those members so every pair
         that keeps a shared ID passes passes_type_consistency_gates.
-        Instance-local. Does not read Barthel stems.
+        Members that already pass Hu/profile stay together. Instance-local.
+        Does not read Barthel stems.
         """
         groups: dict[str, list[int]] = {}
         for i, inst in enumerate(instances):

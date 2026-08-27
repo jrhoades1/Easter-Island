@@ -9,6 +9,8 @@ clusters, so Guy's delimiter is not the target. The honest proxy is a
 repeating 8-gram of frequency ≥2.
 
 That proxy is expected to fail until a mixed 8-gram actually repeats.
+The delimiter-window scoreboard locks how many of the 8 published
+delimiter slots share one G00n ID across Ca7/Ca8 repetitions (0–8).
 """
 
 import random
@@ -170,7 +172,8 @@ class TestMamariImageScoreboard(unittest.TestCase):
         """Repeating 8-gram (freq ≥2) is the image-side delimiter analogue.
 
         Expected to fail: no Barthel remapping; split-fragment allographs
-        plus the consistency split yield a mixed 2-gram, not a repeating 8-gram.
+        plus the consistency split yield a mixed 2-gram, not a repeating
+        8-gram. Delimiter-window slot matches are locked separately.
         """
         ngrams = self.ngram_analyzer.extract_ngrams(self.lines, n=8, min_frequency=2)
         self.assertTrue(
