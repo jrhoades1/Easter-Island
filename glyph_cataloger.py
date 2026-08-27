@@ -215,6 +215,12 @@ def main() -> int:
             "allograph_max_area_ratio", 1.1
         ),
         allograph_max_aspect=config["clustering"].get("allograph_max_aspect", 0.5),
+        split_wide_ligatures=config["clustering"].get("split_wide_ligatures", True),
+        ligature_min_width=config["clustering"].get("ligature_min_width", 70),
+        ligature_min_aspect=config["clustering"].get("ligature_min_aspect", 0.90),
+        ligature_valley_ratio=config["clustering"].get("ligature_valley_ratio", 0.40),
+        ligature_min_part_width=config["clustering"].get("ligature_min_part_width", 12),
+        ligature_max_parts=config["clustering"].get("ligature_max_parts", 3),
     )
     processor = GlyphProcessor(processor_config)
 
@@ -241,6 +247,9 @@ def main() -> int:
         "hu_sign_mode": config["clustering"].get("hu_sign_mode", "unsigned"),
         "same_line_allograph_merge": config["clustering"].get(
             "same_line_allograph_merge", True
+        ),
+        "split_wide_ligatures": config["clustering"].get(
+            "split_wide_ligatures", True
         ),
     }
     lexicon = build_lexicon(processor, instances, images, output_dir, clustering_params)

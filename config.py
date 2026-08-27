@@ -129,6 +129,13 @@ GLYPH_CONFIG = {
         "allograph_max_hu_distance": 3.5,
         "allograph_max_area_ratio": 1.1,
         "allograph_max_aspect": 0.5,
+        # Wide-blob valley split. False restores the cycle-3 75/58 lock.
+        "split_wide_ligatures": True,
+        "ligature_min_width": 70,
+        "ligature_min_aspect": 0.90,
+        "ligature_valley_ratio": 0.40,
+        "ligature_min_part_width": 12,
+        "ligature_max_parts": 3,
     },
 }
 

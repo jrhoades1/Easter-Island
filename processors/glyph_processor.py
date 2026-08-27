@@ -57,6 +57,18 @@ class ProcessorConfig:
     allograph_max_area_ratio: float = 1.1
     allograph_max_aspect: float = 0.5
 
+    # Detection-time split of wide connected blobs. Inner RETR_TREE contours
+    # on these GIFs are holes, not stems. A vertical ink-projection valley
+    # is the honest cut: only boxes much wider than a tall-thin stem, and
+    # only when a deep interior valley exists. Tall-thin crescents (aspect
+    # ~0.4) never meet ligature_min_aspect. Set False for the cycle-3 lock.
+    split_wide_ligatures: bool = True
+    ligature_min_width: int = 70  # ~2.7× opening-crescent width (~26px)
+    ligature_min_aspect: float = 0.90
+    ligature_valley_ratio: float = 0.40  # valley < ratio × median column ink
+    ligature_min_part_width: int = 12
+    ligature_max_parts: int = 3  # Barthel 8.78.711 is three stems
+
 
 def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
     """max(area)/min(area). inf if either box has no area."""
@@ -86,6 +98,65 @@ def _hu_distance(left: GlyphInstance, right: GlyphInstance) -> float:
             - np.asarray(right.features, dtype=float)
         )
     )
+
+
+def vertical_valley_cuts(
+    column_ink: np.ndarray,
+    valley_ratio: float = 0.40,
+    min_part_width: int = 12,
+    max_parts: int = 3,
+    smooth_window: int = 5,
+    interior_lo: float = 0.18,
+    interior_hi: float = 0.82,
+    cluster_gap: int = 4,
+) -> list[int]:
+    """Interior x offsets of deep valleys in a vertical ink projection.
+
+    Returns at most max_parts-1 cuts, deepest first, clustered so adjacent
+    minima count as one valley. Empty if the profile is too short or no
+    valley is deeper than valley_ratio × median.
+    """
+    col = np.asarray(column_ink, dtype=float)
+    n = int(col.size)
+    if n < 16 or max_parts < 2 or min_part_width < 1:
+        return []
+    window = max(1, int(smooth_window))
+    if window % 2 == 0:
+        window += 1
+    kernel = np.ones(window, dtype=float) / window
+    smoothed = np.convolve(col, kernel, mode="same")
+    median = float(np.median(smoothed))
+    if median <= 0:
+        return []
+    lo = max(1, int(n * interior_lo))
+    hi = min(n - 1, int(n * interior_hi))
+    if hi <= lo:
+        return []
+    raw: list[tuple[int, float]] = []
+    threshold = valley_ratio * median
+    for x in range(lo, hi):
+        value = smoothed[x]
+        if value <= smoothed[x - 1] and value <= smoothed[x + 1] and value < threshold:
+            raw.append((x, value))
+    if not raw:
+        return []
+    groups: list[list[tuple[int, float]]] = [[raw[0]]]
+    for item in raw[1:]:
+        if item[0] - groups[-1][-1][0] <= cluster_gap:
+            groups[-1].append(item)
+        else:
+            groups.append([item])
+    candidates = [min(group, key=lambda pair: pair[1])[0] for group in groups]
+    kept: list[int] = []
+    for x in sorted(candidates, key=lambda idx: smoothed[idx]):
+        if x < min_part_width or (n - x) < min_part_width:
+            continue
+        if any(abs(x - other) < min_part_width for other in kept):
+            continue
+        kept.append(x)
+        if len(kept) >= max_parts - 1:
+            break
+    return sorted(kept)
 
 
 class GlyphProcessor:
@@ -264,18 +335,85 @@ class GlyphProcessor:
         filtered = self.filter_contours(contours)
 
         instances = []
-        for i, contour in enumerate(filtered):
+        index = 0
+        for contour in filtered:
             bbox = self.contour_to_bounding_box(contour, image.shape)
-            instance_id = GlyphInstance.generate_id(source_image, i)
-            instances.append(
-                GlyphInstance(
-                    instance_id=instance_id,
-                    source_image=source_image,
-                    bounding_box=bbox,
-                )
+            parts = (
+                self.split_wide_ligature(binary, bbox)
+                if self.config.split_wide_ligatures
+                else [bbox]
             )
+            for part in parts:
+                instance_id = GlyphInstance.generate_id(source_image, index)
+                instances.append(
+                    GlyphInstance(
+                        instance_id=instance_id,
+                        source_image=source_image,
+                        bounding_box=part,
+                    )
+                )
+                index += 1
 
         return instances
+
+    def split_wide_ligature(
+        self, binary: np.ndarray, bbox: BoundingBox
+    ) -> list[BoundingBox]:
+        """Split a wide connected blob at deep vertical ink valleys.
+
+        Tall-thin stems are skipped (aspect gate). Returns [bbox] when
+        the box is too narrow, too thin, or has no qualifying valley.
+        Does not invent stem identities.
+        """
+        if bbox.height <= 0 or bbox.width < self.config.ligature_min_width:
+            return [bbox]
+        aspect = bbox.width / bbox.height
+        if aspect < self.config.ligature_min_aspect:
+            return [bbox]
+
+        pad = self.config.bbox_padding
+        x0 = bbox.x + pad
+        x1 = bbox.x + bbox.width - pad
+        y0 = bbox.y + pad
+        y1 = bbox.y + bbox.height - pad
+        if x1 <= x0 or y1 <= y0:
+            return [bbox]
+        y0 = max(0, y0)
+        y1 = min(binary.shape[0], y1)
+        x0 = max(0, x0)
+        x1 = min(binary.shape[1], x1)
+        if x1 <= x0 or y1 <= y0:
+            return [bbox]
+
+        roi = binary[y0:y1, x0:x1]
+        if roi.size == 0:
+            return [bbox]
+        column_ink = (roi > 0).sum(axis=0)
+        cuts = vertical_valley_cuts(
+            column_ink,
+            valley_ratio=self.config.ligature_valley_ratio,
+            min_part_width=self.config.ligature_min_part_width,
+            max_parts=self.config.ligature_max_parts,
+        )
+        if not cuts:
+            return [bbox]
+        return self._bboxes_from_vertical_cuts(bbox, x0, cuts)
+
+    def _bboxes_from_vertical_cuts(
+        self, bbox: BoundingBox, interior_origin_x: int, cuts: list[int]
+    ) -> list[BoundingBox]:
+        """Divide bbox at interior-relative cut offsets. Fallback: original box."""
+        abs_cuts = [interior_origin_x + cut for cut in cuts]
+        edges = [bbox.x, *abs_cuts, bbox.x + bbox.width]
+        parts: list[BoundingBox] = []
+        for left, right in zip(edges, edges[1:]):
+            width = right - left
+            if width < 8:
+                return [bbox]
+            parts.append(
+                BoundingBox(x=left, y=bbox.y, width=width, height=bbox.height)
+            )
+        return parts if len(parts) > 1 else [bbox]
 
     # =========================================================================
     # Line Detection and Position Assignment

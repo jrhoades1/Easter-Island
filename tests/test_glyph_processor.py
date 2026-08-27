@@ -8,7 +8,11 @@ import cv2
 import numpy as np
 
 from models.glyphs import BoundingBox, GlyphInstance
-from processors.glyph_processor import GlyphProcessor, ProcessorConfig
+from processors.glyph_processor import (
+    GlyphProcessor,
+    ProcessorConfig,
+    vertical_valley_cuts,
+)
 
 
 def create_test_glyph(shape: str, size: int = 50) -> np.ndarray:
@@ -262,6 +266,97 @@ class TestGlyphDetection(unittest.TestCase):
         # With 10px padding, box should extend beyond the shape
         self.assertLessEqual(bbox.x, 25)  # 30 - 5 (default would be)
         self.assertLessEqual(bbox.y, 25)
+
+
+def _bridged_lobes(
+    widths: list[int],
+    height: int = 50,
+    gap: int = 16,
+    bridge_h: int = 4,
+    pad: int = 10,
+) -> np.ndarray:
+    """One connected contour: filled rectangles joined by a thin bridge."""
+    total_w = sum(widths) + gap * (len(widths) - 1) + 2 * pad
+    img = np.ones((height + 2 * pad, total_w), dtype=np.uint8) * 255
+    x = pad
+    center_y = pad + height // 2
+    for i, width in enumerate(widths):
+        cv2.rectangle(img, (x, pad), (x + width - 1, pad + height - 1), 0, -1)
+        if i < len(widths) - 1:
+            by0 = center_y - bridge_h // 2
+            cv2.rectangle(
+                img, (x + width, by0), (x + width + gap, by0 + bridge_h), 0, -1
+            )
+        x += width + gap
+    return img
+
+
+class TestVerticalValleyCuts(unittest.TestCase):
+    """Pure projection helper. No Mamari GIFs."""
+
+    def test_single_deep_valley(self):
+        col = np.array([20] * 20 + [3] * 5 + [20] * 20, dtype=float)
+        cuts = vertical_valley_cuts(col, valley_ratio=0.40, min_part_width=12, max_parts=3)
+        self.assertEqual(len(cuts), 1)
+        self.assertGreater(cuts[0], 18)
+        self.assertLess(cuts[0], 27)
+
+    def test_two_valleys_for_three_parts(self):
+        col = np.array(
+            [20] * 18 + [2] * 4 + [20] * 18 + [2] * 4 + [20] * 18, dtype=float
+        )
+        cuts = vertical_valley_cuts(col, valley_ratio=0.40, min_part_width=12, max_parts=3)
+        self.assertEqual(len(cuts), 2)
+
+    def test_no_valley_on_flat_profile(self):
+        col = np.ones(50, dtype=float) * 20
+        self.assertEqual(vertical_valley_cuts(col), [])
+
+
+class TestWideLigatureSplit(unittest.TestCase):
+    """Valley split on a clean binary (255=ink). Preprocess is not the unit."""
+
+    def _ink_lobes(self, widths: list[int], height: int = 50, gap: int = 16) -> tuple:
+        pad = 5
+        total_w = sum(widths) + gap * (len(widths) - 1) + 2 * pad
+        binary = np.zeros((height + 2 * pad, total_w), dtype=np.uint8)
+        x = pad
+        cy = pad + height // 2
+        for i, width in enumerate(widths):
+            cv2.rectangle(binary, (x, pad), (x + width - 1, pad + height - 1), 255, -1)
+            if i < len(widths) - 1:
+                cv2.rectangle(binary, (x + width, cy - 1), (x + width + gap, cy + 1), 255, -1)
+            x += width + gap
+        bbox = BoundingBox(x=0, y=0, width=binary.shape[1], height=binary.shape[0])
+        return binary, bbox
+
+    def test_bridged_pair_splits_into_two(self):
+        binary, bbox = self._ink_lobes([32, 32])
+        parts = GlyphProcessor().split_wide_ligature(binary, bbox)
+        self.assertEqual(len(parts), 2)
+
+    def test_three_lobes_split_into_three(self):
+        binary, bbox = self._ink_lobes([32, 32, 32])
+        parts = GlyphProcessor().split_wide_ligature(binary, bbox)
+        self.assertEqual(len(parts), 3)
+
+    def test_split_can_be_disabled(self):
+        img = _bridged_lobes([32, 32])
+        processor = GlyphProcessor(ProcessorConfig(split_wide_ligatures=False))
+        instances = processor.detect_glyphs(img, "pair.png")
+        self.assertEqual(len(instances), 1)
+
+    def test_solid_wide_box_does_not_split(self):
+        img = np.ones((70, 100), dtype=np.uint8) * 255
+        cv2.rectangle(img, (10, 10), (90, 60), 0, -1)
+        instances = GlyphProcessor().detect_glyphs(img, "solid.png")
+        self.assertEqual(len(instances), 1)
+
+    def test_tall_thin_stem_does_not_split(self):
+        img = np.ones((80, 40), dtype=np.uint8) * 255
+        cv2.rectangle(img, (8, 6), (28, 72), 0, -1)
+        instances = GlyphProcessor().detect_glyphs(img, "stem.png")
+        self.assertEqual(len(instances), 1)
 
 
 class TestLineDetection(unittest.TestCase):
