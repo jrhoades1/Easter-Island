@@ -21,7 +21,9 @@ and locks those four claims on Cb only. Cycle 33 locks that
 verso's n≥4 freq≥2 profile. Cycle 34 locks those three
 Cb 5-grams on this remainder and the calendar fixture
 (all absent). Cycle 35 locks the off-tablet-C corpus
-ceiling (no other tablet honestly linked). Image track
+ceiling (no other tablet honestly linked from Ca/Cb navbars).
+Cycle 36 vendors the parent catalog's first non-C Barthel page
+(A / Tahua Aa.html). Image track
 stays parked. MockProvider only.
 """
 

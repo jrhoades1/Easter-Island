@@ -1,0 +1,52 @@
+Tahua (Barthel text A) side a — Kohaumotu Aa.html
+================================================
+
+Files
+  catalog.html   http://kohaumotu.org/Rongorongo/
+  tablets.html   http://kohaumotu.org/Rongorongo/tablets.html
+  A_index.html   http://kohaumotu.org/Rongorongo/A/index.html
+  Aa.html        http://kohaumotu.org/Rongorongo/A/Aa.html
+
+Source chain (parent catalog above already-used C pages; same publisher)
+  http://kohaumotu.org/Rongorongo/
+  honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  first non-C tablet with a page is A Tahua → A/index.html
+  http://kohaumotu.org/Rongorongo/A/index.html
+  Barthel-number HTML: Aa.html (Side a, all lines)
+  http://kohaumotu.org/Rongorongo/A/Aa.html
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  These HTML snapshots are not covered by this repository's MIT license.
+
+What was copied
+  The published pages as retrieved 2026-08-27. Barthel numbers sit in
+  <td> text under each line strip (Aa1–Aa8). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  Ab.html (navbar side b on Aa.html; this cycle locks side a only)
+  fi_Aa.html / Fischer pages (not the Barthel all-lines page)
+  A_svg_codes_b.html (SVG overlay; not the Aa.html number table)
+
+Cycle 36 (2026-08-27)
+  Parent catalog is the folder above already-used Ca.html / Cb.html.
+  First non-C tablet with extractable Barthel numbers is A / Tahua.
+  Search lock on Aa.html only (no type map):
+    Guy 8-stem delimiter 390 041 378 041 670 008 078 711: absent
+      (freq 0, no spans)
+    Ca 9-gram 002 010 070 760 040 006 430 047 002: absent
+    three Cb 5-grams: all absent
+    stem count: 906
+    longest n with freq≥2: 10
+    top 8-gram: 080 004 280 182 048 022 025 025 (freq 2); not Guy
+  Existing C scoreboards are unchanged.
+  Image track stays parked. No new image. No clustering change.

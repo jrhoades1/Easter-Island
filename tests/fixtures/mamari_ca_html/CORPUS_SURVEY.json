@@ -225,7 +225,9 @@
       "Cb.html": ["../rongorongo.css", "index.html", "Ca.html"]
     },
     "other_tablet_hrefs": [],
-    "other_tablet_kohaumotu_urls": [],
+    "other_tablet_kohaumotu_urls": [
+      "http://kohaumotu.org/Rongorongo/A/Aa.html"
+    ],
     "index_html": {
       "href": "index.html",
       "kind": "same_folder_contents",
@@ -235,16 +237,55 @@
       "note": "navbar contents link; same C/ folder; not a different tablet Barthel page"
     },
     "cited_kohaumotu_urls": [
+      "http://kohaumotu.org/Rongorongo/",
+      "http://kohaumotu.org/Rongorongo/A/Aa.html",
+      "http://kohaumotu.org/Rongorongo/A/index.html",
       "http://kohaumotu.org/Rongorongo/C/Ca.html",
       "http://kohaumotu.org/Rongorongo/C/Ca07.html",
       "http://kohaumotu.org/Rongorongo/C/Cb.html",
       "http://kohaumotu.org/Rongorongo/C/fi_Ca.html",
       "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
+      "http://kohaumotu.org/Rongorongo/tablets.html",
       "http://kohaumotu.org/rongorongo_org/copy.html",
       "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
       "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
     ],
-    "cited_url_tablet_letters": ["C"],
+    "cited_url_tablet_letters": ["A", "C"],
+    "standing_c_locks_unchanged": true,
+    "image_track": "parked"
+  },
+  "tablet_a_tahua_side_a": {
+    "cycle": 36,
+    "result": "aa_html_vendored",
+    "id": "tablet_a_tahua_side_a",
+    "tablet": "A",
+    "name": "Tahua",
+    "selection": "first_non_c_with_barthel_numbers",
+    "preferred": "A",
+    "catalog": "http://kohaumotu.org/Rongorongo/",
+    "tablets_page": "http://kohaumotu.org/Rongorongo/tablets.html",
+    "tablet_index": "http://kohaumotu.org/Rongorongo/A/index.html",
+    "source_page": "http://kohaumotu.org/Rongorongo/A/Aa.html",
+    "vendored_html": "tests/fixtures/tahua_aa_html/Aa.html",
+    "html_bytes": 11287,
+    "lines": ["Aa1", "Aa2", "Aa3", "Aa4", "Aa5", "Aa6", "Aa7", "Aa8"],
+    "stem_count": 906,
+    "stem_counts_by_line": [116, 108, 98, 114, 104, 111, 134, 121],
+    "guy_8stem_delimiter": false,
+    "guy_8stem_delimiter_freq": 0,
+    "guy_8stem_delimiter_spans": [],
+    "motif_9gram": false,
+    "cb_5grams": [
+      [["660", "005", "064", "660", "005"], false],
+      [["381", "004", "066", "760", "004"], false],
+      [["099", "004", "002", "004", "002"], false]
+    ],
+    "longest_n": 10,
+    "longest_tokens": ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"],
+    "eightgram_count": 3,
+    "top_8gram": ["080", "004", "280", "182", "048", "022", "025", "025"],
+    "top_8gram_freq": 2,
+    "top_8gram_is_guy_delimiter": false,
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
