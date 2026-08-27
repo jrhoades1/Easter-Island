@@ -35,3 +35,13 @@ Cycle 32 (2026-08-27)
     600: two hits (Cb2[21], Cb10[29])
   Ca remainder / calendar scoreboards are unchanged.
   Image track stays parked. No new image. No clustering change.
+
+Cycle 35 (2026-08-27)
+  Off-tablet-C expansion: surveyed this page's navbar / sibling
+  links plus in-repo ATTRIBUTION / CORPUS_SURVEY / README. Navbar:
+  contents (index.html, same C/ folder) and side a (already-vendored
+  Ca.html). No Kohaumotu Barthel page of a different tablet is
+  honestly linked. Tablet C is the only Kohaumotu Barthel we can
+  vendor without a new uncited scrape. No invented URL or digits.
+  index.html was not vendored and not scraped. Image track stays
+  parked.
