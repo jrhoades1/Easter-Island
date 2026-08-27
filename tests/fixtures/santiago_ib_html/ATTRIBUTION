@@ -1,0 +1,53 @@
+Santiago Staff verso Ib — Kohaumotu I/index.html check
+======================================================
+
+Files
+  I_index.html   http://kohaumotu.org/Rongorongo/I/index.html
+  Ib.html        not a published page (same Kohaumotu I/ source as Ia.html)
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet I / Santiago Staff
+  → I/index.html
+  http://kohaumotu.org/Rongorongo/I/index.html
+  first I-side Barthel-number HTML: Ia.html (All lines)
+  http://kohaumotu.org/Rongorongo/I/Ia.html
+  Ib.html is not listed on I/index.html. A/index.html lists Ab.html
+  (side b); B/index.html lists Bv.html (verso). I/index.html lists
+  Ia.html only. The staff is cylindrical; no verso page is published.
+  Ir.html is also not a published page (cycle 46).
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  The already-vendored I/index.html page (cycle 46), copied here as
+  the documented source used to look for a verso. Retrieved
+  2026-08-27. No Ib.html digits exist to copy.
+
+Not vendored
+  Ib.html (not a published page; do not invent stems)
+  a 404 body from requesting Ib.html
+  tablet D / Échancrée or any other fourth tablet
+  ba_Ia.html / fi_Ia.html / Fischer pages
+  I_svg_codes_b.html
+
+Cycle 53 (2026-08-27)
+  Same Kohaumotu I/ source already used for Ia. Search lock:
+    Ib.html: absent
+    documented verso page: none
+    stem count / 076 rate / 090 076 / 076 071 / 090 076 071:
+      not computed (no page; do not invent zeros)
+    locked A/B/C motifs and the Ia 5-gram top: not searched
+  Existing A / B / C / Ia scoreboards are unchanged.
+  Image track stays parked. No new tablet. No type merge. No CV.
