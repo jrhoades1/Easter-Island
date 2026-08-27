@@ -21,8 +21,9 @@ Cycle 20 leftover slot-2+3 unions leave that min at 6, so they stay off.
 Cycle 21 slot-0 flip/180 crop leftovers fail the same gate (best NCC
 0.247 / chamfer 1.224), so published Hamming stays 6. Cycle 22
 8-crop window strips fail too (best NCC 0.244 / chamfer 2.137
-identity); GIF pixels cannot recover the delimiter as a visual
-repeat.
+identity). Cycle 23 raw line rectangles also fail (best NCC
+0.156 / chamfer 1.904 identity); GIF pixels cannot recover the
+delimiter as a visual repeat even without the type model.
 """
 
 import random
@@ -61,6 +62,15 @@ def load_tracing_bgr(path: Path) -> np.ndarray:
 
     rgb = np.array(Image.open(path).convert("RGB"))
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
+
+
+def tracing_binaries(
+    paths: list[Path],
+    processor: GlyphProcessor | None = None,
+) -> dict[str, np.ndarray]:
+    """Preprocessed 0/255 line rasters keyed by filename."""
+    processor = processor or GlyphProcessor()
+    return {path.name: processor.preprocess(load_tracing_bgr(path)) for path in paths}
 
 
 def process_tracings(
