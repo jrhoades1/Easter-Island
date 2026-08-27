@@ -61,7 +61,11 @@ Cycle 45 locks the cycle-44 Bv 8-gram as a motif
 (hits, flanks, absent on Br / Aa / Ab / C).
 Cycle 46 vendors tablet I (Santiago Staff) Ia.html
 from the already-vendored tablets.html and locks that
-page only.
+page only. Cycle 49 holds out one published Guy
+window at a time on this same Ca6–Ca9 fixture and
+locks whether the 8-gram is still recovered (freq ≥2)
+and still the unique top 8-gram from the other
+windows.
 """
 
 import json

@@ -767,6 +767,45 @@
     "standing_ia_999_locks_unchanged": true,
     "image_track": "parked"
   },
+  "calendar_delimiter_leave_one_out": {
+    "cycle": 49,
+    "passage": "ca6_ca9_calendar",
+    "fixture": "tests/fixtures/mamari_ca6_ca9_barthel.json",
+    "n": 8,
+    "min_frequency": 2,
+    "hold_out": "one_guy_window",
+    "window_count": 6,
+    "windows": [
+      ["Ca7", 6, 14],
+      ["Ca7", 19, 27],
+      ["Ca7", 33, 41],
+      ["Ca8", 3, 11],
+      ["Ca8", 15, 23],
+      ["Ca8", 29, 37]
+    ],
+    "table": [
+      [0, true, true],
+      [1, true, true],
+      [2, true, false],
+      [3, true, true],
+      [4, true, true],
+      [5, true, true]
+    ],
+    "all_recovered": true,
+    "all_still_top": false,
+    "tie_window_index": 2,
+    "tie_8gram": ["040", "390", "041", "378", "041", "670", "008", "078"],
+    "ca6_variants_excluded": true,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_ia_999_locks_unchanged": true,
+    "standing_ia_076_locks_unchanged": true,
+    "image_track": "parked"
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",
