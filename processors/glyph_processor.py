@@ -88,6 +88,13 @@ class ProcessorConfig:
     wide_profile_bins: int = 32
     wide_profile_min_correlation: float = 0.85
 
+    # After allograph stitches, un-merge split-fragment types whose members
+    # fail the cycle 7–8 honest pair test (unsigned Hu >= 2.0 or column-ink
+    # r < 0.85). Union-find can stitch first/middle/last ligature slots
+    # through a chain; this pass splits those instances back apart. Does
+    # not read Barthel stems. False keeps the cycle-9 lock.
+    split_inconsistent_types: bool = True
+
 
 def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
     """max(area)/min(area). inf if either box has no area."""
@@ -220,6 +227,29 @@ def profile_correlation(
     if np.isnan(value):
         return 0.0
     return value
+
+
+def passes_type_consistency_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if two co-typed instances are similar enough to stay together.
+
+    Cycle 7–8 honest thresholds: unsigned Hu < 2.0, and when both
+    instances have a column-ink profile, Pearson r >= 0.85. Missing
+    profiles do not fail the pair (Hu decides). Does not look up stems.
+    """
+    cfg = config or ProcessorConfig()
+    if _hu_distance(left, right) >= cfg.split_allograph_max_hu_distance:
+        return False
+    if left.ink_profile and right.ink_profile:
+        corr = profile_correlation(
+            left.ink_profile, right.ink_profile, cfg.wide_profile_bins
+        )
+        if corr < cfg.wide_profile_min_correlation:
+            return False
+    return True
 
 
 def passes_wide_profile_allograph_gates(
@@ -826,10 +856,13 @@ class GlyphProcessor:
             self._merge_split_fragment_allographs(instances)
         if self.config.wide_profile_allograph_merge:
             self._merge_wide_profile_allographs(instances)
+        if self.config.split_inconsistent_types:
+            self._split_inconsistent_types(instances)
         if (
             self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
             or self.config.wide_profile_allograph_merge
+            or self.config.split_inconsistent_types
         ):
             clusters = self._clusters_from_assigned_ids(instances)
 
@@ -993,6 +1026,49 @@ class GlyphProcessor:
             shared_id = f"W{merge_n:03d}"
             for i in members:
                 instances[i].cluster_id = shared_id
+
+    def _split_inconsistent_types(self, instances: list[GlyphInstance]) -> None:
+        """Split split-fragment types whose members fail Hu or profile gates.
+
+        Merge-time union-find is transitive: first/middle/last slots of a
+        3-part valley split can share an ID through a chain even when the
+        endpoints are dissimilar. Re-partition those members so every pair
+        that keeps a shared ID passes passes_type_consistency_gates.
+        Instance-local. Does not read Barthel stems.
+        """
+        groups: dict[str, list[int]] = {}
+        for i, inst in enumerate(instances):
+            if not inst.from_ligature_split or not inst.cluster_id:
+                continue
+            groups.setdefault(inst.cluster_id, []).append(i)
+
+        split_n = 0
+        for idxs in groups.values():
+            if len(idxs) < 2:
+                continue
+            members = sorted(idxs, key=lambda i: instances[i].instance_id)
+            parts: list[list[int]] = []
+            for i in members:
+                placed = False
+                for part in parts:
+                    if all(
+                        passes_type_consistency_gates(
+                            instances[i], instances[j], self.config
+                        )
+                        for j in part
+                    ):
+                        part.append(i)
+                        placed = True
+                        break
+                if not placed:
+                    parts.append([i])
+            if len(parts) < 2:
+                continue
+            for part in parts:
+                split_n += 1
+                new_id = f"X{split_n:03d}"
+                for i in part:
+                    instances[i].cluster_id = new_id
 
     def _reading_order_indexes(
         self, instances: list[GlyphInstance]

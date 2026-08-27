@@ -9,8 +9,10 @@ from models.glyphs import BoundingBox, GlyphInstance, GlyphPosition
 from processors.glyph_processor import (
     GlyphProcessor,
     ProcessorConfig,
+    _hu_distance,
     passes_same_line_allograph_gates,
     passes_split_fragment_allograph_gates,
+    passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
     profile_correlation,
     resample_profile,
@@ -633,6 +635,119 @@ class TestWideProfileAllographMerge(unittest.TestCase):
         )
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+
+class TestInconsistentTypeSplit(unittest.TestCase):
+    """Post-merge split of over-merged split-fragment types. No Mamari GIFs."""
+
+    def _split(
+        self,
+        instance_id: str,
+        source: str,
+        features: list[float],
+        width: int = 31,
+        profile: list[float] | None = None,
+    ) -> GlyphInstance:
+        return GlyphInstance(
+            instance_id=instance_id,
+            source_image=source,
+            bounding_box=BoundingBox(x=0, y=0, width=width, height=66),
+            features=features,
+            from_ligature_split=True,
+            ink_profile=list(profile) if profile is not None else [],
+            position=GlyphPosition(0, 0, 1),
+        )
+
+    def test_gate_splits_poor_profile_even_when_hu_is_close(self):
+        """Hu < 2 is not enough if column-ink r is well below 0.85."""
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=inverse)
+        self.assertLess(_hu_distance(a, b), 2.0)
+        self.assertLess(profile_correlation(ramp, inverse), 0.0)
+        self.assertTrue(passes_split_fragment_allograph_gates(a, b))
+        self.assertFalse(passes_type_consistency_gates(a, b))
+
+    def test_gate_keeps_hu_close_high_corr_pair(self):
+        ramp = [float(i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=ramp)
+        self.assertTrue(passes_type_consistency_gates(a, b))
+
+    def test_gate_splits_hu_ge_2_even_with_matching_profile(self):
+        ramp = [float(i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [2.5] + [0.0] * 6, profile=ramp)
+        self.assertFalse(passes_type_consistency_gates(a, b))
+
+    def test_missing_profile_does_not_split_on_hu_alone(self):
+        """Existing split-fragment tests have no ink_profile; Hu decides."""
+        a = self._split("a", "one.gif", [0.0] * 7)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6)
+        self.assertTrue(passes_type_consistency_gates(a, b))
+
+    def test_poor_profile_pair_is_split_after_merge(self):
+        """Split-fragment stitch unions them; consistency pass splits them."""
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=inverse)
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_matching_profile_pair_stays_merged(self):
+        ramp = [float(i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=ramp)
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_transitive_overmerge_is_split(self):
+        """A–B and B–C merge; A–C is Hu-far. A and C must not share an ID."""
+        ramp = [float(i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=ramp)
+        c = self._split("c", "three.gif", [2.4] + [0.0] * 6, profile=ramp)
+        self.assertTrue(passes_split_fragment_allograph_gates(a, b))
+        self.assertTrue(passes_split_fragment_allograph_gates(b, c))
+        self.assertFalse(passes_type_consistency_gates(a, c))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b, c])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[2].cluster_id)
+
+    def test_non_split_instances_are_not_repartitioned(self):
+        """Tall-thin same-line crescents can have Hu > 2; splitter skips them."""
+        thin_a = GlyphInstance(
+            instance_id="thin_a",
+            source_image="line.gif",
+            bounding_box=BoundingBox(x=0, y=0, width=26, height=66),
+            features=[0.0] * 7,
+            position=GlyphPosition(0, 0, 2),
+        )
+        thin_b = GlyphInstance(
+            instance_id="thin_b",
+            source_image="line.gif",
+            bounding_box=BoundingBox(x=30, y=0, width=26, height=66),
+            features=[3.2] + [0.0] * 6,
+            position=GlyphPosition(0, 1, 2),
+        )
+        self.assertFalse(passes_type_consistency_gates(thin_a, thin_b))
+        self.assertTrue(passes_same_line_allograph_gates(thin_a, thin_b))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([thin_a, thin_b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_split_can_be_disabled(self):
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        a = self._split("a", "one.gif", [0.0] * 7, profile=ramp)
+        b = self._split("b", "two.gif", [0.8] + [0.0] * 6, profile=inverse)
+        processor = GlyphProcessor(ProcessorConfig(split_inconsistent_types=False))
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
 
 class TestSingleGlyphClustering(unittest.TestCase):

@@ -1,15 +1,15 @@
 """Stem-consistency scoreboard: G00n IDs vs published stems on mixed hits.
 
-Cycle 6 locked seven delimiter-aligned mixed n-grams. The same G00n
-3-gram sits on two different published stem triples:
+Cycle 9 locked G009/G004/G003 each to multiple published stems on the
+mixed 3-gram. Cycle 10 splits over-merged split-fragment types using
+instance Hu / profile (no Barthel in the splitter). The 3-gram is gone.
+The remaining mixed 2-gram is still multi-stem:
 
-    Ca8 [7:10]  G009 G004 G003 = 670 008 078
-    Ca8 [18:21] G009 G004 G003 = 041 670 008
+    Ca8 [8:10]  G003 G008 = 008 078
+    Ca8 [19:21] G003 G008 = 670 008
 
-So G009 is 670 in one hit and 041 in the other. This cycle records that
-inconsistency as standing truth. It is a positional alignment table, not
-a G00n→Barthel dictionary and not a meaning assignment. No detector
-retune. Glyph meanings are not assigned.
+Positional alignment table, not a G00n→Barthel dictionary. Glyph
+meanings are not assigned.
 """
 
 import unittest
@@ -18,13 +18,21 @@ from dataclasses import dataclass
 
 from agents.base.providers import MockProvider
 from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
+from processors.glyph_processor import (
+    _hu_distance,
+    passes_type_consistency_gates,
+    profile_correlation,
+)
 from tests.test_mamari_image_scoreboard import (
     TRACING_DIR,
     TRACING_NAMES,
     ca7_ca8_sequences,
     process_tracings,
 )
-from tests.test_mamari_neighbor_allograph_scoreboard import longest_mixed_repeating_n
+from tests.test_mamari_neighbor_allograph_scoreboard import (
+    ca7_ca8_instances,
+    longest_mixed_repeating_n,
+)
 from tests.test_mamari_position_alignment_scoreboard import (
     MixedNgramHit,
     STANDING_MIXED_HITS,
@@ -41,18 +49,19 @@ from tests.test_mamari_type_identity_scoreboard import (
     mixed_repeating_ngrams,
 )
 
-# Observed G00n → distinct published stems on the cycle-6 mixed hits.
+# Observed G00n → distinct published stems on the current mixed hits.
 # Sorted unique values. Not a type map.
 STANDING_GLYPH_STEM_MULTIMAP = {
-    "G003": ("008", "078", "711"),
-    "G004": ("008", "078", "670"),
-    "G009": ("041", "670"),
+    "G003": ("008", "670"),
+    "G008": ("008", "078"),
 }
-STANDING_INCONSISTENT_GLYPHS = ("G003", "G004", "G009")
-STANDING_3GRAM_TRIPLES = (
+STANDING_INCONSISTENT_GLYPHS = ("G003", "G008")
+CYCLE9_3GRAM_TRIPLES = (
     ("Ca8", 7, 10, ("G009", "G004", "G003"), ("670", "008", "078")),
     ("Ca8", 18, 21, ("G009", "G004", "G003"), ("041", "670", "008")),
 )
+STANDING_3GRAM_TRIPLES = ()
+CYCLE9_INCONSISTENT_COUNT = 3
 
 
 @dataclass(frozen=True)
@@ -175,7 +184,7 @@ class TestStemConsistencyHelpers(unittest.TestCase):
         self.assertEqual(multimap["G004"], ("008", "670"))
         self.assertEqual(multimap["G003"], ("008", "078"))
         self.assertEqual(inconsistent_glyphs(multimap), ("G003", "G004", "G009"))
-        self.assertEqual(hit_triples(hits), STANDING_3GRAM_TRIPLES)
+        self.assertEqual(hit_triples(hits), CYCLE9_3GRAM_TRIPLES)
 
     def test_consistent_glyph_is_not_flagged(self):
         hits = (
@@ -214,8 +223,8 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
             self.instances, self.image_lines, self.published_lines
         )
 
-    def test_cycle8_snapshot_unchanged(self):
-        """PR snapshot vs cycle 8: 83/62 / 43+40, mixed 3-gram, no 8-gram."""
+    def test_cycle10_snapshot(self):
+        """PR snapshot: 83/66 / 43+40, mixed 2-gram, no 8-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -226,7 +235,7 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
             list(STANDING_MIXED_REPEATING),
         )
         self.assertEqual(
-            longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 3
+            longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 2
         )
         eight = self.ngram_analyzer.extract_ngrams(
             self.image_lines, n=8, min_frequency=2
@@ -235,38 +244,46 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_standing_mixed_hits_and_triples_locked(self):
-        """Cycle-6 lock rows and the two published 3-gram triples stay put."""
+        """Mixed hits are the remaining 2-gram; the cycle-9 3-gram is gone."""
         position = score_position_alignment(
             self.instances, self.image_lines, self.published_lines
         )
         self.assertEqual([hit_tuple(hit) for hit in position.hits], list(STANDING_MIXED_HITS))
         self.assertEqual(self.score.triples, STANDING_3GRAM_TRIPLES)
-        self.assertEqual(
-            STANDING_3GRAM_TRIPLES[0][4],
-            ("670", "008", "078"),
-        )
-        self.assertEqual(
-            STANDING_3GRAM_TRIPLES[1][4],
-            ("041", "670", "008"),
-        )
+        self.assertEqual(STANDING_3GRAM_TRIPLES, ())
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_g00n_stem_inconsistency_is_standing_truth(self):
-        """Fail if the mixed-hit G00n→stem inconsistency disappears.
+        """Fewer multi-stem G00n IDs than cycle 9; inconsistency remains.
 
-        Today's observation: G009, G004, and G003 each align to more than
-        one published Barthel stem. That is the lock. If a later pipeline
-        change makes every G00n map to a single stem, update this table
-        and document the change — do not silently drop the assertion.
+        G003 is 008 and 670; G008 is 008 and 078. The former G009 pair
+        (Ca8[7] vs Ca8[18], r=0.742) was split and is not in the mixed
+        hits. If a later change makes every G00n map to a single stem,
+        update this table — do not silently drop the assertion.
         """
         s = self.score
         self.assertEqual(s.multimap, STANDING_GLYPH_STEM_MULTIMAP)
         self.assertEqual(s.inconsistent_glyphs, STANDING_INCONSISTENT_GLYPHS)
         self.assertGreater(len(s.inconsistent_glyphs), 0)
+        self.assertLess(len(s.inconsistent_glyphs), CYCLE9_INCONSISTENT_COUNT)
         self.assertGreater(max(len(stems) for stems in s.multimap.values()), 1)
-        self.assertEqual(s.multimap["G009"], ("041", "670"))
-        self.assertIn("670", s.multimap["G009"])
-        self.assertIn("041", s.multimap["G009"])
+        self.assertEqual(s.multimap["G003"], ("008", "670"))
+        self.assertEqual(s.multimap["G008"], ("008", "078"))
+        self.assertNotIn("G009", s.multimap)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_ca8_conflicting_positions_split_only_when_dissimilar(self):
+        """Ca8[7] vs [18] fails profile r; [8]/[19] and [9]/[20] stay typed."""
+        ca8 = ca7_ca8_instances(self.instances)[1]
+        left, right = ca8[7], ca8[18]
+        self.assertLess(_hu_distance(left, right), 2.0)
+        self.assertLess(profile_correlation(left.ink_profile, right.ink_profile), 0.85)
+        self.assertFalse(passes_type_consistency_gates(left, right))
+        self.assertNotEqual(left.cluster_id, right.cluster_id)
+        self.assertTrue(passes_type_consistency_gates(ca8[8], ca8[19]))
+        self.assertTrue(passes_type_consistency_gates(ca8[9], ca8[20]))
+        self.assertEqual(ca8[8].cluster_id, ca8[19].cluster_id)
+        self.assertEqual(ca8[9].cluster_id, ca8[20].cluster_id)
         self.assertEqual(self.provider.get_call_history(), [])
 
 
