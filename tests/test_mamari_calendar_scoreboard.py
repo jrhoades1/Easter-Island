@@ -22,6 +22,8 @@ Cycle 26 locks inter-delimiter cells (span, tokens, 040-count,
 non-040 list, following-window kind) on this same fixture.
 Cycle 27 locks the non-040 inventory (stem, count, cell hits,
 window-adjacent) on the cycle-26 cell table. Stems are ids only.
+Cycle 28 vendors the already-cited Ca.html remainder as a second
+published passage (Guy delimiter absent; 600 not window-adjacent).
 """
 
 import json

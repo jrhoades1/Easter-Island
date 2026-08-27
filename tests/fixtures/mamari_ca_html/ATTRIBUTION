@@ -1,0 +1,49 @@
+Mamari (Barthel text C) side a — Kohaumotu Ca.html
+=================================================
+
+File
+  Ca.html
+
+Source page (already cited by the Ca6–Ca9 fixture)
+  http://kohaumotu.org/Rongorongo/C/Ca.html
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  The published page as retrieved 2026-08-27. Barthel numbers sit in
+  <td> text under each line strip (Ca1–Ca14). No digits were typed
+  from memory. No uncited page was scraped.
+
+Cycle 28 (2026-08-27)
+  First published passage remains the 101-stem Ca6–Ca9 calendar
+  extract in tests/fixtures/mamari_ca6_ca9_barthel.json.
+
+  Second passage is the remainder of this same Ca.html: Ca1–Ca5,
+  the Ca6 prefix before the first 390.041, the Ca9 tail after the
+  two opening 040 night signs, and Ca10–Ca14. Ca7 and Ca8 are
+  entirely inside the first passage.
+
+  Lock (search only; no type map):
+    Guy 8-stem delimiter: absent
+    Ca6 315/375 variants: absent (they sit in the calendar extract)
+    600: five hits, none window-adjacent (no windows)
+    040-runs: 6, all length 1 (Ca10–Ca12)
+    cells: 12 (one per remainder line), 0 windows
+
+  Not scraped: Cb.html (navbar link only; not a cited source URL).
+  Not a second passage: ca0708.html / Ca07.html (already Ca7–Ca8);
+  fi_Ca.html (same digits as Ca.html); lunar.html (no numbers in
+  text); C_svg_codes_b.html (same tablet C). Guy 1990 plates and
+  Horley 2011 stay non-extractable as already recorded on the
+  first fixture.
+
+  Image track stays parked. No new image. No clustering change.

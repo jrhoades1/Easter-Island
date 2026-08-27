@@ -1,0 +1,110 @@
+{
+  "cycle": 28,
+  "result": "second_passage_vendored",
+  "first_passage": {
+    "id": "ca6_ca9_calendar",
+    "fixture": "tests/fixtures/mamari_ca6_ca9_barthel.json",
+    "source_page": "http://kohaumotu.org/Rongorongo/C/Ca.html",
+    "lines": ["Ca6", "Ca7", "Ca8", "Ca9"],
+    "stem_count": 101,
+    "stem_counts_by_line": [16, 43, 40, 2]
+  },
+  "second_passage": {
+    "id": "ca_side_a_remainder",
+    "source_page": "http://kohaumotu.org/Rongorongo/C/Ca.html",
+    "vendored_html": "Ca.html",
+    "html_bytes": 8015,
+    "line_slices": [
+      "Ca1",
+      "Ca2",
+      "Ca3",
+      "Ca4",
+      "Ca5",
+      "Ca6",
+      "Ca9",
+      "Ca10",
+      "Ca11",
+      "Ca12",
+      "Ca13",
+      "Ca14"
+    ],
+    "slice_notes": {
+      "Ca6": "prefix before first published 390.041 (calendar start)",
+      "Ca9": "tokens after the two opening 040 night signs"
+    },
+    "stem_count": 416,
+    "stem_counts_by_line": [40, 35, 39, 36, 38, 24, 30, 36, 37, 33, 33, 35],
+    "guy_8stem_delimiter": false,
+    "ca6_variant_delimiter": false,
+    "window_count": 0,
+    "stem_600_count": 5,
+    "stem_600_hits": [
+      ["Ca1", 14],
+      ["Ca1", 17],
+      ["Ca2", 8],
+      ["Ca5", 23],
+      ["Ca6", 19]
+    ],
+    "stem_600_window_adjacent": false,
+    "run_040_count": 6,
+    "run_040_token_count": 6,
+    "run_040_lengths": [1, 1, 1, 1, 1, 1],
+    "run_040_spans": [
+      ["Ca10", 11, 12, 1, false],
+      ["Ca10", 22, 23, 1, false],
+      ["Ca10", 30, 31, 1, false],
+      ["Ca11", 6, 7, 1, false],
+      ["Ca11", 18, 19, 1, false],
+      ["Ca12", 1, 2, 1, false]
+    ],
+    "cell_count": 12,
+    "empty_cell_count": 0
+  },
+  "standing_image_lock": {
+    "instances": 83,
+    "types": 62,
+    "published_min_hamming": 6
+  },
+  "rejected": [
+    {
+      "id": "lunar_html",
+      "url": "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
+      "reason": "cited commentary; color GIFs only; no Barthel numbers in text"
+    },
+    {
+      "id": "ca0708_html",
+      "url": "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
+      "reason": "same Ca7–Ca8 already inside the 101-stem first passage"
+    },
+    {
+      "id": "fi_ca_html",
+      "url": "http://kohaumotu.org/Rongorongo/C/fi_Ca.html",
+      "reason": "Fischer tracings; same Barthel digits as Ca.html; not a second passage"
+    },
+    {
+      "id": "ca07_html",
+      "url": "http://kohaumotu.org/Rongorongo/C/Ca07.html",
+      "reason": "individualized Ca7 slices already inside the first passage"
+    },
+    {
+      "id": "svg_full_lines",
+      "url": "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
+      "reason": "same tablet C with codes overlaid; not a second published text"
+    },
+    {
+      "id": "guy_1990_plates",
+      "citation": "Guy 1990 Fig. 1 / Table 1",
+      "reason": "already recorded on the first fixture: image plates, did not extract as text"
+    },
+    {
+      "id": "horley_2011",
+      "citation": "Horley 2011 doi:10.4000/jso.6314",
+      "reason": "already recorded on the first fixture: HTML was bot-gated"
+    },
+    {
+      "id": "cb_html",
+      "url": "http://kohaumotu.org/Rongorongo/C/Cb.html",
+      "reason": "navbar link from Ca.html only; not a cited source URL; not scraped"
+    }
+  ]
+}
