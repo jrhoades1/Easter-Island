@@ -65,7 +65,11 @@ page only. Cycle 49 vendors the Wikimedia C-a photo
 and locks that it is strictly larger per calendar line
 than the Ca7–Ca8 GIFs; published Hamming is not
 rescored (crop lengths ≠ 43+40). GIF lock stays
-83/62 / Hamming 6.
+83/62 / Hamming 6. Cycle 49 also holds out one
+published Guy window at a time on this same Ca6–Ca9
+fixture and locks whether the 8-gram is still
+recovered (freq ≥2) and still the unique top 8-gram
+from the other windows.
 """
 
 import json
