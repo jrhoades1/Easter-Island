@@ -148,6 +148,11 @@ GLYPH_CONFIG = {
         "split_inconsistent_types": True,
         # Same-slot stitch across published Guy delimiter starts. False keeps cycle 11.
         "delimiter_slot_merge": True,
+        # Slot-0 leftover crop stitch (NCC/chamfer). False keeps cycle 12.
+        "delimiter_slot_crop_merge": True,
+        "delimiter_slot_crop_slots": (0,),
+        "slot_crop_min_ncc": 0.45,
+        "slot_crop_max_chamfer": 0.80,
         "delimiter_window_len": 8,
         "delimiter_window_starts": (
             (0, 6),

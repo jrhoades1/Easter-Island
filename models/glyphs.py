@@ -125,6 +125,9 @@ class GlyphInstance:
     image_path: Optional[str] = None
     from_ligature_split: bool = False
     ink_profile: list[float] = field(default_factory=list)
+    # Flattened 64x64 binary bbox crop (0/255). Used only for slot-0
+    # crop comparison. Not written to JSON.
+    glyph_crop: list[int] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization."""

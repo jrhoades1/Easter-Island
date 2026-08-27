@@ -5,8 +5,9 @@ on Ca7/Ca8, take the eight image G00n IDs in those same reading-order
 slots (390 041 378 041 670 008 078 711). A slot matches if every
 repetition has the same G00n ID there. Score is 0–8.
 
-North-star beside the repeating 8-gram (freq ≥2). Glyph meanings are
-not assigned.
+Cycle 13 crop-compares the four slot-0 leftovers (NCC / chamfer on the
+bbox image). None pass, so the lock stays 0/8. Glyph meanings are not
+assigned.
 """
 
 import unittest
@@ -17,9 +18,13 @@ from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from models.glyphs import GlyphInstance
 from tests.test_mamari_calendar_scoreboard import DELIMITER_MOTIF
 from processors.glyph_processor import (
+    crop_chamfer,
+    crop_ncc,
     passes_delimiter_slot_gates,
+    passes_slot_crop_gates,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
+    profile_correlation,
 )
 from tests.test_mamari_image_scoreboard import (
     TRACING_DIR,
@@ -61,6 +66,36 @@ STANDING_SLOT_MATCHES = 0
 # Pairwise slot merges that passed Hu/profile. No slot is unanimous.
 STANDING_MERGED_SLOTS = (0, 4, 7)
 STANDING_SLOT_UNIQUE_COUNTS = (4, 6, 6, 6, 5, 6, 6, 5)
+# Slot-0 reading-order occupants (line, index). Four unique IDs remain.
+SLOT0_OCCUPANTS = (
+    ("Ca7", 6),
+    ("Ca7", 19),
+    ("Ca7", 33),
+    ("Ca8", 3),
+    ("Ca8", 15),
+    ("Ca8", 29),
+)
+# (left, right, ncc, chamfer, column-ink r, crop_pass, already_merged)
+# NCC/chamfer from the stored 64x64 bbox crop. Merged-pair floor is
+# 0.504 / 0.544; leftover ceiling is 0.229 / 1.017. Column-ink leftover
+# max r 0.584 is below the 0.70 adjacent-nonmatch ceiling — r stays 0.85.
+STANDING_SLOT0_CROP_PAIRS = (
+    (("Ca7", 6), ("Ca7", 19), 0.055, 1.860, 0.348, False, False),
+    (("Ca7", 6), ("Ca7", 33), 0.214, 1.241, 0.502, False, False),
+    (("Ca7", 6), ("Ca8", 3), 0.504, 0.544, 0.944, True, True),
+    (("Ca7", 6), ("Ca8", 15), 0.198, 1.222, 0.523, False, False),
+    (("Ca7", 6), ("Ca8", 29), 0.081, 1.620, 0.181, False, False),
+    (("Ca7", 19), ("Ca7", 33), -0.010, 1.756, 0.071, False, False),
+    (("Ca7", 19), ("Ca8", 3), 0.072, 1.892, 0.289, False, False),
+    (("Ca7", 19), ("Ca8", 15), -0.009, 1.760, 0.125, False, False),
+    (("Ca7", 19), ("Ca8", 29), -0.051, 2.385, -0.111, False, False),
+    (("Ca7", 33), ("Ca8", 3), 0.209, 1.214, 0.504, False, False),
+    (("Ca7", 33), ("Ca8", 15), 0.909, 0.117, 0.991, True, True),
+    (("Ca7", 33), ("Ca8", 29), 0.157, 1.017, 0.584, False, False),
+    (("Ca8", 3), ("Ca8", 15), 0.229, 1.194, 0.524, False, False),
+    (("Ca8", 3), ("Ca8", 29), 0.057, 1.838, 0.217, False, False),
+    (("Ca8", 15), ("Ca8", 29), 0.144, 1.068, 0.541, False, False),
+)
 
 
 @dataclass(frozen=True)
@@ -131,6 +166,22 @@ def slot_match_count(slot_ids: tuple[tuple[str, ...], ...]) -> int:
 def window_tuple(window: DelimiterWindow) -> tuple:
     """Stable lock row: line, span, image IDs."""
     return (window.line, window.start, window.end, window.image_ids)
+
+
+def slot0_instance(lines: list[list], line: str, index: int):
+    """Slot-0 occupant at a published Ca7/Ca8 reading-order index."""
+    return lines[0 if line == "Ca7" else 1][index]
+
+
+def slot0_crop_row(left, right) -> tuple:
+    """(ncc, chamfer, column-ink r, crop_pass, already_same_id)."""
+    return (
+        crop_ncc(left.glyph_crop, right.glyph_crop),
+        crop_chamfer(left.glyph_crop, right.glyph_crop),
+        profile_correlation(left.ink_profile, right.ink_profile),
+        passes_slot_crop_gates(left, right),
+        left.cluster_id == right.cluster_id,
+    )
 
 
 def score_delimiter_windows(
@@ -221,7 +272,7 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
             self.instances, self.image_lines, self.published_lines
         )
 
-    def test_cycle12_snapshot(self):
+    def test_cycle13_snapshot(self):
         """PR snapshot: 83/64 / 43+40, mixed 2-gram, no 8-gram, slots 0/8."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
@@ -259,10 +310,11 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
     def test_delimiter_slot_matches_are_standing_truth(self):
         """0 of 8 slots share one G00n ID across the six repetitions.
 
-        Cycle 12 merged passing pairs in slots 0, 4, and 7. No slot is
-        unanimous — do not force a leftover occupant onto the merged
-        pair. If a later change makes any slot unanimous, raise
-        STANDING_SLOT_MATCHES. Not a type map.
+        Cycle 12 merged passing pairs in slots 0, 4, and 7. Cycle 13
+        crop-compared the four slot-0 IDs; leftovers fail NCC/chamfer,
+        so unique count stays 4 and matches stay 0/8. Do not force a
+        leftover occupant onto the merged pair. If a later change makes
+        any slot unanimous, raise STANDING_SLOT_MATCHES. Not a type map.
         """
         s = self.score
         self.assertEqual(s.slot_matches, STANDING_SLOT_MATCHES)
@@ -301,6 +353,57 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         # A non-passing occupant in a merged slot keeps its own ID.
         self.assertFalse(passes_delimiter_slot_gates(lines[0][6], lines[0][19]))
         self.assertNotEqual(lines[0][6].cluster_id, lines[0][19].cluster_id)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_slot0_crop_table_is_standing_truth(self):
+        """Leftover slot-0 pairs fail crop gates. Do not force 1/8.
+
+        Already-merged pairs sit at NCC 0.504 / 0.544 and 0.909 / 0.117.
+        The strongest leftover is NCC 0.229 / chamfer 1.017. Column-ink
+        leftover max r is 0.584 — below the 0.70 adjacent-nonmatch
+        ceiling — so r is not lowered. Lock 4 unique IDs, not 1.
+        """
+        lines = ca7_ca8_instances(self.instances)
+        unique_slot0 = {window.image_ids[0] for window in self.score.windows}
+        self.assertEqual(len(unique_slot0), STANDING_SLOT_UNIQUE_COUNTS[0])
+        self.assertEqual(len(unique_slot0), 4)
+        self.assertEqual(self.score.slot_matches, 0)
+        for left_key, right_key, ncc, chamfer, corr, crop_pass, merged in (
+            STANDING_SLOT0_CROP_PAIRS
+        ):
+            left = slot0_instance(lines, *left_key)
+            right = slot0_instance(lines, *right_key)
+            got_ncc, got_chamfer, got_corr, got_crop, got_merged = slot0_crop_row(
+                left, right
+            )
+            self.assertAlmostEqual(got_ncc, ncc, places=3, msg=(left_key, right_key))
+            self.assertAlmostEqual(
+                got_chamfer, chamfer, places=3, msg=(left_key, right_key)
+            )
+            self.assertAlmostEqual(got_corr, corr, places=3, msg=(left_key, right_key))
+            self.assertEqual(got_crop, crop_pass, (left_key, right_key))
+            self.assertEqual(got_merged, merged, (left_key, right_key))
+            if not merged:
+                self.assertFalse(passes_slot_crop_gates(left, right))
+                self.assertNotEqual(left.cluster_id, right.cluster_id)
+        leftover_ncc = [
+            row[2]
+            for row in STANDING_SLOT0_CROP_PAIRS
+            if not row[6]
+        ]
+        leftover_chamfer = [
+            row[3]
+            for row in STANDING_SLOT0_CROP_PAIRS
+            if not row[6]
+        ]
+        leftover_r = [
+            row[4]
+            for row in STANDING_SLOT0_CROP_PAIRS
+            if not row[6]
+        ]
+        self.assertLess(max(leftover_ncc), 0.45)
+        self.assertGreater(min(leftover_chamfer), 0.80)
+        self.assertLess(max(leftover_r), 0.70)
         self.assertEqual(self.provider.get_call_history(), [])
 
 
