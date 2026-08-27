@@ -124,8 +124,6 @@ Q_AND_ABSENT_PAGES = (
     "Q.html",
     "Qa.html",
     "Qb.html",
-    "Qr.html",
-    "Qv.html",
     "Ha.html",
     "Pa.html",
 ) + FOURTH_TABLET_PAGES
@@ -225,7 +223,7 @@ def island_hits_by_side(
 
 
 def forbidden_html_names(fixtures: Path) -> tuple[str, ...]:
-    """Q / D / Ha / Pa Barthel filenames under fixtures, if any."""
+    """Unpublished Q / D / Ha / Pa Barthel filenames under fixtures, if any."""
     return tuple(name for name in Q_AND_ABSENT_PAGES if any(fixtures.glob(f"**/{name}")))
 
 
