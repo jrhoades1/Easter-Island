@@ -1,12 +1,11 @@
 """Nearest 8-window Hamming: full Ca7+Ca8, plus the six Guy windows.
 
 Cycle 17 locked that no 8-gram repeats (Hamming 0 does not occur).
-Cycle 18 records the nearest pair of length-8 G00n windows on the
-concatenated Ca7+Ca8 sequence, and the nearest pair among the six
-published delimiter windows. Distance is Hamming (positions that differ).
+Cycle 18 recorded published-window min Hamming 7. Cycle 19 merges
+one leftover crop pair (slot 7 Ca7[26]/Ca8[22]) that drops that
+number to 6. Concat min stays 3 on the six-G001 night-sign run.
 
-No clustering change. No detector retune. No G00n→Barthel map.
-MockProvider only. Search lock, not a merge.
+No detector retune. No G00n→Barthel map. MockProvider only.
 input/tablets/sample_tablet.png is a synthetic CV dummy, not Mamari.
 """
 
@@ -25,6 +24,7 @@ from tests.test_mamari_delimiter_window_scoreboard import (
     score_delimiter_windows,
     window_tuple,
 )
+from processors.glyph_processor import GlyphProcessor, ProcessorConfig
 from tests.test_mamari_image_scoreboard import (
     TRACING_DIR,
     TRACING_NAMES,
@@ -58,27 +58,35 @@ STANDING_CONCAT_NEAREST_PAIR = (
     3,
     0,
     8,
-    ("G001", "G001", "G001", "G001", "G001", "G001", "G003", "G021"),
+    ("G001", "G001", "G001", "G001", "G001", "G001", "G004", "G021"),
     1,
     9,
-    ("G001", "G001", "G001", "G001", "G001", "G003", "G021", "G020"),
+    ("G001", "G001", "G001", "G001", "G001", "G004", "G021", "G020"),
     True,
     True,
 )
-# Published-window search. Four pairs sit at 7 (cycle-12 merged slots).
-# First in reading order: Ca7[6:14] vs Ca8[3:11], shared G003 at slot 0.
-STANDING_PUBLISHED_MIN_HAMMING = 7
-STANDING_PUBLISHED_MIN_PAIR_COUNT = 4
+# Cycle 18 published-window floor. Cycle 19 beats it with one crop merge.
+CYCLE18_PUBLISHED_MIN_HAMMING = 7
+CYCLE18_PUBLISHED_MIN_PAIR_COUNT = 4
+# Published-window search after the slot-7 crop Hamming merge.
+# Unique pair at 6: Ca7[19:27] vs Ca8[15:23] (G005 slot 4, G003 slot 7).
+STANDING_PUBLISHED_MIN_HAMMING = 6
+STANDING_PUBLISHED_MIN_PAIR_COUNT = 1
 STANDING_PUBLISHED_NEAREST_PAIR = (
-    7,
-    "Ca7",
     6,
-    14,
-    ("G003", "G021", "G020", "G019", "G015", "G018", "G016", "G017"),
+    "Ca7",
+    19,
+    27,
+    ("G023", "G026", "G022", "G033", "G005", "G034", "G035", "G003"),
     "Ca8",
-    3,
-    11,
-    ("G003", "G011", "G013", "G047", "G049", "G009", "G012", "G005"),
+    15,
+    23,
+    ("G006", "G052", "G014", "G051", "G005", "G012", "G050", "G003"),
+)
+# 83/62 / published H / slot matches / mixed n
+STANDING_BEFORE_AFTER = (
+    (83, 62, 7, 0, 2),
+    (83, 62, 6, 0, 2),
 )
 
 
@@ -341,29 +349,63 @@ class TestMamariNearest8WindowScoreboard(unittest.TestCase):
         self.assertEqual(unconstrained.longest_mixed_n, STANDING_LONGEST_MIXED_N)
         self.assertEqual(self.provider.get_call_history(), [])
 
-    def test_published_windows_min_hamming_is_7(self):
-        """Closest published Guy windows differ in 7 of 8 slots.
+    def test_published_windows_min_hamming_is_6(self):
+        """Closest published Guy windows differ in 6 of 8 slots.
 
-        First pair at 7: Ca7[6:14] vs Ca8[3:11] (shared G003 at slot 0).
-        Four pairs sit at 7 — one shared ID each, the cycle-12 merges.
-        This 7 is the published-window number to beat.
+        Unique pair at 6: Ca7[19:27] vs Ca8[15:23] (G005 slot 4 from
+        cycle 12, G003 slot 7 from the cycle-19 crop merge). Cycle 18
+        floor was 7. Concat min stays 3 on the night-sign run.
         """
         s = self.score
         self.assertEqual(s.published_hamming, STANDING_PUBLISHED_MIN_HAMMING)
         self.assertEqual(s.published_pair, STANDING_PUBLISHED_NEAREST_PAIR)
         self.assertEqual(s.published_min_pair_count, STANDING_PUBLISHED_MIN_PAIR_COUNT)
+        self.assertLess(s.published_hamming, CYCLE18_PUBLISHED_MIN_HAMMING)
         self.assertEqual(
             s.published_pair[1:5],
-            STANDING_DELIMITER_WINDOWS[0],
+            STANDING_DELIMITER_WINDOWS[1],
         )
         self.assertEqual(
             s.published_pair[5:9],
-            STANDING_DELIMITER_WINDOWS[3],
+            STANDING_DELIMITER_WINDOWS[4],
         )
         self.assertEqual(self.provider.get_call_history(), [])
 
+    def test_crop_hamming_before_after_table(self):
+        """One crop merge: 83/62 stays; published H 7→6; slots 0/8; mixed n=2."""
+        s = self.score
+        after = (
+            s.instance_count,
+            s.unique_cluster_count,
+            s.published_hamming,
+            s.window_matches,
+            STANDING_LONGEST_MIXED_N,
+        )
+        self.assertEqual(STANDING_BEFORE_AFTER[0], (83, 62, CYCLE18_PUBLISHED_MIN_HAMMING, 0, 2))
+        self.assertEqual(after, STANDING_BEFORE_AFTER[1])
+        unconstrained = score_unconstrained_ngrams(
+            self.instances,
+            self.image_lines,
+            self.published_lines,
+            self.ngram_analyzer,
+        )
+        self.assertEqual(unconstrained.longest_mixed_n, STANDING_LONGEST_MIXED_N)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_hamming_merge_off_restores_cycle18_published_7(self):
+        """delimiter_slot_crop_hamming_merge=False keeps published H=7."""
+        instances = process_tracings(
+            self.paths, GlyphProcessor(ProcessorConfig(delimiter_slot_crop_hamming_merge=False))
+        )
+        image_lines = ca7_ca8_sequences(instances)
+        score = score_nearest_8windows(instances, image_lines, self.published_lines)
+        self.assertEqual(score.published_hamming, CYCLE18_PUBLISHED_MIN_HAMMING)
+        self.assertEqual(score.published_min_pair_count, CYCLE18_PUBLISHED_MIN_PAIR_COUNT)
+        self.assertEqual(score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertEqual(self.provider.get_call_history(), [])
+
     def test_standing_83_62_and_window_0_of_8(self):
-        """Search lock does not change clustering. 83/62 / 0/8 stays."""
+        """Crop Hamming merge keeps 83/62 / 0/8. Types are remumbered."""
         s = self.score
         published_ca7, published_ca8 = published_ca7_ca8_stem_counts()
         identity = score_type_identity(
