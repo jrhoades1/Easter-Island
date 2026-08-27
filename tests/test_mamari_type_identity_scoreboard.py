@@ -253,7 +253,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(s.instances_per_strip, STANDING_INSTANCES_PER_STRIP)
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
-        self.assertLess(s.unique_cluster_count, CYCLE2_UNSIGNED_UNIQUE_CLUSTERS)
+        self.assertGreater(s.unique_cluster_count, CYCLE3_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
         self.assertAlmostEqual(
             s.unique_instance_ratio,
