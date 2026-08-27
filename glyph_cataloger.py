@@ -237,6 +237,9 @@ def main() -> int:
         wide_profile_min_correlation=config["clustering"].get(
             "wide_profile_min_correlation", 0.85
         ),
+        split_inconsistent_types=config["clustering"].get(
+            "split_inconsistent_types", True
+        ),
     )
     processor = GlyphProcessor(processor_config)
 
@@ -272,6 +275,9 @@ def main() -> int:
         ),
         "wide_profile_allograph_merge": config["clustering"].get(
             "wide_profile_allograph_merge", True
+        ),
+        "split_inconsistent_types": config["clustering"].get(
+            "split_inconsistent_types", True
         ),
     }
     lexicon = build_lexicon(processor, instances, images, output_dir, clustering_params)

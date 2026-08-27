@@ -44,6 +44,7 @@ CYCLE3_INSTANCES_PER_STRIP = {
     "sca0803.gif": 12,
 }
 STANDING_UNIQUE_CLUSTERS = 62
+CYCLE9_UNIQUE_CLUSTERS = 62
 CYCLE4_UNIQUE_CLUSTERS = 67
 CYCLE3_UNIQUE_CLUSTERS = 58
 CYCLE2_UNSIGNED_UNIQUE_CLUSTERS = 65
@@ -55,6 +56,11 @@ CYCLE3_CA7_LEN = 39
 CYCLE3_CA8_LEN = 36
 STANDING_HAS_MIXED_REPEATING = True
 STANDING_MIXED_REPEATING = (
+    (("G004", "G003"), 3),
+    (("G009", "G004"), 2),
+    (("G009", "G004", "G003"), 2),
+)
+CYCLE9_MIXED_REPEATING = (
     (("G004", "G003"), 3),
     (("G009", "G004"), 2),
     (("G009", "G004", "G003"), 2),
@@ -332,6 +338,28 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(score.unique_cluster_count, CYCLE3_UNIQUE_CLUSTERS)
         self.assertEqual(score.ca7_length, CYCLE3_CA7_LEN)
         self.assertEqual(score.ca8_length, CYCLE3_CA8_LEN)
+        crescents = isolate_sca0701_opening_crescents(instances)
+        ids = [inst.cluster_id for inst in crescents]
+        self.assertEqual(len(set(ids)), 1, ids)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_inconsistent_split_disabled_restores_cycle9_snapshot(self):
+        """split_inconsistent_types=False keeps the cycle-9 62-type / 3-gram lock."""
+        raw = GlyphProcessor(ProcessorConfig(split_inconsistent_types=False))
+        instances = process_tracings(self.paths, processor=raw)
+        score = score_type_identity(
+            instances,
+            self.ngram_analyzer,
+            self.published_ca7,
+            self.published_ca8,
+        )
+        self.assertEqual(score.unique_cluster_count, CYCLE9_UNIQUE_CLUSTERS)
+        self.assertEqual(
+            mixed_repeating_ngrams(ca7_ca8_sequences(instances), self.ngram_analyzer),
+            list(CYCLE9_MIXED_REPEATING),
+        )
+        self.assertEqual(score.ca7_length, STANDING_CA7_LEN)
+        self.assertEqual(score.ca8_length, STANDING_CA8_LEN)
         crescents = isolate_sca0701_opening_crescents(instances)
         ids = [inst.cluster_id for inst in crescents]
         self.assertEqual(len(set(ids)), 1, ids)

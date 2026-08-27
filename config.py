@@ -144,6 +144,8 @@ GLYPH_CONFIG = {
         "wide_profile_allograph_merge": True,
         "wide_profile_bins": 32,
         "wide_profile_min_correlation": 0.85,
+        # Post-merge split of over-merged split-fragment types. False keeps cycle 9.
+        "split_inconsistent_types": True,
     },
 }
 
