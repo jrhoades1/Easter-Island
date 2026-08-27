@@ -13,6 +13,7 @@ from processors.glyph_processor import (
     best_crop_hamming_pair,
     crop_chamfer,
     crop_ncc,
+    leftover_crop_pairs,
     min_pairwise_window_hamming,
     passes_delimiter_slot_gates,
     passes_same_line_allograph_gates,
@@ -932,6 +933,71 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         self.assertEqual(by_id["p0"], by_id["p1"])
         self.assertNotEqual(by_id["q"], by_id["t"])
 
+    def test_leftover_crop_merge_unions_non_hamming_drop_pair(self):
+        """Cycle 20 leftover flag unions crop-clear pairs that do not drop H."""
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        crop = self._crop("circle")
+        p0 = self._inst("p0", "sca0701.gif", 0, [0.0] * 7, ramp, width=26, total=2)
+        q = self._inst("q", "sca0701.gif", 1, [4.0] + [0.0] * 6, inverse, width=26, total=2)
+        p1 = self._inst("p1", "sca0801.gif", 0, [0.8] + [0.0] * 6, ramp, width=26, total=2)
+        r = self._inst("r", "sca0801.gif", 1, [6.0] + [0.0] * 6, inverse, width=26, total=2)
+        s = self._inst("s", "other.gif", 0, [9.0] + [0.0] * 6, inverse, width=26, total=2)
+        t = self._inst("t", "other.gif", 1, [7.0] + [0.0] * 6, ramp, width=26, total=2)
+        q.glyph_crop = crop
+        t.glyph_crop = list(crop)
+        r.glyph_crop = self._crop("band")
+        self.assertTrue(passes_slot_crop_gates(q, t))
+        self.assertFalse(passes_delimiter_slot_gates(q, t))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0), (2, 0)),
+                delimiter_slot_crop_leftover_merge=True,
+            )
+        )
+        _, clustered = processor.cluster_glyphs([p0, q, p1, r, s, t])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertEqual(by_id["p0"], by_id["p1"])
+        self.assertEqual(by_id["q"], by_id["t"])
+
+    def test_leftover_crop_merge_skips_slot_0(self):
+        """Slot-0 leftovers stay split even when leftover merge is on."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._crop("circle")
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left, total=2)
+        filler = self._inst(
+            "x", "sca0701.gif", 1, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right, total=2)
+        other = self._inst(
+            "y", "sca0801.gif", 1, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        a.glyph_crop = crop
+        b.glyph_crop = list(crop)
+        self.assertTrue(passes_slot_crop_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+                delimiter_slot_crop_merge=False,
+                delimiter_slot_crop_hamming_merge=False,
+                delimiter_slot_crop_leftover_merge=True,
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, filler, other, b])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertNotEqual(by_id["a"], by_id["b"])
+        self.assertEqual(
+            leftover_crop_pairs(
+                clustered,
+                [[0, 3], [1, 2]],
+                ProcessorConfig(delimiter_slot_crop_leftover_merge=True),
+            ),
+            (),
+        )
+
     def test_window_hamming_helpers(self):
         self.assertEqual(window_hamming(("A",) * 8, ("A",) * 8), 0)
         self.assertEqual(window_hamming(("A", "B"), ("A", "C")), 1)
@@ -941,6 +1007,7 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         with self.assertRaises(ValueError):
             window_hamming(("A",), ("A", "B"))
         self.assertIsNone(best_crop_hamming_pair([], []))
+        self.assertEqual(leftover_crop_pairs([], []), ())
 
     def test_missing_crops_do_not_merge(self):
         left = [float(i) for i in range(32)]

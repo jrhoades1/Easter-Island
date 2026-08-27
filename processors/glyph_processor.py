@@ -126,6 +126,11 @@ class ProcessorConfig:
     # at most once. Slot-0 crop (cycle 13) is unchanged. False keeps
     # the cycle-18 published-H=7 lock.
     delimiter_slot_crop_hamming_merge: bool = True
+    # Cycle 20: remaining leftover same-slot crop pairs (slot 2 and
+    # slot 3) on top of the cycle-19 Hamming merge. Together they
+    # leave published min Hamming at 6, so this stays off. Slot 0
+    # leftovers still fail the crop gate and are not merged.
+    delimiter_slot_crop_leftover_merge: bool = False
     delimiter_window_len: int = 8
     # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
@@ -305,8 +310,8 @@ def passes_delimiter_slot_gates(
     2.0 and, when both profiles exist, Pearson r >= 0.85) and/or the
     wide-profile gate (aspect > 0.5 and r >= 0.85). Does not look up
     stems and does not require every occupant of the slot to match.
-    Crop NCC/chamfer is a leftover gate (slot 0, plus the cycle-19
-    Hamming-drop pass on any slot).
+    Crop NCC/chamfer is a leftover gate (slot 0, the cycle-19
+    Hamming-drop pass, and the cycle-20 leftover pass when enabled).
     """
     return passes_type_consistency_gates(
         left, right, config
@@ -388,7 +393,9 @@ def passes_slot_crop_gates(
     the strongest slot-0 leftover (0.229 / 1.017). Does not look up
     stems and does not loosen Hu or column-ink gates. Cycle 19 also
     requires a published-window Hamming drop before this gate unions
-    a non-slot-0 leftover.
+    a non-slot-0 leftover. Cycle 20 can union remaining crop-clear
+    leftovers without a Hamming drop; that pass stays off because
+    published min Hamming stays 6.
     """
     cfg = config or ProcessorConfig()
     size = cfg.target_glyph_size
@@ -493,6 +500,38 @@ def best_crop_hamming_pair(
     if best is None:
         return None
     return (best[3], best[4])
+
+
+def leftover_crop_pairs(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+    config: Optional[ProcessorConfig] = None,
+) -> tuple[tuple[int, int], ...]:
+    """Leftover same-slot crop pairs that still clear NCC/chamfer.
+
+    Slot 0 is excluded (cycle-13 leftovers fail and must stay split).
+    Already-shared IDs are skipped. Does not require a Hamming drop.
+    Pairwise only — a slot is not forced to one ID. No stem lookup.
+    """
+    cfg = config or ProcessorConfig()
+    pairs: list[tuple[int, int]] = []
+    for slot, members in enumerate(slot_members):
+        if slot == 0:
+            continue
+        for a_i in range(len(members)):
+            for b_i in range(a_i + 1, len(members)):
+                left_i, right_i = members[a_i], members[b_i]
+                if left_i == right_i:
+                    continue
+                left, right = instances[left_i], instances[right_i]
+                if not left.cluster_id or not right.cluster_id:
+                    continue
+                if left.cluster_id == right.cluster_id:
+                    continue
+                if not passes_slot_crop_gates(left, right, cfg):
+                    continue
+                pairs.append((left_i, right_i))
+    return tuple(pairs)
 
 
 def tablet_line_key(source_image: str) -> str:
@@ -1127,6 +1166,11 @@ class GlyphProcessor:
         ):
             self._merge_crop_hamming_pair(instances)
         if (
+            self.config.delimiter_slot_merge
+            and self.config.delimiter_slot_crop_leftover_merge
+        ):
+            self._merge_leftover_crop_pairs(instances)
+        if (
             self.config.global_type_consistency_merge
             or self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
@@ -1443,8 +1487,9 @@ class GlyphProcessor:
         a slot is not collapsed to one ID when other occupants fail.
         Crop NCC/chamfer is consulted for configured leftover slots
         (default: slot 0). The cycle-19 Hamming-drop crop stitch runs
-        after this pass assigns IDs. Instance-local. Does not read
-        Barthel stem values.
+        after this pass assigns IDs. Cycle 20 leftover crop unions
+        are off by default. Instance-local. Does not read Barthel
+        stem values.
         """
         if len(instances) < 2:
             return
@@ -1552,6 +1597,61 @@ class GlyphProcessor:
             return
         instances[left_i].cluster_id = shared
         instances[right_i].cluster_id = shared
+
+    def _merge_leftover_crop_pairs(self, instances: list[GlyphInstance]) -> None:
+        """Union remaining leftover crop pairs after the Hamming-drop pass.
+
+        Same cycle-13 crop gate. Slot 0 is not merged. Pairwise only.
+        Shared ID is the first occupant's current ID. No stem lookup.
+        """
+        if len(instances) < 2:
+            return
+        window_len = int(self.config.delimiter_window_len)
+        starts = tuple(self.config.delimiter_window_starts)
+        if window_len < 1 or not starts:
+            return
+        line_indexes = self._concatenated_tablet_line_indexes(instances)
+        slot_members: list[list[int]] = [[] for _ in range(window_len)]
+        for line_index, start in starts:
+            if line_index < 0 or line_index >= len(line_indexes):
+                continue
+            line = line_indexes[line_index]
+            end = start + window_len
+            if start < 0 or end > len(line):
+                continue
+            for slot in range(window_len):
+                slot_members[slot].append(line[start + slot])
+        pairs = leftover_crop_pairs(instances, slot_members, self.config)
+        if not pairs:
+            return
+        parent = list(range(len(instances)))
+
+        def find(x: int) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(i: int, j: int) -> None:
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+
+        for left_i, right_i in pairs:
+            union(left_i, right_i)
+        components: dict[int, list[int]] = {}
+        for left_i, right_i in pairs:
+            for i in (left_i, right_i):
+                components.setdefault(find(i), []).append(i)
+        for members in components.values():
+            unique = sorted(set(members))
+            if len(unique) < 2:
+                continue
+            shared = instances[unique[0]].cluster_id
+            if not shared:
+                continue
+            for i in unique:
+                instances[i].cluster_id = shared
 
     def _reading_order_indexes(
         self, instances: list[GlyphInstance]

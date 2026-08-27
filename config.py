@@ -157,6 +157,9 @@ GLYPH_CONFIG = {
         "slot_crop_max_chamfer": 0.80,
         # Cycle 19 Hamming-drop leftover crop stitch. False keeps cycle 18.
         "delimiter_slot_crop_hamming_merge": True,
+        # Cycle 20 leftover crop stitch (slots 2+3). Jointly they leave
+        # published Hamming at 6, so the extra merges stay off.
+        "delimiter_slot_crop_leftover_merge": False,
         "delimiter_window_len": 8,
         # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
         "delimiter_window_starts": (

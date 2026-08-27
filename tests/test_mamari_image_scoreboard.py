@@ -17,6 +17,7 @@ the full G00n sequence (concat + each line) and still finds no
 repeating 8-gram; longest mixed n anywhere stays 2. Cycle 18 locked
 nearest 8-window Hamming: concat min 3, published-window min 7.
 Cycle 19 merges one leftover crop pair; published-window min is 6.
+Cycle 20 leftover slot-2+3 unions leave that min at 6, so they stay off.
 """
 
 import random

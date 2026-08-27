@@ -255,6 +255,9 @@ def main() -> int:
         delimiter_slot_crop_hamming_merge=config["clustering"].get(
             "delimiter_slot_crop_hamming_merge", True
         ),
+        delimiter_slot_crop_leftover_merge=config["clustering"].get(
+            "delimiter_slot_crop_leftover_merge", False
+        ),
         delimiter_window_len=config["clustering"].get("delimiter_window_len", 8),
         delimiter_window_starts=tuple(
             config["clustering"].get(
