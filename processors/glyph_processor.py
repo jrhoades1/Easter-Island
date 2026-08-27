@@ -131,6 +131,10 @@ class ProcessorConfig:
     # leave published min Hamming at 6, so this stays off. Slot 0
     # leftovers still fail the crop gate and are not merged.
     delimiter_slot_crop_leftover_merge: bool = False
+    # Cycle 21: slot-0 leftover crop under {identity, hflip, vflip,
+    # 180°}. Same NCC/chamfer numbers. No leftover clears, so a
+    # Hamming-drop merge cannot fire. False keeps the cycle-20 lock.
+    delimiter_slot_crop_invariant_merge: bool = False
     delimiter_window_len: int = 8
     # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
@@ -395,7 +399,9 @@ def passes_slot_crop_gates(
     requires a published-window Hamming drop before this gate unions
     a non-slot-0 leftover. Cycle 20 can union remaining crop-clear
     leftovers without a Hamming drop; that pass stays off because
-    published min Hamming stays 6.
+    published min Hamming stays 6. Cycle 21 may consult flip/180
+    invariance on slot-0 leftovers only; that pass stays off
+    because no leftover clears these same numbers.
     """
     cfg = config or ProcessorConfig()
     size = cfg.target_glyph_size
@@ -532,6 +538,154 @@ def leftover_crop_pairs(
                     continue
                 pairs.append((left_i, right_i))
     return tuple(pairs)
+
+
+CROP_INVARIANT_TRANSFORMS = ("identity", "hflip", "vflip", "rot180")
+
+
+def transform_glyph_crop(
+    crop: list[int] | np.ndarray,
+    name: str,
+    size: tuple[int, int] = (64, 64),
+) -> list[int]:
+    """Apply one of {identity, hflip, vflip, rot180} to a stored bbox crop."""
+    plane = _crop_plane(crop, size)
+    if name == "identity":
+        out = plane
+    elif name == "hflip":
+        out = np.fliplr(plane)
+    elif name == "vflip":
+        out = np.flipud(plane)
+    elif name == "rot180":
+        out = np.rot90(plane, 2)
+    else:
+        raise ValueError(f"unknown crop transform: {name}")
+    return [int(v) for v in np.ascontiguousarray(out).ravel().tolist()]
+
+
+def crop_invariant_match(
+    left_crop: list[int] | np.ndarray,
+    right_crop: list[int] | np.ndarray,
+    size: tuple[int, int] = (64, 64),
+) -> tuple[float, float, str]:
+    """Max NCC over the four transforms; chamfer from that same transform."""
+    best: Optional[tuple] = None
+    for name in CROP_INVARIANT_TRANSFORMS:
+        right_t = transform_glyph_crop(right_crop, name, size)
+        ncc = crop_ncc(left_crop, right_t, size)
+        chamfer = crop_chamfer(left_crop, right_t, size)
+        rec = (ncc, -chamfer, name, chamfer)
+        if best is None or rec[:3] > best[:3]:
+            best = rec
+    assert best is not None
+    return (best[0], best[3], best[2])
+
+
+def passes_slot_crop_invariant_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if some transform satisfies the existing NCC/chamfer gate.
+
+    Same numeric thresholds as passes_slot_crop_gates. Does not loosen
+    the gate. Call sites restrict this to leftover slot-0 pairs.
+    Does not look up stems.
+    """
+    cfg = config or ProcessorConfig()
+    size = cfg.target_glyph_size
+    if not left.glyph_crop or not right.glyph_crop:
+        return False
+    for name in CROP_INVARIANT_TRANSFORMS:
+        right_t = transform_glyph_crop(right.glyph_crop, name, size)
+        if crop_ncc(left.glyph_crop, right_t, size) < cfg.slot_crop_min_ncc:
+            continue
+        if crop_chamfer(left.glyph_crop, right_t, size) > cfg.slot_crop_max_chamfer:
+            continue
+        return True
+    return False
+
+
+def _leftover_slot0_pairs(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+):
+    """Yield leftover slot-0 occupant index pairs. No stem lookup."""
+    if not slot_members:
+        return
+    members = slot_members[0]
+    for a_i in range(len(members)):
+        for b_i in range(a_i + 1, len(members)):
+            left_i, right_i = members[a_i], members[b_i]
+            if left_i == right_i:
+                continue
+            left, right = instances[left_i], instances[right_i]
+            if not left.cluster_id or not right.cluster_id:
+                continue
+            if left.cluster_id == right.cluster_id:
+                continue
+            yield left_i, right_i, left, right
+
+
+def best_slot0_invariant_crop_pair(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+    config: Optional[ProcessorConfig] = None,
+) -> Optional[tuple[int, int, float, float, str]]:
+    """Highest-NCC leftover slot-0 pair under the four transforms.
+
+    Returns (left_i, right_i, ncc, chamfer, transform) or None.
+    Does not require the crop gate. Pairwise only. No stem lookup.
+    """
+    cfg = config or ProcessorConfig()
+    size = cfg.target_glyph_size
+    best: Optional[tuple] = None
+    for left_i, right_i, left, right in _leftover_slot0_pairs(instances, slot_members):
+        if not left.glyph_crop or not right.glyph_crop:
+            continue
+        ncc, chamfer, name = crop_invariant_match(left.glyph_crop, right.glyph_crop, size)
+        rec = (ncc, -chamfer, left_i, right_i, chamfer, name)
+        if best is None or rec[:2] > best[:2]:
+            best = rec
+    if best is None:
+        return None
+    return (best[2], best[3], best[0], best[4], best[5])
+
+
+def best_slot0_invariant_crop_hamming_pair(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+    config: Optional[ProcessorConfig] = None,
+) -> Optional[tuple[int, int]]:
+    """At most one leftover slot-0 invariant pair that drops min Hamming.
+
+    Same NCC/chamfer numbers as the upright crop gate. Slot 0 only.
+    Pairwise leftover occupants. Returns instance indexes or None.
+    Does not look up stems.
+    """
+    cfg = config or ProcessorConfig()
+    grams = slot_window_grams(instances, slot_members)
+    if len(grams) < 2:
+        return None
+    current = min_pairwise_window_hamming(grams)
+    best: Optional[tuple] = None
+    for left_i, right_i, left, right in _leftover_slot0_pairs(instances, slot_members):
+        if not passes_slot_crop_invariant_gates(left, right, cfg):
+            continue
+        new_h = min_pairwise_window_hamming(
+            remap_window_types(grams, left.cluster_id, right.cluster_id)
+        )
+        if new_h >= current:
+            continue
+        ncc, _chamfer, _name = crop_invariant_match(
+            left.glyph_crop, right.glyph_crop, cfg.target_glyph_size
+        )
+        rec = (new_h, -ncc, left_i, right_i)
+        if best is None or rec < best:
+            best = rec
+    if best is None:
+        return None
+    return (best[2], best[3])
 
 
 def tablet_line_key(source_image: str) -> str:
@@ -1171,6 +1325,11 @@ class GlyphProcessor:
         ):
             self._merge_leftover_crop_pairs(instances)
         if (
+            self.config.delimiter_slot_merge
+            and self.config.delimiter_slot_crop_invariant_merge
+        ):
+            self._merge_slot0_invariant_crop_hamming_pair(instances)
+        if (
             self.config.global_type_consistency_merge
             or self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
@@ -1652,6 +1811,44 @@ class GlyphProcessor:
                 continue
             for i in unique:
                 instances[i].cluster_id = shared
+
+    def _merge_slot0_invariant_crop_hamming_pair(
+        self, instances: list[GlyphInstance]
+    ) -> None:
+        """Union at most one leftover slot-0 flip/180 pair that drops Hamming.
+
+        Same NCC/chamfer numbers as the upright crop gate. Other slots
+        are not consulted. Shared ID is the left occupant's current ID.
+        No stem lookup.
+        """
+        if len(instances) < 2:
+            return
+        window_len = int(self.config.delimiter_window_len)
+        starts = tuple(self.config.delimiter_window_starts)
+        if window_len < 1 or not starts:
+            return
+        line_indexes = self._concatenated_tablet_line_indexes(instances)
+        slot_members: list[list[int]] = [[] for _ in range(window_len)]
+        for line_index, start in starts:
+            if line_index < 0 or line_index >= len(line_indexes):
+                continue
+            line = line_indexes[line_index]
+            end = start + window_len
+            if start < 0 or end > len(line):
+                continue
+            for slot in range(window_len):
+                slot_members[slot].append(line[start + slot])
+        pair = best_slot0_invariant_crop_hamming_pair(
+            instances, slot_members, self.config
+        )
+        if pair is None:
+            return
+        left_i, right_i = pair
+        shared = instances[left_i].cluster_id or instances[right_i].cluster_id
+        if not shared:
+            return
+        instances[left_i].cluster_id = shared
+        instances[right_i].cluster_id = shared
 
     def _reading_order_indexes(
         self, instances: list[GlyphInstance]
