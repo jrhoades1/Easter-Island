@@ -346,6 +346,13 @@ class TestWideLigatureSplit(unittest.TestCase):
         instances = processor.detect_glyphs(img, "pair.png")
         self.assertEqual(len(instances), 1)
 
+    def test_unsplit_detect_is_not_marked(self):
+        img = np.ones((70, 100), dtype=np.uint8) * 255
+        cv2.rectangle(img, (10, 10), (90, 60), 0, -1)
+        instances = GlyphProcessor().detect_glyphs(img, "solid.png")
+        self.assertEqual(len(instances), 1)
+        self.assertFalse(instances[0].from_ligature_split)
+
     def test_solid_wide_box_does_not_split(self):
         img = np.ones((70, 100), dtype=np.uint8) * 255
         cv2.rectangle(img, (10, 10), (90, 60), 0, -1)

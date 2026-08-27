@@ -69,6 +69,14 @@ class ProcessorConfig:
     ligature_min_part_width: int = 12
     ligature_max_parts: int = 3  # Barthel 8.78.711 is three stems
 
+    # Cross-image stitch of valley-split fragments after the tall-thin
+    # same-line pass. Hu<2.0 and area ratio ~1 also match 34px vs 31px
+    # parts from different slots of the same 3-part split; width ratio
+    # 1.08 keeps those slots apart. Not the failed same-line Hu<3.5 rule.
+    split_fragment_allograph_merge: bool = True
+    split_allograph_max_hu_distance: float = 2.0
+    split_allograph_max_width_ratio: float = 1.08
+
 
 def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
     """max(area)/min(area). inf if either box has no area."""
@@ -78,6 +86,16 @@ def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
     if smaller <= 0:
         return float("inf")
     return max(area_a, area_b) / smaller
+
+
+def _bbox_width_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
+    """max(width)/min(width). inf if either box has no width."""
+    width_a = left.bounding_box.width
+    width_b = right.bounding_box.width
+    smaller = min(width_a, width_b)
+    if smaller <= 0:
+        return float("inf")
+    return max(width_a, width_b) / smaller
 
 
 def _bbox_aspect(instance: GlyphInstance) -> float:
@@ -343,6 +361,7 @@ class GlyphProcessor:
                 if self.config.split_wide_ligatures
                 else [bbox]
             )
+            split = len(parts) > 1
             for part in parts:
                 instance_id = GlyphInstance.generate_id(source_image, index)
                 instances.append(
@@ -350,6 +369,7 @@ class GlyphProcessor:
                         instance_id=instance_id,
                         source_image=source_image,
                         bounding_box=part,
+                        from_ligature_split=split,
                     )
                 )
                 index += 1
@@ -671,6 +691,12 @@ class GlyphProcessor:
 
         if self.config.same_line_allograph_merge:
             self._merge_same_line_allographs(instances)
+        if self.config.split_fragment_allograph_merge:
+            self._merge_split_fragment_allographs(instances)
+        if (
+            self.config.same_line_allograph_merge
+            or self.config.split_fragment_allograph_merge
+        ):
             clusters = self._clusters_from_assigned_ids(instances)
 
         return clusters, instances
@@ -732,6 +758,59 @@ class GlyphProcessor:
                 continue
             merge_n += 1
             shared_id = f"M{merge_n:03d}"
+            for i in members:
+                instances[i].cluster_id = shared_id
+
+    def _merge_split_fragment_allographs(self, instances: list[GlyphInstance]) -> None:
+        """Union valley-split fragments with similar bbox width/area and Hu.
+
+        Cross-image and instance-local. Does not pull non-split members
+        of a pre-existing DBSCAN type. Mutates cluster_id on merged
+        instances. Tall-thin same-line stitch is a separate pass.
+        """
+        idxs = [i for i, inst in enumerate(instances) if inst.from_ligature_split]
+        if len(idxs) < 2:
+            return
+
+        parent = list(range(len(instances)))
+
+        def find(x: int) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(i: int, j: int) -> None:
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+
+        max_dist = self.config.split_allograph_max_hu_distance
+        max_ratio = self.config.allograph_max_area_ratio
+        max_width = self.config.split_allograph_max_width_ratio
+
+        for a_i in range(len(idxs)):
+            for b_i in range(a_i + 1, len(idxs)):
+                left, right = idxs[a_i], idxs[b_i]
+                a, b = instances[left], instances[right]
+                if _bbox_width_ratio(a, b) > max_width:
+                    continue
+                if _bbox_area_ratio(a, b) > max_ratio:
+                    continue
+                if _hu_distance(a, b) >= max_dist:
+                    continue
+                union(left, right)
+
+        components: dict[int, list[int]] = {}
+        for i in idxs:
+            components.setdefault(find(i), []).append(i)
+
+        merge_n = 0
+        for members in components.values():
+            if len(members) < 2:
+                continue
+            merge_n += 1
+            shared_id = f"S{merge_n:03d}"
             for i in members:
                 instances[i].cluster_id = shared_id
 

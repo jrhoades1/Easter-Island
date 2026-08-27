@@ -136,6 +136,10 @@ GLYPH_CONFIG = {
         "ligature_valley_ratio": 0.40,
         "ligature_min_part_width": 12,
         "ligature_max_parts": 3,
+        # Split-fragment allograph stitch. False keeps the cycle-4 67-type lock.
+        "split_fragment_allograph_merge": True,
+        "split_allograph_max_hu_distance": 2.0,
+        "split_allograph_max_width_ratio": 1.08,
     },
 }
 
