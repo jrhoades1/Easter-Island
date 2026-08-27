@@ -41,7 +41,11 @@ Cycle 35 (2026-08-27)
   links plus in-repo ATTRIBUTION / CORPUS_SURVEY / README. Navbar:
   contents (index.html, same C/ folder) and side a (already-vendored
   Ca.html). No Kohaumotu Barthel page of a different tablet is
-  honestly linked. Tablet C is the only Kohaumotu Barthel we can
-  vendor without a new uncited scrape. No invented URL or digits.
-  index.html was not vendored and not scraped. Image track stays
-  parked.
+  honestly linked from those navbars. index.html was not vendored
+  and not scraped. Image track stays parked.
+
+Cycle 36 (2026-08-27)
+  Parent catalog http://kohaumotu.org/Rongorongo/ (folder above this
+  C/ page) → tablets.html → A/Tahua → Aa.html. Search lock is on
+  Aa.html only. See tests/fixtures/tahua_aa_html/ATTRIBUTION.
+  Image track stays parked.

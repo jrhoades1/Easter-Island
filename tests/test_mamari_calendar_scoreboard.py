@@ -42,8 +42,9 @@ calendar and Ca remainder fixtures only (all absent).
 Cycle 35 locks the off-tablet-C corpus ceiling: no other
 Kohaumotu Barthel page is honestly linked from Ca.html /
 Cb.html navbars or in-repo ATTRIBUTION / CORPUS_SURVEY /
-README. Tablet C is the only Kohaumotu Barthel we can
-vendor without a new uncited scrape.
+README as of that cycle. Cycle 36 vendors the parent
+catalog http://kohaumotu.org/Rongorongo/ first non-C
+Barthel page (A / Tahua Aa.html).
 """
 
 import json

@@ -3,11 +3,12 @@
 Cycle 35 text-search lock. Looks at the already-vendored Ca.html /
 Cb.html navbar and sibling links, plus in-repo ATTRIBUTION /
 CORPUS_SURVEY / README. No Kohaumotu Barthel page of a different
-tablet is honestly linked. Tablet C is the only Kohaumotu Barthel we
-can vendor without a new uncited scrape. Does not invent a URL or
-digits. Does not fetch index.html (same-folder tablet-C contents, not
-a different tablet). No G00n→Barthel map. No type merge. No detector
-retune. No CV. No new agents.
+tablet is honestly linked from those navbars. Cycle 36 vendors
+Aa.html from the parent catalog (folder above C/), not from Ca/Cb
+siblings. Navbar hrefs stay C-only. Does not invent a URL or
+digits. Does not fetch C/index.html (same-folder tablet-C contents).
+No G00n→Barthel map. No type merge. No detector retune. No CV. No
+new agents.
 
 Existing C scoreboards stay the lock: Guy delimiter, Ca 9-gram, three
 Cb 5-grams, longest-n / 8-gram claims. Image track stays parked
@@ -101,20 +102,27 @@ STANDING_CB_NAVBAR_HREFS = ("index.html", "Ca.html")
 STANDING_CA_PAGE_HREFS = ("../rongorongo.css", "index.html", "Cb.html")
 STANDING_CB_PAGE_HREFS = ("../rongorongo.css", "index.html", "Ca.html")
 STANDING_OTHER_TABLET_HREFS = ()
-STANDING_OTHER_TABLET_URLS = ()
+STANDING_OTHER_TABLET_URLS = (
+    "http://kohaumotu.org/Rongorongo/A/Aa.html",
+)
 STANDING_RESULT = "tablet_c_corpus_ceiling"
 STANDING_VENDABLE_TABLETS = ("C",)
 STANDING_CITED_KOHAUMOTU_URLS = (
+    "http://kohaumotu.org/Rongorongo/",
+    "http://kohaumotu.org/Rongorongo/A/Aa.html",
+    "http://kohaumotu.org/Rongorongo/A/index.html",
     "http://kohaumotu.org/Rongorongo/C/Ca.html",
     "http://kohaumotu.org/Rongorongo/C/Ca07.html",
     "http://kohaumotu.org/Rongorongo/C/Cb.html",
     "http://kohaumotu.org/Rongorongo/C/fi_Ca.html",
     "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
+    "http://kohaumotu.org/Rongorongo/tablets.html",
     "http://kohaumotu.org/rongorongo_org/copy.html",
     "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
     "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
 )
-STANDING_CITED_TABLET_LETTERS = ("C",)
+STANDING_CITED_TABLET_LETTERS = ("A", "C")
+STANDING_VENDORED_BARTHEL_PAGES = ("Aa.html", "Ca.html", "Cb.html")
 STANDING_INDEX_KIND = "same_folder_contents"
 STANDING_INDEX_DIFFERENT_TABLET = False
 STANDING_INDEX_VENDORED = False
@@ -268,7 +276,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cited_kohaumotu_urls_are_tablet_c_or_license(self):
-        """ATTRIBUTION / CORPUS_SURVEY / README cite C (or copy.html). No other tablet."""
+        """Navbar-era sources stay C. Cycle 36 cites A from the parent catalog."""
         self.assertEqual(self.cited_urls, STANDING_CITED_KOHAUMOTU_URLS)
         letters = tuple(
             sorted(
@@ -284,16 +292,16 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         for url in self.cited_urls:
             self.assertTrue(url.startswith("http://kohaumotu.org/"))
             letter = tablet_letter_from_ref(url)
-            self.assertIn(letter, (None, "C"), url)
+            self.assertIn(letter, (None, "A", "C"), url)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_no_other_tablet_html_was_vendored(self):
-        """Only Ca.html and Cb.html exist as Kohaumotu Barthel page snapshots."""
+        """Ca.html / Cb.html plus cycle-36 Aa.html. No extra tablet pages."""
         fixtures = Path(__file__).parent / "fixtures"
         barthel_pages = tuple(
             sorted(path.name for path in fixtures.glob("**/*[A-Z][ab].html"))
         )
-        self.assertEqual(barthel_pages, ("Ca.html", "Cb.html"))
+        self.assertEqual(barthel_pages, STANDING_VENDORED_BARTHEL_PAGES)
         self.assertTrue(CA_HTML_PATH.is_file())
         self.assertTrue(CB_HTML_PATH.is_file())
         self.assertTrue((CA_HTML_DIR / "ATTRIBUTION").is_file())
