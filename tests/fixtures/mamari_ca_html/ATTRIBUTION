@@ -56,3 +56,12 @@ Cycle 29 (2026-08-27)
     top 8-gram: 002 010 070 760 040 006 430 047 (freq 2); not Guy
     600: five hits, none inside a repeating n≥4 span
   Not scraped: Cb.html. Image track stays parked.
+
+Cycle 30 (2026-08-27)
+  Same remainder and calendar fixtures, no new scrape. The cycle-29
+  longest n-gram is locked as a motif (search only; no meaning):
+    9-gram hits: Ca10[26:35] flanks 002 / 290; Ca11[14:23] flanks 290 / 004
+    8-prefix hits: same starts; after-token is the wrap 002
+    002…002 wraps at n=9: 6 on the remainder (4 are not the motif)
+    calendar Ca6–Ca9: absent (0 hits, 0 wraps)
+  Not scraped: Cb.html. Image track stays parked.

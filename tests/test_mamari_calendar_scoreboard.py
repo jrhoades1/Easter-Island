@@ -27,6 +27,8 @@ published passage (Guy delimiter absent; 600 not window-adjacent).
 Cycle 29 locks that remainder's n≥4 freq≥2 profile (31 n-grams;
 longest n=9; top 8-gram is not Guy's delimiter; 600 outside all
 repeating n≥4). Calendar Ca6–Ca9 is not re-mined.
+Cycle 30 locks that remainder 9-gram as a motif (hits, one-token
+flanks, 002…002 wrap-count at n=9, calendar-absent).
 """
 
 import json
