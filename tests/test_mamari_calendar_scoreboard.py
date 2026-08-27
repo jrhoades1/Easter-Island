@@ -44,7 +44,9 @@ Kohaumotu Barthel page is honestly linked from Ca.html /
 Cb.html navbars or in-repo ATTRIBUTION / CORPUS_SURVEY /
 README as of that cycle. Cycle 36 vendors the parent
 catalog http://kohaumotu.org/Rongorongo/ first non-C
-Barthel page (A / Tahua Aa.html).
+Barthel page (A / Tahua Aa.html). Cycle 37 locks that
+Aa 10-gram as a motif (hits, one-token flanks, 8-prefix,
+C-absent on Ca calendar / remainder / Cb).
 """
 
 import json

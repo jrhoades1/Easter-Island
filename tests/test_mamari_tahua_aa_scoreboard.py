@@ -11,7 +11,8 @@ agents. Image track stays parked.
 Locks on Aa.html only: Guy's 8-stem delimiter (freq / spans or
 absent), the Ca remainder 9-gram (present/absent), each of the three
 Cb 5-grams (present/absent), longest n with freq≥2, top 8-gram or
-none, stem count. Existing C scoreboards stay the lock.
+none, stem count. Cycle 37 locks that 10-gram as a motif (hits,
+flanks, 8-prefix, C-absent). Existing C scoreboards stay the lock.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

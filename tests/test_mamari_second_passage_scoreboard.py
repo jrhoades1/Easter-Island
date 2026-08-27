@@ -23,7 +23,8 @@ Cb 5-grams on this remainder and the calendar fixture
 (all absent). Cycle 35 locks the off-tablet-C corpus
 ceiling (no other tablet honestly linked from Ca/Cb navbars).
 Cycle 36 vendors the parent catalog's first non-C Barthel page
-(A / Tahua Aa.html). Image track
+(A / Tahua Aa.html). Cycle 37 locks that Aa 10-gram as a motif
+(hits, flanks, 8-prefix, C-absent). Image track
 stays parked. MockProvider only.
 """
 
