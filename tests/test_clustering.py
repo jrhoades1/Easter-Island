@@ -13,6 +13,8 @@ from processors.glyph_processor import (
     best_crop_hamming_pair,
     best_slot0_invariant_crop_hamming_pair,
     best_slot0_invariant_crop_pair,
+    best_window_strip_pair,
+    concat_glyph_strip,
     crop_chamfer,
     crop_invariant_match,
     crop_ncc,
@@ -29,8 +31,11 @@ from processors.glyph_processor import (
     profile_correlation,
     remap_window_types,
     resample_profile,
+    strip_plane_size,
     tablet_line_key,
+    window_glyph_strips,
     window_hamming,
+    window_strip_pair_table,
 )
 
 
@@ -1015,6 +1020,10 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         self.assertEqual(leftover_crop_pairs([], []), ())
         self.assertIsNone(best_slot0_invariant_crop_pair([], []))
         self.assertIsNone(best_slot0_invariant_crop_hamming_pair([], []))
+        self.assertEqual(concat_glyph_strip([]), [])
+        self.assertEqual(window_glyph_strips([], []), ())
+        self.assertEqual(window_strip_pair_table([]), ())
+        self.assertIsNone(best_window_strip_pair(()))
 
     def _asymmetric_crop(self) -> list[int]:
         plane = np.zeros((64, 64), dtype=np.uint8)
@@ -1131,6 +1140,45 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
     def test_unknown_crop_transform_raises(self):
         with self.assertRaises(ValueError):
             transform_glyph_crop(self._crop("circle"), "mirror45")
+
+    def test_concat_glyph_strip_is_left_to_right(self):
+        """Eight-cell helper: shared-height crops join in reading order."""
+        left = np.zeros((4, 4), dtype=np.uint8)
+        left[:, :2] = 255
+        right = np.zeros((4, 4), dtype=np.uint8)
+        right[:, 2:] = 255
+        strip = concat_glyph_strip(
+            [left.ravel().tolist(), right.ravel().tolist()], (4, 4)
+        )
+        plane = np.asarray(strip, dtype=np.uint8).reshape(4, 8)
+        self.assertEqual(strip_plane_size(2, (4, 4)), (8, 4))
+        self.assertTrue((plane[:, :2] == 255).all())
+        self.assertTrue((plane[:, 6:] == 255).all())
+        self.assertTrue((plane[:, 2:6] == 0).all())
+
+    def test_identical_strips_clear_identity_gate(self):
+        """Same concatenated image: identity, NCC ~1, chamfer ~0."""
+        crop = self._asymmetric_crop()
+        strip = concat_glyph_strip([crop, self._crop("circle")])
+        rows = window_strip_pair_table((strip, list(strip)))
+        self.assertEqual(len(rows), 1)
+        _i, _j, name, ncc, chamfer, gate = rows[0]
+        self.assertEqual(name, "identity")
+        self.assertGreaterEqual(ncc, 0.99)
+        self.assertLessEqual(chamfer, 0.10)
+        self.assertTrue(gate)
+        self.assertEqual(best_window_strip_pair(rows), rows[0])
+
+    def test_hflipped_strip_selects_hflip(self):
+        """Whole-strip hflip matches under the existing crop gate."""
+        crop = self._asymmetric_crop()
+        strip = concat_glyph_strip([crop, self._crop("circle")])
+        flipped = transform_glyph_crop(strip, "hflip", strip_plane_size(2))
+        rows = window_strip_pair_table((strip, flipped))
+        self.assertEqual(rows[0][2], "hflip")
+        self.assertGreaterEqual(rows[0][3], 0.99)
+        self.assertLessEqual(rows[0][4], 0.10)
+        self.assertTrue(rows[0][5])
 
     def test_missing_crops_do_not_merge(self):
         left = [float(i) for i in range(32)]

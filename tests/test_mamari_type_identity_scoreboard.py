@@ -24,6 +24,8 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
+# Cycle 22 locks published 8-crop window strips below the crop
+# gate (best NCC 0.244 / chamfer 2.137 identity); 83/62 / H=6.
 # Cycle 21 locks slot-0 flip/180 crop leftovers below the gate
 # (best NCC 0.247 / chamfer 1.224); published H stays 6.
 # Cycle 20 locks leftover crop pairs exhausted at published H=6
