@@ -8,11 +8,15 @@ transcription.
 Fail condition: the delimiter motif is missing from the top-N n-grams of
 matching length, or a same-length n-gram outranks it.
 
+Negative control: a deterministic shuffle of the same Barthel stems must
+not recover the published delimiter as a repeating 8-gram.
+
 Sources and extraction limits are recorded on the fixture
 (tests/fixtures/mamari_ca6_ca9_barthel.json). Glyph meanings are not assigned.
 """
 
 import json
+import random
 import re
 import unittest
 from pathlib import Path
@@ -35,6 +39,9 @@ DELIMITER_MOTIF = ("390", "041", "378", "041", "670", "008", "078", "711")
 # Rank window for same-length n-grams. Fail if the motif is outside this
 # window, or if any same-length n-gram has a strictly higher frequency.
 TOP_N = 3
+
+# Fixed seed for the token-preserving shuffle negative control.
+SHUFFLE_SEED = 0
 
 # Strip Barthel orientation / allograph marks (40A, 378y, 041h, V670, 002V?).
 _ALLOGRAPH_MARKS = re.compile(r"[A-Za-z?*!]+")
@@ -76,6 +83,19 @@ def fixture_line_stems(data: dict) -> list[list[str]]:
     """Return Ca6–Ca9 lines as Barthel-stem sequences."""
     lines = data["lines"]
     return [barthel_stems(lines[name]) for name in ("Ca6", "Ca7", "Ca8", "Ca9")]
+
+
+def shuffled_line_stems(lines: list[list[str]], seed: int) -> list[list[str]]:
+    """Same Barthel stems, destroyed order. Line lengths are preserved."""
+    rng = random.Random(seed)
+    flat = [stem for line in lines for stem in line]
+    rng.shuffle(flat)
+    shuffled: list[list[str]] = []
+    offset = 0
+    for line in lines:
+        shuffled.append(flat[offset : offset + len(line)])
+        offset += len(line)
+    return shuffled
 
 
 class TestMamariCalendarScoreboard(unittest.TestCase):
@@ -122,6 +142,35 @@ class TestMamariCalendarScoreboard(unittest.TestCase):
             motif_freq,
             best_freq,
             f"same-length noise outranks delimiter ({ngrams[0]} vs motif freq {motif_freq})",
+        )
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_shuffled_stems_do_not_recover_delimiter_as_top_8gram(self):
+        """Same tokens, shuffled: Guy's delimiter must not be a repeating 8-gram.
+
+        Uses the same extract_ngrams(n=8, min_frequency=2) call as the positive
+        test. A token-preserving shuffle of this 101-stem passage does not
+        reconstruct the published 8-stem delimiter even once (authoring check:
+        seeds 0–49, global and per-line), so the honest assertion is absence
+        from the repeating 8-gram list. That is stronger than 'not rank-1'
+        and is what the analyzer actually does: there is no matching n-gram
+        to rank. Occasional shuffled 040-runs can still repeat; those are a
+        different 8-gram and are not a failure.
+        """
+        n = len(DELIMITER_MOTIF)
+        shuffled = shuffled_line_stems(self.lines, SHUFFLE_SEED)
+        original_flat = [stem for line in self.lines for stem in line]
+        shuffled_flat = [stem for line in shuffled for stem in line]
+        self.assertEqual(sorted(shuffled_flat), sorted(original_flat))
+        self.assertNotEqual(shuffled, self.lines)
+
+        ngrams = self.ngram_analyzer.extract_ngrams(shuffled, n=n, min_frequency=2)
+        ranks = [i for i, (gram, _freq) in enumerate(ngrams) if gram == DELIMITER_MOTIF]
+        self.assertEqual(
+            ranks,
+            [],
+            "shuffled Ca6–Ca9 recovered Guy's delimiter as a repeating 8-gram "
+            f"(top were {ngrams[:TOP_N]})",
         )
         self.assertEqual(self.provider.get_call_history(), [])
 
