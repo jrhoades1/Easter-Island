@@ -19,7 +19,10 @@ nearest 8-window Hamming: concat min 3, published-window min 7.
 Cycle 19 merges one leftover crop pair; published-window min is 6.
 Cycle 20 leftover slot-2+3 unions leave that min at 6, so they stay off.
 Cycle 21 slot-0 flip/180 crop leftovers fail the same gate (best NCC
-0.247 / chamfer 1.224), so published Hamming stays 6.
+0.247 / chamfer 1.224), so published Hamming stays 6. Cycle 22
+8-crop window strips fail too (best NCC 0.244 / chamfer 2.137
+identity); GIF pixels cannot recover the delimiter as a visual
+repeat.
 """
 
 import random

@@ -135,6 +135,8 @@ class ProcessorConfig:
     # 180°}. Same NCC/chamfer numbers. No leftover clears, so a
     # Hamming-drop merge cannot fire. False keeps the cycle-20 lock.
     delimiter_slot_crop_invariant_merge: bool = False
+    # Cycle 22 is a strip diagnostic, not a merge: concatenated
+    # 8-crop window images vs the same NCC/chamfer gate. No flag.
     delimiter_window_len: int = 8
     # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
@@ -686,6 +688,83 @@ def best_slot0_invariant_crop_hamming_pair(
     if best is None:
         return None
     return (best[2], best[3])
+
+
+def concat_glyph_strip(
+    crops: list[list[int] | np.ndarray] | tuple[list[int] | np.ndarray, ...],
+    cell_size: tuple[int, int] = (64, 64),
+) -> list[int]:
+    """Concatenate bbox crops left-to-right at a shared cell height."""
+    if not crops:
+        return []
+    planes = [_crop_plane(crop, cell_size) for crop in crops]
+    strip = np.concatenate(planes, axis=1)
+    return [int(v) for v in np.ascontiguousarray(strip).ravel().tolist()]
+
+
+def strip_plane_size(
+    n_cells: int, cell_size: tuple[int, int] = (64, 64)
+) -> tuple[int, int]:
+    """(width, height) of a concatenated n-cell strip."""
+    return (int(cell_size[0]) * int(n_cells), int(cell_size[1]))
+
+
+def window_glyph_strips(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+    cell_size: tuple[int, int] = (64, 64),
+) -> tuple[list[int], ...]:
+    """One concatenated 8-crop strip per published window. No stem lookup."""
+    if not slot_members or not slot_members[0]:
+        return ()
+    n_windows = len(slot_members[0])
+    window_len = len(slot_members)
+    strips: list[list[int]] = []
+    for window in range(n_windows):
+        crops = [
+            instances[slot_members[slot][window]].glyph_crop or []
+            for slot in range(window_len)
+        ]
+        strips.append(concat_glyph_strip(crops, cell_size))
+    return tuple(strips)
+
+
+def window_strip_pair_table(
+    strips: tuple[list[int], ...] | list[list[int]],
+    cell_size: tuple[int, int] = (64, 64),
+    min_ncc: float = 0.45,
+    max_chamfer: float = 0.80,
+) -> tuple[tuple[int, int, str, float, float, bool], ...]:
+    """Pairwise strip NCC/chamfer under {identity, hflip, vflip, rot180}.
+
+    Each row is (left, right, transform, ncc, chamfer, gate). Gate is
+    the existing crop threshold (NCC >= 0.45 / chamfer <= 0.80).
+    Ceiling diagnostic — does not merge types.
+    """
+    if len(strips) < 2:
+        return ()
+    n_pixels = int(cell_size[0]) * int(cell_size[1])
+    if n_pixels <= 0:
+        raise ValueError("cell_size must be positive")
+    n_cells = len(strips[0]) // n_pixels
+    size = strip_plane_size(n_cells, cell_size)
+    rows: list[tuple[int, int, str, float, float, bool]] = []
+    for i in range(len(strips)):
+        for j in range(i + 1, len(strips)):
+            ncc, chamfer, name = crop_invariant_match(strips[i], strips[j], size)
+            gate = ncc >= min_ncc and chamfer <= max_chamfer
+            rows.append((i, j, name, ncc, chamfer, gate))
+    return tuple(rows)
+
+
+def best_window_strip_pair(
+    rows: tuple[tuple[int, int, str, float, float, bool], ...]
+    | list[tuple[int, int, str, float, float, bool]],
+) -> Optional[tuple[int, int, str, float, float, bool]]:
+    """Highest-NCC strip pair. Tie → lower chamfer, then earlier indexes."""
+    if not rows:
+        return None
+    return max(rows, key=lambda row: (row[3], -row[4], -row[0], -row[1]))
 
 
 def tablet_line_key(source_image: str) -> str:

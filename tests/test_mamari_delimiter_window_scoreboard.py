@@ -27,6 +27,12 @@ published min stays 6, so those extra merges stay off.
 Cycle 21 retries slot-0 leftovers under {identity, hflip, vflip,
 180°}. Best leftover is NCC 0.247 / chamfer 1.224 (hflip); the
 gate does not clear, so published Hamming stays 6.
+Cycle 22 concatenates each published window's eight bbox crops
+into a shared-height strip and scores pairwise strip NCC/chamfer
+under the same four transforms. Best is Ca7[33]/Ca8[15] identity
+at NCC 0.244 / chamfer 2.137. No pair clears 0.45 / 0.80.
+Ceiling diagnostic, not a merge. Snapshot stays 83/62 /
+published Hamming 6 / 0/8.
 Glyph meanings are not assigned.
 """
 
@@ -48,9 +54,12 @@ from processors.glyph_processor import (
     passes_delimiter_slot_gates,
     best_slot0_invariant_crop_hamming_pair,
     best_slot0_invariant_crop_pair,
+    best_window_strip_pair,
     crop_invariant_match,
     passes_slot_crop_gates,
     passes_slot_crop_invariant_gates,
+    window_glyph_strips,
+    window_strip_pair_table,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
     profile_correlation,
@@ -152,6 +161,32 @@ STANDING_SLOT0_INVARIANT_BEST = (
 )
 # G023 vs G006 would drop published Hamming 6→5 but fails the gate.
 STANDING_SLOT0_INVARIANT_HAMMING_DROP_PAIR = (("Ca7", 19), ("Ca7", 33))
+# Cycle 22: pairwise 8-crop strips, IDs ignored. Shared cell height 64.
+# Best is the already-merged slot-0 wide pair as whole windows.
+# No pair clears NCC >= 0.45 / chamfer <= 0.80.
+# (left, right, transform, ncc, chamfer, gate)
+STANDING_WINDOW_STRIP_KEYS = tuple(
+    (window[0], window[1]) for window in STANDING_DELIMITER_WINDOWS
+)
+STANDING_WINDOW_STRIP_PAIRS = (
+    (("Ca7", 6), ("Ca7", 19), "hflip", 0.120, 2.338, False),
+    (("Ca7", 6), ("Ca7", 33), "vflip", 0.218, 1.572, False),
+    (("Ca7", 6), ("Ca8", 3), "identity", 0.202, 1.699, False),
+    (("Ca7", 6), ("Ca8", 15), "hflip", 0.233, 1.823, False),
+    (("Ca7", 6), ("Ca8", 29), "identity", 0.201, 1.479, False),
+    (("Ca7", 19), ("Ca7", 33), "hflip", 0.137, 2.375, False),
+    (("Ca7", 19), ("Ca8", 3), "identity", 0.184, 1.951, False),
+    (("Ca7", 19), ("Ca8", 15), "identity", 0.190, 1.626, False),
+    (("Ca7", 19), ("Ca8", 29), "hflip", 0.138, 1.956, False),
+    (("Ca7", 33), ("Ca8", 3), "vflip", 0.126, 2.076, False),
+    (("Ca7", 33), ("Ca8", 15), "identity", 0.244, 2.137, False),
+    (("Ca7", 33), ("Ca8", 29), "vflip", 0.130, 1.816, False),
+    (("Ca8", 3), ("Ca8", 15), "identity", 0.199, 1.715, False),
+    (("Ca8", 3), ("Ca8", 29), "identity", 0.129, 1.949, False),
+    (("Ca8", 15), ("Ca8", 29), "identity", 0.099, 2.165, False),
+)
+STANDING_WINDOW_STRIP_BEST = STANDING_WINDOW_STRIP_PAIRS[10]
+STANDING_WINDOW_STRIP_GATE_CLEARS = False
 
 # Joint stem-index offsets applied to every published start. Same N
 # for all six windows. Per-window free search would mix slots.
@@ -868,6 +903,71 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
             STANDING_UNIQUE_CLUSTERS,
         )
         self.assertEqual(len(set(slot_ids_across_windows(invariant_windows)[0])), 4)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_published_window_strips_fail_crop_gate(self):
+        """Cycle 22: best 8-crop strip is NCC 0.244 / chamfer 2.137.
+
+        Concatenated bbox crops in reading order, shared height 64,
+        scored under {identity, hflip, vflip, 180°}. Best pair is
+        Ca7[33]/Ca8[15] identity — already merged at slot 0 — and
+        still fails NCC >= 0.45 / chamfer <= 0.80. No pair clears.
+        Ceiling, not a merge. 83/62 / Hamming 6 / 0/8 stay put.
+        """
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_leftover_merge)
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_invariant_merge)
+        self.assertEqual(ProcessorConfig().slot_crop_min_ncc, 0.45)
+        self.assertEqual(ProcessorConfig().slot_crop_max_chamfer, 0.80)
+        self.assertFalse(STANDING_WINDOW_STRIP_GATE_CLEARS)
+        lines = ca7_ca8_instances(self.instances)
+        slot_members = published_slot_members(self.instances, lines)
+        strips = window_glyph_strips(self.instances, slot_members)
+        self.assertEqual(len(strips), STANDING_WINDOW_COUNT)
+        self.assertEqual(len(STANDING_WINDOW_STRIP_KEYS), STANDING_WINDOW_COUNT)
+        rows = window_strip_pair_table(strips)
+        self.assertEqual(len(rows), 15)
+        self.assertEqual(len(STANDING_WINDOW_STRIP_PAIRS), 15)
+        keys = STANDING_WINDOW_STRIP_KEYS
+        for got, exp in zip(rows, STANDING_WINDOW_STRIP_PAIRS):
+            left_i, right_i, name, ncc, chamfer, gate = got
+            left_key, right_key, exp_name, exp_ncc, exp_ch, exp_gate = exp
+            self.assertEqual(keys[left_i], left_key)
+            self.assertEqual(keys[right_i], right_key)
+            self.assertEqual(name, exp_name, (left_key, right_key))
+            self.assertAlmostEqual(ncc, exp_ncc, places=3, msg=(left_key, right_key))
+            self.assertAlmostEqual(chamfer, exp_ch, places=3, msg=(left_key, right_key))
+            self.assertEqual(gate, exp_gate, (left_key, right_key))
+            self.assertEqual(gate, ncc >= 0.45 and chamfer <= 0.80)
+        best = best_window_strip_pair(rows)
+        self.assertIsNotNone(best)
+        left_i, right_i, name, ncc, chamfer, gate = best
+        left_key, right_key, exp_name, exp_ncc, exp_ch, exp_gate = (
+            STANDING_WINDOW_STRIP_BEST
+        )
+        self.assertEqual(keys[left_i], left_key)
+        self.assertEqual(keys[right_i], right_key)
+        self.assertEqual(name, exp_name)
+        self.assertAlmostEqual(ncc, exp_ncc, places=3)
+        self.assertAlmostEqual(chamfer, exp_ch, places=3)
+        self.assertEqual(gate, exp_gate)
+        self.assertFalse(gate)
+        self.assertLess(ncc, 0.45)
+        self.assertGreater(chamfer, 0.80)
+        self.assertFalse(any(row[5] for row in rows))
+        grams = tuple(window.image_ids for window in self.score.windows)
+        self.assertEqual(min_pairwise_window_hamming(grams), 6)
+        self.assertEqual(self.score.instance_count, 83)
+        self.assertEqual(self.score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertEqual(self.score.slot_matches, STANDING_SLOT_MATCHES)
+        unique_counts = tuple(len(set(ids)) for ids in self.score.slot_ids)
+        self.assertEqual(unique_counts, STANDING_SLOT_UNIQUE_COUNTS)
+        self.assertEqual(
+            mixed_repeating_ngrams(self.image_lines, self.ngram_analyzer),
+            list(STANDING_MIXED_REPEATING),
+        )
+        self.assertEqual(
+            longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 2
+        )
         self.assertEqual(self.provider.get_call_history(), [])
 
 
