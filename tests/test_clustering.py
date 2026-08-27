@@ -6,7 +6,12 @@ import cv2
 import numpy as np
 
 from models.glyphs import BoundingBox, GlyphInstance, GlyphPosition
-from processors.glyph_processor import GlyphProcessor, ProcessorConfig
+from processors.glyph_processor import (
+    GlyphProcessor,
+    ProcessorConfig,
+    passes_same_line_allograph_gates,
+    passes_split_fragment_allograph_gates,
+)
 
 
 def create_test_glyph(shape: str, size: int = 50) -> np.ndarray:
@@ -506,6 +511,30 @@ class TestSplitFragmentAllographMerge(unittest.TestCase):
         )
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_gate_predicates_match_merge_decisions(self):
+        """Public gate helpers are the same tests the merge passes use."""
+        close = self._split_instance("a", "one.gif", [0.0] * 7, width=31)
+        match = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=30)
+        wide = self._split_instance("c", "three.gif", [0.8] + [0.0] * 6, width=55)
+        self.assertTrue(passes_split_fragment_allograph_gates(close, match))
+        self.assertFalse(passes_split_fragment_allograph_gates(close, wide))
+        thin = GlyphInstance(
+            instance_id="thin",
+            source_image="line.gif",
+            bounding_box=BoundingBox(x=0, y=0, width=26, height=66),
+            features=[0.0] * 7,
+            position=GlyphPosition(0, 0, 2),
+        )
+        other = GlyphInstance(
+            instance_id="other",
+            source_image="line.gif",
+            bounding_box=BoundingBox(x=30, y=0, width=26, height=66),
+            features=[0.8] + [0.0] * 6,
+            position=GlyphPosition(0, 1, 2),
+        )
+        self.assertTrue(passes_same_line_allograph_gates(thin, other))
+        self.assertFalse(passes_same_line_allograph_gates(thin, wide))
 
 
 class TestSingleGlyphClustering(unittest.TestCase):

@@ -118,6 +118,48 @@ def _hu_distance(left: GlyphInstance, right: GlyphInstance) -> float:
     )
 
 
+def passes_same_line_allograph_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if the same-line stitch would union these two instances.
+
+    Adjacent-position is the caller's job. This is only the unsigned-Hu,
+    area, and tall-thin aspect gates. Does not look up stems.
+    """
+    cfg = config or ProcessorConfig()
+    if _bbox_aspect(left) > cfg.allograph_max_aspect:
+        return False
+    if _bbox_aspect(right) > cfg.allograph_max_aspect:
+        return False
+    if _bbox_area_ratio(left, right) > cfg.allograph_max_area_ratio:
+        return False
+    if _hu_distance(left, right) >= cfg.allograph_max_hu_distance:
+        return False
+    return True
+
+
+def passes_split_fragment_allograph_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if the split-fragment stitch would union these two instances.
+
+    from_ligature_split is the caller's job. This is only the unsigned-Hu,
+    area, and width gates. Does not look up stems.
+    """
+    cfg = config or ProcessorConfig()
+    if _bbox_width_ratio(left, right) > cfg.split_allograph_max_width_ratio:
+        return False
+    if _bbox_area_ratio(left, right) > cfg.allograph_max_area_ratio:
+        return False
+    if _hu_distance(left, right) >= cfg.split_allograph_max_hu_distance:
+        return False
+    return True
+
+
 def vertical_valley_cuts(
     column_ink: np.ndarray,
     valley_ratio: float = 0.40,
@@ -730,21 +772,13 @@ class GlyphProcessor:
             key = (inst.source_image, inst.position.line_number)
             by_line.setdefault(key, []).append(i)
 
-        max_dist = self.config.allograph_max_hu_distance
-        max_ratio = self.config.allograph_max_area_ratio
-        max_aspect = self.config.allograph_max_aspect
-
         for idxs in by_line.values():
             idxs.sort(key=lambda i: instances[i].position.position_in_line)
             for left, right in zip(idxs, idxs[1:]):
                 a, b = instances[left], instances[right]
                 if a.position.position_in_line + 1 != b.position.position_in_line:
                     continue
-                if _bbox_aspect(a) > max_aspect or _bbox_aspect(b) > max_aspect:
-                    continue
-                if _bbox_area_ratio(a, b) > max_ratio:
-                    continue
-                if _hu_distance(a, b) >= max_dist:
+                if not passes_same_line_allograph_gates(a, b, self.config):
                     continue
                 union(left, right)
 
@@ -785,19 +819,11 @@ class GlyphProcessor:
             if ri != rj:
                 parent[rj] = ri
 
-        max_dist = self.config.split_allograph_max_hu_distance
-        max_ratio = self.config.allograph_max_area_ratio
-        max_width = self.config.split_allograph_max_width_ratio
-
         for a_i in range(len(idxs)):
             for b_i in range(a_i + 1, len(idxs)):
                 left, right = idxs[a_i], idxs[b_i]
                 a, b = instances[left], instances[right]
-                if _bbox_width_ratio(a, b) > max_width:
-                    continue
-                if _bbox_area_ratio(a, b) > max_ratio:
-                    continue
-                if _hu_distance(a, b) >= max_dist:
+                if not passes_split_fragment_allograph_gates(a, b, self.config):
                     continue
                 union(left, right)
 
