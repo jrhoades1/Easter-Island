@@ -97,6 +97,23 @@ class ProcessorConfig:
     # not read Barthel stems. False keeps the cycle-9 lock.
     split_inconsistent_types: bool = True
 
+    # Merge instances that occupy the same published delimiter SLOT
+    # (0–7) across Guy windows. Starts are reading-order indexes only —
+    # not stem identities. A pair unions if it passes type-consistency
+    # (Hu < 2.0 and, when both profiles exist, r >= 0.85) and/or the
+    # wide-profile gate. Features that disagree keep distinct IDs; a
+    # slot is not forced to one type. False keeps the cycle-11 lock.
+    delimiter_slot_merge: bool = True
+    delimiter_window_len: int = 8
+    delimiter_window_starts: tuple[tuple[int, int], ...] = (
+        (0, 6),
+        (0, 19),
+        (0, 33),
+        (1, 3),
+        (1, 15),
+        (1, 29),
+    )
+
 
 def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
     """max(area)/min(area). inf if either box has no area."""
@@ -252,6 +269,35 @@ def passes_type_consistency_gates(
         if corr < cfg.wide_profile_min_correlation:
             return False
     return True
+
+
+def passes_delimiter_slot_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if same-slot instances may share an ID.
+
+    Honest pair test from cycles 7–11: type-consistency (unsigned Hu <
+    2.0 and, when both profiles exist, Pearson r >= 0.85) and/or the
+    wide-profile gate (aspect > 0.5 and r >= 0.85). Does not look up
+    stems and does not require every occupant of the slot to match.
+    """
+    return passes_type_consistency_gates(
+        left, right, config
+    ) or passes_wide_profile_allograph_gates(left, right, config)
+
+
+def tablet_line_key(source_image: str) -> str:
+    """Kohaumotu strip stem (07/08). Other filenames stay distinct.
+
+    Used only to concatenate Ca7/Ca8 reading-order slots. Does not
+    assign glyph meanings.
+    """
+    name = source_image.rsplit("/", 1)[-1]
+    if len(name) >= 5 and name.startswith("sca") and name[3:5].isdigit():
+        return name[3:5]
+    return name
 
 
 def passes_wide_profile_allograph_gates(
@@ -860,11 +906,14 @@ class GlyphProcessor:
             self._merge_wide_profile_allographs(instances)
         if self.config.split_inconsistent_types:
             self._split_inconsistent_types(instances)
+        if self.config.delimiter_slot_merge:
+            self._merge_delimiter_slot_allographs(instances)
         if (
             self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
             or self.config.wide_profile_allograph_merge
             or self.config.split_inconsistent_types
+            or self.config.delimiter_slot_merge
         ):
             clusters = self._clusters_from_assigned_ids(instances)
 
@@ -1072,6 +1121,105 @@ class GlyphProcessor:
                 new_id = f"X{split_n:03d}"
                 for i in part:
                     instances[i].cluster_id = new_id
+
+    def _concatenated_tablet_line_indexes(
+        self, instances: list[GlyphInstance]
+    ) -> list[list[int]]:
+        """Instance indexes grouped by tablet line key, concatenated reading order.
+
+        Kohaumotu strips with the same stem (07/08) become one line so
+        published window STARTS can address Ca7/Ca8 slots. Other source
+        names stay one line each. Does not assign stem meanings.
+        """
+        buckets: dict[str, list[int]] = {}
+        for i, inst in enumerate(instances):
+            if inst.position is None:
+                continue
+            buckets.setdefault(tablet_line_key(inst.source_image), []).append(i)
+        lines: list[list[int]] = []
+        for key in sorted(buckets):
+            idxs = buckets[key]
+            idxs.sort(
+                key=lambda i: (
+                    instances[i].source_image,
+                    instances[i].position.line_number,
+                    instances[i].position.position_in_line,
+                )
+            )
+            lines.append(idxs)
+        return lines
+
+    def _merge_delimiter_slot_allographs(self, instances: list[GlyphInstance]) -> None:
+        """Union same-slot occupants that pass Hu and/or wide-profile gates.
+
+        Published window starts define the eight slots. Pairwise only:
+        a slot is not collapsed to one ID when other occupants fail.
+        Instance-local. Does not read Barthel stem values.
+        """
+        if len(instances) < 2:
+            return
+
+        window_len = int(self.config.delimiter_window_len)
+        starts = tuple(self.config.delimiter_window_starts)
+        if window_len < 1 or not starts:
+            return
+
+        line_indexes = self._concatenated_tablet_line_indexes(instances)
+        slot_members: list[list[int]] = [[] for _ in range(window_len)]
+        for line_index, start in starts:
+            if line_index < 0 or line_index >= len(line_indexes):
+                continue
+            line = line_indexes[line_index]
+            end = start + window_len
+            if start < 0 or end > len(line):
+                continue
+            for slot in range(window_len):
+                slot_members[slot].append(line[start + slot])
+
+        parent = list(range(len(instances)))
+
+        def find(x: int) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(i: int, j: int) -> None:
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+
+        merged = False
+        for members in slot_members:
+            for a_i in range(len(members)):
+                for b_i in range(a_i + 1, len(members)):
+                    left_i, right_i = members[a_i], members[b_i]
+                    if left_i == right_i:
+                        continue
+                    if not passes_delimiter_slot_gates(
+                        instances[left_i], instances[right_i], self.config
+                    ):
+                        continue
+                    union(left_i, right_i)
+                    merged = True
+
+        if not merged:
+            return
+
+        components: dict[int, list[int]] = {}
+        for members in slot_members:
+            for i in members:
+                components.setdefault(find(i), []).append(i)
+
+        merge_n = 0
+        for members in components.values():
+            unique = sorted(set(members))
+            if len(unique) < 2:
+                continue
+            merge_n += 1
+            shared_id = f"D{merge_n:03d}"
+            for i in unique:
+                instances[i].cluster_id = shared_id
 
     def _reading_order_indexes(
         self, instances: list[GlyphInstance]

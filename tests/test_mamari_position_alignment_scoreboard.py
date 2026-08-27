@@ -42,11 +42,11 @@ KNOWN_LIGATURE_TOKENS = ("390.041", "008.078.711")
 
 # (line, start, end, image_gram, published_stems, on_delimiter, in_delimiter, in_ligature)
 STANDING_MIXED_HITS = (
-    ("Ca8", 8, 10, ("G003", "G008"), ("008", "078"), True, True, True),
-    ("Ca8", 19, 21, ("G003", "G008"), ("670", "008"), True, True, False),
+    ("Ca7", 32, 34, ("G007", "G006"), ("600", "390"), False, False, False),
+    ("Ca8", 14, 16, ("G007", "G006"), ("040", "390"), False, False, False),
 )
-STANDING_DELIMITER_HITS = 2
-STANDING_LIGATURE_HITS = 1
+STANDING_DELIMITER_HITS = 0
+STANDING_LIGATURE_HITS = 0
 STANDING_HIT_TOTAL = 2
 
 
@@ -179,7 +179,7 @@ def score_position_alignment(
     image_lines: list[list[str]],
     published_lines: list[list[str]],
 ) -> PositionAlignmentScore:
-    """Record mixed-n-gram alignment plus the standing 83/66 / 43+40 lock."""
+    """Record mixed-n-gram alignment plus the standing 83/64 / 43+40 lock."""
     grams = [gram for gram, _freq in STANDING_MIXED_REPEATING]
     hits = score_mixed_ngram_alignment(image_lines, published_lines, grams)
     cluster_ids = [inst.cluster_id for inst in instances if inst.cluster_id]
@@ -281,7 +281,7 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
         )
 
     def test_standing_counts_unchanged(self):
-        """Cycle 11 snapshot: 83/66 / 43+40, mixed 2-gram."""
+        """Cycle 12 snapshot: 83/64 / 43+40, mixed 2-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -300,19 +300,18 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
     def test_mixed_ngrams_align_to_published_stems(self):
         """Lock published stems under each mixed n-gram and the two hit-rates.
 
-        Honest result: both remaining 2-gram hits sit on a delimiter span
-        (2/2). One is a known ligature encoding (008 078 ⊂ 8.78.711). The
-        other is 670 008 — still delimiter-internal, not a consistent
-        encoding of one stem pair.
+        Honest result: the remaining 2-gram sits immediately left of two
+        slot-0 390 merges, not on a delimiter span (0/2). Not a ligature
+        encoding. Do not treat the new pair as Guy's motif.
         """
         s = self.score
         self.assertEqual([hit_tuple(hit) for hit in s.hits], list(STANDING_MIXED_HITS))
         self.assertEqual(s.delimiter_hits, STANDING_DELIMITER_HITS)
         self.assertEqual(s.ligature_hits, STANDING_LIGATURE_HITS)
         self.assertEqual(s.hit_total, STANDING_HIT_TOTAL)
-        self.assertEqual(s.delimiter_hits / s.hit_total, 1.0)
-        self.assertEqual(s.ligature_hits / s.hit_total, 1 / 2)
-        self.assertTrue(all(hit.on_delimiter_span for hit in s.hits))
+        self.assertEqual(s.delimiter_hits, 0)
+        self.assertEqual(s.ligature_hits, 0)
+        self.assertFalse(any(hit.on_delimiter_span for hit in s.hits))
         self.assertEqual(self.provider.get_call_history(), [])
 
 

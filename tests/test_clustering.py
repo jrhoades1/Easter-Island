@@ -10,12 +10,14 @@ from processors.glyph_processor import (
     GlyphProcessor,
     ProcessorConfig,
     _hu_distance,
+    passes_delimiter_slot_gates,
     passes_same_line_allograph_gates,
     passes_split_fragment_allograph_gates,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
     profile_correlation,
     resample_profile,
+    tablet_line_key,
 )
 
 
@@ -632,6 +634,137 @@ class TestWideProfileAllographMerge(unittest.TestCase):
         b = self._wide("b", 1, ramp, features=[5.0] + [0.0] * 6)
         processor = GlyphProcessor(
             ProcessorConfig(wide_profile_allograph_merge=False)
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+
+class TestDelimiterSlotAllographMerge(unittest.TestCase):
+    """Same-slot stitch across published window starts. No Mamari GIFs."""
+
+    def _inst(
+        self,
+        instance_id: str,
+        source: str,
+        position: int,
+        features: list[float],
+        profile: list[float],
+        width: int = 72,
+        height: int = 66,
+        total: int = 4,
+    ) -> GlyphInstance:
+        return GlyphInstance(
+            instance_id=instance_id,
+            source_image=source,
+            bounding_box=BoundingBox(x=position * 80, y=0, width=width, height=height),
+            features=features,
+            ink_profile=profile,
+            position=GlyphPosition(0, position, total),
+        )
+
+    def test_tablet_line_key_uses_kohaumotu_stem_only(self):
+        self.assertEqual(tablet_line_key("sca0701.gif"), "07")
+        self.assertEqual(tablet_line_key("sca0803.gif"), "08")
+        self.assertEqual(tablet_line_key("line.gif"), "line.gif")
+
+    def test_same_slot_wide_profile_pair_shares_an_id(self):
+        """Hu is far; wide-profile r still unions the two slot occupants."""
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, ramp)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, ramp)
+        self.assertFalse(passes_type_consistency_gates(a, b))
+        self.assertTrue(passes_wide_profile_allograph_gates(a, b))
+        self.assertTrue(passes_delimiter_slot_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_same_slot_hu_and_profile_pair_shares_an_id(self):
+        """Tall-thin CONS pair (Hu < 2 and r >= 0.85) also unions."""
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, ramp, width=26)
+        b = self._inst("b", "sca0801.gif", 0, [0.8] + [0.0] * 6, ramp, width=26)
+        self.assertTrue(passes_type_consistency_gates(a, b))
+        self.assertFalse(passes_wide_profile_allograph_gates(a, b))
+        self.assertTrue(passes_delimiter_slot_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_same_slot_poor_features_stay_distinct(self):
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right)
+        self.assertFalse(passes_delimiter_slot_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_does_not_force_unanimous_slot_when_one_occupant_fails(self):
+        """Only the passing pair shares an ID. The third occupant stays out."""
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, ramp, total=1)
+        b = self._inst("b", "sca0801.gif", 0, [0.8] + [0.0] * 6, ramp, total=2)
+        c = self._inst("c", "sca0801.gif", 1, [5.0] + [0.0] * 6, inverse, total=2)
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0), (1, 1)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b, c])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+        self.assertNotEqual(clustered[0].cluster_id, clustered[2].cluster_id)
+
+    def test_different_slots_do_not_merge(self):
+        """Matching features in different slot indexes stay distinct."""
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, ramp, total=2)
+        filler = self._inst(
+            "x", "sca0701.gif", 1, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b = self._inst("b", "sca0801.gif", 1, [0.0] * 7, ramp, total=2)
+        other = self._inst(
+            "y", "sca0801.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        self.assertTrue(passes_delimiter_slot_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, filler, other, b])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertNotEqual(by_id["a"], by_id["b"])
+
+    def test_slot_merge_can_be_disabled(self):
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, ramp)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, ramp)
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_slot_merge=False,
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
         )
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
