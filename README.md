@@ -749,8 +749,12 @@ Please open an issue to discuss significant changes before submitting a PR.
 
 - Fischer, S.R. (1997). *Rongorongo: The Easter Island Script*. Oxford University Press.
 - Barthel, T.S. (1958). *Grundlagen zur Entzifferung der Osterinselschrift*. Hamburg.
+- Guy, J.B.M. (1990). "The lunar calendar of Tablet Mamari." *Journal de la Société des Océanistes* 91: 135–149. doi:10.3406/jso.1990.2882.
 - Pozdniakov, K. (1996). "Les bases du déchiffrement de l'écriture de l'île de Pâques." *Journal de la Société des Océanistes*.
+- Horley, P. (2011). "Lunar calendar in rongorongo texts and rock art of Easter Island." *Journal de la Société des Océanistes* 132: 17–38. doi:10.4000/jso.6314.
 - Horley, P. (2011). "Rongorongo Tablet Keiti." *Rapa Nui Journal* 25(1).
+
+The Ca6–Ca9 scoreboard fixture (`tests/fixtures/mamari_ca6_ca9_barthel.json`) is the Kohaumotu published Barthel-coded transcription of the Mamari lunar/calendar passage ([Ca.html](http://kohaumotu.org/Rongorongo/C/Ca.html)). Guy 1990 Fig. 1 / Table 1 did not extract as text. The unit test fails if the repeating delimiter is missing from the top-N n-grams of matching length, or if same-length noise outranks it.
 
 ### Proto-Polynesian Linguistics
 
