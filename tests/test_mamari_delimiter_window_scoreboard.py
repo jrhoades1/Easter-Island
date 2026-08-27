@@ -6,8 +6,11 @@ slots (390 041 378 041 670 008 078 711). A slot matches if every
 repetition has the same G00n ID there. Score is 0–8.
 
 Cycle 13 crop-compares the four slot-0 leftovers (NCC / chamfer on the
-bbox image). None pass, so the lock stays 0/8. Glyph meanings are not
-assigned.
+bbox image). None pass, so the lock stays 0/8.
+
+Cycle 14 is an alignment search, not a merge: joint offsets of the
+published window STARTS on the existing G00n sequence. Clustering is
+not retuned. Glyph meanings are not assigned.
 """
 
 import unittest
@@ -18,6 +21,7 @@ from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from models.glyphs import GlyphInstance
 from tests.test_mamari_calendar_scoreboard import DELIMITER_MOTIF
 from processors.glyph_processor import (
+    ProcessorConfig,
     crop_chamfer,
     crop_ncc,
     passes_delimiter_slot_gates,
@@ -97,6 +101,31 @@ STANDING_SLOT0_CROP_PAIRS = (
     (("Ca8", 15), ("Ca8", 29), 0.144, 1.068, 0.541, False, False),
 )
 
+# Joint stem-index offsets applied to every published start. Same N
+# for all six windows. Per-window free search would mix slots.
+WINDOW_OFFSETS = (-2, -1, 0, 1, 2)
+PUBLISHED_WINDOW_STARTS = (
+    (0, 6),
+    (0, 19),
+    (0, 33),
+    (1, 3),
+    (1, 15),
+    (1, 29),
+)
+# Joint offset table on the standing G00n sequence. Every offset is
+# 0/8. Offsets -2 / -1 / 0 share mean unique 5.500; +1 / +2 are 5.750.
+# (offset, matches, unique-count 8-tuple)
+STANDING_OFFSET_TABLE = (
+    (-2, 0, (6, 5, 4, 6, 6, 6, 5, 6)),
+    (-1, 0, (5, 4, 6, 6, 6, 5, 6, 6)),
+    (0, 0, (4, 6, 6, 6, 5, 6, 6, 5)),
+    (1, 0, (6, 6, 6, 5, 6, 6, 5, 6)),
+    (2, 0, (6, 6, 5, 6, 6, 5, 6, 6)),
+)
+STANDING_BEST_OFFSET = 0
+STANDING_BEST_OFFSET_MATCHES = 0
+STANDING_BEST_OFFSET_UNIQUE_COUNTS = STANDING_SLOT_UNIQUE_COUNTS
+
 
 @dataclass(frozen=True)
 class DelimiterWindow:
@@ -166,6 +195,128 @@ def slot_match_count(slot_ids: tuple[tuple[str, ...], ...]) -> int:
 def window_tuple(window: DelimiterWindow) -> tuple:
     """Stable lock row: line, span, image IDs."""
     return (window.line, window.start, window.end, window.image_ids)
+
+
+@dataclass(frozen=True)
+class WindowOffsetRow:
+    """Slot identity at one joint start offset. No re-clustering."""
+
+    offset: int
+    starts: tuple[tuple[int, int], ...]
+    slot_matches: int
+    unique_counts: tuple[int, ...]
+    mean_unique: float
+    in_bounds: bool
+
+
+def shift_window_starts(
+    starts: tuple[tuple[int, int], ...],
+    offset: int,
+) -> tuple[tuple[int, int], ...]:
+    """Add the same stem-index offset to every published start."""
+    return tuple((line, start + offset) for line, start in starts)
+
+
+def windows_in_bounds(
+    image_lines: list[list[str]],
+    starts: tuple[tuple[int, int], ...],
+    window_len: int = WINDOW_LEN,
+) -> bool:
+    """True if every shifted 8-slot window sits inside its line."""
+    for line, start in starts:
+        if line < 0 or line >= len(image_lines):
+            return False
+        seq = image_lines[line]
+        if start < 0 or start + window_len > len(seq):
+            return False
+    return True
+
+
+def windows_at_starts(
+    image_lines: list[list[str]],
+    starts: tuple[tuple[int, int], ...],
+    window_len: int = WINDOW_LEN,
+    published_lines: list[list[str]] | None = None,
+) -> list[DelimiterWindow]:
+    """G00n 8-slots at given starts. Existing sequence only."""
+    windows: list[DelimiterWindow] = []
+    for line, start in starts:
+        end = start + window_len
+        stems: tuple[str, ...] = ()
+        if published_lines is not None:
+            stems = tuple(published_lines[line][start:end])
+        windows.append(
+            DelimiterWindow(
+                line=LINE_NAMES[line],
+                start=start,
+                end=end,
+                image_ids=tuple(image_lines[line][start:end]),
+                published_stems=stems,
+            )
+        )
+    return windows
+
+
+def score_window_offset(
+    image_lines: list[list[str]],
+    starts: tuple[tuple[int, int], ...] = PUBLISHED_WINDOW_STARTS,
+    offset: int = 0,
+    window_len: int = WINDOW_LEN,
+) -> WindowOffsetRow:
+    """Slot matches and unique counts at one joint offset."""
+    shifted = shift_window_starts(starts, offset)
+    if not windows_in_bounds(image_lines, shifted, window_len):
+        empty = (0,) * window_len
+        return WindowOffsetRow(offset, shifted, 0, empty, float("inf"), False)
+    windows = windows_at_starts(image_lines, shifted, window_len)
+    slots = slot_ids_across_windows(windows, window_len)
+    unique = tuple(len(set(ids)) for ids in slots)
+    return WindowOffsetRow(
+        offset=offset,
+        starts=shifted,
+        slot_matches=slot_match_count(slots),
+        unique_counts=unique,
+        mean_unique=sum(unique) / len(unique),
+        in_bounds=True,
+    )
+
+
+def sweep_window_offsets(
+    image_lines: list[list[str]],
+    starts: tuple[tuple[int, int], ...] = PUBLISHED_WINDOW_STARTS,
+    offsets: tuple[int, ...] = WINDOW_OFFSETS,
+    window_len: int = WINDOW_LEN,
+) -> tuple[WindowOffsetRow, ...]:
+    """Score every joint offset on the existing G00n sequence."""
+    return tuple(
+        score_window_offset(image_lines, starts, offset, window_len)
+        for offset in offsets
+    )
+
+
+def best_window_offset(
+    rows: tuple[WindowOffsetRow, ...] | list[WindowOffsetRow],
+) -> WindowOffsetRow:
+    """Max slot matches, then min mean unique IDs. Tie → offset 0."""
+    valid = [row for row in rows if row.in_bounds]
+    if not valid:
+        raise ValueError("no in-bounds window offsets")
+    return min(
+        valid,
+        key=lambda row: (
+            -row.slot_matches,
+            row.mean_unique,
+            abs(row.offset),
+            row.offset,
+        ),
+    )
+
+
+def offset_table_tuple(
+    rows: tuple[WindowOffsetRow, ...] | list[WindowOffsetRow],
+) -> tuple[tuple[int, int, tuple[int, ...]], ...]:
+    """Lock row: offset, matches, unique-count 8-tuple."""
+    return tuple((row.offset, row.slot_matches, row.unique_counts) for row in rows)
 
 
 def slot0_instance(lines: list[list], line: str, index: int):
@@ -255,6 +406,33 @@ class TestDelimiterWindowHelpers(unittest.TestCase):
         )
         self.assertTrue(all(window.published_stems == DELIMITER_MOTIF for window in windows))
 
+    def test_joint_offset_shifts_every_start(self):
+        starts = ((0, 6), (1, 3))
+        self.assertEqual(shift_window_starts(starts, -2), ((0, 4), (1, 1)))
+        self.assertEqual(shift_window_starts(starts, 2), ((0, 8), (1, 5)))
+        self.assertTrue(windows_in_bounds([["x"] * 16, ["y"] * 16], ((0, 0), (1, 8))))
+        self.assertFalse(windows_in_bounds([["x"] * 10], ((0, 3),)))
+
+    def test_best_offset_prefers_matches_then_mean_unique(self):
+        def _row(offset, matches, unique):
+            mean = sum(unique) / len(unique)
+            return WindowOffsetRow(offset, ((0, offset),), matches, unique, mean, True)
+
+        table = (
+            _row(-1, 0, (6, 6, 6, 6, 6, 6, 6, 6)),
+            _row(0, 1, (5, 6, 6, 6, 6, 6, 6, 6)),
+            _row(1, 1, (4, 4, 4, 4, 4, 4, 4, 4)),
+        )
+        best = best_window_offset(table)
+        self.assertEqual(best.offset, 1)
+        self.assertEqual(best.slot_matches, 1)
+        tied = (
+            _row(-2, 0, (5, 5, 5, 5, 5, 5, 5, 5)),
+            _row(0, 0, (5, 5, 5, 5, 5, 5, 5, 5)),
+            _row(2, 0, (5, 5, 5, 5, 5, 5, 5, 5)),
+        )
+        self.assertEqual(best_window_offset(tied).offset, 0)
+
 
 class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
     """Stock CV IDs at published Ca7/Ca8 delimiter spans. MockProvider only."""
@@ -291,6 +469,36 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         )
         self.assertEqual(eight, [])
         self.assertEqual(s.slot_matches, STANDING_SLOT_MATCHES)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_joint_window_offset_sweep_locks_best(self):
+        """Best joint start offset on the existing G00n sequence.
+
+        Alignment search, not a merge. Same offset for all six published
+        starts. Clustering stays put. -2 / -1 / 0 all score 0/8 with
+        mean unique 5.500; 0 wins the tie. Default starts stay put
+        because no offset has matches > 0.
+        """
+        rows = sweep_window_offsets(self.image_lines)
+        table = offset_table_tuple(rows)
+        best = best_window_offset(rows)
+        self.assertEqual(table, STANDING_OFFSET_TABLE)
+        self.assertEqual(best.offset, STANDING_BEST_OFFSET)
+        self.assertEqual(best.slot_matches, STANDING_BEST_OFFSET_MATCHES)
+        self.assertEqual(best.unique_counts, STANDING_BEST_OFFSET_UNIQUE_COUNTS)
+        self.assertEqual(best.slot_matches, STANDING_SLOT_MATCHES)
+        self.assertTrue(all(row.in_bounds for row in rows))
+        self.assertEqual(
+            [row.offset for row in rows],
+            list(WINDOW_OFFSETS),
+        )
+        # Default pipeline starts stay at the published indexes.
+        self.assertEqual(best.offset, 0)
+        self.assertEqual(best.starts, PUBLISHED_WINDOW_STARTS)
+        self.assertEqual(
+            ProcessorConfig().delimiter_window_starts,
+            PUBLISHED_WINDOW_STARTS,
+        )
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_published_windows_are_guys_delimiter(self):
