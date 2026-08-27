@@ -312,21 +312,22 @@ class TestSantiagoIa076CellHelpers(unittest.TestCase):
     def test_exact_pair_and_top_nonempty_tiebreak(self):
         """090 |076| 071 counts singleton cells; ties take the earliest tuple."""
         lines = [[] for _ in IA_LINE_NAMES]
-        lines[0] = ["090", "076", "071", "076", "071"]
-        lines[1] = ["011", "076", "001", "076", "430"]
-        lines[2] = ["011"]
+        lines[0] = ["090", "076", "071"]
+        lines[1] = ["011", "076", "011"]
+        lines[2] = ["430", "076", "001"]
+        lines[3] = ["001"]
         provider = MockProvider()
         profile = score_ia_076_cells(lines)
         self.assertEqual(profile.exact_090_076_071, 1)
         self.assertEqual(exact_090_076_071_count(profile.cells), 1)
         self.assertEqual(
             top_nonempty_cells(profile.cells),
-            ((("011",), 2), (("001",), 1), (("071",), 1)),
+            ((("001",), 2), (("011",), 2), (("071",), 1)),
         )
-        self.assertEqual(profile.top_nonempty[0], (("011",), 2))
-        self.assertEqual(profile.empty_count, 1)
-        self.assertEqual(profile.cell_count, 3 + 3 + 1 + (len(IA_LINE_NAMES) - 3))
-        self.assertEqual(top_lengths(profile.cells)[0][0], 0)
+        self.assertEqual(profile.top_nonempty[0], (("001",), 2))
+        self.assertEqual(profile.empty_count, len(IA_LINE_NAMES) - 4)
+        self.assertEqual(profile.cell_count, 2 + 2 + 2 + 1 + profile.empty_count)
+        self.assertEqual(top_lengths(profile.cells)[0], (0, profile.empty_count))
         self.assertEqual(provider.get_call_history(), [])
 
 
