@@ -13,6 +13,9 @@ not recover the published delimiter as a repeating 8-gram.
 
 Sources and extraction limits are recorded on the fixture
 (tests/fixtures/mamari_ca6_ca9_barthel.json). Glyph meanings are not assigned.
+
+Cycle 24 locks the full n≥4 freq≥2 profile on this same fixture
+(longest n=13; top 8-gram remains Guy's delimiter).
 """
 
 import json
