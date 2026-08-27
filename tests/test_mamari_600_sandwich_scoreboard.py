@@ -10,6 +10,8 @@ hit is the Ab 9-gram 600 slot). Also locks the top left-neighbor and
 top right-neighbor of 600 per fixture (stem, count). Line-edge is
 not a stem. Equal counts break by earliest stem id. Stems are ids
 only. No meanings.
+Cycle 42 locks the Ab7 sandwich 9-window Hamming vs
+the Ab 9-gram motif.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

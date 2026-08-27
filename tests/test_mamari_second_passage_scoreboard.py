@@ -32,7 +32,8 @@ Cycle 40 locks a 600 inventory on those same fixtures
 only (hits, flanks, motif membership, calendar
 window-adjacency, per-fixture counts). Cycle 41 locks
 the 004 600 004 sandwich and per-fixture 600 neighbor
-tops on that same inventory.
+tops on that same inventory. Cycle 42 locks the Ab7
+sandwich 9-window Hamming vs the Ab 9-gram motif.
 Image track stays parked. MockProvider only.
 """
 

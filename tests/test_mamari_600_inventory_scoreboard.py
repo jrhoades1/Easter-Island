@@ -13,6 +13,8 @@ ids only. No meanings.
 
 Cycle 41 locks the 004 600 004 sandwich and per-fixture
 600 neighbor tops on this same inventory.
+Cycle 42 locks the Ab7 sandwich 9-window Hamming vs
+the Ab 9-gram motif.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """
