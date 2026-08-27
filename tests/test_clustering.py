@@ -1018,10 +1018,8 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
 
     def _asymmetric_crop(self) -> list[int]:
         plane = np.zeros((64, 64), dtype=np.uint8)
-        plane[8:56, 14:22] = 255
-        plane[8:20, 14:46] = 255
-        plane[8:36, 38:46] = 255
-        plane[28:36, 14:46] = 255
+        plane[6:58, 8:20] = 255
+        plane[46:58, 8:56] = 255
         return plane.ravel().tolist()
 
     def test_hflip_pair_clears_invariant_crop_not_upright(self):
