@@ -114,6 +114,7 @@ class ProcessorConfig:
     slot_crop_min_ncc: float = 0.45
     slot_crop_max_chamfer: float = 0.80
     delimiter_window_len: int = 8
+    # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
         (0, 6),
         (0, 19),
