@@ -23,45 +23,16 @@ from pathlib import Path
 
 from agents.base.providers import MockProvider
 from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
-from processors.glyph_processor import min_pairwise_window_hamming
-from tests.test_mamari_040_run_profile_scoreboard import (
-    STEM_040,
-    run_tuple,
-    score_040_run_profile,
-    variant_motifs,
-)
 from tests.test_mamari_calendar_scoreboard import (
     DELIMITER_MOTIF,
     barthel_stems,
     fixture_line_stems,
     load_mamari_fixture,
 )
-from tests.test_mamari_delimiter_cell_scoreboard import score_delimiter_cells
-from tests.test_mamari_delimiter_window_scoreboard import (
-    STANDING_SLOT_MATCHES,
-    STANDING_SLOT_UNIQUE_COUNTS,
-    score_delimiter_windows,
-)
-from tests.test_mamari_image_scoreboard import (
-    TRACING_DIR,
-    TRACING_NAMES,
-    ca7_ca8_sequences,
-    process_tracings,
-)
-from tests.test_mamari_nearest_8window_scoreboard import STANDING_PUBLISHED_MIN_HAMMING
-from tests.test_mamari_non040_inventory_scoreboard import score_non040_inventory
-from tests.test_mamari_position_alignment_scoreboard import (
-    find_ngram_hits,
-    published_ca7_ca8_stems,
-)
-from tests.test_mamari_type_identity_scoreboard import (
-    STANDING_CA7_LEN,
-    STANDING_CA8_LEN,
-    STANDING_INSTANCES_PER_STRIP,
-    STANDING_UNIQUE_CLUSTERS,
-    published_ca7_ca8_stem_counts,
-    score_type_identity,
-)
+
+STEM_040 = "040"
+STEM_600 = "600"
+FIRST_DELIMITER_VARIANTS = ("315", "375")
 
 CA_HTML_DIR = Path(__file__).parent / "fixtures" / "mamari_ca_html"
 CA_HTML_PATH = CA_HTML_DIR / "Ca.html"
@@ -198,6 +169,128 @@ def remainder_line_stems(published: dict[str, list[str]]) -> list[list[str]]:
     return [published_stems(remainder[name]) for name in REMAINDER_LINE_NAMES]
 
 
+def find_ngram_hits(sequences: list[list[str]], gram: tuple[str, ...]) -> list[tuple[int, int]]:
+    """(line_index, start) for every occurrence of gram."""
+    n = len(gram)
+    hits: list[tuple[int, int]] = []
+    for line_index, sequence in enumerate(sequences):
+        for start in range(len(sequence) - n + 1):
+            if tuple(sequence[start : start + n]) == gram:
+                hits.append((line_index, start))
+    return hits
+
+
+def variant_motifs(
+    motif: tuple[str, ...] = DELIMITER_MOTIF,
+    variants: tuple[str, ...] = FIRST_DELIMITER_VARIANTS,
+) -> tuple[tuple[str, ...], ...]:
+    """Guy motif with 315 or 375 in the 378 slot. Full 8, then short 4."""
+    slot = motif.index("378")
+    short_end = slot + 2
+    rows: list[tuple[str, ...]] = []
+    for variant in variants:
+        rows.append(motif[:slot] + (variant,) + motif[slot + 1 :])
+        rows.append(motif[:slot] + (variant,) + motif[slot + 1 : short_end])
+    return tuple(rows)
+
+
+def published_windows(
+    lines: list[list[str]],
+    motif: tuple[str, ...] = DELIMITER_MOTIF,
+    line_names: tuple[str, ...] = REMAINDER_LINE_NAMES,
+) -> tuple[tuple[str, int, int], ...]:
+    """Guy windows plus Ca6 315/375 variants. Search only."""
+    starts: set[tuple[int, int]] = set()
+    spans: list[tuple[str, int, int]] = []
+    for line_index, start in find_ngram_hits(lines, motif):
+        starts.add((line_index, start))
+        spans.append((line_names[line_index], start, start + len(motif)))
+    for gram in variant_motifs(motif):
+        n = len(gram)
+        for line_index, start in find_ngram_hits(lines, gram):
+            if (line_index, start) in starts:
+                continue
+            starts.add((line_index, start))
+            spans.append((line_names[line_index], start, start + n))
+    spans.sort(key=lambda row: (line_names.index(row[0]), row[1], row[2]))
+    return tuple(spans)
+
+
+def cell_table(
+    lines: list[list[str]],
+    windows: tuple[tuple[str, int, int], ...],
+    line_names: tuple[str, ...] = REMAINDER_LINE_NAMES,
+) -> tuple[tuple[str, int, int, int], ...]:
+    """Inter-window cells: (line, start, end, length). Empty edges kept."""
+    cells: list[tuple[str, int, int, int]] = []
+    for name, sequence in zip(line_names, lines):
+        line_windows = [(start, end) for line, start, end in windows if line == name]
+        starts = [0] + [end for _start, end in line_windows]
+        ends = [start for start, _end in line_windows] + [len(sequence)]
+        for start, end in zip(starts, ends):
+            cells.append((name, start, end, end - start))
+    return tuple(cells)
+
+
+def run_040_table(
+    lines: list[list[str]],
+    windows: tuple[tuple[str, int, int], ...],
+    stem: str = STEM_040,
+    line_names: tuple[str, ...] = REMAINDER_LINE_NAMES,
+) -> tuple[tuple[str, int, int, int, bool], ...]:
+    """Maximal 040 runs: (line, start, end, length, precedes_window)."""
+    runs: list[tuple[str, int, int, int, bool]] = []
+    for name, sequence in zip(line_names, lines):
+        index = 0
+        n = len(sequence)
+        while index < n:
+            if sequence[index] != stem:
+                index += 1
+                continue
+            start = index
+            while index < n and sequence[index] == stem:
+                index += 1
+            precedes = any(
+                line == name and w_start == index for line, w_start, _w_end in windows
+            )
+            runs.append((name, start, index, index - start, precedes))
+    return tuple(runs)
+
+
+def stem_hits(
+    lines: list[list[str]],
+    stem: str,
+    line_names: tuple[str, ...] = REMAINDER_LINE_NAMES,
+) -> tuple[tuple[str, int], ...]:
+    """(line, index) for every stem hit."""
+    return tuple(
+        (line_names[line_index], start)
+        for line_index, sequence in enumerate(lines)
+        for start, token in enumerate(sequence)
+        if token == stem
+    )
+
+
+def hit_is_window_adjacent(
+    line: str,
+    index: int,
+    cells: tuple[tuple[str, int, int, int], ...],
+    windows: tuple[tuple[str, int, int], ...],
+) -> bool:
+    """Last token facing a window, or first token of a cell after a window."""
+    line_cells = [cell for cell in cells if cell[0] == line]
+    for cell_index, (name, start, end, length) in enumerate(line_cells):
+        if index < start or index >= end or length == 0:
+            continue
+        position = index - start
+        follows_window = cell_index > 0
+        faces_window = any(w_line == name and w_start == end for w_line, w_start, _w_end in windows)
+        return (position == 0 and follows_window) or (
+            position == length - 1 and faces_window
+        )
+    return False
+
+
 class TestSecondPassageHelpers(unittest.TestCase):
     """Helpers on synthetic markup. No CV, no LLM."""
 
@@ -223,12 +316,22 @@ class TestSecondPassageHelpers(unittest.TestCase):
 
     def test_calendar_and_remainder_partition_ca6_ca9(self):
         """Ca6/Ca9 split on the published calendar bounds; Ca7–Ca8 stay first."""
+        empty = ["001"]
         published = {
+            "Ca1": empty,
+            "Ca2": empty,
+            "Ca3": empty,
+            "Ca4": empty,
+            "Ca5": empty,
             "Ca6": ["005", "600V", "390.041", "315y", "041"],
             "Ca7": ["040", "040"],
             "Ca8": ["280"],
             "Ca9": ["040", "040", "520", "070"],
-            "Ca1": ["001"],
+            "Ca10": empty,
+            "Ca11": empty,
+            "Ca12": empty,
+            "Ca13": empty,
+            "Ca14": empty,
         }
         calendar = calendar_published_tokens(published)
         remainder = remainder_published_tokens(published)
@@ -239,6 +342,25 @@ class TestSecondPassageHelpers(unittest.TestCase):
         self.assertEqual(calendar["Ca7"], ["040", "040"])
         self.assertNotIn("Ca7", remainder)
         self.assertNotIn("Ca8", remainder)
+
+    def test_600_window_adjacent_needs_a_window(self):
+        """First-after-window / last-facing-window; no window is not adjacent."""
+        motif = DELIMITER_MOTIF
+        lines = [["600"] + list(motif) + ["600", "040"], ["600"]]
+        names = ("L0", "L1")
+        windows = published_windows(lines, line_names=names)
+        cells = cell_table(lines, windows, line_names=names)
+        self.assertEqual(windows, (("L0", 1, 9),))
+        self.assertTrue(hit_is_window_adjacent("L0", 0, cells, windows))
+        self.assertTrue(hit_is_window_adjacent("L0", 9, cells, windows))
+        self.assertFalse(hit_is_window_adjacent("L1", 0, cells, windows))
+        empty = published_windows([["600", "040"]], line_names=("L0",))
+        self.assertEqual(empty, ())
+        self.assertFalse(
+            hit_is_window_adjacent(
+                "L0", 0, cell_table([["600", "040"]], empty, ("L0",)), empty
+            )
+        )
 
 
 class TestMamariSecondPassageScoreboard(unittest.TestCase):
@@ -253,11 +375,9 @@ class TestMamariSecondPassageScoreboard(unittest.TestCase):
         self.calendar = calendar_published_tokens(self.published)
         self.remainder = remainder_published_tokens(self.published)
         self.lines = remainder_line_stems(self.published)
-        self.cells = score_delimiter_cells(self.lines, line_names=REMAINDER_LINE_NAMES)
-        self.runs = score_040_run_profile(self.lines, line_names=REMAINDER_LINE_NAMES)
-        self.inventory = score_non040_inventory(
-            self.lines, line_names=REMAINDER_LINE_NAMES
-        )
+        self.windows = published_windows(self.lines)
+        self.cells = cell_table(self.lines, self.windows)
+        self.runs = run_040_table(self.lines, self.windows)
 
     def test_vendored_html_is_the_cited_ca_page(self):
         """Snapshot is the already-cited Ca.html; 14 published lines."""
@@ -314,48 +434,44 @@ class TestMamariSecondPassageScoreboard(unittest.TestCase):
         self.assertNotIn(DELIMITER_MOTIF, [gram for gram, _freq in eightgrams])
         for variant in variant_motifs(DELIMITER_MOTIF):
             self.assertEqual(find_ngram_hits(self.lines, variant), [])
-        self.assertEqual(self.cells.windows, ())
-        self.assertEqual(len(self.cells.windows), STANDING_WINDOW_COUNT)
+        self.assertEqual(self.windows, ())
+        self.assertEqual(len(self.windows), STANDING_WINDOW_COUNT)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_600_is_present_but_not_window_adjacent(self):
         """Five 600 hits; no window, so none are window-adjacent."""
-        hits = [
-            (REMAINDER_LINE_NAMES[line_index], start)
-            for line_index, sequence in enumerate(self.lines)
-            for start, token in enumerate(sequence)
-            if token == "600"
-        ]
-        self.assertEqual(tuple(hits), STANDING_600_HITS)
+        hits = stem_hits(self.lines, STEM_600)
+        self.assertEqual(hits, STANDING_600_HITS)
         self.assertEqual(len(hits), STANDING_600_COUNT)
-        by_stem = {row.stem: row for row in self.inventory.rows}
-        self.assertEqual(by_stem["600"].count, STANDING_600_COUNT)
-        self.assertEqual(by_stem["600"].window_adjacent, STANDING_600_WINDOW_ADJACENT)
-        self.assertFalse(by_stem["600"].window_adjacent)
+        adjacent = any(
+            hit_is_window_adjacent(line, index, self.cells, self.windows)
+            for line, index in hits
+        )
+        self.assertEqual(adjacent, STANDING_600_WINDOW_ADJACENT)
+        self.assertFalse(adjacent)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_040_run_and_cell_counts(self):
         """Six length-1 040 runs on Ca10–Ca12; twelve windowless cells."""
-        locked = tuple(run_tuple(run) for run in self.runs.runs)
-        self.assertEqual(len(locked), STANDING_040_RUN_COUNT)
-        self.assertEqual(locked, STANDING_040_RUNS)
+        self.assertEqual(len(self.runs), STANDING_040_RUN_COUNT)
+        self.assertEqual(self.runs, STANDING_040_RUNS)
         self.assertEqual(
-            tuple(run.length for run in self.runs.runs),
+            tuple(length for _line, _start, _end, length, _pre in self.runs),
             STANDING_040_RUN_LENGTHS,
         )
         self.assertEqual(
-            sum(run.length for run in self.runs.runs),
+            sum(length for _line, _start, _end, length, _pre in self.runs),
             STANDING_040_TOKEN_COUNT,
         )
-        self.assertTrue(all(not run.precedes_delimiter for run in self.runs.runs))
-        self.assertEqual(len(self.cells.cells), STANDING_CELL_COUNT)
+        self.assertTrue(all(not precedes for _line, _start, _end, _length, precedes in self.runs))
+        self.assertEqual(len(self.cells), STANDING_CELL_COUNT)
         self.assertEqual(
-            sum(1 for cell in self.cells.cells if cell.length == 0),
+            sum(1 for _line, _start, _end, length in self.cells if length == 0),
             STANDING_EMPTY_CELL_COUNT,
         )
-        self.assertTrue(all(cell.following_window is None for cell in self.cells.cells))
+        self.assertEqual(self.windows, ())
         self.assertEqual(
-            tuple(cell.length for cell in self.cells.cells),
+            tuple(length for _line, _start, _end, length in self.cells),
             STANDING_REMAINDER_STEM_COUNTS,
         )
         self.assertEqual(self.provider.get_call_history(), [])
@@ -396,42 +512,10 @@ class TestMamariSecondPassageScoreboard(unittest.TestCase):
                 "cb_html",
             },
         )
-        self.assertEqual(self.provider.get_call_history(), [])
-
-
-class TestMamariSecondPassageImageSnapshot(unittest.TestCase):
-    """Cycle 28 does not touch clustering. 83/62 / Hamming 6 stays."""
-
-    def setUp(self):
-        self.paths = [TRACING_DIR / name for name in TRACING_NAMES]
-        for path in self.paths:
-            self.assertTrue(path.is_file(), f"missing vendored tracing {path.name}")
-        self.provider = MockProvider()
-        self.analyzer = NgramAnalyzer(llm_provider=self.provider)
-        self.instances = process_tracings(self.paths)
-        self.image_lines = ca7_ca8_sequences(self.instances)
-        self.published_lines = published_ca7_ca8_stems()
-
-    def test_image_snapshot_unchanged(self):
-        """Text lock does not merge types. 83/62 / published Hamming 6 / 0/8."""
-        published = self.published_lines
-        window = score_delimiter_windows(self.instances, self.image_lines, published)
-        published_ca7, published_ca8 = published_ca7_ca8_stem_counts()
-        identity = score_type_identity(
-            self.instances, self.analyzer, published_ca7, published_ca8
-        )
-        grams = tuple(w.image_ids for w in window.windows)
-        self.assertEqual(window.instance_count, 83)
-        self.assertEqual(window.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
-        self.assertEqual(identity.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
-        self.assertEqual(identity.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
-        self.assertEqual(identity.ca7_length, STANDING_CA7_LEN)
-        self.assertEqual(identity.ca8_length, STANDING_CA8_LEN)
-        self.assertEqual(min_pairwise_window_hamming(grams), STANDING_PUBLISHED_MIN_HAMMING)
-        self.assertEqual(min_pairwise_window_hamming(grams), 6)
-        self.assertEqual(window.slot_matches, STANDING_SLOT_MATCHES)
-        unique_counts = tuple(len(set(ids)) for ids in window.slot_ids)
-        self.assertEqual(unique_counts, STANDING_SLOT_UNIQUE_COUNTS)
+        image = self.survey["standing_image_lock"]
+        self.assertEqual(image["instances"], 83)
+        self.assertEqual(image["types"], 62)
+        self.assertEqual(image["published_min_hamming"], 6)
         self.assertEqual(self.provider.get_call_history(), [])
 
 
