@@ -592,6 +592,35 @@
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
+  "aruku_bv_8gram_motif": {
+    "cycle": 45,
+    "passage": "tablet_b_aruku_kurenga_verso",
+    "br_passage": "tablet_b_aruku_kurenga_recto",
+    "aa_passage": "tablet_a_tahua_side_a",
+    "ab_passage": "tablet_a_tahua_side_b",
+    "calendar_passage": "ca6_ca9_calendar",
+    "remainder_passage": "ca_side_a_remainder",
+    "cb_passage": "tablet_c_side_b",
+    "motif_tokens": ["002", "065", "042", "300", "385", "003", "065", "200"],
+    "motif_n": 8,
+    "motif_freq": 2,
+    "motif_spans": [["Bv5", 18, 26], ["Bv6", 39, 47]],
+    "bv_motif_hits": [
+      ["Bv5", 18, 26, "663", "236"],
+      ["Bv6", 39, 47, "673", "092"]
+    ],
+    "br_motif_hits": [],
+    "aa_motif_hits": [],
+    "ab_motif_hits": [],
+    "calendar_motif_hits": [],
+    "remainder_motif_hits": [],
+    "cb_motif_hits": [],
+    "br_absent": true,
+    "aa_absent": true,
+    "ab_absent": true,
+    "c_absent": true,
+    "cross_absent": true
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",
