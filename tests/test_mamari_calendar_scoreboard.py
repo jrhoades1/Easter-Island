@@ -34,6 +34,9 @@ Cycle 31 locks the six remainder 002…002 n=9 wraps as a family
 stems). Bookend 002 is not a delimiter claim.
 Cycle 32 vendors Kohaumotu Cb.html (verso of the cited Ca.html)
 and locks Guy-delimiter / 9-gram / 002-wrap / 600 counts on Cb only.
+Cycle 33 locks that verso's n≥4 freq≥2 profile (12 n-grams;
+longest n=5; no repeating 8-gram; longest is not Guy's
+delimiter or the Ca 9-gram).
 """
 
 import json
