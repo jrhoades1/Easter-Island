@@ -57,3 +57,18 @@ Cycle 46 (2026-08-27)
     top 8-gram: none
   Existing A / B / C scoreboards are unchanged.
   Image track stays parked. No new image. No clustering change.
+
+Cycle 47 (2026-08-27)
+  999 on this Ia.html fixture (search lock, no meaning invented):
+    documented cue in Ia.html / ATTRIBUTION: none
+      (not named as gap, damage, line-end, or a Barthel type)
+    stem count: 97
+    cycle-46 5-gram prefix: 3 (Ia4[6], Ia4[25], Ia5[108])
+    isolated (not that prefix): 94
+    published forms: 999×87, 999h×6, 999t×3, 999.440.076×1
+    as stem: longest remains 999 071 076 010 079 (freq 3)
+    as break (split sequences at 999): 2372 stems,
+      longest n with freq≥2 still 5 (four grams, all freq 2),
+      no repeating 8-gram
+  Existing A / B / C / Ia cycle-46 scoreboards are unchanged.
+  Image track stays parked. No Ib scrape.
