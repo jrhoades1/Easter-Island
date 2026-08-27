@@ -97,6 +97,14 @@ class ProcessorConfig:
     # not read Barthel stems. False keeps the cycle-9 lock.
     split_inconsistent_types: bool = True
 
+    # Global same-type stitch after DBSCAN. Stock eps=0.5 leaves almost
+    # every glyph its own type. The cycle 7–8 keep-ID gate (unsigned Hu
+    # < 2.0 and, when both profiles exist, r >= 0.85) is applied to
+    # every instance pair, not only delimiter slots. Connected
+    # components are re-partitioned so a shared ID never includes a
+    # failing pair. Does not loosen the gate. False keeps cycle 14.
+    global_type_consistency_merge: bool = True
+
     # Merge instances that occupy the same published delimiter SLOT
     # (0–7) across Guy windows. Starts are reading-order indexes only —
     # not stem identities. A pair unions if it passes type-consistency
@@ -999,6 +1007,8 @@ class GlyphProcessor:
             )
             clusters.append(cluster)
 
+        if self.config.global_type_consistency_merge:
+            self._merge_global_type_consistency(instances)
         if self.config.same_line_allograph_merge:
             self._merge_same_line_allographs(instances)
         if self.config.split_fragment_allograph_merge:
@@ -1010,7 +1020,8 @@ class GlyphProcessor:
         if self.config.delimiter_slot_merge:
             self._merge_delimiter_slot_allographs(instances)
         if (
-            self.config.same_line_allograph_merge
+            self.config.global_type_consistency_merge
+            or self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
             or self.config.wide_profile_allograph_merge
             or self.config.split_inconsistent_types
@@ -1019,6 +1030,74 @@ class GlyphProcessor:
             clusters = self._clusters_from_assigned_ids(instances)
 
         return clusters, instances
+
+    def _merge_global_type_consistency(self, instances: list[GlyphInstance]) -> None:
+        """Union any instances that pass the cycle 7–8 same-type gates.
+
+        Global: not limited to delimiter slots, same-line adjacency, or
+        split fragments. Pairwise unsigned Hu < 2.0 and, when both
+        profiles exist, r >= 0.85. Connected components are then
+        re-partitioned so every pair that keeps a shared ID still
+        passes. Instance-local. Does not look up stems.
+        """
+        if len(instances) < 2:
+            return
+
+        parent = list(range(len(instances)))
+
+        def find(x: int) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(i: int, j: int) -> None:
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+
+        merged = False
+        for i in range(len(instances)):
+            for j in range(i + 1, len(instances)):
+                if passes_type_consistency_gates(
+                    instances[i], instances[j], self.config
+                ):
+                    union(i, j)
+                    merged = True
+        if not merged:
+            return
+
+        components: dict[int, list[int]] = {}
+        for i in range(len(instances)):
+            components.setdefault(find(i), []).append(i)
+
+        merge_n = 0
+        for members in components.values():
+            unique = sorted(set(members), key=lambda i: instances[i].instance_id)
+            if len(unique) < 2:
+                continue
+            parts: list[list[int]] = []
+            for i in unique:
+                placed = False
+                for part in parts:
+                    if all(
+                        passes_type_consistency_gates(
+                            instances[i], instances[j], self.config
+                        )
+                        for j in part
+                    ):
+                        part.append(i)
+                        placed = True
+                        break
+                if not placed:
+                    parts.append([i])
+            for part in parts:
+                if len(part) < 2:
+                    continue
+                merge_n += 1
+                shared_id = f"T{merge_n:03d}"
+                for i in part:
+                    instances[i].cluster_id = shared_id
 
     def _merge_same_line_allographs(self, instances: list[GlyphInstance]) -> None:
         """Union adjacent same-line instances that pass area / aspect / Hu gates.

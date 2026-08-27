@@ -44,10 +44,12 @@ KNOWN_LIGATURE_TOKENS = ("390.041", "008.078.711")
 STANDING_MIXED_HITS = (
     ("Ca7", 32, 34, ("G007", "G006"), ("600", "390"), False, False, False),
     ("Ca8", 14, 16, ("G007", "G006"), ("040", "390"), False, False, False),
+    ("Ca8", 4, 6, ("G011", "G013"), ("041", "378"), True, True, False),
+    ("Ca8", 29, 31, ("G011", "G013"), ("390", "041"), True, True, True),
 )
-STANDING_DELIMITER_HITS = 0
-STANDING_LIGATURE_HITS = 0
-STANDING_HIT_TOTAL = 2
+STANDING_DELIMITER_HITS = 2
+STANDING_LIGATURE_HITS = 1
+STANDING_HIT_TOTAL = 4
 
 
 @dataclass(frozen=True)
@@ -179,7 +181,7 @@ def score_position_alignment(
     image_lines: list[list[str]],
     published_lines: list[list[str]],
 ) -> PositionAlignmentScore:
-    """Record mixed-n-gram alignment plus the standing 83/64 / 43+40 lock."""
+    """Record mixed-n-gram alignment plus the standing 83/62 / 43+40 lock."""
     grams = [gram for gram, _freq in STANDING_MIXED_REPEATING]
     hits = score_mixed_ngram_alignment(image_lines, published_lines, grams)
     cluster_ids = [inst.cluster_id for inst in instances if inst.cluster_id]
@@ -281,7 +283,7 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
         )
 
     def test_standing_counts_unchanged(self):
-        """Cycle 12 snapshot: 83/64 / 43+40, mixed 2-gram."""
+        """Cycle 15 snapshot: 83/62 / 43+40, two mixed 2-grams."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -298,20 +300,25 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_mixed_ngrams_align_to_published_stems(self):
-        """Lock published stems under each mixed n-gram and the two hit-rates.
+        """Lock published stems under each mixed n-gram and the hit-rates.
 
-        Honest result: the remaining 2-gram sits immediately left of two
-        slot-0 390 merges, not on a delimiter span (0/2). Not a ligature
-        encoding. Do not treat the new pair as Guy's motif.
+        G007 G006 still sits immediately left of two slot-0 390 merges,
+        off the delimiter. G011 G013 is a new cycle-15 2-gram on two
+        Ca8 delimiter slices (041 378 vs 390 041) — not a slot match
+        and not Guy's 8-stem motif. Do not treat either pair as a
+        G00n→Barthel type map.
         """
         s = self.score
         self.assertEqual([hit_tuple(hit) for hit in s.hits], list(STANDING_MIXED_HITS))
         self.assertEqual(s.delimiter_hits, STANDING_DELIMITER_HITS)
         self.assertEqual(s.ligature_hits, STANDING_LIGATURE_HITS)
         self.assertEqual(s.hit_total, STANDING_HIT_TOTAL)
-        self.assertEqual(s.delimiter_hits, 0)
-        self.assertEqual(s.ligature_hits, 0)
-        self.assertFalse(any(hit.on_delimiter_span for hit in s.hits))
+        off = [hit for hit in s.hits if hit.image_gram == ("G007", "G006")]
+        on = [hit for hit in s.hits if hit.image_gram == ("G011", "G013")]
+        self.assertEqual(len(off), 2)
+        self.assertEqual(len(on), 2)
+        self.assertFalse(any(hit.on_delimiter_span or hit.in_delimiter for hit in off))
+        self.assertTrue(all(hit.on_delimiter_span and hit.in_delimiter for hit in on))
         self.assertEqual(self.provider.get_call_history(), [])
 
 

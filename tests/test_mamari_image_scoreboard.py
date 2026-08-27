@@ -171,10 +171,9 @@ class TestMamariImageScoreboard(unittest.TestCase):
     def test_repeating_8gram_delimiter_proxy(self):
         """Repeating 8-gram (freq ≥2) is the image-side delimiter analogue.
 
-        Expected to fail: no Barthel remapping; same-slot stitches that
-        pass Hu/profile, plus the slot-0 crop check, still yield a mixed
-        2-gram, not a repeating 8-gram. Delimiter-window slot matches
-        stay 0/8.
+        Expected to fail: no Barthel remapping; the global keep-ID pass
+        still yields mixed 2-grams, not a repeating 8-gram.
+        Delimiter-window slot matches stay 0/8.
         """
         ngrams = self.ngram_analyzer.extract_ngrams(self.lines, n=8, min_frequency=2)
         self.assertTrue(

@@ -240,7 +240,7 @@ class TestMamariNeighborAllographScoreboard(unittest.TestCase):
         self.cfg = ProcessorConfig()
 
     def test_cycle6_snapshot_unchanged(self):
-        """PR snapshot: 83/64 / 43+40, mixed 2-gram, no 8-gram."""
+        """PR snapshot: 83/62 / 43+40, two mixed 2-grams, no 8-gram."""
         cluster_ids = [inst.cluster_id for inst in self.instances if inst.cluster_id]
         self.assertEqual(len(cluster_ids), sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(len(set(cluster_ids)), STANDING_UNIQUE_CLUSTERS)
@@ -323,13 +323,13 @@ class TestMamariNeighborAllographScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cycle6_hits_still_delimiter_aligned(self):
-        """Standing mixed hits are the remaining 2-gram; off the delimiter."""
-        self.assertEqual(len(STANDING_MIXED_HITS), 2)
-        self.assertFalse(any(row[5] or row[6] for row in STANDING_MIXED_HITS))
-        self.assertEqual(
-            [row[3] for row in STANDING_MIXED_HITS],
-            [("G007", "G006"), ("G007", "G006")],
-        )
+        """G007 G006 stays off the delimiter; G011 G013 is on it, not a slot match."""
+        off = [row for row in STANDING_MIXED_HITS if row[3] == ("G007", "G006")]
+        on = [row for row in STANDING_MIXED_HITS if row[3] == ("G011", "G013")]
+        self.assertEqual(len(off), 2)
+        self.assertEqual(len(on), 2)
+        self.assertFalse(any(row[5] or row[6] for row in off))
+        self.assertTrue(all(row[5] and row[6] for row in on))
         self.assertEqual(
             [row[3] for row in STANDING_MIXED_HITS if len(row[3]) == 3],
             [],
