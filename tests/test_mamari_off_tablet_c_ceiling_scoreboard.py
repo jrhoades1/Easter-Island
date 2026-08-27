@@ -111,6 +111,7 @@ STANDING_OTHER_TABLET_URLS = (
     "http://kohaumotu.org/Rongorongo/G/Gv.html",
     "http://kohaumotu.org/Rongorongo/I/Ia.html",
     "http://kohaumotu.org/Rongorongo/K/Kr.html",
+    "http://kohaumotu.org/Rongorongo/K/Kv.html",
 )
 STANDING_RESULT = "tablet_c_corpus_ceiling"
 STANDING_VENDABLE_TABLETS = ("C",)
@@ -132,6 +133,7 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/Rongorongo/I/Ia.html",
     "http://kohaumotu.org/Rongorongo/I/index.html",
     "http://kohaumotu.org/Rongorongo/K/Kr.html",
+    "http://kohaumotu.org/Rongorongo/K/Kv.html",
     "http://kohaumotu.org/Rongorongo/K/index.html",
     "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
     "http://kohaumotu.org/Rongorongo/tablets.html",
@@ -151,6 +153,7 @@ STANDING_VENDORED_BARTHEL_PAGES = (
     "Gv.html",
     "Ia.html",
     "Kr.html",
+    "Kv.html",
 )
 STANDING_INDEX_KIND = "same_folder_contents"
 STANDING_INDEX_DIFFERENT_TABLET = False
@@ -305,7 +308,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cited_kohaumotu_urls_are_tablet_c_or_license(self):
-        """Navbar-era sources stay C. Cycles 36/38 cite A; 43/44 B; 46 I; 55/56 G; 59 K."""
+        """Navbar-era sources stay C. Cycles 36/38 cite A; 43/44 B; 46 I; 55/56 G; 59/60 K."""
         self.assertEqual(self.cited_urls, STANDING_CITED_KOHAUMOTU_URLS)
         letters = tuple(
             sorted(
@@ -325,7 +328,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_no_other_tablet_html_was_vendored(self):
-        """Ca/Cb plus Aa, Ab, Br, Bv, Ia, Gr, Gv, and cycle-59 Kr.html."""
+        """Ca/Cb plus Aa, Ab, Br, Bv, Ia, Gr, Gv, Kr, and cycle-60 Kv.html."""
         fixtures = Path(__file__).parent / "fixtures"
         barthel_pages = tuple(
             sorted(path.name for path in fixtures.glob("**/*[A-Z][abrv].html"))

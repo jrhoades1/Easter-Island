@@ -1,0 +1,65 @@
+Small London (Barthel text K) verso — Kohaumotu Kv.html
+=======================================================
+
+Files
+  Kv.html        http://kohaumotu.org/Rongorongo/K/Kv.html
+  K_index.html   already vendored in cycle 59
+                 tests/fixtures/small_london_kr_html/K_index.html
+                 http://kohaumotu.org/Rongorongo/K/index.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet K / Small London
+  → K/index.html
+  http://kohaumotu.org/Rongorongo/K/index.html
+  published all-lines Barthel HTML: Kr.html (recto) and Kv.html (verso)
+  http://kohaumotu.org/Rongorongo/K/Kr.html
+  http://kohaumotu.org/Rongorongo/K/Kv.html
+  Cycle 59 vendored the documented recto Kr.html and stopped
+  without scraping Kv.html. This cycle vendors the documented
+  verso. Same Gr vs Ga lesson: Ka.html is not a published page.
+  Tablet D is not scraped. Do not scrape a different tablet letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Kv.html as retrieved 2026-08-27. Barthel numbers sit in <td>
+  text under each line strip (Kv1–Kv5). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  Ka.html (unpublished; not listed on K/index.html)
+  a second copy of Kr.html (already vendored in cycle 59)
+  tablet D / Échancrée or any other substitute tablet
+  fi_Kv.html / Fischer pages
+  K_svg_codes_b.html
+  individualized Kv01.html … Kv05.html slices
+
+Cycle 60 (2026-08-27)
+  Same Kohaumotu catalog already used for A / B / C / I / G / Kr.
+  Search lock on Kv.html only (no type map):
+    stem count: 95 (11 25 29 29 1)
+    Ca 9-gram (C): absent
+    Aa 10-gram (A): absent
+    Ab 9-gram (A): absent
+    Bv 8-gram (B): absent
+    Ia top 5-gram 999 071 076 010 079: absent
+    076 rate: 0 / 95 (rate < 0.10)
+    090 076: 0
+    076 071: 0
+    430 076: 0
+    076 200: 0
+  Existing A / B / C / I / G / Kr scoreboards are unchanged.
+  Cycle 59 Kr.html lock stays. Image track stays parked.
+  No D scrape. No type merge. No CV.
