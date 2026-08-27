@@ -24,8 +24,8 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 5 standing lock (cycle 4 + split-fragment allograph stitch).
-# Cycle 4 was 83 inst / 67 types / mixed False. Cycle 3 was 75/58 / 39+36.
+# Cycle 10 standing lock (cycle 9 + inconsistent-type split).
+# Cycle 9 was 83/62 / mixed 3-gram. Cycle 4 was 67 types. Cycle 3 was 75/58.
 # Cycle 2 was 65 types. Cycle 1 signed lock was 71.
 STANDING_INSTANCES_PER_STRIP = {
     "sca0701.gif": 14,
@@ -43,7 +43,7 @@ CYCLE3_INSTANCES_PER_STRIP = {
     "sca0802.gif": 12,
     "sca0803.gif": 12,
 }
-STANDING_UNIQUE_CLUSTERS = 62
+STANDING_UNIQUE_CLUSTERS = 66
 CYCLE9_UNIQUE_CLUSTERS = 62
 CYCLE4_UNIQUE_CLUSTERS = 67
 CYCLE3_UNIQUE_CLUSTERS = 58
@@ -56,9 +56,7 @@ CYCLE3_CA7_LEN = 39
 CYCLE3_CA8_LEN = 36
 STANDING_HAS_MIXED_REPEATING = True
 STANDING_MIXED_REPEATING = (
-    (("G004", "G003"), 3),
-    (("G009", "G004"), 2),
-    (("G009", "G004", "G003"), 2),
+    (("G003", "G008"), 2),
 )
 CYCLE9_MIXED_REPEATING = (
     (("G004", "G003"), 3),
@@ -278,6 +276,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(s.instances_per_strip, STANDING_INSTANCES_PER_STRIP)
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertGreater(s.unique_cluster_count, CYCLE9_UNIQUE_CLUSTERS)
         self.assertGreater(s.unique_cluster_count, CYCLE3_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE4_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
@@ -366,8 +365,13 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_split_fragment_merge_disabled_restores_cycle4_snapshot(self):
-        """split_fragment_allograph_merge=False keeps the cycle-4 67-type lock."""
-        raw = GlyphProcessor(ProcessorConfig(split_fragment_allograph_merge=False))
+        """Cycle-4 path: no split-fragment stitch and no consistency split."""
+        raw = GlyphProcessor(
+            ProcessorConfig(
+                split_fragment_allograph_merge=False,
+                split_inconsistent_types=False,
+            )
+        )
         instances = process_tracings(self.paths, processor=raw)
         score = score_type_identity(
             instances,

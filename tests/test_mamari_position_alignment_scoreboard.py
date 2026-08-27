@@ -42,17 +42,12 @@ KNOWN_LIGATURE_TOKENS = ("390.041", "008.078.711")
 
 # (line, start, end, image_gram, published_stems, on_delimiter, in_delimiter, in_ligature)
 STANDING_MIXED_HITS = (
-    ("Ca7", 39, 41, ("G004", "G003"), ("078", "711"), True, True, True),
-    ("Ca8", 8, 10, ("G004", "G003"), ("008", "078"), True, True, True),
-    ("Ca8", 19, 21, ("G004", "G003"), ("670", "008"), True, True, False),
-    ("Ca8", 7, 9, ("G009", "G004"), ("670", "008"), True, True, False),
-    ("Ca8", 18, 20, ("G009", "G004"), ("041", "670"), True, True, False),
-    ("Ca8", 7, 10, ("G009", "G004", "G003"), ("670", "008", "078"), True, True, False),
-    ("Ca8", 18, 21, ("G009", "G004", "G003"), ("041", "670", "008"), True, True, False),
+    ("Ca8", 8, 10, ("G003", "G008"), ("008", "078"), True, True, True),
+    ("Ca8", 19, 21, ("G003", "G008"), ("670", "008"), True, True, False),
 )
-STANDING_DELIMITER_HITS = 7
-STANDING_LIGATURE_HITS = 2
-STANDING_HIT_TOTAL = 7
+STANDING_DELIMITER_HITS = 2
+STANDING_LIGATURE_HITS = 1
+STANDING_HIT_TOTAL = 2
 
 
 @dataclass(frozen=True)
@@ -184,7 +179,7 @@ def score_position_alignment(
     image_lines: list[list[str]],
     published_lines: list[list[str]],
 ) -> PositionAlignmentScore:
-    """Record mixed-n-gram alignment plus the standing 83/62 / 43+40 lock."""
+    """Record mixed-n-gram alignment plus the standing 83/66 / 43+40 lock."""
     grams = [gram for gram, _freq in STANDING_MIXED_REPEATING]
     hits = score_mixed_ngram_alignment(image_lines, published_lines, grams)
     cluster_ids = [inst.cluster_id for inst in instances if inst.cluster_id]
@@ -286,7 +281,7 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
         )
 
     def test_standing_counts_unchanged(self):
-        """Cycle 6 does not retune detection; 83/62 / 43+40 stays locked."""
+        """Cycle 10 snapshot: 83/66 / 43+40, mixed 2-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -305,11 +300,10 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
     def test_mixed_ngrams_align_to_published_stems(self):
         """Lock published stems under each mixed n-gram and the two hit-rates.
 
-        Honest result: every hit sits on a delimiter span and its published
-        slice is a delimiter subsequence (7/7). Only two G004 G003 hits are
-        a known ligature encoding (078 711 and 008 078 ⊂ 8.78.711). The
-        repeating 3-gram is 670 008 078 and 041 670 008 — delimiter-internal
-        splitter offsets, not 390.041 / 008.078.711.
+        Honest result: both remaining 2-gram hits sit on a delimiter span
+        (2/2). One is a known ligature encoding (008 078 ⊂ 8.78.711). The
+        other is 670 008 — still delimiter-internal, not a consistent
+        encoding of one stem pair.
         """
         s = self.score
         self.assertEqual([hit_tuple(hit) for hit in s.hits], list(STANDING_MIXED_HITS))
@@ -317,7 +311,7 @@ class TestMamariPositionAlignmentScoreboard(unittest.TestCase):
         self.assertEqual(s.ligature_hits, STANDING_LIGATURE_HITS)
         self.assertEqual(s.hit_total, STANDING_HIT_TOTAL)
         self.assertEqual(s.delimiter_hits / s.hit_total, 1.0)
-        self.assertEqual(s.ligature_hits / s.hit_total, 2 / 7)
+        self.assertEqual(s.ligature_hits / s.hit_total, 1 / 2)
         self.assertTrue(all(hit.on_delimiter_span for hit in s.hits))
         self.assertEqual(self.provider.get_call_history(), [])
 

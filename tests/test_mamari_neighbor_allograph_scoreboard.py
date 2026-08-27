@@ -240,7 +240,7 @@ class TestMamariNeighborAllographScoreboard(unittest.TestCase):
         self.cfg = ProcessorConfig()
 
     def test_cycle6_snapshot_unchanged(self):
-        """PR snapshot vs cycle 6: 83/62 / 43+40, mixed 3-gram, no 8-gram."""
+        """PR snapshot: 83/66 / 43+40, mixed 2-gram, no 8-gram."""
         cluster_ids = [inst.cluster_id for inst in self.instances if inst.cluster_id]
         self.assertEqual(len(cluster_ids), sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(len(set(cluster_ids)), STANDING_UNIQUE_CLUSTERS)
@@ -248,7 +248,7 @@ class TestMamariNeighborAllographScoreboard(unittest.TestCase):
         self.assertEqual(len(self.image_lines[1]), STANDING_CA8_LEN)
         mixed = mixed_repeating_ngrams(self.image_lines, self.ngram_analyzer)
         self.assertEqual(mixed, list(STANDING_MIXED_REPEATING))
-        self.assertEqual(longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 3)
+        self.assertEqual(longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 2)
         eight = self.ngram_analyzer.extract_ngrams(
             self.image_lines, n=8, min_frequency=2
         )
@@ -319,16 +319,20 @@ class TestMamariNeighborAllographScoreboard(unittest.TestCase):
                     self.assertEqual(side, "right")
                     self.assertEqual((score.index_a, score.index_b), (41, 10))
         self.assertEqual(passing, 1)
-        self.assertEqual(longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 3)
+        self.assertEqual(longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 2)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cycle6_hits_still_delimiter_aligned(self):
-        """Standing mixed hits are unchanged; still the cycle-6 lock rows."""
-        self.assertEqual(len(STANDING_MIXED_HITS), 7)
+        """Standing mixed hits are the remaining 2-gram; still delimiter-aligned."""
+        self.assertEqual(len(STANDING_MIXED_HITS), 2)
         self.assertTrue(all(row[5] and row[6] for row in STANDING_MIXED_HITS))
         self.assertEqual(
+            [row[3] for row in STANDING_MIXED_HITS],
+            [("G003", "G008"), ("G003", "G008")],
+        )
+        self.assertEqual(
             [row[3] for row in STANDING_MIXED_HITS if len(row[3]) == 3],
-            [("G009", "G004", "G003"), ("G009", "G004", "G003")],
+            [],
         )
         self.assertEqual(self.provider.get_call_history(), [])
 
