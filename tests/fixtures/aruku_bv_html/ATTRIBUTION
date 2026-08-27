@@ -1,0 +1,58 @@
+Aruku-Kurenga (Barthel text B) verso — Kohaumotu Bv.html
+=======================================================
+
+File
+  Bv.html
+
+Source page (verso of the already-cited Br.html; same publisher)
+  http://kohaumotu.org/Rongorongo/B/Bv.html
+  Navbar link from http://kohaumotu.org/Rongorongo/B/Br.html
+  Also listed on http://kohaumotu.org/Rongorongo/B/index.html
+  (Verso, all lines)
+
+Source chain (parent catalog already vendored in cycle 36; same publisher)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  first tablet that is not A and not C with a page is B Aruku-Kurenga
+  → B/index.html
+  http://kohaumotu.org/Rongorongo/B/index.html
+  Barthel-number HTML: Bv.html (Verso, all lines)
+  http://kohaumotu.org/Rongorongo/B/Bv.html
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  The published page as retrieved 2026-08-27. Barthel numbers sit in
+  <td> text under each line strip (Bv1–Bv12). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  fi_Bv.html / Fischer pages (not the Barthel all-lines page)
+  B_svg_codes_b.html (SVG overlay; not the Bv.html number table)
+  individualized Bv01.html … Bv12.html slices
+
+Cycle 44 (2026-08-27)
+  Same Kohaumotu tablet-B source already used for Br. Search lock
+  on Bv.html only (no type map):
+    Guy 8-stem delimiter 390 041 378 041 670 008 078 711: absent
+      (freq 0, no spans)
+    Ca 9-gram 002 010 070 760 040 006 430 047 002: absent
+    Aa 10-gram 080 004 280 182 048 022 025 025 009 005: absent
+    Ab 9-gram 605 003 004 600 004 003 040 003 050: absent
+    004 600 004 sandwich: absent (freq 0)
+    stem count: 738
+    longest n with freq≥2: 8
+    longest: 002 065 042 300 385 003 065 200 (freq 2) on Bv5/Bv6
+    top 8-gram: 002 065 042 300 385 003 065 200 (freq 2); not Guy
+  Existing A / Br / C scoreboards are unchanged.
+  Image track stays parked. No new image. No clustering change.

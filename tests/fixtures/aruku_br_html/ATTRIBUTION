@@ -33,7 +33,7 @@ What was copied
   that HTML, not typed from memory. Image cells were skipped.
 
 Not vendored here
-  Bv.html (verso; later cycle if needed)
+  Bv.html (verso; cycle 44 vendors tests/fixtures/aruku_bv_html/Bv.html)
   fi_Br.html / Fischer pages (not the Barthel all-lines page)
   B_svg_codes_b.html (SVG overlay; not the Br.html number table)
   individualized Br01.html … Br10.html slices
