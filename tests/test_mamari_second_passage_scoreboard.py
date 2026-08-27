@@ -30,7 +30,9 @@ locks that Ab 9-gram as a motif (hits, flanks, 8-prefix,
 600-slot, absent on Aa / Ca calendar / remainder / Cb).
 Cycle 40 locks a 600 inventory on those same fixtures
 only (hits, flanks, motif membership, calendar
-window-adjacency, per-fixture counts).
+window-adjacency, per-fixture counts). Cycle 41 locks
+the 004 600 004 sandwich and per-fixture 600 neighbor
+tops on that same inventory.
 Image track stays parked. MockProvider only.
 """
 
