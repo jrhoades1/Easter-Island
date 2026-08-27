@@ -734,17 +734,22 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         self.assertNotEqual(clustered[0].cluster_id, clustered[2].cluster_id)
 
     def test_different_slots_do_not_merge(self):
-        """Matching features in different slot indexes stay distinct."""
+        """Matching profiles in different slot indexes stay distinct.
+
+        Hu is far so DBSCAN does not pre-group them. Wide-profile r
+        would pass if they shared a slot; they do not.
+        """
         ramp = [float(i) for i in range(32)]
         a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, ramp, total=2)
         filler = self._inst(
             "x", "sca0701.gif", 1, [9.0] + [0.0] * 6, [0.0] * 32, total=2
         )
-        b = self._inst("b", "sca0801.gif", 1, [0.0] * 7, ramp, total=2)
+        b = self._inst("b", "sca0801.gif", 1, [5.0] + [0.0] * 6, ramp, total=2)
         other = self._inst(
             "y", "sca0801.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
         )
         self.assertTrue(passes_delimiter_slot_gates(a, b))
+        self.assertGreater(_hu_distance(a, b), 2.0)
         processor = GlyphProcessor(
             ProcessorConfig(
                 delimiter_window_len=2,
