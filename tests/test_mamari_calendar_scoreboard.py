@@ -39,6 +39,11 @@ longest n=5; no repeating 8-gram; longest is not Guy's
 delimiter or the Ca 9-gram).
 Cycle 34 locks those three Cb 5-grams on the existing Ca
 calendar and Ca remainder fixtures only (all absent).
+Cycle 35 locks the off-tablet-C corpus ceiling: no other
+Kohaumotu Barthel page is honestly linked from Ca.html /
+Cb.html navbars or in-repo ATTRIBUTION / CORPUS_SURVEY /
+README. Tablet C is the only Kohaumotu Barthel we can
+vendor without a new uncited scrape.
 """
 
 import json

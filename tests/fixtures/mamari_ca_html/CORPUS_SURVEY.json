@@ -199,6 +199,55 @@
     "top_8gram_is_guy_delimiter": false,
     "top_8gram_is_ca_9gram": false
   },
+  "off_tablet_c_ceiling": {
+    "cycle": 35,
+    "result": "tablet_c_corpus_ceiling",
+    "claim": "expand_off_tablet_c",
+    "other_tablet_vendored": false,
+    "invented_url": false,
+    "invented_digits": false,
+    "vendable_tablets": ["C"],
+    "sources_scanned": [
+      "tests/fixtures/mamari_ca_html/Ca.html",
+      "tests/fixtures/mamari_cb_html/Cb.html",
+      "tests/fixtures/mamari_ca_html/ATTRIBUTION",
+      "tests/fixtures/mamari_cb_html/ATTRIBUTION",
+      "tests/fixtures/mamari_ca7_ca8/ATTRIBUTION",
+      "tests/fixtures/mamari_ca_html/CORPUS_SURVEY.json",
+      "README.md"
+    ],
+    "navbar_hrefs": {
+      "Ca.html": ["index.html", "Cb.html"],
+      "Cb.html": ["index.html", "Ca.html"]
+    },
+    "all_hrefs": {
+      "Ca.html": ["../rongorongo.css", "index.html", "Cb.html"],
+      "Cb.html": ["../rongorongo.css", "index.html", "Ca.html"]
+    },
+    "other_tablet_hrefs": [],
+    "other_tablet_kohaumotu_urls": [],
+    "index_html": {
+      "href": "index.html",
+      "kind": "same_folder_contents",
+      "different_tablet": false,
+      "vendored": false,
+      "scraped": false,
+      "note": "navbar contents link; same C/ folder; not a different tablet Barthel page"
+    },
+    "cited_kohaumotu_urls": [
+      "http://kohaumotu.org/Rongorongo/C/Ca.html",
+      "http://kohaumotu.org/Rongorongo/C/Ca07.html",
+      "http://kohaumotu.org/Rongorongo/C/Cb.html",
+      "http://kohaumotu.org/Rongorongo/C/fi_Ca.html",
+      "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
+      "http://kohaumotu.org/rongorongo_org/copy.html",
+      "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
+      "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
+    ],
+    "cited_url_tablet_letters": ["C"],
+    "standing_c_locks_unchanged": true,
+    "image_track": "parked"
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",
