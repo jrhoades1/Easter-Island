@@ -46,3 +46,10 @@ Cycle 17 (2026-08-27)
   and each line). No unconstrained 8-gram of frequency ≥2. Longest
   mixed n-gram of frequency ≥2 anywhere is 2. No new image. No
   clustering change.
+
+Cycle 18 (2026-08-27)
+  Search lock: nearest length-8 Hamming on the standing G00n
+  sequence. Concat min 3 at Ca7[0:8] vs Ca7[1:9] (adjacent
+  overlapping windows; both overlap published Ca7[6:14)). Published
+  delimiter windows min 7 (first pair Ca7[6:14] vs Ca8[3:11]).
+  No new image. No clustering change.
