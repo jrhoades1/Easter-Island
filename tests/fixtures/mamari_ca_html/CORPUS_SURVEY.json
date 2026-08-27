@@ -738,6 +738,35 @@
     "standing_ia_locks_unchanged": true,
     "image_track": "parked"
   },
+  "santiago_ia_076_inventory": {
+    "cycle": 48,
+    "passage": "tablet_i_santiago_staff",
+    "stem": "076",
+    "raw_stems_999_kept": true,
+    "stem_count": 564,
+    "line_counts": [40, 46, 34, 35, 37, 36, 43, 44, 40, 49, 39, 35, 47, 39],
+    "left_top": ["090", 69],
+    "right_top": ["071", 43],
+    "inside_5grams": [
+      [["430", "076", "006", "000", "076"], 4],
+      [["076", "010", "079", "006", "700"], 2],
+      [["076", "011", "090", "090", "076"], 4],
+      [["400", "070", "076", "020", "010"], 2],
+      [["999", "071", "076", "010", "079"], 3]
+    ],
+    "wrap_n": 5,
+    "wrap_exists": true,
+    "wrap_count": 221,
+    "ib_html": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_ia_999_locks_unchanged": true,
+    "image_track": "parked"
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",
