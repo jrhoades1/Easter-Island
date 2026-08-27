@@ -13,8 +13,9 @@ absent), the Ca remainder 9-gram (present/absent), each of the three
 Cb 5-grams (present/absent), longest n with freq≥2, top 8-gram or
 none, stem count. Cycle 37 locks that 10-gram as a motif (hits,
 flanks, 8-prefix, C-absent). Cycle 38 vendors the Aa.html verso
-Ab.html and locks that side only. Existing C scoreboards stay
-the lock.
+Ab.html and locks that side only. Cycle 39 locks that Ab
+9-gram as a motif (hits, flanks, 8-prefix, 600-slot,
+cross-absent). Existing C scoreboards stay the lock.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

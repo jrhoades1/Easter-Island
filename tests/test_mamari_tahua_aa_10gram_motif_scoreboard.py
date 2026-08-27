@@ -9,6 +9,7 @@ The cycle-36 longest Aa n-gram is locked as a motif: exact 10 tokens,
 freq, spans, one published token on each side of every hit (or
 line-edge), and whether the cycle-36 top 8-gram is its prefix. The
 10-gram is absent from the Ca calendar, Ca remainder, and Cb fixtures.
+Cycle 39 locks the already-vendored Ab 9-gram as a motif.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

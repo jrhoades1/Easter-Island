@@ -25,8 +25,10 @@ ceiling (no other tablet honestly linked from Ca/Cb navbars).
 Cycle 36 vendors the parent catalog's first non-C Barthel page
 (A / Tahua Aa.html). Cycle 37 locks that Aa 10-gram as a motif
 (hits, flanks, 8-prefix, C-absent). Cycle 38 vendors the
-Aa.html verso Ab.html and locks that side only. Image track
-stays parked. MockProvider only.
+Aa.html verso Ab.html and locks that side only. Cycle 39
+locks that Ab 9-gram as a motif (hits, flanks, 8-prefix,
+600-slot, absent on Aa / Ca calendar / remainder / Cb).
+Image track stays parked. MockProvider only.
 """
 
 import json
