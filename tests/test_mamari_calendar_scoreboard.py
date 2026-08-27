@@ -18,6 +18,8 @@ Cycle 24 locks the full n≥4 freq≥2 profile on this same fixture
 (longest n=13; top 8-gram remains Guy's delimiter).
 Cycle 25 locks maximal 040 runs (span, length, precedes-delimiter)
 and per-line run-length lists. 040 is the stem only; no lunar reading.
+Cycle 26 locks inter-delimiter cells (span, tokens, 040-count,
+non-040 list, following-window kind) on this same fixture.
 """
 
 import json
