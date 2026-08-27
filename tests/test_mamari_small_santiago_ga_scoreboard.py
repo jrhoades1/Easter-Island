@@ -219,7 +219,7 @@ class TestMamariSmallSantiagoGaScoreboard(unittest.TestCase):
         )
 
     def test_ga_html_is_absent_on_the_documented_g_source(self):
-        """G/index lists Gr.html + Gv.html. No Ga.html file. No Gr scrape."""
+        """G/index lists Gr.html + Gv.html. No Ga.html. Cycle 54 dir has no Gr."""
         self.assertTrue(G_INDEX_HTML_PATH.is_file())
         self.assertTrue((GA_HTML_DIR / "ATTRIBUTION").is_file())
         self.assertFalse(GA_HTML_PATH.exists())
@@ -251,8 +251,8 @@ class TestMamariSmallSantiagoGaScoreboard(unittest.TestCase):
         self.assertIn("kohaumotu.org/rongorongo_org/copy.html", attribution)
         self.assertIn("tablet K", attribution)
         self.assertIn("tablet D", attribution)
+        self.assertEqual(substitute_barthel_pages(GA_HTML_DIR), ())
         fixtures = Path(__file__).parent / "fixtures"
-        self.assertEqual(substitute_barthel_pages(fixtures), ())
         self.assertEqual(fourth_tablet_html_names(fixtures), ())
         self.assertFalse(STANDING_TABLET_D_SCRAPED)
         self.assertFalse(STANDING_TABLET_K_SCRAPED)
