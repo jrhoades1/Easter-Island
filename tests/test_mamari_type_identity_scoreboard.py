@@ -24,7 +24,9 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 13 standing lock (cycle 12 + slot-0 crop check; no new unions).
+# Cycle 14 standing lock was 83/64 / 0/8 (offset 0). Cycle 15 applies
+# the keep-ID gate globally after DBSCAN; standing numbers update after
+# the snapshot run. Cycle 13 was the same 83/64 (crop leftovers fail).
 # Cycle 11 was 83/66 / mixed G003 G008. Cycle 9 was 83/62 / mixed 3-gram.
 # Cycle 4 was 67 types. Cycle 3 was 75/58. Cycle 2 was 65 types.
 # Cycle 1 signed lock was 71.
@@ -45,6 +47,7 @@ CYCLE3_INSTANCES_PER_STRIP = {
     "sca0803.gif": 12,
 }
 STANDING_UNIQUE_CLUSTERS = 64
+CYCLE14_UNIQUE_CLUSTERS = 64
 CYCLE11_UNIQUE_CLUSTERS = 66
 CYCLE9_UNIQUE_CLUSTERS = 62
 CYCLE4_UNIQUE_CLUSTERS = 67
@@ -58,6 +61,9 @@ CYCLE3_CA7_LEN = 39
 CYCLE3_CA8_LEN = 36
 STANDING_HAS_MIXED_REPEATING = True
 STANDING_MIXED_REPEATING = (
+    (("G007", "G006"), 2),
+)
+CYCLE14_MIXED_REPEATING = (
     (("G007", "G006"), 2),
 )
 CYCLE11_MIXED_REPEATING = (
@@ -333,7 +339,9 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         """split_wide_ligatures=False keeps the cycle-3 75/58 / 39+36 lock."""
         raw = GlyphProcessor(
             ProcessorConfig(
-                split_wide_ligatures=False, delimiter_slot_merge=False
+                split_wide_ligatures=False,
+                delimiter_slot_merge=False,
+                global_type_consistency_merge=False,
             )
         )
         instances = process_tracings(self.paths, processor=raw)
@@ -352,9 +360,36 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(len(set(ids)), 1, ids)
         self.assertEqual(self.provider.get_call_history(), [])
 
+    def test_global_merge_disabled_restores_cycle14_snapshot(self):
+        """global_type_consistency_merge=False keeps the cycle-14 64-type lock."""
+        raw = GlyphProcessor(ProcessorConfig(global_type_consistency_merge=False))
+        instances = process_tracings(self.paths, processor=raw)
+        score = score_type_identity(
+            instances,
+            self.ngram_analyzer,
+            self.published_ca7,
+            self.published_ca8,
+        )
+        self.assertEqual(score.unique_cluster_count, CYCLE14_UNIQUE_CLUSTERS)
+        self.assertEqual(
+            mixed_repeating_ngrams(ca7_ca8_sequences(instances), self.ngram_analyzer),
+            list(CYCLE14_MIXED_REPEATING),
+        )
+        self.assertEqual(score.ca7_length, STANDING_CA7_LEN)
+        self.assertEqual(score.ca8_length, STANDING_CA8_LEN)
+        crescents = isolate_sca0701_opening_crescents(instances)
+        ids = [inst.cluster_id for inst in crescents]
+        self.assertEqual(len(set(ids)), 1, ids)
+        self.assertEqual(self.provider.get_call_history(), [])
+
     def test_slot_merge_disabled_restores_cycle11_snapshot(self):
         """delimiter_slot_merge=False keeps the cycle-11 66-type / G003 G008 lock."""
-        raw = GlyphProcessor(ProcessorConfig(delimiter_slot_merge=False))
+        raw = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_slot_merge=False,
+                global_type_consistency_merge=False,
+            )
+        )
         instances = process_tracings(self.paths, processor=raw)
         score = score_type_identity(
             instances,
@@ -378,7 +413,9 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         """split_inconsistent_types=False keeps the cycle-9 62-type / 3-gram lock."""
         raw = GlyphProcessor(
             ProcessorConfig(
-                split_inconsistent_types=False, delimiter_slot_merge=False
+                split_inconsistent_types=False,
+                delimiter_slot_merge=False,
+                global_type_consistency_merge=False,
             )
         )
         instances = process_tracings(self.paths, processor=raw)
@@ -407,6 +444,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
                 split_fragment_allograph_merge=False,
                 split_inconsistent_types=False,
                 delimiter_slot_merge=False,
+                global_type_consistency_merge=False,
             )
         )
         instances = process_tracings(self.paths, processor=raw)
@@ -432,6 +470,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
                 same_line_allograph_merge=False,
                 split_wide_ligatures=False,
                 delimiter_slot_merge=False,
+                global_type_consistency_merge=False,
             )
         )
         instances = process_tracings(self.paths, processor=raw)
@@ -455,6 +494,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
                 same_line_allograph_merge=False,
                 split_wide_ligatures=False,
                 delimiter_slot_merge=False,
+                global_type_consistency_merge=False,
             )
         )
         instances = process_tracings(self.paths, processor=signed)

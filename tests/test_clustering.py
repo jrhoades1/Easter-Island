@@ -443,7 +443,12 @@ class TestSameLineAllographMerge(unittest.TestCase):
             feat = [0.8 * i] + [0.0] * 6
             instances.append(self._thin_instance(f"c{i}", i, feat))
 
-        processor = GlyphProcessor(ProcessorConfig(same_line_allograph_merge=False))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                same_line_allograph_merge=False,
+                global_type_consistency_merge=False,
+            )
+        )
         _, clustered = processor.cluster_glyphs(instances)
         ids = {inst.cluster_id for inst in clustered}
         self.assertEqual(len(ids), 6)
@@ -452,14 +457,18 @@ class TestSameLineAllographMerge(unittest.TestCase):
         """Tall-thin gate blocks a wide adjacent box even when Hu is close."""
         thin = self._thin_instance("thin", 0, [0.0] * 7, width=26, height=66)
         wide = self._thin_instance("wide", 1, [0.8] + [0.0] * 6, width=70, height=65)
-        processor = GlyphProcessor()
+        processor = GlyphProcessor(
+            ProcessorConfig(global_type_consistency_merge=False)
+        )
         _, clustered = processor.cluster_glyphs([thin, wide])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
     def test_dissimilar_area_does_not_merge(self):
         small = self._thin_instance("a", 0, [0.0] * 7, width=26, height=66)
         tall = self._thin_instance("b", 1, [0.8] + [0.0] * 6, width=26, height=120)
-        processor = GlyphProcessor()
+        processor = GlyphProcessor(
+            ProcessorConfig(global_type_consistency_merge=False)
+        )
         _, clustered = processor.cluster_glyphs([small, tall])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
@@ -500,7 +509,9 @@ class TestSplitFragmentAllographMerge(unittest.TestCase):
         extra = self._split_instance(
             "c", "three.gif", [0.4] + [0.0] * 6, width=31, from_split=False
         )
-        processor = GlyphProcessor()
+        processor = GlyphProcessor(
+            ProcessorConfig(global_type_consistency_merge=False)
+        )
         _, clustered = processor.cluster_glyphs([a, b, extra])
         self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
         self.assertNotEqual(clustered[0].cluster_id, clustered[2].cluster_id)
@@ -509,7 +520,9 @@ class TestSplitFragmentAllographMerge(unittest.TestCase):
         """34 vs 31 is under Hu/area gates but over the width gate."""
         a = self._split_instance("a", "one.gif", [0.0] * 7, width=34)
         b = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=31)
-        processor = GlyphProcessor()
+        processor = GlyphProcessor(
+            ProcessorConfig(global_type_consistency_merge=False)
+        )
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
@@ -517,7 +530,10 @@ class TestSplitFragmentAllographMerge(unittest.TestCase):
         a = self._split_instance("a", "one.gif", [0.0] * 7, width=31)
         b = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=30)
         processor = GlyphProcessor(
-            ProcessorConfig(split_fragment_allograph_merge=False)
+            ProcessorConfig(
+                split_fragment_allograph_merge=False,
+                global_type_consistency_merge=False,
+            )
         )
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
@@ -866,6 +882,110 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         )
         _, clustered = processor.cluster_glyphs([a, b])
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+
+class TestGlobalTypeConsistencyMerge(unittest.TestCase):
+    """Global Hu/profile same-type stitch after DBSCAN. No Mamari GIFs."""
+
+    def _inst(
+        self,
+        instance_id: str,
+        source: str,
+        features: list[float],
+        profile: list[float] | None = None,
+        width: int = 31,
+        height: int = 66,
+        from_split: bool = False,
+        position: int = 0,
+    ) -> GlyphInstance:
+        return GlyphInstance(
+            instance_id=instance_id,
+            source_image=source,
+            bounding_box=BoundingBox(x=position * 80, y=0, width=width, height=height),
+            features=features,
+            ink_profile=list(profile) if profile is not None else [],
+            from_ligature_split=from_split,
+            position=GlyphPosition(0, position, 1),
+        )
+
+    def _global_only(self) -> GlyphProcessor:
+        return GlyphProcessor(
+            ProcessorConfig(
+                same_line_allograph_merge=False,
+                split_fragment_allograph_merge=False,
+                wide_profile_allograph_merge=False,
+                split_inconsistent_types=False,
+                delimiter_slot_merge=False,
+            )
+        )
+
+    def test_hu_between_eps_and_gate_merges_across_images(self):
+        """Hu 0.8 > DBSCAN eps; matching profiles; not same-line or slot."""
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "one.gif", [0.0] * 7, ramp)
+        b = self._inst("b", "two.gif", [0.8] + [0.0] * 6, ramp)
+        self.assertGreater(_hu_distance(a, b), ProcessorConfig().dbscan_eps)
+        self.assertTrue(passes_type_consistency_gates(a, b))
+        _, clustered = self._global_only().cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_gate_failure_stays_distinct(self):
+        """Hu-far or low-r pairs are not forced onto one ID."""
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        far = self._inst("far", "one.gif", [0.0] * 7, ramp)
+        other = self._inst("other", "two.gif", [2.5] + [0.0] * 6, ramp)
+        low = self._inst("low", "three.gif", [0.8] + [0.0] * 6, inverse)
+        self.assertFalse(passes_type_consistency_gates(far, other))
+        self.assertFalse(passes_type_consistency_gates(far, low))
+        _, clustered = self._global_only().cluster_glyphs([far, other, low])
+        ids = {inst.cluster_id for inst in clustered}
+        self.assertEqual(len(ids), 3)
+
+    def test_transitive_failing_pair_is_not_forced(self):
+        """A–B and B–C pass; A–C is Hu-far. A and C keep distinct IDs."""
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "one.gif", [0.0] * 7, ramp)
+        b = self._inst("b", "two.gif", [0.8] + [0.0] * 6, ramp)
+        c = self._inst("c", "three.gif", [2.4] + [0.0] * 6, ramp)
+        self.assertTrue(passes_type_consistency_gates(a, b))
+        self.assertTrue(passes_type_consistency_gates(b, c))
+        self.assertFalse(passes_type_consistency_gates(a, c))
+        _, clustered = self._global_only().cluster_glyphs([a, b, c])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertNotEqual(by_id["a"], by_id["c"])
+
+    def test_can_be_disabled(self):
+        ramp = [float(i) for i in range(32)]
+        a = self._inst("a", "one.gif", [0.0] * 7, ramp)
+        b = self._inst("b", "two.gif", [0.8] + [0.0] * 6, ramp)
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                global_type_consistency_merge=False,
+                same_line_allograph_merge=False,
+                split_fragment_allograph_merge=False,
+                wide_profile_allograph_merge=False,
+                delimiter_slot_merge=False,
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_does_not_undo_same_line_crescent_stitch(self):
+        """Adjacent tall-thin Hu 3.2 still share an ID via the crescent stitch."""
+        a = self._inst(
+            "thin_a", "line.gif", [0.0] * 7, width=26, height=66, position=0
+        )
+        b = self._inst(
+            "thin_b", "line.gif", [3.2] + [0.0] * 6, width=26, height=66, position=1
+        )
+        a.position = GlyphPosition(0, 0, 2)
+        b.position = GlyphPosition(0, 1, 2)
+        self.assertFalse(passes_type_consistency_gates(a, b))
+        self.assertTrue(passes_same_line_allograph_gates(a, b))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
 
 class TestInconsistentTypeSplit(unittest.TestCase):

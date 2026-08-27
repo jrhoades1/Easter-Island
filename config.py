@@ -146,6 +146,8 @@ GLYPH_CONFIG = {
         "wide_profile_min_correlation": 0.85,
         # Post-merge split of over-merged split-fragment types. False keeps cycle 9.
         "split_inconsistent_types": True,
+        # Global Hu/profile same-type stitch after DBSCAN. False keeps cycle 14.
+        "global_type_consistency_merge": True,
         # Same-slot stitch across published Guy delimiter starts. False keeps cycle 11.
         "delimiter_slot_merge": True,
         # Slot-0 leftover crop stitch (NCC/chamfer). False keeps cycle 12.

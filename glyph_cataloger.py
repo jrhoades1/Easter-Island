@@ -240,6 +240,9 @@ def main() -> int:
         split_inconsistent_types=config["clustering"].get(
             "split_inconsistent_types", True
         ),
+        global_type_consistency_merge=config["clustering"].get(
+            "global_type_consistency_merge", True
+        ),
         delimiter_slot_merge=config["clustering"].get("delimiter_slot_merge", True),
         delimiter_slot_crop_merge=config["clustering"].get(
             "delimiter_slot_crop_merge", True
