@@ -212,8 +212,8 @@ class TestTahuaAaHelpers(unittest.TestCase):
         """C is skipped; first linked other tablet wins."""
         html = (
             "<table>"
-            "<tr><td>C</td><td><a href='C/index.html'>Mamari</a></td></tr>"
-            "<tr><td>A</td><td><a href='A/index.html'>Tahua</a></td></tr>"
+            '<tr><td>C</td><td><a href="C/index.html">Mamari</a></td></tr>'
+            '<tr><td>A</td><td><a href="A/index.html">Tahua</a></td></tr>'
             "</table>"
         )
         self.assertEqual(first_non_c_tablet(html), ("A", "A/index.html", "Tahua"))
