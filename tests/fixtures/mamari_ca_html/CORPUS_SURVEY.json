@@ -84,6 +84,33 @@
     ],
     "stem_600_inside_repeating_nge4": false
   },
+  "remainder_9gram_motif": {
+    "cycle": 30,
+    "passage": "ca_side_a_remainder",
+    "calendar_passage": "ca6_ca9_calendar",
+    "motif_tokens": ["002", "010", "070", "760", "040", "006", "430", "047", "002"],
+    "prefix8_tokens": ["002", "010", "070", "760", "040", "006", "430", "047"],
+    "remainder_motif_hits": [
+      ["Ca10", 26, 35, "002", "290"],
+      ["Ca11", 14, 23, "290", "004"]
+    ],
+    "remainder_prefix8_hits": [
+      ["Ca10", 26, 34, "002", "002"],
+      ["Ca11", 14, 22, "290", "002"]
+    ],
+    "remainder_wrap_n9_count": 6,
+    "remainder_wrap_n9_other_count": 4,
+    "remainder_wrap_n9_other": [
+      [["002", "002", "200", "215", "002", "010", "002", "005", "002"], "Ca9", 16, 25],
+      [["002", "010", "070", "760", "040", "006", "400", "002", "002"], "Ca10", 18, 27],
+      [["002", "004", "760", "002", "002", "004", "760", "002", "002"], "Ca11", 22, 31],
+      [["002", "004", "760", "002", "002", "002", "004", "763", "002"], "Ca11", 26, 35]
+    ],
+    "calendar_motif_hits": [],
+    "calendar_prefix8_hits": [],
+    "calendar_wrap_n9_count": 0,
+    "calendar_absent": true
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,

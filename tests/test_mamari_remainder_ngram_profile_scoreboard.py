@@ -11,8 +11,9 @@ delimiter is still absent. 600's five remainder hits sit outside every
 repeating n≥4 span.
 
 Longest n with freq ≥2 is 9 (Ca10 / Ca11). Top 8-gram is the 9-gram
-prefix, freq 2 — not Guy's delimiter. Image snapshot stays
-83/62 / Hamming 6.
+prefix, freq 2 — not Guy's delimiter. Cycle 30 locks that 9-gram as
+a motif on this remainder and on the calendar fixture. Image
+snapshot stays 83/62 / Hamming 6.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """
