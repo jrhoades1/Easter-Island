@@ -124,6 +124,7 @@ class GlyphInstance:
     confidence: float = 1.0
     image_path: Optional[str] = None
     from_ligature_split: bool = False
+    ink_profile: list[float] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization."""

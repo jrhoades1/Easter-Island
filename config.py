@@ -140,6 +140,10 @@ GLYPH_CONFIG = {
         "split_fragment_allograph_merge": True,
         "split_allograph_max_hu_distance": 2.0,
         "split_allograph_max_width_ratio": 1.08,
+        # Wide-box column-ink profile stitch. False keeps the cycle-5/7 lock.
+        "wide_profile_allograph_merge": True,
+        "wide_profile_bins": 32,
+        "wide_profile_min_correlation": 0.85,
     },
 }
 
