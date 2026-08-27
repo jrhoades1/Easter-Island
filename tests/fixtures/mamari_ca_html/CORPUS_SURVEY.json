@@ -289,6 +289,31 @@
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
+  "tahua_aa_10gram_motif": {
+    "cycle": 37,
+    "passage": "tablet_a_tahua_side_a",
+    "calendar_passage": "ca6_ca9_calendar",
+    "remainder_passage": "ca_side_a_remainder",
+    "cb_passage": "tablet_c_side_b",
+    "motif_tokens": ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"],
+    "motif_n": 10,
+    "motif_freq": 2,
+    "motif_spans": [["Aa7", 55, 65], ["Aa7", 88, 98]],
+    "aa_motif_hits": [
+      ["Aa7", 55, 65, "002", "009"],
+      ["Aa7", 88, 98, "020", "256"]
+    ],
+    "prefix8_tokens": ["080", "004", "280", "182", "048", "022", "025", "025"],
+    "top_8gram_is_prefix": true,
+    "aa_prefix8_hits": [
+      ["Aa7", 55, 63, "002", "009"],
+      ["Aa7", 88, 96, "020", "009"]
+    ],
+    "calendar_motif_hits": [],
+    "remainder_motif_hits": [],
+    "cb_motif_hits": [],
+    "c_absent": true
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",

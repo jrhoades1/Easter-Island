@@ -50,3 +50,14 @@ Cycle 36 (2026-08-27)
     top 8-gram: 080 004 280 182 048 022 025 025 (freq 2); not Guy
   Existing C scoreboards are unchanged.
   Image track stays parked. No new image. No clustering change.
+
+Cycle 37 (2026-08-27)
+  Same Aa.html fixture. Search lock on the longest n=10 motif only
+  (no type map; no Ab.html scrape):
+    10-gram 080 004 280 182 048 022 025 025 009 005: freq 2
+      Aa7[55:65] flanks 002 / 009
+      Aa7[88:98] flanks 020 / 256
+    cycle-36 top 8-gram is that 10-gram's prefix
+    10-gram absent on Ca calendar, Ca remainder, and Cb
+  Existing C scoreboards are unchanged.
+  Image track stays parked. No new image. No clustering change.

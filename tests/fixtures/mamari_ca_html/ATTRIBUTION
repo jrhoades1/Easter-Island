@@ -84,3 +84,7 @@ Cycle 36 (2026-08-27)
   C/ page) → tablets.html → A/Tahua → Aa.html. Search lock is on
   Aa.html only. See tests/fixtures/tahua_aa_html/ATTRIBUTION.
   Image track stays parked.
+
+Cycle 37 (2026-08-27)
+  Same Aa.html fixture. Locks the longest n=10 motif (hits, flanks,
+  8-prefix, C-absent). No Ab.html scrape. Image track stays parked.
