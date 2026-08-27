@@ -162,12 +162,14 @@ def best_row(hit: HammingWindow) -> tuple:
 
 def window_sort_key(hit: HammingWindow) -> tuple:
     """Min Hamming; tie → earliest passage, line, start."""
-    return (
-        hit.hamming,
-        PASSAGE_ORDER.index(hit.passage),
-        PASSAGE_LINE_NAMES[hit.passage].index(hit.line),
-        hit.start,
+    passage_i = (
+        PASSAGE_ORDER.index(hit.passage)
+        if hit.passage in PASSAGE_ORDER
+        else len(PASSAGE_ORDER)
     )
+    names = PASSAGE_LINE_NAMES.get(hit.passage, ())
+    line_i = names.index(hit.line) if hit.line in names else 0
+    return (hit.hamming, passage_i, line_i, hit.start, hit.line)
 
 
 def score_passage_windows(
