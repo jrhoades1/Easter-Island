@@ -266,7 +266,7 @@ class TestSantiagoIaHelpers(unittest.TestCase):
         published = extract_ia_published_tokens(html)
         self.assertEqual(list(published), ["Ia11", "Ia1"])
         self.assertEqual(published["Ia11"], ["430.076", "021t"])
-        self.assertEqual(published["Ia1"], ["600", "517"])
+        self.assertEqual(published["Ia1"], ["600", "517*"])
         provider = MockProvider()
         self.assertEqual(provider.get_call_history(), [])
 
