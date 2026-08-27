@@ -13,6 +13,8 @@ absent from Aa, the Ca calendar, Ca remainder, and Cb fixtures.
 Cycle 40 locks a 600 inventory on those same fixtures.
 Cycle 41 locks the 004 600 004 sandwich (this 9-gram's
 neighbors) and per-fixture 600 neighbor tops.
+Cycle 42 locks the Ab7 sandwich 9-window Hamming vs
+this motif.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

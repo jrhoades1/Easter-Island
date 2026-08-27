@@ -55,7 +55,8 @@ same fixtures only (hits, flanks, motif membership,
 calendar window-adjacency, per-fixture counts).
 Cycle 41 locks the 004 600 004 sandwich (Ab 9-gram
 neighbors) and per-fixture 600 neighbor tops on
-that same inventory.
+that same inventory. Cycle 42 locks the Ab7
+sandwich 9-window Hamming vs the Ab 9-gram motif.
 """
 
 import json
