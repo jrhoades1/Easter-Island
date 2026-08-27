@@ -3,7 +3,10 @@
 Cycle 17 locked that no 8-gram repeats (Hamming 0 does not occur).
 Cycle 18 recorded published-window min Hamming 7. Cycle 19 merges
 one leftover crop pair (slot 7 Ca7[26]/Ca8[22]) that drops that
-number to 6. Concat min stays 3 on the six-G001 night-sign run.
+number to 6. Cycle 20 applies the two remaining crop-clear leftover
+pairs (slot 2 and slot 3) together; published min stays 6, so those
+extra merges stay off. Concat min stays 3 on the six-G001 night-sign
+run.
 
 No detector retune. No G00n→Barthel map. MockProvider only.
 input/tablets/sample_tablet.png is a synthetic CV dummy, not Mamari.
@@ -87,6 +90,16 @@ STANDING_PUBLISHED_NEAREST_PAIR = (
 STANDING_BEFORE_AFTER = (
     (83, 62, 7, 0, 2),
     (83, 62, 6, 0, 2),
+)
+# Cycle 20 leftover-on experiment. Hamming stays 6; extra merges off.
+CROP_LEFTOVERS_EXHAUSTED_AT_HAMMING = 6
+LEFTOVER_ON_UNIQUE_CLUSTERS = 60
+LEFTOVER_ON_SLOT_UNIQUE_COUNTS = (4, 6, 5, 5, 5, 6, 6, 4)
+LEFTOVER_ON_PUBLISHED_MIN_PAIR_COUNT = 2
+# instances, types, published H, slot unique, slot matches, mixed n
+STANDING_LEFTOVER_BEFORE_AFTER = (
+    (83, 62, 6, (4, 6, 6, 6, 5, 6, 6, 4), 0, 2),
+    (83, 60, 6, (4, 6, 5, 5, 5, 6, 6, 4), 0, 2),
 )
 
 
@@ -402,6 +415,65 @@ class TestMamariNearest8WindowScoreboard(unittest.TestCase):
         self.assertEqual(score.published_hamming, CYCLE18_PUBLISHED_MIN_HAMMING)
         self.assertEqual(score.published_min_pair_count, CYCLE18_PUBLISHED_MIN_PAIR_COUNT)
         self.assertEqual(score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_leftover_crop_merges_exhausted_at_published_6(self):
+        """Slot 2 + slot 3 leftover unions leave published Hamming at 6.
+
+        Extra merges stay off. Turning them on drops types 62→60 and
+        slot unique (4, 6, 6, 6, 5, 6, 6, 4)→(4, 6, 5, 5, 5, 6, 6, 4)
+        but does not beat the cycle-19 published floor.
+        """
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_leftover_merge)
+        self.assertEqual(
+            STANDING_PUBLISHED_MIN_HAMMING, CROP_LEFTOVERS_EXHAUSTED_AT_HAMMING
+        )
+        leftover = process_tracings(
+            self.paths,
+            GlyphProcessor(ProcessorConfig(delimiter_slot_crop_leftover_merge=True)),
+        )
+        leftover_lines = ca7_ca8_sequences(leftover)
+        leftover_score = score_nearest_8windows(
+            leftover, leftover_lines, self.published_lines
+        )
+        leftover_window = score_delimiter_windows(
+            leftover, leftover_lines, self.published_lines
+        )
+        leftover_unique = tuple(len(set(ids)) for ids in leftover_window.slot_ids)
+        before = (
+            self.score.instance_count,
+            self.score.unique_cluster_count,
+            self.score.published_hamming,
+            STANDING_SLOT_UNIQUE_COUNTS,
+            self.score.window_matches,
+            STANDING_LONGEST_MIXED_N,
+        )
+        after = (
+            leftover_score.instance_count,
+            leftover_score.unique_cluster_count,
+            leftover_score.published_hamming,
+            leftover_unique,
+            leftover_score.window_matches,
+            STANDING_LONGEST_MIXED_N,
+        )
+        self.assertEqual(before, STANDING_LEFTOVER_BEFORE_AFTER[0])
+        self.assertEqual(after, STANDING_LEFTOVER_BEFORE_AFTER[1])
+        self.assertEqual(
+            leftover_score.published_hamming, CROP_LEFTOVERS_EXHAUSTED_AT_HAMMING
+        )
+        self.assertEqual(leftover_score.unique_cluster_count, LEFTOVER_ON_UNIQUE_CLUSTERS)
+        self.assertEqual(leftover_unique, LEFTOVER_ON_SLOT_UNIQUE_COUNTS)
+        self.assertEqual(
+            leftover_score.published_min_pair_count, LEFTOVER_ON_PUBLISHED_MIN_PAIR_COUNT
+        )
+        self.assertEqual(leftover_score.concat_hamming, STANDING_CONCAT_MIN_HAMMING)
+        unconstrained = score_unconstrained_ngrams(
+            leftover,
+            leftover_lines,
+            self.published_lines,
+            self.ngram_analyzer,
+        )
+        self.assertEqual(unconstrained.longest_mixed_n, STANDING_LONGEST_MIXED_N)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_standing_83_62_and_window_0_of_8(self):

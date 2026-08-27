@@ -21,8 +21,9 @@ ceiling, lock unchanged. Cycle 17 searches the full G00n sequence
 Cycle 18 locked nearest 8-window Hamming among these six at 7
 (first pair Ca7[6:14] vs Ca8[3:11]); concat min is 3.
 Cycle 19 merges one leftover crop pair that drops published
-Hamming to 6 (slot 7: Ca7[26] vs Ca8[22]). Other crop-passing
-leftovers do not drop Hamming and stay split.
+Hamming to 6 (slot 7: Ca7[26] vs Ca8[22]). Cycle 20 applies the
+other two crop-passing leftovers together (slot 2 and slot 3);
+published min stays 6, so those extra merges stay off.
 Glyph meanings are not assigned.
 """
 
@@ -34,10 +35,12 @@ from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from models.glyphs import GlyphInstance
 from tests.test_mamari_calendar_scoreboard import DELIMITER_MOTIF
 from processors.glyph_processor import (
+    GlyphProcessor,
     ProcessorConfig,
     _hu_distance,
     crop_chamfer,
     crop_ncc,
+    leftover_crop_pairs,
     min_pairwise_window_hamming,
     passes_delimiter_slot_gates,
     passes_slot_crop_gates,
@@ -119,6 +122,7 @@ STANDING_SLOT0_CROP_PAIRS = (
 )
 # Cycle 19: leftover same-slot crop pairs that clear NCC/chamfer.
 # Only slot 7 Ca7[26] vs Ca8[22] also drops published min Hamming.
+# Cycle 20: slot 2 + slot 3 together still leave min Hamming at 6.
 # (slot, left, right, ncc, chamfer, r, crop_pass, drops_hamming)
 STANDING_CROP_HAMMING_CANDIDATES = (
     (7, ("Ca7", 26), ("Ca8", 22), 0.700, 0.357, 0.882, True, True),
@@ -126,6 +130,7 @@ STANDING_CROP_HAMMING_CANDIDATES = (
     (3, ("Ca7", 9), ("Ca8", 32), 0.470, 0.784, 0.735, True, False),
 )
 STANDING_CROP_HAMMING_MERGE = STANDING_CROP_HAMMING_CANDIDATES[0]
+STANDING_LEFTOVER_CROP_PAIRS = STANDING_CROP_HAMMING_CANDIDATES[1:]
 
 # Joint stem-index offsets applied to every published start. Same N
 # for all six windows. Per-window free search would mix slots.
@@ -654,7 +659,8 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
 
         Gate stays NCC >= 0.45 / chamfer <= 0.80. Hu 2.32 fails keep-ID.
         Slot 2 G020/G060 and slot 3 G019/G061 pass crop but would leave
-        published min Hamming at 7, so they stay distinct.
+        published min Hamming at 7 alone, and at 6 together, so they
+        stay distinct. Extra leftover merges stay off.
         """
         lines = ca7_ca8_instances(self.instances)
         grams = tuple(window.image_ids for window in self.score.windows)
@@ -694,6 +700,52 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
                 self.assertEqual(left.cluster_id, right.cluster_id)
             else:
                 self.assertNotEqual(left.cluster_id, right.cluster_id)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_leftover_crop_pairs_stay_split_when_hamming_stays_6(self):
+        """Cycle 20: leftover-on unions slot 2+3; published H stays 6.
+
+        Default leftover merge is off. Slot 0 leftovers stay split.
+        """
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_leftover_merge)
+        lines = ca7_ca8_instances(self.instances)
+        for slot, left_key, right_key, ncc, chamfer, corr, crop_pass, drops in (
+            STANDING_LEFTOVER_CROP_PAIRS
+        ):
+            left = slot0_instance(lines, *left_key)
+            right = slot0_instance(lines, *right_key)
+            self.assertTrue(crop_pass)
+            self.assertTrue(passes_slot_crop_gates(left, right))
+            self.assertFalse(drops)
+            self.assertNotEqual(left.cluster_id, right.cluster_id, (slot, left_key))
+        leftover_instances = process_tracings(
+            self.paths,
+            GlyphProcessor(ProcessorConfig(delimiter_slot_crop_leftover_merge=True)),
+        )
+        leftover_lines = ca7_ca8_instances(leftover_instances)
+        leftover_image = ca7_ca8_sequences(leftover_instances)
+        leftover_windows = delimiter_image_windows(leftover_image, self.published_lines)
+        leftover_grams = tuple(window.image_ids for window in leftover_windows)
+        self.assertEqual(min_pairwise_window_hamming(leftover_grams), 6)
+        leftover_slots = slot_ids_across_windows(leftover_windows)
+        self.assertEqual(
+            tuple(len(set(ids)) for ids in leftover_slots),
+            (4, 6, 5, 5, 5, 6, 6, 4),
+        )
+        self.assertEqual(slot_match_count(leftover_slots), 0)
+        for slot, left_key, right_key, *_rest in STANDING_LEFTOVER_CROP_PAIRS:
+            left = slot0_instance(leftover_lines, *left_key)
+            right = slot0_instance(leftover_lines, *right_key)
+            self.assertEqual(left.cluster_id, right.cluster_id, (slot, left_key))
+        leftover_slot0 = leftover_slots[0]
+        self.assertEqual(len(set(leftover_slot0)), 4)
+        index = {id(inst): i for i, inst in enumerate(leftover_instances)}
+        slot_members = [[] for _ in range(WINDOW_LEN)]
+        for line_index, start in ProcessorConfig().delimiter_window_starts:
+            line = leftover_lines[line_index]
+            for slot in range(WINDOW_LEN):
+                slot_members[slot].append(index[id(line[start + slot])])
+        self.assertEqual(leftover_crop_pairs(leftover_instances, slot_members), ())
         self.assertEqual(self.provider.get_call_history(), [])
 
 

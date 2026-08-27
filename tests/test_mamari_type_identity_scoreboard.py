@@ -24,8 +24,10 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 19 drops published-window min Hamming 7→6 with one crop
-# merge and keeps 83/62 / 0/8 / mixed n=2. Cycle 18 locked nearest
+# Cycle 20 locks leftover crop pairs exhausted at published H=6
+# (slot 2 + slot 3 together do not drop Hamming). Cycle 19 drops
+# published-window min Hamming 7→6 with one crop merge and keeps
+# 83/62 / 0/8 / mixed n=2. Cycle 18 locked nearest
 # 8-window Hamming (concat 3 / published 7). Cycle 17 searched the
 # full G00n sequence (not Guy windows): no repeating 8-gram;
 # longest mixed n=2. Cycle 16 found no honest higher-res public
