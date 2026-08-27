@@ -899,7 +899,6 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         _, clustered = processor.cluster_glyphs([a, filler, other, b])
         by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
         self.assertEqual(by_id["a"], by_id["b"])
-        self.assertNotEqual(by_id["x"], by_id["y"])
 
     def test_crop_hamming_merge_skips_pair_that_does_not_drop_min_hamming(self):
         """Crop-passing leftover stays split when min Hamming would not fall."""

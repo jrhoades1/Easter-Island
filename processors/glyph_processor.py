@@ -1122,6 +1122,11 @@ class GlyphProcessor:
         if self.config.delimiter_slot_merge:
             self._merge_delimiter_slot_allographs(instances)
         if (
+            self.config.delimiter_slot_merge
+            and self.config.delimiter_slot_crop_hamming_merge
+        ):
+            self._merge_crop_hamming_pair(instances)
+        if (
             self.config.global_type_consistency_merge
             or self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
@@ -1437,9 +1442,9 @@ class GlyphProcessor:
         Published window starts define the eight slots. Pairwise only:
         a slot is not collapsed to one ID when other occupants fail.
         Crop NCC/chamfer is consulted for configured leftover slots
-        (default: slot 0) and, when enabled, for at most one leftover
-        pair on any slot whose union drops published-window min
-        Hamming. Instance-local. Does not read Barthel stem values.
+        (default: slot 0). The cycle-19 Hamming-drop crop stitch runs
+        after this pass assigns IDs. Instance-local. Does not read
+        Barthel stem values.
         """
         if len(instances) < 2:
             return
@@ -1496,12 +1501,6 @@ class GlyphProcessor:
                         union(left_i, right_i)
                         merged = True
 
-        if self.config.delimiter_slot_crop_hamming_merge:
-            pair = best_crop_hamming_pair(instances, slot_members, self.config)
-            if pair is not None:
-                union(pair[0], pair[1])
-                merged = True
-
         if not merged:
             return
 
@@ -1519,6 +1518,40 @@ class GlyphProcessor:
             shared_id = f"D{merge_n:03d}"
             for i in unique:
                 instances[i].cluster_id = shared_id
+
+    def _merge_crop_hamming_pair(self, instances: list[GlyphInstance]) -> None:
+        """Union at most one leftover crop pair that drops min Hamming.
+
+        Runs after slot IDs are assigned so the Hamming check sees the
+        cycle-12 shared slots. The winning pair keeps the left
+        occupant's ID. Does not look up stems.
+        """
+        if len(instances) < 2:
+            return
+        window_len = int(self.config.delimiter_window_len)
+        starts = tuple(self.config.delimiter_window_starts)
+        if window_len < 1 or not starts:
+            return
+        line_indexes = self._concatenated_tablet_line_indexes(instances)
+        slot_members: list[list[int]] = [[] for _ in range(window_len)]
+        for line_index, start in starts:
+            if line_index < 0 or line_index >= len(line_indexes):
+                continue
+            line = line_indexes[line_index]
+            end = start + window_len
+            if start < 0 or end > len(line):
+                continue
+            for slot in range(window_len):
+                slot_members[slot].append(line[start + slot])
+        pair = best_crop_hamming_pair(instances, slot_members, self.config)
+        if pair is None:
+            return
+        left_i, right_i = pair
+        shared = instances[left_i].cluster_id or instances[right_i].cluster_id
+        if not shared:
+            return
+        instances[left_i].cluster_id = shared
+        instances[right_i].cluster_id = shared
 
     def _reading_order_indexes(
         self, instances: list[GlyphInstance]
