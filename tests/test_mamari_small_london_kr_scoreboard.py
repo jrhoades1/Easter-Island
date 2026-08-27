@@ -261,15 +261,15 @@ class TestSmallLondonKrHelpers(unittest.TestCase):
         """Present Kr.html locks stem/076/n-gram/motif fields from stems."""
         provider = MockProvider()
         lines = [
-            ["999", "071", "076", "010", "079", "090", "076", "430", "076", "200"],
+            ["999", "071", "076", "010", "079", "090", "076", "071", "430", "076", "200"],
             ["002"] * 9,
         ]
         lock = score_kr_recto(True, lines, STANDING_DOCUMENTED_RECTO)
         self.assertTrue(lock.kr_html)
         self.assertEqual(lock.result, STANDING_RESULT)
-        self.assertEqual(lock.stem_count, 19)
+        self.assertEqual(lock.stem_count, 20)
         self.assertEqual(lock.stem_076_hits, 3)
-        self.assertEqual(lock.stem_076_rate, 3 / 19)
+        self.assertEqual(lock.stem_076_rate, 3 / 20)
         self.assertTrue(lock.stem_076_rate_ge_0_10)
         self.assertEqual(lock.hits_090_076, 1)
         self.assertEqual(lock.hits_076_071, 1)
