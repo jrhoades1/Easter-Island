@@ -24,7 +24,7 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 12 standing lock (cycle 11 + same-slot stitches that pass gates).
+# Cycle 13 standing lock (cycle 12 + slot-0 crop check; no new unions).
 # Cycle 11 was 83/66 / mixed G003 G008. Cycle 9 was 83/62 / mixed 3-gram.
 # Cycle 4 was 67 types. Cycle 3 was 75/58. Cycle 2 was 65 types.
 # Cycle 1 signed lock was 71.

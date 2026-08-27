@@ -10,8 +10,11 @@ from processors.glyph_processor import (
     GlyphProcessor,
     ProcessorConfig,
     _hu_distance,
+    crop_chamfer,
+    crop_ncc,
     passes_delimiter_slot_gates,
     passes_same_line_allograph_gates,
+    passes_slot_crop_gates,
     passes_split_fragment_allograph_gates,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
@@ -767,6 +770,96 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         processor = GlyphProcessor(
             ProcessorConfig(
                 delimiter_slot_merge=False,
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def _crop(self, kind: str = "circle") -> list[int]:
+        plane = np.zeros((64, 64), dtype=np.uint8)
+        if kind == "circle":
+            cv2.circle(plane, (32, 32), 20, 255, -1)
+        elif kind == "band":
+            plane[:, :32] = 255
+        return plane.ravel().tolist()
+
+    def test_slot0_matching_crops_merge_when_hu_and_profile_fail(self):
+        """Crop NCC/chamfer can union a slot-0 pair the Hu/profile gates reject."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._crop("circle")
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right)
+        a.glyph_crop = crop
+        b.glyph_crop = list(crop)
+        self.assertFalse(passes_delimiter_slot_gates(a, b))
+        self.assertTrue(passes_slot_crop_gates(a, b))
+        self.assertGreaterEqual(crop_ncc(a.glyph_crop, b.glyph_crop), 0.99)
+        self.assertLess(crop_chamfer(a.glyph_crop, b.glyph_crop), 0.1)
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_slot0_poor_crops_stay_distinct(self):
+        """Leftover-like crops (low NCC, high chamfer) do not force a merge."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right)
+        a.glyph_crop = self._crop("circle")
+        b.glyph_crop = self._crop("band")
+        self.assertLess(crop_ncc(a.glyph_crop, b.glyph_crop), 0.45)
+        self.assertFalse(passes_slot_crop_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=1,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_crop_gate_does_not_run_on_other_slots(self):
+        """Matching crops in slot 1 stay distinct. Slot-0 only."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._crop("circle")
+        a = self._inst("a", "sca0701.gif", 1, [0.0] * 7, left, total=2)
+        filler = self._inst(
+            "x", "sca0701.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b = self._inst("b", "sca0801.gif", 1, [5.0] + [0.0] * 6, right, total=2)
+        other = self._inst(
+            "y", "sca0801.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        a.glyph_crop = crop
+        b.glyph_crop = list(crop)
+        self.assertTrue(passes_slot_crop_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, filler, other, b])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertNotEqual(by_id["a"], by_id["b"])
+
+    def test_missing_crops_do_not_merge(self):
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right)
+        self.assertFalse(passes_slot_crop_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
                 delimiter_window_len=1,
                 delimiter_window_starts=((0, 0), (1, 0)),
             )

@@ -104,6 +104,15 @@ class ProcessorConfig:
     # wide-profile gate. Features that disagree keep distinct IDs; a
     # slot is not forced to one type. False keeps the cycle-11 lock.
     delimiter_slot_merge: bool = True
+    # Slot-0 leftover crop stitch. NCC / chamfer on the 64x64 bbox
+    # image, not a lowered global r. Merged-pair floor is NCC 0.504 /
+    # chamfer 0.544; leftover ceiling is NCC 0.229 / chamfer 1.017.
+    # Column-ink leftover max r is 0.584, below the 0.70 adjacent
+    # non-match ceiling, so r is not lowered. False keeps cycle 12.
+    delimiter_slot_crop_merge: bool = True
+    delimiter_slot_crop_slots: tuple[int, ...] = (0,)
+    slot_crop_min_ncc: float = 0.45
+    slot_crop_max_chamfer: float = 0.80
     delimiter_window_len: int = 8
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
         (0, 6),
@@ -282,10 +291,97 @@ def passes_delimiter_slot_gates(
     2.0 and, when both profiles exist, Pearson r >= 0.85) and/or the
     wide-profile gate (aspect > 0.5 and r >= 0.85). Does not look up
     stems and does not require every occupant of the slot to match.
+    Crop NCC/chamfer is a separate slot-0 leftover gate.
     """
     return passes_type_consistency_gates(
         left, right, config
     ) or passes_wide_profile_allograph_gates(left, right, config)
+
+
+def bbox_binary_crop(
+    binary: np.ndarray, bbox: BoundingBox, size: tuple[int, int] = (64, 64)
+) -> list[int]:
+    """Flattened 0/255 crop of a bbox ROI, resized to size. Empty if none."""
+    width, height = int(size[0]), int(size[1])
+    n = max(1, width * height)
+    y0 = max(0, bbox.y)
+    x0 = max(0, bbox.x)
+    y1 = min(binary.shape[0], bbox.y + bbox.height)
+    x1 = min(binary.shape[1], bbox.x + bbox.width)
+    if y1 <= y0 or x1 <= x0:
+        return [0] * n
+    roi = binary[y0:y1, x0:x1]
+    if roi.size == 0:
+        return [0] * n
+    resized = cv2.resize((roi > 0).astype(np.uint8) * 255, (width, height))
+    return [int(v) for v in resized.ravel().tolist()]
+
+
+def _crop_plane(
+    crop: list[int] | np.ndarray, size: tuple[int, int] = (64, 64)
+) -> np.ndarray:
+    """Reshape a stored flatten crop to a 2-D 0/255 plane. Zeros if short."""
+    width, height = int(size[0]), int(size[1])
+    values = np.asarray(crop, dtype=np.uint8).ravel()
+    if values.size != width * height:
+        return np.zeros((height, width), dtype=np.uint8)
+    return values.reshape((height, width))
+
+
+def crop_ncc(
+    left_crop: list[int] | np.ndarray,
+    right_crop: list[int] | np.ndarray,
+    size: tuple[int, int] = (64, 64),
+) -> float:
+    """Normalized cross-correlation of two same-size bbox crops. 0 if empty."""
+    left = _crop_plane(left_crop, size).astype(np.float32)
+    right = _crop_plane(right_crop, size).astype(np.float32)
+    if float(left.max()) == 0.0 or float(right.max()) == 0.0:
+        return 0.0
+    value = float(cv2.matchTemplate(left, right, cv2.TM_CCOEFF_NORMED)[0, 0])
+    if np.isnan(value):
+        return 0.0
+    return value
+
+
+def crop_chamfer(
+    left_crop: list[int] | np.ndarray,
+    right_crop: list[int] | np.ndarray,
+    size: tuple[int, int] = (64, 64),
+) -> float:
+    """Symmetric mean chamfer on ink pixels of two bbox crops. inf if empty."""
+    left = _crop_plane(left_crop, size)
+    right = _crop_plane(right_crop, size)
+    left_ink = left > 0
+    right_ink = right > 0
+    if not left_ink.any() or not right_ink.any():
+        return float("inf")
+    dt_left = cv2.distanceTransform((~left_ink).astype(np.uint8) * 255, cv2.DIST_L2, 5)
+    dt_right = cv2.distanceTransform((~right_ink).astype(np.uint8) * 255, cv2.DIST_L2, 5)
+    return 0.5 * (float(dt_left[right_ink].mean()) + float(dt_right[left_ink].mean()))
+
+
+def passes_slot_crop_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if two bbox crops are similar enough to share a slot-0 ID.
+
+    Both stored crops must exist. NCC >= 0.45 and chamfer <= 0.80 —
+    just under the weaker already-merged pair (0.504 / 0.544) and above
+    the strongest leftover (0.229 / 1.017). Does not look up stems and
+    does not loosen Hu or column-ink gates.
+    """
+    cfg = config or ProcessorConfig()
+    size = cfg.target_glyph_size
+    if not left.glyph_crop or not right.glyph_crop:
+        return False
+    if crop_ncc(left.glyph_crop, right.glyph_crop, size) < cfg.slot_crop_min_ncc:
+        return False
+    if crop_chamfer(left.glyph_crop, right.glyph_crop, size) > cfg.slot_crop_max_chamfer:
+        return False
+    return True
 
 
 def tablet_line_key(source_image: str) -> str:
@@ -805,10 +901,14 @@ class GlyphProcessor:
         """
         binary = self.preprocess(image)
         bins = self.config.wide_profile_bins
+        crop_size = self.config.target_glyph_size
         for instance in instances:
             instance.features = self.extract_features(image, instance)
             ink = bbox_column_ink(binary, instance.bounding_box)
             instance.ink_profile = resample_profile(ink, bins)
+            instance.glyph_crop = bbox_binary_crop(
+                binary, instance.bounding_box, crop_size
+            )
         return instances
 
     # =========================================================================
@@ -1150,11 +1250,13 @@ class GlyphProcessor:
         return lines
 
     def _merge_delimiter_slot_allographs(self, instances: list[GlyphInstance]) -> None:
-        """Union same-slot occupants that pass Hu and/or wide-profile gates.
+        """Union same-slot occupants that pass Hu, wide-profile, or crop gates.
 
         Published window starts define the eight slots. Pairwise only:
         a slot is not collapsed to one ID when other occupants fail.
-        Instance-local. Does not read Barthel stem values.
+        Crop NCC/chamfer is consulted only for configured leftover
+        slots (default: slot 0). Instance-local. Does not read Barthel
+        stem values.
         """
         if len(instances) < 2:
             return
@@ -1189,19 +1291,27 @@ class GlyphProcessor:
             if ri != rj:
                 parent[rj] = ri
 
+        crop_slots = (
+            set(self.config.delimiter_slot_crop_slots)
+            if self.config.delimiter_slot_crop_merge
+            else set()
+        )
         merged = False
-        for members in slot_members:
+        for slot, members in enumerate(slot_members):
+            use_crop = slot in crop_slots
             for a_i in range(len(members)):
                 for b_i in range(a_i + 1, len(members)):
                     left_i, right_i = members[a_i], members[b_i]
                     if left_i == right_i:
                         continue
-                    if not passes_delimiter_slot_gates(
-                        instances[left_i], instances[right_i], self.config
-                    ):
+                    left, right = instances[left_i], instances[right_i]
+                    if passes_delimiter_slot_gates(left, right, self.config):
+                        union(left_i, right_i)
+                        merged = True
                         continue
-                    union(left_i, right_i)
-                    merged = True
+                    if use_crop and passes_slot_crop_gates(left, right, self.config):
+                        union(left_i, right_i)
+                        merged = True
 
         if not merged:
             return

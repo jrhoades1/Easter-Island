@@ -5,7 +5,8 @@ mixed 3-gram. Cycle 10 splits over-merged split-fragment types using
 instance Hu / profile (no Barthel in the splitter). The 3-gram is gone.
 
 Cycle 11 kept G003/G008 (every member pair passed). Cycle 12 merges
-same-slot pairs that pass those gates. The delimiter 2-gram is gone.
+same-slot pairs that pass those gates. Cycle 13 crop-compared the
+four slot-0 leftovers; none pass, so the mixed remainder is unchanged.
 Honest remainder sits left of two slot-0 390 merges:
 
     Ca7 [32:34]  G007 G006 = 600 390
@@ -229,7 +230,7 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
             self.instances, self.image_lines, self.published_lines
         )
 
-    def test_cycle12_snapshot(self):
+    def test_cycle13_snapshot(self):
         """PR snapshot: 83/64 / 43+40, mixed 2-gram, no 8-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))

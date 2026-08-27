@@ -241,6 +241,14 @@ def main() -> int:
             "split_inconsistent_types", True
         ),
         delimiter_slot_merge=config["clustering"].get("delimiter_slot_merge", True),
+        delimiter_slot_crop_merge=config["clustering"].get(
+            "delimiter_slot_crop_merge", True
+        ),
+        delimiter_slot_crop_slots=tuple(
+            config["clustering"].get("delimiter_slot_crop_slots", (0,))
+        ),
+        slot_crop_min_ncc=config["clustering"].get("slot_crop_min_ncc", 0.45),
+        slot_crop_max_chamfer=config["clustering"].get("slot_crop_max_chamfer", 0.80),
         delimiter_window_len=config["clustering"].get("delimiter_window_len", 8),
         delimiter_window_starts=tuple(
             config["clustering"].get(

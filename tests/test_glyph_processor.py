@@ -551,6 +551,11 @@ class TestFeatureExtraction(unittest.TestCase):
             self.assertEqual(len(inst.features), 7)
             self.assertTrue(all(isinstance(f, float) for f in inst.features))
             self.assertEqual(len(inst.ink_profile), self.processor.config.wide_profile_bins)
+            self.assertEqual(
+                len(inst.glyph_crop),
+                self.processor.config.target_glyph_size[0]
+                * self.processor.config.target_glyph_size[1],
+            )
 
 
 class TestGlyphImageOperations(unittest.TestCase):
