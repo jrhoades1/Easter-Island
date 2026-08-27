@@ -605,3 +605,31 @@ class GlyphProcessor:
                     return filepath
 
         return ""
+
+
+def instances_to_line_sequences(instances: list[GlyphInstance]) -> list[list[str]]:
+    """Map clustered cataloger instances to cluster-id sequences in reading order.
+
+    Groups by (source_image, line_number) and sorts each group by
+    position_in_line. Emits G00n IDs as assigned by cluster_glyphs.
+    Does not remap those IDs to Barthel stems.
+
+    PatternMiningAgent._extract_sequences is not the cataloger hook: it
+    reads a lexicon dict with clusters[].positions.instances, which
+    RongorongoLexicon.to_dict() does not emit. The real fields are on
+    GlyphInstance.position and GlyphInstance.cluster_id.
+    """
+    buckets: dict[tuple[str, int], list[tuple[int, str]]] = {}
+    for inst in instances:
+        if inst.position is None or not inst.cluster_id:
+            continue
+        key = (inst.source_image, inst.position.line_number)
+        buckets.setdefault(key, []).append(
+            (inst.position.position_in_line, inst.cluster_id)
+        )
+
+    sequences: list[list[str]] = []
+    for key in sorted(buckets):
+        ordered = sorted(buckets[key], key=lambda item: item[0])
+        sequences.append([cluster_id for _, cluster_id in ordered])
+    return sequences
