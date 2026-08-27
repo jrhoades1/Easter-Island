@@ -20,6 +20,8 @@ Cycle 25 locks maximal 040 runs (span, length, precedes-delimiter)
 and per-line run-length lists. 040 is the stem only; no lunar reading.
 Cycle 26 locks inter-delimiter cells (span, tokens, 040-count,
 non-040 list, following-window kind) on this same fixture.
+Cycle 27 locks the non-040 inventory (stem, count, cell hits,
+window-adjacent) on the cycle-26 cell table. Stems are ids only.
 """
 
 import json
