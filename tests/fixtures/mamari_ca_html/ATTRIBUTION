@@ -88,3 +88,8 @@ Cycle 36 (2026-08-27)
 Cycle 37 (2026-08-27)
   Same Aa.html fixture. Locks the longest n=10 motif (hits, flanks,
   8-prefix, C-absent). No Ab.html scrape. Image track stays parked.
+
+Cycle 38 (2026-08-27)
+  Vendors the Aa.html navbar verso Ab.html as
+  tests/fixtures/tahua_ab_html/. Search lock is on Ab only.
+  Image track stays parked.

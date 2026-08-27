@@ -1,0 +1,45 @@
+Tahua (Barthel text A) side b — Kohaumotu Ab.html
+================================================
+
+File
+  Ab.html
+
+Source page (verso of the already-cited Aa.html; same publisher)
+  http://kohaumotu.org/Rongorongo/A/Ab.html
+  Navbar link from http://kohaumotu.org/Rongorongo/A/Aa.html
+  Also listed on http://kohaumotu.org/Rongorongo/A/index.html
+  (Side b, all lines)
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  The published page as retrieved 2026-08-27. Barthel numbers sit in
+  <td> text under each line strip (Ab1–Ab8). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  fi_Ab.html / Fischer pages (not the Barthel all-lines page)
+  A_svg_codes_b.html (SVG overlay; not the Ab.html number table)
+
+Cycle 38 (2026-08-27)
+  Same Kohaumotu tablet-A source already used for Aa. Search lock
+  on Ab.html only (no type map):
+    Aa 10-gram 080 004 280 182 048 022 025 025 009 005: absent
+      (freq 0, no spans)
+    Guy 8-stem delimiter 390 041 378 041 670 008 078 711: absent
+      (freq 0, no spans)
+    Ca 9-gram 002 010 070 760 040 006 430 047 002: absent
+    stem count: 926
+    longest n with freq≥2: 9
+    top 8-gram: 605 003 004 600 004 003 040 003 (freq 2); not Guy
+  Existing Aa / C scoreboards are unchanged.
+  Image track stays parked. No new image. No clustering change.
