@@ -161,6 +161,7 @@ class TestGlyphInstance(unittest.TestCase):
             bounding_box=bbox,
         )
         self.assertEqual(instance.features, [])
+        self.assertEqual(instance.ink_profile, [])
         self.assertIsNone(instance.cluster_id)
         self.assertIsNone(instance.position)
         self.assertEqual(instance.confidence, 1.0)

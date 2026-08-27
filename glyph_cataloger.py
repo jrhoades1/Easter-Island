@@ -230,6 +230,13 @@ def main() -> int:
         split_allograph_max_width_ratio=config["clustering"].get(
             "split_allograph_max_width_ratio", 1.08
         ),
+        wide_profile_allograph_merge=config["clustering"].get(
+            "wide_profile_allograph_merge", True
+        ),
+        wide_profile_bins=config["clustering"].get("wide_profile_bins", 32),
+        wide_profile_min_correlation=config["clustering"].get(
+            "wide_profile_min_correlation", 0.85
+        ),
     )
     processor = GlyphProcessor(processor_config)
 
@@ -262,6 +269,9 @@ def main() -> int:
         ),
         "split_fragment_allograph_merge": config["clustering"].get(
             "split_fragment_allograph_merge", True
+        ),
+        "wide_profile_allograph_merge": config["clustering"].get(
+            "wide_profile_allograph_merge", True
         ),
     }
     lexicon = build_lexicon(processor, instances, images, output_dir, clustering_params)

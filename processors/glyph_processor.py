@@ -1,6 +1,7 @@
 """Computer vision processor for Rongorongo glyph detection and analysis."""
 
 import os
+from collections import defaultdict
 from dataclasses import dataclass
 from typing import Optional
 
@@ -76,6 +77,16 @@ class ProcessorConfig:
     split_fragment_allograph_merge: bool = True
     split_allograph_max_hu_distance: float = 2.0
     split_allograph_max_width_ratio: float = 1.08
+
+    # Wide-box column-ink profile stitch. Hu is a poor match for the
+    # cycle-7 Ca8 left neighbors (wide, Hu>3, area/width ~1). Pearson
+    # on a 32-bin column-ink profile of that pair is ~0.04; adjacent
+    # same-line wide pairs on Ca7–Ca8 top out ~0.70. Threshold 0.85 is
+    # above both, so this pass does not force a 4-gram. Tall-thin Hu
+    # gates are unchanged (aspect ≤ allograph_max_aspect is excluded).
+    wide_profile_allograph_merge: bool = True
+    wide_profile_bins: int = 32
+    wide_profile_min_correlation: float = 0.85
 
 
 def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
@@ -158,6 +169,80 @@ def passes_split_fragment_allograph_gates(
     if _hu_distance(left, right) >= cfg.split_allograph_max_hu_distance:
         return False
     return True
+
+
+def bbox_column_ink(binary: np.ndarray, bbox: BoundingBox) -> np.ndarray:
+    """Ink-pixel count per column of a bbox ROI. Empty if the crop is empty."""
+    y0 = max(0, bbox.y)
+    x0 = max(0, bbox.x)
+    y1 = min(binary.shape[0], bbox.y + bbox.height)
+    x1 = min(binary.shape[1], bbox.x + bbox.width)
+    if y1 <= y0 or x1 <= x0:
+        return np.zeros(0, dtype=float)
+    roi = binary[y0:y1, x0:x1]
+    if roi.size == 0:
+        return np.zeros(0, dtype=float)
+    return (roi > 0).sum(axis=0).astype(float)
+
+
+def resample_profile(column_ink: np.ndarray, bins: int = 32) -> list[float]:
+    """Linear-resample a column-ink vector to a fixed length."""
+    values = np.asarray(column_ink, dtype=float).ravel()
+    n = max(1, int(bins))
+    if values.size == 0:
+        return [0.0] * n
+    if values.size == 1:
+        return [float(values[0])] * n
+    sample = np.interp(
+        np.linspace(0.0, 1.0, n),
+        np.linspace(0.0, 1.0, values.size),
+        values,
+    )
+    return [float(v) for v in sample]
+
+
+def profile_correlation(
+    left_profile: list[float] | np.ndarray,
+    right_profile: list[float] | np.ndarray,
+    bins: int = 32,
+) -> float:
+    """Pearson correlation of two column-ink profiles. 0.0 if undefined."""
+    left = np.asarray(left_profile, dtype=float).ravel()
+    right = np.asarray(right_profile, dtype=float).ravel()
+    if left.size != bins or right.size != bins:
+        left = np.asarray(resample_profile(left, bins), dtype=float)
+        right = np.asarray(resample_profile(right, bins), dtype=float)
+    if left.size < 2 or right.size < 2:
+        return 0.0
+    if float(left.std()) == 0.0 or float(right.std()) == 0.0:
+        return 0.0
+    value = float(np.corrcoef(left, right)[0, 1])
+    if np.isnan(value):
+        return 0.0
+    return value
+
+
+def passes_wide_profile_allograph_gates(
+    left: GlyphInstance,
+    right: GlyphInstance,
+    config: Optional[ProcessorConfig] = None,
+) -> bool:
+    """True if two WIDE boxes share a high column-ink profile correlation.
+
+    Both aspects must exceed allograph_max_aspect (0.5). Does not use Hu
+    and does not loosen the tall-thin same-line gates. Empty profiles fail.
+    """
+    cfg = config or ProcessorConfig()
+    if _bbox_aspect(left) <= cfg.allograph_max_aspect:
+        return False
+    if _bbox_aspect(right) <= cfg.allograph_max_aspect:
+        return False
+    if not left.ink_profile or not right.ink_profile:
+        return False
+    corr = profile_correlation(
+        left.ink_profile, right.ink_profile, cfg.wide_profile_bins
+    )
+    return corr >= cfg.wide_profile_min_correlation
 
 
 def vertical_valley_cuts(
@@ -640,8 +725,12 @@ class GlyphProcessor:
         Returns:
             Same instances with features added.
         """
+        binary = self.preprocess(image)
+        bins = self.config.wide_profile_bins
         for instance in instances:
             instance.features = self.extract_features(image, instance)
+            ink = bbox_column_ink(binary, instance.bounding_box)
+            instance.ink_profile = resample_profile(ink, bins)
         return instances
 
     # =========================================================================
@@ -735,9 +824,12 @@ class GlyphProcessor:
             self._merge_same_line_allographs(instances)
         if self.config.split_fragment_allograph_merge:
             self._merge_split_fragment_allographs(instances)
+        if self.config.wide_profile_allograph_merge:
+            self._merge_wide_profile_allographs(instances)
         if (
             self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
+            or self.config.wide_profile_allograph_merge
         ):
             clusters = self._clusters_from_assigned_ids(instances)
 
@@ -839,6 +931,132 @@ class GlyphProcessor:
             shared_id = f"S{merge_n:03d}"
             for i in members:
                 instances[i].cluster_id = shared_id
+
+    def _merge_wide_profile_allographs(self, instances: list[GlyphInstance]) -> None:
+        """Union wide boxes with high column-ink profile correlation.
+
+        Scopes: same-line adjacent, or corresponding neighbors of a
+        repeating mixed n-gram (delimiter-adjacent proxy). Does not
+        use Hu. Mutates cluster_id on merged instances.
+        """
+        if len(instances) < 2:
+            return
+
+        parent = list(range(len(instances)))
+
+        def find(x: int) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(i: int, j: int) -> None:
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+
+        by_line: dict[tuple[str, int], list[int]] = {}
+        for i, inst in enumerate(instances):
+            if inst.position is None:
+                continue
+            key = (inst.source_image, inst.position.line_number)
+            by_line.setdefault(key, []).append(i)
+
+        for idxs in by_line.values():
+            idxs.sort(key=lambda i: instances[i].position.position_in_line)
+            for left, right in zip(idxs, idxs[1:]):
+                a, b = instances[left], instances[right]
+                if a.position.position_in_line + 1 != b.position.position_in_line:
+                    continue
+                if not passes_wide_profile_allograph_gates(a, b, self.config):
+                    continue
+                union(left, right)
+
+        line_indexes = self._reading_order_indexes(instances)
+        for left_i, right_i in self._mixed_repeating_neighbor_index_pairs(
+            instances, line_indexes
+        ):
+            a, b = instances[left_i], instances[right_i]
+            if not passes_wide_profile_allograph_gates(a, b, self.config):
+                continue
+            union(left_i, right_i)
+
+        components: dict[int, list[int]] = {}
+        for i in range(len(instances)):
+            components.setdefault(find(i), []).append(i)
+
+        merge_n = 0
+        for members in components.values():
+            if len(members) < 2:
+                continue
+            merge_n += 1
+            shared_id = f"W{merge_n:03d}"
+            for i in members:
+                instances[i].cluster_id = shared_id
+
+    def _reading_order_indexes(
+        self, instances: list[GlyphInstance]
+    ) -> list[list[int]]:
+        """Instance indexes grouped by (source_image, line), reading order."""
+        buckets: dict[tuple[str, int], list[int]] = {}
+        for i, inst in enumerate(instances):
+            if inst.position is None or not inst.cluster_id:
+                continue
+            key = (inst.source_image, inst.position.line_number)
+            buckets.setdefault(key, []).append(i)
+        lines: list[list[int]] = []
+        for key in sorted(buckets):
+            idxs = buckets[key]
+            idxs.sort(key=lambda i: instances[i].position.position_in_line)
+            lines.append(idxs)
+        return lines
+
+    def _mixed_repeating_neighbor_index_pairs(
+        self,
+        instances: list[GlyphInstance],
+        line_indexes: list[list[int]],
+    ) -> list[tuple[int, int]]:
+        """Corresponding left/right neighbors of mixed n-grams with freq ≥2."""
+        sequences = [
+            [instances[i].cluster_id for i in idxs] for idxs in line_indexes
+        ]
+        occurrences: dict[tuple[str, ...], list[tuple[int, int, int]]] = defaultdict(
+            list
+        )
+        for n in range(2, 9):
+            for line_k, seq in enumerate(sequences):
+                if len(seq) < n:
+                    continue
+                for start in range(len(seq) - n + 1):
+                    gram = tuple(seq[start : start + n])
+                    if len(set(gram)) < 2:
+                        continue
+                    occurrences[gram].append((line_k, start, n))
+
+        pairs: list[tuple[int, int]] = []
+        seen: set[tuple[int, int]] = set()
+        for hits in occurrences.values():
+            if len(hits) < 2:
+                continue
+            for a in range(len(hits)):
+                for b in range(a + 1, len(hits)):
+                    line_a, start_a, n_a = hits[a]
+                    line_b, start_b, n_b = hits[b]
+                    for offset in (-1, n_a):
+                        idx_a = start_a + offset
+                        idx_b = start_b + offset
+                        if not (0 <= idx_a < len(line_indexes[line_a])):
+                            continue
+                        if not (0 <= idx_b < len(line_indexes[line_b])):
+                            continue
+                        left_i = line_indexes[line_a][idx_a]
+                        right_i = line_indexes[line_b][idx_b]
+                        key = (min(left_i, right_i), max(left_i, right_i))
+                        if key in seen or left_i == right_i:
+                            continue
+                        seen.add(key)
+                        pairs.append(key)
+        return pairs
 
     def _clusters_from_assigned_ids(
         self, instances: list[GlyphInstance]

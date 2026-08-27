@@ -689,6 +689,7 @@ GLYPH_CONFIG = {
         "same_line_allograph_merge": True,
         "split_wide_ligatures": True,
         "split_fragment_allograph_merge": True,
+        "wide_profile_allograph_merge": True,
     }
 }
 
@@ -765,6 +766,8 @@ The image-side scoreboard (`tests/test_mamari_image_scoreboard.py`) runs stock `
 The position-alignment scoreboard (`tests/test_mamari_position_alignment_scoreboard.py`) maps mixed repeating G00n n-gram indexes onto the published Ca7/Ca8 Barthel stems (same 43+40 reading-order slots; no type map). Each hit records the published stem pair/triple and whether that slice is a contiguous subsequence of Guy's delimiter or of the published ligatures 390.041 / 008.078.711.
 
 The neighbor-allograph scoreboard (`tests/test_mamari_neighbor_allograph_scoreboard.py`) applies the existing unsigned-Hu / area / width (and tall-thin aspect) gates to tokens immediately left or right of those mixed hits. Corresponding Ca8 3-gram neighbors fail those gates, so the repeating mixed n-gram stays length 3. No G00n→Barthel map.
+
+The wide-profile scoreboard (`tests/test_mamari_wide_profile_scoreboard.py`) adds a column-ink profile correlation used only on boxes with aspect > 0.5. Same-line adjacent or delimiter-adjacent (corresponding neighbors of a repeating mixed n-gram) wide instances merge if Pearson ≥ 0.85. The cycle-7 Ca8 left-neighbor pair is wide and size-similar but Pearson is ~0.04, so the stitch does not fire and the mixed n-gram stays length 3. Tall-thin Hu gates are unchanged.
 
 The type-identity scoreboard (`tests/test_mamari_type_identity_scoreboard.py`) locks stock cluster identity on those same GIFs: instances per strip, unique G00n count, unique/instance ratio, max n in 1..8 with any n-gram of frequency ≥2, whether a mixed (more than one type) n-gram of length ≥2 repeats, and Ca7/Ca8 sequence lengths vs published stem counts (43 and 40). Stock clustering uses unsigned log-Hu (`ProcessorConfig.hu_sign_mode="unsigned"`) plus a same-line allograph stitch after DBSCAN (adjacent, similar bbox area, tall-thin aspect, unsigned-Hu distance below the observed crescent diameter) and a second, instance-local stitch of valley-split fragments (unsigned Hu < 2.0, area ratio ≤ 1.1, bbox-width ratio ≤ 1.08). Detection splits only wide connected blobs (width ≥70, aspect ≥0.90) at a deep vertical ink-projection valley; inner contours on these GIFs are holes, not stems. `split_fragment_allograph_merge=False` restores the cycle-4 lock. `split_wide_ligatures=False` restores the cycle-3 lock. The signed cycle-1 path and `same_line_allograph_merge=False` remain available. A diagnostic isolates the six adjacent night-sign crescents on `sca0701`. No G00n→Barthel map.
 

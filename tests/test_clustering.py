@@ -11,6 +11,9 @@ from processors.glyph_processor import (
     ProcessorConfig,
     passes_same_line_allograph_gates,
     passes_split_fragment_allograph_gates,
+    passes_wide_profile_allograph_gates,
+    profile_correlation,
+    resample_profile,
 )
 
 
@@ -535,6 +538,101 @@ class TestSplitFragmentAllographMerge(unittest.TestCase):
         )
         self.assertTrue(passes_same_line_allograph_gates(thin, other))
         self.assertFalse(passes_same_line_allograph_gates(thin, wide))
+
+
+class TestWideProfileAllographMerge(unittest.TestCase):
+    """Column-ink profile stitch for wide boxes only. No Mamari GIFs."""
+
+    def _wide(
+        self,
+        instance_id: str,
+        position: int,
+        profile: list[float],
+        source: str = "line.gif",
+        width: int = 72,
+        height: int = 66,
+        features: list[float] | None = None,
+    ) -> GlyphInstance:
+        return GlyphInstance(
+            instance_id=instance_id,
+            source_image=source,
+            bounding_box=BoundingBox(x=position * 80, y=0, width=width, height=height),
+            features=features if features is not None else [0.0] * 7,
+            ink_profile=profile,
+            position=GlyphPosition(0, position, 4),
+        )
+
+    def test_identical_profiles_correlate(self):
+        ramp = [float(i) for i in range(32)]
+        self.assertAlmostEqual(profile_correlation(ramp, ramp), 1.0)
+        shifted = resample_profile(np.array(ramp, dtype=float) + 3.0, 32)
+        self.assertAlmostEqual(profile_correlation(ramp, shifted), 1.0, places=6)
+
+    def test_uncorrelated_profiles_fail_gate(self):
+        left = [1.0, 0.0] * 16
+        right = [0.0, 1.0] * 16
+        self.assertLess(profile_correlation(left, right), 0.0)
+        a = self._wide("a", 0, left)
+        b = self._wide("b", 1, right)
+        self.assertFalse(passes_wide_profile_allograph_gates(a, b))
+
+    def test_adjacent_wide_high_corr_shares_an_id(self):
+        """Hu is far; profile match still unions two wide neighbors."""
+        ramp = [float(i) for i in range(32)]
+        a = self._wide("a", 0, ramp, features=[0.0] * 7)
+        b = self._wide("b", 1, ramp, features=[5.0] + [0.0] * 6)
+        self.assertFalse(passes_same_line_allograph_gates(a, b))
+        self.assertTrue(passes_wide_profile_allograph_gates(a, b))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_tall_thin_is_excluded_even_with_matching_profile(self):
+        """Wide-only gate: aspect ≤ 0.5 never uses this stitch."""
+        ramp = [float(i) for i in range(32)]
+        thin = GlyphInstance(
+            instance_id="thin",
+            source_image="line.gif",
+            bounding_box=BoundingBox(x=0, y=0, width=26, height=66),
+            features=[5.0] + [0.0] * 6,
+            ink_profile=ramp,
+            position=GlyphPosition(0, 0, 2),
+        )
+        other = GlyphInstance(
+            instance_id="other",
+            source_image="line.gif",
+            bounding_box=BoundingBox(x=30, y=0, width=26, height=66),
+            features=[0.0] * 7,
+            ink_profile=ramp,
+            position=GlyphPosition(0, 1, 2),
+        )
+        self.assertFalse(passes_wide_profile_allograph_gates(thin, other))
+        self.assertFalse(passes_same_line_allograph_gates(thin, other))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([thin, other])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_low_corr_wide_pair_does_not_merge(self):
+        """Honest negative: size-similar wide boxes with ~0 profile corr."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        a = self._wide("a", 0, left, features=[0.0] * 7)
+        b = self._wide("b", 1, right, features=[5.0] + [0.0] * 6)
+        self.assertLess(profile_correlation(left, right), 0.0)
+        self.assertFalse(passes_wide_profile_allograph_gates(a, b))
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_wide_profile_merge_can_be_disabled(self):
+        ramp = [float(i) for i in range(32)]
+        a = self._wide("a", 0, ramp)
+        b = self._wide("b", 1, ramp, features=[5.0] + [0.0] * 6)
+        processor = GlyphProcessor(
+            ProcessorConfig(wide_profile_allograph_merge=False)
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
 
 class TestSingleGlyphClustering(unittest.TestCase):
