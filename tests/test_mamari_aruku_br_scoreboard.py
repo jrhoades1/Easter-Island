@@ -209,7 +209,7 @@ class TestArukuBrHelpers(unittest.TestCase):
         )
         published = extract_br_published_tokens(html)
         self.assertEqual(published["Br1"], ["595", "001", "050.394s"])
-        self.assertEqual(published["Br2"], ["600", "050", "381"])
+        self.assertEqual(published["Br2"], ["600", "050", "381*"])
 
     def test_first_non_a_c_skips_tahua_and_mamari(self):
         """A and C are skipped; first linked other tablet wins."""
