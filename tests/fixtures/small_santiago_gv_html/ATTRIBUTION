@@ -1,0 +1,64 @@
+Small Santiago (Barthel text G) verso — Kohaumotu Gv.html
+=======================================================
+
+Files
+  Gv.html        http://kohaumotu.org/Rongorongo/G/Gv.html
+  G_index.html   already vendored in cycle 54
+                 tests/fixtures/small_santiago_ga_html/G_index.html
+                 http://kohaumotu.org/Rongorongo/G/index.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet G / Small Santiago
+  → G/index.html
+  http://kohaumotu.org/Rongorongo/G/index.html
+  published all-lines Barthel HTML: Gr.html (recto) and Gv.html (verso)
+  http://kohaumotu.org/Rongorongo/G/Gv.html
+  Cycle 54 locked Ga.html as unpublished. Cycle 55 vendored the
+  documented recto Gr.html and stopped without scraping Gv.html.
+  This cycle vendors the documented verso. Tablet K (same-text
+  note) and tablet D are not scraped.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Gv.html as retrieved 2026-08-27. Barthel numbers sit in <td>
+  text under each line strip (Gv1–Gv8). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  Ga.html (still unpublished; cycle 54 lock stands)
+  a second copy of Gr.html (already vendored in cycle 55)
+  tablet K / Small London (same-text note; different tablet)
+  tablet D / Échancrée or any other substitute tablet
+  fi_Gv.html / Fischer pages
+  G_svg_codes_b.html
+  individualized Gv01.html … Gv08.html slices
+
+Cycle 56 (2026-08-27)
+  Same Kohaumotu catalog already used for A / B / C / I / Gr.
+  Search lock on Gv.html only (no type map):
+    stem count: 359 (46 46 44 46 45 38 45 49)
+    Ca 9-gram (C): absent
+    Aa 10-gram (A): absent
+    Ab 9-gram (A): absent
+    Bv 8-gram (B): absent
+    Ia top 5-gram 999 071 076 010 079: absent
+    076 rate: 43 / 359 (rate ≥ 0.10)
+    090 076: 0
+    076 071: 0
+    090 076 071: 0
+  Existing A / B / C / Ia / Gr scoreboards are unchanged.
+  Cycle 55 Gr.html lock stays. Image track stays parked.
+  No K scrape. No D scrape. No type merge. No CV.
