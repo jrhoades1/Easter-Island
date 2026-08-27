@@ -56,6 +56,7 @@ from tests.test_mamari_small_santiago_ga_scoreboard import (
 )
 from tests.test_mamari_santiago_ib_scoreboard import (
     FOURTH_TABLET_PAGES,
+    fourth_tablet_html_names,
     published_all_lines_hrefs,
 )
 from tests.test_mamari_tahua_aa_10gram_motif_scoreboard import MOTIF_10GRAM
@@ -297,7 +298,8 @@ class TestMamariSmallSantiagoGrScoreboard(unittest.TestCase):
         self.assertIn("tablet D", attribution)
         fixtures = Path(__file__).parent / "fixtures"
         self.assertEqual(substitute_k_or_gv(fixtures), ())
-        self.assertFalse(any(fixtures.glob(f"**/{name}") for name in FOURTH_TABLET_PAGES))
+        self.assertEqual(fourth_tablet_html_names(fixtures), ())
+        self.assertEqual(FOURTH_TABLET_PAGES[0], "D.html")
         self.assertFalse(STANDING_GV_HTML_VENDORED)
         self.assertFalse(STANDING_TABLET_D_SCRAPED)
         self.assertFalse(STANDING_TABLET_K_SCRAPED)

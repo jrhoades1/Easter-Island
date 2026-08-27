@@ -230,6 +230,7 @@
       "http://kohaumotu.org/Rongorongo/A/Ab.html",
       "http://kohaumotu.org/Rongorongo/B/Br.html",
       "http://kohaumotu.org/Rongorongo/B/Bv.html",
+      "http://kohaumotu.org/Rongorongo/G/Gr.html",
       "http://kohaumotu.org/Rongorongo/I/Ia.html"
     ],
     "index_html": {
@@ -252,6 +253,8 @@
       "http://kohaumotu.org/Rongorongo/C/Ca07.html",
       "http://kohaumotu.org/Rongorongo/C/Cb.html",
       "http://kohaumotu.org/Rongorongo/C/fi_Ca.html",
+      "http://kohaumotu.org/Rongorongo/G/Gr.html",
+      "http://kohaumotu.org/Rongorongo/G/index.html",
       "http://kohaumotu.org/Rongorongo/I/Ia.html",
       "http://kohaumotu.org/Rongorongo/I/index.html",
       "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
@@ -260,7 +263,7 @@
       "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
       "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
     ],
-    "cited_url_tablet_letters": ["A", "B", "C", "I"],
+    "cited_url_tablet_letters": ["A", "B", "C", "G", "I"],
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
