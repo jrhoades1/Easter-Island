@@ -10,8 +10,10 @@ from processors.glyph_processor import (
     GlyphProcessor,
     ProcessorConfig,
     _hu_distance,
+    best_crop_hamming_pair,
     crop_chamfer,
     crop_ncc,
+    min_pairwise_window_hamming,
     passes_delimiter_slot_gates,
     passes_same_line_allograph_gates,
     passes_slot_crop_gates,
@@ -19,8 +21,10 @@ from processors.glyph_processor import (
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
     profile_correlation,
+    remap_window_types,
     resample_profile,
     tablet_line_key,
+    window_hamming,
 )
 
 
@@ -843,7 +847,7 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
     def test_crop_gate_does_not_run_on_other_slots(self):
-        """Matching crops in slot 1 stay distinct. Slot-0 only."""
+        """Matching crops in slot 1 stay distinct when Hamming merge is off."""
         left = [float(i) for i in range(32)]
         right = [float(31 - i) for i in range(32)]
         crop = self._crop("circle")
@@ -862,11 +866,81 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
             ProcessorConfig(
                 delimiter_window_len=2,
                 delimiter_window_starts=((0, 0), (1, 0)),
+                delimiter_slot_crop_hamming_merge=False,
             )
         )
         _, clustered = processor.cluster_glyphs([a, filler, other, b])
         by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
         self.assertNotEqual(by_id["a"], by_id["b"])
+
+    def test_crop_hamming_merge_unions_slot1_when_min_hamming_drops(self):
+        """Slot-1 leftover crop pair unions only because Hamming would drop."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._crop("circle")
+        a = self._inst("a", "sca0701.gif", 1, [0.0] * 7, left, total=2)
+        filler = self._inst(
+            "x", "sca0701.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b = self._inst("b", "sca0801.gif", 1, [5.0] + [0.0] * 6, right, total=2)
+        other = self._inst(
+            "y", "sca0801.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        a.glyph_crop = crop
+        b.glyph_crop = list(crop)
+        self.assertFalse(passes_delimiter_slot_gates(a, b))
+        self.assertTrue(passes_slot_crop_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, filler, other, b])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertEqual(by_id["a"], by_id["b"])
+
+    def test_crop_hamming_merge_skips_pair_that_does_not_drop_min_hamming(self):
+        """Crop-passing leftover stays split when min Hamming would not fall."""
+        ramp = [float(i) for i in range(32)]
+        inverse = [float(31 - i) for i in range(32)]
+        crop = self._crop("circle")
+        p0 = self._inst("p0", "sca0701.gif", 0, [0.0] * 7, ramp, width=26, total=2)
+        q = self._inst("q", "sca0701.gif", 1, [4.0] + [0.0] * 6, inverse, width=26, total=2)
+        p1 = self._inst("p1", "sca0801.gif", 0, [0.8] + [0.0] * 6, ramp, width=26, total=2)
+        r = self._inst("r", "sca0801.gif", 1, [6.0] + [0.0] * 6, inverse, width=26, total=2)
+        s = self._inst("s", "other.gif", 0, [9.0] + [0.0] * 6, inverse, width=26, total=2)
+        t = self._inst("t", "other.gif", 1, [7.0] + [0.0] * 6, ramp, width=26, total=2)
+        q.glyph_crop = crop
+        t.glyph_crop = list(crop)
+        r.glyph_crop = self._crop("band")
+        self.assertTrue(passes_slot_crop_gates(q, t))
+        self.assertFalse(passes_delimiter_slot_gates(q, t))
+        grams = (("P", "Q"), ("P", "R"), ("S", "T"))
+        self.assertEqual(min_pairwise_window_hamming(grams), 1)
+        self.assertEqual(
+            min_pairwise_window_hamming(remap_window_types(grams, "Q", "T")), 1
+        )
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0), (2, 0)),
+            )
+        )
+        _, clustered = processor.cluster_glyphs([p0, q, p1, r, s, t])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertEqual(by_id["p0"], by_id["p1"])
+        self.assertNotEqual(by_id["q"], by_id["t"])
+
+    def test_window_hamming_helpers(self):
+        self.assertEqual(window_hamming(("A",) * 8, ("A",) * 8), 0)
+        self.assertEqual(window_hamming(("A", "B"), ("A", "C")), 1)
+        self.assertEqual(min_pairwise_window_hamming((("A", "B"), ("A", "C"), ("D", "E"))), 1)
+        remapped = remap_window_types((("A", "B"), ("A", "C")), "B", "C")
+        self.assertEqual(min_pairwise_window_hamming(remapped), 0)
+        with self.assertRaises(ValueError):
+            window_hamming(("A",), ("A", "B"))
+        self.assertIsNone(best_crop_hamming_pair([], []))
 
     def test_missing_crops_do_not_merge(self):
         left = [float(i) for i in range(32)]

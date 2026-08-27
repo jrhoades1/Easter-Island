@@ -24,12 +24,13 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 18 locks nearest 8-window Hamming (concat 3 / published 7)
-# and keeps the cycle-15/16 standing lock: 83/62 / 0/8. Cycle 17
-# searched the full G00n sequence (not Guy windows): no repeating
-# 8-gram; longest mixed n=2. Cycle 16 found no honest
-# higher-res public Ca7–Ca8 raster (GIF ceiling). Cycle 15 global
-# keep-ID gate after DBSCAN dropped two types vs cycle 14 (83/64).
+# Cycle 19 drops published-window min Hamming 7→6 with one crop
+# merge and keeps 83/62 / 0/8 / mixed n=2. Cycle 18 locked nearest
+# 8-window Hamming (concat 3 / published 7). Cycle 17 searched the
+# full G00n sequence (not Guy windows): no repeating 8-gram;
+# longest mixed n=2. Cycle 16 found no honest higher-res public
+# Ca7–Ca8 raster (GIF ceiling). Cycle 15 global keep-ID gate after
+# DBSCAN dropped two types vs cycle 14 (83/64).
 # Window stays 0/8. Cycle 13 was the same 83/64 (crop leftovers fail).
 # Cycle 11 was 83/66 / mixed
 # G003 G008. Cycle 9 was 83/62 / mixed 3-gram (same type count, different

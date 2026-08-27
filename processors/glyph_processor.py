@@ -121,6 +121,11 @@ class ProcessorConfig:
     delimiter_slot_crop_slots: tuple[int, ...] = (0,)
     slot_crop_min_ncc: float = 0.45
     slot_crop_max_chamfer: float = 0.80
+    # Cycle 19: leftover crop stitch on any published slot, but only
+    # for a pair whose union drops published-window min Hamming, and
+    # at most once. Slot-0 crop (cycle 13) is unchanged. False keeps
+    # the cycle-18 published-H=7 lock.
+    delimiter_slot_crop_hamming_merge: bool = True
     delimiter_window_len: int = 8
     # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
@@ -300,7 +305,8 @@ def passes_delimiter_slot_gates(
     2.0 and, when both profiles exist, Pearson r >= 0.85) and/or the
     wide-profile gate (aspect > 0.5 and r >= 0.85). Does not look up
     stems and does not require every occupant of the slot to match.
-    Crop NCC/chamfer is a separate slot-0 leftover gate.
+    Crop NCC/chamfer is a leftover gate (slot 0, plus the cycle-19
+    Hamming-drop pass on any slot).
     """
     return passes_type_consistency_gates(
         left, right, config
@@ -375,12 +381,14 @@ def passes_slot_crop_gates(
     right: GlyphInstance,
     config: Optional[ProcessorConfig] = None,
 ) -> bool:
-    """True if two bbox crops are similar enough to share a slot-0 ID.
+    """True if two bbox crops are similar enough to share a leftover ID.
 
     Both stored crops must exist. NCC >= 0.45 and chamfer <= 0.80 —
     just under the weaker already-merged pair (0.504 / 0.544) and above
-    the strongest leftover (0.229 / 1.017). Does not look up stems and
-    does not loosen Hu or column-ink gates.
+    the strongest slot-0 leftover (0.229 / 1.017). Does not look up
+    stems and does not loosen Hu or column-ink gates. Cycle 19 also
+    requires a published-window Hamming drop before this gate unions
+    a non-slot-0 leftover.
     """
     cfg = config or ProcessorConfig()
     size = cfg.target_glyph_size
@@ -391,6 +399,100 @@ def passes_slot_crop_gates(
     if crop_chamfer(left.glyph_crop, right.glyph_crop, size) > cfg.slot_crop_max_chamfer:
         return False
     return True
+
+
+def window_hamming(
+    left: list[str] | tuple[str, ...], right: list[str] | tuple[str, ...]
+) -> int:
+    """Positions that differ. Equal length required."""
+    if len(left) != len(right):
+        raise ValueError("Hamming requires equal-length windows")
+    return sum(a != b for a, b in zip(left, right))
+
+
+def min_pairwise_window_hamming(
+    grams: list[tuple[str, ...]] | tuple[tuple[str, ...], ...],
+) -> int:
+    """Min Hamming among distinct window grams."""
+    if len(grams) < 2:
+        raise ValueError("need at least two windows")
+    return min(
+        window_hamming(grams[i], grams[j])
+        for i in range(len(grams))
+        for j in range(i + 1, len(grams))
+    )
+
+
+def slot_window_grams(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+) -> tuple[tuple[str, ...], ...]:
+    """Per-window G00n 8-grams from slot occupant indexes. No stem lookup."""
+    if not slot_members or not slot_members[0]:
+        return ()
+    n_windows = len(slot_members[0])
+    window_len = len(slot_members)
+    return tuple(
+        tuple(instances[slot_members[slot][w]].cluster_id for slot in range(window_len))
+        for w in range(n_windows)
+    )
+
+
+def remap_window_types(
+    grams: tuple[tuple[str, ...], ...] | list[tuple[str, ...]],
+    left_id: str,
+    right_id: str,
+    shared_id: str = "MERGE",
+) -> tuple[tuple[str, ...], ...]:
+    """Union two cluster IDs inside published-window grams only."""
+    keep = {left_id, right_id}
+    return tuple(
+        tuple(shared_id if token in keep else token for token in gram) for gram in grams
+    )
+
+
+def best_crop_hamming_pair(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+    config: Optional[ProcessorConfig] = None,
+) -> Optional[tuple[int, int]]:
+    """At most one leftover same-slot crop pair that drops min Hamming.
+
+    Conservative cycle-13 crop gate (NCC / chamfer). Pairwise leftover
+    occupants only — a slot is not forced to one ID. Returns instance
+    indexes or None. Does not look up stems.
+    """
+    cfg = config or ProcessorConfig()
+    grams = slot_window_grams(instances, slot_members)
+    if len(grams) < 2:
+        return None
+    current = min_pairwise_window_hamming(grams)
+    best: Optional[tuple] = None
+    for slot, members in enumerate(slot_members):
+        for a_i in range(len(members)):
+            for b_i in range(a_i + 1, len(members)):
+                left_i, right_i = members[a_i], members[b_i]
+                if left_i == right_i:
+                    continue
+                left, right = instances[left_i], instances[right_i]
+                if not left.cluster_id or not right.cluster_id:
+                    continue
+                if left.cluster_id == right.cluster_id:
+                    continue
+                if not passes_slot_crop_gates(left, right, cfg):
+                    continue
+                new_h = min_pairwise_window_hamming(
+                    remap_window_types(grams, left.cluster_id, right.cluster_id)
+                )
+                if new_h >= current:
+                    continue
+                ncc = crop_ncc(left.glyph_crop, right.glyph_crop, cfg.target_glyph_size)
+                rec = (new_h, -ncc, slot, left_i, right_i)
+                if best is None or rec < best:
+                    best = rec
+    if best is None:
+        return None
+    return (best[3], best[4])
 
 
 def tablet_line_key(source_image: str) -> str:
@@ -1020,6 +1122,11 @@ class GlyphProcessor:
         if self.config.delimiter_slot_merge:
             self._merge_delimiter_slot_allographs(instances)
         if (
+            self.config.delimiter_slot_merge
+            and self.config.delimiter_slot_crop_hamming_merge
+        ):
+            self._merge_crop_hamming_pair(instances)
+        if (
             self.config.global_type_consistency_merge
             or self.config.same_line_allograph_merge
             or self.config.split_fragment_allograph_merge
@@ -1334,9 +1441,10 @@ class GlyphProcessor:
 
         Published window starts define the eight slots. Pairwise only:
         a slot is not collapsed to one ID when other occupants fail.
-        Crop NCC/chamfer is consulted only for configured leftover
-        slots (default: slot 0). Instance-local. Does not read Barthel
-        stem values.
+        Crop NCC/chamfer is consulted for configured leftover slots
+        (default: slot 0). The cycle-19 Hamming-drop crop stitch runs
+        after this pass assigns IDs. Instance-local. Does not read
+        Barthel stem values.
         """
         if len(instances) < 2:
             return
@@ -1410,6 +1518,40 @@ class GlyphProcessor:
             shared_id = f"D{merge_n:03d}"
             for i in unique:
                 instances[i].cluster_id = shared_id
+
+    def _merge_crop_hamming_pair(self, instances: list[GlyphInstance]) -> None:
+        """Union at most one leftover crop pair that drops min Hamming.
+
+        Runs after slot IDs are assigned so the Hamming check sees the
+        cycle-12 shared slots. The winning pair keeps the left
+        occupant's ID. Does not look up stems.
+        """
+        if len(instances) < 2:
+            return
+        window_len = int(self.config.delimiter_window_len)
+        starts = tuple(self.config.delimiter_window_starts)
+        if window_len < 1 or not starts:
+            return
+        line_indexes = self._concatenated_tablet_line_indexes(instances)
+        slot_members: list[list[int]] = [[] for _ in range(window_len)]
+        for line_index, start in starts:
+            if line_index < 0 or line_index >= len(line_indexes):
+                continue
+            line = line_indexes[line_index]
+            end = start + window_len
+            if start < 0 or end > len(line):
+                continue
+            for slot in range(window_len):
+                slot_members[slot].append(line[start + slot])
+        pair = best_crop_hamming_pair(instances, slot_members, self.config)
+        if pair is None:
+            return
+        left_i, right_i = pair
+        shared = instances[left_i].cluster_id or instances[right_i].cluster_id
+        if not shared:
+            return
+        instances[left_i].cluster_id = shared
+        instances[right_i].cluster_id = shared
 
     def _reading_order_indexes(
         self, instances: list[GlyphInstance]

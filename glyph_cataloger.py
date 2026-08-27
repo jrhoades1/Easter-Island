@@ -252,6 +252,9 @@ def main() -> int:
         ),
         slot_crop_min_ncc=config["clustering"].get("slot_crop_min_ncc", 0.45),
         slot_crop_max_chamfer=config["clustering"].get("slot_crop_max_chamfer", 0.80),
+        delimiter_slot_crop_hamming_merge=config["clustering"].get(
+            "delimiter_slot_crop_hamming_merge", True
+        ),
         delimiter_window_len=config["clustering"].get("delimiter_window_len", 8),
         delimiter_window_starts=tuple(
             config["clustering"].get(

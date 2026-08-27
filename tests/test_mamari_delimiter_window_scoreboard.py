@@ -18,8 +18,11 @@ slot unique stays (4, 6, 6, 6, 5, 6, 6, 5). The gate is not lowered.
 Cycle 16 found no honest higher-res public Ca7–Ca8 raster; GIF
 ceiling, lock unchanged. Cycle 17 searches the full G00n sequence
 (not these six windows) and still finds no repeating 8-gram.
-Cycle 18 locks nearest 8-window Hamming among these six at 7
+Cycle 18 locked nearest 8-window Hamming among these six at 7
 (first pair Ca7[6:14] vs Ca8[3:11]); concat min is 3.
+Cycle 19 merges one leftover crop pair that drops published
+Hamming to 6 (slot 7: Ca7[26] vs Ca8[22]). Other crop-passing
+leftovers do not drop Hamming and stay split.
 Glyph meanings are not assigned.
 """
 
@@ -32,13 +35,16 @@ from models.glyphs import GlyphInstance
 from tests.test_mamari_calendar_scoreboard import DELIMITER_MOTIF
 from processors.glyph_processor import (
     ProcessorConfig,
+    _hu_distance,
     crop_chamfer,
     crop_ncc,
+    min_pairwise_window_hamming,
     passes_delimiter_slot_gates,
     passes_slot_crop_gates,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
     profile_correlation,
+    remap_window_types,
 )
 from tests.test_mamari_image_scoreboard import (
     TRACING_DIR,
@@ -68,18 +74,19 @@ WINDOW_LEN = len(DELIMITER_MOTIF)
 
 # Six published delimiter occurrences on Ca7/Ca8 (3 + 3).
 STANDING_DELIMITER_WINDOWS = (
-    ("Ca7", 6, 14, ("G003", "G021", "G020", "G019", "G015", "G018", "G016", "G017")),
-    ("Ca7", 19, 27, ("G023", "G026", "G022", "G033", "G004", "G034", "G035", "G005")),
+    ("Ca7", 6, 14, ("G004", "G021", "G020", "G019", "G015", "G018", "G016", "G017")),
+    ("Ca7", 19, 27, ("G023", "G026", "G022", "G033", "G005", "G034", "G035", "G003")),
     ("Ca7", 33, 41, ("G006", "G043", "G039", "G042", "G036", "G040", "G009", "G041")),
-    ("Ca8", 3, 11, ("G003", "G011", "G013", "G047", "G049", "G009", "G012", "G005")),
-    ("Ca8", 15, 23, ("G006", "G052", "G014", "G051", "G004", "G012", "G050", "G002")),
+    ("Ca8", 3, 11, ("G004", "G011", "G013", "G047", "G049", "G009", "G012", "G003")),
+    ("Ca8", 15, 23, ("G006", "G052", "G014", "G051", "G005", "G012", "G050", "G003")),
     ("Ca8", 29, 37, ("G011", "G013", "G060", "G061", "G014", "G055", "G057", "G054")),
 )
 STANDING_WINDOW_COUNT = 6
 STANDING_SLOT_MATCHES = 0
-# Pairwise slot merges that passed Hu/profile. No slot is unanimous.
+# Pairwise slot merges that passed Hu/profile or the cycle-19 crop
+# Hamming gate. No slot is unanimous.
 STANDING_MERGED_SLOTS = (0, 4, 7)
-STANDING_SLOT_UNIQUE_COUNTS = (4, 6, 6, 6, 5, 6, 6, 5)
+STANDING_SLOT_UNIQUE_COUNTS = (4, 6, 6, 6, 5, 6, 6, 4)
 # Slot-0 reading-order occupants (line, index). Four unique IDs remain.
 SLOT0_OCCUPANTS = (
     ("Ca7", 6),
@@ -110,6 +117,15 @@ STANDING_SLOT0_CROP_PAIRS = (
     (("Ca8", 3), ("Ca8", 29), 0.057, 1.838, 0.217, False, False),
     (("Ca8", 15), ("Ca8", 29), 0.144, 1.068, 0.541, False, False),
 )
+# Cycle 19: leftover same-slot crop pairs that clear NCC/chamfer.
+# Only slot 7 Ca7[26] vs Ca8[22] also drops published min Hamming.
+# (slot, left, right, ncc, chamfer, r, crop_pass, drops_hamming)
+STANDING_CROP_HAMMING_CANDIDATES = (
+    (7, ("Ca7", 26), ("Ca8", 22), 0.700, 0.357, 0.882, True, True),
+    (2, ("Ca7", 8), ("Ca8", 31), 0.640, 0.548, 0.753, True, False),
+    (3, ("Ca7", 9), ("Ca8", 32), 0.470, 0.784, 0.735, True, False),
+)
+STANDING_CROP_HAMMING_MERGE = STANDING_CROP_HAMMING_CANDIDATES[0]
 
 # Joint stem-index offsets applied to every published start. Same N
 # for all six windows. Per-window free search would mix slots.
@@ -123,14 +139,15 @@ PUBLISHED_WINDOW_STARTS = (
     (1, 29),
 )
 # Joint offset table on the standing G00n sequence. Every offset is
-# 0/8. Offsets -2 / -1 / 0 share mean unique 5.500; +1 / +2 are 5.750.
+# 0/8. Offset 0 is uniquely best (mean unique 5.375); -2 / -1 are
+# 5.500; +1 / +2 are 5.625 after the slot-7 crop merge.
 # (offset, matches, unique-count 8-tuple)
 STANDING_OFFSET_TABLE = (
     (-2, 0, (6, 5, 4, 6, 6, 6, 5, 6)),
     (-1, 0, (5, 4, 6, 6, 6, 5, 6, 6)),
-    (0, 0, (4, 6, 6, 6, 5, 6, 6, 5)),
-    (1, 0, (6, 6, 6, 5, 6, 6, 5, 6)),
-    (2, 0, (6, 6, 5, 6, 6, 5, 6, 6)),
+    (0, 0, (4, 6, 6, 6, 5, 6, 6, 4)),
+    (1, 0, (6, 6, 6, 5, 6, 6, 4, 6)),
+    (2, 0, (6, 6, 5, 6, 6, 4, 6, 6)),
 )
 STANDING_BEST_OFFSET = 0
 STANDING_BEST_OFFSET_MATCHES = 0
@@ -552,10 +569,11 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_merged_pairs_pass_honest_gates(self):
-        """Only the four passing same-slot pairs share an ID.
+        """Passing same-slot pairs share an ID.
 
         Slot 0: CONS+WIDE (Ca7[6]/Ca8[3]) and WIDE-only (Ca7[33]/Ca8[15]).
-        Slot 4: CONS (Ca7[23]/Ca8[19]). Slot 7: CONS (Ca7[26]/Ca8[10]).
+        Slot 4: CONS (Ca7[23]/Ca8[19]). Slot 7: CONS (Ca7[26]/Ca8[10])
+        plus the cycle-19 crop Hamming pair (Ca7[26]/Ca8[22]).
         Other occupants in those slots stay distinct.
         """
         lines = ca7_ca8_instances(self.instances)
@@ -570,6 +588,11 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
             self.assertEqual(expect_wide, passes_wide_profile_allograph_gates(left, right))
             self.assertTrue(passes_delimiter_slot_gates(left, right))
             self.assertEqual(left.cluster_id, right.cluster_id)
+        crop_left = lines[0][26]
+        crop_right = lines[1][22]
+        self.assertFalse(passes_delimiter_slot_gates(crop_left, crop_right))
+        self.assertTrue(passes_slot_crop_gates(crop_left, crop_right))
+        self.assertEqual(crop_left.cluster_id, crop_right.cluster_id)
         # A non-passing occupant in a merged slot keeps its own ID.
         self.assertFalse(passes_delimiter_slot_gates(lines[0][6], lines[0][19]))
         self.assertNotEqual(lines[0][6].cluster_id, lines[0][19].cluster_id)
@@ -624,6 +647,53 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         self.assertLess(max(leftover_ncc), 0.45)
         self.assertGreater(min(leftover_chamfer), 0.80)
         self.assertLess(max(leftover_r), 0.70)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_one_crop_pair_drops_published_hamming(self):
+        """Cycle 19: only slot 7 Ca7[26]/Ca8[22] clears crop and drops H.
+
+        Gate stays NCC >= 0.45 / chamfer <= 0.80. Hu 2.32 fails keep-ID.
+        Slot 2 G020/G060 and slot 3 G019/G061 pass crop but would leave
+        published min Hamming at 7, so they stay distinct.
+        """
+        lines = ca7_ca8_instances(self.instances)
+        grams = tuple(window.image_ids for window in self.score.windows)
+        cycle18_grams = (
+            ("G003", "G021", "G020", "G019", "G015", "G018", "G016", "G017"),
+            ("G023", "G026", "G022", "G033", "G004", "G034", "G035", "G005"),
+            ("G006", "G043", "G039", "G042", "G036", "G040", "G009", "G041"),
+            ("G003", "G011", "G013", "G047", "G049", "G009", "G012", "G005"),
+            ("G006", "G052", "G014", "G051", "G004", "G012", "G050", "G002"),
+            ("G011", "G013", "G060", "G061", "G014", "G055", "G057", "G054"),
+        )
+        self.assertEqual(min_pairwise_window_hamming(cycle18_grams), 7)
+        self.assertEqual(min_pairwise_window_hamming(grams), 6)
+        for slot, left_key, right_key, ncc, chamfer, corr, crop_pass, drops in (
+            STANDING_CROP_HAMMING_CANDIDATES
+        ):
+            left = slot0_instance(lines, *left_key)
+            right = slot0_instance(lines, *right_key)
+            got_ncc = crop_ncc(left.glyph_crop, right.glyph_crop)
+            got_chamfer = crop_chamfer(left.glyph_crop, right.glyph_crop)
+            got_corr = profile_correlation(left.ink_profile, right.ink_profile)
+            self.assertAlmostEqual(got_ncc, ncc, places=3, msg=(slot, left_key))
+            self.assertAlmostEqual(got_chamfer, chamfer, places=3, msg=(slot, left_key))
+            self.assertAlmostEqual(got_corr, corr, places=3, msg=(slot, left_key))
+            self.assertEqual(passes_slot_crop_gates(left, right), crop_pass)
+            self.assertFalse(passes_delimiter_slot_gates(left, right))
+            simulated = min_pairwise_window_hamming(
+                remap_window_types(cycle18_grams, *{
+                    7: ("G005", "G002"),
+                    2: ("G020", "G060"),
+                    3: ("G019", "G061"),
+                }[slot])
+            )
+            self.assertEqual(simulated < 7, drops, (slot, left_key, right_key))
+            if drops:
+                self.assertGreaterEqual(_hu_distance(left, right), 2.0)
+                self.assertEqual(left.cluster_id, right.cluster_id)
+            else:
+                self.assertNotEqual(left.cluster_id, right.cluster_id)
         self.assertEqual(self.provider.get_call_history(), [])
 
 
