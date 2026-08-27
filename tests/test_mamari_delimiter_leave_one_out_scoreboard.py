@@ -345,6 +345,9 @@ class TestMamariDelimiterLeaveOneOutScoreboard(unittest.TestCase):
         self.assertEqual(self.survey["santiago_ia_076_inventory"]["cycle"], 48)
         self.assertEqual(self.survey["santiago_ia_999_break"]["cycle"], 47)
         self.assertEqual(self.survey["tablet_i_santiago_staff"]["cycle"], 46)
+        self.assertEqual(self.survey["wikimedia_c_a_photo"]["cycle"], 49)
+        self.assertTrue(self.survey["wikimedia_c_a_photo"]["strictly_larger_per_calendar_line"])
+        self.assertFalse(self.survey["wikimedia_c_a_photo"]["published_hamming_rescored"])
         self.assertEqual(self.provider.get_call_history(), [])
 
 

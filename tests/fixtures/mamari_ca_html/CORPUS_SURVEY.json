@@ -820,6 +820,28 @@
     "calendar_all_absent": true,
     "remainder_all_absent": true
   },
+  "wikimedia_c_a_photo": {
+    "cycle": 49,
+    "result": "photo_larger_published_hamming_unaligned",
+    "source_page": "https://commons.wikimedia.org/wiki/File:Rongorongo_C-a_Mamari.jpg",
+    "upload_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Rongorongo_C-a_Mamari.jpg",
+    "pixels": [2040, 1424],
+    "bytes": 547228,
+    "sha1": "4d2b3e539d0167d68adea43c3274e894625f1beb",
+    "side_a_lines": 14,
+    "calendar_lines": ["Ca6", "Ca7", "Ca8", "Ca9"],
+    "photo_full_pixels": 2904960,
+    "gif_max_line_pixels": 115958,
+    "strictly_larger_per_calendar_line": true,
+    "published_crop_bounds": null,
+    "derived_calendar_crop": [71, 515, 1914, 366],
+    "derived_crop_pixels": 700524,
+    "published_hamming_rescored": false,
+    "detector_retuned": false,
+    "inscribe_scraped": false,
+    "standing_c_locks_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
