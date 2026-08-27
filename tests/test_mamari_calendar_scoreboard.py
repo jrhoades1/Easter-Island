@@ -50,7 +50,9 @@ C-absent on Ca calendar / remainder / Cb). Cycle 38 vendors
 the Aa.html verso Ab.html and locks that side only. Cycle 39
 locks that Ab 9-gram as a motif (hits, one-token flanks,
 8-prefix, 600 at a fixed slot, absent on Aa / Ca calendar /
-remainder / Cb).
+remainder / Cb). Cycle 40 locks a 600 inventory on those
+same fixtures only (hits, flanks, motif membership,
+calendar window-adjacency, per-fixture counts).
 """
 
 import json

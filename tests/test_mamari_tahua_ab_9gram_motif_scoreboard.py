@@ -10,6 +10,7 @@ freq, spans, one published token on each side of every hit (or
 line-edge), whether the cycle-38 top 8-gram is its prefix, and
 whether 600 sits at the same slot in both hits. The 9-gram is
 absent from Aa, the Ca calendar, Ca remainder, and Cb fixtures.
+Cycle 40 locks a 600 inventory on those same fixtures.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

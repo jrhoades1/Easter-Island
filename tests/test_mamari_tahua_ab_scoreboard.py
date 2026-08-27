@@ -11,6 +11,7 @@ or absent), Guy's 8-stem delimiter (freq / spans or absent), the
 Ca remainder 9-gram (present/absent), longest n with freq≥2, top
 8-gram or none, stem count. Cycle 39 locks that 9-gram as a
 motif (hits, flanks, 8-prefix, 600-slot, cross-absent).
+Cycle 40 locks a 600 inventory on the existing fixtures.
 Existing Aa / C scoreboards stay the lock.
 
 Search lock, not a merge and not a translation. MockProvider only.
