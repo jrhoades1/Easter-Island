@@ -31,8 +31,12 @@ Cycle 22 concatenates each published window's eight bbox crops
 into a shared-height strip and scores pairwise strip NCC/chamfer
 under the same four transforms. Best is Ca7[33]/Ca8[15] identity
 at NCC 0.244 / chamfer 2.137. No pair clears 0.45 / 0.80.
-Ceiling diagnostic, not a merge. Snapshot stays 83/62 /
-published Hamming 6 / 0/8.
+Cycle 23 scores the raw line rectangle covering each window
+(union bbox of the eight glyph boxes on that GIF). Best is
+Ca8[3]/Ca8[15] identity at NCC 0.156 / chamfer 1.904. No pair
+clears. These GIF pixels cannot recover the delimiter as a
+visual repeat even without the type model. Ceiling, not a
+merge. Snapshot stays 83/62 / published Hamming 6 / 0/8.
 Glyph meanings are not assigned.
 """
 
@@ -44,6 +48,7 @@ from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from models.glyphs import GlyphInstance
 from tests.test_mamari_calendar_scoreboard import DELIMITER_MOTIF
 from processors.glyph_processor import (
+    WINDOW_RECTANGLE_SIZE,
     GlyphProcessor,
     ProcessorConfig,
     _hu_distance,
@@ -58,7 +63,9 @@ from processors.glyph_processor import (
     crop_invariant_match,
     passes_slot_crop_gates,
     passes_slot_crop_invariant_gates,
+    union_bbox,
     window_glyph_strips,
+    window_line_rectangles,
     window_strip_pair_table,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
@@ -70,6 +77,7 @@ from tests.test_mamari_image_scoreboard import (
     TRACING_NAMES,
     ca7_ca8_sequences,
     process_tracings,
+    tracing_binaries,
 )
 from tests.test_mamari_neighbor_allograph_scoreboard import (
     ca7_ca8_instances,
@@ -187,6 +195,29 @@ STANDING_WINDOW_STRIP_PAIRS = (
 )
 STANDING_WINDOW_STRIP_BEST = STANDING_WINDOW_STRIP_PAIRS[10]
 STANDING_WINDOW_STRIP_GATE_CLEARS = False
+# Cycle 23: pairwise raw line rectangles, IDs ignored. Shared
+# 512x64 plane (same as the 8-cell strip). Best is Ca8[3]/Ca8[15]
+# identity. No pair clears NCC >= 0.45 / chamfer <= 0.80.
+# (left, right, transform, ncc, chamfer, gate)
+STANDING_WINDOW_RECTANGLE_PAIRS = (
+    (("Ca7", 6), ("Ca7", 19), "rot180", 0.108, 2.367, False),
+    (("Ca7", 6), ("Ca7", 33), "vflip", 0.134, 2.437, False),
+    (("Ca7", 6), ("Ca8", 3), "vflip", 0.111, 2.242, False),
+    (("Ca7", 6), ("Ca8", 15), "identity", 0.102, 2.037, False),
+    (("Ca7", 6), ("Ca8", 29), "rot180", 0.098, 2.225, False),
+    (("Ca7", 19), ("Ca7", 33), "vflip", 0.124, 2.545, False),
+    (("Ca7", 19), ("Ca8", 3), "vflip", 0.097, 2.420, False),
+    (("Ca7", 19), ("Ca8", 15), "identity", 0.107, 2.480, False),
+    (("Ca7", 19), ("Ca8", 29), "hflip", 0.130, 1.998, False),
+    (("Ca7", 33), ("Ca8", 3), "vflip", 0.081, 2.878, False),
+    (("Ca7", 33), ("Ca8", 15), "rot180", 0.092, 2.530, False),
+    (("Ca7", 33), ("Ca8", 29), "identity", 0.110, 2.384, False),
+    (("Ca8", 3), ("Ca8", 15), "identity", 0.156, 1.904, False),
+    (("Ca8", 3), ("Ca8", 29), "vflip", 0.064, 2.358, False),
+    (("Ca8", 15), ("Ca8", 29), "identity", 0.142, 1.864, False),
+)
+STANDING_WINDOW_RECTANGLE_BEST = STANDING_WINDOW_RECTANGLE_PAIRS[12]
+STANDING_WINDOW_RECTANGLE_GATE_CLEARS = False
 
 # Joint stem-index offsets applied to every published start. Same N
 # for all six windows. Per-window free search would mix slots.
@@ -943,6 +974,82 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         left_i, right_i, name, ncc, chamfer, gate = best
         left_key, right_key, exp_name, exp_ncc, exp_ch, exp_gate = (
             STANDING_WINDOW_STRIP_BEST
+        )
+        self.assertEqual(keys[left_i], left_key)
+        self.assertEqual(keys[right_i], right_key)
+        self.assertEqual(name, exp_name)
+        self.assertAlmostEqual(ncc, exp_ncc, places=3)
+        self.assertAlmostEqual(chamfer, exp_ch, places=3)
+        self.assertEqual(gate, exp_gate)
+        self.assertFalse(gate)
+        self.assertLess(ncc, 0.45)
+        self.assertGreater(chamfer, 0.80)
+        self.assertFalse(any(row[5] for row in rows))
+        grams = tuple(window.image_ids for window in self.score.windows)
+        self.assertEqual(min_pairwise_window_hamming(grams), 6)
+        self.assertEqual(self.score.instance_count, 83)
+        self.assertEqual(self.score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertEqual(self.score.slot_matches, STANDING_SLOT_MATCHES)
+        unique_counts = tuple(len(set(ids)) for ids in self.score.slot_ids)
+        self.assertEqual(unique_counts, STANDING_SLOT_UNIQUE_COUNTS)
+        self.assertEqual(
+            mixed_repeating_ngrams(self.image_lines, self.ngram_analyzer),
+            list(STANDING_MIXED_REPEATING),
+        )
+        self.assertEqual(
+            longest_mixed_repeating_n(self.image_lines, self.ngram_analyzer), 2
+        )
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_published_window_rectangles_fail_crop_gate(self):
+        """Cycle 23: best raw line rectangle is NCC 0.156 / chamfer 1.904.
+
+        Union bbox of the eight glyph boxes on that GIF, one crop per
+        window, scored under {identity, hflip, vflip, 180°}. Best pair
+        is Ca8[3]/Ca8[15] identity and still fails NCC >= 0.45 /
+        chamfer <= 0.80. No pair clears. These GIF pixels cannot
+        recover the delimiter as a visual repeat. Ceiling, not a
+        merge. 83/62 / Hamming 6 / 0/8 stay put.
+        """
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_leftover_merge)
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_invariant_merge)
+        self.assertEqual(ProcessorConfig().slot_crop_min_ncc, 0.45)
+        self.assertEqual(ProcessorConfig().slot_crop_max_chamfer, 0.80)
+        self.assertEqual(WINDOW_RECTANGLE_SIZE, (512, 64))
+        self.assertFalse(STANDING_WINDOW_RECTANGLE_GATE_CLEARS)
+        lines = ca7_ca8_instances(self.instances)
+        slot_members = published_slot_members(self.instances, lines)
+        binaries = tracing_binaries(self.paths)
+        for window in range(STANDING_WINDOW_COUNT):
+            occupants = [
+                self.instances[slot_members[slot][window]] for slot in range(WINDOW_LEN)
+            ]
+            sources = {occ.source_image for occ in occupants}
+            self.assertEqual(len(sources), 1, STANDING_WINDOW_STRIP_KEYS[window])
+            box = union_bbox(tuple(occ.bounding_box for occ in occupants))
+            self.assertGreater(box.width, 0)
+            self.assertGreater(box.height, 0)
+        rects = window_line_rectangles(self.instances, slot_members, binaries)
+        self.assertEqual(len(rects), STANDING_WINDOW_COUNT)
+        rows = window_strip_pair_table(rects, cell_size=WINDOW_RECTANGLE_SIZE)
+        self.assertEqual(len(rows), 15)
+        self.assertEqual(len(STANDING_WINDOW_RECTANGLE_PAIRS), 15)
+        keys = STANDING_WINDOW_STRIP_KEYS
+        for got, exp in zip(rows, STANDING_WINDOW_RECTANGLE_PAIRS):
+            left_i, right_i, name, ncc, chamfer, gate = got
+            left_key, right_key, exp_name, exp_ncc, exp_ch, exp_gate = exp
+            self.assertEqual(keys[left_i], left_key)
+            self.assertEqual(keys[right_i], right_key)
+            self.assertEqual(name, exp_name, (left_key, right_key))
+            self.assertAlmostEqual(ncc, exp_ncc, places=3, msg=(left_key, right_key))
+            self.assertAlmostEqual(chamfer, exp_ch, places=3, msg=(left_key, right_key))
+            self.assertEqual(gate, exp_gate, (left_key, right_key))
+            self.assertEqual(gate, ncc >= 0.45 and chamfer <= 0.80)
+        best = best_window_strip_pair(rows)
+        self.assertIsNotNone(best)
+        left_i, right_i, name, ncc, chamfer, gate = best
+        left_key, right_key, exp_name, exp_ncc, exp_ch, exp_gate = (
+            STANDING_WINDOW_RECTANGLE_BEST
         )
         self.assertEqual(keys[left_i], left_key)
         self.assertEqual(keys[right_i], right_key)

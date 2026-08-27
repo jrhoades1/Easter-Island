@@ -9,7 +9,9 @@ extra merges stay off. Cycle 21 retries slot-0 leftovers under
 {identity, hflip, vflip, 180°}; none clear the crop gate, so
 published Hamming stays 6. Cycle 22 scores the six published
 windows as concatenated 8-crop strips; best NCC 0.244 / chamfer
-2.137 fails the same gate. Concat min stays 3 on the six-G001 night-sign
+2.137 fails the same gate. Cycle 23 scores the raw line
+rectangle covering each window; best NCC 0.156 / chamfer 1.904
+also fails. Concat min stays 3 on the six-G001 night-sign
 run.
 
 No detector retune. No G00n→Barthel map. MockProvider only.
@@ -27,6 +29,8 @@ from tests.test_mamari_delimiter_window_scoreboard import (
     STANDING_SLOT0_INVARIANT_BEST,
     STANDING_SLOT_MATCHES,
     STANDING_SLOT_UNIQUE_COUNTS,
+    STANDING_WINDOW_RECTANGLE_BEST,
+    STANDING_WINDOW_RECTANGLE_GATE_CLEARS,
     STANDING_WINDOW_STRIP_BEST,
     STANDING_WINDOW_STRIP_GATE_CLEARS,
     WINDOW_LEN,
@@ -114,6 +118,8 @@ SLOT0_INVARIANT_HAMMING_BEFORE = STANDING_PUBLISHED_MIN_HAMMING
 SLOT0_INVARIANT_HAMMING_AFTER = STANDING_PUBLISHED_MIN_HAMMING
 # Cycle 22: window-as-image strips fail the crop gate. No merge.
 WINDOW_STRIP_HAMMING_AFTER = STANDING_PUBLISHED_MIN_HAMMING
+# Cycle 23: raw line rectangles fail the crop gate. No merge.
+WINDOW_RECTANGLE_HAMMING_AFTER = STANDING_PUBLISHED_MIN_HAMMING
 
 
 @dataclass(frozen=True)
@@ -525,6 +531,19 @@ class TestMamariNearest8WindowScoreboard(unittest.TestCase):
         self.assertLess(STANDING_WINDOW_STRIP_BEST[3], 0.45)
         self.assertGreater(STANDING_WINDOW_STRIP_BEST[4], 0.80)
         self.assertEqual(self.score.published_hamming, WINDOW_STRIP_HAMMING_AFTER)
+        self.assertEqual(self.score.published_hamming, STANDING_PUBLISHED_MIN_HAMMING)
+        self.assertEqual(self.score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertEqual(self.score.window_matches, STANDING_SLOT_MATCHES)
+        self.assertEqual(self.score.concat_hamming, STANDING_CONCAT_MIN_HAMMING)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_window_rectangles_leave_published_hamming_6(self):
+        """Cycle 23 raw-rectangle ceiling does not merge. Hamming stays 6."""
+        self.assertFalse(STANDING_WINDOW_RECTANGLE_GATE_CLEARS)
+        self.assertFalse(STANDING_WINDOW_RECTANGLE_BEST[5])
+        self.assertLess(STANDING_WINDOW_RECTANGLE_BEST[3], 0.45)
+        self.assertGreater(STANDING_WINDOW_RECTANGLE_BEST[4], 0.80)
+        self.assertEqual(self.score.published_hamming, WINDOW_RECTANGLE_HAMMING_AFTER)
         self.assertEqual(self.score.published_hamming, STANDING_PUBLISHED_MIN_HAMMING)
         self.assertEqual(self.score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
         self.assertEqual(self.score.window_matches, STANDING_SLOT_MATCHES)

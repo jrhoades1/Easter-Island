@@ -7,6 +7,7 @@ import numpy as np
 
 from models.glyphs import BoundingBox, GlyphInstance, GlyphPosition
 from processors.glyph_processor import (
+    WINDOW_RECTANGLE_SIZE,
     GlyphProcessor,
     ProcessorConfig,
     _hu_distance,
@@ -33,8 +34,10 @@ from processors.glyph_processor import (
     resample_profile,
     strip_plane_size,
     tablet_line_key,
+    union_bbox,
     window_glyph_strips,
     window_hamming,
+    window_line_rectangles,
     window_strip_pair_table,
 )
 
@@ -1024,6 +1027,9 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         self.assertEqual(window_glyph_strips([], []), ())
         self.assertEqual(window_strip_pair_table([]), ())
         self.assertIsNone(best_window_strip_pair(()))
+        self.assertEqual(window_line_rectangles([], [], {}), ())
+        self.assertEqual(union_bbox(()), BoundingBox(0, 0, 0, 0))
+        self.assertEqual(WINDOW_RECTANGLE_SIZE, (512, 64))
 
     def _asymmetric_crop(self) -> list[int]:
         plane = np.zeros((64, 64), dtype=np.uint8)
@@ -1179,6 +1185,49 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         self.assertGreaterEqual(rows[0][3], 0.99)
         self.assertLessEqual(rows[0][4], 0.10)
         self.assertTrue(rows[0][5])
+
+    def test_union_bbox_covers_all_boxes(self):
+        left = BoundingBox(x=4, y=2, width=10, height=8)
+        right = BoundingBox(x=20, y=6, width=5, height=12)
+        self.assertEqual(union_bbox((left, right)), BoundingBox(4, 2, 21, 16))
+
+    def test_window_line_rectangles_crop_union_not_cells(self):
+        """One contiguous rectangle per window; mixed sources raise."""
+        binary = np.zeros((20, 40), dtype=np.uint8)
+        binary[2:18, 4:12] = 255
+        binary[2:18, 24:36] = 255
+        a = self._inst("a", "line.gif", 0, [0.0] * 7, [0.0] * 32)
+        b = self._inst("b", "line.gif", 1, [0.0] * 7, [0.0] * 32)
+        a.bounding_box = BoundingBox(4, 2, 8, 16)
+        b.bounding_box = BoundingBox(24, 2, 12, 16)
+        crops = window_line_rectangles(
+            [a, b], [[0], [1]], {"line.gif": binary}, size=(8, 4)
+        )
+        self.assertEqual(len(crops), 1)
+        self.assertEqual(len(crops[0]), 32)
+        other = self._inst("c", "other.gif", 0, [0.0] * 7, [0.0] * 32)
+        with self.assertRaises(ValueError):
+            window_line_rectangles([a, other], [[0], [1]], {"line.gif": binary})
+
+    def test_identical_line_rectangles_clear_identity_gate(self):
+        """Same union-bbox raster: identity, NCC ~1, chamfer ~0."""
+        binary = np.zeros((20, 40), dtype=np.uint8)
+        binary[4:16, 6:34] = 255
+        binary[10:18, 6:14] = 0
+        a = self._inst("a", "line.gif", 0, [0.0] * 7, [0.0] * 32)
+        b = self._inst("b", "line.gif", 1, [0.0] * 7, [0.0] * 32)
+        a.bounding_box = BoundingBox(6, 4, 12, 12)
+        b.bounding_box = BoundingBox(18, 4, 16, 14)
+        crop = window_line_rectangles(
+            [a, b], [[0], [1]], {"line.gif": binary}, size=(16, 8)
+        )[0]
+        rows = window_strip_pair_table((crop, list(crop)), cell_size=(16, 8))
+        _i, _j, name, ncc, chamfer, gate = rows[0]
+        self.assertEqual(name, "identity")
+        self.assertGreaterEqual(ncc, 0.99)
+        self.assertLessEqual(chamfer, 0.10)
+        self.assertTrue(gate)
+        self.assertEqual(best_window_strip_pair(rows), rows[0])
 
     def test_missing_crops_do_not_merge(self):
         left = [float(i) for i in range(32)]

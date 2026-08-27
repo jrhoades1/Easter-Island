@@ -137,6 +137,8 @@ class ProcessorConfig:
     delimiter_slot_crop_invariant_merge: bool = False
     # Cycle 22 is a strip diagnostic, not a merge: concatenated
     # 8-crop window images vs the same NCC/chamfer gate. No flag.
+    # Cycle 23 is the same diagnostic on the raw line rectangle
+    # (union bbox of the eight glyph boxes). No flag. No merge.
     delimiter_window_len: int = 8
     # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
     delimiter_window_starts: tuple[tuple[int, int], ...] = (
@@ -765,6 +767,56 @@ def best_window_strip_pair(
     if not rows:
         return None
     return max(rows, key=lambda row: (row[3], -row[4], -row[0], -row[1]))
+
+
+WINDOW_RECTANGLE_SIZE = strip_plane_size(8)
+
+
+def union_bbox(
+    boxes: list[BoundingBox] | tuple[BoundingBox, ...],
+) -> BoundingBox:
+    """Axis-aligned union of glyph boxes. Empty if none."""
+    if not boxes:
+        return BoundingBox(x=0, y=0, width=0, height=0)
+    x0 = min(box.x for box in boxes)
+    y0 = min(box.y for box in boxes)
+    x1 = max(box.x + box.width for box in boxes)
+    y1 = max(box.y + box.height for box in boxes)
+    return BoundingBox(x=int(x0), y=int(y0), width=int(x1 - x0), height=int(y1 - y0))
+
+
+def window_line_rectangles(
+    instances: list[GlyphInstance],
+    slot_members: list[list[int]],
+    binaries: dict[str, np.ndarray],
+    size: tuple[int, int] = WINDOW_RECTANGLE_SIZE,
+) -> tuple[list[int], ...]:
+    """One union-bbox crop per published window from the line raster.
+
+    Cycle 22 concatenated eight independently resized bbox crops.
+    Those strips can look unlike even when the tablet regions match.
+    This crops the contiguous rectangle covering those eight boxes
+    on that source image. Occupants must share a source_image.
+    No stem lookup. Ceiling diagnostic — does not merge types.
+    """
+    if not slot_members or not slot_members[0]:
+        return ()
+    n_windows = len(slot_members[0])
+    window_len = len(slot_members)
+    crops: list[list[int]] = []
+    for window in range(n_windows):
+        occupants = [
+            instances[slot_members[slot][window]] for slot in range(window_len)
+        ]
+        sources = {occ.source_image for occ in occupants}
+        if len(sources) != 1:
+            raise ValueError("window occupants span multiple line images")
+        source = occupants[0].source_image
+        if source not in binaries:
+            raise KeyError(f"missing line raster for {source}")
+        box = union_bbox(tuple(occ.bounding_box for occ in occupants))
+        crops.append(bbox_binary_crop(binaries[source], box, size))
+    return tuple(crops)
 
 
 def tablet_line_key(source_image: str) -> str:
