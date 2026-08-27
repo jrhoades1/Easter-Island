@@ -14,7 +14,9 @@ Locks at a high level: Guy's 8-stem delimiter is absent; 600 is not
 window-adjacent (no windows); 040-run and cell counts. Cycle 29 locks
 the remainder n≥4 freq≥2 profile on this same fixture. Cycle 30
 locks that 9-gram as a motif (hits, flanks, wrap-count,
-calendar-absent). Image track stays parked. MockProvider only.
+calendar-absent). Cycle 31 locks the six remainder 002…002 n=9
+wraps as a family (overlap with the motif; bookend 002 is not a
+delimiter). Image track stays parked. MockProvider only.
 """
 
 import json
