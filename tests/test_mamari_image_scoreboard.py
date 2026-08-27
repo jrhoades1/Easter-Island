@@ -169,8 +169,8 @@ class TestMamariImageScoreboard(unittest.TestCase):
     def test_repeating_8gram_delimiter_proxy(self):
         """Repeating 8-gram (freq ≥2) is the image-side delimiter analogue.
 
-        Expected to fail: no Barthel remapping; valley-split token counts
-        can match published stems without a repeating mixed 8-gram.
+        Expected to fail: no Barthel remapping; split-fragment allographs
+        yield a mixed 2-gram / 3-gram, not a repeating 8-gram.
         """
         ngrams = self.ngram_analyzer.extract_ngrams(self.lines, n=8, min_frequency=2)
         self.assertTrue(

@@ -449,6 +449,65 @@ class TestSameLineAllographMerge(unittest.TestCase):
         self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
 
 
+class TestSplitFragmentAllographMerge(unittest.TestCase):
+    """Cross-image stitch of valley-split fragments. No Mamari GIFs."""
+
+    def _split_instance(
+        self,
+        instance_id: str,
+        source: str,
+        features: list[float],
+        width: int,
+        height: int = 66,
+        from_split: bool = True,
+    ) -> GlyphInstance:
+        return GlyphInstance(
+            instance_id=instance_id,
+            source_image=source,
+            bounding_box=BoundingBox(x=0, y=0, width=width, height=height),
+            features=features,
+            from_ligature_split=from_split,
+            position=GlyphPosition(0, 0, 1),
+        )
+
+    def test_similar_split_fragments_share_an_id(self):
+        """Hu 0.8, matched area/width, split-marked: merge after DBSCAN."""
+        a = self._split_instance("a", "one.gif", [0.0] * 7, width=31)
+        b = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=30)
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_non_split_neighbor_is_not_pulled(self):
+        """Instance-local: a close non-split box keeps its own ID."""
+        a = self._split_instance("a", "one.gif", [0.0] * 7, width=31)
+        b = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=30)
+        extra = self._split_instance(
+            "c", "three.gif", [0.4] + [0.0] * 6, width=31, from_split=False
+        )
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b, extra])
+        self.assertEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+        self.assertNotEqual(clustered[0].cluster_id, clustered[2].cluster_id)
+
+    def test_width_ratio_blocks_different_slots(self):
+        """34 vs 31 is under Hu/area gates but over the width gate."""
+        a = self._split_instance("a", "one.gif", [0.0] * 7, width=34)
+        b = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=31)
+        processor = GlyphProcessor()
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+    def test_split_fragment_merge_can_be_disabled(self):
+        a = self._split_instance("a", "one.gif", [0.0] * 7, width=31)
+        b = self._split_instance("b", "two.gif", [0.8] + [0.0] * 6, width=30)
+        processor = GlyphProcessor(
+            ProcessorConfig(split_fragment_allograph_merge=False)
+        )
+        _, clustered = processor.cluster_glyphs([a, b])
+        self.assertNotEqual(clustered[0].cluster_id, clustered[1].cluster_id)
+
+
 class TestSingleGlyphClustering(unittest.TestCase):
     """Tests for edge cases with single glyphs."""
 

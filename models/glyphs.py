@@ -123,6 +123,7 @@ class GlyphInstance:
     position: Optional[GlyphPosition] = None
     confidence: float = 1.0
     image_path: Optional[str] = None
+    from_ligature_split: bool = False
 
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization."""
