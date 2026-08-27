@@ -336,16 +336,17 @@ class TestSmallSantiagoLondonSharedN8Helpers(unittest.TestCase):
         by_side = {
             SIDE_GR: [["A", "B", "C", "D", "E", "F", "G", "H", "I"]],
             SIDE_GV: [["X"]],
-            SIDE_KR: [["Z", "A", "B", "C", "D", "E", "F", "G", "H"]],
+            SIDE_KR: [["Z", "A", "B", "C", "D", "E", "F", "G", "H", "I"]],
             SIDE_KV: [["Y"]],
         }
         rows = score_shared_n8(by_side, G_SIDES, K_SIDES)
-        self.assertEqual(len(rows), 2)
-        self.assertEqual(rows[0].n, 8)
-        self.assertEqual(rows[0].tokens, ("A", "B", "C", "D", "E", "F", "G", "H"))
+        self.assertEqual(len(rows), 3)
+        self.assertEqual(rows[0].n, 9)
+        self.assertEqual(rows[0].tokens, ("A", "B", "C", "D", "E", "F", "G", "H", "I"))
         self.assertEqual(rows[0].hits_g, ((SIDE_GR, "Gr1", 0),))
         self.assertEqual(rows[0].hits_k, ((SIDE_KR, "Kr1", 1),))
-        self.assertEqual(rows[1].tokens, ("B", "C", "D", "E", "F", "G", "H", "I"))
+        self.assertEqual(rows[1].tokens, ("A", "B", "C", "D", "E", "F", "G", "H"))
+        self.assertEqual(rows[2].tokens, ("B", "C", "D", "E", "F", "G", "H", "I"))
         self.assertEqual(expand_maximals(STANDING_MAXIMALS)[0].n, 17)
         self.assertEqual(len(expand_maximals(STANDING_MAXIMALS)), STANDING_DISTINCT_COUNT)
         self.assertEqual(provider.get_call_history(), [])
