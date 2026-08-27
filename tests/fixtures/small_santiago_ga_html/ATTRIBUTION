@@ -1,0 +1,56 @@
+Small Santiago (Barthel text G) recto Ga.html — Kohaumotu G/index.html check
+==========================================================================
+
+Files
+  G_index.html   http://kohaumotu.org/Rongorongo/G/index.html
+  Ga.html        http://kohaumotu.org/Rongorongo/G/Ga.html
+                 not a published page (same Kohaumotu catalog as A/B/C/I)
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet G / Small Santiago
+  → G/index.html
+  http://kohaumotu.org/Rongorongo/G/index.html
+  published all-lines Barthel HTML: Gr.html (recto) and Gv.html (verso)
+  http://kohaumotu.org/Rongorongo/G/Gr.html
+  Ga.html is not listed on G/index.html. A/index.html lists Aa.html
+  (side a); B/index.html lists Br.html (recto). G uses the r/v
+  naming of tablet B, not the a/b naming of A/C/I. Ga.html 404s.
+  This cycle stops: do not scrape Gr.html as a substitute, and
+  do not scrape tablet K (same-text note on G/index) or tablet D.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  G/index.html as retrieved 2026-08-27, the documented source used
+  to look for Ga.html. No Ga.html digits exist to copy.
+
+Not vendored
+  Ga.html (not a published page; do not invent stems)
+  a 404 body from requesting Ga.html
+  Gr.html / Gv.html (published r/v pages; not Ga.html; stop)
+  tablet K / Small London (same-text note; different tablet)
+  tablet D / Échancrée or any other substitute tablet
+  fi_Gr.html / Fischer pages
+  G_svg_codes_b.html
+
+Cycle 54 (2026-08-27)
+  Same Kohaumotu catalog already used for A / B / C / I. Search lock:
+    Ga.html: absent
+    documented all-lines pages: Gr.html, Gv.html (not scraped)
+    stem count / 076 rate / 090 076 / 076 071 / 090 076 071:
+      not computed (no Ga.html; do not invent zeros)
+    locked A/B/C motifs and the Ia 5-gram top: not searched
+  Existing A / B / C / Ia scoreboards are unchanged.
+  Image track stays parked. No new Barthel page. No type merge. No CV.
