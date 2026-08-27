@@ -9,8 +9,10 @@ track stays parked.
 Locks on Bv.html only: Guy's 8-stem delimiter (freq / spans or
 absent), the Ca remainder 9-gram, the Aa 10-gram, the Ab 9-gram
 (present/absent), the 004 600 004 sandwich (freq or absent),
-longest n with freq≥2, top 8-gram or none, stem count. Existing
-A / Br / C scoreboards stay the lock.
+longest n with freq≥2, top 8-gram or none, stem count. Cycle 45
+locks that 8-gram as a motif (hits, flanks, cross-absent on Br /
+Aa / Ab / Ca calendar / remainder / Cb). Existing A / Br / C
+scoreboards stay the lock.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """
