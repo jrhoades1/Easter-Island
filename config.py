@@ -122,6 +122,8 @@ GLYPH_CONFIG = {
     "clustering": {
         "eps": 0.5,                   # DBSCAN epsilon (distance threshold)
         "min_samples": 2,             # Minimum samples for a cluster
+        # "unsigned" = abs(signed log-Hu). "signed" = cycle-1 −sign(h)·log10(|h|).
+        "hu_sign_mode": "unsigned",
     },
 }
 

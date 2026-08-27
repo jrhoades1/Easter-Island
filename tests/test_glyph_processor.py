@@ -352,6 +352,43 @@ class TestFeatureExtraction(unittest.TestCase):
 
         self.assertEqual(len(moments), 7)
         self.assertTrue(all(isinstance(m, float) for m in moments))
+        self.assertTrue(all(m >= 0.0 for m in moments))
+
+    def test_unsigned_hu_is_abs_of_signed_log_hu(self):
+        """Unsigned log-Hu is |signed log-Hu|. Detection is not involved."""
+        glyph = create_test_glyph("triangle", 64)
+        signed = GlyphProcessor(ProcessorConfig(hu_sign_mode="signed"))
+        unsigned = GlyphProcessor(ProcessorConfig(hu_sign_mode="unsigned"))
+        signed_vec = signed.compute_hu_moments(glyph)
+        unsigned_vec = unsigned.compute_hu_moments(glyph)
+        self.assertEqual(unsigned_vec, [abs(v) for v in signed_vec])
+        self.assertEqual(self.processor.compute_hu_moments(glyph), unsigned_vec)
+
+    def test_unsigned_hu_collapses_reflection_sign_flip(self):
+        """Horizontal flip: signed Hu5–Hu7 can diverge; unsigned should not."""
+        glyph = create_test_glyph("triangle", 64)
+        flipped = cv2.flip(glyph, 1)
+        signed = GlyphProcessor(ProcessorConfig(hu_sign_mode="signed"))
+        unsigned = GlyphProcessor(ProcessorConfig(hu_sign_mode="unsigned"))
+        signed_d = float(
+            np.linalg.norm(
+                np.asarray(signed.compute_hu_moments(glyph))
+                - np.asarray(signed.compute_hu_moments(flipped))
+            )
+        )
+        unsigned_d = float(
+            np.linalg.norm(
+                np.asarray(unsigned.compute_hu_moments(glyph))
+                - np.asarray(unsigned.compute_hu_moments(flipped))
+            )
+        )
+        self.assertLess(unsigned_d, signed_d)
+        self.assertLess(unsigned_d, 1.0)
+
+    def test_invalid_hu_sign_mode_rejected(self):
+        processor = GlyphProcessor(ProcessorConfig(hu_sign_mode="bogus"))
+        with self.assertRaises(ValueError):
+            processor.compute_hu_moments(create_test_glyph("circle", 64))
 
     def test_hu_moments_rotation_invariant(self):
         """Test that same glyph rotated gives similar moments."""

@@ -1,7 +1,8 @@
 """Type-identity scoreboard: stock CV cluster IDs on Ca7–Ca8 tracings.
 
 Locks current type-identity metrics so later cycles can be scored.
-Does not retune GlyphProcessor. Does not invent G00n→Barthel maps.
+Stock feature is unsigned log-Hu. Detection is not retuned.
+Does not invent G00n→Barthel maps.
 
 input/tablets/sample_tablet.png is a synthetic CV dummy, not Mamari.
 """
@@ -14,7 +15,7 @@ import numpy as np
 from agents.base.providers import MockProvider
 from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from models.glyphs import BoundingBox, GlyphInstance, GlyphPosition
-from processors.glyph_processor import ProcessorConfig
+from processors.glyph_processor import GlyphProcessor, ProcessorConfig
 from tests.test_mamari_calendar_scoreboard import barthel_stems, load_mamari_fixture
 from tests.test_mamari_image_scoreboard import (
     TRACING_DIR,
@@ -23,7 +24,7 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 1 standing lock. Later cycles update these when type identity changes.
+# Cycle 2 standing lock (unsigned log-Hu). Cycle 1 signed lock was 71 types.
 STANDING_INSTANCES_PER_STRIP = {
     "sca0701.gif": 14,
     "sca0702.gif": 14,
@@ -32,7 +33,8 @@ STANDING_INSTANCES_PER_STRIP = {
     "sca0802.gif": 12,
     "sca0803.gif": 12,
 }
-STANDING_UNIQUE_CLUSTERS = 71
+STANDING_UNIQUE_CLUSTERS = 65
+CYCLE1_SIGNED_UNIQUE_CLUSTERS = 71
 STANDING_MAX_REPEATING_N = 1
 STANDING_CA7_LEN = 39
 STANDING_CA8_LEN = 36
@@ -124,7 +126,7 @@ def isolate_sca0701_opening_crescents(instances: list[GlyphInstance]) -> list[Gl
 def pairwise_log_hu_distances(
     instances: list[GlyphInstance],
 ) -> list[tuple[str, str, float]]:
-    """Euclidean distances on GlyphProcessor log-Hu vectors (7-d). That is the feature."""
+    """Euclidean distances on stored 7-d log-Hu vectors (unsigned or signed)."""
     pairs: list[tuple[str, str, float]] = []
     for i, left in enumerate(instances):
         feat_i = np.asarray(left.features, dtype=float)
@@ -215,6 +217,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(s.instances_per_strip, STANDING_INSTANCES_PER_STRIP)
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertLess(s.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
         self.assertAlmostEqual(
             s.unique_instance_ratio,
             STANDING_UNIQUE_CLUSTERS / s.instance_count,
@@ -230,7 +233,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_sca0701_opening_crescents_are_six_types(self):
-        """Six adjacent night-sign crescents must not share a cluster_id today."""
+        """Unsigned Hu removes 50–82 sign-flip distances; residual still > eps."""
         crescents = isolate_sca0701_opening_crescents(self.instances)
         self.assertEqual(len(crescents), CRESCENT_COUNT)
         ids = [inst.cluster_id for inst in crescents]
@@ -240,9 +243,30 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         eps = ProcessorConfig().dbscan_eps
         distances = [dist for _a, _b, dist in pairs]
         self.assertTrue(all(dist > eps for dist in distances), pairs)
-        # Closest pair is just above eps; farthest is ~80 (Hu sign flips).
+        # Closest pair still just above eps; farthest is now ~3.4, not ~80.
         self.assertGreater(min(distances), eps)
         self.assertLess(min(distances), 1.0)
+        self.assertGreater(max(distances), 3.0)
+        self.assertLess(max(distances), 4.0)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_signed_hu_preserves_cycle1_snapshot(self):
+        """hu_sign_mode='signed' keeps the cycle-1 71-type / sign-flip lock."""
+        signed = GlyphProcessor(ProcessorConfig(hu_sign_mode="signed"))
+        instances = process_tracings(self.paths, processor=signed)
+        score = score_type_identity(
+            instances,
+            self.ngram_analyzer,
+            self.published_ca7,
+            self.published_ca8,
+        )
+        self.assertEqual(score.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
+        self.assertEqual(score.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
+        crescents = isolate_sca0701_opening_crescents(instances)
+        ids = [inst.cluster_id for inst in crescents]
+        self.assertEqual(len(set(ids)), CRESCENT_COUNT, ids)
+        distances = [dist for _a, _b, dist in pairwise_log_hu_distances(crescents)]
+        self.assertGreater(min(distances), ProcessorConfig().dbscan_eps)
         self.assertGreater(max(distances), 50.0)
         self.assertEqual(self.provider.get_call_history(), [])
 
