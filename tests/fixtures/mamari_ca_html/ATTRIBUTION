@@ -47,3 +47,12 @@ Cycle 28 (2026-08-27)
   first fixture.
 
   Image track stays parked. No new image. No clustering change.
+
+Cycle 29 (2026-08-27)
+  Same remainder, no new scrape. Repeating n≥4 freq≥2 profile:
+    distinct n-grams: 31
+    longest n: 9 (002 010 070 760 040 006 430 047 002, freq 2,
+      Ca10[26:35] / Ca11[14:23])
+    top 8-gram: 002 010 070 760 040 006 430 047 (freq 2); not Guy
+    600: five hits, none inside a repeating n≥4 span
+  Not scraped: Cb.html. Image track stays parked.

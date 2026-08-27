@@ -24,6 +24,9 @@ Cycle 27 locks the non-040 inventory (stem, count, cell hits,
 window-adjacent) on the cycle-26 cell table. Stems are ids only.
 Cycle 28 vendors the already-cited Ca.html remainder as a second
 published passage (Guy delimiter absent; 600 not window-adjacent).
+Cycle 29 locks that remainder's n≥4 freq≥2 profile (31 n-grams;
+longest n=9; top 8-gram is not Guy's delimiter; 600 outside all
+repeating n≥4). Calendar Ca6–Ca9 is not re-mined.
 """
 
 import json
