@@ -8,7 +8,9 @@ merge. No detector retune. No CV.
 The cycle-29 longest remainder n-gram is locked as a motif: exact
 9-gram hits, exact 8-prefix hits, one published token on each side of
 every hit (or line-edge), and every n=9 002…002 wrap on both fixtures.
-The motif is absent from the calendar passage.
+The motif is absent from the calendar passage. Cycle 31 locks the
+six remainder wraps as a family (position matches and shared
+interior stems; bookend 002 is not a delimiter).
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

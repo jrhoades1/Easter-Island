@@ -29,6 +29,9 @@ longest n=9; top 8-gram is not Guy's delimiter; 600 outside all
 repeating n≥4). Calendar Ca6–Ca9 is not re-mined.
 Cycle 30 locks that remainder 9-gram as a motif (hits, one-token
 flanks, 002…002 wrap-count at n=9, calendar-absent).
+Cycle 31 locks the six remainder 002…002 n=9 wraps as a family
+(line, span, tokens, is_motif, position matches, shared interior
+stems). Bookend 002 is not a delimiter claim.
 """
 
 import json
