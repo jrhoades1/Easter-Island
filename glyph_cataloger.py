@@ -204,6 +204,7 @@ def main() -> int:
         line_merge_threshold=config["processing"]["line_merge_threshold"],
         dbscan_eps=config["clustering"]["eps"],
         dbscan_min_samples=config["clustering"]["min_samples"],
+        hu_sign_mode=config["clustering"].get("hu_sign_mode", "unsigned"),
     )
     processor = GlyphProcessor(processor_config)
 
@@ -227,6 +228,7 @@ def main() -> int:
         "algorithm": "DBSCAN",
         "eps": config["clustering"]["eps"],
         "min_samples": config["clustering"]["min_samples"],
+        "hu_sign_mode": config["clustering"].get("hu_sign_mode", "unsigned"),
     }
     lexicon = build_lexicon(processor, instances, images, output_dir, clustering_params)
 

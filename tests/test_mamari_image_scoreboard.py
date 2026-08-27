@@ -48,9 +48,16 @@ def load_tracing_bgr(path: Path) -> np.ndarray:
     return cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
 
 
-def process_tracings(paths: list[Path]) -> list[GlyphInstance]:
-    """Stock GlyphProcessor on the Ca7–Ca8 strips. No detection retune."""
-    processor = GlyphProcessor()
+def process_tracings(
+    paths: list[Path],
+    processor: GlyphProcessor | None = None,
+) -> list[GlyphInstance]:
+    """Stock GlyphProcessor on the Ca7–Ca8 strips. No detection retune.
+
+    Default processor uses unsigned log-Hu. Pass a configured processor
+    to keep the signed cycle-1 feature path.
+    """
+    processor = processor or GlyphProcessor()
     all_instances: list[GlyphInstance] = []
     for path in paths:
         image = load_tracing_bgr(path)

@@ -40,6 +40,9 @@ class ProcessorConfig:
 
     # Feature extraction
     target_glyph_size: tuple[int, int] = (64, 64)
+    # "unsigned": abs of signed log-Hu so Hu5–Hu7 sign-flips do not split types.
+    # "signed": cycle-1 path (−sign(h)·log10(|h|)). Detection is unchanged either way.
+    hu_sign_mode: str = "unsigned"
 
     # Clustering
     dbscan_eps: float = 0.5
@@ -342,7 +345,9 @@ class GlyphProcessor:
             glyph_image: Normalized glyph image.
 
         Returns:
-            List of 7 Hu moment values (log-transformed).
+            List of 7 log-Hu values. Default is unsigned (abs of the
+            signed log-Hu). Pass hu_sign_mode="signed" for the cycle-1
+            −sign(h)·log10(|h|) path.
         """
         # Ensure binary
         _, binary = cv2.threshold(glyph_image, 127, 255, cv2.THRESH_BINARY)
@@ -350,15 +355,23 @@ class GlyphProcessor:
         moments = cv2.moments(binary)
         hu_moments = cv2.HuMoments(moments).flatten()
 
-        # Log transform for better clustering (handle zeros)
-        log_hu = []
+        # Signed log transform (cycle-1). Unsigned takes abs so Hu5–Hu7
+        # sign-flips do not inflate Euclidean distance.
+        signed_log_hu = []
         for h in hu_moments:
             if h != 0:
-                log_hu.append(-np.sign(h) * np.log10(abs(h)))
+                signed_log_hu.append(float(-np.sign(h) * np.log10(abs(h))))
             else:
-                log_hu.append(0.0)
+                signed_log_hu.append(0.0)
 
-        return log_hu
+        mode = self.config.hu_sign_mode
+        if mode == "unsigned":
+            return [abs(v) for v in signed_log_hu]
+        if mode == "signed":
+            return signed_log_hu
+        raise ValueError(
+            f"hu_sign_mode must be 'unsigned' or 'signed', got {mode!r}"
+        )
 
     def extract_features(
         self, image: np.ndarray, instance: GlyphInstance
