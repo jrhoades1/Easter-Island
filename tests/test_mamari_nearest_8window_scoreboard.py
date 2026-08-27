@@ -300,7 +300,7 @@ class TestNearest8WindowHelpers(unittest.TestCase):
         self.assertEqual(left[0], "Ca7")
         self.assertEqual(right[0], "Ca8")
         self.assertEqual(len(published_pairs_at_hamming(windows, 0)), 1)
-        self.assertEqual(len(published_pairs_at_hamming(windows, 4)), 1)
+        self.assertEqual(len(published_pairs_at_hamming(windows, 4)), 2)
 
 
 class TestMamariNearest8WindowScoreboard(unittest.TestCase):
