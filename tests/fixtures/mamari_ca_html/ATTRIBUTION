@@ -65,3 +65,8 @@ Cycle 30 (2026-08-27)
     002…002 wraps at n=9: 6 on the remainder (4 are not the motif)
     calendar Ca6–Ca9: absent (0 hits, 0 wraps)
   Not scraped: Cb.html. Image track stays parked.
+
+Cycle 32 (2026-08-27)
+  Vendors the Ca.html navbar verso Cb.html (same Kohaumotu tablet-C
+  publisher) as tests/fixtures/mamari_cb_html/. Search lock is on Cb
+  only. See that directory's ATTRIBUTION. Image track stays parked.

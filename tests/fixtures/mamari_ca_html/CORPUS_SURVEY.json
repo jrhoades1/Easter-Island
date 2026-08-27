@@ -130,6 +130,53 @@
     "wraps_sharing_interior_stem": 6,
     "other_wraps_sharing_interior_stem": 4
   },
+  "tablet_c_side_b": {
+    "cycle": 32,
+    "result": "cb_html_vendored",
+    "id": "tablet_c_side_b",
+    "source_page": "http://kohaumotu.org/Rongorongo/C/Cb.html",
+    "vendored_html": "tests/fixtures/mamari_cb_html/Cb.html",
+    "html_bytes": 7877,
+    "lines": [
+      "Cb1",
+      "Cb2",
+      "Cb3",
+      "Cb4",
+      "Cb5",
+      "Cb6",
+      "Cb7",
+      "Cb8",
+      "Cb9",
+      "Cb10",
+      "Cb11",
+      "Cb12",
+      "Cb13",
+      "Cb14"
+    ],
+    "stem_count": 487,
+    "stem_counts_by_line": [39, 35, 38, 38, 34, 34, 32, 36, 37, 35, 34, 36, 36, 23],
+    "guy_8stem_delimiter": false,
+    "guy_8stem_delimiter_freq": 0,
+    "guy_8stem_delimiter_spans": [],
+    "motif_9gram": false,
+    "motif_9gram_freq": 0,
+    "motif_9gram_spans": [],
+    "wrap_n": 9,
+    "bookend_stem": "002",
+    "wrap_count": 4,
+    "wraps": [
+      [["002", "095", "066", "760", "004", "027", "066", "004", "002"], "Cb7", 12, 21, false, 3, ["760"], true],
+      [["002", "004", "002", "070", "095", "001", "095", "205", "002"], "Cb8", 17, 26, false, 2, ["070"], true],
+      [["002", "044", "660", "077", "000", "003", "077", "000", "002"], "Cb9", 5, 14, false, 2, [], false],
+      [["002", "208", "546", "410", "095", "095", "095", "445", "002"], "Cb9", 28, 37, false, 2, [], false]
+    ],
+    "wraps_sharing_interior_stem": 2,
+    "stem_600_count": 2,
+    "stem_600_hits": [
+      ["Cb2", 21],
+      ["Cb10", 29]
+    ]
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
@@ -174,7 +221,7 @@
     {
       "id": "cb_html",
       "url": "http://kohaumotu.org/Rongorongo/C/Cb.html",
-      "reason": "navbar link from Ca.html only; not a cited source URL; not scraped"
+      "reason": "cycle 28: navbar link from Ca.html only; not scraped then. Cycle 32 vendors this URL as tablet_c_side_b"
     }
   ]
 }

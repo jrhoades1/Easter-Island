@@ -32,6 +32,8 @@ flanks, 002…002 wrap-count at n=9, calendar-absent).
 Cycle 31 locks the six remainder 002…002 n=9 wraps as a family
 (line, span, tokens, is_motif, position matches, shared interior
 stems). Bookend 002 is not a delimiter claim.
+Cycle 32 vendors Kohaumotu Cb.html (verso of the cited Ca.html)
+and locks Guy-delimiter / 9-gram / 002-wrap / 600 counts on Cb only.
 """
 
 import json
