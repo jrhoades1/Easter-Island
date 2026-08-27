@@ -9,8 +9,9 @@ track stays parked.
 Locks on Ab.html only: the cycle-37 Aa 10-gram motif (freq / spans
 or absent), Guy's 8-stem delimiter (freq / spans or absent), the
 Ca remainder 9-gram (present/absent), longest n with freq≥2, top
-8-gram or none, stem count. Existing Aa / C scoreboards stay the
-lock.
+8-gram or none, stem count. Cycle 39 locks that 9-gram as a
+motif (hits, flanks, 8-prefix, 600-slot, cross-absent).
+Existing Aa / C scoreboards stay the lock.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

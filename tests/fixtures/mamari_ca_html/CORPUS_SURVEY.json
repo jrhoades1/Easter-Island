@@ -351,6 +351,39 @@
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
+  "tahua_ab_9gram_motif": {
+    "cycle": 39,
+    "passage": "tablet_a_tahua_side_b",
+    "aa_passage": "tablet_a_tahua_side_a",
+    "calendar_passage": "ca6_ca9_calendar",
+    "remainder_passage": "ca_side_a_remainder",
+    "cb_passage": "tablet_c_side_b",
+    "motif_tokens": ["605", "003", "004", "600", "004", "003", "040", "003", "050"],
+    "motif_n": 9,
+    "motif_freq": 2,
+    "motif_spans": [["Ab3", 2, 11], ["Ab5", 13, 22]],
+    "ab_motif_hits": [
+      ["Ab3", 2, 11, "003", "003"],
+      ["Ab5", 13, 22, "208", "093"]
+    ],
+    "prefix8_tokens": ["605", "003", "004", "600", "004", "003", "040", "003"],
+    "top_8gram_is_prefix": true,
+    "ab_prefix8_hits": [
+      ["Ab3", 2, 10, "003", "050"],
+      ["Ab5", 13, 21, "208", "050"]
+    ],
+    "stem_600": "600",
+    "stem_600_slot": 3,
+    "stem_600_slots": [3],
+    "stem_600_fixed_slot": true,
+    "aa_motif_hits": [],
+    "calendar_motif_hits": [],
+    "remainder_motif_hits": [],
+    "cb_motif_hits": [],
+    "aa_absent": true,
+    "c_absent": true,
+    "cross_absent": true
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",

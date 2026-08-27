@@ -47,7 +47,10 @@ catalog http://kohaumotu.org/Rongorongo/ first non-C
 Barthel page (A / Tahua Aa.html). Cycle 37 locks that
 Aa 10-gram as a motif (hits, one-token flanks, 8-prefix,
 C-absent on Ca calendar / remainder / Cb). Cycle 38 vendors
-the Aa.html verso Ab.html and locks that side only.
+the Aa.html verso Ab.html and locks that side only. Cycle 39
+locks that Ab 9-gram as a motif (hits, one-token flanks,
+8-prefix, 600 at a fixed slot, absent on Aa / Ca calendar /
+remainder / Cb).
 """
 
 import json
