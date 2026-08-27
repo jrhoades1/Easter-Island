@@ -1,0 +1,55 @@
+Large / Great Santiago (Barthel text H) verso — Kohaumotu Hv.html
+===============================================================
+
+Files
+  Hv.html        http://kohaumotu.org/Rongorongo/H/Hv.html
+  H_index.html   already vendored with the recto
+                 tests/fixtures/large_santiago_hr_html/H_index.html
+                 http://kohaumotu.org/Rongorongo/H/index.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet H / Great Santiago (also called Large Santiago)
+  → H/index.html
+  http://kohaumotu.org/Rongorongo/H/index.html
+  published all-lines Barthel HTML: Hr.html (recto) and Hv.html (verso)
+  http://kohaumotu.org/Rongorongo/H/Hr.html
+  http://kohaumotu.org/Rongorongo/H/Hv.html
+  Same Gr vs Ga lesson: Ha.html is not a published page (404).
+  Tablet P is the published parallel (this cycle). Tablet Q and
+  tablet D are not scraped.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Hv.html as retrieved 2026-08-27. Barthel numbers sit in <td>
+  text under each line strip (Hv1–Hv12). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  Ha.html (unpublished; 404; not listed on H/index.html)
+  a second copy of Hr.html (vendored in the recto fixture)
+  tablet Q / Small St. Petersburg (Grand Tradition third witness)
+  tablet D / Échancrée or any other substitute tablet
+  fi_Hv.html / Fischer pages
+  H_svg_codes_b.html
+  individualized Hv01.html … Hv12.html slices
+
+Cycle 69 (2026-08-27)
+  Same Kohaumotu catalog already used for A / B / C / G / I / K.
+  Search lock on Hv.html (no type map):
+    stem count: 831 (35 65 63 67 81 79 75 72 79 79 69 67)
+    six G–K islands: all 0
+  Existing A / B / C / I / G / K scoreboards are unchanged.
+  Image track stays parked. No Q scrape. No type merge. No CV.
