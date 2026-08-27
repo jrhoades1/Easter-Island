@@ -24,9 +24,18 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 3 standing lock (unsigned log-Hu + same-line allograph stitch).
-# Cycle 2 unsigned lock was 65 types / max n=1. Cycle 1 signed lock was 71.
+# Cycle 4 standing lock (unsigned log-Hu + allograph stitch + wide-valley split).
+# Cycle 3 (split off) was 75 inst / 58 types / 39+36. Cycle 2 was 65 types.
+# Cycle 1 signed lock was 71.
 STANDING_INSTANCES_PER_STRIP = {
+    "sca0701.gif": 14,
+    "sca0702.gif": 16,
+    "sca0703.gif": 13,
+    "sca0801.gif": 14,
+    "sca0802.gif": 14,
+    "sca0803.gif": 12,
+}
+CYCLE3_INSTANCES_PER_STRIP = {
     "sca0701.gif": 14,
     "sca0702.gif": 14,
     "sca0703.gif": 11,
@@ -34,12 +43,16 @@ STANDING_INSTANCES_PER_STRIP = {
     "sca0802.gif": 12,
     "sca0803.gif": 12,
 }
-STANDING_UNIQUE_CLUSTERS = 58
+STANDING_UNIQUE_CLUSTERS = 67
+CYCLE3_UNIQUE_CLUSTERS = 58
 CYCLE2_UNSIGNED_UNIQUE_CLUSTERS = 65
 CYCLE1_SIGNED_UNIQUE_CLUSTERS = 71
 STANDING_MAX_REPEATING_N = 5
-STANDING_CA7_LEN = 39
-STANDING_CA8_LEN = 36
+STANDING_CA7_LEN = 43
+STANDING_CA8_LEN = 40
+CYCLE3_CA7_LEN = 39
+CYCLE3_CA8_LEN = 36
+STANDING_HAS_MIXED_REPEATING = False
 
 # Opening night-sign run on sca0701 is six thin crescents; the next blob is a
 # wide ligature (~71px). Isolate by the opening narrow run, not by G00n ID.
@@ -61,6 +74,7 @@ class TypeIdentityScore:
     ca8_length: int
     published_ca7_stems: int
     published_ca8_stems: int
+    has_mixed_repeating: bool
 
 
 def published_ca7_ca8_stem_counts() -> tuple[int, int]:
@@ -76,6 +90,17 @@ def max_repeating_n(sequences: list[list[str]], analyzer: NgramAnalyzer, max_n: 
         if analyzer.extract_ngrams(sequences, n=n, min_frequency=2):
             found = n
     return found
+
+
+def has_mixed_repeating_ngram(
+    sequences: list[list[str]], analyzer: NgramAnalyzer, max_n: int = MAX_N
+) -> bool:
+    """True if any n-gram of length >= 2 with freq >= 2 uses more than one type."""
+    for n in range(2, max_n + 1):
+        for gram, _freq in analyzer.extract_ngrams(sequences, n=n, min_frequency=2):
+            if len(set(gram)) > 1:
+                return True
+    return False
 
 
 def score_type_identity(
@@ -106,6 +131,7 @@ def score_type_identity(
         ca8_length=len(lines[1]) if len(lines) > 1 else 0,
         published_ca7_stems=published_ca7,
         published_ca8_stems=published_ca8,
+        has_mixed_repeating=has_mixed_repeating_ngram(lines, analyzer),
     )
 
 
@@ -156,6 +182,14 @@ class TestTypeIdentityHelpers(unittest.TestCase):
         analyzer = NgramAnalyzer(llm_provider=provider)
         sequences = [["A", "B", "A"], ["C", "D"]]
         self.assertEqual(max_repeating_n(sequences, analyzer), 1)
+        self.assertFalse(has_mixed_repeating_ngram(sequences, analyzer))
+        self.assertEqual(provider.get_call_history(), [])
+
+    def test_mixed_repeating_ngram_requires_two_types(self):
+        provider = MockProvider()
+        analyzer = NgramAnalyzer(llm_provider=provider)
+        sequences = [["A", "B", "A", "B"], ["C", "D"]]
+        self.assertTrue(has_mixed_repeating_ngram(sequences, analyzer))
         self.assertEqual(provider.get_call_history(), [])
 
     def test_isolate_opening_run_stops_at_wide_glyph(self):
@@ -227,12 +261,13 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
             places=6,
         )
         self.assertEqual(s.max_repeating_n, STANDING_MAX_REPEATING_N)
+        self.assertEqual(s.has_mixed_repeating, STANDING_HAS_MIXED_REPEATING)
         self.assertEqual(s.ca7_length, STANDING_CA7_LEN)
         self.assertEqual(s.ca8_length, STANDING_CA8_LEN)
         self.assertEqual(s.published_ca7_stems, 43)
         self.assertEqual(s.published_ca8_stems, 40)
-        self.assertNotEqual(s.ca7_length, s.published_ca7_stems)
-        self.assertNotEqual(s.ca8_length, s.published_ca8_stems)
+        self.assertEqual(s.ca7_length, s.published_ca7_stems)
+        self.assertEqual(s.ca8_length, s.published_ca8_stems)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_sca0701_opening_crescents_share_one_id(self):
@@ -253,9 +288,32 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertLess(max(distances), 4.0)
         self.assertEqual(self.provider.get_call_history(), [])
 
+    def test_split_disabled_restores_cycle3_snapshot(self):
+        """split_wide_ligatures=False keeps the cycle-3 75/58 / 39+36 lock."""
+        raw = GlyphProcessor(ProcessorConfig(split_wide_ligatures=False))
+        instances = process_tracings(self.paths, processor=raw)
+        score = score_type_identity(
+            instances,
+            self.ngram_analyzer,
+            self.published_ca7,
+            self.published_ca8,
+        )
+        self.assertEqual(score.instances_per_strip, CYCLE3_INSTANCES_PER_STRIP)
+        self.assertEqual(score.unique_cluster_count, CYCLE3_UNIQUE_CLUSTERS)
+        self.assertEqual(score.ca7_length, CYCLE3_CA7_LEN)
+        self.assertEqual(score.ca8_length, CYCLE3_CA8_LEN)
+        crescents = isolate_sca0701_opening_crescents(instances)
+        ids = [inst.cluster_id for inst in crescents]
+        self.assertEqual(len(set(ids)), 1, ids)
+        self.assertEqual(self.provider.get_call_history(), [])
+
     def test_merge_disabled_restores_cycle2_snapshot(self):
         """same_line_allograph_merge=False keeps the cycle-2 65-type lock."""
-        raw = GlyphProcessor(ProcessorConfig(same_line_allograph_merge=False))
+        raw = GlyphProcessor(
+            ProcessorConfig(
+                same_line_allograph_merge=False, split_wide_ligatures=False
+            )
+        )
         instances = process_tracings(self.paths, processor=raw)
         score = score_type_identity(
             instances,
@@ -272,7 +330,11 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
     def test_signed_hu_preserves_cycle1_snapshot(self):
         """hu_sign_mode='signed' keeps the cycle-1 71-type / sign-flip lock."""
         signed = GlyphProcessor(
-            ProcessorConfig(hu_sign_mode="signed", same_line_allograph_merge=False)
+            ProcessorConfig(
+                hu_sign_mode="signed",
+                same_line_allograph_merge=False,
+                split_wide_ligatures=False,
+            )
         )
         instances = process_tracings(self.paths, processor=signed)
         score = score_type_identity(
@@ -281,7 +343,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
             self.published_ca7,
             self.published_ca8,
         )
-        self.assertEqual(score.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
+        self.assertEqual(score.instance_count, sum(CYCLE3_INSTANCES_PER_STRIP.values()))
         self.assertEqual(score.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
         crescents = isolate_sca0701_opening_crescents(instances)
         ids = [inst.cluster_id for inst in crescents]

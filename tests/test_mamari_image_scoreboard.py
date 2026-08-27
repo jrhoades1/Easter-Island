@@ -3,11 +3,12 @@
 input/tablets/sample_tablet.png is a synthetic CV dummy (circles/triangles),
 not Mamari. Do not use it here.
 
-Cataloger emits G00n cluster IDs. There is no G00n→Barthel map. Ligatures
-will not tokenize like published stems, so Guy's delimiter is not the
-target. The honest proxy is a repeating 8-gram of frequency ≥2.
+Cataloger emits G00n cluster IDs. There is no G00n→Barthel map. Wide
+connected blobs may be valley-split, but types are still unsigned-Hu
+clusters, so Guy's delimiter is not the target. The honest proxy is a
+repeating 8-gram of frequency ≥2.
 
-That proxy is expected to fail today.
+That proxy is expected to fail until a mixed 8-gram actually repeats.
 """
 
 import random
@@ -52,10 +53,10 @@ def process_tracings(
     paths: list[Path],
     processor: GlyphProcessor | None = None,
 ) -> list[GlyphInstance]:
-    """Stock GlyphProcessor on the Ca7–Ca8 strips. No detection retune.
+    """Stock GlyphProcessor on the Ca7–Ca8 strips.
 
-    Default processor uses unsigned log-Hu. Pass a configured processor
-    to keep the signed cycle-1 feature path.
+    Default processor uses unsigned log-Hu and the wide-ligature valley
+    split. Pass a configured processor to keep a prior-cycle path.
     """
     processor = processor or GlyphProcessor()
     all_instances: list[GlyphInstance] = []
@@ -168,8 +169,8 @@ class TestMamariImageScoreboard(unittest.TestCase):
     def test_repeating_8gram_delimiter_proxy(self):
         """Repeating 8-gram (freq ≥2) is the image-side delimiter analogue.
 
-        Expected to fail: no Barthel remapping; stock Hu/DBSCAN will not
-        tokenize ligatures like published stems.
+        Expected to fail: no Barthel remapping; valley-split token counts
+        can match published stems without a repeating mixed 8-gram.
         """
         ngrams = self.ngram_analyzer.extract_ngrams(self.lines, n=8, min_frequency=2)
         self.assertTrue(
