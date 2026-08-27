@@ -1130,6 +1130,49 @@
     "standing_gv_locks_unchanged": true,
     "image_track": "parked"
   },
+  "stem_430_076_200_ngram_per_fixture": {
+    "cycle": 58,
+    "grams": [
+      ["430", "076"],
+      ["076", "200"],
+      ["430", "076", "200"]
+    ],
+    "raw_stems_999_kept": true,
+    "new_tablet": false,
+    "gram_count": 3,
+    "row_count": 10,
+    "only_gv_has_hits": false,
+    "only_ia_has_hits": false,
+    "gv_trigram_hits": 0,
+    "passages": [
+      "ca6_ca9_calendar",
+      "ca_side_a_remainder",
+      "tablet_c_side_b",
+      "tablet_a_tahua_side_a",
+      "tablet_a_tahua_side_b",
+      "tablet_b_aruku_kurenga_recto",
+      "tablet_b_aruku_kurenga_verso",
+      "tablet_i_santiago_staff",
+      "tablet_g_small_santiago_recto",
+      "tablet_g_small_santiago_verso"
+    ],
+    "table": [
+      [["430", "076"], [0, 0, 0, 0, 0, 3, 1, 30, 0, 5]],
+      [["076", "200"], [0, 0, 0, 0, 0, 0, 0, 5, 0, 5]],
+      [["430", "076", "200"], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0]]
+    ],
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_ia_090_076_071_ngram_unchanged": true,
+    "standing_gr_locks_unchanged": true,
+    "standing_gv_locks_unchanged": true,
+    "standing_gv_076_inventory_unchanged": true,
+    "image_track": "parked"
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",
