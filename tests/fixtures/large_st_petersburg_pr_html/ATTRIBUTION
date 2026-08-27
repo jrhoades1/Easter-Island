@@ -1,0 +1,54 @@
+Large / Great St. Petersburg (Barthel text P) recto — Kohaumotu Pr.html
+=====================================================================
+
+Files
+  P_index.html   http://kohaumotu.org/Rongorongo/P/index.html
+  Pr.html        http://kohaumotu.org/Rongorongo/P/Pr.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet P / Great St.Petersburg (also called Large St Petersburg)
+  → P/index.html
+  http://kohaumotu.org/Rongorongo/P/index.html
+  published all-lines Barthel HTML: Pr.html (recto) and Pv.html (verso)
+  http://kohaumotu.org/Rongorongo/P/Pr.html
+  Same Gr vs Ga lesson: Pa.html is not a published page (404).
+  P/index.html lists Pr.html as the recto. Pr.html exists and is
+  vendored. Pv.html is listed and vendored in the matching verso
+  fixture. Tablet H is the published parallel (this cycle). Tablet Q
+  (third Grand Tradition witness) and tablet D are not scraped.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Pr.html and P_index.html as retrieved 2026-08-27. Barthel numbers
+  sit in <td> text under each line strip (Pr1–Pr11). Digits were
+  copied from that HTML, not typed from memory. Image cells were
+  skipped.
+
+Not vendored
+  Pa.html (unpublished; 404; not listed on P/index.html)
+  tablet Q / Small St. Petersburg (Grand Tradition third witness)
+  tablet D / Échancrée or any other substitute tablet
+  fi_Pr.html / Fischer pages
+  P_svg_codes_b.html
+  individualized Pr01.html … Pr11.html slices
+
+Cycle 69 (2026-08-27)
+  Same Kohaumotu catalog already used for A / B / C / G / I / K.
+  Search lock on Pr.html (no type map):
+    stem count: 825 (66 78 105 95 105 82 87 78 46 45 38)
+    six G–K islands: all 0
+  Existing A / B / C / I / G / K scoreboards are unchanged.
+  Image track stays parked. No Q scrape. No type merge. No CV.
