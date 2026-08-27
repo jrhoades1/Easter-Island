@@ -4,12 +4,12 @@ Cycle 9 locked G009/G004/G003 each to multiple published stems on the
 mixed 3-gram. Cycle 10 splits over-merged split-fragment types using
 instance Hu / profile (no Barthel in the splitter). The 3-gram is gone.
 
-Cycle 11 re-applies those same gates to the remaining 2-stem IDs
-(G003, G008). Every member pair passes Hu < 2.0 and profile r ≥ 0.85,
-so the shared IDs stay. Honest remainder:
+Cycle 11 kept G003/G008 (every member pair passed). Cycle 12 merges
+same-slot pairs that pass those gates. The delimiter 2-gram is gone.
+Honest remainder sits left of two slot-0 390 merges:
 
-    Ca8 [8:10]  G003 G008 = 008 078
-    Ca8 [19:21] G003 G008 = 670 008
+    Ca7 [32:34]  G007 G006 = 600 390
+    Ca8 [14:16]  G007 G006 = 040 390
 
 Positional alignment table, not a G00n→Barthel dictionary. Glyph
 meanings are not assigned.
@@ -24,6 +24,7 @@ from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from processors.glyph_processor import (
     _hu_distance,
     passes_type_consistency_gates,
+    passes_wide_profile_allograph_gates,
     profile_correlation,
 )
 from tests.test_mamari_image_scoreboard import (
@@ -55,12 +56,12 @@ from tests.test_mamari_type_identity_scoreboard import (
 # Observed G00n → distinct published stems on the current mixed hits.
 # Sorted unique values. Not a type map.
 STANDING_GLYPH_STEM_MULTIMAP = {
-    "G003": ("008", "670"),
-    "G008": ("008", "078"),
+    "G006": ("390",),
+    "G007": ("040", "600"),
 }
-STANDING_INCONSISTENT_GLYPHS = ("G003", "G008")
-STANDING_G003_MEMBER_COUNT = 3
-STANDING_G008_MEMBER_COUNT = 2
+STANDING_INCONSISTENT_GLYPHS = ("G007",)
+STANDING_G007_MEMBER_COUNT = 2
+STANDING_G006_MEMBER_COUNT = 2
 CYCLE9_3GRAM_TRIPLES = (
     ("Ca8", 7, 10, ("G009", "G004", "G003"), ("670", "008", "078")),
     ("Ca8", 18, 21, ("G009", "G004", "G003"), ("041", "670", "008")),
@@ -228,8 +229,8 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
             self.instances, self.image_lines, self.published_lines
         )
 
-    def test_cycle11_snapshot(self):
-        """PR snapshot: 83/66 / 43+40, mixed 2-gram, no 8-gram."""
+    def test_cycle12_snapshot(self):
+        """PR snapshot: 83/64 / 43+40, mixed 2-gram, no 8-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -249,7 +250,7 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_standing_mixed_hits_and_triples_locked(self):
-        """Mixed hits are the remaining 2-gram; the cycle-9 3-gram is gone."""
+        """Mixed hits are the off-delimiter 2-gram; the cycle-9 3-gram is gone."""
         position = score_position_alignment(
             self.instances, self.image_lines, self.published_lines
         )
@@ -261,9 +262,9 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
     def test_g00n_stem_inconsistency_is_standing_truth(self):
         """Fewer multi-stem G00n IDs than cycle 9; inconsistency remains.
 
-        Cycle 11 re-checked G003 and G008 with the same Hu/profile
-        gates. Features say keep, so both still map to two stems.
-        If a later change makes every G00n map to a single stem,
+        Cycle 12 mixed hits are G007 G006. G006 is the slot-0 390 pair
+        (one stem). G007 sits immediately left and still maps to two
+        stems. If a later change makes every G00n map to a single stem,
         update this table — do not silently drop the assertion.
         """
         s = self.score
@@ -272,13 +273,15 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertGreater(len(s.inconsistent_glyphs), 0)
         self.assertLess(len(s.inconsistent_glyphs), CYCLE9_INCONSISTENT_COUNT)
         self.assertGreater(max(len(stems) for stems in s.multimap.values()), 1)
-        self.assertEqual(s.multimap["G003"], ("008", "670"))
-        self.assertEqual(s.multimap["G008"], ("008", "078"))
-        self.assertNotIn("G009", s.multimap)
+        self.assertEqual(s.multimap["G007"], ("040", "600"))
+        self.assertEqual(s.multimap["G006"], ("390",))
+        self.assertNotIn("G003", s.multimap)
+        self.assertNotIn("G008", s.multimap)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_ca8_conflicting_positions_split_only_when_dissimilar(self):
-        """Ca8[7] vs [18] fails profile r; remaining 2-stem IDs stay typed."""
+        """Ca8[7] vs [18] fails profile r; slot-4 merge moves only [19]."""
+        ca7 = ca7_ca8_instances(self.instances)[0]
         ca8 = ca7_ca8_instances(self.instances)[1]
         left, right = ca8[7], ca8[18]
         self.assertLess(_hu_distance(left, right), 2.0)
@@ -287,37 +290,26 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertNotEqual(left.cluster_id, right.cluster_id)
         self.assertTrue(passes_type_consistency_gates(ca8[8], ca8[19]))
         self.assertTrue(passes_type_consistency_gates(ca8[9], ca8[20]))
-        self.assertEqual(ca8[8].cluster_id, ca8[19].cluster_id)
+        # Slot 4 partner Ca7[23] matches Ca8[19] only. Do not pull Ca8[8].
+        self.assertTrue(passes_type_consistency_gates(ca7[23], ca8[19]))
+        self.assertFalse(passes_type_consistency_gates(ca7[23], ca8[8]))
+        self.assertEqual(ca7[23].cluster_id, ca8[19].cluster_id)
+        self.assertNotEqual(ca8[8].cluster_id, ca8[19].cluster_id)
         self.assertEqual(ca8[9].cluster_id, ca8[20].cluster_id)
         self.assertEqual(self.provider.get_call_history(), [])
 
-    def test_remaining_two_stem_ids_pass_consistency_gates(self):
-        """Cycle 11: apply the same Hu/profile split to G003 and G008.
-
-        All member pairs pass, so the splitter keeps the shared IDs.
-        Do not force a split when features say keep.
-        """
-        by_id: dict[str, list] = {glyph_id: [] for glyph_id in STANDING_INCONSISTENT_GLYPHS}
+    def test_mixed_hit_ids_match_member_counts(self):
+        """Cycle 12 mixed IDs: G007 is the 2-stem leftover; G006 is 390."""
+        by_id: dict[str, list] = {glyph_id: [] for glyph_id in STANDING_GLYPH_STEM_MULTIMAP}
         for inst in self.instances:
             if inst.cluster_id in by_id:
                 by_id[inst.cluster_id].append(inst)
-        self.assertEqual(len(by_id["G003"]), STANDING_G003_MEMBER_COUNT)
-        self.assertEqual(len(by_id["G008"]), STANDING_G008_MEMBER_COUNT)
-        for glyph_id, members in by_id.items():
-            self.assertTrue(all(inst.from_ligature_split for inst in members), glyph_id)
-            for i, left in enumerate(members):
-                for right in members[i + 1 :]:
-                    self.assertLess(_hu_distance(left, right), 2.0, glyph_id)
-                    self.assertGreaterEqual(
-                        profile_correlation(left.ink_profile, right.ink_profile),
-                        0.85,
-                        glyph_id,
-                    )
-                    self.assertTrue(
-                        passes_type_consistency_gates(left, right),
-                        glyph_id,
-                    )
-                    self.assertEqual(left.cluster_id, right.cluster_id)
+        self.assertEqual(len(by_id["G007"]), STANDING_G007_MEMBER_COUNT)
+        self.assertEqual(len(by_id["G006"]), STANDING_G006_MEMBER_COUNT)
+        for i, left in enumerate(by_id["G006"]):
+            for right in by_id["G006"][i + 1 :]:
+                self.assertTrue(passes_wide_profile_allograph_gates(left, right))
+                self.assertEqual(left.cluster_id, right.cluster_id)
         self.assertEqual(self.provider.get_call_history(), [])
 
 

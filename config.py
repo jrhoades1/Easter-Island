@@ -146,6 +146,17 @@ GLYPH_CONFIG = {
         "wide_profile_min_correlation": 0.85,
         # Post-merge split of over-merged split-fragment types. False keeps cycle 9.
         "split_inconsistent_types": True,
+        # Same-slot stitch across published Guy delimiter starts. False keeps cycle 11.
+        "delimiter_slot_merge": True,
+        "delimiter_window_len": 8,
+        "delimiter_window_starts": (
+            (0, 6),
+            (0, 19),
+            (0, 33),
+            (1, 3),
+            (1, 15),
+            (1, 29),
+        ),
     },
 }
 

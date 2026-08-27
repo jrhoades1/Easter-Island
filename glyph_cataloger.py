@@ -240,6 +240,14 @@ def main() -> int:
         split_inconsistent_types=config["clustering"].get(
             "split_inconsistent_types", True
         ),
+        delimiter_slot_merge=config["clustering"].get("delimiter_slot_merge", True),
+        delimiter_window_len=config["clustering"].get("delimiter_window_len", 8),
+        delimiter_window_starts=tuple(
+            config["clustering"].get(
+                "delimiter_window_starts",
+                ((0, 6), (0, 19), (0, 33), (1, 3), (1, 15), (1, 29)),
+            )
+        ),
     )
     processor = GlyphProcessor(processor_config)
 
@@ -279,6 +287,7 @@ def main() -> int:
         "split_inconsistent_types": config["clustering"].get(
             "split_inconsistent_types", True
         ),
+        "delimiter_slot_merge": config["clustering"].get("delimiter_slot_merge", True),
     }
     lexicon = build_lexicon(processor, instances, images, output_dir, clustering_params)
 
