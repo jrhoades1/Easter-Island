@@ -124,6 +124,11 @@ GLYPH_CONFIG = {
         "min_samples": 2,             # Minimum samples for a cluster
         # "unsigned" = abs(signed log-Hu). "signed" = cycle-1 −sign(h)·log10(|h|).
         "hu_sign_mode": "unsigned",
+        # Post-DBSCAN same-line allograph stitch. Set False to keep cycle-2 IDs.
+        "same_line_allograph_merge": True,
+        "allograph_max_hu_distance": 3.5,
+        "allograph_max_area_ratio": 1.1,
+        "allograph_max_aspect": 0.5,
     },
 }
 

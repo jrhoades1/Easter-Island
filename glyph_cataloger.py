@@ -205,6 +205,16 @@ def main() -> int:
         dbscan_eps=config["clustering"]["eps"],
         dbscan_min_samples=config["clustering"]["min_samples"],
         hu_sign_mode=config["clustering"].get("hu_sign_mode", "unsigned"),
+        same_line_allograph_merge=config["clustering"].get(
+            "same_line_allograph_merge", True
+        ),
+        allograph_max_hu_distance=config["clustering"].get(
+            "allograph_max_hu_distance", 3.5
+        ),
+        allograph_max_area_ratio=config["clustering"].get(
+            "allograph_max_area_ratio", 1.1
+        ),
+        allograph_max_aspect=config["clustering"].get("allograph_max_aspect", 0.5),
     )
     processor = GlyphProcessor(processor_config)
 
@@ -229,6 +239,9 @@ def main() -> int:
         "eps": config["clustering"]["eps"],
         "min_samples": config["clustering"]["min_samples"],
         "hu_sign_mode": config["clustering"].get("hu_sign_mode", "unsigned"),
+        "same_line_allograph_merge": config["clustering"].get(
+            "same_line_allograph_merge", True
+        ),
     }
     lexicon = build_lexicon(processor, instances, images, output_dir, clustering_params)
 

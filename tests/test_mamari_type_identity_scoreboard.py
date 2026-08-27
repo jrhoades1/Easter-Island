@@ -24,7 +24,8 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 2 standing lock (unsigned log-Hu). Cycle 1 signed lock was 71 types.
+# Cycle 3 standing lock (unsigned log-Hu + same-line allograph stitch).
+# Cycle 2 unsigned lock was 65 types / max n=1. Cycle 1 signed lock was 71.
 STANDING_INSTANCES_PER_STRIP = {
     "sca0701.gif": 14,
     "sca0702.gif": 14,
@@ -33,9 +34,10 @@ STANDING_INSTANCES_PER_STRIP = {
     "sca0802.gif": 12,
     "sca0803.gif": 12,
 }
-STANDING_UNIQUE_CLUSTERS = 65
+STANDING_UNIQUE_CLUSTERS = 58
+CYCLE2_UNSIGNED_UNIQUE_CLUSTERS = 65
 CYCLE1_SIGNED_UNIQUE_CLUSTERS = 71
-STANDING_MAX_REPEATING_N = 1
+STANDING_MAX_REPEATING_N = 5
 STANDING_CA7_LEN = 39
 STANDING_CA8_LEN = 36
 
@@ -217,6 +219,7 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(s.instances_per_strip, STANDING_INSTANCES_PER_STRIP)
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertLess(s.unique_cluster_count, CYCLE2_UNSIGNED_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
         self.assertAlmostEqual(
             s.unique_instance_ratio,
@@ -232,12 +235,12 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertNotEqual(s.ca8_length, s.published_ca8_stems)
         self.assertEqual(self.provider.get_call_history(), [])
 
-    def test_sca0701_opening_crescents_are_six_types(self):
-        """Unsigned Hu removes 50–82 sign-flip distances; residual still > eps."""
+    def test_sca0701_opening_crescents_share_one_id(self):
+        """Same-line stitch merges the six crescents; Hu residual still > eps."""
         crescents = isolate_sca0701_opening_crescents(self.instances)
         self.assertEqual(len(crescents), CRESCENT_COUNT)
         ids = [inst.cluster_id for inst in crescents]
-        self.assertEqual(len(set(ids)), CRESCENT_COUNT, f"allograph merge: {ids}")
+        self.assertEqual(len(set(ids)), 1, f"crescents should share an ID: {ids}")
         pairs = pairwise_log_hu_distances(crescents)
         self.assertEqual(len(pairs), CRESCENT_COUNT * (CRESCENT_COUNT - 1) // 2)
         eps = ProcessorConfig().dbscan_eps
@@ -250,9 +253,27 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertLess(max(distances), 4.0)
         self.assertEqual(self.provider.get_call_history(), [])
 
+    def test_merge_disabled_restores_cycle2_snapshot(self):
+        """same_line_allograph_merge=False keeps the cycle-2 65-type lock."""
+        raw = GlyphProcessor(ProcessorConfig(same_line_allograph_merge=False))
+        instances = process_tracings(self.paths, processor=raw)
+        score = score_type_identity(
+            instances,
+            self.ngram_analyzer,
+            self.published_ca7,
+            self.published_ca8,
+        )
+        self.assertEqual(score.unique_cluster_count, CYCLE2_UNSIGNED_UNIQUE_CLUSTERS)
+        crescents = isolate_sca0701_opening_crescents(instances)
+        ids = [inst.cluster_id for inst in crescents]
+        self.assertEqual(len(set(ids)), CRESCENT_COUNT, ids)
+        self.assertEqual(self.provider.get_call_history(), [])
+
     def test_signed_hu_preserves_cycle1_snapshot(self):
         """hu_sign_mode='signed' keeps the cycle-1 71-type / sign-flip lock."""
-        signed = GlyphProcessor(ProcessorConfig(hu_sign_mode="signed"))
+        signed = GlyphProcessor(
+            ProcessorConfig(hu_sign_mode="signed", same_line_allograph_merge=False)
+        )
         instances = process_tracings(self.paths, processor=signed)
         score = score_type_identity(
             instances,
