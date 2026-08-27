@@ -1,0 +1,65 @@
+{
+  "title": "Mamari (Barthel text C) Ca6–Ca9 lunar/calendar passage",
+  "encoding": "Barthel numerical transliteration",
+  "source": {
+    "primary": {
+      "title": "Kohaumotu.org numerical transliteration of Rongorongo tablet C (Mamari), side a",
+      "url": "http://kohaumotu.org/Rongorongo/C/Ca.html",
+      "note": "Published Barthel-coded transcription. Used as the extractable source of glyph numbers."
+    },
+    "cross_checks": [
+      {
+        "title": "Kohaumotu.org Mamari Ca7–Ca8",
+        "url": "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html"
+      },
+      {
+        "title": "Kohaumotu.org lunar calendar commentary",
+        "url": "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
+      }
+    ],
+    "scholarship": [
+      {
+        "citation": "Barthel, T.S. (1958). Grundlagen zur Entzifferung der Osterinselschrift. Hamburg.",
+        "note": "Identified the Ca6–Ca9 passage as a lunar calendar."
+      },
+      {
+        "citation": "Guy, J.B.M. (1990). The lunar calendar of Tablet Mamari. Journal de la Société des Océanistes 91: 135–149.",
+        "doi": "10.3406/jso.1990.2882",
+        "note": "Identifies the repeating delimiter 390.41 378y 41 V631B 8.78.711 (and a shorter 390.41 378y 41). Fig. 1 / Table 1 print a full numerical transcription under the glyphs, but those plates did not extract as text from Persée; numbers below are therefore taken from the Kohaumotu encoding rather than re-keyed from the figure."
+      },
+      {
+        "citation": "Horley, P. (2011). Lunar calendar in rongorongo texts and rock art of Easter Island. Journal de la Société des Océanistes 132: 17–38.",
+        "doi": "10.4000/jso.6314"
+      }
+    ],
+    "extraction_limits": "Guy 1990 Fig. 1 and Table 1 are image plates; Horley 2011 HTML was bot-gated. Allograph labels differ across editions (Guy V631B ≈ Kohaumotu 670; Guy 40A ≈ 040; first delimiter uses 315y / 375 rather than 378). This fixture keeps the Kohaumotu published tokens and does not remap those variants."
+  },
+  "passage_bounds": "Calendar starts at the first delimiter on Ca6 (Guy 1990: near the end of line 6; Kohaumotu lunar page: Ca6:160). Ca9 contributes only the two opening 040 night signs (Guy 1990: intercalary / supplementary nights after the last delimiter + 280 385y 385). The non-calendar prefix of Ca6 and the remainder of Ca9 are omitted.",
+  "lines": {
+    "Ca6": [
+      "390.041", "315y", "041", "670", "008.078.711",
+      "040.010", "040", "030a",
+      "390.041", "375", "041"
+    ],
+    "Ca7": [
+      "040", "040", "040", "040", "040", "040",
+      "390.041", "378", "041", "670", "008.078.711",
+      "040", "074f.040",
+      "059f", "040",
+      "390.041", "378y", "041h", "670", "008.078.711",
+      "044.040", "040", "143", "152",
+      "600.390.041", "378y", "041", "670y", "008", "078.711",
+      "040", "040"
+    ],
+    "Ca8": [
+      "040", "040", "040",
+      "390.041", "378y", "041h", "670", "008.078.711",
+      "040", "040", "003.040",
+      "390.041", "378y", "041", "670", "008.078.711",
+      "600", "040", "040", "040", "040", "040",
+      "390.041", "378y", "041", "670", "008.078.711",
+      "280", "385y", "385"
+    ],
+    "Ca9": ["040", "040"]
+  }
+}
