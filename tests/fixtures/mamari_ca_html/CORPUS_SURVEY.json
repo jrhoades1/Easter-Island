@@ -468,6 +468,33 @@
       ["tablet_a_tahua_side_b", "A", "b", "Ab8", 96, "002", "001", false, false, false, false, false]
     ]
   },
+  "stem_600_sandwich": {
+    "cycle": 41,
+    "sandwich": ["004", "600", "004"],
+    "stem": "600",
+    "passages": ["ca6_ca9_calendar", "ca_side_a_remainder", "tablet_c_side_b", "tablet_a_tahua_side_a", "tablet_a_tahua_side_b"],
+    "total": 3,
+    "counts": {
+      "ca6_ca9_calendar": 0,
+      "ca_side_a_remainder": 0,
+      "tablet_c_side_b": 0,
+      "tablet_a_tahua_side_a": 0,
+      "tablet_a_tahua_side_b": 3
+    },
+    "ab_9gram_slot": 2,
+    "hits": [
+      ["tablet_a_tahua_side_b", "A", "b", "Ab3", 4, 7, true],
+      ["tablet_a_tahua_side_b", "A", "b", "Ab5", 15, 18, true],
+      ["tablet_a_tahua_side_b", "A", "b", "Ab7", 16, 19, false]
+    ],
+    "neighbor_tops": {
+      "ca6_ca9_calendar": ["152", 1, "040", 1],
+      "ca_side_a_remainder": ["007", 2, "001", 2],
+      "tablet_c_side_b": ["001", 1, "003", 1],
+      "tablet_a_tahua_side_a": ["004", 5, "007", 5],
+      "tablet_a_tahua_side_b": ["003", 6, "001", 5]
+    }
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",

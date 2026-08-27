@@ -11,6 +11,9 @@ it is window-adjacent on the calendar (last token facing a Guy window,
 or first token of a cell after one). Totals per fixture. Stems are
 ids only. No meanings.
 
+Cycle 41 locks the 004 600 004 sandwich and per-fixture
+600 neighbor tops on this same inventory.
+
 Search lock, not a merge and not a translation. MockProvider only.
 """
 
