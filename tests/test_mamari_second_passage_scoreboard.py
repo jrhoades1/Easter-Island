@@ -16,7 +16,9 @@ the remainder n≥4 freq≥2 profile on this same fixture. Cycle 30
 locks that 9-gram as a motif (hits, flanks, wrap-count,
 calendar-absent). Cycle 31 locks the six remainder 002…002 n=9
 wraps as a family (overlap with the motif; bookend 002 is not a
-delimiter). Image track stays parked. MockProvider only.
+delimiter). Cycle 32 vendors the same publisher's Cb.html verso
+and locks those four claims on Cb only. Image track stays parked.
+MockProvider only.
 """
 
 import json
