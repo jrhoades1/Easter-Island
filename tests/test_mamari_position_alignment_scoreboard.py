@@ -262,9 +262,9 @@ class TestPositionAlignmentHelpers(unittest.TestCase):
         self.assertEqual(
             [hit_tuple(hit) for hit in hits],
             [
-                ("Ca7", 1, 3, ("G004", "G003"), ("008", "078"), True, True, True),
+                ("Ca7", 1, 3, ("G004", "G003"), ("008", "078"), False, True, True),
                 ("Ca8", 1, 3, ("G004", "G003"), ("078", "711"), False, True, True),
-                ("Ca7", 0, 3, ("G009", "G004", "G003"), ("670", "008", "078"), True, True, False),
+                ("Ca7", 0, 3, ("G009", "G004", "G003"), ("670", "008", "078"), False, True, False),
             ],
         )
 
