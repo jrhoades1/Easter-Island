@@ -61,7 +61,11 @@ Cycle 45 locks the cycle-44 Bv 8-gram as a motif
 (hits, flanks, absent on Br / Aa / Ab / C).
 Cycle 46 vendors tablet I (Santiago Staff) Ia.html
 from the already-vendored tablets.html and locks that
-page only.
+page only. Cycle 49 vendors the Wikimedia C-a photo
+and locks that it is strictly larger per calendar line
+than the Ca7–Ca8 GIFs; published Hamming is not
+rescored (crop lengths ≠ 43+40). GIF lock stays
+83/62 / Hamming 6.
 """
 
 import json

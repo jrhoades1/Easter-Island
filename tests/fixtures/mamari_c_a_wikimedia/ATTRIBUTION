@@ -1,0 +1,47 @@
+Mamari (Barthel text C) side a — Wikimedia Commons photograph
+============================================================
+
+File
+  Rongorongo_C-a_Mamari.jpg
+  2040 × 1424 JPEG, 547228 bytes
+  SHA-1 4d2b3e539d0167d68adea43c3274e894625f1beb
+
+Commons file page
+  https://commons.wikimedia.org/wiki/File:Rongorongo_C-a_Mamari.jpg
+
+Direct file (verified 2026-08-27; MD5 path is 1/14/, not 4/4e)
+  https://upload.wikimedia.org/wikipedia/commons/1/14/Rongorongo_C-a_Mamari.jpg
+
+Photograph
+  Widow Hoare, Papeete, while the tablet was in Jaussen’s possession.
+  Date on Commons: before 1860.
+
+Publication
+  Chauvet, Stéphen-Charles. 1935. L'île de Pâques et ses mystères.
+  Paris: Éditions Tel.
+  Later English edition: translation by Ann M. Altman (2004),
+  McLaughlin, Shawn, ed. Easter Island and its Mysteries.
+  OCLC 182885760.
+
+License (not MIT)
+  GFDL: GNU Free Documentation License 1.2 or later (no invariant sections).
+  CC BY-SA 3.0: Creative Commons Attribution-Share Alike 3.0 Unported.
+  https://www.gnu.org/copyleft/fdl.html
+  https://creativecommons.org/licenses/by-sa/3.0/
+  Wikimedia VRT ticket 2008061210011949.
+
+  This JPEG is not covered by this repository's MIT license.
+
+Not scraped
+  INSCRIBE 3D viewer (museum copyright).
+
+Cycle 49 (2026-08-27)
+  Vendored this public C-a photo. Calendar is Ca6–Ca9 on this side
+  (14 published Ca.html lines). Full-frame pixels per line
+  (2040×1424 / 14) and an equal-split Ca6–Ca9 crop of the measured
+  tablet bbox are both strictly larger than the Kohaumotu Ca7/Ca8
+  GIF wraps (~522×74 × 3). No published Ca6–Ca9 pixel bounds exist,
+  so the crop is a 14-way equal split, not a published plate.
+  Stock CV on that crop does not emit the published 43+40 stems;
+  published-window Hamming is not rescored. Detector is not retuned.
+  GIF lock stays 83/62 / Hamming 6.
