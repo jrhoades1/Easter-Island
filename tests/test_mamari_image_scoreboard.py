@@ -18,6 +18,8 @@ repeating 8-gram; longest mixed n anywhere stays 2. Cycle 18 locked
 nearest 8-window Hamming: concat min 3, published-window min 7.
 Cycle 19 merges one leftover crop pair; published-window min is 6.
 Cycle 20 leftover slot-2+3 unions leave that min at 6, so they stay off.
+Cycle 21 slot-0 flip/180 crop leftovers fail the same gate (best NCC
+0.247 / chamfer 1.224), so published Hamming stays 6.
 """
 
 import random

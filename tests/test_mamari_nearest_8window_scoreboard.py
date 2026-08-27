@@ -5,7 +5,9 @@ Cycle 18 recorded published-window min Hamming 7. Cycle 19 merges
 one leftover crop pair (slot 7 Ca7[26]/Ca8[22]) that drops that
 number to 6. Cycle 20 applies the two remaining crop-clear leftover
 pairs (slot 2 and slot 3) together; published min stays 6, so those
-extra merges stay off. Concat min stays 3 on the six-G001 night-sign
+extra merges stay off. Cycle 21 retries slot-0 leftovers under
+{identity, hflip, vflip, 180°}; none clear the crop gate, so
+published Hamming stays 6. Concat min stays 3 on the six-G001 night-sign
 run.
 
 No detector retune. No G00n→Barthel map. MockProvider only.
@@ -20,6 +22,7 @@ from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from tests.test_mamari_calendar_scoreboard import DELIMITER_MOTIF
 from tests.test_mamari_delimiter_window_scoreboard import (
     STANDING_DELIMITER_WINDOWS,
+    STANDING_SLOT0_INVARIANT_BEST,
     STANDING_SLOT_MATCHES,
     STANDING_SLOT_UNIQUE_COUNTS,
     WINDOW_LEN,
@@ -101,6 +104,10 @@ STANDING_LEFTOVER_BEFORE_AFTER = (
     (83, 62, 6, (4, 6, 6, 6, 5, 6, 6, 4), 0, 2),
     (83, 60, 6, (4, 6, 5, 5, 5, 6, 6, 4), 0, 2),
 )
+# Cycle 21: no slot-0 leftover clears flip/180 crop, so no merge.
+SLOT0_INVARIANT_GATE_CLEARS = False
+SLOT0_INVARIANT_HAMMING_BEFORE = STANDING_PUBLISHED_MIN_HAMMING
+SLOT0_INVARIANT_HAMMING_AFTER = STANDING_PUBLISHED_MIN_HAMMING
 
 
 @dataclass(frozen=True)
@@ -474,6 +481,35 @@ class TestMamariNearest8WindowScoreboard(unittest.TestCase):
             self.ngram_analyzer,
         )
         self.assertEqual(unconstrained.longest_mixed_n, STANDING_LONGEST_MIXED_N)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_slot0_invariant_crop_leaves_published_hamming_6(self):
+        """Flip/180 slot-0 leftovers fail the crop gate. Hamming stays 6.
+
+        Best leftover is Ca7[33]/Ca8[29] hflip at NCC 0.247 / chamfer
+        1.224. leftover_merge stays off. Turning invariant merge on
+        does not change the snapshot.
+        """
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_leftover_merge)
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_invariant_merge)
+        self.assertFalse(SLOT0_INVARIANT_GATE_CLEARS)
+        self.assertFalse(STANDING_SLOT0_INVARIANT_BEST[5])
+        self.assertEqual(self.score.published_hamming, SLOT0_INVARIANT_HAMMING_BEFORE)
+        invariant = process_tracings(
+            self.paths,
+            GlyphProcessor(ProcessorConfig(delimiter_slot_crop_invariant_merge=True)),
+        )
+        invariant_lines = ca7_ca8_sequences(invariant)
+        invariant_score = score_nearest_8windows(
+            invariant, invariant_lines, self.published_lines
+        )
+        self.assertEqual(invariant_score.published_hamming, SLOT0_INVARIANT_HAMMING_AFTER)
+        self.assertEqual(
+            invariant_score.published_hamming, STANDING_PUBLISHED_MIN_HAMMING
+        )
+        self.assertEqual(invariant_score.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertEqual(invariant_score.window_matches, STANDING_SLOT_MATCHES)
+        self.assertEqual(invariant_score.concat_hamming, STANDING_CONCAT_MIN_HAMMING)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_standing_83_62_and_window_0_of_8(self):

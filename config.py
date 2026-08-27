@@ -160,6 +160,8 @@ GLYPH_CONFIG = {
         # Cycle 20 leftover crop stitch (slots 2+3). Jointly they leave
         # published Hamming at 6, so the extra merges stay off.
         "delimiter_slot_crop_leftover_merge": False,
+        # Cycle 21 slot-0 flip/180 crop. No leftover clears the gate.
+        "delimiter_slot_crop_invariant_merge": False,
         "delimiter_window_len": 8,
         # Cycle 14 locked joint offset 0 (0/8 at every offset in {-2..+2}).
         "delimiter_window_starts": (

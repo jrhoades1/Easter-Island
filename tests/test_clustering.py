@@ -11,9 +11,14 @@ from processors.glyph_processor import (
     ProcessorConfig,
     _hu_distance,
     best_crop_hamming_pair,
+    best_slot0_invariant_crop_hamming_pair,
+    best_slot0_invariant_crop_pair,
     crop_chamfer,
+    crop_invariant_match,
     crop_ncc,
     leftover_crop_pairs,
+    passes_slot_crop_invariant_gates,
+    transform_glyph_crop,
     min_pairwise_window_hamming,
     passes_delimiter_slot_gates,
     passes_same_line_allograph_gates,
@@ -1008,6 +1013,124 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
             window_hamming(("A",), ("A", "B"))
         self.assertIsNone(best_crop_hamming_pair([], []))
         self.assertEqual(leftover_crop_pairs([], []), ())
+        self.assertIsNone(best_slot0_invariant_crop_pair([], []))
+        self.assertIsNone(best_slot0_invariant_crop_hamming_pair([], []))
+
+    def _asymmetric_crop(self) -> list[int]:
+        plane = np.zeros((64, 64), dtype=np.uint8)
+        plane[6:58, 8:20] = 255
+        plane[46:58, 8:56] = 255
+        return plane.ravel().tolist()
+
+    def test_hflip_pair_clears_invariant_crop_not_upright(self):
+        """Mirrored leftovers fail upright NCC and pass the same numeric gate."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._asymmetric_crop()
+        flipped = transform_glyph_crop(crop, "hflip")
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left)
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right)
+        a.glyph_crop = crop
+        b.glyph_crop = flipped
+        self.assertLess(crop_ncc(a.glyph_crop, b.glyph_crop), 0.45)
+        self.assertFalse(passes_slot_crop_gates(a, b))
+        ncc, chamfer, name = crop_invariant_match(a.glyph_crop, b.glyph_crop)
+        self.assertEqual(name, "hflip")
+        self.assertGreaterEqual(ncc, 0.45)
+        self.assertLessEqual(chamfer, 0.80)
+        self.assertTrue(passes_slot_crop_invariant_gates(a, b))
+
+    def test_slot0_invariant_hamming_merge_unions_flipped_pair(self):
+        """Slot-0 leftover hflip pair unions only when the flag is on."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._asymmetric_crop()
+        a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left, total=2)
+        filler = self._inst(
+            "x", "sca0701.gif", 1, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right, total=2)
+        other = self._inst(
+            "y", "sca0801.gif", 1, [8.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        a.glyph_crop = crop
+        b.glyph_crop = transform_glyph_crop(crop, "hflip")
+        self.assertFalse(passes_slot_crop_gates(a, b))
+        self.assertTrue(passes_slot_crop_invariant_gates(a, b))
+        default = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+                delimiter_slot_crop_merge=False,
+                delimiter_slot_crop_hamming_merge=False,
+            )
+        )
+        _, clustered = default.cluster_glyphs([a, filler, other, b])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertNotEqual(by_id["a"], by_id["b"])
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_invariant_merge)
+        on = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+                delimiter_slot_crop_merge=False,
+                delimiter_slot_crop_hamming_merge=False,
+                delimiter_slot_crop_invariant_merge=True,
+            )
+        )
+        a2 = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left, total=2)
+        filler2 = self._inst(
+            "x", "sca0701.gif", 1, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b2 = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right, total=2)
+        other2 = self._inst(
+            "y", "sca0801.gif", 1, [8.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        a2.glyph_crop = crop
+        b2.glyph_crop = transform_glyph_crop(crop, "rot180")
+        _, merged = on.cluster_glyphs([a2, filler2, other2, b2])
+        by_id = {inst.instance_id: inst.cluster_id for inst in merged}
+        self.assertEqual(by_id["a"], by_id["b"])
+
+    def test_invariant_hamming_merge_skips_other_slots(self):
+        """Flip-clear leftovers in slot 1 stay split."""
+        left = [float(i) for i in range(32)]
+        right = [float(31 - i) for i in range(32)]
+        crop = self._asymmetric_crop()
+        a = self._inst("a", "sca0701.gif", 1, [0.0] * 7, left, total=2)
+        filler = self._inst(
+            "x", "sca0701.gif", 0, [9.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        b = self._inst("b", "sca0801.gif", 1, [5.0] + [0.0] * 6, right, total=2)
+        other = self._inst(
+            "y", "sca0801.gif", 0, [8.0] + [0.0] * 6, [0.0] * 32, total=2
+        )
+        a.glyph_crop = crop
+        b.glyph_crop = transform_glyph_crop(crop, "hflip")
+        self.assertTrue(passes_slot_crop_invariant_gates(a, b))
+        processor = GlyphProcessor(
+            ProcessorConfig(
+                delimiter_window_len=2,
+                delimiter_window_starts=((0, 0), (1, 0)),
+                delimiter_slot_crop_merge=False,
+                delimiter_slot_crop_hamming_merge=False,
+                delimiter_slot_crop_invariant_merge=True,
+            )
+        )
+        _, clustered = processor.cluster_glyphs([a, filler, other, b])
+        by_id = {inst.instance_id: inst.cluster_id for inst in clustered}
+        self.assertNotEqual(by_id["a"], by_id["b"])
+        self.assertIsNone(
+            best_slot0_invariant_crop_hamming_pair(
+                clustered,
+                [[1, 2], [0, 3]],
+                ProcessorConfig(delimiter_slot_crop_invariant_merge=True),
+            )
+        )
+
+    def test_unknown_crop_transform_raises(self):
+        with self.assertRaises(ValueError):
+            transform_glyph_crop(self._crop("circle"), "mirror45")
 
     def test_missing_crops_do_not_merge(self):
         left = [float(i) for i in range(32)]
@@ -1015,6 +1138,7 @@ class TestDelimiterSlotAllographMerge(unittest.TestCase):
         a = self._inst("a", "sca0701.gif", 0, [0.0] * 7, left)
         b = self._inst("b", "sca0801.gif", 0, [5.0] + [0.0] * 6, right)
         self.assertFalse(passes_slot_crop_gates(a, b))
+        self.assertFalse(passes_slot_crop_invariant_gates(a, b))
         processor = GlyphProcessor(
             ProcessorConfig(
                 delimiter_window_len=1,

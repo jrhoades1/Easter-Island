@@ -24,6 +24,8 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
+# Cycle 21 locks slot-0 flip/180 crop leftovers below the gate
+# (best NCC 0.247 / chamfer 1.224); published H stays 6.
 # Cycle 20 locks leftover crop pairs exhausted at published H=6
 # (slot 2 + slot 3 together do not drop Hamming). Cycle 19 drops
 # published-window min Hamming 7→6 with one crop merge and keeps

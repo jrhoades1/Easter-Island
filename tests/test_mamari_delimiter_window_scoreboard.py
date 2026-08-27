@@ -24,6 +24,9 @@ Cycle 19 merges one leftover crop pair that drops published
 Hamming to 6 (slot 7: Ca7[26] vs Ca8[22]). Cycle 20 applies the
 other two crop-passing leftovers together (slot 2 and slot 3);
 published min stays 6, so those extra merges stay off.
+Cycle 21 retries slot-0 leftovers under {identity, hflip, vflip,
+180°}. Best leftover is NCC 0.247 / chamfer 1.224 (hflip); the
+gate does not clear, so published Hamming stays 6.
 Glyph meanings are not assigned.
 """
 
@@ -43,7 +46,11 @@ from processors.glyph_processor import (
     leftover_crop_pairs,
     min_pairwise_window_hamming,
     passes_delimiter_slot_gates,
+    best_slot0_invariant_crop_hamming_pair,
+    best_slot0_invariant_crop_pair,
+    crop_invariant_match,
     passes_slot_crop_gates,
+    passes_slot_crop_invariant_gates,
     passes_type_consistency_gates,
     passes_wide_profile_allograph_gates,
     profile_correlation,
@@ -131,6 +138,20 @@ STANDING_CROP_HAMMING_CANDIDATES = (
 )
 STANDING_CROP_HAMMING_MERGE = STANDING_CROP_HAMMING_CANDIDATES[0]
 STANDING_LEFTOVER_CROP_PAIRS = STANDING_CROP_HAMMING_CANDIDATES[1:]
+# Cycle 21: leftover slot-0 crop under {identity, hflip, vflip, 180°}.
+# Best leftover NCC is still below 0.45; chamfer still above 0.80.
+# (left, right, transform, ncc, chamfer, crop_pass, drops_hamming)
+STANDING_SLOT0_INVARIANT_BEST = (
+    ("Ca7", 33),
+    ("Ca8", 29),
+    "hflip",
+    0.247,
+    1.224,
+    False,
+    False,
+)
+# G023 vs G006 would drop published Hamming 6→5 but fails the gate.
+STANDING_SLOT0_INVARIANT_HAMMING_DROP_PAIR = (("Ca7", 19), ("Ca7", 33))
 
 # Joint stem-index offsets applied to every published start. Same N
 # for all six windows. Per-window free search would mix slots.
@@ -354,6 +375,29 @@ def offset_table_tuple(
 def slot0_instance(lines: list[list], line: str, index: int):
     """Slot-0 occupant at a published Ca7/Ca8 reading-order index."""
     return lines[0 if line == "Ca7" else 1][index]
+
+
+def published_slot_members(
+    instances: list[GlyphInstance],
+    lines: list[list],
+) -> list[list[int]]:
+    """Instance indexes of the eight published delimiter slots."""
+    index = {id(inst): i for i, inst in enumerate(instances)}
+    slot_members: list[list[int]] = [[] for _ in range(WINDOW_LEN)]
+    for line_index, start in ProcessorConfig().delimiter_window_starts:
+        line = lines[line_index]
+        for slot in range(WINDOW_LEN):
+            slot_members[slot].append(index[id(line[start + slot])])
+    return slot_members
+
+
+def occupant_key(inst, lines: list[list]) -> tuple[str, int]:
+    """(Ca7|Ca8, reading-order index) for a clustered instance."""
+    for name, line in (("Ca7", lines[0]), ("Ca8", lines[1])):
+        for i, other in enumerate(line):
+            if other is inst:
+                return (name, i)
+    raise AssertionError("instance is not a Ca7/Ca8 occupant")
 
 
 def slot0_crop_row(left, right) -> tuple:
@@ -746,6 +790,84 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
             for slot in range(WINDOW_LEN):
                 slot_members[slot].append(index[id(line[start + slot])])
         self.assertEqual(leftover_crop_pairs(leftover_instances, slot_members), ())
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_slot0_invariant_crop_cannot_buy_hamming(self):
+        """Cycle 21: best leftover flip/180 is NCC 0.247 / chamfer 1.224.
+
+        Gate stays NCC >= 0.45 / chamfer <= 0.80. No leftover clears.
+        Published Hamming stays 6 before and after the (empty) merge.
+        leftover_merge stays off. Default clustering is unchanged.
+        """
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_leftover_merge)
+        self.assertFalse(ProcessorConfig().delimiter_slot_crop_invariant_merge)
+        self.assertEqual(ProcessorConfig().slot_crop_min_ncc, 0.45)
+        self.assertEqual(ProcessorConfig().slot_crop_max_chamfer, 0.80)
+        lines = ca7_ca8_instances(self.instances)
+        slot_members = published_slot_members(self.instances, lines)
+        best = best_slot0_invariant_crop_pair(self.instances, slot_members)
+        self.assertIsNotNone(best)
+        left_i, right_i, ncc, chamfer, name = best
+        left_key, right_key, exp_name, exp_ncc, exp_ch, exp_pass, exp_drop = (
+            STANDING_SLOT0_INVARIANT_BEST
+        )
+        self.assertEqual(occupant_key(self.instances[left_i], lines), left_key)
+        self.assertEqual(occupant_key(self.instances[right_i], lines), right_key)
+        self.assertEqual(name, exp_name)
+        self.assertAlmostEqual(ncc, exp_ncc, places=3)
+        self.assertAlmostEqual(chamfer, exp_ch, places=3)
+        left = slot0_instance(lines, *left_key)
+        right = slot0_instance(lines, *right_key)
+        self.assertFalse(passes_slot_crop_gates(left, right))
+        self.assertFalse(passes_slot_crop_invariant_gates(left, right))
+        self.assertEqual(passes_slot_crop_invariant_gates(left, right), exp_pass)
+        self.assertLess(ncc, 0.45)
+        self.assertGreater(chamfer, 0.80)
+        grams = tuple(window.image_ids for window in self.score.windows)
+        before_h = min_pairwise_window_hamming(grams)
+        self.assertEqual(before_h, 6)
+        self.assertIsNone(
+            best_slot0_invariant_crop_hamming_pair(self.instances, slot_members)
+        )
+        drop_left = slot0_instance(lines, *STANDING_SLOT0_INVARIANT_HAMMING_DROP_PAIR[0])
+        drop_right = slot0_instance(lines, *STANDING_SLOT0_INVARIANT_HAMMING_DROP_PAIR[1])
+        self.assertEqual(
+            min_pairwise_window_hamming(
+                remap_window_types(grams, drop_left.cluster_id, drop_right.cluster_id)
+            ),
+            5,
+        )
+        self.assertFalse(passes_slot_crop_invariant_gates(drop_left, drop_right))
+        self.assertEqual(exp_drop, False)
+        leftover_ncc = []
+        for a_i, members_i in enumerate(slot_members[0]):
+            for members_j in slot_members[0][a_i + 1 :]:
+                left_occ = self.instances[members_i]
+                right_occ = self.instances[members_j]
+                if left_occ.cluster_id == right_occ.cluster_id:
+                    continue
+                self.assertFalse(passes_slot_crop_invariant_gates(left_occ, right_occ))
+                pair_ncc, _ch, _name = crop_invariant_match(
+                    left_occ.glyph_crop, right_occ.glyph_crop
+                )
+                leftover_ncc.append(pair_ncc)
+        self.assertLess(max(leftover_ncc), 0.45)
+        invariant = process_tracings(
+            self.paths,
+            GlyphProcessor(ProcessorConfig(delimiter_slot_crop_invariant_merge=True)),
+        )
+        invariant_image = ca7_ca8_sequences(invariant)
+        invariant_windows = delimiter_image_windows(invariant_image, self.published_lines)
+        after_h = min_pairwise_window_hamming(
+            tuple(window.image_ids for window in invariant_windows)
+        )
+        self.assertEqual(after_h, before_h)
+        self.assertEqual(after_h, 6)
+        self.assertEqual(
+            len({inst.cluster_id for inst in invariant if inst.cluster_id}),
+            STANDING_UNIQUE_CLUSTERS,
+        )
+        self.assertEqual(len(set(slot_ids_across_windows(invariant_windows)[0])), 4)
         self.assertEqual(self.provider.get_call_history(), [])
 
 
