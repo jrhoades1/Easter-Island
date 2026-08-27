@@ -28,6 +28,9 @@ Cycle 36 vendors the parent catalog's first non-C Barthel page
 Aa.html verso Ab.html and locks that side only. Cycle 39
 locks that Ab 9-gram as a motif (hits, flanks, 8-prefix,
 600-slot, absent on Aa / Ca calendar / remainder / Cb).
+Cycle 40 locks a 600 inventory on those same fixtures
+only (hits, flanks, motif membership, calendar
+window-adjacency, per-fixture counts).
 Image track stays parked. MockProvider only.
 """
 

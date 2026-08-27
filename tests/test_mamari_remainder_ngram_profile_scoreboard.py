@@ -19,7 +19,10 @@ already-vendored Cb.html verso. Cycle 34 locks those three
 Cb 5-grams on this remainder and the calendar fixture.
 Cycle 37 locks the Tahua Aa 10-gram as a motif (C-absent
 here). Cycle 39 locks the Tahua Ab 9-gram as a motif
-(Aa / C-absent here). Image snapshot stays 83/62 / Hamming 6.
+(Aa / C-absent here). Cycle 40 locks a 600 inventory
+on the existing fixtures (hits, flanks, motif
+membership, calendar window-adjacency). Image snapshot
+stays 83/62 / Hamming 6.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

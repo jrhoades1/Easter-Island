@@ -15,7 +15,8 @@ none, stem count. Cycle 37 locks that 10-gram as a motif (hits,
 flanks, 8-prefix, C-absent). Cycle 38 vendors the Aa.html verso
 Ab.html and locks that side only. Cycle 39 locks that Ab
 9-gram as a motif (hits, flanks, 8-prefix, 600-slot,
-cross-absent). Existing C scoreboards stay the lock.
+cross-absent). Cycle 40 locks a 600 inventory on the
+existing fixtures only. Existing C scoreboards stay the lock.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """
