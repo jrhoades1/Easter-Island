@@ -18,6 +18,8 @@ slot unique stays (4, 6, 6, 6, 5, 6, 6, 5). The gate is not lowered.
 Cycle 16 found no honest higher-res public Ca7–Ca8 raster; GIF
 ceiling, lock unchanged. Cycle 17 searches the full G00n sequence
 (not these six windows) and still finds no repeating 8-gram.
+Cycle 18 locks nearest 8-window Hamming among these six at 7
+(first pair Ca7[6:14] vs Ca8[3:11]); concat min is 3.
 Glyph meanings are not assigned.
 """
 
