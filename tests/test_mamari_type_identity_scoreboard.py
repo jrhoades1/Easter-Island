@@ -24,9 +24,11 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 15 standing lock: 83/62 / 0/8. Global keep-ID gate after DBSCAN
-# dropped two types vs cycle 14 (83/64). Window stays 0/8. Cycle 13 was
-# the same 83/64 (crop leftovers fail). Cycle 11 was 83/66 / mixed
+# Cycle 16 keeps the cycle-15 standing lock: 83/62 / 0/8. No higher-res
+# public Ca7–Ca8 raster was vendored (GIF ceiling). Cycle 15 global
+# keep-ID gate after DBSCAN dropped two types vs cycle 14 (83/64).
+# Window stays 0/8. Cycle 13 was the same 83/64 (crop leftovers fail).
+# Cycle 11 was 83/66 / mixed
 # G003 G008. Cycle 9 was 83/62 / mixed 3-gram (same type count, different
 # clustering). Cycle 4 was 67 types. Cycle 3 was 75/58. Cycle 2 was 65.
 # Cycle 1 signed lock was 71.

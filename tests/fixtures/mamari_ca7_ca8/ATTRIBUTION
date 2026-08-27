@@ -23,3 +23,20 @@ Not vendored
   lunar.html color GIFs
   whole-tablet ca.jpg
   ruler strips (r100.gif / r200.gif / r300.gif)
+
+Cycle 16 (2026-08-27)
+  Surveyed public Kohaumotu / CEIPP rasters for a Ca7–Ca8 source
+  larger than 522×74. None could be vendored without inventing a
+  crop or a derived raster. See SOURCE_SURVEY.json.
+
+  Ca.html Barthel PNGs: 522×74 (same as these GIFs)
+  repro/ca.jpg: 980×630 whole tablet; no published Ca7–Ca8 pixel bounds
+  lunar.html color GIFs: 771×92, color-coded + ruler; THRESH_BINARY_INV
+  Fischer Ca7–Ca8 PNGs: 74px tall (wider wraps, not higher-res)
+  C_svg_codes_b.html: full-line SVG 1933×160 / 1901×160 with codes
+    and divider lines; not a published line photo
+  individualized tr/C slices: 7×74 of the same 74px strips
+  sample_tablet.png: synthetic CV dummy, not Mamari
+
+  Result: GIF ceiling (~522×74; sca0802.gif is 523×74).
+  Lock 83/62 / 0/8. No new image.
