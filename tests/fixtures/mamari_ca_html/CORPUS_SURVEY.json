@@ -226,7 +226,8 @@
     },
     "other_tablet_hrefs": [],
     "other_tablet_kohaumotu_urls": [
-      "http://kohaumotu.org/Rongorongo/A/Aa.html"
+      "http://kohaumotu.org/Rongorongo/A/Aa.html",
+      "http://kohaumotu.org/Rongorongo/A/Ab.html"
     ],
     "index_html": {
       "href": "index.html",
@@ -239,6 +240,7 @@
     "cited_kohaumotu_urls": [
       "http://kohaumotu.org/Rongorongo/",
       "http://kohaumotu.org/Rongorongo/A/Aa.html",
+      "http://kohaumotu.org/Rongorongo/A/Ab.html",
       "http://kohaumotu.org/Rongorongo/A/index.html",
       "http://kohaumotu.org/Rongorongo/C/Ca.html",
       "http://kohaumotu.org/Rongorongo/C/Ca07.html",
@@ -313,6 +315,41 @@
     "remainder_motif_hits": [],
     "cb_motif_hits": [],
     "c_absent": true
+  },
+  "tablet_a_tahua_side_b": {
+    "cycle": 38,
+    "result": "ab_html_vendored",
+    "id": "tablet_a_tahua_side_b",
+    "tablet": "A",
+    "name": "Tahua",
+    "selection": "verso_of_cited_aa",
+    "source_page": "http://kohaumotu.org/Rongorongo/A/Ab.html",
+    "verso_of": "http://kohaumotu.org/Rongorongo/A/Aa.html",
+    "tablet_index": "http://kohaumotu.org/Rongorongo/A/index.html",
+    "vendored_html": "tests/fixtures/tahua_ab_html/Ab.html",
+    "html_bytes": 11257,
+    "lines": ["Ab1", "Ab2", "Ab3", "Ab4", "Ab5", "Ab6", "Ab7", "Ab8"],
+    "stem_count": 926,
+    "stem_counts_by_line": [108, 121, 123, 116, 112, 128, 109, 109],
+    "motif_10gram": false,
+    "motif_10gram_tokens": ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"],
+    "motif_10gram_freq": 0,
+    "motif_10gram_spans": [],
+    "guy_8stem_delimiter": false,
+    "guy_8stem_delimiter_freq": 0,
+    "guy_8stem_delimiter_spans": [],
+    "motif_9gram": false,
+    "longest_n": 9,
+    "longest_tokens": ["605", "003", "004", "600", "004", "003", "040", "003", "050"],
+    "longest_freq": 2,
+    "longest_spans": [["Ab3", 2, 11], ["Ab5", 13, 22]],
+    "eightgram_count": 3,
+    "top_8gram": ["605", "003", "004", "600", "004", "003", "040", "003"],
+    "top_8gram_freq": 2,
+    "top_8gram_is_guy_delimiter": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "image_track": "parked"
   },
   "cb_5gram_ca_cross": {
     "cycle": 34,

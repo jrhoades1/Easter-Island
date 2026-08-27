@@ -32,10 +32,10 @@ What was copied
   <td> text under each line strip (Aa1–Aa8). Digits were copied from
   that HTML, not typed from memory. Image cells were skipped.
 
-Not vendored
-  Ab.html (navbar side b on Aa.html; this cycle locks side a only)
+Not vendored here
   fi_Aa.html / Fischer pages (not the Barthel all-lines page)
   A_svg_codes_b.html (SVG overlay; not the Aa.html number table)
+  Ab.html is vendored in cycle 38 (tests/fixtures/tahua_ab_html/)
 
 Cycle 36 (2026-08-27)
   Parent catalog is the folder above already-used Ca.html / Cb.html.
@@ -61,3 +61,8 @@ Cycle 37 (2026-08-27)
     10-gram absent on Ca calendar, Ca remainder, and Cb
   Existing C scoreboards are unchanged.
   Image track stays parked. No new image. No clustering change.
+
+Cycle 38 (2026-08-27)
+  Vendors the Aa.html navbar verso Ab.html (same Kohaumotu tablet-A
+  publisher) as tests/fixtures/tahua_ab_html/. Search lock is on Ab
+  only. See that directory's ATTRIBUTION. Image track stays parked.
