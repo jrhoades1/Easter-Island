@@ -238,7 +238,9 @@
       "http://kohaumotu.org/Rongorongo/K/Kr.html",
       "http://kohaumotu.org/Rongorongo/K/Kv.html",
       "http://kohaumotu.org/Rongorongo/P/Pr.html",
-      "http://kohaumotu.org/Rongorongo/P/Pv.html"
+      "http://kohaumotu.org/Rongorongo/P/Pv.html",
+      "http://kohaumotu.org/Rongorongo/Q/Qr.html",
+      "http://kohaumotu.org/Rongorongo/Q/Qv.html"
     ],
     "index_html": {
       "href": "index.html",
@@ -274,13 +276,16 @@
       "http://kohaumotu.org/Rongorongo/P/Pr.html",
       "http://kohaumotu.org/Rongorongo/P/Pv.html",
       "http://kohaumotu.org/Rongorongo/P/index.html",
+      "http://kohaumotu.org/Rongorongo/Q/Qr.html",
+      "http://kohaumotu.org/Rongorongo/Q/Qv.html",
+      "http://kohaumotu.org/Rongorongo/Q/index.html",
       "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
       "http://kohaumotu.org/Rongorongo/tablets.html",
       "http://kohaumotu.org/rongorongo_org/copy.html",
       "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
       "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
     ],
-    "cited_url_tablet_letters": ["A", "B", "C", "G", "H", "I", "K", "P"],
+    "cited_url_tablet_letters": ["A", "B", "C", "G", "H", "I", "K", "P", "Q"],
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
@@ -1961,6 +1966,151 @@
     "standing_gv_locks_unchanged": true,
     "standing_kr_locks_unchanged": true,
     "standing_kv_locks_unchanged": true,
+    "standing_gk_shared_n8_unchanged": true,
+    "standing_gk_island_off_gk_unchanged": true,
+    "image_track": "parked"
+  },
+  "tablet_q_small_st_petersburg_vendor": {
+    "cycle": 70,
+    "result": "q_small_st_petersburg_vendored",
+    "tablet_q": "Q",
+    "name_q": "Small St. Petersburg",
+    "catalog": "http://kohaumotu.org/Rongorongo/",
+    "tablets_page": "http://kohaumotu.org/Rongorongo/tablets.html",
+    "q_index": "http://kohaumotu.org/Rongorongo/Q/index.html",
+    "q_pages": ["Qr.html", "Qv.html"],
+    "html_bytes": {"Qr": 7119, "Qv": 6663},
+    "index_bytes": {"Q": 4232},
+    "lines": {
+      "Qr": ["Qr1", "Qr2", "Qr3", "Qr4", "Qr5", "Qr6", "Qr7", "Qr8", "Qr9"],
+      "Qv": ["Qv1", "Qv2", "Qv3", "Qv4", "Qv5", "Qv6", "Qv7", "Qv8", "Qv9"]
+    },
+    "stem_totals": {"Qr": 503, "Qv": 423},
+    "stem_counts": {
+      "Qr": [18, 59, 66, 60, 69, 50, 59, 63, 59],
+      "Qv": [57, 62, 57, 52, 52, 45, 46, 41, 11]
+    },
+    "gk_islands": [
+      ["380", "001", "003", "005", "006", "010", "380", "001", "003", "315", "380", "001", "003", "090", "001", "380", "001"],
+      ["079", "450", "019", "069", "380", "001", "003", "162", "522", "050", "002", "450", "380", "001", "003"],
+      ["073", "006", "206", "073", "006", "200", "073", "006", "222", "073", "006", "451", "073"],
+      ["522", "045", "061", "009", "260", "001", "004", "711", "260", "001", "004", "711"],
+      ["380", "001", "003", "005", "066", "380", "001", "003", "290", "001"],
+      ["380", "001", "003", "597", "380", "001", "003", "059", "720", "380"]
+    ],
+    "gk_island_hits": {
+      "Qr": [0, 0, 0, 0, 0, 0],
+      "Qv": [0, 0, 0, 0, 0, 0]
+    },
+    "any_gk_island": false,
+    "new_tablet": true,
+    "tablet_d_scraped": false,
+    "qa_html": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_gr_locks_unchanged": true,
+    "standing_gv_locks_unchanged": true,
+    "standing_kr_locks_unchanged": true,
+    "standing_kv_locks_unchanged": true,
+    "standing_hp_vendor_unchanged": true,
+    "standing_hp_shared_n8_unchanged": true,
+    "standing_gk_island_off_gk_unchanged": true,
+    "image_track": "parked"
+  },
+  "tablet_q_shared_n8_inventory": {
+    "cycle": 70,
+    "result": "q_hp_shared_n8_inventory",
+    "min_n": 8,
+    "q_vs_h": {
+      "distinct_count": 503,
+      "maximal_count": 15,
+      "by_n": [86, 71, 58, 45, 36, 29, 23, 19, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
+      "maximals": [
+        [["003", "004", "600", "004", "006", "042", "003", "050", "003", "093", "003", "027", "003", "086", "003", "060", "003", "093", "003", "254", "003", "093", "003", "205", "072", "450", "052", "551", "003", "600", "003"], 31, 1, 1, ["Qr", "Qr3", 19], ["Hr", "Hr3", 39]],
+        [["003", "306", "003", "084", "004", "280", "200", "048", "254", "755", "003", "734", "003", "306", "003"], 15, 1, 1, ["Qr", "Qr1", 3], ["Hr", "Hr1", 23]],
+        [["631", "208", "200", "005", "021", "005", "002", "041", "220", "009", "220", "009", "440", "440", "440"], 15, 1, 1, ["Qr", "Qr5", 10], ["Hr", "Hr5", 31]],
+        [["700", "061", "739", "040", "140", "316", "301", "004", "064", "004", "064", "209", "081", "050"], 14, 1, 1, ["Qv", "Qv5", 5], ["Hv", "Hv2", 26]],
+        [["050", "600", "430", "076", "430", "076", "076", "063", "004", "064", "670", "700", "470"], 13, 1, 1, ["Qr", "Qr9", 17], ["Hr", "Hr9", 21]],
+        [["520", "381", "008", "001", "008", "739", "065", "306", "431", "200", "276", "011", "385"], 13, 1, 1, ["Qr", "Qr6", 0], ["Hr", "Hr6", 32]],
+        [["002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"], 12, 1, 1, ["Qr", "Qr7", 47], ["Hr", "Hr8", 0]],
+        [["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064"], 11, 1, 1, ["Qr", "Qr3", 7], ["Hr", "Hr3", 27]],
+        [["381", "072", "450", "052", "551", "003", "600", "003", "385", "003", "670"], 11, 1, 1, ["Qr", "Qr3", 51], ["Hr", "Hr3", 71]],
+        [["004", "064", "087", "430", "214", "002", "203", "027", "090", "545"], 10, 1, 1, ["Qr", "Qr6", 28], ["Hr", "Hr6", 62]],
+        [["400", "072", "002", "003", "072", "002", "430", "072", "002", "200"], 10, 1, 1, ["Qv", "Qv8", 0], ["Hv", "Hv5", 29]],
+        [["500", "440", "280", "002", "040", "050", "216", "001", "366", "076"], 10, 1, 1, ["Qr", "Qr6", 40], ["Hr", "Hr7", 2]],
+        [["720", "244", "381", "002", "631", "099", "721", "022", "001", "062"], 10, 1, 1, ["Qr", "Qr2", 3], ["Hr", "Hr2", 39]],
+        [["005", "099", "011", "007", "004", "600", "522", "606"], 8, 1, 1, ["Qr", "Qr7", 28], ["Hr", "Hr7", 47]],
+        [["430", "002", "010", "002", "010", "144", "026", "006"], 8, 1, 1, ["Qv", "Qv7", 35], ["Hv", "Hv4", 53]]
+      ],
+      "per_side_counts": [
+        ["Qr", "Hr", 468],
+        ["Qr", "Hv", 0],
+        ["Qv", "Hr", 0],
+        ["Qv", "Hv", 35]
+      ],
+      "coverage": [
+        ["Qr", 159, 503],
+        ["Qv", 32, 423],
+        ["Hr", 159, 771],
+        ["Hv", 32, 831]
+      ],
+      "covered_q": 191,
+      "covered_h": 191
+    },
+    "q_vs_p": {
+      "distinct_count": 147,
+      "maximal_count": 8,
+      "by_n": [39, 31, 24, 18, 13, 9, 6, 4, 2, 1],
+      "maximals": [
+        [["206", "430", "600", "027", "700", "011", "078", "308", "034", "021", "021", "380", "020", "385", "205", "001", "381"], 17, 1, 1, ["Qv", "Qv4", 12], ["Pv", "Pv3", 30]],
+        [["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064", "202", "003", "004", "600"], 15, 1, 1, ["Qr", "Qr3", 7], ["Pr", "Pr3", 14]],
+        [["022", "002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"], 13, 1, 1, ["Qr", "Qr7", 46], ["Pr", "Pr7", 28]],
+        [["301", "004", "064", "004", "064", "209", "081", "050", "450", "052", "240", "069"], 12, 1, 1, ["Qv", "Qv5", 11], ["Pv", "Pv4", 50]],
+        [["005", "002", "041", "220", "009", "220", "009", "440", "440", "440", "440"], 11, 1, 1, ["Qr", "Qr5", 15], ["Pr", "Pr5", 9]],
+        [["020", "004", "021", "020", "280", "021", "027", "600", "209", "600"], 10, 1, 1, ["Qv", "Qv3", 2], ["Pv", "Pv2", 18]],
+        [["755", "006", "770", "060", "070", "061", "001", "061", "386"], 9, 1, 1, ["Qr", "Qr9", 46], ["Pr", "Pr9", 11]],
+        [["005", "099", "011", "007", "004", "600", "522", "606"], 8, 1, 1, ["Qr", "Qr7", 28], ["Pr", "Pr7", 10]]
+      ],
+      "per_side_counts": [
+        ["Qr", "Pr", 71],
+        ["Qr", "Pv", 0],
+        ["Qv", "Pr", 0],
+        ["Qv", "Pv", 76]
+      ],
+      "coverage": [
+        ["Qr", 56, 503],
+        ["Qv", 39, 423],
+        ["Pr", 56, 825],
+        ["Pv", 39, 739]
+      ],
+      "covered_q": 95,
+      "covered_p": 95
+    },
+    "shared_n8_exists": true,
+    "two_short_formulas": false,
+    "claim_holds": true,
+    "same_text": false,
+    "formula_islands_qh": 15,
+    "formula_islands_qp": 8,
+    "islands_disjoint": true,
+    "raw_stems_999_kept": true,
+    "tablet_d_scraped": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_gr_locks_unchanged": true,
+    "standing_gv_locks_unchanged": true,
+    "standing_kr_locks_unchanged": true,
+    "standing_kv_locks_unchanged": true,
+    "standing_hp_vendor_unchanged": true,
+    "standing_hp_shared_n8_unchanged": true,
     "standing_gk_shared_n8_unchanged": true,
     "standing_gk_island_off_gk_unchanged": true,
     "image_track": "parked"

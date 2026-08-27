@@ -1,0 +1,54 @@
+Small / Small St. Petersburg (Barthel text Q) verso — Kohaumotu Qv.html
+=====================================================================
+
+Files
+  Qv.html        http://kohaumotu.org/Rongorongo/Q/Qv.html
+  Q_index.html   already vendored with the recto
+                 tests/fixtures/small_st_petersburg_qr_html/Q_index.html
+                 http://kohaumotu.org/Rongorongo/Q/index.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet Q / Small St.Petersburg (also called Small St Petersburg)
+  → Q/index.html
+  http://kohaumotu.org/Rongorongo/Q/index.html
+  published all-lines Barthel HTML: Qr.html (recto) and Qv.html (verso)
+  http://kohaumotu.org/Rongorongo/Q/Qr.html
+  http://kohaumotu.org/Rongorongo/Q/Qv.html
+  Same Gr vs Ga lesson: Qa.html is not a published page (404).
+  Tablets H and P are the published Grand Tradition parallels
+  (cycle 69). Tablet D is not scraped.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Qv.html as retrieved 2026-08-27. Barthel numbers sit in <td>
+  text under each line strip (Qv1–Qv9). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+
+Not vendored
+  Qa.html (unpublished; 404; not listed on Q/index.html)
+  a second copy of Qr.html (vendored in the recto fixture)
+  tablet D / Échancrée or any other substitute tablet
+  fi_Qv.html / Fischer pages
+  Q_svg_codes_b.html
+  individualized Qv01.html … Qv09.html slices
+
+Cycle 70 (2026-08-27)
+  Same Kohaumotu catalog already used for A / B / C / G / H / I / K / P.
+  Search lock on Qv.html (no type map):
+    stem count: 423 (57 62 57 52 52 45 46 41 11)
+    six G–K islands: all 0
+  Existing A / B / C / I / G / K / H / P scoreboards are unchanged.
+  Image track stays parked. No D scrape. No type merge. No CV.
