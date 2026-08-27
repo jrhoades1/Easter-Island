@@ -1,0 +1,251 @@
+"""Type-identity scoreboard: stock CV cluster IDs on Ca7–Ca8 tracings.
+
+Locks current type-identity metrics so later cycles can be scored.
+Does not retune GlyphProcessor. Does not invent G00n→Barthel maps.
+
+input/tablets/sample_tablet.png is a synthetic CV dummy, not Mamari.
+"""
+
+import unittest
+from dataclasses import dataclass
+
+import numpy as np
+
+from agents.base.providers import MockProvider
+from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
+from models.glyphs import BoundingBox, GlyphInstance, GlyphPosition
+from processors.glyph_processor import ProcessorConfig
+from tests.test_mamari_calendar_scoreboard import barthel_stems, load_mamari_fixture
+from tests.test_mamari_image_scoreboard import (
+    TRACING_DIR,
+    TRACING_NAMES,
+    ca7_ca8_sequences,
+    process_tracings,
+)
+
+# Cycle 1 standing lock. Later cycles update these when type identity changes.
+STANDING_INSTANCES_PER_STRIP = {
+    "sca0701.gif": 14,
+    "sca0702.gif": 14,
+    "sca0703.gif": 11,
+    "sca0801.gif": 12,
+    "sca0802.gif": 12,
+    "sca0803.gif": 12,
+}
+STANDING_UNIQUE_CLUSTERS = 71
+STANDING_MAX_REPEATING_N = 1
+STANDING_CA7_LEN = 39
+STANDING_CA8_LEN = 36
+
+# Opening night-sign run on sca0701 is six thin crescents; the next blob is a
+# wide ligature (~71px). Isolate by the opening narrow run, not by G00n ID.
+CRESCENT_MAX_WIDTH = 40
+CRESCENT_COUNT = 6
+MAX_N = 8
+
+
+@dataclass(frozen=True)
+class TypeIdentityScore:
+    """Stock-CV type-identity snapshot. No Barthel remapping."""
+
+    instances_per_strip: dict[str, int]
+    instance_count: int
+    unique_cluster_count: int
+    unique_instance_ratio: float
+    max_repeating_n: int
+    ca7_length: int
+    ca8_length: int
+    published_ca7_stems: int
+    published_ca8_stems: int
+
+
+def published_ca7_ca8_stem_counts() -> tuple[int, int]:
+    """Mechanical Barthel-stem counts from the published Ca6–Ca9 fixture."""
+    lines = load_mamari_fixture()["lines"]
+    return len(barthel_stems(lines["Ca7"])), len(barthel_stems(lines["Ca8"]))
+
+
+def max_repeating_n(sequences: list[list[str]], analyzer: NgramAnalyzer, max_n: int = MAX_N) -> int:
+    """Largest n in 1..max_n that has any n-gram with frequency ≥2. 0 if none."""
+    found = 0
+    for n in range(1, max_n + 1):
+        if analyzer.extract_ngrams(sequences, n=n, min_frequency=2):
+            found = n
+    return found
+
+
+def score_type_identity(
+    instances: list[GlyphInstance],
+    analyzer: NgramAnalyzer,
+    published_ca7: int,
+    published_ca8: int,
+) -> TypeIdentityScore:
+    """Record stock type-identity metrics. IDs stay G00n."""
+    per_strip = {name: 0 for name in TRACING_NAMES}
+    cluster_ids: list[str] = []
+    for inst in instances:
+        if inst.source_image in per_strip:
+            per_strip[inst.source_image] += 1
+        if inst.cluster_id:
+            cluster_ids.append(inst.cluster_id)
+
+    unique = len(set(cluster_ids))
+    count = len(cluster_ids)
+    lines = ca7_ca8_sequences(instances)
+    return TypeIdentityScore(
+        instances_per_strip=per_strip,
+        instance_count=count,
+        unique_cluster_count=unique,
+        unique_instance_ratio=(unique / count) if count else 0.0,
+        max_repeating_n=max_repeating_n(lines, analyzer),
+        ca7_length=len(lines[0]) if lines else 0,
+        ca8_length=len(lines[1]) if len(lines) > 1 else 0,
+        published_ca7_stems=published_ca7,
+        published_ca8_stems=published_ca8,
+    )
+
+
+def isolate_sca0701_opening_crescents(instances: list[GlyphInstance]) -> list[GlyphInstance]:
+    """First consecutive narrow detections on sca0701 (published opening 040 run)."""
+    strip = [
+        inst
+        for inst in instances
+        if inst.source_image == "sca0701.gif" and inst.position is not None
+    ]
+    strip.sort(key=lambda inst: (inst.position.line_number, inst.position.position_in_line))
+    crescents: list[GlyphInstance] = []
+    for inst in strip:
+        if inst.bounding_box.width >= CRESCENT_MAX_WIDTH:
+            break
+        crescents.append(inst)
+    return crescents
+
+
+def pairwise_log_hu_distances(
+    instances: list[GlyphInstance],
+) -> list[tuple[str, str, float]]:
+    """Euclidean distances on GlyphProcessor log-Hu vectors (7-d). That is the feature."""
+    pairs: list[tuple[str, str, float]] = []
+    for i, left in enumerate(instances):
+        feat_i = np.asarray(left.features, dtype=float)
+        label_i = left.cluster_id or left.instance_id
+        for right in instances[i + 1 :]:
+            feat_j = np.asarray(right.features, dtype=float)
+            label_j = right.cluster_id or right.instance_id
+            pairs.append((label_i, label_j, float(np.linalg.norm(feat_i - feat_j))))
+    return pairs
+
+
+class TestPublishedStemCounts(unittest.TestCase):
+    """Verify the fixture still yields 43 / 40 stems before using those targets."""
+
+    def test_ca7_ca8_stem_counts(self):
+        ca7, ca8 = published_ca7_ca8_stem_counts()
+        self.assertEqual((ca7, ca8), (43, 40))
+
+
+class TestTypeIdentityHelpers(unittest.TestCase):
+    """Helpers on synthetic instances. No CV, no LLM."""
+
+    def test_max_repeating_n_stops_at_unigrams(self):
+        provider = MockProvider()
+        analyzer = NgramAnalyzer(llm_provider=provider)
+        sequences = [["A", "B", "A"], ["C", "D"]]
+        self.assertEqual(max_repeating_n(sequences, analyzer), 1)
+        self.assertEqual(provider.get_call_history(), [])
+
+    def test_isolate_opening_run_stops_at_wide_glyph(self):
+        bbox_n = BoundingBox(x=0, y=0, width=26, height=66)
+        bbox_w = BoundingBox(x=130, y=0, width=71, height=67)
+        instances = []
+        for i in range(6):
+            instances.append(
+                GlyphInstance(
+                    f"c{i}",
+                    "sca0701.gif",
+                    bbox_n,
+                    cluster_id=f"G{i + 1:03d}",
+                    position=GlyphPosition(0, i, 7),
+                )
+            )
+        instances.append(
+            GlyphInstance(
+                "wide",
+                "sca0701.gif",
+                bbox_w,
+                cluster_id="G099",
+                position=GlyphPosition(0, 6, 7),
+            )
+        )
+        crescents = isolate_sca0701_opening_crescents(instances)
+        self.assertEqual(len(crescents), CRESCENT_COUNT)
+        self.assertEqual([c.cluster_id for c in crescents], [f"G{i:03d}" for i in range(1, 7)])
+
+    def test_pairwise_log_hu_euclidean(self):
+        bbox = BoundingBox(x=0, y=0, width=10, height=10)
+        a = GlyphInstance("a", "sca0701.gif", bbox, features=[0.0] * 7, cluster_id="G001")
+        b = GlyphInstance("b", "sca0701.gif", bbox, features=[3.0] + [0.0] * 6, cluster_id="G002")
+        pairs = pairwise_log_hu_distances([a, b])
+        self.assertEqual(len(pairs), 1)
+        self.assertEqual(pairs[0][:2], ("G001", "G002"))
+        self.assertAlmostEqual(pairs[0][2], 3.0)
+
+
+class TestMamariTypeIdentityScoreboard(unittest.TestCase):
+    """Stock CV → type-identity snapshot. MockProvider only."""
+
+    def setUp(self):
+        self.paths = [TRACING_DIR / name for name in TRACING_NAMES]
+        for path in self.paths:
+            self.assertTrue(path.is_file(), f"missing vendored tracing {path.name}")
+        self.provider = MockProvider()
+        self.ngram_analyzer = NgramAnalyzer(llm_provider=self.provider)
+        self.instances = process_tracings(self.paths)
+        self.published_ca7, self.published_ca8 = published_ca7_ca8_stem_counts()
+        self.score = score_type_identity(
+            self.instances,
+            self.ngram_analyzer,
+            self.published_ca7,
+            self.published_ca8,
+        )
+
+    def test_standing_type_identity_snapshot(self):
+        """Record stock identity metrics. Later cycles score against this lock."""
+        s = self.score
+        self.assertEqual(s.instances_per_strip, STANDING_INSTANCES_PER_STRIP)
+        self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
+        self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertAlmostEqual(
+            s.unique_instance_ratio,
+            STANDING_UNIQUE_CLUSTERS / s.instance_count,
+            places=6,
+        )
+        self.assertEqual(s.max_repeating_n, STANDING_MAX_REPEATING_N)
+        self.assertEqual(s.ca7_length, STANDING_CA7_LEN)
+        self.assertEqual(s.ca8_length, STANDING_CA8_LEN)
+        self.assertEqual(s.published_ca7_stems, 43)
+        self.assertEqual(s.published_ca8_stems, 40)
+        self.assertNotEqual(s.ca7_length, s.published_ca7_stems)
+        self.assertNotEqual(s.ca8_length, s.published_ca8_stems)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+    def test_sca0701_opening_crescents_are_six_types(self):
+        """Six adjacent night-sign crescents must not share a cluster_id today."""
+        crescents = isolate_sca0701_opening_crescents(self.instances)
+        self.assertEqual(len(crescents), CRESCENT_COUNT)
+        ids = [inst.cluster_id for inst in crescents]
+        self.assertEqual(len(set(ids)), CRESCENT_COUNT, f"allograph merge: {ids}")
+        pairs = pairwise_log_hu_distances(crescents)
+        self.assertEqual(len(pairs), CRESCENT_COUNT * (CRESCENT_COUNT - 1) // 2)
+        eps = ProcessorConfig().dbscan_eps
+        distances = [dist for _a, _b, dist in pairs]
+        self.assertTrue(all(dist > eps for dist in distances), pairs)
+        # Closest pair is just above eps; farthest is ~80 (Hu sign flips).
+        self.assertGreater(min(distances), eps)
+        self.assertLess(min(distances), 1.0)
+        self.assertGreater(max(distances), 50.0)
+        self.assertEqual(self.provider.get_call_history(), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
