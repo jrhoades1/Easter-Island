@@ -9,7 +9,7 @@ Locks four Cb-only claims: Guy's 8-stem delimiter frequency and spans,
 whether the remainder 9-gram motif appears, 002…002 n=9 wrap count and
 how many share a non-bookend interior stem with the motif, and the 600
 count. Bookend 002 is not a delimiter. Ca remainder / calendar locks
-are unchanged.
+are unchanged. Cycle 33 locks this verso's n≥4 freq≥2 profile.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """

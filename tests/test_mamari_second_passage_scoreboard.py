@@ -17,7 +17,8 @@ locks that 9-gram as a motif (hits, flanks, wrap-count,
 calendar-absent). Cycle 31 locks the six remainder 002…002 n=9
 wraps as a family (overlap with the motif; bookend 002 is not a
 delimiter). Cycle 32 vendors the same publisher's Cb.html verso
-and locks those four claims on Cb only. Image track stays parked.
+and locks those four claims on Cb only. Cycle 33 locks that
+verso's n≥4 freq≥2 profile. Image track stays parked.
 MockProvider only.
 """
 

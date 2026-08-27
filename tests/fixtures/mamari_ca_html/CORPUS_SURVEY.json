@@ -177,6 +177,28 @@
       ["Cb10", 29]
     ]
   },
+  "cb_repeating_ngram_profile": {
+    "cycle": 33,
+    "passage": "tablet_c_side_b",
+    "min_n": 4,
+    "min_freq": 2,
+    "distinct_count": 12,
+    "counts_by_n": {"4": 9, "5": 3},
+    "longest_n": 5,
+    "longest_count": 3,
+    "longest_freq": 2,
+    "longest": [
+      [["660", "005", "064", "660", "005"], 5, 2, [["Cb4", 18, 23], ["Cb4", 21, 26]]],
+      [["381", "004", "066", "760", "004"], 5, 2, [["Cb6", 9, 14], ["Cb6", 17, 22]]],
+      [["099", "004", "002", "004", "002"], 5, 2, [["Cb8", 15, 20], ["Cb11", 2, 7]]]
+    ],
+    "eightgram_count": 0,
+    "top_8gram": null,
+    "longest_is_guy_delimiter": false,
+    "longest_is_ca_9gram": false,
+    "top_8gram_is_guy_delimiter": false,
+    "top_8gram_is_ca_9gram": false
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
