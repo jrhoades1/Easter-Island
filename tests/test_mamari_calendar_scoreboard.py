@@ -37,6 +37,8 @@ and locks Guy-delimiter / 9-gram / 002-wrap / 600 counts on Cb only.
 Cycle 33 locks that verso's n≥4 freq≥2 profile (12 n-grams;
 longest n=5; no repeating 8-gram; longest is not Guy's
 delimiter or the Ca 9-gram).
+Cycle 34 locks those three Cb 5-grams on the existing Ca
+calendar and Ca remainder fixtures only (all absent).
 """
 
 import json

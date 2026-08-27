@@ -199,6 +199,20 @@
     "top_8gram_is_guy_delimiter": false,
     "top_8gram_is_ca_9gram": false
   },
+  "cb_5gram_ca_cross": {
+    "cycle": 34,
+    "calendar_passage": "ca6_ca9_calendar",
+    "remainder_passage": "ca_side_a_remainder",
+    "source_motifs": "cb_repeating_ngram_profile.longest",
+    "row_count": 3,
+    "table": [
+      [["660", "005", "064", "660", "005"], [], []],
+      [["381", "004", "066", "760", "004"], [], []],
+      [["099", "004", "002", "004", "002"], [], []]
+    ],
+    "calendar_all_absent": true,
+    "remainder_all_absent": true
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,

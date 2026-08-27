@@ -15,7 +15,9 @@ prefix, freq 2 — not Guy's delimiter. Cycle 30 locks that 9-gram as
 a motif on this remainder and on the calendar fixture. Cycle 31
 locks the six 002…002 n=9 wraps as a family (interior overlap with
 the motif). Cycle 33 locks the same n≥4 freq≥2 profile on the
-already-vendored Cb.html verso. Image snapshot stays 83/62 / Hamming 6.
+already-vendored Cb.html verso. Cycle 34 locks those three
+Cb 5-grams on this remainder and the calendar fixture.
+Image snapshot stays 83/62 / Hamming 6.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """
