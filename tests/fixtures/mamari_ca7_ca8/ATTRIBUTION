@@ -53,3 +53,12 @@ Cycle 18 (2026-08-27)
   overlapping windows; both overlap published Ca7[6:14)). Published
   delimiter windows min 7 (first pair Ca7[6:14] vs Ca8[3:11]).
   No new image. No clustering change.
+
+Cycle 49 (2026-08-27)
+  Vendored the Wikimedia C-a photograph (2040×1424; Chauvet 1935 /
+  Widow Hoare; GFDL / CC BY-SA 3.0) in
+  tests/fixtures/mamari_c_a_wikimedia/. More pixels per calendar
+  line than these GIF wraps. Stock CV on an equal-split Ca6–Ca9
+  crop does not match published 43+40, so published Hamming is not
+  rescored. Detector is not retuned. These GIFs stay the 83/62 /
+  Hamming 6 lock. See that directory's ATTRIBUTION.

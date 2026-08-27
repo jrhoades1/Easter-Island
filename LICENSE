@@ -23,3 +23,8 @@ SOFTWARE.
 The files under tests/fixtures/mamari_ca7_ca8/ are C.E.I.P.P. drawings
 hosted by Kohaumotu / rongorongo.org. They are not MIT-licensed. See
 tests/fixtures/mamari_ca7_ca8/ATTRIBUTION.
+
+tests/fixtures/mamari_c_a_wikimedia/Rongorongo_C-a_Mamari.jpg is a
+Wikimedia Commons photograph (Widow Hoare / Chauvet 1935) under
+GFDL 1.2+ and CC BY-SA 3.0. It is not MIT-licensed. See that
+directory's ATTRIBUTION.
