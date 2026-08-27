@@ -685,6 +685,8 @@ GLYPH_CONFIG = {
     "clustering": {
         "eps": 0.5,
         "min_samples": 2,
+        "hu_sign_mode": "unsigned",
+        "same_line_allograph_merge": True,
     }
 }
 
@@ -758,7 +760,7 @@ The Ca6–Ca9 scoreboard fixture (`tests/fixtures/mamari_ca6_ca9_barthel.json`) 
 
 The image-side scoreboard (`tests/test_mamari_image_scoreboard.py`) runs stock `GlyphProcessor` on the Kohaumotu Ca7–Ca8 Barthel tracings (`tests/fixtures/mamari_ca7_ca8/`; CEIPP drawings, not MIT — see that directory's ATTRIBUTION). Cataloger IDs stay G00n; there is no invented Barthel map. `input/tablets/sample_tablet.png` is a synthetic CV dummy (circles/triangles), not Mamari. The honest proxy is a repeating 8-gram of frequency ≥2; that assertion is an expected failure today.
 
-The type-identity scoreboard (`tests/test_mamari_type_identity_scoreboard.py`) locks stock cluster identity on those same GIFs: instances per strip, unique G00n count, unique/instance ratio, max n in 1..8 with any n-gram of frequency ≥2, and Ca7/Ca8 sequence lengths vs published stem counts (43 and 40). Stock clustering uses unsigned log-Hu (`ProcessorConfig.hu_sign_mode="unsigned"`); the signed cycle-1 path remains available. A diagnostic isolates the six adjacent night-sign crescents on `sca0701` and reports pairwise unsigned-Hu distances. No detector retune, no G00n→Barthel map.
+The type-identity scoreboard (`tests/test_mamari_type_identity_scoreboard.py`) locks stock cluster identity on those same GIFs: instances per strip, unique G00n count, unique/instance ratio, max n in 1..8 with any n-gram of frequency ≥2, and Ca7/Ca8 sequence lengths vs published stem counts (43 and 40). Stock clustering uses unsigned log-Hu (`ProcessorConfig.hu_sign_mode="unsigned"`) plus a same-line allograph stitch after DBSCAN (adjacent, similar bbox area, tall-thin aspect, unsigned-Hu distance below the observed crescent diameter). The signed cycle-1 path and `same_line_allograph_merge=False` remain available. A diagnostic isolates the six adjacent night-sign crescents on `sca0701`. No detector retune, no G00n→Barthel map.
 
 ### Proto-Polynesian Linguistics
 

@@ -48,6 +48,45 @@ class ProcessorConfig:
     dbscan_eps: float = 0.5
     dbscan_min_samples: int = 2
 
+    # Same-line allograph stitch after DBSCAN. Unsigned crescent diameter is
+    # ~3.41; stock eps=0.5 does not reach it. Same-line *any* pair at that
+    # distance over-collapses (~65→29 types). Adjacent + area + tall-thin
+    # keeps the opening crescents together without merging wide figures.
+    same_line_allograph_merge: bool = True
+    allograph_max_hu_distance: float = 3.5
+    allograph_max_area_ratio: float = 1.1
+    allograph_max_aspect: float = 0.5
+
+
+def _bbox_area_ratio(left: GlyphInstance, right: GlyphInstance) -> float:
+    """max(area)/min(area). inf if either box has no area."""
+    area_a = left.bounding_box.area
+    area_b = right.bounding_box.area
+    smaller = min(area_a, area_b)
+    if smaller <= 0:
+        return float("inf")
+    return max(area_a, area_b) / smaller
+
+
+def _bbox_aspect(instance: GlyphInstance) -> float:
+    """width/height. inf if height is 0."""
+    height = instance.bounding_box.height
+    if height <= 0:
+        return float("inf")
+    return instance.bounding_box.width / height
+
+
+def _hu_distance(left: GlyphInstance, right: GlyphInstance) -> float:
+    """Euclidean distance on stored log-Hu vectors."""
+    if not left.features or not right.features:
+        return float("inf")
+    return float(
+        np.linalg.norm(
+            np.asarray(left.features, dtype=float)
+            - np.asarray(right.features, dtype=float)
+        )
+    )
+
 
 class GlyphProcessor:
     """Processes images to detect, extract, and cluster Rongorongo glyphs."""
@@ -492,7 +531,102 @@ class GlyphProcessor:
             )
             clusters.append(cluster)
 
+        if self.config.same_line_allograph_merge:
+            self._merge_same_line_allographs(instances)
+            clusters = self._clusters_from_assigned_ids(instances)
+
         return clusters, instances
+
+    def _merge_same_line_allographs(self, instances: list[GlyphInstance]) -> None:
+        """Union adjacent same-line instances that pass area / aspect / Hu gates.
+
+        Instance-local: does not pull in other members of a pre-existing
+        DBSCAN type. Mutates cluster_id on merged instances.
+        """
+        if len(instances) < 2:
+            return
+
+        parent = list(range(len(instances)))
+
+        def find(x: int) -> int:
+            while parent[x] != x:
+                parent[x] = parent[parent[x]]
+                x = parent[x]
+            return x
+
+        def union(i: int, j: int) -> None:
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+
+        by_line: dict[tuple[str, int], list[int]] = {}
+        for i, inst in enumerate(instances):
+            if inst.position is None:
+                continue
+            key = (inst.source_image, inst.position.line_number)
+            by_line.setdefault(key, []).append(i)
+
+        max_dist = self.config.allograph_max_hu_distance
+        max_ratio = self.config.allograph_max_area_ratio
+        max_aspect = self.config.allograph_max_aspect
+
+        for idxs in by_line.values():
+            idxs.sort(key=lambda i: instances[i].position.position_in_line)
+            for left, right in zip(idxs, idxs[1:]):
+                a, b = instances[left], instances[right]
+                if a.position.position_in_line + 1 != b.position.position_in_line:
+                    continue
+                if _bbox_aspect(a) > max_aspect or _bbox_aspect(b) > max_aspect:
+                    continue
+                if _bbox_area_ratio(a, b) > max_ratio:
+                    continue
+                if _hu_distance(a, b) >= max_dist:
+                    continue
+                union(left, right)
+
+        components: dict[int, list[int]] = {}
+        for i in range(len(instances)):
+            components.setdefault(find(i), []).append(i)
+
+        merge_n = 0
+        for members in components.values():
+            if len(members) < 2:
+                continue
+            merge_n += 1
+            shared_id = f"M{merge_n:03d}"
+            for i in members:
+                instances[i].cluster_id = shared_id
+
+    def _clusters_from_assigned_ids(
+        self, instances: list[GlyphInstance]
+    ) -> list[GlyphCluster]:
+        """Rebuild clusters from instance.cluster_id; G001 is most frequent."""
+        groups: dict[str, list[GlyphInstance]] = {}
+        for inst in instances:
+            if not inst.cluster_id:
+                continue
+            groups.setdefault(inst.cluster_id, []).append(inst)
+
+        ranked = sorted(
+            groups.values(),
+            key=lambda members: (-len(members), members[0].instance_id),
+        )
+        clusters = []
+        for i, members in enumerate(ranked):
+            cluster_id = GlyphCluster.generate_id(i + 1)
+            for inst in members:
+                inst.cluster_id = cluster_id
+            mean_features = np.mean(
+                [inst.features for inst in members], axis=0
+            ).tolist()
+            clusters.append(
+                GlyphCluster(
+                    cluster_id=cluster_id,
+                    instances=[inst.instance_id for inst in members],
+                    mean_features=mean_features,
+                )
+            )
+        return clusters
 
     # =========================================================================
     # Position Statistics
