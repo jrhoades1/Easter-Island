@@ -106,6 +106,7 @@ STANDING_OTHER_TABLET_URLS = (
     "http://kohaumotu.org/Rongorongo/A/Aa.html",
     "http://kohaumotu.org/Rongorongo/A/Ab.html",
     "http://kohaumotu.org/Rongorongo/B/Br.html",
+    "http://kohaumotu.org/Rongorongo/B/Bv.html",
 )
 STANDING_RESULT = "tablet_c_corpus_ceiling"
 STANDING_VENDABLE_TABLETS = ("C",)
@@ -115,6 +116,7 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/Rongorongo/A/Ab.html",
     "http://kohaumotu.org/Rongorongo/A/index.html",
     "http://kohaumotu.org/Rongorongo/B/Br.html",
+    "http://kohaumotu.org/Rongorongo/B/Bv.html",
     "http://kohaumotu.org/Rongorongo/B/index.html",
     "http://kohaumotu.org/Rongorongo/C/Ca.html",
     "http://kohaumotu.org/Rongorongo/C/Ca07.html",
@@ -127,7 +129,7 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
 )
 STANDING_CITED_TABLET_LETTERS = ("A", "B", "C")
-STANDING_VENDORED_BARTHEL_PAGES = ("Aa.html", "Ab.html", "Br.html", "Ca.html", "Cb.html")
+STANDING_VENDORED_BARTHEL_PAGES = ("Aa.html", "Ab.html", "Br.html", "Bv.html", "Ca.html", "Cb.html")
 STANDING_INDEX_KIND = "same_folder_contents"
 STANDING_INDEX_DIFFERENT_TABLET = False
 STANDING_INDEX_VENDORED = False
@@ -281,7 +283,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cited_kohaumotu_urls_are_tablet_c_or_license(self):
-        """Navbar-era sources stay C. Cycles 36/38 cite A; cycle 43 cites B."""
+        """Navbar-era sources stay C. Cycles 36/38 cite A; cycles 43/44 cite B."""
         self.assertEqual(self.cited_urls, STANDING_CITED_KOHAUMOTU_URLS)
         letters = tuple(
             sorted(
@@ -301,7 +303,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_no_other_tablet_html_was_vendored(self):
-        """Ca.html / Cb.html plus cycle-36 Aa.html, cycle-38 Ab.html, cycle-43 Br.html."""
+        """Ca.html / Cb.html plus Aa.html, Ab.html, Br.html, and cycle-44 Bv.html."""
         fixtures = Path(__file__).parent / "fixtures"
         barthel_pages = tuple(
             sorted(path.name for path in fixtures.glob("**/*[A-Z][abrv].html"))
