@@ -59,6 +59,9 @@ that same inventory. Cycle 42 locks the Ab7
 sandwich 9-window Hamming vs the Ab 9-gram motif.
 Cycle 45 locks the cycle-44 Bv 8-gram as a motif
 (hits, flanks, absent on Br / Aa / Ab / C).
+Cycle 46 vendors tablet I (Santiago Staff) Ia.html
+from the already-vendored tablets.html and locks that
+page only.
 """
 
 import json
