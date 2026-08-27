@@ -40,3 +40,9 @@ Cycle 16 (2026-08-27)
 
   Result: GIF ceiling (~522×74; sca0802.gif is 523×74).
   Lock 83/62 / 0/8. No new image.
+
+Cycle 17 (2026-08-27)
+  Search lock on the standing G00n sequence (concatenated Ca7+Ca8
+  and each line). No unconstrained 8-gram of frequency ≥2. Longest
+  mixed n-gram of frequency ≥2 anywhere is 2. No new image. No
+  clustering change.
