@@ -834,6 +834,61 @@
     "standing_ia_076_cells_unchanged": true,
     "image_track": "parked"
   },
+  "stem_090_071_rate_per_fixture": {
+    "cycle": 51,
+    "stems": ["090", "071"],
+    "threshold": 0.10,
+    "raw_stems_999_kept": true,
+    "new_tablet": false,
+    "row_count": 8,
+    "only_ia_ge_threshold": {
+      "090": false,
+      "071": false
+    },
+    "passages": [
+      "ca6_ca9_calendar",
+      "ca_side_a_remainder",
+      "tablet_c_side_b",
+      "tablet_a_tahua_side_a",
+      "tablet_a_tahua_side_b",
+      "tablet_b_aruku_kurenga_recto",
+      "tablet_b_aruku_kurenga_verso",
+      "tablet_i_santiago_staff"
+    ],
+    "tables": {
+      "090": [
+        ["ca6_ca9_calendar", 0, 101, false],
+        ["ca_side_a_remainder", 0, 416, false],
+        ["tablet_c_side_b", 1, 487, false],
+        ["tablet_a_tahua_side_a", 4, 906, false],
+        ["tablet_a_tahua_side_b", 2, 926, false],
+        ["tablet_b_aruku_kurenga_recto", 0, 560, false],
+        ["tablet_b_aruku_kurenga_verso", 0, 738, false],
+        ["tablet_i_santiago_staff", 114, 2469, false]
+      ],
+      "071": [
+        ["ca6_ca9_calendar", 0, 101, false],
+        ["ca_side_a_remainder", 0, 416, false],
+        ["tablet_c_side_b", 2, 487, false],
+        ["tablet_a_tahua_side_a", 3, 906, false],
+        ["tablet_a_tahua_side_b", 2, 926, false],
+        ["tablet_b_aruku_kurenga_recto", 3, 560, false],
+        ["tablet_b_aruku_kurenga_verso", 2, 738, false],
+        ["tablet_i_santiago_staff", 93, 2469, false]
+      ]
+    },
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_ia_999_locks_unchanged": true,
+    "standing_ia_076_locks_unchanged": true,
+    "standing_ia_076_cells_unchanged": true,
+    "standing_ia_076_rate_unchanged": true,
+    "image_track": "parked"
+  },
   "cb_5gram_ca_cross": {
     "cycle": 34,
     "calendar_passage": "ca6_ca9_calendar",
