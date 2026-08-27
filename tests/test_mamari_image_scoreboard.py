@@ -11,6 +11,8 @@ repeating 8-gram of frequency ≥2.
 That proxy is expected to fail until a mixed 8-gram actually repeats.
 The delimiter-window scoreboard locks how many of the 8 published
 delimiter slots share one G00n ID across Ca7/Ca8 repetitions (0–8).
+Cycle 16 found no honest higher-res public Ca7–Ca8 raster; the
+522×74 CEIPP GIFs remain the image-side ceiling.
 """
 
 import random

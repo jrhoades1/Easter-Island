@@ -15,7 +15,8 @@ published window STARTS on the existing G00n sequence. Best offset is
 Cycle 15 applies the keep-ID gate globally after DBSCAN (Hu < 2.0,
 r ≥ 0.85 when profiles exist). Types 64→62. Slot matches stay 0/8;
 slot unique stays (4, 6, 6, 6, 5, 6, 6, 5). The gate is not lowered.
-Glyph meanings are not assigned.
+Cycle 16 found no honest higher-res public Ca7–Ca8 raster; GIF
+ceiling, lock unchanged. Glyph meanings are not assigned.
 """
 
 import unittest

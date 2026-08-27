@@ -1,0 +1,92 @@
+{
+  "cycle": 16,
+  "result": "gif_ceiling",
+  "standing_lock": {
+    "instances": 83,
+    "types": 62,
+    "window_matches": 0,
+    "window_slots": 8,
+    "repeating_8gram": false,
+    "ca7_length": 43,
+    "ca8_length": 40
+  },
+  "vendored": {
+    "files": [
+      "sca0701.gif",
+      "sca0702.gif",
+      "sca0703.gif",
+      "sca0801.gif",
+      "sca0802.gif",
+      "sca0803.gif"
+    ],
+    "pixels": {
+      "sca0701.gif": [522, 74],
+      "sca0702.gif": [522, 74],
+      "sca0703.gif": [522, 74],
+      "sca0801.gif": [522, 74],
+      "sca0802.gif": [523, 74],
+      "sca0803.gif": [522, 74]
+    },
+    "max_pixels": [523, 74],
+    "source_page": "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
+    "license": "http://kohaumotu.org/rongorongo_org/copy.html"
+  },
+  "rejected": [
+    {
+      "id": "ca_html_pngs",
+      "kind": "full_line_raster",
+      "url": "http://kohaumotu.org/Rongorongo/C/Ca.html",
+      "pixels": [522, 74],
+      "crop_bounds": null,
+      "reason": "same 522x74 as the vendored CEIPP GIFs; not higher-res"
+    },
+    {
+      "id": "ca_jpg",
+      "kind": "whole_tablet_photo",
+      "url": "http://kohaumotu.org/rongorongo_org/repro/ca.jpg",
+      "pixels": [980, 630],
+      "published": "whole tablet side a; physical 290mm x 196mm; line 14 invisible; no Ca7-Ca8 pixel bounds",
+      "crop_bounds": null,
+      "reason": "crop would invent bounds"
+    },
+    {
+      "id": "lunar_color_gifs",
+      "kind": "color_coded_line_raster",
+      "url": "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
+      "pixels": [771, 92],
+      "crop_bounds": null,
+      "reason": "color-coded (blue/green/red/olive) plus baked ruler; fights THRESH_BINARY_INV"
+    },
+    {
+      "id": "fischer_pngs",
+      "kind": "full_line_raster",
+      "url": "http://kohaumotu.org/Rongorongo/C/fi_Ca.html",
+      "pixels": [638, 74],
+      "crop_bounds": null,
+      "reason": "same 74px line height; Fischer wraps, not a higher-res CEIPP scan"
+    },
+    {
+      "id": "svg_full_lines",
+      "kind": "vector_reconstruction",
+      "url": "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
+      "published_svg_px": {"Ca7": [1933, 160], "Ca8": [1901, 160]},
+      "crop_bounds": null,
+      "reason": "codes and divider lines overlaid; not a published line photo; raster would invent chrome-strip"
+    },
+    {
+      "id": "individualized_tr_pngs",
+      "kind": "per_glyph_slice",
+      "url": "http://kohaumotu.org/Rongorongo/C/Ca07.html",
+      "pixels": [7, 74],
+      "crop_bounds": null,
+      "reason": "pre-sliced glyphs from the same 74px strips"
+    },
+    {
+      "id": "sample_tablet",
+      "kind": "synthetic_dummy",
+      "path": "input/tablets/sample_tablet.png",
+      "crop_bounds": null,
+      "reason": "synthetic CV dummy (circles/triangles), not Mamari"
+    }
+  ]
+}
