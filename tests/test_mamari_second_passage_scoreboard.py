@@ -18,8 +18,9 @@ calendar-absent). Cycle 31 locks the six remainder 002…002 n=9
 wraps as a family (overlap with the motif; bookend 002 is not a
 delimiter). Cycle 32 vendors the same publisher's Cb.html verso
 and locks those four claims on Cb only. Cycle 33 locks that
-verso's n≥4 freq≥2 profile. Image track stays parked.
-MockProvider only.
+verso's n≥4 freq≥2 profile. Cycle 34 locks those three
+Cb 5-grams on this remainder and the calendar fixture
+(all absent). Image track stays parked. MockProvider only.
 """
 
 import json

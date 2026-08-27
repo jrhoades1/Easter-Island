@@ -8,7 +8,8 @@ No detector retune. No CV.
 Per-line extract_ngrams, same analyzer as the remainder profile.
 For each distinct n-gram: tokens, n, freq, line spans. Guy's 8-stem
 delimiter and the Ca remainder 9-gram are still absent. Longest n
-with freq ≥2 is 5 (three n-grams, all freq 2). No repeating 8-gram.
+with freq ≥2 is 5 (three n-grams, all freq 2). No repeating 8-gram. Cycle 34 locks those three n=5 grams on
+the existing Ca calendar and remainder fixtures only.
 
 Search lock, not a merge and not a translation. MockProvider only.
 """
