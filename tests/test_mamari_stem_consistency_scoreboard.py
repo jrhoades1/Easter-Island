@@ -6,11 +6,13 @@ instance Hu / profile (no Barthel in the splitter). The 3-gram is gone.
 
 Cycle 11 kept G003/G008 (every member pair passed). Cycle 12 merges
 same-slot pairs that pass those gates. Cycle 13 crop-compared the
-four slot-0 leftovers; none pass, so the mixed remainder is unchanged.
-Honest remainder sits left of two slot-0 390 merges:
+four slot-0 leftovers; none pass. Cycle 15 adds a second mixed 2-gram
+from the global keep-ID pass. Remainder:
 
     Ca7 [32:34]  G007 G006 = 600 390
     Ca8 [14:16]  G007 G006 = 040 390
+    Ca8 [4:6]    G011 G013 = 041 378
+    Ca8 [29:31]  G011 G013 = 390 041
 
 Positional alignment table, not a G00n→Barthel dictionary. Glyph
 meanings are not assigned.
@@ -59,10 +61,14 @@ from tests.test_mamari_type_identity_scoreboard import (
 STANDING_GLYPH_STEM_MULTIMAP = {
     "G006": ("390",),
     "G007": ("040", "600"),
+    "G011": ("041", "390"),
+    "G013": ("041", "378"),
 }
-STANDING_INCONSISTENT_GLYPHS = ("G007",)
+STANDING_INCONSISTENT_GLYPHS = ("G007", "G011", "G013")
 STANDING_G007_MEMBER_COUNT = 2
 STANDING_G006_MEMBER_COUNT = 2
+STANDING_G011_MEMBER_COUNT = 2
+STANDING_G013_MEMBER_COUNT = 2
 CYCLE9_3GRAM_TRIPLES = (
     ("Ca8", 7, 10, ("G009", "G004", "G003"), ("670", "008", "078")),
     ("Ca8", 18, 21, ("G009", "G004", "G003"), ("041", "670", "008")),
@@ -231,7 +237,7 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         )
 
     def test_cycle13_snapshot(self):
-        """PR snapshot: 83/64 / 43+40, mixed 2-gram, no 8-gram."""
+        """PR snapshot: 83/62 / 43+40, two mixed 2-grams, no 8-gram."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -261,21 +267,25 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_g00n_stem_inconsistency_is_standing_truth(self):
-        """Fewer multi-stem G00n IDs than cycle 9; inconsistency remains.
+        """Multi-stem G00n IDs on mixed hits. Not a type map.
 
-        Cycle 12 mixed hits are G007 G006. G006 is the slot-0 390 pair
+        Cycle 12 remainder: G007 G006. G006 is the slot-0 390 pair
         (one stem). G007 sits immediately left and still maps to two
-        stems. If a later change makes every G00n map to a single stem,
-        update this table — do not silently drop the assertion.
+        stems. Cycle 15 adds G011 G013 on two Ca8 delimiter slices;
+        each maps to two published stems. Same inconsistent count as
+        cycle 9, different IDs. If a later change makes every G00n map
+        to a single stem, update this table — do not silently drop it.
         """
         s = self.score
         self.assertEqual(s.multimap, STANDING_GLYPH_STEM_MULTIMAP)
         self.assertEqual(s.inconsistent_glyphs, STANDING_INCONSISTENT_GLYPHS)
         self.assertGreater(len(s.inconsistent_glyphs), 0)
-        self.assertLess(len(s.inconsistent_glyphs), CYCLE9_INCONSISTENT_COUNT)
+        self.assertEqual(len(s.inconsistent_glyphs), CYCLE9_INCONSISTENT_COUNT)
         self.assertGreater(max(len(stems) for stems in s.multimap.values()), 1)
         self.assertEqual(s.multimap["G007"], ("040", "600"))
         self.assertEqual(s.multimap["G006"], ("390",))
+        self.assertEqual(s.multimap["G011"], ("041", "390"))
+        self.assertEqual(s.multimap["G013"], ("041", "378"))
         self.assertNotIn("G003", s.multimap)
         self.assertNotIn("G008", s.multimap)
         self.assertEqual(self.provider.get_call_history(), [])
@@ -300,13 +310,15 @@ class TestMamariStemConsistencyScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_mixed_hit_ids_match_member_counts(self):
-        """Cycle 12 mixed IDs: G007 is the 2-stem leftover; G006 is 390."""
+        """Mixed IDs: G007 is the 2-stem leftover; G006 is 390; G011/G013 are 2."""
         by_id: dict[str, list] = {glyph_id: [] for glyph_id in STANDING_GLYPH_STEM_MULTIMAP}
         for inst in self.instances:
             if inst.cluster_id in by_id:
                 by_id[inst.cluster_id].append(inst)
         self.assertEqual(len(by_id["G007"]), STANDING_G007_MEMBER_COUNT)
         self.assertEqual(len(by_id["G006"]), STANDING_G006_MEMBER_COUNT)
+        self.assertEqual(len(by_id["G011"]), STANDING_G011_MEMBER_COUNT)
+        self.assertEqual(len(by_id["G013"]), STANDING_G013_MEMBER_COUNT)
         for i, left in enumerate(by_id["G006"]):
             for right in by_id["G006"][i + 1 :]:
                 self.assertTrue(passes_wide_profile_allograph_gates(left, right))

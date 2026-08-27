@@ -9,8 +9,13 @@ Cycle 13 crop-compares the four slot-0 leftovers (NCC / chamfer on the
 bbox image). None pass, so the lock stays 0/8.
 
 Cycle 14 is an alignment search, not a merge: joint offsets of the
-published window STARTS on the existing G00n sequence. Clustering is
-not retuned. Glyph meanings are not assigned.
+published window STARTS on the existing G00n sequence. Best offset is
+0. Slot matches stay 0/8.
+
+Cycle 15 applies the keep-ID gate globally after DBSCAN (Hu < 2.0,
+r ≥ 0.85 when profiles exist). Types 64→62. Slot matches stay 0/8;
+slot unique stays (4, 6, 6, 6, 5, 6, 6, 5). The gate is not lowered.
+Glyph meanings are not assigned.
 """
 
 import unittest
@@ -58,12 +63,12 @@ WINDOW_LEN = len(DELIMITER_MOTIF)
 
 # Six published delimiter occurrences on Ca7/Ca8 (3 + 3).
 STANDING_DELIMITER_WINDOWS = (
-    ("Ca7", 6, 14, ("G003", "G019", "G018", "G017", "G013", "G016", "G014", "G015")),
-    ("Ca7", 19, 27, ("G021", "G024", "G020", "G031", "G004", "G032", "G033", "G005")),
-    ("Ca7", 33, 41, ("G006", "G041", "G037", "G040", "G034", "G038", "G009", "G039")),
-    ("Ca8", 3, 11, ("G003", "G046", "G049", "G045", "G048", "G009", "G011", "G005")),
-    ("Ca8", 15, 23, ("G006", "G052", "G012", "G051", "G004", "G011", "G050", "G002")),
-    ("Ca8", 29, 37, ("G058", "G062", "G061", "G063", "G012", "G055", "G057", "G054")),
+    ("Ca7", 6, 14, ("G003", "G021", "G020", "G019", "G015", "G018", "G016", "G017")),
+    ("Ca7", 19, 27, ("G023", "G026", "G022", "G033", "G004", "G034", "G035", "G005")),
+    ("Ca7", 33, 41, ("G006", "G043", "G039", "G042", "G036", "G040", "G009", "G041")),
+    ("Ca8", 3, 11, ("G003", "G011", "G013", "G047", "G049", "G009", "G012", "G005")),
+    ("Ca8", 15, 23, ("G006", "G052", "G014", "G051", "G004", "G012", "G050", "G002")),
+    ("Ca8", 29, 37, ("G011", "G013", "G060", "G061", "G014", "G055", "G057", "G054")),
 )
 STANDING_WINDOW_COUNT = 6
 STANDING_SLOT_MATCHES = 0
@@ -451,7 +456,7 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         )
 
     def test_cycle13_snapshot(self):
-        """PR snapshot: 83/64 / 43+40, mixed 2-gram, no 8-gram, slots 0/8."""
+        """PR snapshot: 83/62 / 43+40, two mixed 2-grams, no 8-gram, slots 0/8."""
         s = self.score
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
@@ -519,10 +524,12 @@ class TestMamariDelimiterWindowScoreboard(unittest.TestCase):
         """0 of 8 slots share one G00n ID across the six repetitions.
 
         Cycle 12 merged passing pairs in slots 0, 4, and 7. Cycle 13
-        crop-compared the four slot-0 IDs; leftovers fail NCC/chamfer,
-        so unique count stays 4 and matches stay 0/8. Do not force a
-        leftover occupant onto the merged pair. If a later change makes
-        any slot unanimous, raise STANDING_SLOT_MATCHES. Not a type map.
+        crop-compared the four slot-0 IDs; leftovers fail NCC/chamfer.
+        Cycle 15 global keep-ID clustering drops two types and does not
+        make any slot unanimous; unique count stays 4 and matches stay
+        0/8. Do not force a leftover occupant onto the merged pair and
+        do not lower the gate. If a later change makes any slot
+        unanimous, raise STANDING_SLOT_MATCHES. Not a type map.
         """
         s = self.score
         self.assertEqual(s.slot_matches, STANDING_SLOT_MATCHES)

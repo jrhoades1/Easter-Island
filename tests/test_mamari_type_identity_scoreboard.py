@@ -24,11 +24,11 @@ from tests.test_mamari_image_scoreboard import (
     process_tracings,
 )
 
-# Cycle 14 standing lock was 83/64 / 0/8 (offset 0). Cycle 15 applies
-# the keep-ID gate globally after DBSCAN; standing numbers update after
-# the snapshot run. Cycle 13 was the same 83/64 (crop leftovers fail).
-# Cycle 11 was 83/66 / mixed G003 G008. Cycle 9 was 83/62 / mixed 3-gram.
-# Cycle 4 was 67 types. Cycle 3 was 75/58. Cycle 2 was 65 types.
+# Cycle 15 standing lock: 83/62 / 0/8. Global keep-ID gate after DBSCAN
+# dropped two types vs cycle 14 (83/64). Window stays 0/8. Cycle 13 was
+# the same 83/64 (crop leftovers fail). Cycle 11 was 83/66 / mixed
+# G003 G008. Cycle 9 was 83/62 / mixed 3-gram (same type count, different
+# clustering). Cycle 4 was 67 types. Cycle 3 was 75/58. Cycle 2 was 65.
 # Cycle 1 signed lock was 71.
 STANDING_INSTANCES_PER_STRIP = {
     "sca0701.gif": 14,
@@ -46,7 +46,7 @@ CYCLE3_INSTANCES_PER_STRIP = {
     "sca0802.gif": 12,
     "sca0803.gif": 12,
 }
-STANDING_UNIQUE_CLUSTERS = 64
+STANDING_UNIQUE_CLUSTERS = 62
 CYCLE14_UNIQUE_CLUSTERS = 64
 CYCLE11_UNIQUE_CLUSTERS = 66
 CYCLE9_UNIQUE_CLUSTERS = 62
@@ -62,6 +62,7 @@ CYCLE3_CA8_LEN = 36
 STANDING_HAS_MIXED_REPEATING = True
 STANDING_MIXED_REPEATING = (
     (("G007", "G006"), 2),
+    (("G011", "G013"), 2),
 )
 CYCLE14_MIXED_REPEATING = (
     (("G007", "G006"), 2),
@@ -287,8 +288,9 @@ class TestMamariTypeIdentityScoreboard(unittest.TestCase):
         self.assertEqual(s.instances_per_strip, STANDING_INSTANCES_PER_STRIP)
         self.assertEqual(s.instance_count, sum(STANDING_INSTANCES_PER_STRIP.values()))
         self.assertEqual(s.unique_cluster_count, STANDING_UNIQUE_CLUSTERS)
+        self.assertLess(s.unique_cluster_count, CYCLE14_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE11_UNIQUE_CLUSTERS)
-        self.assertGreater(s.unique_cluster_count, CYCLE9_UNIQUE_CLUSTERS)
+        self.assertEqual(s.unique_cluster_count, CYCLE9_UNIQUE_CLUSTERS)
         self.assertGreater(s.unique_cluster_count, CYCLE3_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE4_UNIQUE_CLUSTERS)
         self.assertLess(s.unique_cluster_count, CYCLE1_SIGNED_UNIQUE_CLUSTERS)
