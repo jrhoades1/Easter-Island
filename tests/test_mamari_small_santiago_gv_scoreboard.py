@@ -302,7 +302,7 @@ class TestMamariSmallSantiagoGvScoreboard(unittest.TestCase):
         self.assertIn("tablet K", attribution)
         self.assertIn("tablet D", attribution)
         fixtures = Path(__file__).parent / "fixtures"
-        self.assertEqual(substitute_k_or_d(fixtures), ())
+        self.assertEqual(substitute_k_or_d(GV_HTML_DIR), ())
         self.assertEqual(fourth_tablet_html_names(fixtures), ())
         self.assertEqual(FOURTH_TABLET_PAGES[0], "D.html")
         self.assertFalse(STANDING_TABLET_D_SCRAPED)
