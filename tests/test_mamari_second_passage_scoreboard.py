@@ -11,7 +11,8 @@ tail after the two opening 040s, and Ca10–Ca14. Ca7–Ca8 are entirely
 inside the first passage.
 
 Locks at a high level: Guy's 8-stem delimiter is absent; 600 is not
-window-adjacent (no windows); 040-run and cell counts. Image track
+window-adjacent (no windows); 040-run and cell counts. Cycle 29 locks
+the remainder n≥4 freq≥2 profile on this same fixture. Image track
 stays parked. MockProvider only.
 """
 

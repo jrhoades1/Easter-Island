@@ -60,6 +60,30 @@
     "cell_count": 12,
     "empty_cell_count": 0
   },
+  "repeating_ngram_profile": {
+    "cycle": 29,
+    "passage": "ca_side_a_remainder",
+    "min_n": 4,
+    "min_freq": 2,
+    "distinct_count": 31,
+    "counts_by_n": {"4": 11, "5": 8, "6": 6, "7": 3, "8": 2, "9": 1},
+    "longest_n": 9,
+    "longest_tokens": ["002", "010", "070", "760", "040", "006", "430", "047", "002"],
+    "longest_freq": 2,
+    "longest_spans": [["Ca10", 26, 35], ["Ca11", 14, 23]],
+    "eightgram_count": 2,
+    "top_8gram": ["002", "010", "070", "760", "040", "006", "430", "047"],
+    "top_8gram_freq": 2,
+    "top_8gram_is_guy_delimiter": false,
+    "stem_600_hits": [
+      ["Ca1", 14],
+      ["Ca1", 17],
+      ["Ca2", 8],
+      ["Ca5", 23],
+      ["Ca6", 19]
+    ],
+    "stem_600_inside_repeating_nge4": false
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
