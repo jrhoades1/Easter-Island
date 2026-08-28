@@ -1,0 +1,64 @@
+Small Vienna (Barthel text N) side a — Kohaumotu Na.html
+=======================================================
+
+Files
+  N_index.html   http://kohaumotu.org/Rongorongo/N/index.html
+  Na.html        http://kohaumotu.org/Rongorongo/N/Na.html
+  Na_barthel.json  parsed Barthel tokens / stems from Na.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet N / Small Vienna
+  → N/index.html
+  http://kohaumotu.org/Rongorongo/N/index.html
+  published all-lines Barthel HTML: Na.html (side a) and Nb.html (side b)
+  http://kohaumotu.org/Rongorongo/N/Na.html
+  Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa / Jb vs Ja /
+  Lb vs La / Mb vs Ma lesson: do not assume a filename.
+  HEAD-check 2026-08-28: Na.html 200, Nb.html 200, N/index.html 200;
+  Nr.html 404, Nv.html 404, N.html 404. N uses a/b naming
+  (like A/C/D/F), not r/v. Nr.html is unpublished. Na.html exists
+  and is vendored. Nb.html is listed and vendored in the
+  matching side-b fixture. Catalog name is Small Vienna (not
+  Great Vienna / London / Reimiro). No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Na.html and N_index.html as retrieved 2026-08-28. Barthel
+  numbers sit in <td> text under the five lines (Na1–Na5). Digits
+  were copied from that HTML, not typed from memory. Image cells
+  were skipped. Published text is hyphen-separated tokens (151
+  stems after '.' / ':' ligature split).
+
+Not vendored
+  Nr.html / Nv.html / N.html (unpublished; 404)
+  tablet O or any other substitute tablet
+  fi_Na.html / Fischer pages
+  N_svg_codes_b.html
+  individualized Na01.html … Na05.html slices
+
+Cycle 89 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / F / G / H / I / J / K / L / M / P / Q.
+  Search lock on Na.html (no type map):
+    stem count: 151 (32 29 30 38 22)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    M n=4 006 022 006 022: 0
+    longest repeating n-gram on N: n=6 (004 064 034 006 004 064); no n≥8
+  Claim that can lose: known tradition islands, E islands, and M's
+  n=4 are exact-0 on N.
+  M's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E / F / J / L / M
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
