@@ -55,13 +55,19 @@ from tests.test_mamari_small_vienna_vendor_scoreboard import (
 from tests.test_mamari_vienna_vendor_scoreboard import (
     MA_LINE_NAMES,
     SIDE_MA,
-    STANDING_EIGHTGRAM_EXISTS as M_EIGHTGRAM_EXISTS,
-    STANDING_LONGEST_N as M_LONGEST_N,
-    STANDING_LONGEST_NGRAM as M_N4_GRAM,
     STANDING_MB_HTML,
     TestMamariViennaVendorScoreboard,
     load_m_sides,
     unpublished_m_html_names,
+)
+from tests.test_mamari_vienna_vendor_scoreboard import (
+    STANDING_EIGHTGRAM_EXISTS as M_EIGHTGRAM_EXISTS,
+)
+from tests.test_mamari_vienna_vendor_scoreboard import (
+    STANDING_LONGEST_N as M_LONGEST_N,
+)
+from tests.test_mamari_vienna_vendor_scoreboard import (
+    STANDING_LONGEST_NGRAM as M_N4_GRAM,
 )
 
 GRAM4 = M_N4_GRAM
@@ -108,7 +114,7 @@ def load_vendored_by_tablet() -> dict[str, list[list[str]]]:
     e = load_e_sides()
     f = load_f_sides()
     j = load_j_sides()
-    l = load_l_sides()
+    tablet_l = load_l_sides()
     m = load_m_sides()
     n = load_n_sides()
     return {
@@ -125,7 +131,7 @@ def load_vendored_by_tablet() -> dict[str, list[list[str]]]:
         "Q": off_e["Q"],
         "I": off_e["I"],
         "J": j[SIDE_JA],
-        "L": l[SIDE_LA],
+        "L": tablet_l[SIDE_LA],
         "M": m[SIDE_MA],
         "N": n[SIDE_NA] + n[SIDE_NB],
     }
@@ -233,7 +239,10 @@ class TestMamariViennaMa2MOnlyScoreboard(unittest.TestCase):
             VENDORED_TABLETS,
             ("A", "B", "C", "D", "E", "F", "G", "K", "H", "P", "Q", "I", "J", "L", "M", "N"),
         )
-        self.assertEqual(OFF_M_TABLETS, ("A", "B", "C", "D", "E", "F", "G", "K", "H", "P", "Q", "I", "J", "L", "N"))
+        self.assertEqual(
+            OFF_M_TABLETS,
+            ("A", "B", "C", "D", "E", "F", "G", "K", "H", "P", "Q", "I", "J", "L", "N"),
+        )
         self.assertEqual(self.hits_by_tablet, STANDING_HITS_BY_TABLET)
         self.assertEqual(self.off_m_counts, STANDING_OFF_M_BY_TABLET)
         self.assertEqual(self.off_m_hits, STANDING_OFF_M_HITS)
