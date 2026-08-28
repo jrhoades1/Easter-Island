@@ -2239,6 +2239,61 @@
     "standing_gk_island_off_gk_unchanged": true,
     "image_track": "parked"
   },
+  "tablet_h_p_q_island_recto_order": {
+    "cycle": 73,
+    "result": "hpq_island_recto_order",
+    "recto_count": 4,
+    "verso_count": 1,
+    "hr_order": [
+      [["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064"], 11, ["Hr", "Hr3", 27]],
+      [["005", "002", "041", "220", "009", "220", "009", "440", "440", "440"], 10, ["Hr", "Hr5", 36]],
+      [["005", "099", "011", "007", "004", "600", "522", "606"], 8, ["Hr", "Hr7", 47]],
+      [["002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"], 12, ["Hr", "Hr8", 0]]
+    ],
+    "pr_order": [
+      [["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064"], 11, ["Pr", "Pr3", 14]],
+      [["005", "002", "041", "220", "009", "220", "009", "440", "440", "440"], 10, ["Pr", "Pr5", 9]],
+      [["005", "099", "011", "007", "004", "600", "522", "606"], 8, ["Pr", "Pr7", 10]],
+      [["002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"], 12, ["Pr", "Pr7", 29]]
+    ],
+    "qr_order": [
+      [["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064"], 11, ["Qr", "Qr3", 7]],
+      [["005", "002", "041", "220", "009", "220", "009", "440", "440", "440"], 10, ["Qr", "Qr5", 15]],
+      [["005", "099", "011", "007", "004", "600", "522", "606"], 8, ["Qr", "Qr7", 28]],
+      [["002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"], 12, ["Qr", "Qr7", 47]]
+    ],
+    "token_order": [
+      ["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064"],
+      ["005", "002", "041", "220", "009", "220", "009", "440", "440", "440"],
+      ["005", "099", "011", "007", "004", "600", "522", "606"],
+      ["002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"]
+    ],
+    "same_order": true,
+    "bag_of_formulas": false,
+    "copied_recto_order": true,
+    "verso": [["301", "004", "064", "004", "064", "209", "081", "050"], 8, ["Hv", "Hv2", 32], ["Pv", "Pv4", 50], ["Qv", "Qv5", 11]],
+    "verso_mixed_into_recto": false,
+    "raw_stems_999_kept": true,
+    "new_tablet": false,
+    "tablet_d_scraped": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_gr_locks_unchanged": true,
+    "standing_gv_locks_unchanged": true,
+    "standing_kr_locks_unchanged": true,
+    "standing_kv_locks_unchanged": true,
+    "standing_hp_shared_n8_unchanged": true,
+    "standing_q_shared_n8_unchanged": true,
+    "standing_hpq_triple_n8_unchanged": true,
+    "standing_hpq_island_off_hpq_unchanged": true,
+    "standing_gk_shared_n8_unchanged": true,
+    "standing_gk_island_off_gk_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
