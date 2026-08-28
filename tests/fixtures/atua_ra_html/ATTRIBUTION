@@ -1,0 +1,66 @@
+Atua-Mata-Riri (Barthel text R) side a — Kohaumotu Ra.html
+==========================================================
+
+Files
+  R_index.html   http://kohaumotu.org/Rongorongo/R/index.html
+  Ra.html        http://kohaumotu.org/Rongorongo/R/Ra.html
+  Ra_barthel.json  parsed Barthel tokens / stems from Ra.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet R / Atua-Mata-Riri
+  → R/index.html
+  http://kohaumotu.org/Rongorongo/R/index.html
+  published all-lines Barthel HTML: Ra.html (side a) and Rb.html (side b)
+  http://kohaumotu.org/Rongorongo/R/Ra.html
+  Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa / Jb vs Ja /
+  Lb vs La / Mb vs Ma / Nr vs Na / Ob vs Oa lesson: do not
+  assume a filename. HEAD-check 2026-08-28: Ra.html 200,
+  Rb.html 200, R/index.html 200; Rr.html 404, Rv.html 404,
+  R.html 404. R uses a/b naming (like A/C/D/F/N), not r/v.
+  Rr.html is unpublished. Ra.html exists and is vendored.
+  Rb.html is listed and vendored in the matching side-b
+  fixture. Catalog name is Atua-Mata-Riri (not Vienna /
+  London / Reimiro / Boomerang). No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Ra.html and R_index.html as retrieved 2026-08-28. Barthel
+  numbers sit in <td> text under the eight lines (Ra1–Ra8). Digits
+  were copied from that HTML, not typed from memory. Image cells
+  were skipped. Published text is hyphen-separated tokens (266
+  stems after '.' / ':' ligature split).
+
+Not vendored
+  Rr.html / Rv.html / R.html (unpublished; 404)
+  tablet S or any other substitute tablet
+  fi_Ra.html / Fischer pages
+  R_svg_codes_b.html
+  individualized Ra01.html … Ra08.html slices
+
+Cycle 93 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / F / G / H / I / J / K / L / M / N / O / P / Q.
+  Search lock on Ra.html (no type map):
+    stem count: 266 (28 35 38 41 35 41 31 17)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    M n=4 006 022 006 022: 0
+    N n=6 004 064 034 006 004 064: 0
+    longest repeating n-gram on R: n=0 (no n≥4 freq≥2)
+  Claim that can lose: known tradition islands, E islands, M's
+  n=4, and N's n=6 are exact-0 on R.
+  O's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E / F / J / L / M / N / O
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
