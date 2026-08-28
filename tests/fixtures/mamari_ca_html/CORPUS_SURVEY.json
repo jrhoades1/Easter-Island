@@ -5278,6 +5278,256 @@
     "standing_e_keiti_er7_double_unchanged": true,
     "image_track": "parked"
   },
+  "corpus_max_n_leak_table": {
+    "cycle": 104,
+    "result": "corpus_max_n_leak_table",
+    "tablets": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V"],
+    "hypothesis_from_cycle": 99,
+    "min_n": 4,
+    "rows": {
+      "A": {
+        "longest_n": 10,
+        "longest_tokens": ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "B": {
+        "longest_n": 8,
+        "longest_tokens": ["002", "065", "042", "300", "385", "003", "065", "200"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "C": {
+        "longest_n": 13,
+        "longest_tokens": ["040", "040", "040", "040", "040", "390", "041", "378", "041", "670", "008", "078", "711"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "D": {
+        "longest_n": 4,
+        "longest_tokens": ["002", "200", "052", "600"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "E": {
+        "longest_n": 9,
+        "longest_tokens": ["300", "040", "300", "028", "004", "430", "022", "380", "203"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "F": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "G": {
+        "longest_n": 9,
+        "longest_tokens": ["007", "006", "124", "006", "124", "098", "007", "059", "002"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "H": {
+        "longest_n": 7,
+        "longest_tokens": ["072", "450", "052", "551", "003", "600", "003"],
+        "own_hits": 2,
+        "leak_hits": 2,
+        "leak_counts": {"Q": 2},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
+        "tablet_only": false,
+        "island_status": null
+      },
+      "I": {
+        "longest_n": 5,
+        "longest_tokens": ["999", "071", "076", "010", "079"],
+        "own_hits": 3,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "J": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "K": {
+        "longest_n": 4,
+        "longest_tokens": ["260", "001", "004", "711"],
+        "own_hits": 2,
+        "leak_hits": 5,
+        "leak_counts": {"B": 3, "G": 2},
+        "hits_by_tablet": [0, 3, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": false,
+        "island_status": null
+      },
+      "L": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "M": {
+        "longest_n": 4,
+        "longest_tokens": ["006", "022", "006", "022"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "N": {
+        "longest_n": 6,
+        "longest_tokens": ["004", "064", "034", "006", "004", "064"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "O": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "P": {
+        "longest_n": 6,
+        "longest_tokens": ["062", "006", "001", "062", "006", "001"],
+        "own_hits": 2,
+        "leak_hits": 4,
+        "leak_counts": {"H": 2, "Q": 2},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0],
+        "tablet_only": false,
+        "island_status": null
+      },
+      "Q": {
+        "longest_n": 7,
+        "longest_tokens": ["072", "450", "052", "551", "003", "600", "003"],
+        "own_hits": 2,
+        "leak_hits": 2,
+        "leak_counts": {"H": 2},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
+        "tablet_only": false,
+        "island_status": null
+      },
+      "R": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "S": {
+        "longest_n": 7,
+        "longest_tokens": ["004", "660", "081", "004", "660", "081", "004"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0],
+        "tablet_only": true,
+        "island_status": null
+      },
+      "T": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "U": {
+        "longest_n": 0,
+        "longest_tokens": [],
+        "own_hits": 0,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        "tablet_only": null,
+        "island_status": null
+      },
+      "V": {
+        "longest_n": 4,
+        "longest_tokens": ["048", "010", "048", "010"],
+        "own_hits": 2,
+        "leak_hits": 0,
+        "leak_counts": {},
+        "hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2],
+        "tablet_only": true,
+        "island_status": null
+      }
+    },
+    "leaking_homes": ["H", "K", "P", "Q"],
+    "zero_off_home": ["A", "B", "C", "D", "E", "F", "G", "I", "J", "L", "M", "N", "O", "R", "S", "T", "U", "V"],
+    "zero_n_tablets": ["F", "J", "L", "O", "R", "T", "U"],
+    "leak_pairs": [["H", "Q", 2], ["K", "B", 3], ["K", "G", 2], ["P", "H", 2], ["P", "Q", 2], ["Q", "H", 2]],
+    "claim": "leak_table_holds",
+    "leak_table_holds": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_d_echancree_da_d_only_unchanged": true,
+    "standing_v_honolulu_va_v_only_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "standing_s_washington_sb2_s_only_unchanged": true,
+    "standing_n_vienna_na1_n_only_unchanged": true,
+    "standing_m_vienna_ma2_m_only_unchanged": true,
+    "standing_e_keiti_vendor_unchanged": true,
+    "standing_e_keiti_er7_double_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
