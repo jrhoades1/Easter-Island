@@ -1,0 +1,60 @@
+Stephen-Chauvet Fragment (Barthel text F) side a — Kohaumotu Fa.html
+=====================================================================
+
+Files
+  F_index.html   http://kohaumotu.org/Rongorongo/F/index.html
+  Fa.html        http://kohaumotu.org/Rongorongo/F/Fa.html
+  Fa_barthel.json  parsed Barthel tokens / stems from Fa.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet F / Stephen-Chauvet Fragment
+  → F/index.html
+  http://kohaumotu.org/Rongorongo/F/index.html
+  published all-lines Barthel HTML: Fa.html (side a) and Fb.html (side b)
+  http://kohaumotu.org/Rongorongo/F/Fa.html
+  Same Gr vs Ga / Da vs Dr / Er vs Ea lesson: do not assume a filename.
+  HEAD-check 2026-08-28: Fa.html 200, Fb.html 200, F/index.html 200;
+  Fr.html 404, Fv.html 404, F.html 404. F uses a/b naming
+  (like A/C/D), not r/v. Fr.html is unpublished. Fa.html exists
+  and is vendored. Fb.html is listed and vendored in the
+  matching side-b fixture. No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Fa.html and F_index.html as retrieved 2026-08-28. Barthel numbers
+  sit in <td> text under each line strip (Fa1–Fa6). Digits were
+  copied from that HTML, not typed from memory. Image cells were
+  skipped. Fa6 is the published lacuna marker (2-3); the shared
+  parser yields 0 stems.
+
+Not vendored
+  Fr.html / Fv.html / F.html (unpublished; 404)
+  tablet J or any other substitute tablet
+  fi_Fa.html / Fischer pages
+  F_svg_codes_b.html
+  individualized Fa01.html … Fa06.html slices
+
+Cycle 85 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / G / H / I / K / P / Q.
+  Search lock on Fa.html (no type map):
+    stem count: 44 (4 10 12 10 8 0)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    longest repeating n-gram on F: n=0; no n≥4 freq≥2
+  Claim that can lose: known tradition islands and E islands are exact-0 on F.
+  E's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
