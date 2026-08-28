@@ -49,7 +49,10 @@ CITED_IB_URL = "http://kohaumotu.org/Rongorongo/I/Ib.html"
 CITED_I_INDEX_URL = "http://kohaumotu.org/Rongorongo/I/index.html"
 
 ALL_LINES_HREF = re.compile(r'href="([A-Z][abrv]\.html)"')
-FOURTH_TABLET_PAGES = ("D.html", "Da.html", "Db.html", "Dr.html", "Dv.html")
+# Unpublished D pages (cycle 54 Gr vs Ga lesson). HEAD-check 2026-08-28:
+# Dr.html / Dv.html / D.html 404. Da.html / Db.html are the published
+# sides and are vendored in cycle 79.
+FOURTH_TABLET_PAGES = ("D.html", "Dr.html", "Dv.html")
 
 STANDING_A_ALL_LINES = ("Aa.html", "Ab.html")
 STANDING_B_ALL_LINES = ("Br.html", "Bv.html")
