@@ -1,0 +1,64 @@
+{
+  "tablet": "F",
+  "name": "Stephen-Chauvet Fragment",
+  "side": "Fb",
+  "encoding": "Barthel numerical transliteration",
+  "source": {
+    "url": "http://kohaumotu.org/Rongorongo/F/Fb.html",
+    "index": "http://kohaumotu.org/Rongorongo/F/index.html",
+    "note": "Published Kohaumotu Barthel HTML. Digits copied from <td> text. Fb1 is a lacuna marker; stems stay empty. Line headers are Side b, line N."
+  },
+  "lines": {
+    "Fb1": [
+      "(6",
+      "8)!*"
+    ],
+    "Fb2": [
+      "(2",
+      "4)!",
+      "200!",
+      "(2",
+      "4)!*"
+    ],
+    "Fb3": [
+      "000!",
+      "000!",
+      "200!",
+      "096!",
+      "280!",
+      "549xy!",
+      "093!",
+      "078y!",
+      "000!*"
+    ],
+    "Fb4": [
+      "(1",
+      "2)!",
+      "099b!",
+      "093!",
+      "(1",
+      "2)!*"
+    ]
+  },
+  "stems": {
+    "Fb1": [],
+    "Fb2": [
+      "200"
+    ],
+    "Fb3": [
+      "000",
+      "000",
+      "200",
+      "096",
+      "280",
+      "549",
+      "093",
+      "078",
+      "000"
+    ],
+    "Fb4": [
+      "099",
+      "093"
+    ]
+  }
+}
