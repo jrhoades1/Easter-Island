@@ -1,0 +1,71 @@
+Great Washington (Barthel text S) side a — Kohaumotu Sa.html
+===========================================================
+
+Files
+  S_index.html   http://kohaumotu.org/Rongorongo/S/index.html
+  Sa.html        http://kohaumotu.org/Rongorongo/S/Sa.html
+  Sa_barthel.json  parsed Barthel tokens / stems from Sa.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet S / Great Washington
+  → S/index.html
+  http://kohaumotu.org/Rongorongo/S/index.html
+  published all-lines Barthel HTML: Sa.html (side a) and Sb.html (side b)
+  http://kohaumotu.org/Rongorongo/S/Sa.html
+  Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa / Jb vs Ja /
+  Lb vs La / Mb vs Ma / Nr vs Na / Ob vs Oa / Rr vs Ra lesson: do not
+  assume a filename. HEAD-check 2026-08-28: Sa.html 200,
+  Sb.html 200, S/index.html 200, S.html 200 (photos only, no
+  Barthel); Sr.html 404, Sv.html 404. S uses a/b naming (like
+  A/C/D/F/N/R), not r/v. Sr.html is unpublished. Sa.html exists
+  and is vendored. Sb.html is listed and vendored in the matching
+  side-b fixture. S.html is photos of the complete item (Smithsonian);
+  not vendored as Barthel. Catalog name is Great Washington (not
+  Vienna / London / Reimiro / Boomerang / Atua-Mata-Riri). No
+  second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Sa.html and S_index.html as retrieved 2026-08-28. Barthel
+  numbers sit in <td> text under the eight lines (Sa1–Sa8). Digits
+  were copied from that HTML, not typed from memory. Image cells
+  were skipped. Published text is hyphen-separated tokens (380
+  stems after '.' / ':' ligature split). Leading ellipsis tokens
+  (…000!) are copied as published; the shared stem parser keeps
+  only digit stems.
+
+Not vendored
+  Sr.html / Sv.html (unpublished; 404)
+  S.html (200 photos-only; no Barthel codes)
+  tablet T or any other substitute tablet
+  fi_Sa.html / Fischer pages
+  S_svg_codes_b.html
+  individualized Sa01.html … Sa08.html slices
+
+Cycle 94 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / F / G / H / I / J / K / L / M / N / O / P / Q / R.
+  Search lock on Sa.html (no type map):
+    stem count: 380 (42 44 46 52 55 67 52 22)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    M n=4 006 022 006 022: 0
+    N n=6 004 064 034 006 004 064: 0
+    longest repeating n-gram on S: n=7 (004 660 081 004 660 081 004 on Sb2); no n≥8
+  Claim that can lose: known tradition islands, E islands, M's
+  n=4, and N's n=6 are exact-0 on S.
+  R's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E / F / J / L / M / N / O / R
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
