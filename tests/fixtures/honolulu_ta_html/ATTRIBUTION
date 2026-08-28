@@ -1,0 +1,70 @@
+Honolulu 1 [#3629] (Barthel text T) — Kohaumotu Ta.html
+=======================================================
+
+Files
+  T_index.html   http://kohaumotu.org/Rongorongo/T/index.html
+  Ta.html        http://kohaumotu.org/Rongorongo/T/Ta.html
+  Ta_barthel.json  parsed Barthel tokens / stems from Ta.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet T / Honolulu 1 [#3629]
+  → T/index.html
+  http://kohaumotu.org/Rongorongo/T/index.html
+  published all-lines Barthel HTML: Ta.html (side a) only
+  http://kohaumotu.org/Rongorongo/T/Ta.html
+  Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa / Jb vs Ja /
+  Lb vs La / Mb vs Ma / Nr vs Na / Ob vs Oa / Rr vs Ra /
+  Sr vs Sa lesson: do not assume a filename. HEAD-check
+  2026-08-28: Ta.html 200, T/index.html 200; Tb.html 404,
+  Tr.html 404, Tv.html 404, T.html 404. T/index.html names
+  Ta.html as Barthel (a-side, like A/C/D/F/J/L/M/N/O/R/S),
+  not r/v. Navbar on Ta.html says "one side only." Catalog
+  name is Honolulu 1 [#3629] — not Washington / Vienna /
+  London / Reimiro / Boomerang / Atua-Mata-Riri. No second
+  new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Ta.html and T_index.html as retrieved 2026-08-28. Barthel
+  numbers sit in <td> text under the eleven lines (Ta1–Ta11).
+  Digits were copied from that HTML, not typed from memory.
+  Image cells were skipped. Ta1 / Ta11 are published lacuna
+  markers ((10-20)! / (8-16)!); the shared parser yields 0
+  stems there. Published text is hyphen-separated tokens
+  (172 stems after '.' / ':' ligature split).
+
+Not vendored
+  Tb.html / Tr.html / Tv.html / T.html (unpublished; 404)
+  tablet U or any other substitute tablet
+  fi_Ta.html / fl_Ta.html / Fischer pages
+  T_svg_codes_b.html
+  individualized Ta01.html … Ta11.html slices
+
+Cycle 96 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / F / G / H / I / J / K / L / M / N / O / P / Q / R / S.
+  Search lock on Ta.html (no type map):
+    stem count: 172 (0 24 24 30 21 22 9 17 14 11 0)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    M n=4 006 022 006 022: 0
+    N n=6 004 064 034 006 004 064: 0
+    S n=7 004 660 081 004 660 081 004: 0
+    longest repeating n-gram on T: n=0 (no n≥4 freq≥2)
+  Claim that can lose: known tradition islands, E islands, M's
+  n=4, N's n=6, and S's n=7 are exact-0 on T.
+  S's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E / F / J / L / M / N / O / R / S
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
