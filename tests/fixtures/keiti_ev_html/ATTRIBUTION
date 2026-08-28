@@ -1,0 +1,58 @@
+Keiti (Barthel text E) verso — Kohaumotu Ev.html
+================================================
+
+Files
+  Ev.html        http://kohaumotu.org/Rongorongo/E/Ev.html
+  Ev_barthel.json  parsed Barthel tokens / stems from Ev.html
+  E_index.html   already vendored with recto
+                 tests/fixtures/keiti_er_html/E_index.html
+                 http://kohaumotu.org/Rongorongo/E/index.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet E / Keiti
+  → E/index.html
+  http://kohaumotu.org/Rongorongo/E/index.html
+  published all-lines Barthel HTML: Er.html (recto) and Ev.html (verso)
+  http://kohaumotu.org/Rongorongo/E/Er.html
+  http://kohaumotu.org/Rongorongo/E/Ev.html
+  Same Gr vs Ga / Da vs Dr lesson: Ea.html is not a published page (404).
+  E/index.html lists Ev.html as verso. No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Ev.html as retrieved 2026-08-28. Barthel numbers sit in <td>
+  text under each line strip (Ev1–Ev8). Digits were copied from
+  that HTML, not typed from memory. Image cells were skipped.
+  Physical tablet destroyed; Barthel/Kohaumotu text remains.
+
+Not vendored
+  Ea.html / Eb.html / E.html (unpublished; 404)
+  a second copy of Er.html (vendored in the recto fixture)
+  tablet F or any other substitute tablet
+  fi_Ev.html / Fischer pages
+  E_svg_codes_b.html
+  individualized Ev01.html … Ev08.html slices
+
+Cycle 80 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / G / H / I / K / P / Q.
+  Search lock on Ev.html (no type map):
+    stem count: 424 (52 45 59 55 51 56 53 53)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    longest repeating n-gram on E: n=9; n≥8 exists
+  Claim that can lose: known tradition islands are exact-0 on E.
+  D's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
