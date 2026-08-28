@@ -3035,6 +3035,89 @@
     "standing_gk_island_off_hpq_unchanged": true,
     "image_track": "parked"
   },
+  "tablet_d_echancree_vendor": {
+    "cycle": 79,
+    "result": "d_echancree_vendored",
+    "tablet_d": "D",
+    "name_d": "Échancrée",
+    "catalog": "http://kohaumotu.org/Rongorongo/",
+    "tablets_page": "http://kohaumotu.org/Rongorongo/tablets.html",
+    "d_index": "http://kohaumotu.org/Rongorongo/D/index.html",
+    "d_pages": ["Da.html", "Db.html"],
+    "html_bytes": {"Da": 3469, "Db": 2760},
+    "index_bytes": {"D": 3770},
+    "head_check": {
+      "D/index.html": 200,
+      "Da.html": 200,
+      "Db.html": 200,
+      "Dr.html": 404,
+      "Dv.html": 404,
+      "D.html": 404
+    },
+    "lines": {
+      "Da": ["Da1", "Da2", "Da3", "Da4", "Da5", "Da6", "Da7", "Da8"],
+      "Db": ["Db1", "Db2", "Db3", "Db4", "Db5", "Db6"]
+    },
+    "stem_totals": {"Da": 150, "Db": 116},
+    "stem_counts": {
+      "Da": [17, 22, 22, 23, 24, 22, 20, 0],
+      "Db": [16, 23, 23, 19, 20, 15]
+    },
+    "gk_grams": [
+      ["522", "045", "061", "009", "260", "001", "004", "711", "260", "001", "004", "711"],
+      ["073", "006", "206", "073", "006", "200", "073", "006", "222", "073", "006", "451", "073"],
+      ["380", "001", "003", "597", "380", "001", "003", "059", "720", "380"],
+      ["380", "001", "003", "005", "006", "010", "380", "001", "003", "315", "380", "001", "003", "090", "001", "380", "001"],
+      ["380", "001", "003", "005", "066", "380", "001", "003", "290", "001"],
+      ["079", "450", "019", "069", "380", "001", "003", "162", "522", "050", "002", "450", "380", "001", "003"],
+      ["380", "001", "003", "003", "003", "004", "215", "380", "001", "003", "079", "450", "019", "069", "380", "001", "003", "162", "522", "050", "002", "450", "380", "001", "003"]
+    ],
+    "gk_island_hits": {
+      "Da": [0, 0, 0, 0, 0, 0, 0],
+      "Db": [0, 0, 0, 0, 0, 0, 0]
+    },
+    "hpq_islands": [
+      ["002", "144", "002", "662", "680", "005", "010", "005", "052", "022", "243", "001"],
+      ["062", "006", "001", "062", "006", "001", "062", "006", "001", "020", "064"],
+      ["005", "002", "041", "220", "009", "220", "009", "440", "440", "440"],
+      ["005", "099", "011", "007", "004", "600", "522", "606"],
+      ["301", "004", "064", "004", "064", "209", "081", "050"]
+    ],
+    "hpq_island_hits": {
+      "Da": [0, 0, 0, 0, 0],
+      "Db": [0, 0, 0, 0, 0]
+    },
+    "any_gk_island": false,
+    "any_hpq_island": false,
+    "any_tradition_island": false,
+    "longest_n": 4,
+    "eightgram_exists": false,
+    "claim": "tradition_islands_absent",
+    "new_tablet": true,
+    "dr_html": false,
+    "dv_html": false,
+    "d_html": false,
+    "raw_stems_999_kept": true,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_gr_locks_unchanged": true,
+    "standing_gv_locks_unchanged": true,
+    "standing_kr_locks_unchanged": true,
+    "standing_kv_locks_unchanged": true,
+    "standing_hp_vendor_unchanged": true,
+    "standing_q_vendor_unchanged": true,
+    "standing_gk_shared_n8_unchanged": true,
+    "standing_gk_island_off_gk_unchanged": true,
+    "standing_gk_grkv_maximals_unchanged": true,
+    "standing_gk_island_off_hpq_unchanged": true,
+    "standing_hpq_triple_n8_unchanged": true,
+    "standing_hpq_island_off_hpq_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,

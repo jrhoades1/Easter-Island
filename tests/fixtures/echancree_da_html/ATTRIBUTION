@@ -1,0 +1,59 @@
+Échancrée (Barthel text D) side a — Kohaumotu Da.html
+=====================================================
+
+Files
+  D_index.html   http://kohaumotu.org/Rongorongo/D/index.html
+  Da.html        http://kohaumotu.org/Rongorongo/D/Da.html
+  Da_barthel.json  parsed Barthel tokens / stems from Da.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet D / Échancrée
+  → D/index.html
+  http://kohaumotu.org/Rongorongo/D/index.html
+  published all-lines Barthel HTML: Da.html (side a) and Db.html (side b)
+  http://kohaumotu.org/Rongorongo/D/Da.html
+  Same Gr vs Ga lesson: do not assume a filename. HEAD-check
+  2026-08-28: Da.html 200, Db.html 200, D/index.html 200;
+  Dr.html 404, Dv.html 404, D.html 404. D uses a/b naming
+  (like A/C), not r/v. Dr.html is unpublished. Da.html exists
+  and is vendored. Db.html is listed and vendored in the
+  matching side-b fixture. No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Da.html and D_index.html as retrieved 2026-08-28. Barthel numbers
+  sit in <td> text under each line strip (Da1–Da8). Digits were
+  copied from that HTML, not typed from memory. Image cells were
+  skipped. Da8 is the published lacuna marker (10-20); the shared
+  parser yields 0 stems.
+
+Not vendored
+  Dr.html / Dv.html / D.html (unpublished; 404)
+  tablet E or any other substitute tablet
+  fi_Da.html / Fischer pages
+  D_svg_codes_b.html
+  individualized Da01.html … Da08.html slices
+
+Cycle 79 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / G / H / I / K / P / Q.
+  Search lock on Da.html (no type map):
+    stem count: 150 (17 22 22 23 24 22 20 0)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    longest repeating n-gram: n=4; no n≥8
+  Claim that can lose: known tradition islands are exact-0 on D.
+  Existing A / B / C / I / G / K / H / P / Q scoreboards are unchanged.
+  Image track stays parked. No type merge. No CV.
