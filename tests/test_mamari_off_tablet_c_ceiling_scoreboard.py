@@ -124,6 +124,7 @@ STANDING_OTHER_TABLET_URLS = (
     "http://kohaumotu.org/Rongorongo/K/Kv.html",
     "http://kohaumotu.org/Rongorongo/L/L.html",
     "http://kohaumotu.org/Rongorongo/L/La.html",
+    "http://kohaumotu.org/Rongorongo/M/Ma.html",
     "http://kohaumotu.org/Rongorongo/P/Pr.html",
     "http://kohaumotu.org/Rongorongo/P/Pv.html",
     "http://kohaumotu.org/Rongorongo/Q/Qr.html",
@@ -169,6 +170,8 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/Rongorongo/L/L.html",
     "http://kohaumotu.org/Rongorongo/L/La.html",
     "http://kohaumotu.org/Rongorongo/L/index.html",
+    "http://kohaumotu.org/Rongorongo/M/Ma.html",
+    "http://kohaumotu.org/Rongorongo/M/index.html",
     "http://kohaumotu.org/Rongorongo/P/Pr.html",
     "http://kohaumotu.org/Rongorongo/P/Pv.html",
     "http://kohaumotu.org/Rongorongo/P/index.html",
@@ -181,7 +184,7 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
     "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
 )
-STANDING_CITED_TABLET_LETTERS = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "P", "Q")
+STANDING_CITED_TABLET_LETTERS = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "P", "Q")
 STANDING_VENDORED_BARTHEL_PAGES = (
     "Aa.html",
     "Ab.html",
@@ -204,6 +207,7 @@ STANDING_VENDORED_BARTHEL_PAGES = (
     "Kr.html",
     "Kv.html",
     "La.html",
+    "Ma.html",
     "Pr.html",
     "Pv.html",
     "Qr.html",
@@ -362,7 +366,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cited_kohaumotu_urls_are_tablet_c_or_license(self):
-        """Navbar-era sources stay C. Cycles 36/38 cite A; 43/44 B; 46 I; 55/56 G; 59/60 K; 69 H/P; 70 Q; 79 D; 80 E; 85 F; 86 J; 87 L."""
+        """Navbar-era sources stay C. Cycles 36/38 cite A; 43/44 B; 46 I; 55/56 G; 59/60 K; 69 H/P; 70 Q; 79 D; 80 E; 85 F; 86 J; 87 L; 88 M."""
         self.assertEqual(self.cited_urls, STANDING_CITED_KOHAUMOTU_URLS)
         letters = tuple(
             sorted(
@@ -378,11 +382,11 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         for url in self.cited_urls:
             self.assertTrue(url.startswith("http://kohaumotu.org/"))
             letter = tablet_letter_from_ref(url)
-            self.assertIn(letter, (None, "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "P", "Q"), url)
+            self.assertIn(letter, (None, "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "P", "Q"), url)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_no_other_tablet_html_was_vendored(self):
-        """Ca/Cb plus Aa, Ab, Br, Bv, Ia, Gr, Gv, Kr, Kv, Hr/Hv/Pr/Pv, Qr/Qv, Da/Db, Er/Ev, Fa/Fb, Ja, and cycle-87 La."""
+        """Ca/Cb plus Aa, Ab, Br, Bv, Ia, Gr, Gv, Kr, Kv, Hr/Hv/Pr/Pv, Qr/Qv, Da/Db, Er/Ev, Fa/Fb, Ja, La, and cycle-88 Ma."""
         fixtures = Path(__file__).parent / "fixtures"
         barthel_pages = tuple(
             sorted(path.name for path in fixtures.glob("**/*[A-Z][abrv].html"))
