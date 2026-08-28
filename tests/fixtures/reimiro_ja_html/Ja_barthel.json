@@ -1,0 +1,23 @@
+{
+  "tablet": "J",
+  "name": "Reimiro 1",
+  "side": "Ja",
+  "encoding": "Barthel numerical transliteration",
+  "source": {
+    "url": "http://kohaumotu.org/Rongorongo/J/Ja.html",
+    "index": "http://kohaumotu.org/Rongorongo/J/index.html",
+    "note": "Published Kohaumotu Barthel HTML. Digits copied from <td> text. One line, two signs. J.html is the item+lines overview (same two codes), not a second side."
+  },
+  "lines": {
+    "Ja1": [
+      "522",
+      "088*"
+    ]
+  },
+  "stems": {
+    "Ja1": [
+      "522",
+      "088"
+    ]
+  }
+}
