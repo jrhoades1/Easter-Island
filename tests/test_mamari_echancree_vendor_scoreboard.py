@@ -346,6 +346,8 @@ class TestMamariEchancreeVendorScoreboard(unittest.TestCase):
         self.assertEqual(lock["catalog"], CITED_CATALOG_URL)
         self.assertEqual(lock["tablets_page"], CITED_TABLETS_URL)
         self.assertEqual(lock["d_index"], CITED_D_INDEX_URL)
+        self.assertEqual(lock["da_page"], CITED_DA_URL)
+        self.assertEqual(lock["db_page"], CITED_DB_URL)
         self.assertEqual(tuple(lock["d_pages"]), STANDING_D_ALL_LINES)
         self.assertEqual(lock["html_bytes"]["Da"], STANDING_DA_BYTES)
         self.assertEqual(lock["html_bytes"]["Db"], STANDING_DB_BYTES)
