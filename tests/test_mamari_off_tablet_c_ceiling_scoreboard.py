@@ -362,7 +362,7 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_cited_kohaumotu_urls_are_tablet_c_or_license(self):
-        """Navbar-era sources stay C. Cycles 36/38 cite A; 43/44 B; 46 I; 55/56 G; 59/60 K; 69 H/P; 70 Q; 79 D; 80 E; 85 F; 86 J."""
+        """Navbar-era sources stay C. Cycles 36/38 cite A; 43/44 B; 46 I; 55/56 G; 59/60 K; 69 H/P; 70 Q; 79 D; 80 E; 85 F; 86 J; 87 L."""
         self.assertEqual(self.cited_urls, STANDING_CITED_KOHAUMOTU_URLS)
         letters = tuple(
             sorted(
