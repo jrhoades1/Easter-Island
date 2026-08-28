@@ -258,7 +258,8 @@
       "http://kohaumotu.org/Rongorongo/R/Ra.html",
       "http://kohaumotu.org/Rongorongo/R/Rb.html",
       "http://kohaumotu.org/Rongorongo/S/Sa.html",
-      "http://kohaumotu.org/Rongorongo/S/Sb.html"
+      "http://kohaumotu.org/Rongorongo/S/Sb.html",
+      "http://kohaumotu.org/Rongorongo/T/Ta.html"
     ],
     "index_html": {
       "href": "index.html",
@@ -325,13 +326,15 @@
       "http://kohaumotu.org/Rongorongo/S/Sa.html",
       "http://kohaumotu.org/Rongorongo/S/Sb.html",
       "http://kohaumotu.org/Rongorongo/S/index.html",
+      "http://kohaumotu.org/Rongorongo/T/Ta.html",
+      "http://kohaumotu.org/Rongorongo/T/index.html",
       "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
       "http://kohaumotu.org/Rongorongo/tablets.html",
       "http://kohaumotu.org/rongorongo_org/copy.html",
       "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
       "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html"
     ],
-    "cited_url_tablet_letters": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"],
+    "cited_url_tablet_letters": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"],
     "standing_c_locks_unchanged": true,
     "image_track": "parked"
   },
