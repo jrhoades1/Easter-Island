@@ -122,6 +122,8 @@ STANDING_OTHER_TABLET_URLS = (
     "http://kohaumotu.org/Rongorongo/J/Ja.html",
     "http://kohaumotu.org/Rongorongo/K/Kr.html",
     "http://kohaumotu.org/Rongorongo/K/Kv.html",
+    "http://kohaumotu.org/Rongorongo/L/L.html",
+    "http://kohaumotu.org/Rongorongo/L/La.html",
     "http://kohaumotu.org/Rongorongo/P/Pr.html",
     "http://kohaumotu.org/Rongorongo/P/Pv.html",
     "http://kohaumotu.org/Rongorongo/Q/Qr.html",
@@ -164,6 +166,9 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/Rongorongo/K/Kr.html",
     "http://kohaumotu.org/Rongorongo/K/Kv.html",
     "http://kohaumotu.org/Rongorongo/K/index.html",
+    "http://kohaumotu.org/Rongorongo/L/L.html",
+    "http://kohaumotu.org/Rongorongo/L/La.html",
+    "http://kohaumotu.org/Rongorongo/L/index.html",
     "http://kohaumotu.org/Rongorongo/P/Pr.html",
     "http://kohaumotu.org/Rongorongo/P/Pv.html",
     "http://kohaumotu.org/Rongorongo/P/index.html",
@@ -176,7 +181,7 @@ STANDING_CITED_KOHAUMOTU_URLS = (
     "http://kohaumotu.org/rongorongo_org/mamari/ca0708.html",
     "http://kohaumotu.org/rongorongo_org/rosetta/lunar.html",
 )
-STANDING_CITED_TABLET_LETTERS = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P", "Q")
+STANDING_CITED_TABLET_LETTERS = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "P", "Q")
 STANDING_VENDORED_BARTHEL_PAGES = (
     "Aa.html",
     "Ab.html",
@@ -198,6 +203,7 @@ STANDING_VENDORED_BARTHEL_PAGES = (
     "Ja.html",
     "Kr.html",
     "Kv.html",
+    "La.html",
     "Pr.html",
     "Pv.html",
     "Qr.html",
@@ -372,11 +378,11 @@ class TestMamariOffTabletCCeilingScoreboard(unittest.TestCase):
         for url in self.cited_urls:
             self.assertTrue(url.startswith("http://kohaumotu.org/"))
             letter = tablet_letter_from_ref(url)
-            self.assertIn(letter, (None, "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P", "Q"), url)
+            self.assertIn(letter, (None, "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "P", "Q"), url)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_no_other_tablet_html_was_vendored(self):
-        """Ca/Cb plus Aa, Ab, Br, Bv, Ia, Gr, Gv, Kr, Kv, Hr/Hv/Pr/Pv, Qr/Qv, Da/Db, Er/Ev, Fa/Fb, and cycle-86 Ja."""
+        """Ca/Cb plus Aa, Ab, Br, Bv, Ia, Gr, Gv, Kr, Kv, Hr/Hv/Pr/Pv, Qr/Qv, Da/Db, Er/Ev, Fa/Fb, Ja, and cycle-87 La."""
         fixtures = Path(__file__).parent / "fixtures"
         barthel_pages = tuple(
             sorted(path.name for path in fixtures.glob("**/*[A-Z][abrv].html"))
