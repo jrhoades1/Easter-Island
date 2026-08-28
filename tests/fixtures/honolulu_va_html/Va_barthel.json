@@ -1,0 +1,67 @@
+{
+  "tablet": "V",
+  "name": "Honolulu 3 [#3622]",
+  "side": "Va",
+  "encoding": "Barthel numerical transliteration",
+  "source": {
+    "url": "http://kohaumotu.org/Rongorongo/V/Va.html",
+    "index": "http://kohaumotu.org/Rongorongo/V/index.html",
+    "note": "Published Kohaumotu Barthel HTML. Digits copied from <td> text. Two lines (Va1–Va2). Va2 is a published lacuna marker (stems stay empty). Vb.html / Vr.html / Vv.html / V.html are unpublished (404). Index lists Va.html as Barthel. Only one side."
+  },
+  "lines": {
+    "Va1": [
+      "051",
+      "200.200.011",
+      "002",
+      "048.010",
+      "048.010",
+      "048.010",
+      "102",
+      "700",
+      "700",
+      "145",
+      "591?",
+      "591?",
+      "200?",
+      "748?",
+      "057",
+      "057",
+      "057?",
+      "070",
+      "061.061",
+      "450?*"
+    ],
+    "Va2": []
+  },
+  "stems": {
+    "Va1": [
+      "051",
+      "200",
+      "200",
+      "011",
+      "002",
+      "048",
+      "010",
+      "048",
+      "010",
+      "048",
+      "010",
+      "102",
+      "700",
+      "700",
+      "145",
+      "591",
+      "591",
+      "200",
+      "748",
+      "057",
+      "057",
+      "057",
+      "070",
+      "061",
+      "061",
+      "450"
+    ],
+    "Va2": []
+  }
+}
