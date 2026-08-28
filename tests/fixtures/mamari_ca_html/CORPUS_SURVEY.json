@@ -2772,6 +2772,134 @@
     "standing_hpq_island_recto_order_unchanged": true,
     "image_track": "parked"
   },
+  "tablet_g_k_island_gaps": {
+    "cycle": 75,
+    "result": "gk_island_gaps",
+    "gap_count": 4,
+    "gap_islands": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        6
+      ]
+    ],
+    "gap_pairs": [
+      [
+        "Gr",
+        "Kr"
+      ],
+      [
+        "Gr",
+        "Kr"
+      ],
+      [
+        "Gr",
+        "Kr"
+      ],
+      [
+        "Gr",
+        "Kv"
+      ]
+    ],
+    "gaps": [
+      [
+        28,
+        28,
+        4,
+        [
+          "022",
+          "062",
+          "001",
+          "099"
+        ],
+        false
+      ],
+      [
+        51,
+        41,
+        7,
+        [
+          "470",
+          "001",
+          "430",
+          "580",
+          "380",
+          "001",
+          "003"
+        ],
+        false
+      ],
+      [
+        5,
+        2,
+        0,
+        [],
+        false
+      ],
+      [
+        11,
+        11,
+        10,
+        [
+          "380",
+          "001",
+          "003",
+          "003",
+          "003",
+          "004",
+          "215",
+          "380",
+          "001",
+          "003"
+        ],
+        false
+      ]
+    ],
+    "any_shared_n_ge_8": true,
+    "any_full_match": false,
+    "copied_pages": true,
+    "waypoints": false,
+    "side_switch": {
+      "after": 4,
+      "before": 5,
+      "len_gr": 102,
+      "comparable": false
+    },
+    "gv_in_gaps": false,
+    "raw_stems_999_kept": true,
+    "new_tablet": false,
+    "tablet_d_scraped": false,
+    "standing_aa_locks_unchanged": true,
+    "standing_ab_locks_unchanged": true,
+    "standing_br_locks_unchanged": true,
+    "standing_bv_locks_unchanged": true,
+    "standing_c_locks_unchanged": true,
+    "standing_ia_locks_unchanged": true,
+    "standing_gr_locks_unchanged": true,
+    "standing_gv_locks_unchanged": true,
+    "standing_kr_locks_unchanged": true,
+    "standing_kv_locks_unchanged": true,
+    "standing_gk_shared_n8_unchanged": true,
+    "standing_gk_island_off_gk_unchanged": true,
+    "standing_hp_shared_n8_unchanged": true,
+    "standing_q_shared_n8_unchanged": true,
+    "standing_hpq_triple_n8_unchanged": true,
+    "standing_hpq_island_off_hpq_unchanged": true,
+    "standing_hpq_island_recto_order_unchanged": true,
+    "standing_hpq_island_recto_gaps_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
