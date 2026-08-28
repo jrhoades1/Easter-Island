@@ -1,0 +1,89 @@
+{
+  "tablet": "U",
+  "name": "Honolulu 2 [#3623]",
+  "side": "Ua",
+  "encoding": "Barthel numerical transliteration",
+  "source": {
+    "url": "http://kohaumotu.org/Rongorongo/U/Ua.html",
+    "index": "http://kohaumotu.org/Rongorongo/U/index.html",
+    "note": "Published Kohaumotu Barthel HTML. Digits copied from <td> text. Four lines (Ua1–Ua4). Ua1 / Ua4 are lacuna markers (stems stay empty). Ub.html / Ur.html / Uv.html / U.html are unpublished (404). Index lists Ua.html as Barthel. Only one side."
+  },
+  "lines": {
+    "Ua1": [
+      "(8",
+      "16)!*"
+    ],
+    "Ua2": [
+      "000!",
+      "030b",
+      "073.006",
+      "044?",
+      "040",
+      "000!",
+      "000!",
+      "600V",
+      "386?",
+      "009?",
+      "000!*"
+    ],
+    "Ua3": [
+      "000!",
+      "065.006.003?",
+      "000!.003",
+      "002",
+      "007",
+      "047",
+      "004",
+      "002",
+      "595",
+      "600.009?",
+      "021t",
+      "042?:008",
+      "550",
+      "000!*"
+    ],
+    "Ua4": [
+      "(10",
+      "20)!*"
+    ]
+  },
+  "stems": {
+    "Ua1": [],
+    "Ua2": [
+      "000",
+      "030",
+      "073",
+      "006",
+      "044",
+      "040",
+      "000",
+      "000",
+      "600",
+      "386",
+      "009",
+      "000"
+    ],
+    "Ua3": [
+      "000",
+      "065",
+      "006",
+      "003",
+      "000",
+      "003",
+      "002",
+      "007",
+      "047",
+      "004",
+      "002",
+      "595",
+      "600",
+      "009",
+      "021",
+      "042",
+      "008",
+      "550",
+      "000"
+    ],
+    "Ua4": []
+  }
+}
