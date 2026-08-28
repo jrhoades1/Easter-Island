@@ -1,0 +1,64 @@
+Reimiro 2 (Barthel text L) — Kohaumotu La.html
+=============================================
+
+Files
+  L_index.html   http://kohaumotu.org/Rongorongo/L/index.html
+  La.html        http://kohaumotu.org/Rongorongo/L/La.html
+  L.html         http://kohaumotu.org/Rongorongo/L/L.html
+  La_barthel.json  parsed Barthel tokens / stems from La.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet L / Reimiro 2
+  → L/index.html
+  http://kohaumotu.org/Rongorongo/L/index.html
+  published all-lines Barthel HTML: La.html (Lines)
+  http://kohaumotu.org/Rongorongo/L/La.html
+  L.html is listed as "Item" (item photo + links;
+  no Line_N anchors; not a second side).
+  Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa / Jb vs Ja lesson:
+  do not assume a filename. HEAD-check 2026-08-28: La.html 200,
+  L/index.html 200, L.html 200; Lb.html 404, Lr.html 404,
+  Lv.html 404. L uses a-side naming (like A/C/D/F/J), not r/v.
+  Lb.html / Lr.html / Lv.html are unpublished. La.html exists
+  and is vendored. Catalog name is Reimiro 2 (not London / Vienna).
+  No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  La.html, L.html, and L_index.html as retrieved 2026-08-28. Barthel
+  numbers sit in <td> text under the one line (La1) split across three
+  image strips. Digits were copied from that HTML, not typed from
+  memory. Image cells were skipped. Published text is 44 hyphen-
+  separated tokens (51 stems after '.' / ':' ligature split).
+
+Not vendored
+  Lb.html / Lr.html / Lv.html (unpublished; 404)
+  tablet M or any other substitute tablet
+  fi_La.html / Fischer pages
+  L_svg_codes_b.html
+  individualized La01.html slices
+
+Cycle 87 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / F / G / H / I / J / K / P / Q.
+  Search lock on La.html (no type map):
+    stem count: 51 (51)
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    longest repeating n-gram on L: n=0; no n≥4 freq≥2
+  Claim that can lose: known tradition islands and E islands are exact-0 on L.
+  J's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E / F / J
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
