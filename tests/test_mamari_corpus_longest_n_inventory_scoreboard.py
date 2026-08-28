@@ -298,8 +298,18 @@ def inventory_holds(
 
 
 def vendored_w_html_names(fixtures: Path = FIXTURES_DIR) -> tuple[str, ...]:
-    """W Barthel filenames under fixtures, if any."""
-    return tuple(name for name in W_PAGES if any(fixtures.glob(f"**/{name}")))
+    """W Barthel filenames under fixtures, if any have real codes."""
+    from tests.test_mamari_honolulu4_unpublished_scoreboard import (
+        has_real_barthel_codes,
+    )
+
+    found: list[str] = []
+    for name in W_PAGES:
+        for path in fixtures.glob(f"**/{name}"):
+            if has_real_barthel_codes(path.read_text(encoding="utf-8")):
+                found.append(name)
+                break
+    return tuple(found)
 
 
 def catalog_w_row(tablets_html: str) -> tuple[str, str, str] | None:

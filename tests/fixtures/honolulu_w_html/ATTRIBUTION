@@ -1,0 +1,73 @@
+Honolulu 4 [#445] (text W) — Kohaumotu photos-only, no Barthel
+==============================================================
+
+Files
+  W_index.html   http://kohaumotu.org/Rongorongo/W/index.html
+  Wa.html        http://kohaumotu.org/Rongorongo/W/Wa.html
+  W.html         http://kohaumotu.org/Rongorongo/W/W.html
+  No Wa_barthel.json — Wa.html has no published Barthel codes.
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet W / Honolulu 4 [#445]
+  → W/index.html
+  http://kohaumotu.org/Rongorongo/W/index.html
+  named all-lines page: Wa.html (a-side label, like
+  A/C/D/F/J/L/M/N/O/R/S/T/U/V), not r/v.
+  Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa / Jb vs Ja /
+  Lb vs La / Mb vs Ma / Nr vs Na / Ob vs Oa / Rr vs Ra /
+  Sr vs Sa / Tb vs Ta / Ub vs Ua / Vb vs Va lesson: do not
+  assume a filename. HEAD-check 2026-08-28:
+    W/index.html 200
+    Wa.html 200 photos-only (no Barthel)
+    W.html 200 photos-only (no Barthel)
+    Wb.html 404
+    Wr.html 404
+    Wv.html 404
+    W/tablets.html 404
+  W/index.html names Wa.html as “Barthel/Bishop Museum”
+  and says “Barthel” tracings are Bishop Museum drawings.
+  W.html states Barthel provides only an image, no line
+  segmentation and no glyph numbering. Wa.html Line 1 is
+  the annotation “(10-30)!”; lines 2–4 are “_” / “_*”
+  plus photos. Navbar says “one side only.” Catalog name
+  is Honolulu 4 [#445] — not Honolulu 1 / Honolulu 2 /
+  Honolulu 3 / Washington / Vienna / London / Reimiro /
+  Boomerang / Atua-Mata-Riri. No second new letter (X).
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  W_index.html, Wa.html, and W.html as retrieved 2026-08-28.
+  These are 200 pages without real Barthel codes. They are
+  evidence of the unpublished/photos-only lock, not a Barthel
+  tablet vendor. Digits were not invented. Image cells were
+  skipped. The shared parser yields 0 stems.
+
+Not vendored
+  Wb.html / Wr.html / Wv.html (unpublished; 404)
+  W/tablets.html (unpublished; 404)
+  tablet X or any other substitute tablet
+  fl_Wa.html / Fischer pages
+  W_discussion.html
+  W_svg_codes_b.html / W_svg_codes_f.html
+  individualized Wa01.html … Wa04.html slices
+
+Cycle 100 (2026-08-28)
+  Same Kohaumotu catalog already used for A–V.
+  Search lock: W is named in tablets.html but Kohaumotu
+  publishes no Barthel codes. Stop. Do not invent a tablet.
+  Claim that can lose: w_unpublished.
+  Cycle 99 A–V inventory stays. Image track stays parked.
+  No type merge. No CV. No G00n→Barthel map.
