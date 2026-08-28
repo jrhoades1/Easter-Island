@@ -41,6 +41,8 @@ from tests.test_mamari_hpq_island_off_hpq_scoreboard import (
 )
 from tests.test_mamari_keiti_er7_double_scoreboard import (
     GRAM4 as ER7_GRAM4,
+)
+from tests.test_mamari_keiti_er7_double_scoreboard import (
     GRAM8 as ER7_GRAM8,
 )
 from tests.test_mamari_keiti_n9_scoreboard import (
@@ -66,6 +68,8 @@ from tests.test_mamari_small_vienna_na1_n_only_scoreboard import (
 )
 from tests.test_mamari_small_vienna_vendor_scoreboard import (
     STANDING_LONGEST_NGRAM as N_N6_GRAM,
+)
+from tests.test_mamari_small_vienna_vendor_scoreboard import (
     TestMamariSmallViennaVendorScoreboard,
 )
 from tests.test_mamari_tahua_aa_scoreboard import load_vendored_tablets_html
