@@ -1,0 +1,69 @@
+Boomerang / Berlin Tablet (Barthel text O) — Kohaumotu Oa.html
+=============================================================
+
+Files
+  O_index.html   http://kohaumotu.org/Rongorongo/O/index.html
+  Oa.html        http://kohaumotu.org/Rongorongo/O/Oa.html
+  Oa_barthel.json  parsed Barthel tokens / stems from Oa.html
+
+Source chain (parent catalog / tablets.html already vendored in cycle 36)
+  http://kohaumotu.org/Rongorongo/
+    honestly links to tablets.html
+  http://kohaumotu.org/Rongorongo/tablets.html
+  tablet O / Boomerang
+  → O/index.html
+  http://kohaumotu.org/Rongorongo/O/index.html
+  Index: "Only one side legible." Catalog name is Boomerang
+  (Berlin Tablet). Index lists ba_Oa.html ("Barthel's Lines 1-7"),
+  not Oa.html. Same Gr vs Ga / Da vs Dr / Er vs Ea / Fr vs Fa /
+  Jb vs Ja / Lb vs La / Mb vs Ma / Nr vs Na lesson: do not
+  assume a filename. HEAD-check 2026-08-28: O/index.html 200,
+  Oa.html 200; Ob.html 404, Or.html 404, Ov.html 404, O.html 404.
+  ba_Oa.html is also 200 but has no name="Line_N" anchors, so the
+  existing extractor cannot read it. Oa.html exists independently
+  with Line_3–Line_9 anchors (Fischer renumber of Barthel's 1–7)
+  and is the vendored parse source. O uses a-side naming (like
+  A/C/D/F/J/L/M/N), not r/v. Ob.html / Or.html / Ov.html / O.html
+  are unpublished. No second new letter.
+
+License (not MIT)
+  Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île
+  de Pâques et la Polynésie), after Thomas Barthel.
+  Hosted copy: Kohaumotu / rongorongo.org.
+  http://kohaumotu.org/rongorongo_org/copy.html
+  "There are no restrictions on copying and distributing the contents
+  of this site as long as the sources are acknowledged and the
+  distribution is non-profit."
+
+  This HTML snapshot is not covered by this repository's MIT license.
+
+What was copied
+  Oa.html and O_index.html as retrieved 2026-08-28. Barthel
+  numbers sit in <td> text under the seven Fischer-renumbered
+  lines (Oa3–Oa9). Digits were copied from that HTML, not typed
+  from memory. Image cells were skipped. Published text is
+  hyphen-separated tokens (117 stems after '.' / ':' ligature
+  split).
+
+Not vendored
+  Ob.html / Or.html / Ov.html / O.html (unpublished; 404)
+  ba_Oa.html (listed by index; no Line_N anchors)
+  fi_Oa.html / fl_Oa.html / Fischer pages
+  O_svg_codes_b.html
+  individualized Oa03.html … Oa09.html slices
+  tablet R or any other substitute tablet
+
+Cycle 92 (2026-08-28)
+  Same Kohaumotu catalog already used for A / B / C / D / E / F / G / H / I / J / K / L / M / N / P / Q.
+  Search lock on Oa.html (no type map):
+    stem count: 117 (12 24 19 24 12 17 9) on Oa3–Oa9
+    six G–K islands plus n=25: all 0
+    five H∩P∩Q n≥8 islands: all 0
+    E n=9 and Er7 doubled 4-gram: all 0
+    M n=4 006 022 006 022: 0
+    N n=6 004 064 034 006 004 064: 0
+    longest repeating n-gram on O: n=0 (no n≥4 freq≥2)
+  Claim that can lose: known tradition islands, E islands, M's
+  n=4, and N's n=6 are exact-0 on O.
+  N's locked facts stay. Existing A / B / C / I / G / K / H / P / Q / D / E / F / J / L / M / N
+  scoreboards are unchanged. Image track stays parked. No type merge. No CV.
