@@ -8564,6 +8564,45 @@
     "standing_c_side_b_unchanged": true,
     "image_track": "parked"
   },
+  "c_repeating_13grams": {
+    "cycle": 119,
+    "result": "c_repeating_13grams",
+    "n": 13,
+    "thirteengram_count": 1,
+    "hypothesis_n": 1,
+    "tokens": [
+      ["040", "040", "040", "040", "040", "390", "041", "378", "041", "670", "008", "078", "711"]
+    ],
+    "freqs": [2],
+    "sites": [
+      [["Ca", "Ca7", 1], ["Ca", "Ca8", 24]]
+    ],
+    "hits_by_tablet": [
+      [0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "c_hits": [2],
+    "ca_hits": [2],
+    "cb_hits": [0],
+    "off_c_hits": [0],
+    "leak_counts": [{}],
+    "home_tokens13": ["040", "040", "040", "040", "040", "390", "041", "378", "041", "670", "008", "078", "711"],
+    "known_distinct": true,
+    "home_in_set": true,
+    "claim": "c_has_exactly_1_repeating_13gram",
+    "c_has_exactly_1_repeating_13gram": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_c_mamari_ca_c_only_unchanged": true,
+    "standing_a_repeating_10grams_unchanged": true,
+    "standing_b_repeating_8grams_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
