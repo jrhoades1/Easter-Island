@@ -10953,6 +10953,74 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_4gram_072_076_010_079_forward_5gram": {
+    "cycle": 149,
+    "result": "i_4gram_072_076_010_079_forward_5gram",
+    "hypothesis_share_one_forward_5gram": true,
+    "tokens4": ["072", "076", "010", "079"],
+    "n4": 4,
+    "n5": 5,
+    "N_on_I": 2,
+    "i_sites": [
+      ["Ia", "Ia5", 138],
+      ["Ia", "Ia13", 71]
+    ],
+    "N_with_forward": 2,
+    "N_no_forward": 0,
+    "no_forward_sites": [],
+    "N_distinct_forward_5grams": 2,
+    "distinct_forward_5grams": [
+      ["072", "076", "010", "079", "090"],
+      ["072", "076", "010", "079", "006"]
+    ],
+    "per_site_forward_5grams": [
+      ["072", "076", "010", "079", "090"],
+      ["072", "076", "010", "079", "006"]
+    ],
+    "sites_per_forward_5gram": [
+      {
+        "tokens5": ["072", "076", "010", "079", "090"],
+        "sites": [["Ia", "Ia5", 138]]
+      },
+      {
+        "tokens5": ["072", "076", "010", "079", "006"],
+        "sites": [["Ia", "Ia13", 71]]
+      }
+    ],
+    "independent_n5_site_after_ia13": ["Ia", "Ia13", 72],
+    "known_distinct": true,
+    "claim": "i_4gram_072_076_010_079_share_one_forward_5gram",
+    "i_4gram_072_076_010_079_share_one_forward_5gram": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_independent_n5": false,
+    "raw_stems_999_kept": true,
+    "standing_i_4gram_072_076_010_079_i_only_unchanged": true,
+    "standing_i_leftover_backward_5grams_i_only_unchanged": true,
+    "standing_i_leftover_071_076_010_079_backward_5gram_unchanged": true,
+    "standing_i_4gram_071_076_010_079_inside_cycle103_unchanged": true,
+    "standing_i_leftover_076_010_079_backward_4gram_unchanged": true,
+    "standing_i_leftover_076_010_079_forward_4gram_unchanged": true,
+    "standing_i_overlap_3gram_inside_two_5grams_unchanged": true,
+    "standing_i_overlap_3gram_076_010_079_i_only_unchanged": true,
+    "standing_i_independent_n5_cycle103_n3_overlap_unchanged": true,
+    "standing_i_independent_n5_maximals_076_unchanged": true,
+    "standing_i_exception_n4_071_065_071_999_i_only_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
