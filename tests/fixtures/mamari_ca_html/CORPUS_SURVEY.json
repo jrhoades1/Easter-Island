@@ -9336,6 +9336,56 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "p_repeating_nge6": {
+    "cycle": 132,
+    "result": "p_repeating_nge6",
+    "min_n": 6,
+    "repeating_count": 2,
+    "substring_count": 1,
+    "independent_count": 1,
+    "counts_by_n": {"6": 2},
+    "home_tokens6": ["062", "006", "001", "062", "006", "001"],
+    "independent_tokens6": ["021", "010", "021", "010", "144", "599"],
+    "rows": [
+      [["062", "006", "001", "062", "006", "001"], 6, 2, true, [["Pr", "Pr3", 14], ["Pr", "Pr3", 17]]],
+      [["021", "010", "021", "010", "144", "599"], 6, 2, false, [["Pv", "Pv6", 19], ["Pv", "Pv7", 54]]]
+    ],
+    "independent": [
+      {
+        "tokens": ["021", "010", "021", "010", "144", "599"],
+        "n": 6,
+        "freq": 2,
+        "sites": [["Pv", "Pv6", 19], ["Pv", "Pv7", 54]],
+        "off_p_hits": 0
+      }
+    ],
+    "independent_off_p_hits": [0],
+    "known_distinct": true,
+    "n6_in_set": true,
+    "indep_in_set": true,
+    "n6_is_substring_of_self": true,
+    "indep_is_substring": false,
+    "claim": "p_repeating_nge6_all_substrings_of_p_6gram",
+    "p_repeating_nge6_all_substrings_of_p_6gram": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_p_repeating_nge8_unchanged": true,
+    "standing_q_repeating_nge7_unchanged": true,
+    "standing_h_repeating_nge7_unchanged": true,
+    "standing_p_max_n_hpq_island_substring_unchanged": true,
+    "standing_hq_max_n_hpq_island_substring_unchanged": true,
+    "standing_hq_7gram_hq_pairwise_island_substring_unchanged": true,
+    "standing_q_repeating_nge8_unchanged": true,
+    "standing_h_repeating_nge8_unchanged": true,
+    "standing_k_repeating_nge8_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
