@@ -8932,6 +8932,61 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "e_repeating_nge8": {
+    "cycle": 124,
+    "result": "e_repeating_nge8",
+    "min_n": 8,
+    "repeating_count": 5,
+    "substring_count": 3,
+    "independent_count": 2,
+    "counts_by_n": {"8": 4, "9": 1},
+    "home_tokens9": ["300", "040", "300", "028", "004", "430", "022", "380", "203"],
+    "rows": [
+      [["040", "300", "028", "004", "430", "022", "380", "203"], 8, 3, true, [["Er", "Er2", 12], ["Er", "Er2", 29], ["Er", "Er3", 11]]],
+      [["300", "040", "300", "028", "004", "430", "022", "380"], 8, 2, true, [["Er", "Er2", 11], ["Er", "Er2", 28]]],
+      [["040", "300", "040", "300", "028", "004", "430", "022"], 8, 2, false, [["Er", "Er2", 27], ["Er", "Er4", 1]]],
+      [["092", "050", "006", "670", "092", "050", "006", "670"], 8, 2, false, [["Er", "Er7", 7], ["Er", "Er7", 11]]],
+      [["300", "040", "300", "028", "004", "430", "022", "380", "203"], 9, 2, true, [["Er", "Er2", 11], ["Er", "Er2", 28]]]
+    ],
+    "independent": [
+      {
+        "tokens": ["040", "300", "040", "300", "028", "004", "430", "022"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Er", "Er2", 27], ["Er", "Er4", 1]],
+        "off_e_hits": 0
+      },
+      {
+        "tokens": ["092", "050", "006", "670", "092", "050", "006", "670"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Er", "Er7", 7], ["Er", "Er7", 11]],
+        "off_e_hits": 0
+      }
+    ],
+    "independent_off_e_hits": [0, 0],
+    "known_distinct": true,
+    "n9_in_set": true,
+    "er_independent_8grams_in_independent": true,
+    "claim": "e_repeating_nge8_all_substrings_of_n9",
+    "e_repeating_nge8_all_substrings_of_n9": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_e_keiti_n9_sites_unchanged": true,
+    "standing_e_keiti_eightgrams_unchanged": true,
+    "standing_e_keiti_ev_longest_unchanged": true,
+    "standing_e_keiti_er7_double_unchanged": true,
+    "standing_a_independent_nge8_maximals_unchanged": true,
+    "standing_a_repeating_nge8_unchanged": true,
+    "standing_c_repeating_nge8_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
