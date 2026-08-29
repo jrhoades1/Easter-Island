@@ -10326,6 +10326,106 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_independent_n5_cycle103_n3_overlap": {
+    "cycle": 140,
+    "result": "i_independent_n5_cycle103_n3_overlap",
+    "hypothesis_share_no_n3plus": true,
+    "independent_n5_count": 4,
+    "N_independent_5grams": 4,
+    "with_n3plus_overlap_count": 1,
+    "N_with_n3plus_overlap": 1,
+    "without_n3plus_overlap_count": 3,
+    "N_without_n3plus_overlap": 3,
+    "cycle103_tokens5": ["999", "071", "076", "010", "079"],
+    "n5_maximals": [
+      {
+        "tokens": ["430", "076", "006", "000", "076"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia1", 129],
+          ["Ia", "Ia14", 162]
+        ],
+        "shared_nge3": []
+      },
+      {
+        "tokens": ["076", "011", "090", "090", "076"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia12", 39],
+          ["Ia", "Ia14", 102]
+        ],
+        "shared_nge3": []
+      },
+      {
+        "tokens": ["400", "070", "076", "020", "010"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia13", 85],
+          ["Ia", "Ia14", 126]
+        ],
+        "shared_nge3": []
+      },
+      {
+        "tokens": ["076", "010", "079", "006", "700"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia6", 19],
+          ["Ia", "Ia13", 72]
+        ],
+        "shared_nge3": [
+          ["076", "010", "079"]
+        ]
+      }
+    ],
+    "overlaps": [
+      {
+        "tokens5": ["076", "010", "079", "006", "700"],
+        "shared": ["076", "010", "079"],
+        "n": 3
+      }
+    ],
+    "overlap_tuples": [
+      [
+        ["076", "010", "079", "006", "700"],
+        ["076", "010", "079"],
+        3
+      ]
+    ],
+    "shared_by_n5": [
+      [],
+      [],
+      [],
+      [
+        ["076", "010", "079"]
+      ]
+    ],
+    "known_distinct": true,
+    "claim": "i_independent_n5_share_no_n3plus_with_cycle103_5gram",
+    "i_independent_n5_share_no_n3plus_with_cycle103_5gram": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "raw_stems_999_kept": true,
+    "standing_i_independent_n5_maximals_076_unchanged": true,
+    "standing_i_exception_n4_071_065_071_999_i_only_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
