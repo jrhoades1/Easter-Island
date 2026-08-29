@@ -5751,6 +5751,873 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "hq_islands_zero_on_p": {
+    "cycle": 110,
+    "result": "hq_islands_zero_on_p",
+    "from_cycle": 70,
+    "island_count": 15,
+    "hq_islands_zero_on_p": 12,
+    "hq_islands_hit_on_p": 3,
+    "claim": "hq_islands_zero_on_p_count_holds",
+    "hq_islands_zero_on_p_count_holds": true,
+    "arithmetic_15_minus_5": 10,
+    "arithmetic_15_minus_5_holds": false,
+    "n31_is_zero_on_p": true,
+    "zero_on_p_ns": [
+      31,
+      15,
+      15,
+      14,
+      13,
+      13,
+      11,
+      10,
+      10,
+      10,
+      10,
+      8
+    ],
+    "hit_on_p_ns": [
+      12,
+      11,
+      8
+    ],
+    "zero_on_p_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14
+    ],
+    "hit_on_p_indices": [
+      6,
+      7,
+      13
+    ],
+    "islands": [
+      {
+        "n": 31,
+        "tokens": [
+          "003",
+          "004",
+          "600",
+          "004",
+          "006",
+          "042",
+          "003",
+          "050",
+          "003",
+          "093",
+          "003",
+          "027",
+          "003",
+          "086",
+          "003",
+          "060",
+          "003",
+          "093",
+          "003",
+          "254",
+          "003",
+          "093",
+          "003",
+          "205",
+          "072",
+          "450",
+          "052",
+          "551",
+          "003",
+          "600",
+          "003"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr3",
+          39
+        ],
+        "q_site": [
+          "Qr",
+          "Qr3",
+          19
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 15,
+        "tokens": [
+          "003",
+          "306",
+          "003",
+          "084",
+          "004",
+          "280",
+          "200",
+          "048",
+          "254",
+          "755",
+          "003",
+          "734",
+          "003",
+          "306",
+          "003"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr1",
+          23
+        ],
+        "q_site": [
+          "Qr",
+          "Qr1",
+          3
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 15,
+        "tokens": [
+          "631",
+          "208",
+          "200",
+          "005",
+          "021",
+          "005",
+          "002",
+          "041",
+          "220",
+          "009",
+          "220",
+          "009",
+          "440",
+          "440",
+          "440"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr5",
+          31
+        ],
+        "q_site": [
+          "Qr",
+          "Qr5",
+          10
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 14,
+        "tokens": [
+          "700",
+          "061",
+          "739",
+          "040",
+          "140",
+          "316",
+          "301",
+          "004",
+          "064",
+          "004",
+          "064",
+          "209",
+          "081",
+          "050"
+        ],
+        "h_site": [
+          "Hv",
+          "Hv2",
+          26
+        ],
+        "q_site": [
+          "Qv",
+          "Qv5",
+          5
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 13,
+        "tokens": [
+          "050",
+          "600",
+          "430",
+          "076",
+          "430",
+          "076",
+          "076",
+          "063",
+          "004",
+          "064",
+          "670",
+          "700",
+          "470"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr9",
+          21
+        ],
+        "q_site": [
+          "Qr",
+          "Qr9",
+          17
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 13,
+        "tokens": [
+          "520",
+          "381",
+          "008",
+          "001",
+          "008",
+          "739",
+          "065",
+          "306",
+          "431",
+          "200",
+          "276",
+          "011",
+          "385"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr6",
+          32
+        ],
+        "q_site": [
+          "Qr",
+          "Qr6",
+          0
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 12,
+        "tokens": [
+          "002",
+          "144",
+          "002",
+          "662",
+          "680",
+          "005",
+          "010",
+          "005",
+          "052",
+          "022",
+          "243",
+          "001"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr8",
+          0
+        ],
+        "q_site": [
+          "Qr",
+          "Qr7",
+          47
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr7",
+            29
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_triple": true
+      },
+      {
+        "n": 11,
+        "tokens": [
+          "062",
+          "006",
+          "001",
+          "062",
+          "006",
+          "001",
+          "062",
+          "006",
+          "001",
+          "020",
+          "064"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr3",
+          27
+        ],
+        "q_site": [
+          "Qr",
+          "Qr3",
+          7
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr3",
+            14
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_triple": true
+      },
+      {
+        "n": 11,
+        "tokens": [
+          "381",
+          "072",
+          "450",
+          "052",
+          "551",
+          "003",
+          "600",
+          "003",
+          "385",
+          "003",
+          "670"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr3",
+          71
+        ],
+        "q_site": [
+          "Qr",
+          "Qr3",
+          51
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 10,
+        "tokens": [
+          "004",
+          "064",
+          "087",
+          "430",
+          "214",
+          "002",
+          "203",
+          "027",
+          "090",
+          "545"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr6",
+          62
+        ],
+        "q_site": [
+          "Qr",
+          "Qr6",
+          28
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 10,
+        "tokens": [
+          "400",
+          "072",
+          "002",
+          "003",
+          "072",
+          "002",
+          "430",
+          "072",
+          "002",
+          "200"
+        ],
+        "h_site": [
+          "Hv",
+          "Hv5",
+          29
+        ],
+        "q_site": [
+          "Qv",
+          "Qv8",
+          0
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 10,
+        "tokens": [
+          "500",
+          "440",
+          "280",
+          "002",
+          "040",
+          "050",
+          "216",
+          "001",
+          "366",
+          "076"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr7",
+          2
+        ],
+        "q_site": [
+          "Qr",
+          "Qr6",
+          40
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 10,
+        "tokens": [
+          "720",
+          "244",
+          "381",
+          "002",
+          "631",
+          "099",
+          "721",
+          "022",
+          "001",
+          "062"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr2",
+          39
+        ],
+        "q_site": [
+          "Qr",
+          "Qr2",
+          3
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      },
+      {
+        "n": 8,
+        "tokens": [
+          "005",
+          "099",
+          "011",
+          "007",
+          "004",
+          "600",
+          "522",
+          "606"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr7",
+          47
+        ],
+        "q_site": [
+          "Qr",
+          "Qr7",
+          28
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr7",
+            10
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_triple": true
+      },
+      {
+        "n": 8,
+        "tokens": [
+          "430",
+          "002",
+          "010",
+          "002",
+          "010",
+          "144",
+          "026",
+          "006"
+        ],
+        "h_site": [
+          "Hv",
+          "Hv4",
+          53
+        ],
+        "q_site": [
+          "Qv",
+          "Qv7",
+          35
+        ],
+        "p_hits": 0,
+        "p_sites": [],
+        "zero_on_p": true,
+        "exact_triple": false
+      }
+    ],
+    "triple_island_count": 5,
+    "triple_islands_hit_on_p": true,
+    "triple_islands_zero_on_p": 0,
+    "exact_triple_in_hq15": 3,
+    "triple_proper_substring_of_hq": 2,
+    "triples": [
+      {
+        "n": 12,
+        "tokens": [
+          "002",
+          "144",
+          "002",
+          "662",
+          "680",
+          "005",
+          "010",
+          "005",
+          "052",
+          "022",
+          "243",
+          "001"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr8",
+          0
+        ],
+        "p_site": [
+          "Pr",
+          "Pr7",
+          29
+        ],
+        "q_site": [
+          "Qr",
+          "Qr7",
+          47
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr7",
+            29
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_in_hq15": true,
+        "hq_parents": [
+          {
+            "index": 6,
+            "n": 12,
+            "h_site": [
+              "Hr",
+              "Hr8",
+              0
+            ],
+            "q_site": [
+              "Qr",
+              "Qr7",
+              47
+            ],
+            "offsets": [
+              0
+            ],
+            "exact": true,
+            "parent_zero_on_p": false
+          }
+        ]
+      },
+      {
+        "n": 11,
+        "tokens": [
+          "062",
+          "006",
+          "001",
+          "062",
+          "006",
+          "001",
+          "062",
+          "006",
+          "001",
+          "020",
+          "064"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr3",
+          27
+        ],
+        "p_site": [
+          "Pr",
+          "Pr3",
+          14
+        ],
+        "q_site": [
+          "Qr",
+          "Qr3",
+          7
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr3",
+            14
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_in_hq15": true,
+        "hq_parents": [
+          {
+            "index": 7,
+            "n": 11,
+            "h_site": [
+              "Hr",
+              "Hr3",
+              27
+            ],
+            "q_site": [
+              "Qr",
+              "Qr3",
+              7
+            ],
+            "offsets": [
+              0
+            ],
+            "exact": true,
+            "parent_zero_on_p": false
+          }
+        ]
+      },
+      {
+        "n": 10,
+        "tokens": [
+          "005",
+          "002",
+          "041",
+          "220",
+          "009",
+          "220",
+          "009",
+          "440",
+          "440",
+          "440"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr5",
+          36
+        ],
+        "p_site": [
+          "Pr",
+          "Pr5",
+          9
+        ],
+        "q_site": [
+          "Qr",
+          "Qr5",
+          15
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr5",
+            9
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_in_hq15": false,
+        "hq_parents": [
+          {
+            "index": 2,
+            "n": 15,
+            "h_site": [
+              "Hr",
+              "Hr5",
+              31
+            ],
+            "q_site": [
+              "Qr",
+              "Qr5",
+              10
+            ],
+            "offsets": [
+              5
+            ],
+            "exact": false,
+            "parent_zero_on_p": true
+          }
+        ]
+      },
+      {
+        "n": 8,
+        "tokens": [
+          "005",
+          "099",
+          "011",
+          "007",
+          "004",
+          "600",
+          "522",
+          "606"
+        ],
+        "h_site": [
+          "Hr",
+          "Hr7",
+          47
+        ],
+        "p_site": [
+          "Pr",
+          "Pr7",
+          10
+        ],
+        "q_site": [
+          "Qr",
+          "Qr7",
+          28
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pr",
+            "Pr7",
+            10
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_in_hq15": true,
+        "hq_parents": [
+          {
+            "index": 13,
+            "n": 8,
+            "h_site": [
+              "Hr",
+              "Hr7",
+              47
+            ],
+            "q_site": [
+              "Qr",
+              "Qr7",
+              28
+            ],
+            "offsets": [
+              0
+            ],
+            "exact": true,
+            "parent_zero_on_p": false
+          }
+        ]
+      },
+      {
+        "n": 8,
+        "tokens": [
+          "301",
+          "004",
+          "064",
+          "004",
+          "064",
+          "209",
+          "081",
+          "050"
+        ],
+        "h_site": [
+          "Hv",
+          "Hv2",
+          32
+        ],
+        "p_site": [
+          "Pv",
+          "Pv4",
+          50
+        ],
+        "q_site": [
+          "Qv",
+          "Qv5",
+          11
+        ],
+        "p_hits": 1,
+        "p_sites": [
+          [
+            "Pv",
+            "Pv4",
+            50
+          ]
+        ],
+        "zero_on_p": false,
+        "exact_in_hq15": false,
+        "hq_parents": [
+          {
+            "index": 3,
+            "n": 14,
+            "h_site": [
+              "Hv",
+              "Hv2",
+              26
+            ],
+            "q_site": [
+              "Qv",
+              "Qv5",
+              5
+            ],
+            "offsets": [
+              6
+            ],
+            "exact": false,
+            "parent_zero_on_p": true
+          }
+        ]
+      }
+    ],
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_q_shared_n8_unchanged": true,
+    "standing_hpq_triple_n8_unchanged": true,
+    "standing_hq_7gram_hq_pairwise_island_substring_unchanged": true,
+    "standing_hq_max_n_hpq_island_substring_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
