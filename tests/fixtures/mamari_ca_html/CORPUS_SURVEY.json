@@ -9616,6 +9616,275 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_independent_nge4_maximals": {
+    "cycle": 136,
+    "result": "i_independent_nge4_maximals",
+    "hypothesis_n": 4,
+    "maximal_count": 31,
+    "independent_count": 39,
+    "nonmaximal_count": 8,
+    "leftover_n4_count": 27,
+    "maximals": [
+      {
+        "tokens": ["430", "076", "006", "000", "076"],
+        "n": 5,
+        "freq": 2,
+        "sites": [["Ia", "Ia1", 129], ["Ia", "Ia14", 162]]
+      },
+      {
+        "tokens": ["076", "011", "090", "090", "076"],
+        "n": 5,
+        "freq": 2,
+        "sites": [["Ia", "Ia12", 39], ["Ia", "Ia14", 102]]
+      },
+      {
+        "tokens": ["400", "070", "076", "020", "010"],
+        "n": 5,
+        "freq": 2,
+        "sites": [["Ia", "Ia13", 85], ["Ia", "Ia14", 126]]
+      },
+      {
+        "tokens": ["076", "010", "079", "006", "700"],
+        "n": 5,
+        "freq": 2,
+        "sites": [["Ia", "Ia6", 19], ["Ia", "Ia13", 72]]
+      },
+      {
+        "tokens": ["071", "999", "604", "076"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia1", 63], ["Ia", "Ia9", 3]]
+      },
+      {
+        "tokens": ["028", "076", "011", "076"],
+        "n": 4,
+        "freq": 3,
+        "sites": [["Ia", "Ia1", 136], ["Ia", "Ia4", 125], ["Ia", "Ia14", 78]]
+      },
+      {
+        "tokens": ["430", "076", "001", "076"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia10", 103], ["Ia", "Ia13", 156]]
+      },
+      {
+        "tokens": ["053", "076", "020", "010"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia12", 0], ["Ia", "Ia14", 109]]
+      },
+      {
+        "tokens": ["090", "999", "090", "076"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia12", 45], ["Ia", "Ia14", 138]]
+      },
+      {
+        "tokens": ["430", "076", "049", "400"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia13", 170], ["Ia", "Ia14", 63]]
+      },
+      {
+        "tokens": ["999", "090", "076", "070"],
+        "n": 4,
+        "freq": 5,
+        "sites": [["Ia", "Ia2", 9], ["Ia", "Ia4", 111], ["Ia", "Ia7", 67], ["Ia", "Ia7", 128], ["Ia", "Ia14", 139]]
+      },
+      {
+        "tokens": ["600", "090", "076", "011"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia2", 106], ["Ia", "Ia14", 53]]
+      },
+      {
+        "tokens": ["090", "076", "020", "010"],
+        "n": 4,
+        "freq": 4,
+        "sites": [["Ia", "Ia2", 119], ["Ia", "Ia4", 86], ["Ia", "Ia5", 143], ["Ia", "Ia12", 83]]
+      },
+      {
+        "tokens": ["076", "020", "010", "050"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia2", 120], ["Ia", "Ia14", 110]]
+      },
+      {
+        "tokens": ["000", "999", "090", "076"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia3", 35], ["Ia", "Ia5", 0]]
+      },
+      {
+        "tokens": ["999", "090", "076", "013"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia3", 36], ["Ia", "Ia6", 91]]
+      },
+      {
+        "tokens": ["999", "205", "076", "071"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia3", 51], ["Ia", "Ia3", 79]]
+      },
+      {
+        "tokens": ["999", "090", "076", "005"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia3", 70], ["Ia", "Ia13", 108]]
+      },
+      {
+        "tokens": ["021", "090", "076", "087"],
+        "n": 4,
+        "freq": 3,
+        "sites": [["Ia", "Ia4", 116], ["Ia", "Ia5", 27], ["Ia", "Ia6", 77]]
+      },
+      {
+        "tokens": ["999", "090", "076", "071"],
+        "n": 4,
+        "freq": 3,
+        "sites": [["Ia", "Ia4", 153], ["Ia", "Ia5", 1], ["Ia", "Ia5", 22]]
+      },
+      {
+        "tokens": ["076", "010", "079", "090"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia5", 110], ["Ia", "Ia5", 139]]
+      },
+      {
+        "tokens": ["072", "076", "010", "079"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia5", 138], ["Ia", "Ia13", 71]]
+      },
+      {
+        "tokens": ["076", "071", "009", "090"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia5", 161], ["Ia", "Ia12", 71]]
+      },
+      {
+        "tokens": ["202", "076", "006", "055"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia6", 48], ["Ia", "Ia12", 119]]
+      },
+      {
+        "tokens": ["076", "071", "090", "999"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia7", 166], ["Ia", "Ia14", 136]]
+      },
+      {
+        "tokens": ["076", "999", "029", "076"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia8", 30], ["Ia", "Ia10", 144]]
+      },
+      {
+        "tokens": ["999", "021", "090", "076"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia8", 104], ["Ia", "Ia13", 15]]
+      },
+      {
+        "tokens": ["090", "076", "057", "600"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia8", 114], ["Ia", "Ia9", 28]]
+      },
+      {
+        "tokens": ["700", "076", "076", "053"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia8", 167], ["Ia", "Ia9", 32]]
+      },
+      {
+        "tokens": ["071", "065", "071", "999"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia9", 1], ["Ia", "Ia9", 56]]
+      },
+      {
+        "tokens": ["999", "090", "076", "057"],
+        "n": 4,
+        "freq": 2,
+        "sites": [["Ia", "Ia9", 27], ["Ia", "Ia9", 128]]
+      }
+    ],
+    "maximal_ns": [5, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+    "containing": [
+      [10],
+      [12],
+      [0],
+      [5],
+      [18],
+      [19],
+      [4],
+      [0],
+      [11],
+      [13],
+      [14],
+      [15],
+      [16],
+      [17],
+      [20],
+      [21],
+      [22],
+      [3],
+      [3],
+      [23],
+      [24],
+      [25],
+      [26],
+      [27],
+      [28],
+      [29],
+      [30],
+      [6],
+      [7],
+      [1],
+      [1],
+      [8],
+      [2],
+      [2],
+      [9],
+      [0],
+      [3],
+      [1],
+      [2]
+    ],
+    "hypothesized_tokens5": [
+      ["430", "076", "006", "000", "076"],
+      ["076", "010", "079", "006", "700"],
+      ["076", "011", "090", "090", "076"],
+      ["400", "070", "076", "020", "010"]
+    ],
+    "shared_core_count": 0,
+    "exactly_one_nonmaximal_count": 8,
+    "two_maximal_nonmaximal_count": 0,
+    "every_independent_in_at_least_one": true,
+    "every_nonmaximal_exactly_one": true,
+    "known_distinct": true,
+    "claim": "i_independent_nge4_has_exactly_4_maximals",
+    "i_independent_nge4_has_exactly_4_maximals": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_a_independent_nge8_maximals_unchanged": true,
+    "standing_c_independent_nge8_maximals_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
