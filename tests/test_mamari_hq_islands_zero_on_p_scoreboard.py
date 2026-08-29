@@ -51,6 +51,7 @@ from tests.test_mamari_large_santiago_st_petersburg_vendor_scoreboard import (
     SIDE_HR,
     SIDE_HV,
     SIDE_PR,
+    SIDE_PV,
 )
 from tests.test_mamari_santiago_ia_090_076_071_ngram_scoreboard import (
     ngram_hit_count,
