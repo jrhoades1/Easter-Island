@@ -32,7 +32,7 @@ from agents.base.providers import MockProvider
 from agents.pattern_mining.ngram_analyzer import NgramAnalyzer
 from tests.test_mamari_b_gk_doubled_8gram_scoreboard import (
     GRAM8,
-    TestMamariBGkDoubled8gramScoreboard,
+    TestMamariBGkDoubled8GramScoreboard,
 )
 from tests.test_mamari_corpus_longest_n_inventory_scoreboard import (
     VENDORED_TABLETS,
@@ -462,7 +462,7 @@ class TestMamariKNge8Scoreboard(unittest.TestCase):
         prior_105 = TestMamariKMaxNGkIslandSubstringScoreboard()
         prior_105.setUp()
         prior_105.test_survey_matches_computed_lock()
-        prior_106 = TestMamariBGkDoubled8gramScoreboard()
+        prior_106 = TestMamariBGkDoubled8GramScoreboard()
         prior_106.setUp()
         prior_106.test_survey_matches_computed_lock()
         prior_67 = TestMamariSmallSantiagoLondonSharedN8Scoreboard()
