@@ -8367,6 +8367,49 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "b_repeating_8grams": {
+    "cycle": 115,
+    "result": "b_repeating_8grams",
+    "n": 8,
+    "eightgram_count": 1,
+    "hypothesis_n": 2,
+    "tokens": [
+      ["002", "065", "042", "300", "385", "003", "065", "200"]
+    ],
+    "freqs": [2],
+    "sites": [
+      [["Bv", "Bv5", 18], ["Bv", "Bv6", 39]]
+    ],
+    "hits_by_tablet": [
+      [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "b_hits": [2],
+    "br_hits": [0],
+    "bv_hits": [2],
+    "off_b_hits": [0],
+    "leak_counts": [{}],
+    "home_tokens8": ["002", "065", "042", "300", "385", "003", "065", "200"],
+    "doubled_tokens8": ["260", "001", "004", "711", "260", "001", "004", "711"],
+    "known_distinct": true,
+    "home_in_set": true,
+    "doubled_in_set": false,
+    "doubled_b_freq": 1,
+    "doubled_b_sites": [["Bv", "Bv8", 21]],
+    "claim": "b_has_exactly_2_repeating_8grams",
+    "b_has_exactly_2_repeating_8grams": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_e_keiti_eightgrams_unchanged": true,
+    "standing_b_max_n_gk_doubled_8gram_unchanged": true,
+    "standing_b_gk_doubled_8gram_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
