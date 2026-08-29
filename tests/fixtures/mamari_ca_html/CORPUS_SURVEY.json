@@ -11106,6 +11106,57 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_independent_076_010_079_006_700_preceded_072": {
+    "cycle": 151,
+    "result": "i_independent_076_010_079_006_700_preceded_072",
+    "hypothesis_both_preceded_by_072": true,
+    "tokens5": ["076", "010", "079", "006", "700"],
+    "n5": 5,
+    "stem_072": "072",
+    "N_sites": 2,
+    "i_sites": [
+      ["Ia", "Ia6", 19],
+      ["Ia", "Ia13", 72]
+    ],
+    "N_preceded_by_072": 1,
+    "N_not_preceded_by_072": 1,
+    "preceded_by_072_sites": [
+      ["Ia", "Ia13", 72]
+    ],
+    "not_preceded_by_072_sites": [
+      ["Ia", "Ia6", 19]
+    ],
+    "per_site_previous_stems": ["630", "072"],
+    "no_previous_sites": [],
+    "known_distinct": true,
+    "claim": "i_independent_076_010_079_006_700_both_preceded_by_072",
+    "i_independent_076_010_079_006_700_both_preceded_by_072": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle148_4gram": false,
+    "raw_stems_999_kept": true,
+    "standing_i_072_forward_5grams_i_only_unchanged": true,
+    "standing_i_4gram_072_076_010_079_forward_5gram_unchanged": true,
+    "standing_i_4gram_072_076_010_079_i_only_unchanged": true,
+    "standing_i_overlap_3gram_inside_two_5grams_unchanged": true,
+    "standing_i_independent_n5_cycle103_n3_overlap_unchanged": true,
+    "standing_i_independent_n5_maximals_076_unchanged": true,
+    "standing_i_exception_n4_071_065_071_999_i_only_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
