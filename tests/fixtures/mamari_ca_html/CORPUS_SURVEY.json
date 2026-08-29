@@ -10250,6 +10250,82 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_independent_n5_maximals_076": {
+    "cycle": 139,
+    "result": "i_independent_n5_maximals_076",
+    "hypothesis_all_contain_076": true,
+    "independent_n5_count": 4,
+    "with_076_count": 4,
+    "without_076_count": 0,
+    "stem": "076",
+    "n5_maximals": [
+      {
+        "tokens": ["430", "076", "006", "000", "076"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia1", 129],
+          ["Ia", "Ia14", 162]
+        ],
+        "contains_076": true
+      },
+      {
+        "tokens": ["076", "011", "090", "090", "076"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia12", 39],
+          ["Ia", "Ia14", 102]
+        ],
+        "contains_076": true
+      },
+      {
+        "tokens": ["400", "070", "076", "020", "010"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia13", 85],
+          ["Ia", "Ia14", 126]
+        ],
+        "contains_076": true
+      },
+      {
+        "tokens": ["076", "010", "079", "006", "700"],
+        "n": 5,
+        "freq": 2,
+        "sites": [
+          ["Ia", "Ia6", 19],
+          ["Ia", "Ia13", 72]
+        ],
+        "contains_076": true
+      }
+    ],
+    "exceptions": [],
+    "contains_076": [true, true, true, true],
+    "exception_tokens": [],
+    "exception_sites": [],
+    "known_distinct": true,
+    "claim": "i_independent_n5_maximals_all_contain_076",
+    "i_independent_n5_maximals_all_contain_076": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "raw_stems_999_kept": true,
+    "standing_i_exception_n4_071_065_071_999_i_only_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
