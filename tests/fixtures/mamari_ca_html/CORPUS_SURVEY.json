@@ -8467,6 +8467,45 @@
     "standing_m_vienna_ma2_m_only_unchanged": true,
     "image_track": "parked"
   },
+  "a_repeating_10grams": {
+    "cycle": 117,
+    "result": "a_repeating_10grams",
+    "n": 10,
+    "tengram_count": 1,
+    "hypothesis_n": 1,
+    "tokens": [
+      ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"]
+    ],
+    "freqs": [2],
+    "sites": [
+      [["Aa", "Aa7", 55], ["Aa", "Aa7", 88]]
+    ],
+    "hits_by_tablet": [
+      [2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    "a_hits": [2],
+    "aa_hits": [2],
+    "ab_hits": [0],
+    "off_a_hits": [0],
+    "leak_counts": [{}],
+    "home_tokens10": ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"],
+    "known_distinct": true,
+    "home_in_set": true,
+    "claim": "a_has_exactly_1_repeating_10gram",
+    "a_has_exactly_1_repeating_10gram": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_tahua_aa_a_only_unchanged": true,
+    "standing_tahua_aa_10gram_motif_unchanged": true,
+    "standing_b_repeating_8grams_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
