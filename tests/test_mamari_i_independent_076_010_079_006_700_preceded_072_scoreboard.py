@@ -311,12 +311,12 @@ class TestMamariIIndependent076010079006700Preceded072Scoreboard(
         self.assertEqual(STANDING_CYCLE148_SITES[1][2] + 1, ia13_index)
         self.assertEqual(ia13_stems[ia13_index - 1], STEM_072)
         self.assertEqual(
-            tuple(ia13_stems[ia13_index - 1 : ia13_index + 4]),
+            tuple(ia13_stems[ia13_index - 1 : ia13_index + 3]),
             GRAM4,
         )
         self.assertEqual(
             tuple(ia13_stems[ia13_index - 1 : ia13_index + 4]),
-            STANDING_FORWARD_5GRAM_006[:4],
+            STANDING_FORWARD_5GRAM_006,
         )
         self.assertEqual(STANDING_I_SITES_006[0][2] + 1, ia13_index)
         ia6_stems = line_stems_for_site(self.i_sides, STANDING_I_SITES[0])
