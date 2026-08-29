@@ -32,6 +32,7 @@ from tests.test_mamari_honolulu4_unpublished_scoreboard import (
 )
 from tests.test_mamari_i_independent_n5_cycle103_n3_overlap_scoreboard import (
     STANDING_SHARED_N3,
+    TestMamariIIndependentN5Cycle103N3OverlapScoreboard,
 )
 from tests.test_mamari_i_independent_nge4_maximals_scoreboard import (
     MAXIMAL_N5_010,
@@ -374,6 +375,10 @@ class TestMamariILeftover076010079Forward4gramScoreboard(unittest.TestCase):
         prior_141.test_i_hits_are_eight_on_ia()
         prior_141.test_3gram_is_zero_off_i_and_i_only()
         prior_141.test_survey_matches_computed_lock()
+        prior_140 = TestMamariIIndependentN5Cycle103N3OverlapScoreboard()
+        prior_140.setUp()
+        prior_140.test_counts_1_of_4_and_hypothesis_none_share_loses()
+        prior_140.test_survey_matches_computed_lock()
         prior_103 = TestMamariSantiagoIaIOnlyScoreboard()
         prior_103.setUp()
         prior_103.test_5gram_is_zero_off_i_and_i_only()
