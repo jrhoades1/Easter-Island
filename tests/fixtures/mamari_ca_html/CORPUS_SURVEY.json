@@ -5699,6 +5699,58 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "hq_7gram_hq_pairwise_island_substring": {
+    "cycle": 109,
+    "result": "hq_7gram_hq_pairwise_island_substring",
+    "tokens7": ["072", "450", "052", "551", "003", "600", "003"],
+    "n7": 7,
+    "from_cycle": 108,
+    "h_hits": 2,
+    "q_hits": 2,
+    "p_hits": 0,
+    "h_sites": [["Hr", "Hr3", 63], ["Hr", "Hr3", 72]],
+    "q_sites": [["Qr", "Qr3", 43], ["Qr", "Qr3", 52]],
+    "p_sites": [],
+    "claim": "hq_7gram_is_hq_pairwise_island_substring",
+    "hq_7gram_is_hq_pairwise_island_substring": true,
+    "matching_island_count": 2,
+    "island_count": 15,
+    "matching_islands": [
+      {
+        "n": 31,
+        "tokens": ["003", "004", "600", "004", "006", "042", "003", "050", "003", "093", "003", "027", "003", "086", "003", "060", "003", "093", "003", "254", "003", "093", "003", "205", "072", "450", "052", "551", "003", "600", "003"],
+        "h_site": ["Hr", "Hr3", 39],
+        "q_site": ["Qr", "Qr3", 19],
+        "offsets": [24]
+      },
+      {
+        "n": 11,
+        "tokens": ["381", "072", "450", "052", "551", "003", "600", "003", "385", "003", "670"],
+        "h_site": ["Hr", "Hr3", 71],
+        "q_site": ["Qr", "Qr3", 51],
+        "offsets": [1]
+      }
+    ],
+    "hq_7gram_maximal_n": 31,
+    "hq_7gram_maximal_tokens": ["003", "004", "600", "004", "006", "042", "003", "050", "003", "093", "003", "027", "003", "086", "003", "060", "003", "093", "003", "254", "003", "093", "003", "205", "072", "450", "052", "551", "003", "600", "003"],
+    "maximal_h_sites": [["Hr", "Hr3", 39]],
+    "maximal_q_sites": [["Qr", "Qr3", 19]],
+    "maximal_p_sites": [],
+    "maximal_h_hits": 1,
+    "maximal_q_hits": 1,
+    "maximal_p_hits": 0,
+    "maximal_hits_by_tablet": [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_q_shared_n8_unchanged": true,
+    "standing_hq_max_n_hpq_island_substring_unchanged": true,
+    "standing_hpq_triple_n8_unchanged": true,
+    "standing_p_max_n_hpq_island_substring_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
