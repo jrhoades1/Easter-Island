@@ -8744,6 +8744,69 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "c_independent_nge8_maximals": {
+    "cycle": 121,
+    "result": "c_independent_nge8_maximals",
+    "hypothesis_n": 2,
+    "maximal_count": 3,
+    "independent_count": 11,
+    "nonmaximal_count": 8,
+    "maximals": [
+      {
+        "tokens": ["040", "040", "040", "390", "041", "378", "041", "670", "008", "078", "711", "040"],
+        "n": 12,
+        "freq": 2,
+        "sites": [["Ca", "Ca7", 3], ["Ca", "Ca8", 0]]
+      },
+      {
+        "tokens": ["390", "041", "378", "041", "670", "008", "078", "711", "040", "040"],
+        "n": 10,
+        "freq": 2,
+        "sites": [["Ca", "Ca7", 33], ["Ca", "Ca8", 3]]
+      },
+      {
+        "tokens": ["002", "010", "070", "760", "040", "006", "430", "047", "002"],
+        "n": 9,
+        "freq": 2,
+        "sites": [["Ca", "Ca10", 26], ["Ca", "Ca11", 14]]
+      }
+    ],
+    "maximal_ns": [12, 10, 9],
+    "containing": [
+      [0, 1],
+      [1],
+      [2],
+      [2],
+      [0, 1],
+      [1],
+      [2],
+      [0],
+      [1],
+      [0],
+      [0]
+    ],
+    "shared_core_count": 2,
+    "exactly_one_nonmaximal_count": 6,
+    "two_maximal_nonmaximal_count": 2,
+    "every_independent_in_at_least_one": true,
+    "every_nonmaximal_exactly_one": false,
+    "known_distinct": true,
+    "claim": "c_independent_nge8_has_exactly_2_maximals",
+    "c_independent_nge8_has_exactly_2_maximals": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_c_repeating_nge8_unchanged": true,
+    "standing_c_repeating_13grams_unchanged": true,
+    "standing_c_mamari_ca_c_only_unchanged": true,
+    "standing_b_repeating_8grams_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
