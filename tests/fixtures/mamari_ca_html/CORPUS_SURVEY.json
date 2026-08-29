@@ -8807,6 +8807,79 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "a_repeating_nge8": {
+    "cycle": 122,
+    "result": "a_repeating_nge8",
+    "min_n": 8,
+    "repeating_count": 10,
+    "substring_count": 6,
+    "independent_count": 4,
+    "counts_by_n": {"8": 6, "9": 3, "10": 1},
+    "home_tokens10": ["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"],
+    "rows": [
+      [["080", "004", "280", "182", "048", "022", "025", "025"], 8, 2, true, [["Aa", "Aa7", 55], ["Aa", "Aa7", 88]]],
+      [["004", "280", "182", "048", "022", "025", "025", "009"], 8, 2, true, [["Aa", "Aa7", 56], ["Aa", "Aa7", 89]]],
+      [["280", "182", "048", "022", "025", "025", "009", "005"], 8, 2, true, [["Aa", "Aa7", 57], ["Aa", "Aa7", 90]]],
+      [["605", "003", "004", "600", "004", "003", "040", "003"], 8, 2, false, [["Ab", "Ab3", 2], ["Ab", "Ab5", 13]]],
+      [["003", "004", "600", "004", "003", "040", "003", "050"], 8, 2, false, [["Ab", "Ab3", 3], ["Ab", "Ab5", 14]]],
+      [["003", "741", "003", "445", "003", "719", "450", "052"], 8, 2, false, [["Ab", "Ab3", 22], ["Ab", "Ab5", 34]]],
+      [["080", "004", "280", "182", "048", "022", "025", "025", "009"], 9, 2, true, [["Aa", "Aa7", 55], ["Aa", "Aa7", 88]]],
+      [["004", "280", "182", "048", "022", "025", "025", "009", "005"], 9, 2, true, [["Aa", "Aa7", 56], ["Aa", "Aa7", 89]]],
+      [["605", "003", "004", "600", "004", "003", "040", "003", "050"], 9, 2, false, [["Ab", "Ab3", 2], ["Ab", "Ab5", 13]]],
+      [["080", "004", "280", "182", "048", "022", "025", "025", "009", "005"], 10, 2, true, [["Aa", "Aa7", 55], ["Aa", "Aa7", 88]]]
+    ],
+    "independent": [
+      {
+        "tokens": ["605", "003", "004", "600", "004", "003", "040", "003"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Ab", "Ab3", 2], ["Ab", "Ab5", 13]],
+        "off_a_hits": 0
+      },
+      {
+        "tokens": ["003", "004", "600", "004", "003", "040", "003", "050"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Ab", "Ab3", 3], ["Ab", "Ab5", 14]],
+        "off_a_hits": 0
+      },
+      {
+        "tokens": ["003", "741", "003", "445", "003", "719", "450", "052"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Ab", "Ab3", 22], ["Ab", "Ab5", 34]],
+        "off_a_hits": 0
+      },
+      {
+        "tokens": ["605", "003", "004", "600", "004", "003", "040", "003", "050"],
+        "n": 9,
+        "freq": 2,
+        "sites": [["Ab", "Ab3", 2], ["Ab", "Ab5", 13]],
+        "off_a_hits": 0
+      }
+    ],
+    "independent_off_a_hits": [0, 0, 0, 0],
+    "known_distinct": true,
+    "n10_in_set": true,
+    "ab_9gram_in_independent": true,
+    "ab_extra_8_in_independent": true,
+    "claim": "a_repeating_nge8_all_substrings_of_n10",
+    "a_repeating_nge8_all_substrings_of_n10": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_a_repeating_10grams_unchanged": true,
+    "standing_c_independent_nge8_maximals_unchanged": true,
+    "standing_c_repeating_nge8_unchanged": true,
+    "standing_tahua_aa_a_only_unchanged": true,
+    "standing_tahua_ab_9gram_motif_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
