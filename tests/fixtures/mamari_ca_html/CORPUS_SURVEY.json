@@ -12181,6 +12181,132 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_overlap_3gram_076_020_010_inside_family": {
+    "cycle": 161,
+    "result": "i_overlap_3gram_076_020_010_inside_family",
+    "hypothesis_all_inside_known_family": true,
+    "tokens3": ["076", "020", "010"],
+    "n3": 3,
+    "independent_tokens5": ["400", "070", "076", "020", "010"],
+    "leftover_n4_090_tokens": ["090", "076", "020", "010"],
+    "leftover_n4_050_tokens": ["076", "020", "010", "050"],
+    "leftover_n4_053_tokens": ["053", "076", "020", "010"],
+    "independent_container_sites": [
+      ["Ia", "Ia13", 85],
+      ["Ia", "Ia14", 126]
+    ],
+    "leftover_n4_090_container_sites": [
+      ["Ia", "Ia2", 119],
+      ["Ia", "Ia4", 86],
+      ["Ia", "Ia5", 143],
+      ["Ia", "Ia12", 83]
+    ],
+    "leftover_n4_050_container_sites": [
+      ["Ia", "Ia2", 120],
+      ["Ia", "Ia14", 110]
+    ],
+    "leftover_n4_053_container_sites": [
+      ["Ia", "Ia12", 0],
+      ["Ia", "Ia14", 109]
+    ],
+    "N_on_I": 12,
+    "i_hits": 12,
+    "ia_hits": 12,
+    "ib_hits": 0,
+    "i_sites": [
+      ["Ia", "Ia2", 120],
+      ["Ia", "Ia4", 87],
+      ["Ia", "Ia4", 158],
+      ["Ia", "Ia5", 56],
+      ["Ia", "Ia5", 144],
+      ["Ia", "Ia6", 102],
+      ["Ia", "Ia12", 1],
+      ["Ia", "Ia12", 84],
+      ["Ia", "Ia13", 48],
+      ["Ia", "Ia13", 87],
+      ["Ia", "Ia14", 110],
+      ["Ia", "Ia14", 128]
+    ],
+    "N_in_independent_400_070_076_020_010": 2,
+    "independent_covered_sites": [
+      ["Ia", "Ia13", 87],
+      ["Ia", "Ia14", 128]
+    ],
+    "N_in_leftover_090_076_020_010": 4,
+    "leftover_090_covered_sites": [
+      ["Ia", "Ia2", 120],
+      ["Ia", "Ia4", 87],
+      ["Ia", "Ia5", 144],
+      ["Ia", "Ia12", 84]
+    ],
+    "N_in_leftover_076_020_010_050": 2,
+    "leftover_050_covered_sites": [
+      ["Ia", "Ia2", 120],
+      ["Ia", "Ia14", 110]
+    ],
+    "N_in_leftover_053_076_020_010": 2,
+    "leftover_053_covered_sites": [
+      ["Ia", "Ia12", 1],
+      ["Ia", "Ia14", 110]
+    ],
+    "N_inside": 8,
+    "inside_sites": [
+      ["Ia", "Ia2", 120],
+      ["Ia", "Ia4", 87],
+      ["Ia", "Ia5", 144],
+      ["Ia", "Ia12", 1],
+      ["Ia", "Ia12", 84],
+      ["Ia", "Ia13", 87],
+      ["Ia", "Ia14", 110],
+      ["Ia", "Ia14", 128]
+    ],
+    "N_leftover": 4,
+    "leftover_sites": [
+      ["Ia", "Ia4", 158],
+      ["Ia", "Ia5", 56],
+      ["Ia", "Ia6", 102],
+      ["Ia", "Ia13", 48]
+    ],
+    "membership": [
+      ["leftover_090_076_020_010", "leftover_076_020_010_050"],
+      ["leftover_090_076_020_010"],
+      [],
+      [],
+      ["leftover_090_076_020_010"],
+      [],
+      ["leftover_053_076_020_010"],
+      ["leftover_090_076_020_010"],
+      [],
+      ["independent_400_070_076_020_010"],
+      ["leftover_076_020_010_050", "leftover_053_076_020_010"],
+      ["independent_400_070_076_020_010"]
+    ],
+    "known_distinct": true,
+    "claim": "i_overlap_3gram_076_020_010_all_inside_known_family",
+    "i_overlap_3gram_076_020_010_all_inside_known_family": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle142": false,
+    "raw_stems_999_kept": true,
+    "standing_i_overlap_3gram_076_020_010_i_only_unchanged": true,
+    "standing_i_leftover_n4_independent_n5_n3_overlap_unchanged": true,
+    "standing_i_overlap_3gram_inside_two_5grams_unchanged": true,
+    "standing_i_overlap_3gram_076_010_079_i_only_unchanged": true,
+    "standing_i_independent_n5_maximals_076_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
