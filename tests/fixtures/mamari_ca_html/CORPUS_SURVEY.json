@@ -8987,6 +8987,76 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "g_repeating_nge8": {
+    "cycle": 125,
+    "result": "g_repeating_nge8",
+    "min_n": 8,
+    "repeating_count": 3,
+    "substring_count": 0,
+    "independent_count": 3,
+    "counts_by_n": {"8": 2, "9": 1},
+    "island_count": 6,
+    "island_ns": [17, 15, 13, 12, 10, 10],
+    "islands": [
+      ["380", "001", "003", "005", "006", "010", "380", "001", "003", "315", "380", "001", "003", "090", "001", "380", "001"],
+      ["079", "450", "019", "069", "380", "001", "003", "162", "522", "050", "002", "450", "380", "001", "003"],
+      ["073", "006", "206", "073", "006", "200", "073", "006", "222", "073", "006", "451", "073"],
+      ["522", "045", "061", "009", "260", "001", "004", "711", "260", "001", "004", "711"],
+      ["380", "001", "003", "005", "066", "380", "001", "003", "290", "001"],
+      ["380", "001", "003", "597", "380", "001", "003", "059", "720", "380"]
+    ],
+    "home_tokens9": ["007", "006", "124", "006", "124", "098", "007", "059", "002"],
+    "n25_tokens": ["380", "001", "003", "003", "003", "004", "215", "380", "001", "003", "079", "450", "019", "069", "380", "001", "003", "162", "522", "050", "002", "450", "380", "001", "003"],
+    "rows": [
+      [["007", "006", "124", "006", "124", "098", "007", "059"], 8, 2, false, [["Gr", "Gr8", 0], ["Gr", "Gr8", 20]]],
+      [["006", "124", "006", "124", "098", "007", "059", "002"], 8, 2, false, [["Gr", "Gr8", 1], ["Gr", "Gr8", 21]]],
+      [["007", "006", "124", "006", "124", "098", "007", "059", "002"], 9, 2, false, [["Gr", "Gr8", 0], ["Gr", "Gr8", 20]]]
+    ],
+    "independent": [
+      {
+        "tokens": ["007", "006", "124", "006", "124", "098", "007", "059"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Gr", "Gr8", 0], ["Gr", "Gr8", 20]],
+        "off_g_hits": 0
+      },
+      {
+        "tokens": ["006", "124", "006", "124", "098", "007", "059", "002"],
+        "n": 8,
+        "freq": 2,
+        "sites": [["Gr", "Gr8", 1], ["Gr", "Gr8", 21]],
+        "off_g_hits": 0
+      },
+      {
+        "tokens": ["007", "006", "124", "006", "124", "098", "007", "059", "002"],
+        "n": 9,
+        "freq": 2,
+        "sites": [["Gr", "Gr8", 0], ["Gr", "Gr8", 20]],
+        "off_g_hits": 0
+      }
+    ],
+    "independent_off_g_hits": [0, 0, 0],
+    "known_distinct": true,
+    "n9_in_set": true,
+    "n25_also_misses": true,
+    "claim": "g_repeating_nge8_all_substrings_of_gk_islands",
+    "g_repeating_nge8_all_substrings_of_gk_islands": false,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "raw_stems_999_kept": true,
+    "standing_gk_shared_n8_unchanged": true,
+    "standing_gk_grkv_maximals_unchanged": true,
+    "standing_gk_islands_zero_on_b_unchanged": true,
+    "standing_e_repeating_nge8_unchanged": true,
+    "standing_a_repeating_nge8_unchanged": true,
+    "standing_c_repeating_nge8_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
