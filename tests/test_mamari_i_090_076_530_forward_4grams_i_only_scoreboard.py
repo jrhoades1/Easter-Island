@@ -971,13 +971,13 @@ class TestMamariI090076530Forward4gramsIOnlyScoreboard(unittest.TestCase):
         prior_238.test_counts_2_of_31_and_hypothesis_k_2_holds()
         prior_238.test_survey_matches_computed_lock()
         self.assertEqual(prior_238.k, 2)
-        self.assertEqual(prior_238.g, "530")
+        self.assertEqual(CYCLE238_G, "530")
         self.assertEqual(prior_238.n_remaining5, 31)
         self.assertEqual(prior_238.matching, CYCLE238_MATCHING_SITES)
         self.assertEqual(prior_238.matching_next_4grams, STANDING_SEQUENCES)
         self.assertTrue(prior_238.claim_holds)
         self.assertTrue(CYCLE238_CLAIM)
-        if prior_238.k != 2 or prior_238.g != "530" or prior_238.n_remaining5 != 31:
+        if prior_238.k != 2 or CYCLE238_G != "530" or prior_238.n_remaining5 != 31:
             self.fail("nested cycle 238 leftover extra remaining-after-700 G=530 K=2 drifted")
         prior_237 = TestMamariI090076700Forward4gramsIOnlyScoreboard()
         prior_237.setUp()
