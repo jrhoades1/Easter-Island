@@ -446,6 +446,8 @@ def leftover_extra_remaining_after_000_3grams_subset_all(
     i_sites_each: tuple[tuple[tuple[str, str, int], ...], ...],
 ) -> bool:
     """True iff every remaining-after-000 site sits in its I 3-gram sites."""
+    if len(leftover_sites) != len(i_sites_each):
+        return False
     return all(
         leftover_extra_remaining_after_000_3gram_subset(site, sites)
         for site, sites in zip(leftover_sites, i_sites_each, strict=True)
