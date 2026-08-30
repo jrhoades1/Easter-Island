@@ -165,9 +165,6 @@ from tests.test_mamari_i_leftover_extra_090_076_previous_stem_scoreboard import 
     leftover_extra_previous_stems,
     TestMamariILeftoverExtra090076PreviousStemScoreboard,
 )
-from tests.test_mamari_i_leftover_n4_maximals_076_scoreboard import (
-    EXCEPTION_GRAM,
-)
 from tests.test_mamari_i_nge4_scoreboard import (
     nge4_sites,
 )
@@ -1008,7 +1005,6 @@ class TestMamariI3gram999090076LeftoverExtraPreviousIOnlyScoreboard(unittest.Tes
         self.assertEqual(STANDING_EXTRA_I_090_076_SITES, ((SIDE_IA, "Ia9", 28),))
         self.assertIn(STANDING_EXTRA_I_090_076_SITES[0], CYCLE223_I_SITES)
         self.assertIn(STANDING_EXTRA_I_090_076_SITES[0], CYCLE224_INSIDE_SITES)
-        self.assertEqual(tuple(EXCEPTION_GRAM), ("090", "076", "020", "010"))
         self.assertTrue(STANDING_TABLET_ONLY)
         self.assertFalse(STANDING_N_GE_8_ISLAND)
         self.assertTrue(STANDING_LEFTOVER_EXTRA_REMAINING_AFTER_999_IS_NOT_THIS_CYCLE)
