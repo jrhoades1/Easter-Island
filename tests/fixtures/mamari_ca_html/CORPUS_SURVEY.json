@@ -32797,6 +32797,761 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_leftover_n4_076_070": {
+    "cycle": 205,
+    "result": "i_leftover_n4_076_070",
+    "hypothesis_n": 1,
+    "tokens2": [
+      "076",
+      "070"
+    ],
+    "n2": 2,
+    "leftover_n4_count": 27,
+    "N_leftover_n4": 27,
+    "with_076_070_count": 1,
+    "N_with_076_070": 1,
+    "without_076_070_count": 26,
+    "N_without_076_070": 26,
+    "matching_leftovers": [
+      [
+        "999",
+        "090",
+        "076",
+        "070"
+      ]
+    ],
+    "leftovers": [
+      {
+        "tokens": [
+          "999",
+          "090",
+          "076",
+          "070"
+        ],
+        "n": 4,
+        "freq": 5,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            9
+          ],
+          [
+            "Ia",
+            "Ia4",
+            111
+          ],
+          [
+            "Ia",
+            "Ia7",
+            67
+          ],
+          [
+            "Ia",
+            "Ia7",
+            128
+          ],
+          [
+            "Ia",
+            "Ia14",
+            139
+          ]
+        ],
+        "contains_076_070": true
+      },
+      {
+        "tokens": [
+          "090",
+          "076",
+          "020",
+          "010"
+        ],
+        "n": 4,
+        "freq": 4,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            119
+          ],
+          [
+            "Ia",
+            "Ia4",
+            86
+          ],
+          [
+            "Ia",
+            "Ia5",
+            143
+          ],
+          [
+            "Ia",
+            "Ia12",
+            83
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "028",
+          "076",
+          "011",
+          "076"
+        ],
+        "n": 4,
+        "freq": 3,
+        "sites": [
+          [
+            "Ia",
+            "Ia1",
+            136
+          ],
+          [
+            "Ia",
+            "Ia4",
+            125
+          ],
+          [
+            "Ia",
+            "Ia14",
+            78
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "021",
+          "090",
+          "076",
+          "087"
+        ],
+        "n": 4,
+        "freq": 3,
+        "sites": [
+          [
+            "Ia",
+            "Ia4",
+            116
+          ],
+          [
+            "Ia",
+            "Ia5",
+            27
+          ],
+          [
+            "Ia",
+            "Ia6",
+            77
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "999",
+          "090",
+          "076",
+          "071"
+        ],
+        "n": 4,
+        "freq": 3,
+        "sites": [
+          [
+            "Ia",
+            "Ia4",
+            153
+          ],
+          [
+            "Ia",
+            "Ia5",
+            1
+          ],
+          [
+            "Ia",
+            "Ia5",
+            22
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "071",
+          "999",
+          "604",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia1",
+            63
+          ],
+          [
+            "Ia",
+            "Ia9",
+            3
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "600",
+          "090",
+          "076",
+          "011"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            106
+          ],
+          [
+            "Ia",
+            "Ia14",
+            53
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "076",
+          "020",
+          "010",
+          "050"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            120
+          ],
+          [
+            "Ia",
+            "Ia14",
+            110
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "000",
+          "999",
+          "090",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia3",
+            35
+          ],
+          [
+            "Ia",
+            "Ia5",
+            0
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "999",
+          "090",
+          "076",
+          "013"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia3",
+            36
+          ],
+          [
+            "Ia",
+            "Ia6",
+            91
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "999",
+          "205",
+          "076",
+          "071"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia3",
+            51
+          ],
+          [
+            "Ia",
+            "Ia3",
+            79
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "999",
+          "090",
+          "076",
+          "005"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia3",
+            70
+          ],
+          [
+            "Ia",
+            "Ia13",
+            108
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "076",
+          "010",
+          "079",
+          "090"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia5",
+            110
+          ],
+          [
+            "Ia",
+            "Ia5",
+            139
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "072",
+          "076",
+          "010",
+          "079"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia5",
+            138
+          ],
+          [
+            "Ia",
+            "Ia13",
+            71
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "076",
+          "071",
+          "009",
+          "090"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia5",
+            161
+          ],
+          [
+            "Ia",
+            "Ia12",
+            71
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "202",
+          "076",
+          "006",
+          "055"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia6",
+            48
+          ],
+          [
+            "Ia",
+            "Ia12",
+            119
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "076",
+          "071",
+          "090",
+          "999"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia7",
+            166
+          ],
+          [
+            "Ia",
+            "Ia14",
+            136
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "076",
+          "999",
+          "029",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            30
+          ],
+          [
+            "Ia",
+            "Ia10",
+            144
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "999",
+          "021",
+          "090",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            104
+          ],
+          [
+            "Ia",
+            "Ia13",
+            15
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "090",
+          "076",
+          "057",
+          "600"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            114
+          ],
+          [
+            "Ia",
+            "Ia9",
+            28
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "700",
+          "076",
+          "076",
+          "053"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            167
+          ],
+          [
+            "Ia",
+            "Ia9",
+            32
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "071",
+          "065",
+          "071",
+          "999"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia9",
+            1
+          ],
+          [
+            "Ia",
+            "Ia9",
+            56
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "999",
+          "090",
+          "076",
+          "057"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia9",
+            27
+          ],
+          [
+            "Ia",
+            "Ia9",
+            128
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "430",
+          "076",
+          "001",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia10",
+            103
+          ],
+          [
+            "Ia",
+            "Ia13",
+            156
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "053",
+          "076",
+          "020",
+          "010"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia12",
+            0
+          ],
+          [
+            "Ia",
+            "Ia14",
+            109
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "090",
+          "999",
+          "090",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia12",
+            45
+          ],
+          [
+            "Ia",
+            "Ia14",
+            138
+          ]
+        ],
+        "contains_076_070": false
+      },
+      {
+        "tokens": [
+          "430",
+          "076",
+          "049",
+          "400"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia13",
+            170
+          ],
+          [
+            "Ia",
+            "Ia14",
+            63
+          ]
+        ],
+        "contains_076_070": false
+      }
+    ],
+    "contains_076_070": [
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "near_miss_999_090_076_071": [
+      "999",
+      "090",
+      "076",
+      "071"
+    ],
+    "near_miss_700_076_076_053": [
+      "700",
+      "076",
+      "076",
+      "053"
+    ],
+    "076_071_does_not_count": true,
+    "known_distinct": true,
+    "claim": "i_leftover_n4_exactly_1_contain_076_070",
+    "i_leftover_n4_exactly_1_contain_076_070": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "same_inventory_move_as_cycle_166": true,
+    "same_inventory_move_as_cycle_170": true,
+    "standing_i_leftover_076_071_remaining_previous_4grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_076_071_unchanged": true,
+    "standing_i_leftover_n4_999_090_076_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
 
   "standing_image_lock": {
     "instances": 83,
