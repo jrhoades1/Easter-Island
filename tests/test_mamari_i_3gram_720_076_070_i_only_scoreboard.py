@@ -456,10 +456,15 @@ class TestI3gram720076070IOnlyHelpers(unittest.TestCase):
             tuple(sorted(leftover + extra)),
             tuple(sorted(STANDING_I_SITES)),
         )
-        planted_leftover = STANDING_LEFTOVER_SITES[:-1]
+        planted_leftover = tuple(
+            site
+            for site in STANDING_LEFTOVER_SITES
+            if site != STANDING_LEFTOVER_076_070_SITES[0]
+        )
         planted_extra = extra_i_sites(STANDING_I_SITES, planted_leftover)
         self.assertNotEqual(planted_extra, extra)
         self.assertEqual(len(planted_extra), 1)
+        self.assertEqual(planted_extra, (STANDING_I_SITES[0],))
         self.assertTrue(STANDING_PREFIXED_090_DOES_NOT_COUNT)
         self.assertTrue(STANDING_NEAR_MISS_090_099_DOES_NOT_COUNT)
         self.assertEqual(provider.get_call_history(), [])
