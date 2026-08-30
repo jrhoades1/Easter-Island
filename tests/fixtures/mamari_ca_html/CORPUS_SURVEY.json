@@ -51063,6 +51063,288 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_3gram_090_076_013_i_only": {
+    "cycle": 229,
+    "result": "i_3gram_090_076_013_i_only",
+    "hypothesis_i_only": true,
+    "tokens3": [
+      "090",
+      "076",
+      "013"
+    ],
+    "n3": 3,
+    "n4": 4,
+    "i_hits": 5,
+    "N_on_I": 5,
+    "N_I": 5,
+    "ia_hits": 5,
+    "ib_hits": 0,
+    "i_sites": [
+      [
+        "Ia",
+        "Ia3",
+        37
+      ],
+      [
+        "Ia",
+        "Ia5",
+        6
+      ],
+      [
+        "Ia",
+        "Ia5",
+        164
+      ],
+      [
+        "Ia",
+        "Ia6",
+        92
+      ],
+      [
+        "Ia",
+        "Ia13",
+        67
+      ]
+    ],
+    "ib_sites": [],
+    "leftover_extra_remaining_after_071_013_sites": [
+      [
+        "Ia",
+        "Ia3",
+        37
+      ],
+      [
+        "Ia",
+        "Ia5",
+        6
+      ],
+      [
+        "Ia",
+        "Ia5",
+        164
+      ],
+      [
+        "Ia",
+        "Ia6",
+        92
+      ],
+      [
+        "Ia",
+        "Ia13",
+        67
+      ]
+    ],
+    "leftover_extra_remaining_after_071_013_count": 5,
+    "leftover_extra_remaining_after_071_013_subset_of_i_sites": true,
+    "extra_i_sites": [],
+    "N_extra": 0,
+    "i_previous_4grams": [
+      [
+        "999",
+        "090",
+        "076",
+        "013"
+      ],
+      [
+        "295",
+        "090",
+        "076",
+        "013"
+      ],
+      [
+        "009",
+        "090",
+        "076",
+        "013"
+      ],
+      [
+        "999",
+        "090",
+        "076",
+        "013"
+      ],
+      [
+        "386",
+        "090",
+        "076",
+        "013"
+      ]
+    ],
+    "i_next_4grams": [
+      [
+        "090",
+        "076",
+        "013",
+        "073"
+      ],
+      [
+        "090",
+        "076",
+        "013",
+        "291"
+      ],
+      [
+        "090",
+        "076",
+        "013",
+        "076"
+      ],
+      [
+        "090",
+        "076",
+        "013",
+        "070"
+      ],
+      [
+        "090",
+        "076",
+        "013",
+        "755"
+      ]
+    ],
+    "off_i_hits": 0,
+    "N_off_I": 0,
+    "off_i_sites": [],
+    "off_i_tablets": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V"
+    ],
+    "off_i_by_tablet": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "off_i_tablets_with_hits": [],
+    "off_i_by_tablet_nonzero": {},
+    "vendored_tablets": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V"
+    ],
+    "hits_by_tablet": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "nested_cycle228_G": "013",
+    "nested_cycle228_K": 5,
+    "nested_cycle228_N_remaining2": 41,
+    "known_distinct": true,
+    "claim": "i_3gram_090_076_013_i_only",
+    "i_3gram_090_076_013_i_only": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle174_3gram": false,
+    "same_as_cycle195_3gram": false,
+    "same_as_cycle207_3gram": false,
+    "same_as_cycle223_2gram": false,
+    "same_as_cycle228": false,
+    "same_claim_shape_as_cycle174": true,
+    "same_claim_shape_as_cycle195": true,
+    "same_claim_shape_as_cycle207": true,
+    "090_076_070_does_not_count": true,
+    "090_076_071_does_not_count": true,
+    "090_076_without_013_does_not_count": true,
+    "076_071_does_not_count": true,
+    "leftover_n4_set_not_retuned": true,
+    "leftover_extra_remaining_after_013_is_not_this_cycle": true,
+    "off_i_t_sites_of_090_076_are_not_this_cycle": true,
+    "raw_stems_999_kept": true,
+    "standing_i_leftover_extra_090_076_remaining_after_071_next_stem_unchanged": true,
+    "standing_i_leftover_extra_090_076_remaining_next_stem_unchanged": true,
+    "standing_i_leftover_extra_090_076_forward_070_unchanged": true,
+    "standing_i_2gram_090_076_i_only_unchanged": true,
+    "standing_i_3gram_090_076_071_i_only_unchanged": true,
+    "standing_i_3gram_090_076_070_i_only_unchanged": true,
+    "standing_i_3gram_076_071_076_i_only_unchanged": true,
+    "standing_i_2gram_076_071_i_only_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
