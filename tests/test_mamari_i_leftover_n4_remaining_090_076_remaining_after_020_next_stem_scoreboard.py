@@ -666,10 +666,16 @@ class TestILeftoverN4Remaining090076RemainingAfter020NextStemHelpers(unittest.Te
             )
         )
         tie_stems = list(stems)
-        demote = ((SIDE_IA, "Ia6", 78),)
+        # Remaining-after-020 already has 087×3, 011×2, 057×2. Demoting one
+        # 087 to 011 would make unique-max 011×3. Demote one 087 and one 057
+        # to distinct hapaxes so 087 and 011 tie at 2 (cycle-234 shape).
+        demote = {
+            (SIDE_IA, "Ia6", 78): "801",
+            (SIDE_IA, "Ia8", 114): "802",
+        }
         for i, site in enumerate(inside):
             if site in demote:
-                tie_stems[i] = "011"
+                tie_stems[i] = demote[site]
         tied = tuple(tie_stems)
         tied_g, tied_k, tied_unique = select_remaining_after_020_g(
             leftover_n4_remaining_remaining_after_020_next_stems(inside, tied)
