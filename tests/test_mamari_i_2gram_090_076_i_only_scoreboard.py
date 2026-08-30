@@ -524,7 +524,7 @@ class TestMamariI2gram090076IOnlyScoreboard(unittest.TestCase):
         ):
             stems = t_sides[side][TA_LINE_NAMES.index(line)]
             self.assertEqual(tuple(stems[index : index + STANDING_N2]), GRAM2)
-            self.assertEqual(tuple(stems[index - 1 : index + STANDING_N2]), prev4)
+            self.assertEqual(tuple(stems[index - 1 : index + 3]), prev4)
             self.assertEqual(tuple(stems[index : index + 3]), follow3)
         self.assertEqual(
             STANDING_OFF_I_FOLLOWING_3GRAMS[2],
