@@ -28136,6 +28136,1269 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_leftover_076_071_remaining_previous_stems_distinct": {
+    "cycle": 203,
+    "result": "i_leftover_076_071_remaining_previous_stems_distinct",
+    "hypothesis_n_remaining": 24,
+    "hypothesis_n_distinct": 24,
+    "tokens2": [
+      "076",
+      "071"
+    ],
+    "n2": 2,
+    "locked_previous_stems": [
+      "700",
+      "090",
+      "604",
+      "099"
+    ],
+    "n3": 3,
+    "n4": 4,
+    "N_leftover": 34,
+    "leftover_sites": [
+      [
+        "Ia",
+        "Ia1",
+        86
+      ],
+      [
+        "Ia",
+        "Ia1",
+        163
+      ],
+      [
+        "Ia",
+        "Ia2",
+        43
+      ],
+      [
+        "Ia",
+        "Ia2",
+        51
+      ],
+      [
+        "Ia",
+        "Ia2",
+        104
+      ],
+      [
+        "Ia",
+        "Ia2",
+        169
+      ],
+      [
+        "Ia",
+        "Ia3",
+        13
+      ],
+      [
+        "Ia",
+        "Ia3",
+        85
+      ],
+      [
+        "Ia",
+        "Ia3",
+        110
+      ],
+      [
+        "Ia",
+        "Ia3",
+        133
+      ],
+      [
+        "Ia",
+        "Ia3",
+        147
+      ],
+      [
+        "Ia",
+        "Ia5",
+        67
+      ],
+      [
+        "Ia",
+        "Ia5",
+        79
+      ],
+      [
+        "Ia",
+        "Ia5",
+        134
+      ],
+      [
+        "Ia",
+        "Ia6",
+        117
+      ],
+      [
+        "Ia",
+        "Ia7",
+        32
+      ],
+      [
+        "Ia",
+        "Ia7",
+        48
+      ],
+      [
+        "Ia",
+        "Ia8",
+        27
+      ],
+      [
+        "Ia",
+        "Ia9",
+        10
+      ],
+      [
+        "Ia",
+        "Ia12",
+        6
+      ],
+      [
+        "Ia",
+        "Ia12",
+        19
+      ],
+      [
+        "Ia",
+        "Ia12",
+        59
+      ],
+      [
+        "Ia",
+        "Ia12",
+        63
+      ],
+      [
+        "Ia",
+        "Ia13",
+        44
+      ],
+      [
+        "Ia",
+        "Ia13",
+        54
+      ],
+      [
+        "Ia",
+        "Ia13",
+        92
+      ],
+      [
+        "Ia",
+        "Ia13",
+        101
+      ],
+      [
+        "Ia",
+        "Ia13",
+        114
+      ],
+      [
+        "Ia",
+        "Ia13",
+        128
+      ],
+      [
+        "Ia",
+        "Ia13",
+        149
+      ],
+      [
+        "Ia",
+        "Ia13",
+        153
+      ],
+      [
+        "Ia",
+        "Ia14",
+        81
+      ],
+      [
+        "Ia",
+        "Ia14",
+        106
+      ],
+      [
+        "Ia",
+        "Ia14",
+        166
+      ]
+    ],
+    "leftover_previous_4grams": [
+      [
+        "027",
+        "200",
+        "076",
+        "071"
+      ],
+      [
+        "090",
+        "700",
+        "076",
+        "071"
+      ],
+      [
+        "430",
+        "071",
+        "076",
+        "071"
+      ],
+      [
+        "999",
+        "700",
+        "076",
+        "071"
+      ],
+      [
+        "005",
+        "633",
+        "076",
+        "071"
+      ],
+      [
+        "147",
+        "076",
+        "076",
+        "071"
+      ],
+      [
+        "205",
+        "225",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "385",
+        "076",
+        "071"
+      ],
+      [
+        "530",
+        "298",
+        "076",
+        "071"
+      ],
+      [
+        "070",
+        "205",
+        "076",
+        "071"
+      ],
+      [
+        "600",
+        "604",
+        "076",
+        "071"
+      ],
+      [
+        "000",
+        "090",
+        "076",
+        "071"
+      ],
+      [
+        "999",
+        "406",
+        "076",
+        "071"
+      ],
+      [
+        "071",
+        "072",
+        "076",
+        "071"
+      ],
+      [
+        "430",
+        "099",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "999",
+        "076",
+        "071"
+      ],
+      [
+        "400",
+        "222",
+        "076",
+        "071"
+      ],
+      [
+        "002",
+        "514",
+        "076",
+        "071"
+      ],
+      [
+        "700",
+        "604",
+        "076",
+        "071"
+      ],
+      [
+        "019",
+        "099",
+        "076",
+        "071"
+      ],
+      [
+        "490",
+        "440",
+        "076",
+        "071"
+      ],
+      [
+        "050",
+        "606",
+        "076",
+        "071"
+      ],
+      [
+        "061",
+        "290",
+        "076",
+        "071"
+      ],
+      [
+        "002",
+        "009",
+        "076",
+        "071"
+      ],
+      [
+        "999",
+        "007",
+        "076",
+        "071"
+      ],
+      [
+        "073",
+        "006",
+        "076",
+        "071"
+      ],
+      [
+        "042",
+        "730",
+        "076",
+        "071"
+      ],
+      [
+        "084",
+        "600",
+        "076",
+        "071"
+      ],
+      [
+        "040",
+        "700",
+        "076",
+        "071"
+      ],
+      [
+        "006",
+        "048",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "090",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "011",
+        "076",
+        "071"
+      ],
+      [
+        "090",
+        "090",
+        "076",
+        "071"
+      ],
+      [
+        "006",
+        "000",
+        "076",
+        "071"
+      ]
+    ],
+    "N_locked_cluster": 10,
+    "N_remaining": 24,
+    "N_distinct_remaining_previous_stems": 24,
+    "N_no_backward": 0,
+    "no_backward_sites": [],
+    "locked_cluster_sites": [
+      [
+        "Ia",
+        "Ia1",
+        163
+      ],
+      [
+        "Ia",
+        "Ia2",
+        51
+      ],
+      [
+        "Ia",
+        "Ia3",
+        147
+      ],
+      [
+        "Ia",
+        "Ia5",
+        67
+      ],
+      [
+        "Ia",
+        "Ia6",
+        117
+      ],
+      [
+        "Ia",
+        "Ia9",
+        10
+      ],
+      [
+        "Ia",
+        "Ia12",
+        6
+      ],
+      [
+        "Ia",
+        "Ia13",
+        128
+      ],
+      [
+        "Ia",
+        "Ia13",
+        153
+      ],
+      [
+        "Ia",
+        "Ia14",
+        106
+      ]
+    ],
+    "remaining_leftover_sites": [
+      [
+        "Ia",
+        "Ia1",
+        86
+      ],
+      [
+        "Ia",
+        "Ia2",
+        43
+      ],
+      [
+        "Ia",
+        "Ia2",
+        104
+      ],
+      [
+        "Ia",
+        "Ia2",
+        169
+      ],
+      [
+        "Ia",
+        "Ia3",
+        13
+      ],
+      [
+        "Ia",
+        "Ia3",
+        85
+      ],
+      [
+        "Ia",
+        "Ia3",
+        110
+      ],
+      [
+        "Ia",
+        "Ia3",
+        133
+      ],
+      [
+        "Ia",
+        "Ia5",
+        79
+      ],
+      [
+        "Ia",
+        "Ia5",
+        134
+      ],
+      [
+        "Ia",
+        "Ia7",
+        32
+      ],
+      [
+        "Ia",
+        "Ia7",
+        48
+      ],
+      [
+        "Ia",
+        "Ia8",
+        27
+      ],
+      [
+        "Ia",
+        "Ia12",
+        19
+      ],
+      [
+        "Ia",
+        "Ia12",
+        59
+      ],
+      [
+        "Ia",
+        "Ia12",
+        63
+      ],
+      [
+        "Ia",
+        "Ia13",
+        44
+      ],
+      [
+        "Ia",
+        "Ia13",
+        54
+      ],
+      [
+        "Ia",
+        "Ia13",
+        92
+      ],
+      [
+        "Ia",
+        "Ia13",
+        101
+      ],
+      [
+        "Ia",
+        "Ia13",
+        114
+      ],
+      [
+        "Ia",
+        "Ia13",
+        149
+      ],
+      [
+        "Ia",
+        "Ia14",
+        81
+      ],
+      [
+        "Ia",
+        "Ia14",
+        166
+      ]
+    ],
+    "remaining_previous_4grams": [
+      [
+        "027",
+        "200",
+        "076",
+        "071"
+      ],
+      [
+        "430",
+        "071",
+        "076",
+        "071"
+      ],
+      [
+        "005",
+        "633",
+        "076",
+        "071"
+      ],
+      [
+        "147",
+        "076",
+        "076",
+        "071"
+      ],
+      [
+        "205",
+        "225",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "385",
+        "076",
+        "071"
+      ],
+      [
+        "530",
+        "298",
+        "076",
+        "071"
+      ],
+      [
+        "070",
+        "205",
+        "076",
+        "071"
+      ],
+      [
+        "999",
+        "406",
+        "076",
+        "071"
+      ],
+      [
+        "071",
+        "072",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "999",
+        "076",
+        "071"
+      ],
+      [
+        "400",
+        "222",
+        "076",
+        "071"
+      ],
+      [
+        "002",
+        "514",
+        "076",
+        "071"
+      ],
+      [
+        "490",
+        "440",
+        "076",
+        "071"
+      ],
+      [
+        "050",
+        "606",
+        "076",
+        "071"
+      ],
+      [
+        "061",
+        "290",
+        "076",
+        "071"
+      ],
+      [
+        "002",
+        "009",
+        "076",
+        "071"
+      ],
+      [
+        "999",
+        "007",
+        "076",
+        "071"
+      ],
+      [
+        "073",
+        "006",
+        "076",
+        "071"
+      ],
+      [
+        "042",
+        "730",
+        "076",
+        "071"
+      ],
+      [
+        "084",
+        "600",
+        "076",
+        "071"
+      ],
+      [
+        "006",
+        "048",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "011",
+        "076",
+        "071"
+      ],
+      [
+        "006",
+        "000",
+        "076",
+        "071"
+      ]
+    ],
+    "remaining_previous_stems": [
+      "200",
+      "071",
+      "633",
+      "076",
+      "225",
+      "385",
+      "298",
+      "205",
+      "406",
+      "072",
+      "999",
+      "222",
+      "514",
+      "440",
+      "606",
+      "290",
+      "009",
+      "007",
+      "006",
+      "730",
+      "600",
+      "048",
+      "011",
+      "000"
+    ],
+    "remaining_leftover_local_4grams": [
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia1",
+        "index": 86,
+        "previous_4gram": [
+          "027",
+          "200",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "200",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia2",
+        "index": 43,
+        "previous_4gram": [
+          "430",
+          "071",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "071",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia2",
+        "index": 104,
+        "previous_4gram": [
+          "005",
+          "633",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "633",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia2",
+        "index": 169,
+        "previous_4gram": [
+          "147",
+          "076",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "076",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia3",
+        "index": 13,
+        "previous_4gram": [
+          "205",
+          "225",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "225",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia3",
+        "index": 85,
+        "previous_4gram": [
+          "076",
+          "385",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "385",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia3",
+        "index": 110,
+        "previous_4gram": [
+          "530",
+          "298",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "298",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia3",
+        "index": 133,
+        "previous_4gram": [
+          "070",
+          "205",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "205",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia5",
+        "index": 79,
+        "previous_4gram": [
+          "999",
+          "406",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "406",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia5",
+        "index": 134,
+        "previous_4gram": [
+          "071",
+          "072",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "072",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia7",
+        "index": 32,
+        "previous_4gram": [
+          "076",
+          "999",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "999",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia7",
+        "index": 48,
+        "previous_4gram": [
+          "400",
+          "222",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "222",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia8",
+        "index": 27,
+        "previous_4gram": [
+          "002",
+          "514",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "514",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia12",
+        "index": 19,
+        "previous_4gram": [
+          "490",
+          "440",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "440",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia12",
+        "index": 59,
+        "previous_4gram": [
+          "050",
+          "606",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "606",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia12",
+        "index": 63,
+        "previous_4gram": [
+          "061",
+          "290",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "290",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia13",
+        "index": 44,
+        "previous_4gram": [
+          "002",
+          "009",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "009",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia13",
+        "index": 54,
+        "previous_4gram": [
+          "999",
+          "007",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "007",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia13",
+        "index": 92,
+        "previous_4gram": [
+          "073",
+          "006",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "006",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia13",
+        "index": 101,
+        "previous_4gram": [
+          "042",
+          "730",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "730",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia13",
+        "index": 114,
+        "previous_4gram": [
+          "084",
+          "600",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "600",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia13",
+        "index": 149,
+        "previous_4gram": [
+          "006",
+          "048",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "048",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia14",
+        "index": 81,
+        "previous_4gram": [
+          "076",
+          "011",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "011",
+          "076",
+          "071"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia14",
+        "index": 166,
+        "previous_4gram": [
+          "006",
+          "000",
+          "076",
+          "071"
+        ],
+        "backward_3gram": [
+          "000",
+          "076",
+          "071"
+        ]
+      }
+    ],
+    "inside_family_does_not_count": true,
+    "cycle191_700_cluster_does_not_count": true,
+    "cycle191_matching_sites": [
+      [
+        "Ia",
+        "Ia1",
+        163
+      ],
+      [
+        "Ia",
+        "Ia2",
+        51
+      ],
+      [
+        "Ia",
+        "Ia13",
+        128
+      ]
+    ],
+    "cycle191_N_with_previous_700_076_071": 3,
+    "cycle194_090_cluster_does_not_count": true,
+    "cycle194_matching_sites": [
+      [
+        "Ia",
+        "Ia5",
+        67
+      ],
+      [
+        "Ia",
+        "Ia13",
+        153
+      ],
+      [
+        "Ia",
+        "Ia14",
+        106
+      ]
+    ],
+    "cycle194_N_with_previous_090_076_071": 3,
+    "cycle197_604_cluster_does_not_count": true,
+    "cycle197_matching_sites": [
+      [
+        "Ia",
+        "Ia3",
+        147
+      ],
+      [
+        "Ia",
+        "Ia9",
+        10
+      ]
+    ],
+    "cycle197_N_with_previous_604_076_071": 2,
+    "cycle200_099_cluster_does_not_count": true,
+    "cycle200_matching_sites": [
+      [
+        "Ia",
+        "Ia6",
+        117
+      ],
+      [
+        "Ia",
+        "Ia12",
+        6
+      ]
+    ],
+    "cycle200_N_with_previous_099_076_071": 2,
+    "remaining_sites_disjoint_from_locked_clusters": true,
+    "share_one_previous_stem_not_locked": true,
+    "known_distinct": true,
+    "claim": "i_leftover_076_071_remaining_previous_stems_all_distinct",
+    "i_leftover_076_071_remaining_previous_stems_all_distinct": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle191": false,
+    "same_as_cycle194": false,
+    "same_as_cycle197": false,
+    "same_as_cycle200": false,
+    "same_as_cycle190": false,
+    "071_999_does_not_count": true,
+    "076_076_does_not_count": true,
+    "other_leftover_n4_does_not_count": true,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "cycle190_leftover_previous_4grams_remeasured": true,
+    "standing_i_leftover_076_071_previous_099_unchanged": true,
+    "standing_i_leftover_076_071_previous_604_unchanged": true,
+    "standing_i_leftover_076_071_previous_090_unchanged": true,
+    "standing_i_leftover_076_071_previous_700_unchanged": true,
+    "standing_i_leftover_076_071_previous_stem_unchanged": true,
+    "standing_i_2gram_076_071_inside_family_unchanged": true,
+    "standing_i_2gram_076_071_i_only_unchanged": true,
+    "standing_i_leftover_n4_076_071_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
