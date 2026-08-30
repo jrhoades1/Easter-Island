@@ -341,8 +341,9 @@ class TestI2gram076070IOnlyHelpers(unittest.TestCase):
             tuple(sorted(leftover_2gram + extra)),
             tuple(sorted(STANDING_I_SITES)),
         )
-        planted = leftover_2gram + ((SIDE_IA, "Ia1", 0),)
+        planted = leftover_2gram + (STANDING_EXTRA_I_SITES[0],)
         self.assertNotEqual(extra_i_sites(STANDING_I_SITES, planted), extra)
+        self.assertEqual(len(extra_i_sites(STANDING_I_SITES, planted)), STANDING_N_EXTRA - 1)
         self.assertEqual(provider.get_call_history(), [])
 
 
