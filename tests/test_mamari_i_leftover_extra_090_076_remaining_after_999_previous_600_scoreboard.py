@@ -1010,7 +1010,7 @@ class TestMamariILeftoverExtra090076RemainingAfter999Previous600Scoreboard(
         prior_w.test_survey_matches_computed_lock()
         unused = CYCLE207_GRAM3
         self.assertEqual(unused, ("090", "076", "070"))
-        unused_n = CYCLE224_N_I
+        unused_n = STANDING_N_I
         self.assertEqual(unused_n, 69)
         unused_266 = CYCLE266_N_REMAINING
         self.assertEqual(unused_266, 41)
