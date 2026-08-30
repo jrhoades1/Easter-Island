@@ -41417,6 +41417,1005 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_leftover_n4_remaining_next_2gram": {
+    "cycle": 222,
+    "result": "i_leftover_n4_remaining_next_2gram",
+    "hypothesis_k": 5,
+    "tokens2": [
+      "090",
+      "076"
+    ],
+    "G": [
+      "090",
+      "076"
+    ],
+    "n2": 2,
+    "leftover_n4_count": 27,
+    "N_leftover_n4": 27,
+    "N_with_999_090_076": 7,
+    "N_with_076_071": 4,
+    "N_with_076_070": 1,
+    "N_exception": 1,
+    "exception": [
+      "071",
+      "065",
+      "071",
+      "999"
+    ],
+    "N_remaining": 16,
+    "K": 5,
+    "N_with_g": 5,
+    "N_without_g": 11,
+    "matching_leftovers": [
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "021",
+        "090",
+        "076",
+        "087"
+      ],
+      [
+        "600",
+        "090",
+        "076",
+        "011"
+      ],
+      [
+        "999",
+        "021",
+        "090",
+        "076"
+      ],
+      [
+        "090",
+        "076",
+        "057",
+        "600"
+      ]
+    ],
+    "remaining": [
+      {
+        "tokens": [
+          "090",
+          "076",
+          "020",
+          "010"
+        ],
+        "n": 4,
+        "freq": 4,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            119
+          ],
+          [
+            "Ia",
+            "Ia4",
+            86
+          ],
+          [
+            "Ia",
+            "Ia5",
+            143
+          ],
+          [
+            "Ia",
+            "Ia12",
+            83
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "090",
+            "076"
+          ],
+          [
+            "076",
+            "020"
+          ],
+          [
+            "020",
+            "010"
+          ]
+        ],
+        "contains_g": true
+      },
+      {
+        "tokens": [
+          "028",
+          "076",
+          "011",
+          "076"
+        ],
+        "n": 4,
+        "freq": 3,
+        "sites": [
+          [
+            "Ia",
+            "Ia1",
+            136
+          ],
+          [
+            "Ia",
+            "Ia4",
+            125
+          ],
+          [
+            "Ia",
+            "Ia14",
+            78
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "028",
+            "076"
+          ],
+          [
+            "076",
+            "011"
+          ],
+          [
+            "011",
+            "076"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "021",
+          "090",
+          "076",
+          "087"
+        ],
+        "n": 4,
+        "freq": 3,
+        "sites": [
+          [
+            "Ia",
+            "Ia4",
+            116
+          ],
+          [
+            "Ia",
+            "Ia5",
+            27
+          ],
+          [
+            "Ia",
+            "Ia6",
+            77
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "021",
+            "090"
+          ],
+          [
+            "090",
+            "076"
+          ],
+          [
+            "076",
+            "087"
+          ]
+        ],
+        "contains_g": true
+      },
+      {
+        "tokens": [
+          "071",
+          "999",
+          "604",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia1",
+            63
+          ],
+          [
+            "Ia",
+            "Ia9",
+            3
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "071",
+            "999"
+          ],
+          [
+            "999",
+            "604"
+          ],
+          [
+            "604",
+            "076"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "600",
+          "090",
+          "076",
+          "011"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            106
+          ],
+          [
+            "Ia",
+            "Ia14",
+            53
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "600",
+            "090"
+          ],
+          [
+            "090",
+            "076"
+          ],
+          [
+            "076",
+            "011"
+          ]
+        ],
+        "contains_g": true
+      },
+      {
+        "tokens": [
+          "076",
+          "020",
+          "010",
+          "050"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia2",
+            120
+          ],
+          [
+            "Ia",
+            "Ia14",
+            110
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "076",
+            "020"
+          ],
+          [
+            "020",
+            "010"
+          ],
+          [
+            "010",
+            "050"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "076",
+          "010",
+          "079",
+          "090"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia5",
+            110
+          ],
+          [
+            "Ia",
+            "Ia5",
+            139
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "076",
+            "010"
+          ],
+          [
+            "010",
+            "079"
+          ],
+          [
+            "079",
+            "090"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "072",
+          "076",
+          "010",
+          "079"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia5",
+            138
+          ],
+          [
+            "Ia",
+            "Ia13",
+            71
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "072",
+            "076"
+          ],
+          [
+            "076",
+            "010"
+          ],
+          [
+            "010",
+            "079"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "202",
+          "076",
+          "006",
+          "055"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia6",
+            48
+          ],
+          [
+            "Ia",
+            "Ia12",
+            119
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "202",
+            "076"
+          ],
+          [
+            "076",
+            "006"
+          ],
+          [
+            "006",
+            "055"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "076",
+          "999",
+          "029",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            30
+          ],
+          [
+            "Ia",
+            "Ia10",
+            144
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "076",
+            "999"
+          ],
+          [
+            "999",
+            "029"
+          ],
+          [
+            "029",
+            "076"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "999",
+          "021",
+          "090",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            104
+          ],
+          [
+            "Ia",
+            "Ia13",
+            15
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "999",
+            "021"
+          ],
+          [
+            "021",
+            "090"
+          ],
+          [
+            "090",
+            "076"
+          ]
+        ],
+        "contains_g": true
+      },
+      {
+        "tokens": [
+          "090",
+          "076",
+          "057",
+          "600"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            114
+          ],
+          [
+            "Ia",
+            "Ia9",
+            28
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "090",
+            "076"
+          ],
+          [
+            "076",
+            "057"
+          ],
+          [
+            "057",
+            "600"
+          ]
+        ],
+        "contains_g": true
+      },
+      {
+        "tokens": [
+          "700",
+          "076",
+          "076",
+          "053"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia8",
+            167
+          ],
+          [
+            "Ia",
+            "Ia9",
+            32
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "700",
+            "076"
+          ],
+          [
+            "076",
+            "076"
+          ],
+          [
+            "076",
+            "053"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "430",
+          "076",
+          "001",
+          "076"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia10",
+            103
+          ],
+          [
+            "Ia",
+            "Ia13",
+            156
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "430",
+            "076"
+          ],
+          [
+            "076",
+            "001"
+          ],
+          [
+            "001",
+            "076"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "053",
+          "076",
+          "020",
+          "010"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia12",
+            0
+          ],
+          [
+            "Ia",
+            "Ia14",
+            109
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "053",
+            "076"
+          ],
+          [
+            "076",
+            "020"
+          ],
+          [
+            "020",
+            "010"
+          ]
+        ],
+        "contains_g": false
+      },
+      {
+        "tokens": [
+          "430",
+          "076",
+          "049",
+          "400"
+        ],
+        "n": 4,
+        "freq": 2,
+        "sites": [
+          [
+            "Ia",
+            "Ia13",
+            170
+          ],
+          [
+            "Ia",
+            "Ia14",
+            63
+          ]
+        ],
+        "constituent_2grams": [
+          [
+            "430",
+            "076"
+          ],
+          [
+            "076",
+            "049"
+          ],
+          [
+            "049",
+            "400"
+          ]
+        ],
+        "contains_g": false
+      }
+    ],
+    "ranked_2grams": [
+      {
+        "tokens": [
+          "090",
+          "076"
+        ],
+        "remaining_count": 5
+      },
+      {
+        "tokens": [
+          "076",
+          "020"
+        ],
+        "remaining_count": 3
+      },
+      {
+        "tokens": [
+          "020",
+          "010"
+        ],
+        "remaining_count": 3
+      },
+      {
+        "tokens": [
+          "430",
+          "076"
+        ],
+        "remaining_count": 2
+      },
+      {
+        "tokens": [
+          "076",
+          "011"
+        ],
+        "remaining_count": 2
+      },
+      {
+        "tokens": [
+          "076",
+          "010"
+        ],
+        "remaining_count": 2
+      },
+      {
+        "tokens": [
+          "021",
+          "090"
+        ],
+        "remaining_count": 2
+      },
+      {
+        "tokens": [
+          "010",
+          "079"
+        ],
+        "remaining_count": 2
+      },
+      {
+        "tokens": [
+          "999",
+          "604"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "999",
+          "029"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "999",
+          "021"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "700",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "604",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "600",
+          "090"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "202",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "079",
+          "090"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "999"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "087"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "057"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "053"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "049"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "006"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "076",
+          "001"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "072",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "071",
+          "999"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "057",
+          "600"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "053",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "049",
+          "400"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "029",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "028",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "011",
+          "076"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "010",
+          "050"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "006",
+          "055"
+        ],
+        "remaining_count": 1
+      },
+      {
+        "tokens": [
+          "001",
+          "076"
+        ],
+        "remaining_count": 1
+      }
+    ],
+    "contains_g": [
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
+    ],
+    "near_miss_999_090_076_070": [
+      "999",
+      "090",
+      "076",
+      "070"
+    ],
+    "near_miss_999_090_076_071": [
+      "999",
+      "090",
+      "076",
+      "071"
+    ],
+    "near_miss_076_071_009_090": [
+      "076",
+      "071",
+      "009",
+      "090"
+    ],
+    "near_miss_071_065_071_999": [
+      "071",
+      "065",
+      "071",
+      "999"
+    ],
+    "family_999_090_076_does_not_count": true,
+    "family_076_071_does_not_count": true,
+    "exception_071_065_071_999_does_not_count": true,
+    "g_uniquely_most_frequent": true,
+    "i_vs_off_i_is_not_this_cycle": true,
+    "ib_hits": 0,
+    "ib_sites": [],
+    "known_distinct": true,
+    "claim": "i_leftover_n4_remaining_exactly_5_contain_090_076",
+    "i_leftover_n4_remaining_exactly_5_contain_090_076": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "standing_i_leftover_999_090_076_070_remaining_5grams_i_only_unchanged": true,
+    "standing_i_4gram_999_090_076_070_i_only_unchanged": true,
+    "standing_i_leftover_n4_076_070_unchanged": true,
+    "standing_i_leftover_n4_076_071_unchanged": true,
+    "standing_i_leftover_n4_999_090_076_unchanged": true,
+    "standing_i_leftover_n4_maximals_076_unchanged": true,
+    "standing_i_independent_nge4_maximals_unchanged": true,
+    "standing_i_2gram_076_071_i_only_unchanged": true,
+    "standing_i_repeating_nge4_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
