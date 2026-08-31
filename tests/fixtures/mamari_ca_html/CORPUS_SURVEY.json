@@ -137131,6 +137131,601 @@
     "nested_cycle328_K": 2,
     "nested_cycle328_N_tied_at_k": 5
   },
+  "i_2gram_076_020_i_only": {
+    "cycle": 334,
+    "result": "i_2gram_076_020_i_only",
+    "hypothesis_i_only": true,
+    "tokens2": [
+      "076",
+      "020"
+    ],
+    "n2": 2,
+    "i_hits": 12,
+    "N_on_I": 12,
+    "N_I": 12,
+    "ia_hits": 12,
+    "ib_hits": 0,
+    "i_sites": [
+      [
+        "Ia",
+        "Ia2",
+        120
+      ],
+      [
+        "Ia",
+        "Ia4",
+        87
+      ],
+      [
+        "Ia",
+        "Ia4",
+        158
+      ],
+      [
+        "Ia",
+        "Ia5",
+        56
+      ],
+      [
+        "Ia",
+        "Ia5",
+        144
+      ],
+      [
+        "Ia",
+        "Ia6",
+        102
+      ],
+      [
+        "Ia",
+        "Ia12",
+        1
+      ],
+      [
+        "Ia",
+        "Ia12",
+        84
+      ],
+      [
+        "Ia",
+        "Ia13",
+        48
+      ],
+      [
+        "Ia",
+        "Ia13",
+        87
+      ],
+      [
+        "Ia",
+        "Ia14",
+        110
+      ],
+      [
+        "Ia",
+        "Ia14",
+        128
+      ]
+    ],
+    "ib_sites": [],
+    "leftover_4gram_sites": [
+      [
+        "Ia",
+        "Ia2",
+        120
+      ],
+      [
+        "Ia",
+        "Ia14",
+        110
+      ],
+      [
+        "Ia",
+        "Ia12",
+        0
+      ],
+      [
+        "Ia",
+        "Ia14",
+        109
+      ]
+    ],
+    "leftover_matching_4grams": [
+      [
+        "076",
+        "020",
+        "010",
+        "050"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "050"
+      ],
+      [
+        "053",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "053",
+        "076",
+        "020",
+        "010"
+      ]
+    ],
+    "leftover_matching_sites": [
+      [
+        "Ia",
+        "Ia2",
+        120
+      ],
+      [
+        "Ia",
+        "Ia12",
+        1
+      ],
+      [
+        "Ia",
+        "Ia14",
+        110
+      ]
+    ],
+    "leftover_matching_count": 3,
+    "leftover_matching_subset_of_i_sites": true,
+    "leftover_matching_next_4grams": [
+      [
+        "076",
+        "020",
+        "010",
+        "050"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "019"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "050"
+      ]
+    ],
+    "extra_i_sites": [
+      [
+        "Ia",
+        "Ia4",
+        87
+      ],
+      [
+        "Ia",
+        "Ia4",
+        158
+      ],
+      [
+        "Ia",
+        "Ia5",
+        56
+      ],
+      [
+        "Ia",
+        "Ia5",
+        144
+      ],
+      [
+        "Ia",
+        "Ia6",
+        102
+      ],
+      [
+        "Ia",
+        "Ia12",
+        84
+      ],
+      [
+        "Ia",
+        "Ia13",
+        48
+      ],
+      [
+        "Ia",
+        "Ia13",
+        87
+      ],
+      [
+        "Ia",
+        "Ia14",
+        128
+      ]
+    ],
+    "N_extra": 9,
+    "leftover_090_076_020_2gram_sites": [
+      [
+        "Ia",
+        "Ia2",
+        120
+      ],
+      [
+        "Ia",
+        "Ia4",
+        87
+      ],
+      [
+        "Ia",
+        "Ia5",
+        144
+      ],
+      [
+        "Ia",
+        "Ia12",
+        84
+      ]
+    ],
+    "leftover_090_076_020_in_matching": [
+      [
+        "Ia",
+        "Ia2",
+        120
+      ]
+    ],
+    "leftover_090_076_020_in_extra": [
+      [
+        "Ia",
+        "Ia4",
+        87
+      ],
+      [
+        "Ia",
+        "Ia5",
+        144
+      ],
+      [
+        "Ia",
+        "Ia12",
+        84
+      ]
+    ],
+    "N_leftover_090_076_020_overlap": 4,
+    "N_leftover_090_076_020_in_matching": 1,
+    "N_leftover_090_076_020_in_extra": 3,
+    "i_previous_4grams": [
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "633",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "208",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "005",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "053",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "536",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "070",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "053",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "070",
+        "076",
+        "020",
+        "010"
+      ]
+    ],
+    "i_next_4grams": [
+      [
+        "076",
+        "020",
+        "010",
+        "050"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "087"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "150"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "090"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "690"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "146"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "019"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "600"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "076"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "073"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "050"
+      ],
+      [
+        "076",
+        "020",
+        "010",
+        "070"
+      ]
+    ],
+    "off_i_hits": 0,
+    "N_off_I": 0,
+    "N_leak": 0,
+    "off_i_sites": [],
+    "off_i_previous_4grams": [],
+    "off_i_following_3grams": [],
+    "N_T": 0,
+    "t_sites": [],
+    "t_among_leaks": false,
+    "off_i_tablets": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V"
+    ],
+    "off_i_by_tablet": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "off_i_tablets_with_hits": [],
+    "off_i_by_tablet_nonzero": {},
+    "vendored_tablets": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V"
+    ],
+    "hits_by_tablet": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "known_distinct": true,
+    "claim": "i_2gram_076_020_i_only",
+    "i_2gram_076_020_i_only": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle223_2gram": false,
+    "same_as_cycle290_3gram": false,
+    "same_as_cycle330_2gram": false,
+    "same_as_cycle333": false,
+    "same_as_cycle332": false,
+    "same_as_cycle331": false,
+    "same_as_cycle329": false,
+    "same_as_cycle328": false,
+    "same_claim_shape_as_cycle330": true,
+    "same_claim_shape_as_cycle223": true,
+    "same_claim_shape_as_cycle290": true,
+    "090_076_does_not_count": true,
+    "430_076_does_not_count": true,
+    "090_076_020_does_not_count": true,
+    "090_076_070_does_not_count": true,
+    "076_071_does_not_count": true,
+    "leftover_4gram_i_only_is_not_this_cycle": true,
+    "all_i_inside_family_is_not_this_cycle": true,
+    "all_i_inside_family": false,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "do_not_relock_cycle333": true,
+    "do_not_relock_cycle332": true,
+    "do_not_relock_cycle331": true,
+    "do_not_relock_cycle330": true,
+    "do_not_relock_cycle329": true,
+    "do_not_relock_cycle328": true,
+    "do_not_relock_cycle222": true,
+    "do_not_relock_cycles_288_327": true,
+    "do_not_relock_leftover_extra_peels": true,
+    "do_not_relock_cycles_220_221": true,
+    "do_not_relock_cycle223": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_exactly2_076_020_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_next_2gram_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_430_076_4grams_i_only_unchanged": true,
+    "standing_i_2gram_430_076_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_exactly2_430_076_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_next_2gram_unchanged": true,
+    "standing_i_leftover_n4_remaining_next_2gram_unchanged": true,
+    "standing_i_2gram_090_076_i_only_unchanged": true,
+    "standing_i_3gram_090_076_020_i_only_unchanged": true,
+    "standing_i_leftover_999_090_076_070_remaining_5grams_i_only_unchanged": true,
+    "standing_i_5gram_999_090_076_070_000_i_only_unchanged": true,
+    "standing_i_2gram_076_071_i_only_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_i_santiago_staff_unchanged": true,
+    "standing_n_repeating_nge5_unchanged": true,
+    "standing_s_repeating_nge6_unchanged": true,
+    "standing_corpus_longest_n_inventory_unchanged": true,
+    "standing_corpus_max_n_leak_table_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked",
+    "nested_cycle333_exactly_2_share_076_020": true,
+    "nested_cycle333_K": 2,
+    "nested_cycle333_N": 9,
+    "nested_cycle333_N_remaining": 7,
+    "nested_cycle332_unique_max_false": true,
+    "nested_cycle332_unique_max": false,
+    "nested_cycle332_K": 2,
+    "nested_cycle332_N_tied_at_k": 4,
+    "nested_cycle331_4grams_all_i_only": true,
+    "nested_cycle331_N_extra": 0,
+    "nested_cycle330_i_2gram_430_076_i_only": false,
+    "nested_cycle330_N_I": 30,
+    "nested_cycle330_N_off_I": 16,
+    "nested_cycle330_N_extra": 26,
+    "nested_cycle329_exactly_2_share_430_076": true,
+    "nested_cycle329_K": 2,
+    "nested_cycle329_N_remaining": 9,
+    "nested_cycle328_unique_max": false,
+    "nested_cycle328_K": 2,
+    "nested_cycle328_N_tied_at_k": 5
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
