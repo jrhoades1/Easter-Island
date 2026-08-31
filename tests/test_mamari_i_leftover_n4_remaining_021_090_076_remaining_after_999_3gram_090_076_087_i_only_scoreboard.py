@@ -735,7 +735,9 @@ class TestILeftoverN4Remaining021090076RemainingAfter9993gram090076087IOnlyHelpe
             )
         )
         self.assertEqual(len(extra_i_sites(planted_extra)), 3)
-        dropped = STANDING_I_SITES[1:]
+        dropped = tuple(
+            site for site in STANDING_I_SITES if site != STANDING_LEFTOVER_MATCHING_SITES[0]
+        )
         self.assertFalse(
             leftover_n4_remaining_remaining_after_999_next087_subset(
                 STANDING_LEFTOVER_MATCHING_SITES,
