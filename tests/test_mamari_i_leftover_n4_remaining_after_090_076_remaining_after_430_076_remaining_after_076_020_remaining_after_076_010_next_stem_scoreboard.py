@@ -698,7 +698,7 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(hold_g, "760")
         self.assertEqual(hold_k, 11)
         self.assertTrue(hold_unique)
-        two_way = ("760",) * 6 + ("720",) * 5
+        two_way = ("760",) * 5 + ("720",) * 5 + ("000",)
         self.assertFalse(
             i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_unique_next_stem(
                 sites,
