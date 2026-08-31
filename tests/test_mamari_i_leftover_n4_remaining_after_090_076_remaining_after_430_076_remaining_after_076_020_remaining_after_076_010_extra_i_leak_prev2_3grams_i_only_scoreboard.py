@@ -972,7 +972,10 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
             self.assertNotIn(gram, CYCLE340_SEQUENCES)
             self.assertFalse(is_contiguous_substring(NEAR_MISS_090_076, gram))
             self.assertFalse(is_contiguous_substring(NEAR_MISS_430_076, gram))
-            self.assertFalse(is_contiguous_substring(NEAR_MISS_076_020, gram))
+            if gram == GRAM3_070_076_020:
+                self.assertTrue(is_contiguous_substring(NEAR_MISS_076_020, gram))
+            else:
+                self.assertFalse(is_contiguous_substring(NEAR_MISS_076_020, gram))
             self.assertFalse(is_contiguous_substring(NEAR_MISS_076_010, gram))
         adjacent = [list(gram) for gram in STANDING_SEQUENCES]
         self.assertEqual(ngram_hit_count(adjacent, STANDING_SEQUENCES[0]), 1)
