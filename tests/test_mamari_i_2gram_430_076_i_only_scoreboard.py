@@ -534,15 +534,18 @@ class TestI2gram430076IOnlyHelpers(unittest.TestCase):
             STANDING_LEFTOVER_MATCHING_COUNT + STANDING_N_EXTRA,
         )
         self.assertEqual(4 + 26, 30)
-        planted_extra = STANDING_I_SITES + ((SIDE_IA, "Ia1", 0),)
+        planted_foreign = (SIDE_IA, "Ia99", 999)
+        planted_extra = STANDING_I_SITES + (planted_foreign,)
         self.assertFalse(
             leftover_matching_subset(
-                STANDING_LEFTOVER_MATCHING_SITES + ((SIDE_IA, "Ia1", 0),),
+                STANDING_LEFTOVER_MATCHING_SITES + (planted_foreign,),
                 STANDING_I_SITES,
             )
         )
         self.assertEqual(len(extra_i_sites(planted_extra)), 27)
-        dropped = STANDING_I_SITES[1:]
+        dropped = tuple(
+            site for site in STANDING_I_SITES if site != STANDING_LEFTOVER_MATCHING_SITES[0]
+        )
         self.assertFalse(
             leftover_matching_subset(
                 STANDING_LEFTOVER_MATCHING_SITES,
