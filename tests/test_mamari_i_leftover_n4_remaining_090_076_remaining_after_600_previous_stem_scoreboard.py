@@ -797,7 +797,7 @@ class TestILeftoverN4Remaining090076RemainingAfter600PreviousStemHelpers(
             )
         )
         two_way = list(stems)
-        two_way_map = {(SIDE_IA, "Ia2", 119): "999", (SIDE_IA, "Ia4", 86): "591"}
+        two_way_map = {(SIDE_IA, "Ia4", 86): "999", (SIDE_IA, "Ia5", 143): "591"}
         for i, site in enumerate(inside):
             if site in two_way_map:
                 two_way[i] = two_way_map[site]
