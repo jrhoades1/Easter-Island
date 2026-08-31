@@ -121785,6 +121785,13 @@
     "overlap_cycle258_extra_i_057": true,
     "overlap_cycle259_extra_i_057": true,
     "ia2_ia4_ia5_ia12_overlap_cycle258_259_295": false,
+    "overlap_cycle257_fwd4_4gram": [
+      "090",
+      "076",
+      "090",
+      "076"
+    ],
+    "overlap_cycle257_fwd4": true,
     "overlap_does_not_lose": true,
     "nested_leftover_n4_remaining": [
       13,

@@ -367,6 +367,8 @@ STANDING_OVERLAP_CYCLE295_NEXT_057 = (
 STANDING_OVERLAP_CYCLE258_EXTRA_I_057 = True
 STANDING_OVERLAP_CYCLE259_EXTRA_I_057 = True
 STANDING_IA2_IA4_IA5_IA12_OVERLAP_258_259_295 = False
+STANDING_OVERLAP_CYCLE257_FWD4_4GRAM = ("090", "076", "090", "076")
+STANDING_OVERLAP_CYCLE257_FWD4 = True
 STANDING_OVERLAP_DOES_NOT_LOSE = True
 STANDING_CLAIM = (
     "i_leftover_n4_remaining_090_076_remaining_after_600_previous_4grams_all_i_only"
@@ -577,10 +579,13 @@ class TestILeftoverN4Remaining090076RemainingAfter600Prev4IOnlyHelpers(
             self.assertNotEqual(gram[1:], ("021", "090", "076"))
             self.assertNotEqual(gram[1:], ("600", "090", "076"))
             self.assertNotEqual(gram, CYCLE219_LEAK_4GRAM)
-            self.assertNotIn(gram, CYCLE257_SEQUENCES)
             self.assertNotIn(gram, CYCLE259_SEQUENCES)
             self.assertNotIn(gram, CYCLE285_SEQUENCES)
             self.assertNotIn(gram, CYCLE299_SEQUENCES)
+            if gram == STANDING_OVERLAP_CYCLE257_FWD4_4GRAM:
+                self.assertIn(gram, CYCLE257_SEQUENCES)
+            else:
+                self.assertNotIn(gram, CYCLE257_SEQUENCES)
         adjacent = [list(gram) for gram in STANDING_SEQUENCES]
         for gram in STANDING_SEQUENCES:
             self.assertEqual(ngram_hit_count(adjacent, gram), 1)
@@ -1178,9 +1183,15 @@ class TestMamariILeftoverN4Remaining090076RemainingAfter600Prev4IOnlyScoreboard(
         for gram in CYCLE285_SEQUENCES:
             self.assertNotIn(gram, STANDING_SEQUENCES)
         for gram in CYCLE257_SEQUENCES:
-            self.assertNotIn(gram, STANDING_SEQUENCES)
+            if gram == STANDING_OVERLAP_CYCLE257_FWD4_4GRAM:
+                self.assertIn(gram, STANDING_SEQUENCES)
+            else:
+                self.assertNotIn(gram, STANDING_SEQUENCES)
         for gram in CYCLE299_SEQUENCES:
             self.assertNotIn(gram, STANDING_SEQUENCES)
+        self.assertEqual(STANDING_SEQUENCES[1], STANDING_OVERLAP_CYCLE257_FWD4_4GRAM)
+        self.assertIn(STANDING_OVERLAP_CYCLE257_FWD4_4GRAM, CYCLE257_SEQUENCES)
+        self.assertTrue(STANDING_OVERLAP_CYCLE257_FWD4)
         self.assertNotIn(STANDING_SEQUENCES[3], CYCLE259_SEQUENCES)
         self.assertNotIn(STANDING_SEQUENCES[4], CYCLE259_SEQUENCES)
         self.assertEqual(IA_LINE_NAMES[1], "Ia2")
@@ -1601,6 +1612,11 @@ class TestMamariILeftoverN4Remaining090076RemainingAfter600Prev4IOnlyScoreboard(
         self.assertTrue(lock["overlap_cycle258_extra_i_057"])
         self.assertTrue(lock["overlap_cycle259_extra_i_057"])
         self.assertFalse(lock["ia2_ia4_ia5_ia12_overlap_cycle258_259_295"])
+        self.assertEqual(
+            tuple(lock["overlap_cycle257_fwd4_4gram"]),
+            STANDING_OVERLAP_CYCLE257_FWD4_4GRAM,
+        )
+        self.assertTrue(lock["overlap_cycle257_fwd4"])
         self.assertTrue(lock["overlap_does_not_lose"])
         self.assertEqual(lock["nested_leftover_n4_remaining"], [13, 4, 9, 3, 6, 2, 4, 2, 2])
         self.assertEqual(lock["nested_cycle308_N_remaining_after_600"], 6)
