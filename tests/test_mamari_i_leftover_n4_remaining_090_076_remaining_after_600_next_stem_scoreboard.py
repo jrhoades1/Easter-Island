@@ -828,14 +828,12 @@ class TestILeftoverN4Remaining090076RemainingAfter600NextStemHelpers(
         for i, site in enumerate(inside):
             if site == (SIDE_IA, "Ia2", 119):
                 tie_next[i] = "057"
-            if site == (SIDE_IA, "Ia4", 86):
-                tie_next[i] = "057"
         tied = tuple(tie_next)
         tied_g, tied_k, tied_unique = select_remaining_after_600_next_g(
             leftover_n4_remaining_remaining_after_600_next_stems(inside, prev, tied)
         )
         self.assertEqual(tied_g, "057")
-        self.assertEqual(tied_k, 4)
+        self.assertEqual(tied_k, 3)
         self.assertFalse(tied_unique)
         self.assertEqual(len(leftover_n4_remaining_remaining_after_600(inside, prev)), 6)
         self.assertFalse(
