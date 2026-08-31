@@ -229,6 +229,7 @@ from tests.test_mamari_i_leftover_n4_remaining_after_090_076_remaining_after_430
 )
 from tests.test_mamari_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_4grams_i_only_scoreboard import (
     STANDING_I_LEFTOVER_N4_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_4GRAMS_ALL_I_ONLY as CYCLE340_CLAIM,
+    STANDING_LEFTOVER_MATCHING_4GRAMS as CYCLE340_MATCHING_4GRAMS,
     STANDING_LEFTOVER_MATCHING_SITES as CYCLE340_LEFTOVER_MATCHING,
     STANDING_N as CYCLE340_N,
     STANDING_N_EXTRA as CYCLE340_N_EXTRA,
@@ -965,12 +966,12 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.previous_2grams = leftover_4gram_previous_2grams(
             self.i_sides,
             self.leftover_matching,
-            CYCLE340_SEQUENCES,
+            CYCLE340_MATCHING_4GRAMS,
         )
         self.previous_3grams = leftover_4gram_previous_3grams(
             self.i_sides,
             self.leftover_matching,
-            CYCLE340_SEQUENCES,
+            CYCLE340_MATCHING_4GRAMS,
         )
         self.leftover_2grams = leftover_remaining_2grams(self.leftover)
         self.by_tablet = load_vendored_by_tablet()
