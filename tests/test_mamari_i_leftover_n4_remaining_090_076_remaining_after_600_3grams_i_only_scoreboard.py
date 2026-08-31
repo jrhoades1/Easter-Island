@@ -1381,7 +1381,8 @@ class TestMamariILeftoverN4Remaining090076RemainingAfter6003gramsIOnlyScoreboard
             self.assertNotIn(site, STANDING_REMAINING_SITES)
         for site in CYCLE303_MATCHING_SITES:
             self.assertNotIn(site, STANDING_REMAINING_SITES)
-        self.assertEqual(STANDING_SEQUENCES[1][1:], STANDING_OVERLAP_CYCLE257_FWD4_4GRAM[1:])
+        self.assertEqual(CYCLE309_SEQUENCES[1], STANDING_OVERLAP_CYCLE257_FWD4_4GRAM)
+        self.assertEqual(STANDING_I_PREVIOUS_4GRAMS[1][1], STANDING_OVERLAP_CYCLE257_FWD4_4GRAM)
         self.assertIn(STANDING_OVERLAP_CYCLE257_FWD4_4GRAM, CYCLE257_SEQUENCES)
         self.assertTrue(STANDING_OVERLAP_CYCLE257_FWD4)
         self.assertEqual(IA_LINE_NAMES[1], "Ia2")
