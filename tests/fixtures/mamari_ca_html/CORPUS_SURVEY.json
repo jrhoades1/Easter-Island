@@ -197750,6 +197750,8768 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_1gram_2grams_i_only": {
+    "cycle": 359,
+    "result": "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_1gram_2grams_i_only",
+    "hypothesis_all_i_only": true,
+    "n1": 1,
+    "n2": 2,
+    "n3": 3,
+    "n4": 4,
+    "N": 52,
+    "N_4grams_leftover": 5,
+    "N_1grams": 12,
+    "N_i_only_1grams": 1,
+    "N_i_only_1grams_with_extra": 1,
+    "N_i_only_1grams_zero_extra": 0,
+    "N_leaking_1grams": 11,
+    "N_extra_i": 93,
+    "N_extra_total": 93,
+    "N_extra_i_2grams": 93,
+    "N_distinct_2grams": 52,
+    "tokens2": [
+      [
+        "999",
+        "090"
+      ],
+      [
+        "999",
+        "390"
+      ],
+      [
+        "999",
+        "571"
+      ],
+      [
+        "999",
+        "700"
+      ],
+      [
+        "999",
+        "099"
+      ],
+      [
+        "999",
+        "604"
+      ],
+      [
+        "999",
+        "606"
+      ],
+      [
+        "999",
+        "027"
+      ],
+      [
+        "999",
+        "205"
+      ],
+      [
+        "999",
+        "023"
+      ],
+      [
+        "999",
+        "200"
+      ],
+      [
+        "999",
+        "071"
+      ],
+      [
+        "999",
+        "430"
+      ],
+      [
+        "999",
+        "440"
+      ],
+      [
+        "999",
+        "208"
+      ],
+      [
+        "999",
+        "021"
+      ],
+      [
+        "999",
+        "406"
+      ],
+      [
+        "999",
+        "004"
+      ],
+      [
+        "999",
+        "072"
+      ],
+      [
+        "999",
+        "048"
+      ],
+      [
+        "999",
+        "755"
+      ],
+      [
+        "999",
+        "202"
+      ],
+      [
+        "999",
+        "129"
+      ],
+      [
+        "999",
+        "607"
+      ],
+      [
+        "999",
+        "404"
+      ],
+      [
+        "999",
+        "009"
+      ],
+      [
+        "999",
+        "049"
+      ],
+      [
+        "999",
+        "076"
+      ],
+      [
+        "999",
+        "069"
+      ],
+      [
+        "999",
+        "008"
+      ],
+      [
+        "999",
+        "194"
+      ],
+      [
+        "999",
+        "240"
+      ],
+      [
+        "999",
+        "451"
+      ],
+      [
+        "999",
+        "445"
+      ],
+      [
+        "999",
+        "499"
+      ],
+      [
+        "999",
+        "630"
+      ],
+      [
+        "999",
+        "472"
+      ],
+      [
+        "999",
+        "045"
+      ],
+      [
+        "999",
+        "050"
+      ],
+      [
+        "999",
+        "006"
+      ],
+      [
+        "999",
+        "002"
+      ],
+      [
+        "999",
+        "720"
+      ],
+      [
+        "999",
+        "741"
+      ],
+      [
+        "999",
+        "690"
+      ],
+      [
+        "999",
+        "073"
+      ],
+      [
+        "999",
+        "059"
+      ],
+      [
+        "999",
+        "379"
+      ],
+      [
+        "999",
+        "280"
+      ],
+      [
+        "999",
+        "633"
+      ],
+      [
+        "999",
+        "007"
+      ],
+      [
+        "999",
+        "161"
+      ],
+      [
+        "999",
+        "107"
+      ]
+    ],
+    "parent_1grams_with_extra": [
+      [
+        "999"
+      ]
+    ],
+    "extra_i_sites": [
+      [
+        "Ia",
+        "Ia1",
+        1
+      ],
+      [
+        "Ia",
+        "Ia1",
+        110
+      ],
+      [
+        "Ia",
+        "Ia1",
+        173
+      ],
+      [
+        "Ia",
+        "Ia2",
+        9
+      ],
+      [
+        "Ia",
+        "Ia2",
+        49
+      ],
+      [
+        "Ia",
+        "Ia2",
+        98
+      ],
+      [
+        "Ia",
+        "Ia2",
+        132
+      ],
+      [
+        "Ia",
+        "Ia3",
+        24
+      ],
+      [
+        "Ia",
+        "Ia3",
+        36
+      ],
+      [
+        "Ia",
+        "Ia3",
+        42
+      ],
+      [
+        "Ia",
+        "Ia3",
+        51
+      ],
+      [
+        "Ia",
+        "Ia3",
+        70
+      ],
+      [
+        "Ia",
+        "Ia3",
+        79
+      ],
+      [
+        "Ia",
+        "Ia3",
+        91
+      ],
+      [
+        "Ia",
+        "Ia3",
+        127
+      ],
+      [
+        "Ia",
+        "Ia4",
+        6
+      ],
+      [
+        "Ia",
+        "Ia4",
+        25
+      ],
+      [
+        "Ia",
+        "Ia4",
+        51
+      ],
+      [
+        "Ia",
+        "Ia4",
+        111
+      ],
+      [
+        "Ia",
+        "Ia4",
+        153
+      ],
+      [
+        "Ia",
+        "Ia5",
+        1
+      ],
+      [
+        "Ia",
+        "Ia5",
+        12
+      ],
+      [
+        "Ia",
+        "Ia5",
+        17
+      ],
+      [
+        "Ia",
+        "Ia5",
+        22
+      ],
+      [
+        "Ia",
+        "Ia5",
+        36
+      ],
+      [
+        "Ia",
+        "Ia5",
+        49
+      ],
+      [
+        "Ia",
+        "Ia5",
+        54
+      ],
+      [
+        "Ia",
+        "Ia5",
+        71
+      ],
+      [
+        "Ia",
+        "Ia5",
+        77
+      ],
+      [
+        "Ia",
+        "Ia5",
+        82
+      ],
+      [
+        "Ia",
+        "Ia5",
+        94
+      ],
+      [
+        "Ia",
+        "Ia5",
+        108
+      ],
+      [
+        "Ia",
+        "Ia5",
+        137
+      ],
+      [
+        "Ia",
+        "Ia6",
+        11
+      ],
+      [
+        "Ia",
+        "Ia6",
+        43
+      ],
+      [
+        "Ia",
+        "Ia6",
+        59
+      ],
+      [
+        "Ia",
+        "Ia6",
+        72
+      ],
+      [
+        "Ia",
+        "Ia6",
+        91
+      ],
+      [
+        "Ia",
+        "Ia6",
+        96
+      ],
+      [
+        "Ia",
+        "Ia6",
+        107
+      ],
+      [
+        "Ia",
+        "Ia6",
+        138
+      ],
+      [
+        "Ia",
+        "Ia6",
+        147
+      ],
+      [
+        "Ia",
+        "Ia6",
+        163
+      ],
+      [
+        "Ia",
+        "Ia7",
+        6
+      ],
+      [
+        "Ia",
+        "Ia7",
+        31
+      ],
+      [
+        "Ia",
+        "Ia7",
+        53
+      ],
+      [
+        "Ia",
+        "Ia7",
+        67
+      ],
+      [
+        "Ia",
+        "Ia7",
+        77
+      ],
+      [
+        "Ia",
+        "Ia7",
+        92
+      ],
+      [
+        "Ia",
+        "Ia7",
+        104
+      ],
+      [
+        "Ia",
+        "Ia7",
+        117
+      ],
+      [
+        "Ia",
+        "Ia7",
+        128
+      ],
+      [
+        "Ia",
+        "Ia7",
+        142
+      ],
+      [
+        "Ia",
+        "Ia7",
+        160
+      ],
+      [
+        "Ia",
+        "Ia7",
+        169
+      ],
+      [
+        "Ia",
+        "Ia8",
+        3
+      ],
+      [
+        "Ia",
+        "Ia8",
+        9
+      ],
+      [
+        "Ia",
+        "Ia8",
+        47
+      ],
+      [
+        "Ia",
+        "Ia8",
+        52
+      ],
+      [
+        "Ia",
+        "Ia8",
+        68
+      ],
+      [
+        "Ia",
+        "Ia8",
+        91
+      ],
+      [
+        "Ia",
+        "Ia8",
+        104
+      ],
+      [
+        "Ia",
+        "Ia8",
+        130
+      ],
+      [
+        "Ia",
+        "Ia8",
+        153
+      ],
+      [
+        "Ia",
+        "Ia8",
+        162
+      ],
+      [
+        "Ia",
+        "Ia9",
+        13
+      ],
+      [
+        "Ia",
+        "Ia9",
+        18
+      ],
+      [
+        "Ia",
+        "Ia9",
+        22
+      ],
+      [
+        "Ia",
+        "Ia9",
+        27
+      ],
+      [
+        "Ia",
+        "Ia9",
+        59
+      ],
+      [
+        "Ia",
+        "Ia9",
+        68
+      ],
+      [
+        "Ia",
+        "Ia9",
+        77
+      ],
+      [
+        "Ia",
+        "Ia9",
+        82
+      ],
+      [
+        "Ia",
+        "Ia9",
+        109
+      ],
+      [
+        "Ia",
+        "Ia9",
+        118
+      ],
+      [
+        "Ia",
+        "Ia9",
+        128
+      ],
+      [
+        "Ia",
+        "Ia9",
+        153
+      ],
+      [
+        "Ia",
+        "Ia9",
+        166
+      ],
+      [
+        "Ia",
+        "Ia10",
+        150
+      ],
+      [
+        "Ia",
+        "Ia10",
+        156
+      ],
+      [
+        "Ia",
+        "Ia10",
+        161
+      ],
+      [
+        "Ia",
+        "Ia10",
+        166
+      ],
+      [
+        "Ia",
+        "Ia10",
+        171
+      ],
+      [
+        "Ia",
+        "Ia10",
+        181
+      ],
+      [
+        "Ia",
+        "Ia12",
+        46
+      ],
+      [
+        "Ia",
+        "Ia12",
+        114
+      ],
+      [
+        "Ia",
+        "Ia13",
+        15
+      ],
+      [
+        "Ia",
+        "Ia13",
+        52
+      ],
+      [
+        "Ia",
+        "Ia13",
+        108
+      ],
+      [
+        "Ia",
+        "Ia13",
+        166
+      ],
+      [
+        "Ia",
+        "Ia14",
+        62
+      ],
+      [
+        "Ia",
+        "Ia14",
+        91
+      ],
+      [
+        "Ia",
+        "Ia14",
+        139
+      ]
+    ],
+    "leftover_matching_sites": [
+      [
+        "Ia",
+        "Ia1",
+        136
+      ],
+      [
+        "Ia",
+        "Ia4",
+        125
+      ],
+      [
+        "Ia",
+        "Ia14",
+        78
+      ],
+      [
+        "Ia",
+        "Ia1",
+        63
+      ],
+      [
+        "Ia",
+        "Ia9",
+        3
+      ],
+      [
+        "Ia",
+        "Ia6",
+        48
+      ],
+      [
+        "Ia",
+        "Ia12",
+        119
+      ],
+      [
+        "Ia",
+        "Ia8",
+        30
+      ],
+      [
+        "Ia",
+        "Ia10",
+        144
+      ],
+      [
+        "Ia",
+        "Ia8",
+        167
+      ],
+      [
+        "Ia",
+        "Ia9",
+        32
+      ]
+    ],
+    "leftover_matching_count": 11,
+    "leftover_matching_1gram_count": 44,
+    "leftover_matching_2gram_count": 33,
+    "N_line_final": 0,
+    "all_extra_i_have_next": true,
+    "not_assumed_hapax": true,
+    "hapax_not_required": true,
+    "N_extra": 2,
+    "N_extra_of_2grams": 2,
+    "sequences": [
+      {
+        "tokens2": [
+          "999",
+          "090"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia1",
+            1
+          ],
+          [
+            "Ia",
+            "Ia2",
+            9
+          ],
+          [
+            "Ia",
+            "Ia3",
+            36
+          ],
+          [
+            "Ia",
+            "Ia3",
+            70
+          ],
+          [
+            "Ia",
+            "Ia4",
+            111
+          ],
+          [
+            "Ia",
+            "Ia4",
+            153
+          ],
+          [
+            "Ia",
+            "Ia5",
+            1
+          ],
+          [
+            "Ia",
+            "Ia5",
+            22
+          ],
+          [
+            "Ia",
+            "Ia6",
+            91
+          ],
+          [
+            "Ia",
+            "Ia7",
+            67
+          ],
+          [
+            "Ia",
+            "Ia7",
+            128
+          ],
+          [
+            "Ia",
+            "Ia9",
+            27
+          ],
+          [
+            "Ia",
+            "Ia9",
+            128
+          ],
+          [
+            "Ia",
+            "Ia12",
+            46
+          ],
+          [
+            "Ia",
+            "Ia13",
+            108
+          ],
+          [
+            "Ia",
+            "Ia14",
+            139
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia1",
+          1
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            1
+          ],
+          [
+            "Ia",
+            "Ia2",
+            9
+          ],
+          [
+            "Ia",
+            "Ia3",
+            36
+          ],
+          [
+            "Ia",
+            "Ia3",
+            70
+          ],
+          [
+            "Ia",
+            "Ia4",
+            111
+          ],
+          [
+            "Ia",
+            "Ia4",
+            153
+          ],
+          [
+            "Ia",
+            "Ia5",
+            1
+          ],
+          [
+            "Ia",
+            "Ia5",
+            22
+          ],
+          [
+            "Ia",
+            "Ia6",
+            91
+          ],
+          [
+            "Ia",
+            "Ia7",
+            67
+          ],
+          [
+            "Ia",
+            "Ia7",
+            128
+          ],
+          [
+            "Ia",
+            "Ia9",
+            27
+          ],
+          [
+            "Ia",
+            "Ia9",
+            128
+          ],
+          [
+            "Ia",
+            "Ia12",
+            46
+          ],
+          [
+            "Ia",
+            "Ia13",
+            108
+          ],
+          [
+            "Ia",
+            "Ia14",
+            139
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 16,
+        "N_on_I": 16,
+        "ia_hits": 16,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "390"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia1",
+            110
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia1",
+          110
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            110
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "571"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia1",
+            173
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia1",
+          173
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            173
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "700"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia2",
+            49
+          ],
+          [
+            "Ia",
+            "Ia9",
+            59
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia2",
+          49
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia2",
+            49
+          ],
+          [
+            "Ia",
+            "Ia9",
+            59
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "099"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia2",
+            98
+          ],
+          [
+            "Ia",
+            "Ia7",
+            92
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia2",
+          98
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia2",
+            98
+          ],
+          [
+            "Ia",
+            "Ia7",
+            92
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "604"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia2",
+            132
+          ],
+          [
+            "Ia",
+            "Ia5",
+            82
+          ],
+          [
+            "Ia",
+            "Ia7",
+            77
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia2",
+          132
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            64
+          ],
+          [
+            "Ia",
+            "Ia2",
+            132
+          ],
+          [
+            "Ia",
+            "Ia5",
+            82
+          ],
+          [
+            "Ia",
+            "Ia7",
+            77
+          ],
+          [
+            "Ia",
+            "Ia9",
+            4
+          ]
+        ],
+        "leftover_matching_sites": [
+          [
+            "Ia",
+            "Ia1",
+            64
+          ],
+          [
+            "Ia",
+            "Ia9",
+            4
+          ]
+        ],
+        "leftover_matching_count": 2,
+        "N_I": 5,
+        "N_on_I": 5,
+        "ia_hits": 5,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            64
+          ],
+          [
+            "Ia",
+            "Ia9",
+            4
+          ]
+        ],
+        "N_extra": 2,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "606"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia3",
+            24
+          ],
+          [
+            "Ia",
+            "Ia5",
+            12
+          ],
+          [
+            "Ia",
+            "Ia5",
+            36
+          ],
+          [
+            "Ia",
+            "Ia6",
+            59
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia3",
+          24
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia3",
+            24
+          ],
+          [
+            "Ia",
+            "Ia5",
+            12
+          ],
+          [
+            "Ia",
+            "Ia5",
+            36
+          ],
+          [
+            "Ia",
+            "Ia6",
+            59
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 4,
+        "N_on_I": 4,
+        "ia_hits": 4,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "027"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia3",
+            42
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia3",
+          42
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia3",
+            42
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "205"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia3",
+            51
+          ],
+          [
+            "Ia",
+            "Ia3",
+            79
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia3",
+          51
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia3",
+            51
+          ],
+          [
+            "Ia",
+            "Ia3",
+            79
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "023"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia3",
+            91
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia3",
+          91
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia3",
+            91
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "200"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia3",
+            127
+          ],
+          [
+            "Ia",
+            "Ia4",
+            51
+          ],
+          [
+            "Ia",
+            "Ia10",
+            171
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia3",
+          127
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia3",
+            127
+          ],
+          [
+            "Ia",
+            "Ia4",
+            51
+          ],
+          [
+            "Ia",
+            "Ia10",
+            171
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 3,
+        "N_on_I": 3,
+        "ia_hits": 3,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "071"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia4",
+            6
+          ],
+          [
+            "Ia",
+            "Ia4",
+            25
+          ],
+          [
+            "Ia",
+            "Ia5",
+            108
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia4",
+          6
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia4",
+            6
+          ],
+          [
+            "Ia",
+            "Ia4",
+            25
+          ],
+          [
+            "Ia",
+            "Ia5",
+            108
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 3,
+        "N_on_I": 3,
+        "ia_hits": 3,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "430"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            17
+          ],
+          [
+            "Ia",
+            "Ia6",
+            43
+          ],
+          [
+            "Ia",
+            "Ia10",
+            181
+          ],
+          [
+            "Ia",
+            "Ia14",
+            62
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          17
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            17
+          ],
+          [
+            "Ia",
+            "Ia6",
+            43
+          ],
+          [
+            "Ia",
+            "Ia10",
+            181
+          ],
+          [
+            "Ia",
+            "Ia14",
+            62
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 4,
+        "N_on_I": 4,
+        "ia_hits": 4,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "440"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            49
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          49
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            49
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "208"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            54
+          ],
+          [
+            "Ia",
+            "Ia9",
+            22
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          54
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            54
+          ],
+          [
+            "Ia",
+            "Ia9",
+            22
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "021"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            71
+          ],
+          [
+            "Ia",
+            "Ia8",
+            104
+          ],
+          [
+            "Ia",
+            "Ia13",
+            15
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          71
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            71
+          ],
+          [
+            "Ia",
+            "Ia8",
+            104
+          ],
+          [
+            "Ia",
+            "Ia13",
+            15
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 3,
+        "N_on_I": 3,
+        "ia_hits": 3,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "406"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            77
+          ],
+          [
+            "Ia",
+            "Ia9",
+            109
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          77
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            77
+          ],
+          [
+            "Ia",
+            "Ia9",
+            109
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "004"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            94
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          94
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            94
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "072"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia5",
+            137
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia5",
+          137
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia5",
+            137
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "048"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            11
+          ],
+          [
+            "Ia",
+            "Ia8",
+            68
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          11
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            11
+          ],
+          [
+            "Ia",
+            "Ia8",
+            68
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "755"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            72
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          72
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            72
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "202"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            96
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          96
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            96
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "129"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            107
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          107
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            107
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "607"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            138
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          138
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            138
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "404"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            147
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          147
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            147
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "009"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia6",
+            163
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia6",
+          163
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            163
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "049"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            6
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          6
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            6
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "076"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            31
+          ],
+          [
+            "Ia",
+            "Ia7",
+            160
+          ],
+          [
+            "Ia",
+            "Ia9",
+            18
+          ],
+          [
+            "Ia",
+            "Ia9",
+            82
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          31
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            31
+          ],
+          [
+            "Ia",
+            "Ia7",
+            160
+          ],
+          [
+            "Ia",
+            "Ia9",
+            18
+          ],
+          [
+            "Ia",
+            "Ia9",
+            82
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 4,
+        "N_on_I": 4,
+        "ia_hits": 4,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "069"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            53
+          ],
+          [
+            "Ia",
+            "Ia8",
+            3
+          ],
+          [
+            "Ia",
+            "Ia8",
+            130
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          53
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            53
+          ],
+          [
+            "Ia",
+            "Ia8",
+            3
+          ],
+          [
+            "Ia",
+            "Ia8",
+            130
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 3,
+        "N_on_I": 3,
+        "ia_hits": 3,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "008"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            104
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          104
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            104
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "194"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            117
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          117
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            117
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "240"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            142
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          142
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            142
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "451"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia7",
+            169
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia7",
+          169
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            169
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "445"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia8",
+            9
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia8",
+          9
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            9
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "499"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia8",
+            47
+          ],
+          [
+            "Ia",
+            "Ia8",
+            52
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia8",
+          47
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            47
+          ],
+          [
+            "Ia",
+            "Ia8",
+            52
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 2,
+        "N_on_I": 2,
+        "ia_hits": 2,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens2": [
+          "999",
+          "630"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia8",
+            91
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia8",
+          91
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            91
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "472"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia8",
+            153
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia8",
+          153
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            153
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "045"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia8",
+            162
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia8",
+          162
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            162
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "050"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia9",
+            13
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia9",
+          13
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            13
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "006"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia9",
+            68
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia9",
+          68
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            68
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "002"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia9",
+            77
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia9",
+          77
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            77
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "720"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia9",
+            118
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia9",
+          118
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            118
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "741"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia9",
+            153
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia9",
+          153
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            153
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "690"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia9",
+            166
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia9",
+          166
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            166
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "073"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia10",
+            150
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia10",
+          150
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            150
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "059"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia10",
+            156
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia10",
+          156
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            156
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "379"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia10",
+            161
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia10",
+          161
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            161
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "280"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia10",
+            166
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia10",
+          166
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            166
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "633"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia12",
+            114
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia12",
+          114
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia12",
+            114
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "007"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia13",
+            52
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia13",
+          52
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia13",
+            52
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "161"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia13",
+            166
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia13",
+          166
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia13",
+            166
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens2": [
+          "999",
+          "107"
+        ],
+        "parent_1gram": [
+          "999"
+        ],
+        "role": "next",
+        "extra_i_1gram_sites": [
+          [
+            "Ia",
+            "Ia14",
+            91
+          ]
+        ],
+        "extra_i_1gram_site": [
+          "Ia",
+          "Ia14",
+          91
+        ],
+        "i_sites": [
+          [
+            "Ia",
+            "Ia14",
+            91
+          ]
+        ],
+        "leftover_matching_sites": [],
+        "leftover_matching_count": 0,
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "ib_sites": [],
+        "N_off_I": 0,
+        "N_leak": 0,
+        "off_i_sites": [],
+        "extra_i_sites": [],
+        "N_extra": 0,
+        "off_i_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "off_i_by_tablet_nonzero": {},
+        "vendored_tablets": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U",
+          "V"
+        ],
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "i_only": true,
+        "hapax": true
+      }
+    ],
+    "N_I_each": [
+      16,
+      1,
+      1,
+      2,
+      2,
+      5,
+      4,
+      1,
+      2,
+      1,
+      3,
+      3,
+      4,
+      1,
+      2,
+      3,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      4,
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "N_off_I_each": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "hapax_each": [
+      false,
+      true,
+      true,
+      false,
+      false,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
+      false,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "leaking_2grams": [],
+    "N_leaking": 0,
+    "N_leak": 0,
+    "claim": "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_1gram_2grams_all_i_only",
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_1gram_2grams_all_i_only": true,
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_1gram_2grams_i_only": true,
+    "N_i_only": 52,
+    "N_hapax_i_only": 36,
+    "N_not_hapax": 16,
+    "N_not_i_only": 0,
+    "nested_cycle358_1grams_all_i_only": false,
+    "nested_cycle358_N_i_only": 1,
+    "nested_cycle358_N_leak": 11,
+    "nested_cycle358_N_extra": 916,
+    "nested_cycle357_extra_i_2gram_4grams_all_i_only": true,
+    "nested_cycle357_N_i_only": 29,
+    "nested_cycle357_N_hapax_i_only": 29,
+    "nested_cycle357_N_leak": 0,
+    "nested_cycle356_extra_i_leak_prev2_4grams_all_i_only": true,
+    "nested_cycle356_N_i_only": 10,
+    "nested_cycle356_N_leak": 0,
+    "nested_cycle355_extra_i_leak_prev2_3grams_all_i_only": true,
+    "nested_cycle355_N_i_only": 10,
+    "nested_cycle354_extra_i_leak_2gram_4grams_all_i_only": false,
+    "nested_cycle354_N_i_only": 84,
+    "nested_cycle354_N_leak": 0,
+    "nested_cycle354_N_line_final": 1,
+    "nested_cycle353_extra_i_leak_2gram_3grams_all_i_only": false,
+    "nested_cycle353_N_i_only": 71,
+    "nested_cycle353_N_leak": 3,
+    "nested_cycle352_extra_i_prev2_3grams_all_i_only": true,
+    "nested_cycle351_previous_2grams_all_i_only": false,
+    "nested_cycle351_N_i_only": 7,
+    "nested_cycle351_N_leak": 4,
+    "nested_cycle351_N_extra": 16,
+    "nested_cycle350_extra_i_2gram_3grams_all_i_only": true,
+    "nested_cycle350_N_i_only": 24,
+    "nested_cycle350_N_leak": 0,
+    "nested_cycle350_N_extra": 2,
+    "nested_cycle349_2grams_all_i_only": false,
+    "nested_cycle349_N_i_only": 9,
+    "nested_cycle349_N_leak": 6,
+    "nested_cycle349_N_extra": 116,
+    "nested_cycle348_extra_i_prev3_4grams_all_i_only": true,
+    "nested_cycle348_N_i_only": 1,
+    "nested_cycle347_previous_3grams_all_i_only": true,
+    "nested_cycle347_N_extra": 1,
+    "nested_cycle346_previous_5grams_all_i_only": true,
+    "nested_cycle345_unique_max": false,
+    "nested_cycle344_forward_5grams_all_i_only": true,
+    "nested_cycle343_unique_max": false,
+    "nested_cycle342_extra_i_4grams_all_i_only": true,
+    "nested_cycle342_N_i_only": 10,
+    "nested_cycle341_3grams_all_i_only": true,
+    "nested_cycle341_N_extra": 5,
+    "nested_cycle341_N_i_only": 10,
+    "nested_cycle341_N_leak": 0,
+    "nested_cycle340_4grams_all_i_only": true,
+    "nested_cycle340_N_extra": 0,
+    "nested_cycle340_N_i_only": 5,
+    "nested_cycle340_leftover_matching_count": 11,
+    "nested_cycle339_unique_max": false,
+    "nested_cycle339_K": 1,
+    "nested_cycle339_N": 5,
+    "nested_cycle338_4grams_all_i_only": true,
+    "nested_cycle337_N_I": 11,
+    "nested_cycle337_N_off_I": 3,
+    "nested_cycle337_i_2gram_076_010_i_only": false,
+    "nested_cycle334_N_I": 12,
+    "nested_cycle334_N_off_I": 0,
+    "nested_cycle330_i_2gram_430_076_i_only": false,
+    "nested_cycle330_N_I": 30,
+    "nested_cycle330_N_off_I": 16,
+    "nested_cycle300_3grams_all_i_only": true,
+    "nested_cycle300_N_i_only": 2,
+    "nested_cycle310_3grams_all_i_only": false,
+    "nested_cycle310_N_i_only": 4,
+    "nested_cycle310_N_leak": 2,
+    "nested_cycle223_N_I": 69,
+    "nested_cycle223_N_off_I": 3,
+    "nested_cycle222_K": 5,
+    "nested_cycle222_N_remaining": 16,
+    "known_distinct": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle222": false,
+    "same_as_cycle223": false,
+    "same_as_cycle339": false,
+    "same_as_cycle340": false,
+    "same_as_cycle341": false,
+    "same_as_cycle349": false,
+    "same_as_cycle350": false,
+    "same_as_cycle352": false,
+    "same_as_cycle358": false,
+    "same_claim_shape_as_cycle350": true,
+    "same_claim_shape_as_cycle352": true,
+    "leftover_4gram_i_only_is_not_this_cycle": true,
+    "leftover_3gram_i_only_is_not_this_cycle": true,
+    "leftover_2gram_i_only_is_not_this_cycle": true,
+    "leftover_1gram_i_only_is_not_this_cycle": true,
+    "extra_i_leftover_2gram_peels_are_not_this_cycle": true,
+    "extra_i_previous_2gram_peels_are_not_this_cycle": true,
+    "extra_i_of_leftover_matching_2grams_is_not_this_cycle": true,
+    "unique_max_2gram_is_not_this_cycle": true,
+    "all_i_inside_family_is_not_this_cycle": true,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "do_not_relock_cycle328": true,
+    "do_not_relock_cycle329": true,
+    "do_not_relock_cycle330": true,
+    "do_not_relock_cycle331": true,
+    "do_not_relock_cycle332": true,
+    "do_not_relock_cycle333": true,
+    "do_not_relock_cycle334": true,
+    "do_not_relock_cycle335": true,
+    "do_not_relock_cycle336": true,
+    "do_not_relock_cycle337": true,
+    "do_not_relock_cycle338": true,
+    "do_not_relock_cycle339": true,
+    "do_not_relock_cycle340": true,
+    "do_not_relock_cycle341": true,
+    "do_not_relock_cycle342": true,
+    "do_not_relock_cycle343": true,
+    "do_not_relock_cycle344": true,
+    "do_not_relock_cycle345": true,
+    "do_not_relock_cycle346": true,
+    "do_not_relock_cycle347": true,
+    "do_not_relock_cycle348": true,
+    "do_not_relock_cycle349": true,
+    "do_not_relock_cycle350": true,
+    "do_not_relock_cycle351": true,
+    "do_not_relock_cycle352": true,
+    "do_not_relock_cycle353": true,
+    "do_not_relock_cycle354": true,
+    "do_not_relock_cycle355": true,
+    "do_not_relock_cycle356": true,
+    "do_not_relock_cycle357": true,
+    "do_not_relock_cycle358": true,
+    "do_not_relock_cycle222": true,
+    "do_not_relock_cycles_288_327": true,
+    "do_not_relock_leftover_extra_peels": true,
+    "do_not_relock_cycles_220_221": true,
+    "do_not_relock_cycle223": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_1grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_2gram_3grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_2grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_3grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_4grams_i_only_unchanged": true,
+    "standing_i_2gram_076_010_i_only_unchanged": true,
+    "standing_i_2gram_076_020_i_only_unchanged": true,
+    "standing_i_2gram_430_076_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_next_2gram_unchanged": true,
+    "standing_i_2gram_090_076_i_only_unchanged": true,
+    "standing_i_2gram_076_071_i_only_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
 
   "standing_image_lock": {
     "instances": 83,
