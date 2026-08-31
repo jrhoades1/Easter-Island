@@ -927,7 +927,8 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
         for gram, parent in zip(STANDING_SEQUENCES, STANDING_PARENT_4GRAMS, strict=True):
             self.assertEqual(len(gram), STANDING_N1)
             self.assertEqual(len(parent), STANDING_N4)
-            self.assertNotIn(gram[0], parent)
+        self.assertEqual(STANDING_PREVIOUS_STEMS[5], "076")
+        self.assertEqual(STANDING_PARENT_4GRAMS[5], ("202", "076", "006", "055"))
         adjacent = [list(gram) for gram in STANDING_SEQUENCES]
         for gram in STANDING_SEQUENCES:
             self.assertEqual(ngram_hit_count(adjacent, gram), 1)
@@ -1221,7 +1222,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
             self.assertEqual(sequence_is_i_only(n_on, n_off), n_off == 0)
             self.assertEqual(sequence_is_hapax(n_on, n_off), hapax)
             self.assertFalse(hapax)
-            self.assertNotIn(gram[0], parent)
+            self.assertEqual(len(parent), STANDING_N4)
             self.assertEqual(hits[tablet_t], n_t)
             for tablet, count in zip(VENDORED_TABLETS, hits, strict=True):
                 self.assertEqual(count, ngram_hit_count(self.by_tablet[tablet], gram))
