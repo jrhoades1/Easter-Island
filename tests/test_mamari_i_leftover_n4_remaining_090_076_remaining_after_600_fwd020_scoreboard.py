@@ -731,11 +731,14 @@ class TestILeftoverN4Remaining090076RemainingAfter600Fwd020Helpers(unittest.Test
         planted = STANDING_MATCHING_SITES[:-1]
         self.assertFalse(matching_equals_cycle312_g_set(planted))
         self.assertFalse(matching_equals_cycle289_next_020(planted))
-        self.assertFalse(
-            all_matching_4grams_are_090_076_020_010(STANDING_MATCHING_NEXT_4GRAMS[:-1])
-        )
+        self.assertFalse(all_matching_4grams_are_090_076_020_010(()))
         self.assertFalse(
             all_matching_4grams_are_090_076_020_010((("090", "076", "057", "600"),))
+        )
+        self.assertFalse(
+            all_matching_4grams_are_090_076_020_010(
+                STANDING_MATCHING_NEXT_4GRAMS[:-1] + (("090", "076", "057", "600"),)
+            )
         )
         self.assertTrue(STANDING_OVERLAP_DOES_NOT_LOSE)
         self.assertTrue(STANDING_DO_NOT_RELOCK_CYCLE289_EXACTLY_4_SHARE_NEXT_020)
