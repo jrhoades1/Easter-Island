@@ -124378,6 +124378,602 @@
     "standing_w_honolulu_unpublished_unchanged": true,
     "image_track": "parked"
   },
+  "i_leftover_n4_remaining_090_076_remaining_after_600_next_stem": {
+    "cycle": 312,
+    "result": "i_leftover_n4_remaining_090_076_remaining_after_600_next_stem",
+    "tokens2": [
+      "090",
+      "076"
+    ],
+    "n2": 2,
+    "forward_3gram": [
+      "090",
+      "076",
+      "020"
+    ],
+    "n3": 3,
+    "n4": 4,
+    "locked_previous_stems_after_600": [
+      "021",
+      "600"
+    ],
+    "N_I": 69,
+    "N_inside": 13,
+    "N_leftover_extra": 56,
+    "inside_sites": [
+      [
+        "Ia",
+        "Ia2",
+        107
+      ],
+      [
+        "Ia",
+        "Ia2",
+        119
+      ],
+      [
+        "Ia",
+        "Ia4",
+        86
+      ],
+      [
+        "Ia",
+        "Ia4",
+        117
+      ],
+      [
+        "Ia",
+        "Ia5",
+        28
+      ],
+      [
+        "Ia",
+        "Ia5",
+        143
+      ],
+      [
+        "Ia",
+        "Ia6",
+        78
+      ],
+      [
+        "Ia",
+        "Ia8",
+        106
+      ],
+      [
+        "Ia",
+        "Ia8",
+        114
+      ],
+      [
+        "Ia",
+        "Ia9",
+        28
+      ],
+      [
+        "Ia",
+        "Ia12",
+        83
+      ],
+      [
+        "Ia",
+        "Ia13",
+        17
+      ],
+      [
+        "Ia",
+        "Ia14",
+        54
+      ]
+    ],
+    "N_with_previous_inside": 13,
+    "N_line_initial_inside": 0,
+    "K_021": 5,
+    "share_021_sites": [
+      [
+        "Ia",
+        "Ia4",
+        117
+      ],
+      [
+        "Ia",
+        "Ia5",
+        28
+      ],
+      [
+        "Ia",
+        "Ia6",
+        78
+      ],
+      [
+        "Ia",
+        "Ia8",
+        106
+      ],
+      [
+        "Ia",
+        "Ia13",
+        17
+      ]
+    ],
+    "N_remaining_after_021": 8,
+    "K_600": 2,
+    "share_600_sites": [
+      [
+        "Ia",
+        "Ia2",
+        107
+      ],
+      [
+        "Ia",
+        "Ia14",
+        54
+      ]
+    ],
+    "N_remaining_after_600": 6,
+    "remaining_after_600_sites": [
+      [
+        "Ia",
+        "Ia2",
+        119
+      ],
+      [
+        "Ia",
+        "Ia4",
+        86
+      ],
+      [
+        "Ia",
+        "Ia5",
+        143
+      ],
+      [
+        "Ia",
+        "Ia8",
+        114
+      ],
+      [
+        "Ia",
+        "Ia9",
+        28
+      ],
+      [
+        "Ia",
+        "Ia12",
+        83
+      ]
+    ],
+    "remaining_after_600_previous_stems": [
+      "591",
+      "076",
+      "090",
+      "000",
+      "999",
+      "008"
+    ],
+    "remaining_after_600_next_stems": [
+      "020",
+      "020",
+      "020",
+      "057",
+      "057",
+      "020"
+    ],
+    "N_with_next": 6,
+    "N_line_final": 0,
+    "N_no_next": 0,
+    "line_final_sites": [],
+    "no_next_sites": [],
+    "N_distinct": 2,
+    "N_hapax": 0,
+    "G": "020",
+    "K": 4,
+    "G_uniquely_most_frequent": true,
+    "unique_max": true,
+    "tied_stems_at_K": [
+      "020"
+    ],
+    "N_tied_at_K": 1,
+    "N_without_G": 2,
+    "matching_leftover_n4_remaining_remaining_after_600_sites": [
+      [
+        "Ia",
+        "Ia2",
+        119
+      ],
+      [
+        "Ia",
+        "Ia4",
+        86
+      ],
+      [
+        "Ia",
+        "Ia5",
+        143
+      ],
+      [
+        "Ia",
+        "Ia12",
+        83
+      ]
+    ],
+    "matching_next_4grams": [
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ],
+      [
+        "090",
+        "076",
+        "020",
+        "010"
+      ]
+    ],
+    "matching_leftover_n4_remaining_remaining_after_600_local_4grams": [
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia2",
+        "index": 119,
+        "next_4gram": [
+          "090",
+          "076",
+          "020",
+          "010"
+        ],
+        "forward_3gram": [
+          "090",
+          "076",
+          "020"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia4",
+        "index": 86,
+        "next_4gram": [
+          "090",
+          "076",
+          "020",
+          "010"
+        ],
+        "forward_3gram": [
+          "090",
+          "076",
+          "020"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia5",
+        "index": 143,
+        "next_4gram": [
+          "090",
+          "076",
+          "020",
+          "010"
+        ],
+        "forward_3gram": [
+          "090",
+          "076",
+          "020"
+        ]
+      },
+      {
+        "tablet": "I",
+        "side": "Ia",
+        "line": "Ia12",
+        "index": 83,
+        "next_4gram": [
+          "090",
+          "076",
+          "020",
+          "010"
+        ],
+        "forward_3gram": [
+          "090",
+          "076",
+          "020"
+        ]
+      }
+    ],
+    "remaining_after_600_next_stem_frequency": [
+      {
+        "next_stem": "020",
+        "count": 4,
+        "leftover_n4_remaining_remaining_after_600_sites": [
+          [
+            "Ia",
+            "Ia2",
+            119
+          ],
+          [
+            "Ia",
+            "Ia4",
+            86
+          ],
+          [
+            "Ia",
+            "Ia5",
+            143
+          ],
+          [
+            "Ia",
+            "Ia12",
+            83
+          ]
+        ],
+        "forward_3grams": [
+          [
+            "090",
+            "076",
+            "020"
+          ],
+          [
+            "090",
+            "076",
+            "020"
+          ],
+          [
+            "090",
+            "076",
+            "020"
+          ],
+          [
+            "090",
+            "076",
+            "020"
+          ]
+        ]
+      },
+      {
+        "next_stem": "057",
+        "count": 2,
+        "leftover_n4_remaining_remaining_after_600_sites": [
+          [
+            "Ia",
+            "Ia8",
+            114
+          ],
+          [
+            "Ia",
+            "Ia9",
+            28
+          ]
+        ],
+        "forward_3grams": [
+          [
+            "090",
+            "076",
+            "057"
+          ],
+          [
+            "090",
+            "076",
+            "057"
+          ]
+        ]
+      }
+    ],
+    "overlap_cycle258_extra_i_sites": [
+      [
+        "Ia",
+        "Ia8",
+        114
+      ],
+      [
+        "Ia",
+        "Ia9",
+        28
+      ]
+    ],
+    "overlap_cycle259_extra_i_sites": [
+      [
+        "Ia",
+        "Ia8",
+        114
+      ],
+      [
+        "Ia",
+        "Ia9",
+        28
+      ]
+    ],
+    "overlap_cycle295_next_057_sites": [
+      [
+        "Ia",
+        "Ia8",
+        114
+      ],
+      [
+        "Ia",
+        "Ia9",
+        28
+      ]
+    ],
+    "overlap_cycle288_g_020_sites": [
+      [
+        "Ia",
+        "Ia2",
+        119
+      ],
+      [
+        "Ia",
+        "Ia4",
+        86
+      ],
+      [
+        "Ia",
+        "Ia5",
+        143
+      ],
+      [
+        "Ia",
+        "Ia12",
+        83
+      ]
+    ],
+    "overlap_g_cycle258_extra_i_sites": [],
+    "overlap_g_cycle259_extra_i_sites": [],
+    "overlap_g_cycle295_next_057_sites": [],
+    "overlap_cycle285_extra_i_090_start_sites": [],
+    "overlap_does_not_lose": true,
+    "nested_leftover_n4_remaining": [
+      13,
+      4,
+      9,
+      3,
+      6,
+      2,
+      4,
+      2,
+      2
+    ],
+    "nested_cycle311_N_i_only": 2,
+    "nested_cycle311_N_hapax_i_only": 2,
+    "nested_cycle311_N_not_i_only": 0,
+    "nested_cycle311_extra_i_prev4_all_i_only": true,
+    "nested_cycle311_extra_i_4grams": [
+      [
+        "490",
+        "000",
+        "090",
+        "076"
+      ],
+      [
+        "727",
+        "008",
+        "090",
+        "076"
+      ]
+    ],
+    "nested_cycle310_N_i_only": 4,
+    "nested_cycle310_N_leak_off_i": 2,
+    "nested_cycle310_N_extra_total": 21,
+    "nested_cycle310_3grams_all_i_only": false,
+    "nested_cycle309_N_i_only": 6,
+    "nested_cycle309_N_hapax_i_only": 6,
+    "nested_cycle309_N_not_i_only": 0,
+    "nested_cycle309_previous_4grams_all_i_only": true,
+    "nested_cycle308_G": "999",
+    "nested_cycle308_K": 1,
+    "nested_cycle308_N_remaining_after_600": 6,
+    "nested_cycle308_N_distinct": 6,
+    "nested_cycle308_G_uniquely_most_frequent": false,
+    "nested_cycle307_K_600": 2,
+    "nested_cycle307_N_remaining_after_600": 6,
+    "nested_cycle306_G": "600",
+    "nested_cycle306_K": 2,
+    "nested_cycle306_N_remaining_after_021": 8,
+    "nested_cycle306_N_distinct": 7,
+    "nested_cycle306_unique_previous_stem": true,
+    "nested_cycle303_K_021": 5,
+    "nested_cycle303_N_remaining_after_021": 8,
+    "nested_cycle295_K_057": 2,
+    "nested_cycle288_N_distinct_next_stems": 6,
+    "nested_cycle288_G": "020",
+    "nested_cycle288_K": 4,
+    "nested_cycle288_share_one_forward_stem": false,
+    "nested_cycle288_g_uniquely_most_frequent": true,
+    "nested_cycle292_G": "087",
+    "nested_cycle292_K": 3,
+    "nested_cycle292_unique_next_stem": true,
+    "nested_cycle294_G": "057",
+    "nested_cycle294_K": 2,
+    "nested_cycle294_G_uniquely_most_frequent": false,
+    "nested_cycle296_G": "011",
+    "nested_cycle296_K": 2,
+    "nested_cycle296_unique_next_stem": true,
+    "nested_cycle298_G": "607",
+    "nested_cycle298_K": 1,
+    "nested_cycle298_G_uniquely_most_frequent": false,
+    "nested_cycle287_N_i_only": 2,
+    "nested_cycle287_N_not_i_only": 0,
+    "nested_cycle285_N_i_only": 27,
+    "nested_cycle259_N_extra_i": 3,
+    "nested_cycle258_N_extra": 3,
+    "nested_cycle224_N_inside": 13,
+    "nested_cycle224_N_leftover": 56,
+    "nested_cycle223_N_I": 69,
+    "nested_cycle223_N_off_I": 3,
+    "known_distinct": true,
+    "claim": "i_leftover_n4_remaining_090_076_remaining_after_600_unique_next_stem",
+    "i_leftover_n4_remaining_090_076_remaining_after_600_unique_next_stem": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_i_5gram": false,
+    "same_as_cycle288": false,
+    "same_as_cycle292": false,
+    "same_as_cycle294": false,
+    "same_as_cycle296": false,
+    "same_as_cycle298": false,
+    "same_as_cycle308": false,
+    "same_as_cycle309": false,
+    "same_as_cycle310": false,
+    "same_as_cycle311": false,
+    "same_claim_shape_as_cycle288": true,
+    "same_claim_shape_as_cycle292": true,
+    "same_claim_shape_as_cycle298": true,
+    "same_claim_shape_as_cycle308": true,
+    "off_i_t_sites_are_not_this_cycle": true,
+    "do_not_peel_a_specific_remaining_stem": true,
+    "do_not_peel_hapax_previous_stems": true,
+    "do_not_lock_exactly_K_share_next_G": true,
+    "do_not_relock_cycle287_extra_i_prev4": true,
+    "do_not_relock_cycle288_unique_next": true,
+    "do_not_relock_cycle292_remaining_after_020_unique_next": true,
+    "do_not_relock_cycle294_remaining_after_087_unique_next": true,
+    "do_not_relock_cycle296_remaining_after_057_unique_next": true,
+    "do_not_relock_cycle298_remaining_after_011_unique_next": true,
+    "do_not_relock_cycle308_unique_previous": true,
+    "cycle311_extra_i_prev4_is_not_this_cycle": true,
+    "cycle309_prev4_is_not_this_cycle": true,
+    "cycle310_3grams_is_not_this_cycle": true,
+    "076_071_does_not_count": true,
+    "076_070_does_not_count": true,
+    "leftover_extra_does_not_count": true,
+    "leftover_n4_remaining_remaining_after_087_is_not_this_cycle": true,
+    "leftover_extra_remaining_after_009_extra_i_is_not_this_cycle": true,
+    "leftover_extra_remaining_after_000_extra_i_is_not_this_cycle": true,
+    "leftover_n4_set_not_retuned": true,
+    "leftover_extra_peels_not_retuned": true,
+    "g_k_is_inventory_for_later_peel": true,
+    "raw_stems_999_kept": true,
+    "standing_i_leftover_n4_remaining_090_076_remaining_after_600_extra_i_prev4_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_remaining_after_600_3grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_remaining_after_600_prev4_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_remaining_after_600_previous_stem_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_remaining_after_021_previous_stem_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_previous_021_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_forward_stem_unchanged": true,
+    "standing_i_leftover_n4_remaining_090_076_remaining_after_087_forward_057_unchanged": true,
+    "standing_i_leftover_extra_090_076_remaining_after_009_extra_i_prev4_i_only_unchanged": true,
+    "standing_i_leftover_extra_090_076_remaining_after_000_extra_i_fwd4_i_only_unchanged": true,
+    "standing_i_090_076_inside_leftover_n4_remaining_family_unchanged": true,
+    "standing_i_2gram_090_076_i_only_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  },
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
