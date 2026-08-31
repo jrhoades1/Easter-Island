@@ -506,6 +506,30 @@ def leftover_4gram_previous_5grams(
     )
 
 
+def site_previous_3gram_before_4gram(
+    stems: list[str],
+    index: int,
+    gram4: tuple[str, ...],
+) -> tuple[str, ...] | None:
+    """Previous stem plus first two leftover tokens; None at line-initial or mismatch."""
+    prev = site_previous_stem_before_4gram(stems, index, gram4)
+    if prev is None:
+        return None
+    return (prev,) + gram4[:2]
+
+
+def leftover_4gram_previous_3grams(
+    i_sides: dict[str, list[list[str]]],
+    sites: tuple[tuple[str, str, int], ...] = STANDING_LEFTOVER_MATCHING_SITES,
+    grams: tuple[tuple[str, ...], ...] = STANDING_LEFTOVER_MATCHING_4GRAMS,
+) -> tuple[tuple[str, ...] | None, ...]:
+    """Per-site previous stem plus first two leftover tokens."""
+    return tuple(
+        site_previous_3gram_before_4gram(line_stems_for_site(i_sides, site), site[2], gram)
+        for site, gram in zip(sites, grams, strict=True)
+    )
+
+
 def leftover_4gram_sites_with_prev(
     sites: tuple[tuple[str, str, int], ...],
     previous_stems: tuple[str | None, ...],
