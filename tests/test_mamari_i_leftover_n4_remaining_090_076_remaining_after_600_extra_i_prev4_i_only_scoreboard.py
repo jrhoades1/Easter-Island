@@ -250,6 +250,7 @@ from tests.test_mamari_i_leftover_extra_090_076_remaining_after_009_prev4_i_only
 from tests.test_mamari_i_leftover_n4_remaining_090_076_forward_stem_scoreboard import (
     STANDING_G as CYCLE288_G,
     STANDING_G_UNIQUELY_MOST_FREQUENT as CYCLE288_UNIQUE_MAX,
+    STANDING_I_LEFTOVER_N4_REMAINING_090_076_SHARE_ONE_FORWARD_STEM as CYCLE288_SHARE_ONE,
     STANDING_K as CYCLE288_K,
     TestMamariILeftoverN4Remaining090076ForwardStemScoreboard,
 )
@@ -1711,7 +1712,8 @@ class TestMamariILeftoverN4Remaining090076RemainingAfter600ExtraIPrev4IOnlyScore
         prior_288.test_survey_matches_computed_lock()
         self.assertEqual(CYCLE288_G, "020")
         self.assertEqual(CYCLE288_K, 4)
-        self.assertFalse(CYCLE288_UNIQUE_MAX)
+        self.assertTrue(CYCLE288_UNIQUE_MAX)
+        self.assertFalse(CYCLE288_SHARE_ONE)
         prior_287 = TestMamariILeftoverExtra090076RemainingAfter009ExtraIPrev4IOnlyScoreboard()
         prior_287.setUp()
         prior_287.test_each_extra_i_4gram_lock_and_claim_holds()
@@ -2028,7 +2030,8 @@ class TestMamariILeftoverN4Remaining090076RemainingAfter600ExtraIPrev4IOnlyScore
         self.assertEqual(lock["nested_cycle295_K_057"], 2)
         self.assertEqual(lock["nested_cycle288_G"], "020")
         self.assertEqual(lock["nested_cycle288_K"], 4)
-        self.assertFalse(lock["nested_cycle288_G_uniquely_most_frequent"])
+        self.assertTrue(lock["nested_cycle288_G_uniquely_most_frequent"])
+        self.assertFalse(lock["nested_cycle288_share_one_forward_stem"])
         self.assertEqual(lock["nested_cycle287_N_i_only"], 2)
         self.assertEqual(lock["nested_cycle287_N_not_i_only"], 0)
         self.assertEqual(lock["nested_cycle286_N_i_only"], 27)
