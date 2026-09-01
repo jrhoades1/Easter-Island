@@ -1210,7 +1210,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(prior_388["cycle"], 388)
         self.assertTrue(
             prior_388[
-                "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_7grams_all_i_only"
+                "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_6grams_all_i_only"
             ]
         )
         self.assertEqual(prior_388["N_i_only"], 11)
