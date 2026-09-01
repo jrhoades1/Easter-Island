@@ -103,7 +103,7 @@ from tests.test_mamari_i_2gram_076_010_i_only_scoreboard import (
     named_off_i_sites,
 )
 from tests.test_mamari_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_2grams_i_only_scoreboard import (
-    STANDING_CLAIM as CYCLE349_CLAIM,
+    STANDING_I_LEFTOVER_N4_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_2GRAMS_ALL_I_ONLY as CYCLE349_CLAIM,
     STANDING_N_I_ONLY as CYCLE349_N_I_ONLY,
     STANDING_N_LEAK as CYCLE349_N_LEAK,
     TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760102gramsIOnlyScoreboard,
@@ -388,6 +388,8 @@ def leftover_4grams_remaining_after_leftover2_peels(
     leftovers: tuple[tuple[tuple[str, ...], int, int, tuple], ...] | None = None,
 ) -> tuple[tuple[tuple[str, ...], int, int, tuple], ...]:
     """Leftover remaining-after-076-010 4-grams that do not contain leftover-2 peels."""
+    if leftovers is None:
+        leftovers = leftover_n4_rows()
     remaining = leftover_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010(
         leftovers
     )
