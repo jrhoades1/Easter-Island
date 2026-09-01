@@ -1303,7 +1303,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(prior_389["cycle"], 389)
         self.assertFalse(
             prior_389[
-                "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_previous_8grams_tokens_all_i_only"
+                "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_previous_6grams_tokens_all_i_only"
             ]
         )
         self.assertEqual(prior_389["N_i_only"], 10)
@@ -1920,7 +1920,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["nested_cycle390_N_extra"], 0)
         self.assertEqual(lock["nested_cycle390_N_with_next7"], 11)
         self.assertEqual(lock["nested_cycle390_N_no_next7"], 0)
-        self.assertFalse(lock["nested_cycle389_previous_8grams_tokens_all_i_only"])
+        self.assertFalse(lock["nested_cycle389_previous_6grams_tokens_all_i_only"])
         self.assertEqual(lock["nested_cycle389_N_i_only"], 10)
         self.assertEqual(lock["nested_cycle389_N_leak"], 0)
         self.assertEqual(lock["nested_cycle389_N_extra"], 0)
