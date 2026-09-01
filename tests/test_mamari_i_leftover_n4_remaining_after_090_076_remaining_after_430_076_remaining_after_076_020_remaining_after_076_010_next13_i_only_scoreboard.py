@@ -1325,7 +1325,7 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
             self.assertNotIn(gram, CYCLE344_SEQUENCES)
             self.assertNotIn(gram, CYCLE383_SEQUENCES)
             self.assertNotIn(gram, CYCLE385_SEQUENCES)
-            self.assertEqual(len(gram), STANDING_N12)
+            self.assertEqual(len(gram), STANDING_N13)
         next4 = leftover_remaining_next4()
         self.assertEqual(next4, CYCLE382_SEQUENCES)
         for gram, tok4 in zip(STANDING_SEQUENCES, STANDING_EXISTING_NEXT4, strict=True):
@@ -1408,6 +1408,7 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
                         "604",
                         "076",
                         "600",
+                        "090",
                         "295",
                         "076",
                         "070",
@@ -1420,20 +1421,21 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
                         "604",
                         "076",
                         "600",
+                        "090",
                     ]
                 ],
-                GRAM12_295_076_070_560_072_076_010_044_027_604_076_600,
+                GRAM13_295_076_070_560_072_076_010_044_027_604_076_600_090,
             ),
             2,
         )
         self.assertEqual(
             ngram_hit_count(
                 [["295", "076", "070", "560", "072", "076", "010", "044", "027", "604", "076", "000"]],
-                GRAM12_295_076_070_560_072_076_010_044_027_604_076_600,
+                GRAM13_295_076_070_560_072_076_010_044_027_604_076_600_090,
             ),
             0,
         )
-        self.assertEqual(ngram_hit_count([[]], GRAM12_295_076_070_560_072_076_010_044_027_604_076_600), 0)
+        self.assertEqual(ngram_hit_count([[]], GRAM13_295_076_070_560_072_076_010_044_027_604_076_600_090), 0)
         self.assertTrue(STANDING_LEFTOVER_4GRAM_I_ONLY_IS_NOT_THIS_CYCLE)
         self.assertTrue(STANDING_NEXT_4GRAM_I_ONLY_IS_NOT_THIS_CYCLE)
         self.assertTrue(STANDING_EXTRA_I_NEXT4_5GRAMS_ARE_NOT_THIS_CYCLE)
@@ -1448,7 +1450,7 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
         leftover = leftover_n4_rows()
         hold_ones = (1,) * STANDING_N
         hold_zeros = (0,) * STANDING_N
-        planted = STANDING_SEQUENCES + (GRAM12_295_076_070_560_072_076_010_044_027_604_076_600,)
+        planted = STANDING_SEQUENCES + (GRAM13_295_076_070_560_072_076_010_044_027_604_076_600_090,)
         self.assertTrue(
             i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_13grams_all_i_only(
                 hold_ones, hold_zeros, leftovers=leftover, next_13grams=planted, sequences=planted
@@ -1484,7 +1486,7 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leaking_13grams(STANDING_SEQUENCES, (0,) * STANDING_N_SEQUENCES), ())
         self.assertEqual(
             leaking_13grams(STANDING_SEQUENCES, (1,) + (0,) * 9),
-            (GRAM12_295_076_070_560_072_076_010_044_027_604_076_600,),
+            (GRAM13_295_076_070_560_072_076_010_044_027_604_076_600_090,),
         )
         self.assertTrue(STANDING_EXTRA_I_DOES_NOT_MAKE_CLAIM_LOSE)
         self.assertTrue(STANDING_INCOMPLETE_SET_IS_LOSE)
@@ -1994,7 +1996,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
             self.assertTrue(sequence_is_i_only(n_on, n_off))
             self.assertEqual(sequence_is_hapax(n_on, n_off), hapax)
             self.assertEqual(len(parent), STANDING_N4)
-            self.assertEqual(len(gram), STANDING_N12)
+            self.assertEqual(len(gram), STANDING_N13)
             self.assertEqual(hits[tablet_t], n_t)
             for tablet, count in zip(VENDORED_TABLETS, hits, strict=True):
                 self.assertEqual(count, ngram_hit_count(self.by_tablet[tablet], gram))
@@ -2003,7 +2005,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
                 else:
                     self.assertEqual(count, 0)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N12]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N13]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
@@ -2016,7 +2018,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(leftover_matching_leftover4_of_extra_i(), ())
         self.assertEqual(leftover_matching_leftover2_of_extra_i(), ())
         nested_383 = line_stems_for_site(self.i_sides, STANDING_NESTED_CYCLE383_NEXT5_SITE)
-        self.assertEqual(tuple(nested_383[82:94]), GRAM12_071_076_010_079_053_002_076_006_499_999_107_076)
+        self.assertEqual(tuple(nested_383[82:95]), GRAM13_071_076_010_079_053_002_076_006_499_999_107_076_010)
         self.assertEqual(tuple(nested_383[82:93]), CYCLE398_SEQUENCES[2])
         self.assertEqual(tuple(nested_383[82:92]), CYCLE396_SEQUENCES[2])
         self.assertEqual(tuple(nested_383[82:91]), CYCLE394_SEQUENCES[2])
@@ -2025,14 +2027,15 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(tuple(nested_383[82:88]), STANDING_NESTED_CYCLE388_NEXT6_GRAM)
         self.assertEqual(tuple(nested_383[82:87]), STANDING_NESTED_CYCLE386_NEXT5_GRAM)
         self.assertEqual(tuple(nested_383[82:86]), STANDING_NESTED_CYCLE382_NEXT4_GRAM)
-        self.assertIn(GRAM12_071_076_010_079_053_002_076_006_499_999_107_076, self.grams)
-        self.assertNotIn(GRAM12_071_076_010_079_053_002_076_006_499_999_107_076, CYCLE383_SEQUENCES)
-        self.assertNotIn(GRAM12_071_076_010_079_053_002_076_006_499_999_107_076, CYCLE388_SEQUENCES)
-        self.assertNotIn(GRAM12_071_076_010_079_053_002_076_006_499_999_107_076, CYCLE390_SEQUENCES)
+        self.assertIn(GRAM13_071_076_010_079_053_002_076_006_499_999_107_076_010, self.grams)
+        self.assertNotIn(GRAM13_071_076_010_079_053_002_076_006_499_999_107_076_010, CYCLE383_SEQUENCES)
+        self.assertNotIn(GRAM13_071_076_010_079_053_002_076_006_499_999_107_076_010, CYCLE388_SEQUENCES)
+        self.assertNotIn(GRAM13_071_076_010_079_053_002_076_006_499_999_107_076_010, CYCLE390_SEQUENCES)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_NEXT13_OF_LEFTOVER_MATCHING_NEXT11_IS_NESTED)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_NEXT13_OF_LEFTOVER_MATCHING_NEXT10_IS_NESTED)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_NEXT8_OF_LEFTOVER_MATCHING_NEXT7_IS_NESTED)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_NEXT13_IS_THIS_CYCLE)
+        self.assertFalse(STANDING_LEFTOVER_MATCHING_NEXT12_IS_THIS_CYCLE)
         self.assertFalse(STANDING_LEFTOVER_MATCHING_NEXT11_IS_THIS_CYCLE)
         self.assertFalse(STANDING_LEFTOVER_MATCHING_NEXT8_IS_THIS_CYCLE)
         self.assertEqual(self.leaking, STANDING_LEAKING_13GRAMS)
