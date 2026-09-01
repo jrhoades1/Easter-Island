@@ -1304,7 +1304,8 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(STANDING_N_EXTRA, 0)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER3, 0)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER4, 0)
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER2, 0)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER2, 2)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER2_GRAMS, (GRAM2_076_011, GRAM2_076_006))
         planted = (SIDE_IA, "Ia99", 999)
         self.assertEqual(
             extra_i_sites_of_11gram(STANDING_I_SITES[0], STANDING_LEFTOVER_MATCHING_SITES_EACH[0]),
@@ -1650,7 +1651,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(leftover_matching_leftover3_of_extra_i(), ())
         self.assertEqual(leftover_matching_leftover4_of_extra_i(), ())
         self.assertEqual(leftover_matching_leftover2_of_extra_i(), ())
-        self.assertTrue(STANDING_LEFTOVER_MATCHING_PREV11_OF_LEFTOVER_MATCHING_PREV9_IS_NESTED)
+        self.assertTrue(STANDING_LEFTOVER_MATCHING_PREV11_OF_LEFTOVER_MATCHING_PREV10_IS_NESTED)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_PREV11_TOKENS_IS_THIS_CYCLE)
         self.assertEqual(self.leaking, STANDING_LEAKING_11GRAMS)
         self.assertEqual(self.n_i_only, STANDING_N_I_ONLY)
