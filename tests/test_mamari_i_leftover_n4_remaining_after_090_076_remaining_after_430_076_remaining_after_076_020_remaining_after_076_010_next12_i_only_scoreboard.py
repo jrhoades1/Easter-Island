@@ -2377,7 +2377,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_4grams"], 5)
         self.assertEqual(lock["N_sequences"], STANDING_N_SEQUENCES)
         self.assertEqual(lock["N_next12grams"], STANDING_N_SEQUENCES)
-        self.assertEqual(lock["N_distinct_11grams"], STANDING_N_SEQUENCES)
+        self.assertEqual(lock["N_distinct_12grams"], STANDING_N_SEQUENCES)
         self.assertEqual(lock["N_with_next12"], STANDING_N_WITH_NEXT12)
         self.assertEqual(lock["N_no_next12"], STANDING_N_NO_NEXT12)
         self.assertEqual(lock["N_with_next11"], 10)
@@ -2534,7 +2534,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax_i_only"], 10)
         self.assertEqual(lock["N_not_hapax"], 0)
         self.assertEqual(
-            lock["i_only_11grams"],
+            lock["i_only_12grams"],
             [list(gram) for gram in STANDING_I_ONLY_12GRAMS],
         )
         self.assertFalse(lock["nested_cycle399_previous_11grams_tokens_all_i_only"])
