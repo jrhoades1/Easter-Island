@@ -687908,6 +687908,1777 @@
     "image_track": "parked"
   }
 ,
+  "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next3_i_only": {
+    "cycle": 424,
+    "result": "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next3_i_only",
+    "hypothesis_all_i_only": true,
+    "n1": 1,
+    "n2": 2,
+    "n3": 3,
+    "n4": 4,
+    "n5": 5,
+    "N": 12,
+    "N_5grams": 12,
+    "N_sequences": 12,
+    "N_3grams": 12,
+    "N_distinct": 12,
+    "N_with_next3": 12,
+    "N_no_next3": 0,
+    "N_line_final": 0,
+    "tokens5": [
+      [
+        "071",
+        "999",
+        "604",
+        "076",
+        "460"
+      ],
+      [
+        "700",
+        "071",
+        "999",
+        "604",
+        "076"
+      ],
+      [
+        "071",
+        "999",
+        "604",
+        "076",
+        "000"
+      ],
+      [
+        "065",
+        "071",
+        "999",
+        "604",
+        "076"
+      ],
+      [
+        "076",
+        "999",
+        "029",
+        "076",
+        "022"
+      ],
+      [
+        "070",
+        "076",
+        "999",
+        "029",
+        "076"
+      ],
+      [
+        "076",
+        "999",
+        "029",
+        "076",
+        "048"
+      ],
+      [
+        "000",
+        "076",
+        "999",
+        "029",
+        "076"
+      ],
+      [
+        "700",
+        "076",
+        "076",
+        "053",
+        "720"
+      ],
+      [
+        "087",
+        "700",
+        "076",
+        "076",
+        "053"
+      ],
+      [
+        "700",
+        "076",
+        "076",
+        "053",
+        "177"
+      ],
+      [
+        "600",
+        "700",
+        "076",
+        "076",
+        "053"
+      ]
+    ],
+    "tokens3": [
+      [
+        "050",
+        "498",
+        "027"
+      ],
+      [
+        "460",
+        "050",
+        "498"
+      ],
+      [
+        "700",
+        "604",
+        "076"
+      ],
+      [
+        "000",
+        "700",
+        "604"
+      ],
+      [
+        "280",
+        "280",
+        "326"
+      ],
+      [
+        "022",
+        "280",
+        "280"
+      ],
+      [
+        "700",
+        "999",
+        "073"
+      ],
+      [
+        "048",
+        "700",
+        "999"
+      ],
+      [
+        "076",
+        "070",
+        "701"
+      ],
+      [
+        "720",
+        "076",
+        "070"
+      ],
+      [
+        "700",
+        "076",
+        "057"
+      ],
+      [
+        "177",
+        "700",
+        "076"
+      ]
+    ],
+    "next_stems": [
+      "050",
+      "460",
+      "700",
+      "000",
+      "280",
+      "022",
+      "700",
+      "048",
+      "076",
+      "720",
+      "700",
+      "177"
+    ],
+    "leftover_matching_sites": [
+      [
+        "Ia",
+        "Ia1",
+        63
+      ],
+      [
+        "Ia",
+        "Ia1",
+        62
+      ],
+      [
+        "Ia",
+        "Ia9",
+        3
+      ],
+      [
+        "Ia",
+        "Ia9",
+        2
+      ],
+      [
+        "Ia",
+        "Ia8",
+        30
+      ],
+      [
+        "Ia",
+        "Ia8",
+        29
+      ],
+      [
+        "Ia",
+        "Ia10",
+        144
+      ],
+      [
+        "Ia",
+        "Ia10",
+        143
+      ],
+      [
+        "Ia",
+        "Ia8",
+        167
+      ],
+      [
+        "Ia",
+        "Ia8",
+        166
+      ],
+      [
+        "Ia",
+        "Ia9",
+        32
+      ],
+      [
+        "Ia",
+        "Ia9",
+        31
+      ]
+    ],
+    "leftover_matching_leftover5_remaining_sites": [
+      [
+        "Ia",
+        "Ia1",
+        63
+      ],
+      [
+        "Ia",
+        "Ia1",
+        62
+      ],
+      [
+        "Ia",
+        "Ia9",
+        3
+      ],
+      [
+        "Ia",
+        "Ia9",
+        2
+      ],
+      [
+        "Ia",
+        "Ia8",
+        30
+      ],
+      [
+        "Ia",
+        "Ia8",
+        29
+      ],
+      [
+        "Ia",
+        "Ia10",
+        144
+      ],
+      [
+        "Ia",
+        "Ia10",
+        143
+      ],
+      [
+        "Ia",
+        "Ia8",
+        167
+      ],
+      [
+        "Ia",
+        "Ia8",
+        166
+      ],
+      [
+        "Ia",
+        "Ia9",
+        32
+      ],
+      [
+        "Ia",
+        "Ia9",
+        31
+      ]
+    ],
+    "leftover_matching_next3_sites": [
+      [
+        "Ia",
+        "Ia1",
+        68
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        8
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia8",
+        35
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        149
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia8",
+        172
+      ],
+      [
+        "Ia",
+        "Ia8",
+        171
+      ],
+      [
+        "Ia",
+        "Ia9",
+        37
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "leftover_matching_count": 12,
+    "leftover_matching_leftover5_remaining_sites_count": 12,
+    "leftover_matching_next3_count": 12,
+    "leftover_matching_equals_next3_minus_five": true,
+    "leftover_matching_leftover4": 6,
+    "leftover_matching_leftover3": 12,
+    "leftover_matching_leftover2": 18,
+    "leftover_matching_leftover2_of_next3": 1,
+    "leftover_matching_leftover3_of_next3": 0,
+    "leftover_matching_leftover4_of_next3": 0,
+    "leftover_matching_next3_of_leftover3": 0,
+    "leftover_matching_leftover3_of_extra_i": 0,
+    "leftover_matching_leftover4_of_extra_i": 0,
+    "leftover_matching_leftover2_of_extra_i": 0,
+    "leftover_matching_leftover_n4_next3": 6,
+    "N_extra": 2,
+    "N_extra_of_next3grams": 2,
+    "N_extra_of_i_only_next3grams": 2,
+    "not_assumed_hapax": true,
+    "hapax_not_required": true,
+    "extra_i_does_not_make_claim_lose": true,
+    "all_sites_have_next_3gram": true,
+    "incomplete_set_is_lose": true,
+    "any_N_leak_is_lose": true,
+    "no_next3_sites": [],
+    "sequences": [
+      {
+        "tokens3": [
+          "050",
+          "498",
+          "027"
+        ],
+        "parent_5gram": [
+          "071",
+          "999",
+          "604",
+          "076",
+          "460"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia1",
+            68
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia1",
+          63
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            68
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "460",
+          "050",
+          "498"
+        ],
+        "parent_5gram": [
+          "700",
+          "071",
+          "999",
+          "604",
+          "076"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia1",
+            67
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia1",
+          62
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            67
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "700",
+          "604",
+          "076"
+        ],
+        "parent_5gram": [
+          "071",
+          "999",
+          "604",
+          "076",
+          "000"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia9",
+            8
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia9",
+          3
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            8
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "000",
+          "700",
+          "604"
+        ],
+        "parent_5gram": [
+          "065",
+          "071",
+          "999",
+          "604",
+          "076"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia9",
+            7
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia9",
+          2
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            7
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "280",
+          "280",
+          "326"
+        ],
+        "parent_5gram": [
+          "076",
+          "999",
+          "029",
+          "076",
+          "022"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia8",
+            35
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia8",
+          30
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            35
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "022",
+          "280",
+          "280"
+        ],
+        "parent_5gram": [
+          "070",
+          "076",
+          "999",
+          "029",
+          "076"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia8",
+            34
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia8",
+          29
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            34
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "700",
+          "999",
+          "073"
+        ],
+        "parent_5gram": [
+          "076",
+          "999",
+          "029",
+          "076",
+          "048"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia10",
+            149
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia10",
+          144
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            149
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "048",
+          "700",
+          "999"
+        ],
+        "parent_5gram": [
+          "000",
+          "076",
+          "999",
+          "029",
+          "076"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia10",
+            148
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia10",
+          143
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            148
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "076",
+          "070",
+          "701"
+        ],
+        "parent_5gram": [
+          "700",
+          "076",
+          "076",
+          "053",
+          "720"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia8",
+            172
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia8",
+          167
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            172
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "720",
+          "076",
+          "070"
+        ],
+        "parent_5gram": [
+          "087",
+          "700",
+          "076",
+          "076",
+          "053"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia8",
+            171
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia8",
+          166
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            171
+          ],
+          [
+            "Ia",
+            "Ia7",
+            62
+          ],
+          [
+            "Ia",
+            "Ia9",
+            119
+          ]
+        ],
+        "extra_i_sites": [
+          [
+            "Ia",
+            "Ia7",
+            62
+          ],
+          [
+            "Ia",
+            "Ia9",
+            119
+          ]
+        ],
+        "N_I": 3,
+        "N_on_I": 3,
+        "ia_hits": 3,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 2,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": false
+      },
+      {
+        "tokens3": [
+          "700",
+          "076",
+          "057"
+        ],
+        "parent_5gram": [
+          "700",
+          "076",
+          "076",
+          "053",
+          "177"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia9",
+            37
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia9",
+          32
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            37
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens3": [
+          "177",
+          "700",
+          "076"
+        ],
+        "parent_5gram": [
+          "600",
+          "700",
+          "076",
+          "076",
+          "053"
+        ],
+        "leftover_matching_next3_sites": [
+          [
+            "Ia",
+            "Ia9",
+            36
+          ]
+        ],
+        "leftover_matching_5gram_site": [
+          "Ia",
+          "Ia9",
+          31
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            36
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      }
+    ],
+    "N_I_each": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      3,
+      1,
+      1
+    ],
+    "N_off_I_each": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "N_extra_each": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    "hapax_each": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true
+    ],
+    "leaking_3grams": [],
+    "N_leaking": 0,
+    "N_leak": 0,
+    "N_leak_hit_T": 0,
+    "claim": "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_3grams_all_i_only",
+    "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_3grams_all_i_only": true,
+    "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next3_i_only": true,
+    "N_i_only": 12,
+    "N_not_i_only": 0,
+    "N_hapax": 11,
+    "N_hapax_i_only": 11,
+    "N_not_hapax": 1,
+    "i_only_3grams": [
+      [
+        "050",
+        "498",
+        "027"
+      ],
+      [
+        "460",
+        "050",
+        "498"
+      ],
+      [
+        "700",
+        "604",
+        "076"
+      ],
+      [
+        "000",
+        "700",
+        "604"
+      ],
+      [
+        "280",
+        "280",
+        "326"
+      ],
+      [
+        "022",
+        "280",
+        "280"
+      ],
+      [
+        "700",
+        "999",
+        "073"
+      ],
+      [
+        "048",
+        "700",
+        "999"
+      ],
+      [
+        "076",
+        "070",
+        "701"
+      ],
+      [
+        "720",
+        "076",
+        "070"
+      ],
+      [
+        "700",
+        "076",
+        "057"
+      ],
+      [
+        "177",
+        "700",
+        "076"
+      ]
+    ],
+    "nested_cycle423_extra_i_next2_4grams_all_i_only": true,
+    "nested_cycle423_N_i_only": 9,
+    "nested_cycle423_N_leak": 0,
+    "nested_cycle423_N_extra": 0,
+    "nested_cycle422_extra_i_leak_next2_4grams_all_i_only": true,
+    "nested_cycle422_N_i_only": 39,
+    "nested_cycle422_N_leak": 0,
+    "nested_cycle422_N_extra": 0,
+    "nested_cycle421_extra_i_leak_next2_3grams_all_i_only": false,
+    "nested_cycle421_N_i_only": 30,
+    "nested_cycle421_N_leak": 2,
+    "nested_cycle421_N_extra": 0,
+    "nested_cycle420_extra_i_next2_3grams_all_i_only": true,
+    "nested_cycle420_N_i_only": 8,
+    "nested_cycle420_N_leak": 0,
+    "nested_cycle420_N_extra": 1,
+    "nested_cycle419_next_2grams_all_i_only": false,
+    "nested_cycle419_N_i_only": 6,
+    "nested_cycle419_N_leak": 6,
+    "nested_cycle419_N_extra": 50,
+    "nested_cycle419_N_extra_of_i_only_next2grams": 9,
+    "nested_cycle418_extra_i_leak_next1_4grams_all_i_only": false,
+    "nested_cycle418_N_i_only": 696,
+    "nested_cycle418_N_leak": 0,
+    "nested_cycle418_N_extra": 0,
+    "nested_cycle418_N_line_final": 18,
+    "nested_cycle415_next_1grams_all_i_only": false,
+    "nested_cycle415_N_i_only": 1,
+    "nested_cycle415_N_leak": 11,
+    "nested_cycle415_N_extra": 852,
+    "nested_cycle414_5grams_all_i_only": true,
+    "nested_cycle414_N": 12,
+    "nested_cycle414_N_i_only": 12,
+    "nested_cycle414_N_leak": 0,
+    "nested_cycle414_N_extra": 0,
+    "nested_cycle414_N_hapax": 12,
+    "nested_cycle414_leftover_matching_count": 12,
+    "nested_cycle380_next_3grams_all_i_only": true,
+    "nested_cycle380_N_i_only": 11,
+    "nested_cycle380_N_leak": 0,
+    "nested_cycle380_N_extra": 6,
+    "nested_cycle349_2grams_all_i_only": false,
+    "nested_cycle349_N_i_only": 9,
+    "nested_cycle349_N_leak": 6,
+    "nested_cycle349_N_extra": 116,
+    "nested_cycle340_4grams_all_i_only": true,
+    "nested_cycle340_N_extra": 0,
+    "nested_cycle340_N_i_only": 5,
+    "nested_cycle340_leftover_matching_count": 11,
+    "known_distinct": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_cycle340": false,
+    "same_as_cycle349": false,
+    "same_as_cycle380": false,
+    "same_as_cycle414": false,
+    "same_as_cycle415": false,
+    "same_as_cycle418": false,
+    "same_as_cycle419": false,
+    "same_as_cycle420": false,
+    "same_as_cycle421": false,
+    "same_as_cycle422": false,
+    "same_as_cycle423": false,
+    "same_claim_shape_as_cycle380": true,
+    "labeled_G_does_not_count": true,
+    "peel_labeled_G_is_tautology": true,
+    "do_not_peel_labeled_g_exactly_1_share": true,
+    "do_not_repeel_leftover2": true,
+    "do_not_launch_extra_i_peels": true,
+    "do_not_launch_extra_i_of_i_only_next3": true,
+    "do_not_launch_extra_i_of_i_only_next2_3grams": true,
+    "do_not_launch_previous_n": true,
+    "do_not_launch_leftover_6grams": true,
+    "leftover_5gram_i_only_is_not_this_cycle": true,
+    "leftover_5gram_next1_i_only_is_not_this_cycle": true,
+    "leftover_5gram_next2_i_only_is_not_this_cycle": true,
+    "extra_i_next2_3grams_of_i_only_are_not_this_cycle": true,
+    "extra_i_leak_next2_3grams_are_not_this_cycle": true,
+    "extra_i_leak_next2_4grams_are_not_this_cycle": true,
+    "extra_i_next2_4grams_of_i_only_are_not_this_cycle": true,
+    "leftover_4gram_i_only_is_not_this_cycle": true,
+    "leftover_2gram_i_only_is_not_this_cycle": true,
+    "leftover_n4_next3_i_only_is_not_this_cycle": true,
+    "all_i_inside_family_is_not_this_cycle": true,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "leftover_n5_set_not_retuned": true,
+    "leftover_n5_next1_not_retuned": true,
+    "leftover_n5_next2_not_retuned": true,
+    "leftover_n5_extra_i_next2_3grams_not_retuned": true,
+    "leftover_n5_extra_i_leak_next2_3grams_not_retuned": true,
+    "leftover_n5_extra_i_leak_next2_4grams_not_retuned": true,
+    "leftover_n5_extra_i_next2_4grams_not_retuned": true,
+    "leftover_n5_extra_i_leak_next1_4grams_not_retuned": true,
+    "leftover_n4_next3_not_retuned": true,
+    "do_not_relock_cycle423": true,
+    "do_not_relock_cycle422": true,
+    "do_not_relock_cycle421": true,
+    "do_not_relock_cycle420": true,
+    "do_not_relock_cycle419": true,
+    "do_not_relock_cycle418": true,
+    "do_not_relock_cycle415": true,
+    "do_not_relock_cycle414": true,
+    "do_not_relock_cycle380": true,
+    "do_not_relock_cycle349": true,
+    "do_not_relock_cycle340": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next2_4grams_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next2_4grams_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next2_3grams_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next2_3grams_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next2_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next1_4grams_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next1_i_only_unchanged": true,
+    "standing_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_5grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next3_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_2grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_4grams_i_only_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked"
+  }
+,
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
