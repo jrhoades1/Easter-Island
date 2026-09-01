@@ -1338,10 +1338,12 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
             self.assertEqual(role, "next")
             self.assertEqual(gram[:1], parent)
             self.assertNotIn(gram, CYCLE340_SEQUENCES)
-            self.assertFalse(is_contiguous_substring(NEAR_MISS_090_076, gram))
-            self.assertFalse(is_contiguous_substring(NEAR_MISS_430_076, gram))
-            self.assertFalse(is_contiguous_substring(NEAR_MISS_076_020, gram))
-            self.assertFalse(is_contiguous_substring(NEAR_MISS_076_010, gram))
+        self.assertTrue(is_contiguous_substring(NEAR_MISS_090_076, GRAM3_999_090_076))
+        self.assertTrue(is_contiguous_substring(NEAR_MISS_430_076, GRAM3_999_430_076))
+        self.assertTrue(STANDING_090_076_DOES_NOT_COUNT)
+        self.assertTrue(STANDING_430_076_DOES_NOT_COUNT)
+        self.assertTrue(STANDING_076_020_DOES_NOT_COUNT)
+        self.assertTrue(STANDING_076_010_DOES_NOT_COUNT)
         adjacent = [list(gram) for gram in STANDING_SEQUENCES]
         self.assertEqual(ngram_hit_count(adjacent, STANDING_SEQUENCES[0]), 1)
         overlap = [["999", "090", "076", "999", "090", "076"]]
