@@ -565384,6 +565384,3672 @@
       "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev10_tokens_i_only_unchanged": true
     },
 
+
+  "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next12_i_only": {
+    "cycle": 400,
+    "result": "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next12_i_only",
+    "hypothesis_all_i_only": true,
+    "n1": 1,
+    "n2": 2,
+    "n3": 3,
+    "n4": 4,
+    "n5": 5,
+    "N": 11,
+    "N_4grams": 5,
+    "N_sequences": 10,
+    "N_with_next5": 11,
+    "N_no_next5": 0,
+    "tokens4_leftover": [
+      [
+        "028",
+        "076",
+        "011",
+        "076"
+      ],
+      [
+        "071",
+        "999",
+        "604",
+        "076"
+      ],
+      [
+        "202",
+        "076",
+        "006",
+        "055"
+      ],
+      [
+        "076",
+        "999",
+        "029",
+        "076"
+      ],
+      [
+        "700",
+        "076",
+        "076",
+        "053"
+      ]
+    ],
+    "tokens5": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064"
+      ],
+      [
+        "720",
+        "076",
+        "070",
+        "701",
+        "214"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741"
+      ]
+    ],
+    "next_stems": [
+      "295",
+      "002",
+      "071",
+      "460",
+      "000",
+      "076",
+      "760",
+      "022",
+      "048",
+      "720",
+      "177"
+    ],
+    "leftover_matching_sites": [
+      [
+        "Ia",
+        "Ia1",
+        136
+      ],
+      [
+        "Ia",
+        "Ia4",
+        125
+      ],
+      [
+        "Ia",
+        "Ia14",
+        78
+      ],
+      [
+        "Ia",
+        "Ia1",
+        63
+      ],
+      [
+        "Ia",
+        "Ia9",
+        3
+      ],
+      [
+        "Ia",
+        "Ia6",
+        48
+      ],
+      [
+        "Ia",
+        "Ia12",
+        119
+      ],
+      [
+        "Ia",
+        "Ia8",
+        30
+      ],
+      [
+        "Ia",
+        "Ia10",
+        144
+      ],
+      [
+        "Ia",
+        "Ia8",
+        167
+      ],
+      [
+        "Ia",
+        "Ia9",
+        32
+      ]
+    ],
+    "leftover_matching_next5_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia8",
+        171
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "leftover_matching_next4_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia8",
+        171
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "leftover_matching_count": 11,
+    "leftover_matching_next5_count": 11,
+    "leftover_matching_next4_count": 11,
+    "N_extra": 0,
+    "not_assumed_hapax": true,
+    "hapax_not_required": true,
+    "extra_i_does_not_make_claim_lose": true,
+    "incomplete_set_is_lose": true,
+    "any_N_leak_is_lose": true,
+    "sequences": [
+      {
+        "tokens12": [
+          "295",
+          "076",
+          "070",
+          "560",
+          "072",
+          "076",
+          "010",
+          "044",
+          "027",
+          "604",
+          "076",
+          "600"
+        ],
+        "parent_4gram": [
+          "028",
+          "076",
+          "011",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia1",
+            140
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia1",
+          136
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            140
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "002",
+          "076",
+          "021",
+          "460",
+          "522",
+          "090",
+          "076",
+          "001",
+          "048",
+          "048",
+          "430",
+          "076"
+        ],
+        "parent_4gram": [
+          "028",
+          "076",
+          "011",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia4",
+            129
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia4",
+          125
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia4",
+            129
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "071",
+          "076",
+          "010",
+          "079",
+          "053",
+          "002",
+          "076",
+          "006",
+          "499",
+          "999",
+          "107",
+          "076"
+        ],
+        "parent_4gram": [
+          "028",
+          "076",
+          "011",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia14",
+            82
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia14",
+          78
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia14",
+            82
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "460",
+          "050",
+          "498",
+          "027",
+          "076",
+          "093",
+          "726",
+          "087",
+          "076",
+          "011",
+          "099",
+          "571"
+        ],
+        "parent_4gram": [
+          "071",
+          "999",
+          "604",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia1",
+            67
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia1",
+          63
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia1",
+            67
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "000",
+          "700",
+          "604",
+          "076",
+          "071",
+          "600",
+          "999",
+          "050",
+          "076",
+          "000",
+          "002",
+          "999"
+        ],
+        "parent_4gram": [
+          "071",
+          "999",
+          "604",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia9",
+            7
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia9",
+          3
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            7
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "076",
+          "600",
+          "001",
+          "076",
+          "534",
+          "300",
+          "032",
+          "999",
+          "606",
+          "010",
+          "079",
+          "634"
+        ],
+        "parent_4gram": [
+          "202",
+          "076",
+          "006",
+          "055"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia6",
+            52
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia6",
+          48
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia6",
+            52
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "760",
+          "036",
+          "026",
+          "076",
+          "055",
+          "006",
+          "700",
+          "076",
+          "073",
+          "050",
+          "050",
+          "090"
+        ],
+        "parent_4gram": [
+          "202",
+          "076",
+          "006",
+          "055"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia12",
+            123
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia12",
+          119
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia12",
+            123
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "022",
+          "280",
+          "280",
+          "326",
+          "076",
+          "532",
+          "070",
+          "631",
+          "499",
+          "076",
+          "532",
+          "631"
+        ],
+        "parent_4gram": [
+          "076",
+          "999",
+          "029",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia8",
+            34
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia8",
+          30
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia8",
+            34
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "048",
+          "700",
+          "999",
+          "073",
+          "064",
+          "076",
+          "075",
+          "720",
+          "999",
+          "059",
+          "076",
+          "400"
+        ],
+        "parent_4gram": [
+          "076",
+          "999",
+          "029",
+          "076"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia10",
+            148
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia10",
+          144
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia10",
+            148
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      },
+      {
+        "tokens12": [
+          "177",
+          "700",
+          "076",
+          "057",
+          "741",
+          "430",
+          "076",
+          "532",
+          "200",
+          "059",
+          "076",
+          "074"
+        ],
+        "parent_4gram": [
+          "700",
+          "076",
+          "076",
+          "053"
+        ],
+        "leftover_matching_next12_sites": [
+          [
+            "Ia",
+            "Ia9",
+            36
+          ]
+        ],
+        "leftover_matching_4gram_site": [
+          "Ia",
+          "Ia9",
+          32
+        ],
+        "leftover_matching_count": 1,
+        "i_sites": [
+          [
+            "Ia",
+            "Ia9",
+            36
+          ]
+        ],
+        "extra_i_sites": [],
+        "N_I": 1,
+        "N_on_I": 1,
+        "ia_hits": 1,
+        "ib_hits": 0,
+        "N_off_I": 0,
+        "N_leak": 0,
+        "N_extra": 0,
+        "hits_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_by_tablet": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "off_i_tablets_with_hits": [],
+        "i_only": true,
+        "hapax": true
+      }
+    ],
+    "N_I_each": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "N_off_I_each": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "N_extra_each": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "hapax_each": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "N_leaking": 0,
+    "N_leak": 0,
+    "N_leak_hit_T": 0,
+    "leftover_matching_leftover3": 0,
+    "leftover_matching_leftover4": 0,
+    "leftover_matching_leftover2": 0,
+    "leftover_matching_next3_of_leftover3": 0,
+    "leftover_matching_leftover3_of_extra_i": 0,
+    "leftover_matching_leftover4_of_extra_i": 0,
+    "leftover_matching_leftover2_of_extra_i": 0,
+    "nested_cycle383_next5_site": [
+      "Ia",
+      "Ia14",
+      82
+    ],
+    "nested_cycle383_next5_gram": [
+      "071",
+      "076",
+      "010",
+      "079",
+      "053"
+    ],
+    "nested_cycle382_next4_site": [
+      "Ia",
+      "Ia14",
+      82
+    ],
+    "nested_cycle382_next4_gram": [
+      "071",
+      "076",
+      "010",
+      "079"
+    ],
+    "claim": "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_12grams_all_i_only",
+    "N_i_only": 10,
+    "N_not_i_only": 0,
+    "N_hapax": 10,
+    "N_hapax_i_only": 10,
+    "N_not_hapax": 0,
+    "nested_cycle385_extra_i_prev4_5grams_all_i_only": true,
+    "nested_cycle385_N_i_only": 1,
+    "nested_cycle385_N_leak": 0,
+    "nested_cycle385_extra_I_total": 1,
+    "nested_cycle385_N_extra_i_5grams": 1,
+    "nested_cycle385_N_extra": 0,
+    "nested_cycle384_previous_4grams_all_i_only": false,
+    "nested_cycle384_N_i_only": 10,
+    "nested_cycle384_N_leak": 0,
+    "nested_cycle384_N_extra": 1,
+    "nested_cycle384_N_with_prev4": 10,
+    "nested_cycle384_N_no_prev4": 1,
+    "nested_cycle383_extra_i_next4_5grams_all_i_only": true,
+    "nested_cycle383_N_i_only": 4,
+    "nested_cycle383_N_leak": 0,
+    "nested_cycle383_extra_I_total": 4,
+    "nested_cycle383_N_extra_i_5grams": 4,
+    "nested_cycle383_N_extra": 0,
+    "nested_cycle382_next_4grams_all_i_only": true,
+    "nested_cycle382_N_i_only": 11,
+    "nested_cycle382_N_leak": 0,
+    "nested_cycle382_N_extra": 4,
+    "nested_cycle344_forward_5grams_all_i_only": true,
+    "nested_cycle344_N_i_only": 11,
+    "nested_cycle341_3grams_all_i_only": true,
+    "nested_cycle341_N_extra": 5,
+    "nested_cycle341_N_i_only": 10,
+    "nested_cycle341_N_leak": 0,
+    "nested_cycle340_4grams_all_i_only": true,
+    "nested_cycle340_N_extra": 0,
+    "nested_cycle340_N_i_only": 5,
+    "nested_cycle340_leftover_matching_count": 11,
+    "nested_cycle349_2grams_all_i_only": false,
+    "nested_cycle349_N_i_only": 9,
+    "nested_cycle349_N_leak": 6,
+    "nested_cycle343_unique_max": false,
+    "nested_cycle343_G": "760",
+    "nested_cycle337_N_I": 11,
+    "nested_cycle337_N_off_I": 3,
+    "nested_cycle337_i_2gram_076_010_i_only": false,
+    "nested_cycle334_N_I": 12,
+    "nested_cycle334_N_off_I": 0,
+    "nested_cycle330_i_2gram_430_076_i_only": false,
+    "nested_cycle330_N_I": 30,
+    "nested_cycle330_N_off_I": 16,
+    "nested_cycle223_N_I": 69,
+    "nested_cycle223_N_off_I": 3,
+    "nested_cycle222_K": 5,
+    "nested_cycle222_N_remaining": 16,
+    "known_distinct": true,
+    "tablet_only": true,
+    "n_ge_8_island": false,
+    "w_barthel": false,
+    "new_tablet": false,
+    "same_as_cycle340": false,
+    "same_as_cycle344": false,
+    "same_as_cycle382": false,
+    "same_as_cycle383": false,
+    "same_as_cycle384": false,
+    "same_as_cycle385": false,
+    "same_claim_shape_as_cycle344": true,
+    "same_claim_shape_as_cycle380": true,
+    "same_claim_shape_as_cycle382": true,
+    "labeled_G_does_not_count": true,
+    "peel_labeled_G_is_tautology": true,
+    "do_not_peel_a_specific_stem": true,
+    "leftover_4gram_i_only_is_not_this_cycle": true,
+    "leftover_3gram_i_only_is_not_this_cycle": true,
+    "leftover_2gram_i_only_is_not_this_cycle": true,
+    "previous_4gram_i_only_is_not_this_cycle": true,
+    "next_4gram_i_only_is_not_this_cycle": true,
+    "extra_i_next4_5grams_are_not_this_cycle": true,
+    "extra_i_prev4_5grams_are_not_this_cycle": true,
+    "unique_next_stem_is_not_this_cycle": true,
+    "unique_previous_stem_is_not_this_cycle": true,
+    "forward_5gram_i_only_is_not_this_cycle": true,
+    "leftover_matching_next5_of_leftover_matching_next4_is_nested": true,
+    "raw_stems_999_kept": true,
+    "leftover_n4_set_not_retuned": true,
+    "do_not_relock_cycle328": true,
+    "do_not_relock_cycle329": true,
+    "do_not_relock_cycle330": true,
+    "do_not_relock_cycle331": true,
+    "do_not_relock_cycle332": true,
+    "do_not_relock_cycle333": true,
+    "do_not_relock_cycle334": true,
+    "do_not_relock_cycle335": true,
+    "do_not_relock_cycle336": true,
+    "do_not_relock_cycle337": true,
+    "do_not_relock_cycle338": true,
+    "do_not_relock_cycle339": true,
+    "do_not_relock_cycle340": true,
+    "do_not_relock_cycle341": true,
+    "do_not_relock_cycle342": true,
+    "do_not_relock_cycle343": true,
+    "do_not_relock_cycle344": true,
+    "do_not_relock_cycle345": true,
+    "do_not_relock_cycle346": true,
+    "do_not_relock_cycle347": true,
+    "do_not_relock_cycle348": true,
+    "do_not_relock_cycle349": true,
+    "do_not_relock_cycle350": true,
+    "do_not_relock_cycle351": true,
+    "do_not_relock_cycle352": true,
+    "do_not_relock_cycle353": true,
+    "do_not_relock_cycle354": true,
+    "do_not_relock_cycle355": true,
+    "do_not_relock_cycle356": true,
+    "do_not_relock_cycle357": true,
+    "do_not_relock_cycle358": true,
+    "do_not_relock_cycle359": true,
+    "do_not_relock_cycle360": true,
+    "do_not_relock_cycle361": true,
+    "do_not_relock_cycle362": true,
+    "do_not_relock_cycle363": true,
+    "do_not_relock_cycle364": true,
+    "do_not_relock_cycle365": true,
+    "do_not_relock_cycle366": true,
+    "do_not_relock_cycle367": true,
+    "do_not_relock_cycle368": true,
+    "do_not_relock_cycle369": true,
+    "do_not_relock_cycle370": true,
+    "do_not_relock_cycle371": true,
+    "do_not_relock_cycle372": true,
+    "do_not_relock_cycle373": true,
+    "do_not_relock_cycle374": true,
+    "do_not_relock_cycle375": true,
+    "do_not_relock_cycle376": true,
+    "do_not_relock_cycle377": true,
+    "do_not_relock_cycle378": true,
+    "do_not_relock_cycle379": true,
+    "do_not_relock_cycle380": true,
+    "do_not_relock_cycle381": true,
+    "do_not_relock_cycle382": true,
+    "do_not_relock_cycle383": true,
+    "do_not_relock_cycle384": true,
+    "do_not_relock_cycle385": true,
+    "do_not_relock_cycle222": true,
+    "do_not_relock_cycles_288_327": true,
+    "do_not_relock_leftover_extra_peels": true,
+    "do_not_relock_cycles_220_221": true,
+    "do_not_relock_cycle223": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_prev4_5grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev4_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next4_5grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_4grams_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_fwd5_i_only_unchanged": true,
+    "standing_i_2gram_076_010_i_only_unchanged": true,
+    "standing_i_2gram_076_020_i_only_unchanged": true,
+    "standing_i_2gram_430_076_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_next_2gram_unchanged": true,
+    "standing_i_2gram_090_076_i_only_unchanged": true,
+    "standing_i_2gram_076_071_i_only_unchanged": true,
+    "standing_i_santiago_ia_i_only_unchanged": true,
+    "standing_w_honolulu_unpublished_unchanged": true,
+    "image_track": "parked",
+    "n6": 6,
+    "N_next6grams": 11,
+    "N_distinct_6grams": 11,
+    "N_with_next6": 11,
+    "N_no_next6": 0,
+    "tokens6": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076"
+      ],
+      [
+        "720",
+        "076",
+        "070",
+        "701",
+        "214",
+        "076"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430"
+      ]
+    ],
+    "leftover_matching_next6_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia8",
+        171
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "leftover_matching_next6_count": 11,
+    "leftover_matching_equals_next6_minus_four": true,
+    "leftover_matching_equals_next5_minus_four": true,
+    "all_sites_have_next_6gram": true,
+    "leaking_6grams": [],
+    "nested_cycle386_next5_gram": [
+      "071",
+      "076",
+      "010",
+      "079",
+      "053"
+    ],
+    "i_only_6grams": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076"
+      ],
+      [
+        "720",
+        "076",
+        "070",
+        "701",
+        "214",
+        "076"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430"
+      ]
+    ],
+    "nested_cycle387_previous_5grams_tokens_all_i_only": false,
+    "nested_cycle387_N_i_only": 10,
+    "nested_cycle387_N_leak": 0,
+    "nested_cycle387_N_extra": 0,
+    "nested_cycle387_N_with_prev5": 10,
+    "nested_cycle387_N_no_prev5": 1,
+    "nested_cycle386_next_5grams_all_i_only": true,
+    "nested_cycle386_N_i_only": 11,
+    "nested_cycle386_N_leak": 0,
+    "nested_cycle386_N_extra": 0,
+    "nested_cycle386_N_with_next5": 11,
+    "nested_cycle386_N_no_next5": 0,
+    "nested_cycle346_previous_5grams_all_i_only": true,
+    "nested_cycle346_N_i_only": 11,
+    "nested_cycle346_N_leak": 0,
+    "nested_cycle346_N_extra": 0,
+    "same_as_cycle386": false,
+    "same_as_cycle387": false,
+    "same_as_cycle346": false,
+    "same_claim_shape_as_cycle386": true,
+    "same_claim_shape_as_cycle387": true,
+    "next_5gram_i_only_is_not_this_cycle": true,
+    "previous_5gram_tokens_i_only_is_not_this_cycle": true,
+    "previous_5gram_leftover4_plus_stem_is_not_this_cycle": true,
+    "leftover_matching_next6_of_leftover_matching_next5_is_nested": true,
+    "leftover_matching_next6_is_this_cycle": false,
+    "do_not_relock_cycle386": true,
+    "do_not_relock_cycle387": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev5_tokens_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next5_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev5_i_only_unchanged": true,
+    "n7": 7,
+    "N_next7grams": 11,
+    "N_distinct_7grams": 11,
+    "N_with_next7": 11,
+    "N_no_next7": 0,
+    "tokens7": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075"
+      ],
+      [
+        "720",
+        "076",
+        "070",
+        "701",
+        "214",
+        "076",
+        "298"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076"
+      ]
+    ],
+    "leftover_matching_next7_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia8",
+        171
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "leftover_matching_next7_count": 11,
+    "leftover_matching_equals_next7_minus_four": true,
+    "all_sites_have_next_7gram": true,
+    "leaking_7grams": [],
+    "nested_cycle388_next6_gram": [
+      "071",
+      "076",
+      "010",
+      "079",
+      "053",
+      "002"
+    ],
+    "nested_cycle388_next6_site": [
+      "Ia",
+      "Ia14",
+      82
+    ],
+    "nested_cycle389_previous_6grams_tokens_all_i_only": false,
+    "nested_cycle389_N_i_only": 10,
+    "nested_cycle389_N_leak": 0,
+    "nested_cycle389_N_extra": 0,
+    "nested_cycle389_N_with_prev6": 10,
+    "nested_cycle389_N_no_prev6": 1,
+    "nested_cycle388_next_6grams_all_i_only": true,
+    "nested_cycle388_N_i_only": 11,
+    "nested_cycle388_N_leak": 0,
+    "nested_cycle388_N_extra": 0,
+    "nested_cycle388_N_with_next6": 11,
+    "nested_cycle388_N_no_next6": 0,
+    "same_as_cycle388": false,
+    "same_as_cycle389": false,
+    "same_claim_shape_as_cycle388": true,
+    "same_claim_shape_as_cycle389": true,
+    "next_6gram_i_only_is_not_this_cycle": true,
+    "previous_6gram_tokens_i_only_is_not_this_cycle": true,
+    "leftover_matching_next7_of_leftover_matching_next6_is_nested": true,
+    "leftover_matching_next7_is_this_cycle": false,
+    "do_not_relock_cycle388": true,
+    "do_not_relock_cycle389": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev6_tokens_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next6_i_only_unchanged": true,
+    "n8": 8,
+    "N_next8grams": 10,
+    "N_distinct_8grams": 10,
+    "N_with_next8": 10,
+    "N_no_next8": 1,
+    "N_line_final": 1,
+    "leftover_matching_next8_count": 10,
+    "leftover_matching_equals_next8_minus_four": false,
+    "leftover_matching_with_next8_equals_next8_minus_four": true,
+    "all_sites_have_next_8gram": false,
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_8grams_all_i_only": false,
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next8_i_only": false,
+    "tokens8": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532"
+      ]
+    ],
+    "leftover_matching_next8_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "no_next8_sites": [
+      [
+        "Ia",
+        "Ia8",
+        167
+      ]
+    ],
+    "no_next8_parent": [
+      "700",
+      "076",
+      "076",
+      "053"
+    ],
+    "no_next8_context": [
+      "720",
+      "076",
+      "070",
+      "701",
+      "214",
+      "076",
+      "298"
+    ],
+    "i_only_8grams": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532"
+      ]
+    ],
+    "leaking_8grams": [],
+    "leftover_matching_next8_of_leftover_matching_next7_is_nested": true,
+    "leftover_matching_next8_is_this_cycle": false,
+    "next_7gram_i_only_is_not_this_cycle": true,
+    "previous_7gram_tokens_i_only_is_not_this_cycle": true,
+    "same_as_cycle390": false,
+    "same_as_cycle391": false,
+    "same_claim_shape_as_cycle390": true,
+    "same_claim_shape_as_cycle391": true,
+    "nested_cycle391_previous_7grams_tokens_all_i_only": false,
+    "nested_cycle391_N_i_only": 10,
+    "nested_cycle391_N_leak": 0,
+    "nested_cycle391_N_extra": 0,
+    "nested_cycle391_N_with_prev7": 10,
+    "nested_cycle391_N_no_prev7": 1,
+    "nested_cycle390_next_7grams_all_i_only": true,
+    "nested_cycle390_N_i_only": 11,
+    "nested_cycle390_N_leak": 0,
+    "nested_cycle390_N_extra": 0,
+    "nested_cycle390_N_with_next7": 11,
+    "nested_cycle390_N_no_next7": 0,
+    "do_not_relock_cycle390": true,
+    "do_not_relock_cycle391": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next7_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev7_tokens_i_only_unchanged": true,
+    "n9": 9,
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_9grams_all_i_only": false,
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next9_i_only": false,
+    "N_next9grams": 10,
+    "N_distinct_9grams": 10,
+    "N_with_next9": 10,
+    "N_no_next9": 1,
+    "leftover_matching_next9_count": 10,
+    "leftover_matching_equals_next9_minus_four": false,
+    "leftover_matching_with_next9_equals_next9_minus_four": true,
+    "all_sites_have_next_9gram": false,
+    "leftover_matching_next9_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "no_next9_sites": [
+      [
+        "Ia",
+        "Ia8",
+        167
+      ]
+    ],
+    "no_next9_parent": [
+      "700",
+      "076",
+      "076",
+      "053"
+    ],
+    "no_next9_context": [
+      "720",
+      "076",
+      "070",
+      "701",
+      "214",
+      "076",
+      "298"
+    ],
+    "tokens9": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200"
+      ]
+    ],
+    "i_only_9grams": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200"
+      ]
+    ],
+    "leaking_9grams": [],
+    "leftover_matching_next9_of_leftover_matching_next8_is_nested": true,
+    "leftover_matching_next9_is_this_cycle": false,
+    "next_8gram_i_only_is_not_this_cycle": true,
+    "previous_8gram_tokens_i_only_is_not_this_cycle": true,
+    "same_as_cycle392": false,
+    "same_as_cycle393": false,
+    "same_claim_shape_as_cycle392": true,
+    "same_claim_shape_as_cycle393": true,
+    "nested_cycle393_previous_8grams_tokens_all_i_only": false,
+    "nested_cycle393_N_i_only": 10,
+    "nested_cycle393_N_leak": 0,
+    "nested_cycle393_N_extra": 0,
+    "nested_cycle393_N_with_prev8": 10,
+    "nested_cycle393_N_no_prev8": 1,
+    "nested_cycle392_next_8grams_all_i_only": false,
+    "nested_cycle392_N_i_only": 10,
+    "nested_cycle392_N_leak": 0,
+    "nested_cycle392_N_extra": 0,
+    "nested_cycle392_N_with_next8": 10,
+    "nested_cycle392_N_no_next8": 1,
+    "do_not_relock_cycle392": true,
+    "do_not_relock_cycle393": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next8_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev8_tokens_i_only_unchanged": true,
+    "n10": 10,
+    "N_next10grams": 10,
+    "N_distinct_10grams": 10,
+    "N_with_next10": 10,
+    "N_no_next10": 1,
+    "leftover_matching_next10_count": 10,
+    "leftover_matching_equals_next10_minus_four": false,
+    "leftover_matching_with_next10_equals_next10_minus_four": true,
+    "all_sites_have_next_10gram": false,
+    "leftover_matching_next10_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "no_next10_sites": [
+      [
+        "Ia",
+        "Ia8",
+        167
+      ]
+    ],
+    "no_next10_parent": [
+      "700",
+      "076",
+      "076",
+      "053"
+    ],
+    "no_next10_context": [
+      "720",
+      "076",
+      "070",
+      "701",
+      "214",
+      "076",
+      "298"
+    ],
+    "tokens10": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027",
+        "604"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048",
+        "048"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499",
+        "999"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076",
+        "011"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076",
+        "000"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606",
+        "010"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073",
+        "050"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499",
+        "076"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999",
+        "059"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200",
+        "059"
+      ]
+    ],
+    "i_only_10grams": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027",
+        "604"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048",
+        "048"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499",
+        "999"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076",
+        "011"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076",
+        "000"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606",
+        "010"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073",
+        "050"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499",
+        "076"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999",
+        "059"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200",
+        "059"
+      ]
+    ],
+    "leaking_10grams": [],
+    "leftover_matching_next10_of_leftover_matching_next9_is_nested": true,
+    "leftover_matching_next10_is_this_cycle": false,
+    "next_9gram_i_only_is_not_this_cycle": true,
+    "previous_9gram_tokens_i_only_is_not_this_cycle": true,
+    "same_as_cycle394": false,
+    "same_as_cycle395": false,
+    "same_claim_shape_as_cycle394": true,
+    "same_claim_shape_as_cycle395": true,
+    "nested_cycle395_previous_9grams_tokens_all_i_only": false,
+    "nested_cycle395_N_i_only": 10,
+    "nested_cycle395_N_leak": 0,
+    "nested_cycle395_N_extra": 0,
+    "nested_cycle395_N_with_prev9": 10,
+    "nested_cycle395_N_no_prev9": 1,
+    "nested_cycle394_next_9grams_all_i_only": false,
+    "nested_cycle394_N_i_only": 10,
+    "nested_cycle394_N_leak": 0,
+    "nested_cycle394_N_extra": 0,
+    "nested_cycle394_N_with_next9": 10,
+    "nested_cycle394_N_no_next9": 1,
+    "do_not_relock_cycle394": true,
+    "do_not_relock_cycle395": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next9_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev9_tokens_i_only_unchanged": true,
+    "n11": 11,
+    "N_with_next11": 10,
+    "N_no_next11": 1,
+    "leftover_matching_next11_count": 10,
+    "all_sites_have_next_11gram": false,
+    "leftover_matching_next11_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "tokens11": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027",
+        "604",
+        "076"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048",
+        "048",
+        "430"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499",
+        "999",
+        "107"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076",
+        "011",
+        "099"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076",
+        "000",
+        "002"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606",
+        "010",
+        "079"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073",
+        "050",
+        "050"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499",
+        "076",
+        "532"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999",
+        "059",
+        "076"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200",
+        "059",
+        "076"
+      ]
+    ],
+    "leftover_matching_next11_of_leftover_matching_next10_is_nested": true,
+    "leftover_matching_next11_is_this_cycle": false,
+    "next_10gram_i_only_is_not_this_cycle": true,
+    "previous_10gram_tokens_i_only_is_not_this_cycle": true,
+    "same_as_cycle396": false,
+    "same_as_cycle397": false,
+    "same_claim_shape_as_cycle396": true,
+    "same_claim_shape_as_cycle397": true,
+    "nested_cycle397_previous_10grams_tokens_all_i_only": false,
+    "nested_cycle397_N_i_only": 10,
+    "nested_cycle397_N_leak": 0,
+    "nested_cycle397_N_extra": 0,
+    "nested_cycle397_N_with_prev10": 10,
+    "nested_cycle397_N_no_prev10": 1,
+    "nested_cycle396_next_10grams_all_i_only": false,
+    "nested_cycle396_N_i_only": 10,
+    "nested_cycle396_N_leak": 0,
+    "nested_cycle396_N_extra": 0,
+    "nested_cycle396_N_with_next10": 10,
+    "nested_cycle396_N_no_next10": 1,
+    "do_not_relock_cycle396": true,
+    "do_not_relock_cycle397": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next10_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev10_tokens_i_only_unchanged": true,
+    "n12": 12,
+    "N_next12grams": 10,
+    "N_distinct_12grams": 10,
+    "N_with_next12": 10,
+    "N_no_next12": 1,
+    "leftover_matching_next12_count": 10,
+    "leftover_matching_equals_next12_minus_four": false,
+    "leftover_matching_with_next12_equals_next12_minus_four": true,
+    "all_sites_have_next_12gram": false,
+    "leftover_matching_next12_sites": [
+      [
+        "Ia",
+        "Ia1",
+        140
+      ],
+      [
+        "Ia",
+        "Ia4",
+        129
+      ],
+      [
+        "Ia",
+        "Ia14",
+        82
+      ],
+      [
+        "Ia",
+        "Ia1",
+        67
+      ],
+      [
+        "Ia",
+        "Ia9",
+        7
+      ],
+      [
+        "Ia",
+        "Ia6",
+        52
+      ],
+      [
+        "Ia",
+        "Ia12",
+        123
+      ],
+      [
+        "Ia",
+        "Ia8",
+        34
+      ],
+      [
+        "Ia",
+        "Ia10",
+        148
+      ],
+      [
+        "Ia",
+        "Ia9",
+        36
+      ]
+    ],
+    "no_next12_sites": [
+      [
+        "Ia",
+        "Ia8",
+        167
+      ]
+    ],
+    "no_next12_parent": [
+      "700",
+      "076",
+      "076",
+      "053"
+    ],
+    "no_next12_context": [
+      "720",
+      "076",
+      "070",
+      "701",
+      "214",
+      "076",
+      "298"
+    ],
+    "tokens12": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027",
+        "604",
+        "076",
+        "600"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048",
+        "048",
+        "430",
+        "076"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499",
+        "999",
+        "107",
+        "076"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076",
+        "011",
+        "099",
+        "571"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076",
+        "000",
+        "002",
+        "999"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606",
+        "010",
+        "079",
+        "634"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073",
+        "050",
+        "050",
+        "090"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499",
+        "076",
+        "532",
+        "631"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999",
+        "059",
+        "076",
+        "400"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200",
+        "059",
+        "076",
+        "074"
+      ]
+    ],
+    "leaking_12grams": [],
+    "i_only_12grams": [
+      [
+        "295",
+        "076",
+        "070",
+        "560",
+        "072",
+        "076",
+        "010",
+        "044",
+        "027",
+        "604",
+        "076",
+        "600"
+      ],
+      [
+        "002",
+        "076",
+        "021",
+        "460",
+        "522",
+        "090",
+        "076",
+        "001",
+        "048",
+        "048",
+        "430",
+        "076"
+      ],
+      [
+        "071",
+        "076",
+        "010",
+        "079",
+        "053",
+        "002",
+        "076",
+        "006",
+        "499",
+        "999",
+        "107",
+        "076"
+      ],
+      [
+        "460",
+        "050",
+        "498",
+        "027",
+        "076",
+        "093",
+        "726",
+        "087",
+        "076",
+        "011",
+        "099",
+        "571"
+      ],
+      [
+        "000",
+        "700",
+        "604",
+        "076",
+        "071",
+        "600",
+        "999",
+        "050",
+        "076",
+        "000",
+        "002",
+        "999"
+      ],
+      [
+        "076",
+        "600",
+        "001",
+        "076",
+        "534",
+        "300",
+        "032",
+        "999",
+        "606",
+        "010",
+        "079",
+        "634"
+      ],
+      [
+        "760",
+        "036",
+        "026",
+        "076",
+        "055",
+        "006",
+        "700",
+        "076",
+        "073",
+        "050",
+        "050",
+        "090"
+      ],
+      [
+        "022",
+        "280",
+        "280",
+        "326",
+        "076",
+        "532",
+        "070",
+        "631",
+        "499",
+        "076",
+        "532",
+        "631"
+      ],
+      [
+        "048",
+        "700",
+        "999",
+        "073",
+        "064",
+        "076",
+        "075",
+        "720",
+        "999",
+        "059",
+        "076",
+        "400"
+      ],
+      [
+        "177",
+        "700",
+        "076",
+        "057",
+        "741",
+        "430",
+        "076",
+        "532",
+        "200",
+        "059",
+        "076",
+        "074"
+      ]
+    ],
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_12grams_all_i_only": false,
+    "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next12_i_only": false,
+    "leftover_matching_next12_of_leftover_matching_next11_is_nested": true,
+    "leftover_matching_next12_of_leftover_matching_next10_is_nested": true,
+    "leftover_matching_next12_is_this_cycle": true,
+    "next_11gram_i_only_is_not_this_cycle": true,
+    "previous_11gram_tokens_i_only_is_not_this_cycle": true,
+    "same_as_cycle398": false,
+    "same_as_cycle399": false,
+    "same_claim_shape_as_cycle398": true,
+    "same_claim_shape_as_cycle399": true,
+    "nested_cycle399_previous_11grams_tokens_all_i_only": false,
+    "nested_cycle399_N_i_only": 10,
+    "nested_cycle399_N_leak": 0,
+    "nested_cycle399_N_extra": 0,
+    "nested_cycle399_N_with_prev11": 10,
+    "nested_cycle399_N_no_prev11": 1,
+    "nested_cycle398_next_11grams_all_i_only": false,
+    "nested_cycle398_N_i_only": 10,
+    "nested_cycle398_N_leak": 0,
+    "nested_cycle398_N_extra": 0,
+    "nested_cycle398_N_with_next11": 10,
+    "nested_cycle398_N_no_next11": 1,
+    "do_not_relock_cycle398": true,
+    "do_not_relock_cycle399": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next11_i_only_unchanged": true,
+    "standing_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev11_tokens_i_only_unchanged": true
+  }
+,
+
   "standing_image_lock": {
     "instances": 83,
     "types": 62,
