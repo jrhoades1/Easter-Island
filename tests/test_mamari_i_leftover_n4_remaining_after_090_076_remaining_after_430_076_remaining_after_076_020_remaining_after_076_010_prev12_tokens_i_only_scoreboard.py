@@ -763,8 +763,8 @@ STANDING_N_I_ONLY = 10
 STANDING_N_NOT_I_ONLY = 0
 STANDING_N_LEAKING = 0
 STANDING_N_LEAK = 0
-STANDING_LEAKING_11GRAMS = ()
-STANDING_I_ONLY_11GRAMS = STANDING_SEQUENCES
+STANDING_LEAKING_12GRAMS = ()
+STANDING_I_ONLY_12GRAMS = STANDING_SEQUENCES
 STANDING_I_SITES = STANDING_LEFTOVER_MATCHING_SITES_EACH
 STANDING_EXTRA_I_SITES = ((),) * STANDING_N_SEQUENCES
 STANDING_HAPAX_EACH = (True,) * STANDING_N_SEQUENCES
@@ -1714,7 +1714,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
                 else:
                     self.assertEqual(count, 0)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N11]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N12]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
@@ -1727,7 +1727,7 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(leftover_matching_leftover2_of_extra_i(), ())
         self.assertTrue(STANDING_LEFTOVER_MATCHING_PREV12_OF_LEFTOVER_MATCHING_PREV11_IS_NESTED)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_PREV12_TOKENS_IS_THIS_CYCLE)
-        self.assertEqual(self.leaking, STANDING_LEAKING_11GRAMS)
+        self.assertEqual(self.leaking, STANDING_LEAKING_12GRAMS)
         self.assertEqual(self.n_i_only, STANDING_N_I_ONLY)
         self.assertEqual(self.n_i_only, 10)
         self.assertEqual(self.n_not_i_only, STANDING_N_NOT_I_ONLY)
@@ -2291,9 +2291,22 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_not_hapax"], 0)
         self.assertEqual(
             lock["i_only_12grams"],
-            [list(gram) for gram in STANDING_I_ONLY_11GRAMS],
+            [list(gram) for gram in STANDING_I_ONLY_12GRAMS],
         )
-        self.assertFalse(lock["nested_cycle398_next_12grams_all_i_only"])
+        self.assertFalse(lock["nested_cycle400_next_12grams_all_i_only"])
+        self.assertEqual(lock["nested_cycle400_N_i_only"], 10)
+        self.assertEqual(lock["nested_cycle400_N_leak"], 0)
+        self.assertEqual(lock["nested_cycle400_N_extra"], 0)
+        self.assertEqual(lock["nested_cycle400_N_with_next12"], 10)
+        self.assertEqual(lock["nested_cycle400_N_no_next12"], 1)
+        self.assertFalse(lock["nested_cycle399_previous_11grams_tokens_all_i_only"])
+        self.assertEqual(lock["nested_cycle399_N_i_only"], 10)
+        self.assertEqual(lock["nested_cycle399_N_leak"], 0)
+        self.assertEqual(lock["nested_cycle399_N_extra"], 0)
+        self.assertEqual(lock["nested_cycle399_N_with_prev11"], 10)
+        self.assertEqual(lock["nested_cycle399_N_no_prev11"], 1)
+        self.assertEqual(lock["nested_cycle399_leftover_matching_leftover2"], 2)
+        self.assertFalse(lock["nested_cycle398_next_11grams_all_i_only"])
         self.assertEqual(lock["nested_cycle398_N_i_only"], 10)
         self.assertEqual(lock["nested_cycle398_N_leak"], 0)
         self.assertEqual(lock["nested_cycle398_N_extra"], 0)
@@ -2488,7 +2501,9 @@ class TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["previous_9gram_tokens_i_only_is_not_this_cycle"])
         self.assertTrue(lock["next_9gram_i_only_is_not_this_cycle"])
         self.assertTrue(lock["next_10gram_i_only_is_not_this_cycle"])
+        self.assertTrue(lock["next_11gram_i_only_is_not_this_cycle"])
         self.assertTrue(lock["next_12gram_i_only_is_not_this_cycle"])
+        self.assertTrue(lock["previous_11gram_tokens_i_only_is_not_this_cycle"])
         self.assertTrue(lock["previous_10gram_tokens_i_only_is_not_this_cycle"])
         self.assertTrue(lock["previous_6gram_tokens_i_only_is_not_this_cycle"])
         self.assertTrue(lock["extra_i_next4_5grams_are_not_this_cycle"])
