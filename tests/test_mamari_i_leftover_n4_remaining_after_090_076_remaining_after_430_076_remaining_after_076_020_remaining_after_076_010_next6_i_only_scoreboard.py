@@ -886,13 +886,31 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
             self.assertEqual(ngram_hit_count(adjacent, gram), 1)
         self.assertEqual(
             ngram_hit_count(
-                [["295", "076", "070", "560", "072", "295", "076", "070", "560", "072"]],
+                [
+                    [
+                        "295",
+                        "076",
+                        "070",
+                        "560",
+                        "072",
+                        "076",
+                        "295",
+                        "076",
+                        "070",
+                        "560",
+                        "072",
+                        "076",
+                    ]
+                ],
                 GRAM6_295_076_070_560_072_076,
             ),
             2,
         )
         self.assertEqual(
-            ngram_hit_count([["295", "076", "070", "560", "000"]], GRAM6_295_076_070_560_072_076),
+            ngram_hit_count(
+                [["295", "076", "070", "560", "072", "000"]],
+                GRAM6_295_076_070_560_072_076,
+            ),
             0,
         )
         self.assertEqual(ngram_hit_count([[]], GRAM6_295_076_070_560_072_076), 0)
