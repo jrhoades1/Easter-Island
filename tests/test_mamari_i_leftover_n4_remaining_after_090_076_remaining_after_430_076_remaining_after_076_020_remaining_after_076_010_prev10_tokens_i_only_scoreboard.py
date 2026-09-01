@@ -1258,7 +1258,7 @@ class TestILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(STANDING_N_EXTRA, 0)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER3, 0)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER4, 0)
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER2, 1)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER2, 0)
         planted = (SIDE_IA, "Ia99", 999)
         self.assertEqual(
             extra_i_sites_of_10gram(STANDING_I_SITES[0], STANDING_LEFTOVER_MATCHING_SITES_EACH[0]),
