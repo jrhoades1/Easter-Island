@@ -148,7 +148,7 @@ Extra I of the previous 5-grams is 0. Extra I of I-only previous
 N_distinct=10, N_with_prev5=10, N_no_prev5=2, N_line_initial=2,
 leftover matching leftover-2/3/4 of prev5=0 leftover matching
 leftover-4/3/2 of leftover 5-grams=6/12/18 leftover matching
-leftover-n4 prev5 of leftover-n5 prev5=0 leftover matching
+leftover-n4 prev5 of leftover-n5 prev5=5 leftover matching
 leftover-n4 next5=6 (record overlap only; cycle 429 nested), Ib
 unpublished 0. The claim is false: existing previous 5-grams are
 all I-only (N_leak=0) but two leftover matching leftover-5
@@ -573,7 +573,7 @@ STANDING_LEFTOVER_MATCHING_LEFTOVER2_OF_PREV5 = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER3_OF_EXTRA_I = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER4_OF_EXTRA_I = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER2_OF_EXTRA_I = 0
-STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_PREV5 = 0
+STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_PREV5 = 5
 STANDING_NOT_ASSUMED_HAPAX = True
 STANDING_HAPAX_NOT_REQUIRED = True
 STANDING_KNOWN_DISTINCT = True
@@ -988,7 +988,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
             len(leftover_matching_leftover_n4_prev5()),
             STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_PREV5,
         )
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_PREV5, 0)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_PREV5, 5)
         self.assertEqual(leftover_n4_remaining_prev4(), CYCLE384_SEQUENCES)
         adjacent = [list(gram) for gram in STANDING_SEQUENCES]
         for gram in STANDING_SEQUENCES:
@@ -1364,7 +1364,16 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         extra_999 = line_stems_for_site(self.i_sides, STANDING_NESTED_CYCLE427_NEW_EXTRA_I_SITE)
         self.assertEqual(tuple(extra_999[128:132]), STANDING_NESTED_CYCLE427_NEW_EXTRA_I_GRAM)
         self.assertTrue(STANDING_LEFTOVER_MATCHING_PREV5_IS_THIS_CYCLE)
-        self.assertEqual(leftover_matching_leftover_n4_prev5(), ())
+        self.assertEqual(
+            leftover_matching_leftover_n4_prev5(),
+            (
+                GRAM5_380_090_076_470_700,
+                GRAM5_002_514_076_071_070,
+                GRAM5_072_205_090_076_000,
+                GRAM5_999_045_076_600_087,
+                GRAM5_999_090_076_057_600,
+            ),
+        )
         self.assertEqual(self.leaking, STANDING_LEAKING_5GRAMS)
         self.assertEqual(self.n_i_only, STANDING_N_I_ONLY)
         self.assertEqual(self.n_i_only, 10)
@@ -1814,7 +1823,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["leftover_matching_leftover3_of_extra_i"], 0)
         self.assertEqual(lock["leftover_matching_leftover4_of_extra_i"], 0)
         self.assertEqual(lock["leftover_matching_leftover2_of_extra_i"], 0)
-        self.assertEqual(lock["leftover_matching_leftover_n4_prev5"], 0)
+        self.assertEqual(lock["leftover_matching_leftover_n4_prev5"], 5)
         self.assertEqual(lock["N_extra"], STANDING_N_EXTRA)
         self.assertEqual(lock["N_extra"], 0)
         self.assertEqual(lock["N_extra_of_prev5grams"], 0)
