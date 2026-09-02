@@ -1471,7 +1471,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
                 else:
                     self.assertEqual(count, 0)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N6]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N7]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
@@ -2128,7 +2128,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["nested_cycle433_N_leak"], 0)
         self.assertEqual(lock["nested_cycle433_N_extra"], 0)
         self.assertEqual(lock["nested_cycle433_N_no_next7"], 1)
-        self.assertFalse(lock["nested_cycle432_previous_7grams_all_i_only"])
+        self.assertFalse(lock["nested_cycle432_previous_6grams_all_i_only"])
         self.assertEqual(lock["nested_cycle432_N_i_only"], 10)
         self.assertEqual(lock["nested_cycle432_N_leak"], 0)
         self.assertEqual(lock["nested_cycle432_N_extra"], 0)
@@ -2143,7 +2143,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["nested_cycle430_N_leak"], 0)
         self.assertEqual(lock["nested_cycle430_N_extra"], 0)
         self.assertEqual(lock["nested_cycle430_N_no_prev5"], 2)
-        self.assertFalse(lock["nested_cycle389_previous_7grams_tokens_all_i_only"])
+        self.assertFalse(lock["nested_cycle389_previous_6grams_tokens_all_i_only"])
         self.assertEqual(lock["nested_cycle389_N_i_only"], 10)
         self.assertEqual(lock["nested_cycle389_N_leak"], 0)
         self.assertEqual(lock["nested_cycle389_N_extra"], 0)
@@ -2269,7 +2269,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_peel_labeled_g_exactly_1_share"])
         self.assertTrue(lock["do_not_repeel_leftover2"])
         self.assertTrue(lock["do_not_launch_extra_i_peels"])
-        self.assertTrue(lock["do_not_launch_extra_i_of_i_only_prev6"])
+        self.assertTrue(lock["do_not_launch_extra_i_of_i_only_prev7"])
         self.assertTrue(lock["do_not_launch_extra_i_of_next5"])
         self.assertTrue(lock["do_not_launch_extra_i_of_next6"])
         self.assertTrue(lock["do_not_launch_extra_i_of_next7"])
