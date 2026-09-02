@@ -1356,7 +1356,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertNotEqual(leftover_matching_next8_sites(), CYCLE419_NEXT2_SITES)
         self.assertNotEqual(leftover_matching_next3_sites_of_leftover5(), STANDING_LEFTOVER_MATCHING_NEXT8_SITES)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_COUNT, 12)
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT8_COUNT, 11)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT8_COUNT, 10)
         planted = (SIDE_IA, "Ia99", 999)
         self.assertFalse(
             leftover_matching_equals_next8_minus_five(
@@ -1579,7 +1579,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.leftover_matching_next8, STANDING_LEFTOVER_MATCHING_NEXT8_SITES)
         self.assertEqual(self.leftover_matching_each, STANDING_LEFTOVER_MATCHING_SITES_EACH)
         self.assertEqual(len(self.leftover_matching_next8), STANDING_LEFTOVER_MATCHING_NEXT8_COUNT)
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT8_COUNT, 11)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT8_COUNT, 10)
         self.assertFalse(
             leftover_matching_equals_next8_minus_five(
                 self.leftover_matching_5, self.leftover_matching_next8
@@ -2189,9 +2189,9 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_survey_matches_computed_lock(self):
-        """CORPUS_SURVEY.json records the cycle-433 leftover 5-gram next 8-gram incomplete-set lose."""
+        """CORPUS_SURVEY.json records the cycle-435 leftover 5-gram next 8-gram incomplete-set lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 433)
+        self.assertEqual(lock["cycle"], 435)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
@@ -2694,8 +2694,20 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
             "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next6_i_only"
         ]
         self.assertEqual(prior_431["cycle"], 431)
-        prior_390 = self.survey[
+        prior_434 = self.survey[
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev7_i_only"
+        ]
+        self.assertEqual(prior_434["cycle"], 434)
+        prior_433 = self.survey[
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next7_i_only"
+        ]
+        self.assertEqual(prior_433["cycle"], 433)
+        prior_392 = self.survey[
             "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next8_i_only"
+        ]
+        self.assertEqual(prior_392["cycle"], 392)
+        prior_390 = self.survey[
+            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next7_i_only"
         ]
         self.assertEqual(prior_390["cycle"], 390)
         prior_430 = self.survey[
