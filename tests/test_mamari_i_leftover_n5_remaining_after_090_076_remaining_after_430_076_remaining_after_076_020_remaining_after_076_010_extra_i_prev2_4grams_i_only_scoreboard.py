@@ -1353,7 +1353,7 @@ def extra_i_prev2_4grams_at_sites(
 def distinct_extra_i_4grams(
     rows: tuple[tuple[tuple[str, ...], tuple[str, str, int], str, tuple[str, ...]], ...],
 ) -> tuple[tuple[str, ...], ...]:
-    """First-seen distinct extra-I previous-2-gram 3-grams."""
+    """First-seen distinct extra-I previous-2-gram 4-grams."""
     seen_grams: list[tuple[str, ...]] = []
     for gram, _site, _role, _parent in rows:
         if gram not in seen_grams:
@@ -1365,7 +1365,7 @@ def leaking_4grams(
     sequences: tuple[tuple[str, ...], ...],
     n_off_i: tuple[int, ...],
 ) -> tuple[tuple[str, ...], ...]:
-    """Distinct extra-I previous-2-gram 3-grams with N_off_I>0."""
+    """Distinct extra-I previous-2-gram 4-grams with N_off_I>0."""
     return tuple(
         gram
         for gram, off in zip(sequences, n_off_i, strict=True)
@@ -1377,7 +1377,7 @@ def extra_i_prev2_site_covered_by_4gram(
     extra_site: tuple[str, str, int],
     i_sites: tuple[tuple[str, str, int], ...],
 ) -> bool:
-    """True iff the extra I previous-2-gram site sits inside its extra-I 3-gram."""
+    """True iff the extra I previous-2-gram site sits inside its extra-I 4-gram."""
     covered = prev2_4gram_site(extra_site)
     return covered is not None and covered in i_sites
 
@@ -1687,7 +1687,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertFalse(sequence_is_hapax(2, 0))
         self.assertEqual(leaking_4grams(STANDING_SEQUENCES, STANDING_N_OFF_I_EACH), ())
         self.assertTrue(
-            STANDING_I_LEFTOVER_N5_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_EXTRA_I_PREV2_3GRAMS_ALL_I_ONLY
+            STANDING_I_LEFTOVER_N5_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_EXTRA_I_PREV2_4GRAMS_ALL_I_ONLY
         )
         self.assertTrue(STANDING_HAPAX_NOT_REQUIRED)
         self.assertTrue(STANDING_INCOMPLETE_SET_IS_LOSE)
