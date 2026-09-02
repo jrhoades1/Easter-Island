@@ -1054,7 +1054,7 @@ STANDING_LEFTOVER_MATCHING_NEXT14_OF_LEFTOVER3 = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER3_OF_EXTRA_I = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER4_OF_EXTRA_I = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER2_OF_EXTRA_I = 0
-STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_NEXT14 = 0
+STANDING_LEFTOVER_MATCHING_LEFTOVER_N4_NEXT14 = 5
 STANDING_NOT_ASSUMED_HAPAX = True
 STANDING_HAPAX_NOT_REQUIRED = True
 STANDING_KNOWN_DISTINCT = True
@@ -2036,7 +2036,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
                 else:
                     self.assertEqual(count, 0)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N13]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N14]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
@@ -2077,7 +2077,13 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(tuple(extra_720_b[119:123]), CYCLE425_SEQUENCES[1])
         self.assertEqual(
             leftover_matching_leftover_n4_next14(),
-            (),
+            (
+                GRAM14_460_050_498_027_076_093_726_087_076_011_099_571_076_070,
+                GRAM14_000_700_604_076_071_600_999_050_076_000_002_999_076_092,
+                GRAM14_022_280_280_326_076_532_070_631_499_076_532_631_631_999,
+                GRAM14_048_700_999_073_064_076_075_720_999_059_076_400_280_999,
+                GRAM14_177_700_076_057_741_430_076_532_200_059_076_074_379_002,
+            ),
         )
         self.assertEqual(
             i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_14grams_all_i_only(
@@ -2863,7 +2869,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["leftover_matching_leftover3_of_extra_i"], 0)
         self.assertEqual(lock["leftover_matching_leftover4_of_extra_i"], 0)
         self.assertEqual(lock["leftover_matching_leftover2_of_extra_i"], 0)
-        self.assertEqual(lock["leftover_matching_leftover_n4_next14"], 0)
+        self.assertEqual(lock["leftover_matching_leftover_n4_next14"], 5)
         self.assertEqual(lock["N_extra"], STANDING_N_EXTRA)
         self.assertEqual(lock["N_extra"], 0)
         self.assertEqual(lock["N_extra_of_next14grams"], 0)
@@ -2872,7 +2878,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["not_assumed_hapax"])
         self.assertTrue(lock["hapax_not_required"])
         self.assertTrue(lock["extra_i_does_not_make_claim_lose"])
-        self.assertFalse(lock["all_sites_have_next_13gram"])
+        self.assertFalse(lock["all_sites_have_next_14gram"])
         self.assertTrue(lock["incomplete_set_is_lose"])
         self.assertTrue(lock["any_N_leak_is_lose"])
         self.assertEqual(tuple(tuple(row) for row in lock["no_next14_sites"]), STANDING_NO_NEXT14_SITES)
