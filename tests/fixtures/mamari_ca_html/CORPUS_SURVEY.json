@@ -734933,6 +734933,8 @@
   },
 
 
+
+
   "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev14_i_only": {
     "cycle": 448,
     "result": "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev14_i_only",
@@ -735213,7 +735215,7 @@
           [
             "Ia",
             "Ia1",
-            50
+            49
           ]
         ],
         "extra_i_sites": [],
@@ -735316,7 +735318,7 @@
           [
             "Ia",
             "Ia1",
-            49
+            48
           ]
         ],
         "extra_i_sites": [],
@@ -735419,7 +735421,7 @@
           [
             "Ia",
             "Ia8",
-            17
+            16
           ]
         ],
         "extra_i_sites": [],
@@ -735522,7 +735524,7 @@
           [
             "Ia",
             "Ia8",
-            16
+            15
           ]
         ],
         "extra_i_sites": [],
@@ -735625,7 +735627,7 @@
           [
             "Ia",
             "Ia10",
-            131
+            130
           ]
         ],
         "extra_i_sites": [],
@@ -735728,7 +735730,7 @@
           [
             "Ia",
             "Ia10",
-            130
+            129
           ]
         ],
         "extra_i_sites": [],
@@ -735831,7 +735833,7 @@
           [
             "Ia",
             "Ia8",
-            154
+            153
           ]
         ],
         "extra_i_sites": [],
@@ -735934,7 +735936,7 @@
           [
             "Ia",
             "Ia8",
-            153
+            152
           ]
         ],
         "extra_i_sites": [],
@@ -736037,7 +736039,7 @@
           [
             "Ia",
             "Ia9",
-            19
+            18
           ]
         ],
         "extra_i_sites": [],
@@ -736140,7 +736142,7 @@
           [
             "Ia",
             "Ia9",
-            18
+            17
           ]
         ],
         "extra_i_sites": [],
@@ -737154,6 +737156,7 @@
     "nested_cycle447_N_leak": 0,
     "nested_cycle447_N_extra": 0,
     "nested_cycle447_N_no_next14": 2,
-    "do_not_launch_next_15grams": true
+    "do_not_launch_next_15grams": true,
+    "do_not_launch_next_13grams": true
   }
 }

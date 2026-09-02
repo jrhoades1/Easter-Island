@@ -1256,7 +1256,7 @@ def leftover_matching_prev14_sites_each(
     return tuple(tuple(buckets[gram]) for gram in sequences)
 
 
-def leftover_matching_with_prev13_equals_prev13_plus_fourteen(
+def leftover_matching_with_prev14_equals_prev14_plus_fourteen(
     leftover_sites: tuple[tuple[str, str, int], ...] = STANDING_LEFTOVER_MATCHING_5GRAM_SITES_WITH_PREV14,
     matching_prev4_sites: tuple[tuple[str, str, int], ...] = STANDING_LEFTOVER_MATCHING_PREV14_SITES,
 ) -> bool:
@@ -1343,7 +1343,7 @@ def leftover_matching_leftover2_of_extra_i(
 
 def leftover_matching_leftover_n4_prev14(
     sequences: tuple[tuple[str, ...], ...] = STANDING_SEQUENCES,
-    leftover_n4_prev14: tuple[tuple[str, ...], ...] = CYCLE403_SEQUENCES,
+    leftover_n4_prev14: tuple[tuple[str, ...], ...] = CYCLE405_SEQUENCES,
 ) -> tuple[tuple[str, ...], ...]:
     """Previous 8-grams that also appear as leftover-n4 remaining-after-076-010 previous-14-gram tokens."""
     leftover_set = set(leftover_n4_prev14)
@@ -1390,7 +1390,7 @@ def leftover_prev14_survey_rows() -> list[dict]:
     ):
         rows.append(
             {
-                "tokens_prev13": list(gram),
+                "tokens_prev14": list(gram),
                 "parent_5gram": list(parent),
                 "leftover_matching_prev14_sites": [list(site) for site in matching],
                 "leftover_matching_5gram_site": list(leftover5),
@@ -1582,7 +1582,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
             leftover_matching_5gram_sites(),
             STANDING_LEFTOVER_MATCHING_5GRAM_SITES,
         )
-        self.assertTrue(leftover_matching_with_prev13_equals_prev13_plus_fourteen())
+        self.assertTrue(leftover_matching_with_prev14_equals_prev14_plus_fourteen())
         self.assertEqual(len(STANDING_LEFTOVER_MATCHING_5GRAM_SITES), 12)
         self.assertEqual(
             leftover_matching_prev14_sites_each(),
@@ -1782,7 +1782,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(len(self.leftover_matching_prev14), STANDING_LEFTOVER_MATCHING_PREV14_COUNT)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_PREV14_COUNT, 10)
         self.assertTrue(
-            leftover_matching_with_prev13_equals_prev13_plus_fourteen(
+            leftover_matching_with_prev14_equals_prev14_plus_fourteen(
                 STANDING_LEFTOVER_MATCHING_5GRAM_SITES_WITH_PREV14,
                 self.leftover_matching_prev14,
             )
@@ -2730,7 +2730,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         measured_5 = [list(gram) for gram in CYCLE414_SEQUENCES]
         self.assertEqual(lock["tokens5"], measured_5)
         measured_prev5 = [list(gram) for gram in STANDING_SEQUENCES]
-        self.assertEqual(lock["tokens_prev13"], measured_prev5)
+        self.assertEqual(lock["tokens_prev14"], measured_prev5)
         self.assertEqual(
             tuple(tuple(site_row) for site_row in lock["leftover_matching_sites"]),
             STANDING_LEFTOVER_MATCHING_5GRAM_SITES,
@@ -2751,8 +2751,8 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
             STANDING_LEFTOVER_MATCHING_PREV14_COUNT,
         )
         self.assertEqual(lock["leftover_matching_prev14_count"], 10)
-        self.assertTrue(lock["leftover_matching_with_prev13_equals_prev13_plus_fourteen"])
-        self.assertFalse(lock["leftover_matching_equals_prev13_plus_fourteen"])
+        self.assertTrue(lock["leftover_matching_with_prev14_equals_prev14_plus_fourteen"])
+        self.assertFalse(lock["leftover_matching_equals_prev14_plus_fourteen"])
         self.assertEqual(
             tuple(tuple(site_row) for site_row in lock["no_prev14_sites"]),
             STANDING_NO_PREV14_SITES,
@@ -3045,7 +3045,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_peel_labeled_g_exactly_1_share"])
         self.assertTrue(lock["do_not_repeel_leftover2"])
         self.assertTrue(lock["do_not_launch_extra_i_peels"])
-        self.assertTrue(lock["do_not_launch_extra_i_of_i_only_prev13"])
+        self.assertTrue(lock["do_not_launch_extra_i_of_i_only_prev14"])
         self.assertTrue(lock["do_not_launch_extra_i_of_next9"])
         self.assertTrue(lock["do_not_launch_extra_i_of_prev8"])
         self.assertTrue(lock["do_not_launch_extra_i_of_next5"])
