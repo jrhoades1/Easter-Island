@@ -1845,7 +1845,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
                 else:
                     self.assertEqual(count, 0)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N10]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N11]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
@@ -2542,7 +2542,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_survey_matches_computed_lock(self):
-        """CORPUS_SURVEY.json records the cycle-441 leftover 5-gram next 10-gram incomplete-set lose."""
+        """CORPUS_SURVEY.json records the cycle-441 leftover 5-gram next 11-gram incomplete-set lose."""
         lock = self.survey[STANDING_RESULT]
         self.assertEqual(lock["cycle"], 441)
         self.assertEqual(lock["result"], STANDING_RESULT)
