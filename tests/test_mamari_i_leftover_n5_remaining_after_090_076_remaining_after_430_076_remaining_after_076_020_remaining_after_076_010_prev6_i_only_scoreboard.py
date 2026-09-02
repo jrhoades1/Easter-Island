@@ -445,7 +445,6 @@ from tests.test_mamari_i_leftover_n5_remaining_after_090_076_remaining_after_430
     STANDING_N_NO_PREV5 as CYCLE430_N_NO_PREV5,
     STANDING_N_WITH_PREV5 as CYCLE430_N_WITH_PREV5,
     STANDING_SEQUENCES as CYCLE430_SEQUENCES,
-    TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev5IOnlyScoreboard,
     leftover_remaining_prev5 as leftover_n5_remaining_prev5,
 )
 from tests.test_mamari_i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next6_i_only_scoreboard import (
