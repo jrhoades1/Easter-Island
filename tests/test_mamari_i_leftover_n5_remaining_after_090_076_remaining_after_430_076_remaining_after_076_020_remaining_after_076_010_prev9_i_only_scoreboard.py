@@ -1231,13 +1231,13 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
             self.assertEqual(ngram_hit_count(adjacent, gram), 1)
         self.assertEqual(
             ngram_hit_count(
-                [["076", "023", "380", "380", "090", "076", "470", "700", "076", "023", "380", "380", "090", "076", "470", "700"]],
-                GRAM9_076_023_380_380_090_076_470_700,
+                [["298", "076", "023", "380", "380", "090", "076", "470", "700", "298", "076", "023", "380", "380", "090", "076", "470", "700"]],
+                GRAM9_298_076_023_380_380_090_076_470_700,
             ),
             2,
         )
-        self.assertEqual(ngram_hit_count([["076", "023", "380", "380", "090", "076", "470", "380"]], GRAM9_076_023_380_380_090_076_470_700), 0)
-        self.assertEqual(ngram_hit_count([[]], GRAM9_076_023_380_380_090_076_470_700), 0)
+        self.assertEqual(ngram_hit_count([["298", "076", "023", "380", "380", "090", "076", "470", "380"]], GRAM9_298_076_023_380_380_090_076_470_700), 0)
+        self.assertEqual(ngram_hit_count([[]], GRAM9_298_076_023_380_380_090_076_470_700), 0)
         self.assertTrue(STANDING_LEFTOVER_5GRAM_I_ONLY_IS_NOT_THIS_CYCLE)
         self.assertTrue(STANDING_LEFTOVER_5GRAM_NEXT4_I_ONLY_IS_NOT_THIS_CYCLE)
         self.assertTrue(STANDING_LEFTOVER_N4_PREV4_I_ONLY_IS_NOT_THIS_CYCLE)
@@ -1258,7 +1258,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
         leftover = leftover_n4_rows()
         hold_ones = (1,) * STANDING_N
         hold_zeros = (0,) * STANDING_N
-        planted = STANDING_SEQUENCES + (GRAM9_076_023_380_380_090_076_470_700, GRAM9_298_076_023_380_380_090_076_470)
+        planted = STANDING_SEQUENCES + (GRAM9_298_076_023_380_380_090_076_470_700, GRAM9_698_298_076_023_380_380_090_076_470)
         self.assertTrue(
             i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_previous_9grams_all_i_only(
                 hold_ones, hold_zeros, leftovers=leftover, previous_9grams=planted, sequences=planted
@@ -1291,7 +1291,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leaking_9grams(STANDING_SEQUENCES, (0,) * 10), ())
         self.assertEqual(
             leaking_9grams(STANDING_SEQUENCES, (1,) + (0,) * 9),
-            (GRAM9_076_023_380_380_090_076_470_700,),
+            (GRAM9_298_076_023_380_380_090_076_470_700,),
         )
         self.assertTrue(STANDING_EXTRA_I_DOES_NOT_MAKE_CLAIM_LOSE)
         self.assertTrue(STANDING_INCOMPLETE_SET_IS_LOSE)
@@ -1606,11 +1606,11 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(
             leftover_matching_leftover_n4_prev9(),
             (
-                GRAM9_076_023_380_380_090_076_470_700,
-                GRAM9_381_000_006_002_514_076_071_070,
-                GRAM9_010_090_076_072_205_090_076_000,
-                GRAM9_076_090_050_999_045_076_600_087,
-                GRAM9_076_532_244_999_090_076_057_600,
+                GRAM9_298_076_023_380_380_090_076_470_700,
+                GRAM9_065_381_000_006_002_514_076_071_070,
+                GRAM9_208_010_090_076_072_205_090_076_000,
+                GRAM9_024_076_090_050_999_045_076_600_087,
+                GRAM9_208_076_532_244_999_090_076_057_600,
             ),
         )
         self.assertEqual(self.leaking, STANDING_LEAKING_9GRAMS)
