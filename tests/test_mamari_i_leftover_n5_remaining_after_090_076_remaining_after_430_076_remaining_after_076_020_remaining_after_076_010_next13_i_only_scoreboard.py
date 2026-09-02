@@ -1540,7 +1540,7 @@ class TestILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfter07602
             tuple(g for i, g in enumerate(CYCLE415_SEQUENCES) if i not in skip),
             strict=True,
         ):
-            self.assertEqual(len(gram), STANDING_N12)
+            self.assertEqual(len(gram), STANDING_N13)
             self.assertEqual(gram[:5], tok5)
             self.assertEqual(gram[:4], tok4)
             self.assertEqual(gram[:3], tok3)
@@ -1969,7 +1969,7 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
                 else:
                     self.assertEqual(count, 0)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N12]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N13]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
@@ -3263,9 +3263,21 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         ]
         self.assertEqual(prior_398["cycle"], 398)
         prior_400 = self.survey[
-            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next13_i_only"
+            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next12_i_only"
         ]
         self.assertEqual(prior_400["cycle"], 400)
+        prior_402 = self.survey[
+            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next13_i_only"
+        ]
+        self.assertEqual(prior_402["cycle"], 402)
+        prior_443 = self.survey[
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next12_i_only"
+        ]
+        self.assertEqual(prior_443["cycle"], 443)
+        prior_444 = self.survey[
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev12_i_only"
+        ]
+        self.assertEqual(prior_444["cycle"], 444)
         prior_441 = self.survey[
             "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next11_i_only"
         ]
