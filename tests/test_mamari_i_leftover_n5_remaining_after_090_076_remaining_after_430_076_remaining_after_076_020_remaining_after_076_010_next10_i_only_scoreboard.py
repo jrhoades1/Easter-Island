@@ -2958,9 +2958,21 @@ class TestMamariILeftoverN5RemainingAfter090076RemainingAfter430076RemainingAfte
         ]
         self.assertEqual(prior_392["cycle"], 392)
         prior_394 = self.survey[
-            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next10_i_only"
+            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next9_i_only"
         ]
         self.assertEqual(prior_394["cycle"], 394)
+        prior_396 = self.survey[
+            "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next10_i_only"
+        ]
+        self.assertEqual(prior_396["cycle"], 396)
+        prior_437 = self.survey[
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next9_i_only"
+        ]
+        self.assertEqual(prior_437["cycle"], 437)
+        prior_438 = self.survey[
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev9_i_only"
+        ]
+        self.assertEqual(prior_438["cycle"], 438)
         prior_390 = self.survey[
             "i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next7_i_only"
         ]
