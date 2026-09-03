@@ -1140,7 +1140,7 @@ def leftover_matching_equals_prev12_plus_twelve(
     leftover_sites: tuple[tuple[str, str, int], ...] = STANDING_LEFTOVER_MATCHING_6GRAM_SITES_WITH_PREV12,
     matching_prev12_sites: tuple[tuple[str, str, int], ...] = STANDING_LEFTOVER_MATCHING_PREV12_SITES,
 ) -> bool:
-    """True iff leftover-6 remaining sites with prev12 equal prev-9 starts plus eleven."""
+    """True iff leftover-6 remaining sites with prev12 equal prev-12 starts plus twelve."""
     measured = set(leftover_6gram_site_for_prev12(site) for site in matching_prev12_sites)
     return set(leftover_sites) == measured
 
@@ -1441,7 +1441,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(provider.get_call_history(), [])
 
     def test_leftover_matching_equals_prev12_plus_twelve(self):
-        """Leftover matching leftover-6 remaining-with-prev12 equal prev-6 starts plus eleven."""
+        """Leftover matching leftover-6 remaining-with-prev12 equal prev-12 starts plus twelve."""
         provider = MockProvider()
         self.assertTrue(
             leftover_matching_equals_prev12_plus_twelve(
@@ -2471,7 +2471,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax"], 15)
         self.assertEqual(lock["N_hapax_i_only"], 15)
         self.assertEqual(
-            lock["i_only_11grams"],
+            lock["i_only_12grams"],
             [list(gram) for gram in STANDING_I_ONLY_12GRAMS],
         )
         self.assertTrue(lock["nested_cycle475_next_6grams_all_i_only"] is False)
