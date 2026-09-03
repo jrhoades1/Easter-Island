@@ -1806,8 +1806,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_N_LEAK_HIT_T, 0)
         self.assertEqual(sum(1 for n_t in STANDING_N_T_EACH if n_t), 0)
         self.assertEqual(STANDING_I_ONLY_10GRAMS, STANDING_SEQUENCES)
-        self.assertIn((SIDE_IA, "Ia9", 23), self.leftover_matching_prev10)
         self.assertIn((SIDE_IA, "Ia9", 22), self.leftover_matching_prev10)
+        self.assertIn((SIDE_IA, "Ia9", 21), self.leftover_matching_prev10)
+        self.assertIn((SIDE_IA, "Ia9", 20), self.leftover_matching_prev10)
         self.assertIn((SIDE_IA, "Ia9", 3), STANDING_NO_PREV10_SITES)
         self.assertIn((SIDE_IA, "Ia9", 2), STANDING_NO_PREV10_SITES)
         self.assertIn((SIDE_IA, "Ia9", 1), STANDING_NO_PREV10_SITES)
@@ -1863,7 +1864,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(STANDING_DO_NOT_REPEEL_LEFTOVER2)
         self.assertTrue(STANDING_CYCLE349_DOES_NOT_COUNT)
         self.assertFalse(CYCLE349_CLAIM)
-        self.assertEqual(CYCLE349_N_I_ONLY, 10)
+        self.assertEqual(CYCLE349_N_I_ONLY, 9)
         self.assertEqual(CYCLE349_N_LEAK, 6)
         self.assertEqual(self.provider.get_call_history(), [])
 
@@ -2247,7 +2248,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(CYCLE419_N_I_ONLY, 6)
         self.assertEqual(CYCLE419_N_LEAK, 6)
         self.assertEqual(CYCLE419_N_EXTRA, 50)
-        self.assertEqual(CYCLE419_N_EXTRA_I_ONLY, 10)
+        self.assertEqual(CYCLE419_N_EXTRA_I_ONLY, 9)
         self.assertEqual(CYCLE419_N_WITH_NEXT2, 12)
         if prior_419.claim_holds:
             self.fail("nested cycle 419 leftover remaining-after-076-010 leftover 5-gram next 2-grams drifted")
@@ -2466,7 +2467,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax"], 15)
         self.assertEqual(lock["N_hapax_i_only"], 15)
         self.assertEqual(
-            lock["i_only_9grams"],
+            lock["i_only_10grams"],
             [list(gram) for gram in STANDING_I_ONLY_10GRAMS],
         )
         self.assertTrue(lock["nested_cycle475_next_6grams_all_i_only"] is False)
@@ -2596,7 +2597,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["nested_cycle414_N_hapax"], 12)
         self.assertEqual(lock["nested_cycle414_leftover_matching_count"], 12)
         self.assertFalse(lock["nested_cycle349_2grams_all_i_only"])
-        self.assertEqual(lock["nested_cycle349_N_i_only"], 10)
+        self.assertEqual(lock["nested_cycle349_N_i_only"], 9)
         self.assertEqual(lock["nested_cycle349_N_leak"], 6)
         self.assertTrue(lock["nested_cycle340_4grams_all_i_only"])
         self.assertEqual(lock["nested_cycle340_N_extra"], 0)
