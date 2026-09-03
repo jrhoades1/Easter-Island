@@ -1159,7 +1159,7 @@ def leftover_n5_prev16_overlap_sites(
     prev16_sites: tuple[tuple[str, str, int], ...] | None = None,
     leftover_n5_remaining: tuple[tuple[str, str, int], ...] | None = None,
 ) -> tuple[tuple[str, str, int], ...]:
-    """Leftover matching leftover-n5 prev-15 overlap: leftover-5 remaining index>=16."""
+    """Leftover matching leftover-n5 prev-16 overlap: leftover-5 remaining index>=16."""
     if prev16_sites is None:
         prev16_sites = leftover_matching_prev16_sites()
     if leftover_n5_remaining is None:
@@ -2481,7 +2481,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax"], 15)
         self.assertEqual(lock["N_hapax_i_only"], 15)
         self.assertEqual(
-            lock["i_only_15grams"],
+            lock["i_only_16grams"],
             [list(gram) for gram in STANDING_I_ONLY_16GRAMS],
         )
         self.assertTrue(lock["nested_cycle475_next_6grams_all_i_only"] is False)
