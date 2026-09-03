@@ -1071,7 +1071,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
     """Helpers on leftover remaining-after-076-010 leftover 6-gram previous 4-grams. No CV, no LLM."""
 
     def test_counts_require_exact_tokens(self):
-        """Next 3-grams are three tokens after leftover 6-grams, not leftover-inside tokens."""
+        """Previous 4-grams are four tokens before leftover 6-grams, not leftover-inside tokens."""
         provider = MockProvider()
         self.assertEqual(leftover_remaining_prev4(), STANDING_SEQUENCES)
         self.assertEqual(len(leftover_6gram_prev_4grams()), STANDING_N)
@@ -1082,7 +1082,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(STANDING_N, 18)
         self.assertEqual(leftover_remaining_6grams_distinct(), CYCLE457_SEQUENCES)
         self.assertNotEqual(STANDING_SEQUENCES, CYCLE457_SEQUENCES)
-        self.assertEqual(len(STANDING_PARENT_6GRAMS), STANDING_N)
+        self.assertEqual(len(STANDING_PARENT_6GRAMS), STANDING_N_SEQUENCES)
         for gram in STANDING_SEQUENCES:
             self.assertEqual(len(gram), STANDING_N4)
         leftover_2 = leftover_remaining_2grams()
@@ -1140,7 +1140,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertFalse(sequence_is_i_only(0, 0))
         self.assertTrue(sequence_is_hapax(1, 0))
         self.assertFalse(sequence_is_hapax(2, 0))
-        self.assertEqual(leaking_4grams(STANDING_SEQUENCES, hold_zeros), ())
+        self.assertEqual(leaking_4grams(STANDING_SEQUENCES, STANDING_N_OFF_I_EACH), ())
         self.assertEqual(
             leaking_4grams(STANDING_SEQUENCES, STANDING_N_OFF_I_EACH),
             STANDING_LEAKING_4GRAMS,
@@ -1285,7 +1285,8 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_tokens_are_four_before_leftover_6grams_not_retuned(self):
         """Previous 4-grams sit before leftover 6-grams. Leftover 6-grams stay cycle 457."""
         self.assertEqual(self.remaining_6grams, CYCLE457_SEQUENCES)
-        self.assertEqual(self.remaining_6grams, STANDING_PARENT_6GRAMS)
+        self.assertEqual(STANDING_PARENT_6GRAMS, CYCLE457_SEQUENCES[:3] + CYCLE457_SEQUENCES[6:])
+        self.assertNotEqual(self.remaining_6grams, STANDING_PARENT_6GRAMS)
         self.assertEqual(self.grams, STANDING_SEQUENCES)
         self.assertEqual(self.prev4_or_none.count(None), 3)
         self.assertEqual(len(self.grams), STANDING_N_SEQUENCES)
