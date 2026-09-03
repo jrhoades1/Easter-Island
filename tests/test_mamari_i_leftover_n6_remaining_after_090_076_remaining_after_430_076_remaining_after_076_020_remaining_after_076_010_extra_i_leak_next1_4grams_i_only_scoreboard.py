@@ -2243,7 +2243,7 @@ STANDING_N_LEAKING_NEXT1 = 16
 STANDING_N_LEAKING_NEXT1_WITH_EXTRA = 16
 STANDING_N1 = 1
 STANDING_N2 = 2
-STANDING_N4 = 3
+STANDING_N3 = 3
 STANDING_N4 = 4
 STANDING_N5 = 5
 STANDING_N6 = 6
@@ -2846,7 +2846,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(prior_461["N_leak"], 16)
         self.assertEqual(prior_461["N_extra_of_3grams"], 2)
         prior_417 = self.survey[
-            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next1_4grams_i_only"
+            "i_leftover_n5_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next1_3grams_i_only"
         ]
         self.assertEqual(prior_417["cycle"], 417)
         self.assertEqual(prior_417["N_i_only"], 611)
