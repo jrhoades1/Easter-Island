@@ -2480,7 +2480,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax"], 15)
         self.assertEqual(lock["N_hapax_i_only"], 15)
         self.assertEqual(
-            lock["i_only_13grams"],
+            lock["i_only_14grams"],
             [list(gram) for gram in STANDING_I_ONLY_14GRAMS],
         )
         self.assertTrue(lock["nested_cycle475_next_6grams_all_i_only"] is False)
