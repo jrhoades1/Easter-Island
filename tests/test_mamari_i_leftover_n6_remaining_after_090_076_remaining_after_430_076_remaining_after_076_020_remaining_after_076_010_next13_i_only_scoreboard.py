@@ -2149,7 +2149,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         if prior_462.claim_holds:
             self.fail("nested cycle 462 leftover remaining-after-076-010 extra-I leak next1 4-grams drifted")
         prior_461 = (
-            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraILeakNext14gramsIOnlyScoreboard()
+            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraILeakNext13gramsIOnlyScoreboard()
         )
         prior_461.setUp()
         prior_461.test_survey_matches_computed_lock()
@@ -2161,7 +2161,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         if prior_461.claim_holds:
             self.fail("nested cycle 461 leftover remaining-after-076-010 extra-I leak next1 3-grams drifted")
         prior_460 = (
-            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraILeakNext13gramsIOnlyScoreboard()
+            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraILeakNext12gramsIOnlyScoreboard()
         )
         prior_460.setUp()
         prior_460.test_survey_matches_computed_lock()
@@ -2173,7 +2173,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         if prior_460.claim_holds:
             self.fail("nested cycle 460 leftover remaining-after-076-010 extra-I leak next1 2-grams drifted")
         prior_459 = (
-            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraINext13gramsIOnlyScoreboard()
+            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraINext12gramsIOnlyScoreboard()
         )
         prior_459.setUp()
         prior_459.test_survey_matches_computed_lock()
