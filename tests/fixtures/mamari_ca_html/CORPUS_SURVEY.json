@@ -992595,6 +992595,7 @@
     "leftover_6gram_next17_i_only_is_not_this_cycle": true,
     "leftover_6_prev17_i_only_is_not_this_cycle": true,
     "leftover_n6_next17_not_retuned": true,
-    "leftover_n6_prev17_not_retuned": true
+    "leftover_n6_prev17_not_retuned": true,
+    "do_not_launch_previous_17grams": true
   }
 }
