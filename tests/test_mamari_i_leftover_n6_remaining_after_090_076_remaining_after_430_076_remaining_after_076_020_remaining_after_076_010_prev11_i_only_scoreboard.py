@@ -1577,11 +1577,11 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_11GRAM)
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[155:165]), GRAM11_076_075_440_024_076_090_050_999_045_076)
+        self.assertEqual(tuple(ia8[155:166]), GRAM11_076_075_440_024_076_090_050_999_045_076_600)
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
-        self.assertEqual(tuple(ia9[22:32]), GRAM11_999_208_076_532_244_999_090_076_057_600)
-        self.assertEqual(tuple(ia9[21:31]), GRAM11_535_999_208_076_532_244_999_090_076_057)
-        self.assertEqual(tuple(ia9[20:30]), GRAM11_092_535_999_208_076_532_244_999_090_076)
+        self.assertEqual(tuple(ia9[21:32]), GRAM11_535_999_208_076_532_244_999_090_076_057_600)
+        self.assertEqual(tuple(ia9[20:31]), GRAM11_092_535_999_208_076_532_244_999_090_076_057)
+        self.assertEqual(tuple(ia9[19:30]), GRAM11_076_092_535_999_208_076_532_244_999_090_076)
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
         ]
@@ -1808,9 +1808,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_N_LEAK_HIT_T, 0)
         self.assertEqual(sum(1 for n_t in STANDING_N_T_EACH if n_t), 0)
         self.assertEqual(STANDING_I_ONLY_11GRAMS, STANDING_SEQUENCES)
-        self.assertIn((SIDE_IA, "Ia9", 22), self.leftover_matching_prev11)
         self.assertIn((SIDE_IA, "Ia9", 21), self.leftover_matching_prev11)
         self.assertIn((SIDE_IA, "Ia9", 20), self.leftover_matching_prev11)
+        self.assertIn((SIDE_IA, "Ia9", 19), self.leftover_matching_prev11)
         self.assertIn((SIDE_IA, "Ia9", 3), STANDING_NO_PREV11_SITES)
         self.assertIn((SIDE_IA, "Ia9", 2), STANDING_NO_PREV11_SITES)
         self.assertIn((SIDE_IA, "Ia9", 1), STANDING_NO_PREV11_SITES)
@@ -2469,7 +2469,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax"], 15)
         self.assertEqual(lock["N_hapax_i_only"], 15)
         self.assertEqual(
-            lock["i_only_10grams"],
+            lock["i_only_11grams"],
             [list(gram) for gram in STANDING_I_ONLY_11GRAMS],
         )
         self.assertTrue(lock["nested_cycle475_next_6grams_all_i_only"] is False)
