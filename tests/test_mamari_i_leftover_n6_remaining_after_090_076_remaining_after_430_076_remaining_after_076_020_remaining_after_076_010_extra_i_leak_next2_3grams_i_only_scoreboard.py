@@ -1252,16 +1252,16 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
             self.assertNotIn(gram, CYCLE340_SEQUENCES)
         adjacent = [list(gram) for gram in STANDING_SEQUENCES]
         self.assertEqual(ngram_hit_count(adjacent, STANDING_SEQUENCES[0]), 1)
-        overlap = [["604", "076", "022", "076", "022"]]
+        overlap = [["076", "070", "449", "070", "449"]]
         self.assertEqual(ngram_hit_count(overlap, STANDING_SEQUENCES[0]), 1)
         gapped = [list(STANDING_SEQUENCES[0][:2]) + ["000"] + list(STANDING_SEQUENCES[0][2:])]
         self.assertEqual(ngram_hit_count(gapped, STANDING_SEQUENCES[0]), 0)
         self.assertEqual(ngram_hit_count([[]], STANDING_SEQUENCES[0]), 0)
         self.assertEqual(
-            site_next_3gram_for_2gram(["604", "076", "022"], 0, GRAM2_604_076),
-            ("604", "076", "022"),
+            site_next_3gram_for_2gram(["076", "070", "449"], 0, GRAM2_076_070),
+            ("076", "070", "449"),
         )
-        self.assertIsNone(site_next_3gram_for_2gram(["604", "076"], 0, GRAM2_604_076))
+        self.assertIsNone(site_next_3gram_for_2gram(["076", "070"], 0, GRAM2_076_070))
         self.assertTrue(STANDING_LEFTOVER_6GRAM_NEXT2_I_ONLY_IS_NOT_THIS_CYCLE)
         self.assertTrue(STANDING_LEFTOVER_5_EXTRA_I_NEXT2_3GRAMS_ARE_NOT_THIS_CYCLE)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_EXTRA_I_NEXT2_4GRAMS_OF_I_ONLY)
@@ -2191,14 +2191,14 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_leaking"], 2)
         self.assertEqual(lock["N_leak"], 2)
         self.assertEqual(lock["claim"], STANDING_CLAIM)
-        self.assertTrue(
+        self.assertFalse(
             lock[
                 "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next2_3grams_all_i_only"
             ]
         )
-        self.assertTrue(
+        self.assertFalse(
             lock[
-                "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next2_3grams_i_only"
+                "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_leak_next2_3grams_i_only"
             ]
         )
         self.assertEqual(lock["N_i_only"], STANDING_N_I_ONLY)
@@ -2209,7 +2209,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax_i_only"], 24)
         self.assertEqual(lock["N_not_hapax"], STANDING_N_NOT_HAPAX)
         self.assertEqual(lock["N_not_hapax"], 8)
-        self.assertEqual(lock["N_not_i_only"], 0)
+        self.assertEqual(lock["N_not_i_only"], 2)
         self.assertTrue(lock["nested_cycle464_extra_i_next2_3grams_all_i_only"])
         self.assertEqual(lock["nested_cycle464_N_i_only"], 25)
         self.assertEqual(lock["nested_cycle464_N_leak"], 0)
