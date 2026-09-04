@@ -1868,13 +1868,13 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
         self.assertEqual(tuple(ia8[173:]), ("070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[173:]), STANDING_N19)
+        self.assertLess(len(ia8[173:]), STANDING_N20)
         self.assertEqual(tuple(ia8[166:172]), ("087", "700", "076", "076", "053", "720"))
         self.assertEqual(tuple(ia8[172:]), ("076", "070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[172:]), STANDING_N19)
+        self.assertLess(len(ia8[172:]), STANDING_N20)
         self.assertEqual(tuple(ia8[165:171]), ("600", "087", "700", "076", "076", "053"))
         self.assertEqual(tuple(ia8[171:]), ("720", "076", "070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[171:]), STANDING_N19)
+        self.assertLess(len(ia8[171:]), STANDING_N20)
         prior_478 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev7_i_only"
         ]
@@ -2138,7 +2138,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
                 if tablet == "I":
                     self.assertEqual(count, n_on)
             for side, line, index in matching:
-                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N19]
+                stems = self.i_sides[side][IA_LINE_NAMES.index(line)][index : index + STANDING_N20]
                 self.assertEqual(tuple(stems), gram)
                 self.assertEqual(side, SIDE_IA)
                 self.assertNotEqual(line[:2], "Ib")
