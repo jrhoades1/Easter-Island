@@ -1622,8 +1622,6 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(len(STANDING_PARENT_6GRAMS), STANDING_N_SEQUENCES)
         prior_next20 = tuple(CYCLE503_SEQUENCES)
         prior_next19 = tuple(CYCLE501_SEQUENCES)
-        prior_next20 = tuple(CYCLE503_SEQUENCES)
-        prior_next19 = tuple(CYCLE501_SEQUENCES)
         prior_next18 = tuple(CYCLE499_SEQUENCES)
         prior_next17 = tuple(CYCLE497_SEQUENCES)
         prior_next16 = tuple(CYCLE495_SEQUENCES)
