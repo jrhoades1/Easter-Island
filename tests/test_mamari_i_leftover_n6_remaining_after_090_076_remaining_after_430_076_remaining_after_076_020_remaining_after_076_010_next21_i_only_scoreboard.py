@@ -1862,6 +1862,8 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.grams, STANDING_SEQUENCES)
         self.assertEqual(self.next21_or_none.count(None), STANDING_N_NO_NEXT21)
         self.assertEqual(self.stems, CYCLE458_NEXT_STEMS)
+        prior_next20 = tuple(CYCLE503_SEQUENCES)
+        prior_next19 = tuple(CYCLE501_SEQUENCES)
         prior_next18 = tuple(CYCLE499_SEQUENCES)
         prior_next17 = tuple(CYCLE497_SEQUENCES)
         prior_next16 = tuple(CYCLE495_SEQUENCES)
@@ -3185,7 +3187,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_survey_matches_computed_lock(self):
         """CORPUS_SURVEY.json records the cycle-505 leftover 6-gram next 21-gram I-only incomplete-set lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 503)
+        self.assertEqual(lock["cycle"], 505)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
