@@ -2,12 +2,13 @@
 
 A computational approach to analyzing the undeciphered Rongorongo script of Easter Island (Rapa Nui), combining computer vision, Proto-Polynesian linguistics, and LLM-powered analysis.
 
-> **Research Status**: This toolkit produces *hypothetical* mappings for scholarly exploration. Rongorongo remains undeciphered, and all outputs should be treated as research tools rather than definitive translations.
+> **Research Status**: This toolkit produces *hypothetical* mappings for scholarly exploration. Rongorongo remains undeciphered, and all outputs should be treated as research tools rather than definitive translations. How the scoreboard loop scales toward a first partial reading (and what not to scale) is in [docs/SCALE-TO-READING.md](docs/SCALE-TO-READING.md).
 
 ---
 
 ## Table of Contents
 
+- [Scale toward reading](docs/SCALE-TO-READING.md)
 - [Overview](#overview)
 - [The Decipherment Pipeline](#the-decipherment-pipeline)
 - [Installation](#installation)
