@@ -3124,7 +3124,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next44_i_only"
         ]
         self.assertEqual(prior_551["cycle"], 551)
-        self.assertEqual(prior_551["N_i_only"], 14)
+        self.assertEqual(prior_551["N_i_only"], 13)
         self.assertEqual(prior_551["N_leak"], 0)
         prior_551_board = (
             TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next44IOnlyScoreboard()
