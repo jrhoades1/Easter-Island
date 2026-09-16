@@ -1633,9 +1633,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_42GRAM)
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[126:167]), GRAM42_076_076_092_052_999_069_076_200_023_440_076_532_100_004_064_076_290_062_076_076_076_099_204_503_076_057_700_999_472_076_075_440_024_076_090_050_999_045_076_600_087)
-        self.assertEqual(tuple(ia8[125:166]), GRAM42_205_076_076_092_052_999_069_076_200_023_440_076_532_100_004_064_076_290_062_076_076_076_099_204_503_076_057_700_999_472_076_075_440_024_076_090_050_999_045_076_600)
-        self.assertEqual(tuple(ia8[124:165]), GRAM42_600_205_076_076_092_052_999_069_076_200_023_440_076_532_100_004_064_076_290_062_076_076_076_099_204_503_076_057_700_999_472_076_075_440_024_076_090_050_999_045_076)
+        self.assertEqual(tuple(ia8[125:167]), GRAM42_205_076_076_092_052_999_069_076_200_023_440_076_532_100_004_064_076_290_062_076_076_076_099_204_503_076_057_700_999_472_076_075_440_024_076_090_050_999_045_076_600_087)
+        self.assertEqual(tuple(ia8[124:166]), GRAM42_600_205_076_076_092_052_999_069_076_200_023_440_076_532_100_004_064_076_290_062_076_076_076_099_204_503_076_057_700_999_472_076_075_440_024_076_090_050_999_045_076_600)
+        self.assertEqual(tuple(ia8[123:165]), GRAM42_071_600_205_076_076_092_052_999_069_076_200_023_440_076_532_100_004_064_076_290_062_076_076_076_099_204_503_076_057_700_999_472_076_075_440_024_076_090_050_999_045_076)
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
@@ -2903,7 +2903,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["n8"], STANDING_N8)
         self.assertEqual(lock["n8"], 8)
         self.assertEqual(lock["n42"], STANDING_N42)
-        self.assertEqual(lock["n42"], 41)
+        self.assertEqual(lock["n42"], 42)
         self.assertFalse(lock["same_as_cycle476"])
         self.assertFalse(lock["same_as_cycle477"])
         self.assertFalse(lock["same_as_cycle478"])
