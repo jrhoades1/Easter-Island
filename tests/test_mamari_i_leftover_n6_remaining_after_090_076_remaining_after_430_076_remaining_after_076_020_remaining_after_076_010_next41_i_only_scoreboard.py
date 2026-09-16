@@ -3469,7 +3469,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["n24"], STANDING_N24)
         self.assertEqual(lock["n24"], 24)
         self.assertEqual(lock["n41"], STANDING_N41)
-        self.assertEqual(lock["n41"], 40)
+        self.assertEqual(lock["n41"], 41)
         self.assertEqual(lock["n22"], 22)
         self.assertEqual(lock["N"], STANDING_N)
         self.assertEqual(lock["N"], 18)
