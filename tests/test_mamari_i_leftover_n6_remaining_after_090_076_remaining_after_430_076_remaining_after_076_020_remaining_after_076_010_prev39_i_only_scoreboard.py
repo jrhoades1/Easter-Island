@@ -1399,7 +1399,7 @@ def i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_afte
     )
 
 
-class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev38IOnlyHelpers(
+class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev39IOnlyHelpers(
     unittest.TestCase
 ):
     """Helpers on leftover remaining-after-076-010 leftover 6-gram previous 39-grams. No CV, no LLM."""
@@ -1536,7 +1536,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(provider.get_call_history(), [])
 
 
-class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev38IOnlyScoreboard(
+class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev39IOnlyScoreboard(
     unittest.TestCase
 ):
     """Cited-fixture leftover remaining-after-076-010 leftover 6-gram previous 39-grams I-only. Mock only."""
@@ -1608,7 +1608,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             if sequence_is_i_only(on, off)
         )
 
-    def test_tokens_are_thirty_eight_before_leftover_6grams_not_retuned(self):
+    def test_tokens_are_thirty_nine_before_leftover_6grams_not_retuned(self):
         """Previous 39-grams sit before leftover 6-grams. Leftover 6-grams stay cycle 457."""
         self.assertEqual(self.remaining_6grams, CYCLE457_SEQUENCES)
         self.assertEqual(STANDING_PARENT_6GRAMS, CYCLE457_SEQUENCES[0:3] + CYCLE457_SEQUENCES[9:12] + CYCLE457_SEQUENCES[12:15])
@@ -3197,7 +3197,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.provider.get_call_history(), [])
 
 
-class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev38IOnlyImageSnapshot(
+class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev39IOnlyImageSnapshot(
     unittest.TestCase
 ):
     """Cycle 542 does not touch clustering. 83/62 / Hamming 6 stays."""
