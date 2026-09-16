@@ -4,15 +4,15 @@ One-page map for Jimmy and later agents. This repo runs a **computational deciph
 
 Search lock, not a merge, and not a translation. Rongorongo stays undeciphered until a claim survives the gates below.
 
-## Status (2026-09-12)
+## Status (2026-09-16)
 
 | Item | Lock |
 |------|------|
-| Recurse routine | **PAUSED** |
-| Cursor Models | Included hit 100%. **On-demand stays OFF.** Never enable it. |
-| Resume spend | After included resets (~15 Sep 2026) **or** Jimmy’s explicit go. |
-| Last merged | Cycle 536 leftover-6 remaining-after-076-010 **prev-36 I-only** → **incomplete-set LOSE** (9/18; existing prev-36 are I-only, `N_leak=0`; nine sites have no prev-36). |
-| Cycle 537 | **Canceled** (do not invent a next-37 lock from this pause). |
+| Recurse routine | **PAUSED** after Cycle 537 (same line-final ceiling as next-36). |
+| Cursor Models | Included only. **On-demand stays OFF.** Never enable it. |
+| Resume spend | After included resets **or** Jimmy’s explicit go. |
+| Last merged | Cycle 537 leftover-6 remaining-after-076-010 **next-37 I-only** → **incomplete-set LOSE** (15/18; existing next-37 are I-only, `N_leak=0`; line-final Ia8[167]/Ia8[166]/Ia8[165]). |
+| Cycle 537 | **incomplete-set LOSE** 15/18 (same holes as Cycle 535 next-36). |
 | Current work | Leftover-6 n-gram peels: map where structure **stops**. |
 | Image track | **Parked** 83/62 / published-window Hamming 6. |
 | Working branch | `cursor/ia-076-cells-7abd` (cycles after ~49). `feature/rongorongo-glyph-cataloger` is frozen at Cycle 49. |
@@ -88,11 +88,10 @@ Until then: we are mapping structure, not reading.
 
 Resume **only** after included Models reset or explicit go. First cycle back:
 
-1. **Leftover-6 next-37 I-only** — leftover matching leftover-6 remaining sites=18; leftover 6-gram plus the thirty-seven next tokens (`stems[index+6:index+43]`). HOLD = every next-37 is I-only (`N_leak=0`) **and** complete vs N=18. Incomplete-set LOSE if `N_no_next37` / line-final (expect Ia8[167] / Ia8[166] / Ia8[165] from next-36). Analog: Cycle 535 next-36 LOSE 15/18.
-2. Leftover-6 **prev-37 I-only** (pair with next-37; analog Cycle 536 prev-36 LOSE 9/18).
-3. Keep leftover-6 next/prev peels until the incomplete-set ceiling is stable, then **leftover-7** / other tablets — not from this pause.
-4. Vision reopen (phase 2) only after tablet-local leftover-6 is exhausted **or** Jimmy names it.
-5. Cross-tablet identity (phase 3) on a *locked* leftover pattern, not on an open peel.
-6. Lexicon-with-refusal (phase 4) last.
+1. Leftover-6 **prev-37 I-only** (pair with Cycle 537 next-37 LOSE 15/18; analog Cycle 536 prev-36 LOSE 9/18).
+2. Keep leftover-6 next/prev peels until the incomplete-set ceiling is stable, then **leftover-7** / other tablets — not from this pause.
+3. Vision reopen (phase 2) only after tablet-local leftover-6 is exhausted **or** Jimmy names it.
+4. Cross-tablet identity (phase 3) on a *locked* leftover pattern, not on an open peel.
+5. Lexicon-with-refusal (phase 4) last.
 
 Does not launch leftover-7, leftover-6 next-38, extra-I peels, detector retune, or a new tablet from this document.
