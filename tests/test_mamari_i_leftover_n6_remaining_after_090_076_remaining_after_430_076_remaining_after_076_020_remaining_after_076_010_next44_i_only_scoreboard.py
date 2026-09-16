@@ -1953,7 +1953,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
             (),
         )
         self.assertEqual(
-            extra_i_sites_of_20gram(STANDING_I_SITES[13], STANDING_LEFTOVER_MATCHING_SITES_EACH[13]),
+            extra_i_sites_of_20gram(STANDING_I_SITES[12], STANDING_LEFTOVER_MATCHING_SITES_EACH[12]),
             (),
         )
         self.assertEqual(provider.get_call_history(), [])
@@ -2292,7 +2292,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT39)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT43)
         self.assertFalse(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT44)
-        self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT44)
+        self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT45)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_19GRAMS)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_21GRAMS)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_15GRAMS)
@@ -3426,7 +3426,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_survey_matches_computed_lock(self):
         """CORPUS_SURVEY.json records the cycle-551 leftover 6-gram next 44-gram I-only incomplete-set lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 549)
+        self.assertEqual(lock["cycle"], 551)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
@@ -4169,7 +4169,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_launch_leftover_n6_next39"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next43"])
         self.assertFalse(lock["do_not_launch_leftover_n6_next44"])
-        self.assertTrue(lock["do_not_launch_leftover_n6_next44"])
+        self.assertTrue(lock["do_not_launch_leftover_n6_next45"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next30"])
         self.assertTrue(lock["do_not_launch_previous_19grams"])
         self.assertTrue(lock["do_not_launch_previous_21grams"])
