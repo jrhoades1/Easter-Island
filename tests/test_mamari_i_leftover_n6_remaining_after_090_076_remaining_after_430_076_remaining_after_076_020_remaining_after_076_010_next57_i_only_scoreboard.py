@@ -4226,7 +4226,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["not_assumed_hapax"])
         self.assertTrue(lock["hapax_not_required"])
         self.assertTrue(lock["extra_i_does_not_make_claim_lose"])
-        self.assertFalse(lock["all_sites_have_next_56gram"])
+        self.assertFalse(lock["all_sites_have_next_57gram"])
         self.assertTrue(lock["incomplete_set_is_lose"])
         self.assertEqual(lock["no_next57_sites"], [["Ia", "Ia10", 144], ["Ia", "Ia10", 143], ["Ia", "Ia10", 142], ["Ia", "Ia8", 167], ["Ia", "Ia8", 166], ["Ia", "Ia8", 165]])
         rows = lock["sequences"]
