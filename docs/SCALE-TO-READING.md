@@ -8,10 +8,11 @@ Search lock, not a merge, and not a translation. Rongorongo stays undeciphered u
 
 | Item | Lock |
 |------|------|
-| Recurse routine | **PAUSED** after Cycle 564 prev-50; next resume leftover-6 **next-51 I-only**. |
+| Recurse routine | **PAUSED** after Cycle 565 next-51; next resume leftover-6 **prev-51 I-only**. |
 | Cursor Models | Included only. **On-demand stays OFF.** Never enable it. |
 | Resume spend | After included resets **or** Jimmy’s explicit go. |
-| Last merged | Cycle 564 leftover-6 remaining-after-076-010 **prev-50 I-only** → **incomplete-set LOSE** (9/18; existing prev-50 are I-only, `N_leak=0`; same holes as Cycle 562 prev-49 / Cycle 560 prev-48 / held 9/18 since prev-33). |
+| Last merged | Cycle 565 leftover-6 remaining-after-076-010 **next-51 I-only** → **incomplete-set LOSE** (12/18; existing next-51 are I-only, `N_leak=0`; same holes as Cycle 563 next-50 / Cycle 561 next-49 / held 12/18 since next-45). |
+| Cycle 565 | **incomplete-set LOSE** 12/18 (same holes as Cycle 563 next-50 / Cycle 561 next-49 / Cycle 553 next-45: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals). |
 | Cycle 564 | **incomplete-set LOSE** 9/18 (same holes as Cycle 562 prev-49 / Cycle 560 prev-48 / held since prev-33). |
 | Cycle 563 | **incomplete-set LOSE** 12/18 (same holes as Cycle 561 next-49 / Cycle 559 next-48: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals). |
 | Cycle 562 | **incomplete-set LOSE** 9/18 (same holes as Cycle 560 prev-48 / Cycle 558 prev-47 / held since prev-33). |
@@ -112,10 +113,10 @@ Until then: we are mapping structure, not reading.
 
 Resume **only** after included Models reset or explicit go. First cycle back:
 
-1. Leftover-6 **next-51 I-only** (pair with Cycle 564 prev-50 LOSE 9/18; analog Cycle 563 next-50 LOSE 12/18).
+1. Leftover-6 **prev-51 I-only** (pair with Cycle 565 next-51 LOSE 12/18; analog Cycle 564 prev-50 LOSE 9/18).
 2. Keep leftover-6 next/prev peels until the incomplete-set ceiling is stable, then **leftover-7** / other tablets — not from this pause.
 3. Vision reopen (phase 2) only after tablet-local leftover-6 is exhausted **or** Jimmy names it.
 4. Cross-tablet identity (phase 3) on a *locked* leftover pattern, not on an open peel.
 5. Lexicon-with-refusal (phase 4) last.
 
-Does not launch leftover-7, leftover-6 next-51 from this document’s pause note, leftover-6 prev-51, leftover-6 next-52, extra-I peels, detector retune, or a new tablet from this document.
+Does not launch leftover-7, leftover-6 prev-51 from this document’s pause note, leftover-6 next-52, leftover-6 prev-52, extra-I peels, detector retune, or a new tablet from this document.
