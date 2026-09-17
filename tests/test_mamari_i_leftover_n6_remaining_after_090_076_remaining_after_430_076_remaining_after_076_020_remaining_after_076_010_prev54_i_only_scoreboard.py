@@ -2434,7 +2434,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_survey_matches_computed_lock(self):
         """CORPUS_SURVEY.json records the cycle-572 leftover 6-gram previous 54-gram I-only lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 570)
+        self.assertEqual(lock["cycle"], 572)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
@@ -3135,7 +3135,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         prior_568 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev53_i_only"
         ]
-        self.assertEqual(prior_568["cycle"], 568)
+        self.assertEqual(prior_568["cycle"], 570)
         self.assertEqual(prior_568["N_i_only"], 9)
         self.assertEqual(prior_568["N_leak"], 0)
         prior_568_board = (
@@ -3146,7 +3146,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         prior_569 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next54_i_only"
         ]
-        self.assertEqual(prior_569["cycle"], 569)
+        self.assertEqual(prior_569["cycle"], 571)
         self.assertEqual(prior_569["N_i_only"], 12)
         self.assertEqual(prior_569["N_leak"], 0)
         prior_569_board = (
