@@ -7,7 +7,7 @@ after-076-010 leftover 6-grams (N=18, all I-only extra I=0,
 leftover matching leftover-6 remaining sites=18). Next 50-gram
 = leftover 6-gram plus the fifty next tokens immediately after
 leftover matching leftover-6 remaining sites
-    (stems[index+6:index+55]). Cycle analog: leftover remaining-
+    (stems[index+6:index+56]). Cycle analog: leftover remaining-
 after-076-010 next 49-grams of leftover 6-grams (Cycle 561
 incomplete-set LOSE 12/18 extra I=0 line-short Ia10[144]/Ia10[143]/Ia10[142] plus line-final Ia8[167]/Ia8[166]/Ia8[165]).
 Parent Cycle 519 incomplete-set LOSE leftover-6 next 28-grams:
