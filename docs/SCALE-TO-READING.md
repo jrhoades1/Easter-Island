@@ -8,10 +8,11 @@ Search lock, not a merge, and not a translation. Rongorongo stays undeciphered u
 
 | Item | Lock |
 |------|------|
-| Recurse routine | **PAUSED** after Cycle 554 prev-45; next resume leftover-6 **next-46 I-only**. |
+| Recurse routine | **PAUSED** after Cycle 555 next-46; next resume leftover-6 **prev-46 I-only**. |
 | Cursor Models | Included only. **On-demand stays OFF.** Never enable it. |
 | Resume spend | After included resets **or** Jimmy’s explicit go. |
-| Last merged | Cycle 554 leftover-6 remaining-after-076-010 **prev-45 I-only** → **incomplete-set LOSE** (9/18; existing prev-45 are I-only, `N_leak=0`; same holes as Cycle 552 prev-44). |
+| Last merged | Cycle 555 leftover-6 remaining-after-076-010 **next-46 I-only** → **incomplete-set LOSE** (12/18; existing next-46 are I-only, `N_leak=0`; same holes as Cycle 553 next-45). |
+| Cycle 555 | **incomplete-set LOSE** 12/18 (same holes as Cycle 553 next-45: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals). |
 | Cycle 554 | **incomplete-set LOSE** 9/18 (same holes as Cycle 552 prev-44 / held since prev-33). |
 | Cycle 553 | **incomplete-set LOSE** 12/18 (new Ia10[142] hole; next-44 had held 13/18). |
 | Cycle 552 | **incomplete-set LOSE** 9/18 (same holes as Cycle 550 prev-43). |
@@ -102,10 +103,10 @@ Until then: we are mapping structure, not reading.
 
 Resume **only** after included Models reset or explicit go. First cycle back:
 
-1. Leftover-6 **next-46 I-only** (pair with Cycle 554 prev-45 LOSE 9/18; analog Cycle 553 next-45 LOSE 12/18).
+1. Leftover-6 **prev-46 I-only** (pair with Cycle 555 next-46 LOSE 12/18; analog Cycle 554 prev-45 LOSE 9/18).
 2. Keep leftover-6 next/prev peels until the incomplete-set ceiling is stable, then **leftover-7** / other tablets — not from this pause.
 3. Vision reopen (phase 2) only after tablet-local leftover-6 is exhausted **or** Jimmy names it.
 4. Cross-tablet identity (phase 3) on a *locked* leftover pattern, not on an open peel.
 5. Lexicon-with-refusal (phase 4) last.
 
-Does not launch leftover-7, leftover-6 next-46 from this document’s pause note, leftover-6 prev-46, extra-I peels, detector retune, or a new tablet from this document.
+Does not launch leftover-7, leftover-6 next-47, leftover-6 prev-46 from this document’s pause note, extra-I peels, detector retune, or a new tablet from this document.
