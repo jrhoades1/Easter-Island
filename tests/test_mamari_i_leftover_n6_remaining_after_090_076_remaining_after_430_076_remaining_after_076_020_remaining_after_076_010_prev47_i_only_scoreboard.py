@@ -1760,7 +1760,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT5)
         self.assertEqual(self.provider.get_call_history(), [])
 
-    def test_each_46gram_lock_extra_i_and_claim_loses(self):
+    def test_each_47gram_lock_extra_i_and_claim_loses(self):
         """Nine previous 47-grams are I-only (9 hapax, extra I=0); none leak. Incomplete-set LOSE."""
         self.assertEqual(tuple(self.by_tablet), VENDORED_TABLETS)
         self.assertEqual(VENDORED_TABLETS, tuple("ABCDEFGHIJKLMNOPQRSTUV"))
@@ -2423,7 +2423,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_survey_matches_computed_lock(self):
         """CORPUS_SURVEY.json records the cycle-558 leftover 6-gram previous 47-gram I-only lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 556)
+        self.assertEqual(lock["cycle"], 558)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
