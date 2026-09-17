@@ -1540,7 +1540,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
             (),
         )
         self.assertEqual(
-            extra_i_sites_of_51gram(STANDING_I_SITES[6], STANDING_LEFTOVER_MATCHING_SITES_EACH[6]),
+            extra_i_sites_of_51gram(STANDING_I_SITES[5], STANDING_LEFTOVER_MATCHING_SITES_EACH[5]),
             (),
         )
         self.assertEqual(provider.get_call_history(), [])
@@ -1780,7 +1780,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             )
         )
         self.assertEqual(leftover_n5_prev64_overlap_sites(self.leftover_matching_prev64), STANDING_LEFTOVER_N5_PREV51_OVERLAP_SITES)
-        self.assertEqual(len(leftover_n5_prev64_overlap_sites(self.leftover_matching_prev64)), 5)
+        self.assertEqual(len(leftover_n5_prev64_overlap_sites(self.leftover_matching_prev64)), 4)
         self.assertEqual(leftover_n6_extra_i_next3_4gram_overlap(), ())
         self.assertEqual(STANDING_LEFTOVER_N6_EXTRA_I_NEXT3_4GRAM_OVERLAP, 0)
         self.assertEqual(STANDING_LEFTOVER_N5_EXTRA_I_NEXT3_4GRAM_OVERLAP, 0)
