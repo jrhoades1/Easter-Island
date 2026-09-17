@@ -4192,9 +4192,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_survey_matches_computed_lock(self):
-        """CORPUS_SURVEY.json records the cycle-581 leftover 6-gram next 60-gram I-only incomplete-set lose."""
+        """CORPUS_SURVEY.json records the cycle-583 leftover 6-gram next 60-gram I-only incomplete-set lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 581)
+        self.assertEqual(lock["cycle"], 583)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
@@ -5584,7 +5584,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
 class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next60IOnlyImageSnapshot(
     unittest.TestCase
 ):
-    """Cycle 581 does not touch clustering. 83/62 / Hamming 6 stays."""
+    """Cycle 583 does not touch clustering. 83/62 / Hamming 6 stays."""
 
     def test_image_snapshot_unchanged(self):
         """Text lock does not merge types. Parked image track stays 83/62 / 6."""
