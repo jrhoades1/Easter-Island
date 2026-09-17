@@ -1144,8 +1144,8 @@ from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430
     STANDING_N_I_ONLY as CYCLE568_N_I_ONLY,
     STANDING_N_LEAK as CYCLE568_N_LEAK,
     STANDING_N_LINE_INITIAL as CYCLE568_N_LINE_INITIAL,
-    STANDING_N_NO_PREV52 as CYCLE568_N_NO_PREV52,
-    STANDING_N_WITH_PREV52 as CYCLE568_N_WITH_PREV52,
+    STANDING_N_NO_PREV51 as CYCLE568_N_NO_PREV52,
+    STANDING_N_WITH_PREV51 as CYCLE568_N_WITH_PREV52,
     TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev52IOnlyScoreboard,
 )
 from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next51_i_only_scoreboard import (
@@ -2618,7 +2618,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT39)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT43)
         self.assertFalse(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT53)
-        self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT53)
+        self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT54)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_19GRAMS)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_21GRAMS)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_15GRAMS)
