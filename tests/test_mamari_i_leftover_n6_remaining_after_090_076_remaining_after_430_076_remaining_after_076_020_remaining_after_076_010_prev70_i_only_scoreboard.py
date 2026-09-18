@@ -50,7 +50,7 @@ leak next2 4-grams (cycle 468 HOLD extra I of 4-grams=0
 extra_I_total=41), leftover-6 extra-I next2 4-grams of I-only
 (cycle 467 HOLD extra I of 4-grams=0 extra_I_total=29), leftover-6
 next 3-grams (cycle 468 HOLD 18/0 extra I of I-only=3), leftover-6
-extra-I next3 4-grams of I-only (cycle __KEEP470__ HOLD extra I of
+extra-I next3 4-grams of I-only (cycle 469 HOLD extra I of
 4-grams=0 extra_I_total=3), leftover-6 next 4-grams (cycle 470
 HOLD extra I=0 leftover matching leftover-6 remaining sites=18
 leftover matching next-4=18), leftover-6 previous 4-grams (cycle
@@ -257,7 +257,7 @@ incomplete set. Nested Cycle 537 next37 LOSE 15/18 line-final Ia8[167]/Ia8[166]/
 0 extra I). The claim is false: incomplete-set LOSE
 (N_no_prev70=12 / N_line_initial=3 even though existing prev-53
 are all I-only N_leak=0 extra I=0). Extra I of leftover-6 next
-3-grams=3 stays recorded at extra-I next3 4-grams (Cycle __KEEP470__
+3-grams=3 stays recorded at extra-I next3 4-grams (Cycle 469
 HOLD extra I of 4-grams=0): 604 076 071 061 Ia3[146]; 720 076
 070 073 Ia7[62]; 720 076 070 091 Ia9[119]. Extra-I of extra-I
 next2 3-grams leftover matching next-3 Ia9[9]/Ia8[171] extra I
@@ -524,13 +524,13 @@ from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430
     leftover_remaining_next3,
 )
 from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next3_4grams_i_only_scoreboard import (
-    STANDING_I_LEFTOVER_N6_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_EXTRA_I_NEXT3_4GRAMS_ALL_I_ONLY as CYCLE__KEEP470___CLAIM,
-    STANDING_N as CYCLE__KEEP470___N,
-    STANDING_N_EXTRA as CYCLE__KEEP470___N_EXTRA,
-    STANDING_N_EXTRA_I as CYCLE__KEEP470___N_EXTRA_I,
-    STANDING_N_I_ONLY as CYCLE__KEEP470___N_I_ONLY,
-    STANDING_N_LEAK as CYCLE__KEEP470___N_LEAK,
-    STANDING_SEQUENCES as CYCLE__KEEP470___SEQUENCES,
+    STANDING_I_LEFTOVER_N6_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_EXTRA_I_NEXT3_4GRAMS_ALL_I_ONLY as CYCLE469_CLAIM,
+    STANDING_N as CYCLE469_N,
+    STANDING_N_EXTRA as CYCLE469_N_EXTRA,
+    STANDING_N_EXTRA_I as CYCLE469_N_EXTRA_I,
+    STANDING_N_I_ONLY as CYCLE469_N_I_ONLY,
+    STANDING_N_LEAK as CYCLE469_N_LEAK,
+    STANDING_SEQUENCES as CYCLE469_SEQUENCES,
     TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraINext34gramsIOnlyScoreboard,
 )
 from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only_scoreboard import (
@@ -903,7 +903,7 @@ STANDING_SAME_AS_CYCLE465 = False
 STANDING_SAME_AS_CYCLE466 = False
 STANDING_SAME_AS_CYCLE467 = False
 STANDING_SAME_AS_CYCLE468 = False
-STANDING_SAME_AS_CYCLE__KEEP470__ = False
+STANDING_SAME_AS_CYCLE469 = False
 STANDING_SAME_AS_CYCLE470 = False
 STANDING_SAME_AS_CYCLE471 = False
 STANDING_SAME_AS_CYCLE472 = False
@@ -1079,7 +1079,7 @@ STANDING_CYCLE473_DOES_NOT_COUNT = True
 STANDING_CYCLE472_DOES_NOT_COUNT = True
 STANDING_CYCLE471_DOES_NOT_COUNT = True
 STANDING_CYCLE470_DOES_NOT_COUNT = True
-STANDING_CYCLE__KEEP470___DOES_NOT_COUNT = True
+STANDING_CYCLE469_DOES_NOT_COUNT = True
 STANDING_CYCLE468_DOES_NOT_COUNT = True
 STANDING_CYCLE467_DOES_NOT_COUNT = True
 STANDING_CYCLE466_DOES_NOT_COUNT = True
@@ -1230,7 +1230,7 @@ def leftover_n5_prev70_overlap_sites(
 
 def leftover_n6_extra_i_next3_4gram_overlap(
     sequences: tuple[tuple[str, ...], ...] = STANDING_SEQUENCES,
-    extra_i_next3: tuple[tuple[str, ...], ...] = CYCLE__KEEP470___SEQUENCES,
+    extra_i_next3: tuple[tuple[str, ...], ...] = CYCLE469_SEQUENCES,
 ) -> tuple[tuple[str, ...], ...]:
     """Prev-31 60-grams that also appear as leftover-n6 extra-I next3 4-grams."""
     extra = set(extra_i_next3)
@@ -1637,9 +1637,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_70GRAM)
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[98:167]), STANDING_SEQUENCES[3])
-        self.assertEqual(tuple(ia8[97:166]), STANDING_SEQUENCES[4])
-        self.assertEqual(tuple(ia8[96:165]), STANDING_SEQUENCES[5])
+        self.assertEqual(tuple(ia8[97:167]), STANDING_SEQUENCES[3])
+        self.assertEqual(tuple(ia8[96:166]), STANDING_SEQUENCES[4])
+        self.assertEqual(tuple(ia8[95:165]), STANDING_SEQUENCES[5])
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
@@ -1657,18 +1657,18 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
         ]
         self.assertEqual(prior_470b["cycle"], 470)
-        prior_470 = self.survey[
+        prior_469 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next3_4grams_i_only"
         ]
-        self.assertEqual(prior_470["cycle"], 470)
+        self.assertEqual(prior_469["cycle"], 469)
         self.assertTrue(
-            prior_470[
+            prior_469[
                 "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next3_4grams_all_i_only"
             ]
         )
-        self.assertEqual(prior_470["N_i_only"], 3)
-        self.assertEqual(prior_470["N_leak"], 0)
-        self.assertEqual(prior_470["N_extra"], 0)
+        self.assertEqual(prior_469["N_i_only"], 3)
+        self.assertEqual(prior_469["N_leak"], 0)
+        self.assertEqual(prior_469["N_extra"], 0)
         prior_468 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next3_i_only"
         ]
@@ -1937,7 +1937,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(CYCLE349_N_LEAK, 6)
         self.assertEqual(self.provider.get_call_history(), [])
 
-    def test_existing_470_470_468_467_466_465_464_463_462_459_458_457_426_424_419_418_415_414_349_340_scoreboards_still_compute(self):
+    def test_existing_470_469_468_467_466_465_464_463_462_459_458_457_426_424_419_418_415_414_349_340_scoreboards_still_compute(self):
         """Nested leftover-6 next4 / extra-I next3 4grams / next3 / extra-I next2 4/3grams / leak next2 4/3grams / next2 / extra-I leak next1 / extra-I next1 / next1 / 6grams / leftover-5 next4 / next3 / next2 / extra-I leak next1 4grams / next1 / 5grams / leftover 2-grams / leftover 4-grams stay."""
         leftover = leftover_n4_rows()
         self.assertTrue(leftover_n4_family_counts_hold(leftover))
@@ -2097,19 +2097,19 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(CYCLE470_N_NO_NEXT4, 0)
         if not prior_470.claim_holds:
             self.fail("nested cycle 470 leftover remaining-after-076-010 leftover 6-gram next 4-grams drifted")
-        prior_470 = (
+        prior_469 = (
             TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010ExtraINext34gramsIOnlyScoreboard()
         )
-        prior_470.setUp()
-        prior_470.test_survey_matches_computed_lock()
-        self.assertTrue(CYCLE__KEEP470___CLAIM)
-        self.assertEqual(CYCLE__KEEP470___N, 3)
-        self.assertEqual(CYCLE__KEEP470___N_I_ONLY, 3)
-        self.assertEqual(CYCLE__KEEP470___N_LEAK, 0)
-        self.assertEqual(CYCLE__KEEP470___N_EXTRA, 0)
-        self.assertEqual(CYCLE__KEEP470___N_EXTRA_I, 3)
-        if not prior_470.claim_holds:
-            self.fail("nested cycle __KEEP470__ leftover remaining-after-076-010 extra-I next3 4-grams of I-only drifted")
+        prior_469.setUp()
+        prior_469.test_survey_matches_computed_lock()
+        self.assertTrue(CYCLE469_CLAIM)
+        self.assertEqual(CYCLE469_N, 3)
+        self.assertEqual(CYCLE469_N_I_ONLY, 3)
+        self.assertEqual(CYCLE469_N_LEAK, 0)
+        self.assertEqual(CYCLE469_N_EXTRA, 0)
+        self.assertEqual(CYCLE469_N_EXTRA_I, 3)
+        if not prior_469.claim_holds:
+            self.fail("nested cycle 469 leftover remaining-after-076-010 extra-I next3 4-grams of I-only drifted")
         prior_468 = (
             TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next3IOnlyScoreboard()
         )
@@ -2327,7 +2327,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         prior_418.setUp()
         prior_418.test_survey_matches_computed_lock()
         self.assertFalse(CYCLE418_CLAIM)
-        self.assertEqual(CYCLE418_N_I_ONLY, 706)
+        self.assertEqual(CYCLE418_N_I_ONLY, 696)
         self.assertEqual(CYCLE418_N_LEAK, 0)
         self.assertEqual(CYCLE418_N_EXTRA, 0)
         self.assertEqual(CYCLE418_N_LINE_FINAL, 18)
@@ -2390,7 +2390,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(STANDING_CYCLE430_DOES_NOT_COUNT)
         self.assertTrue(STANDING_CYCLE429_DOES_NOT_COUNT)
         self.assertTrue(STANDING_CYCLE428_DOES_NOT_COUNT)
-        self.assertTrue(STANDING_CYCLE__KEEP470___DOES_NOT_COUNT)
+        self.assertTrue(STANDING_CYCLE469_DOES_NOT_COUNT)
         self.assertTrue(STANDING_CYCLE468_DOES_NOT_COUNT)
         self.assertTrue(STANDING_CYCLE467_DOES_NOT_COUNT)
         self.assertTrue(STANDING_CYCLE466_DOES_NOT_COUNT)
@@ -2569,11 +2569,11 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["nested_cycle470_N_leak"], 0)
         self.assertEqual(lock["nested_cycle470_N_extra"], 0)
         self.assertEqual(lock["nested_cycle470_N_hapax"], 18)
-        self.assertTrue(lock["nested_cycle__KEEP470___extra_i_next3_4grams_all_i_only"])
-        self.assertEqual(lock["nested_cycle__KEEP470___N_i_only"], 3)
-        self.assertEqual(lock["nested_cycle__KEEP470___N_leak"], 0)
-        self.assertEqual(lock["nested_cycle__KEEP470___N_extra"], 0)
-        self.assertEqual(lock["nested_cycle__KEEP470___N_extra_i"], 3)
+        self.assertTrue(lock["nested_cycle469_extra_i_next3_4grams_all_i_only"])
+        self.assertEqual(lock["nested_cycle469_N_i_only"], 3)
+        self.assertEqual(lock["nested_cycle469_N_leak"], 0)
+        self.assertEqual(lock["nested_cycle469_N_extra"], 0)
+        self.assertEqual(lock["nested_cycle469_N_extra_i"], 3)
         self.assertTrue(lock["nested_cycle468_next_3grams_all_i_only"])
         self.assertEqual(lock["nested_cycle468_N_i_only"], 18)
         self.assertEqual(lock["nested_cycle468_N_leak"], 0)
@@ -2650,7 +2650,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["nested_cycle419_N_leak"], 6)
         self.assertEqual(lock["nested_cycle419_N_extra"], 50)
         self.assertFalse(lock["nested_cycle418_extra_i_leak_next1_4grams_all_i_only"])
-        self.assertEqual(lock["nested_cycle418_N_i_only"], 706)
+        self.assertEqual(lock["nested_cycle418_N_i_only"], 696)
         self.assertEqual(lock["nested_cycle418_N_leak"], 0)
         self.assertEqual(lock["nested_cycle418_N_extra"], 0)
         self.assertEqual(lock["nested_cycle418_N_line_final"], 18)
@@ -2696,7 +2696,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertFalse(lock["same_as_cycle468"])
         self.assertFalse(lock["same_as_cycle467"])
         self.assertFalse(lock["same_as_cycle468"])
-        self.assertFalse(lock["same_as_cycle__KEEP470__"])
+        self.assertFalse(lock["same_as_cycle469"])
         self.assertFalse(lock["same_as_cycle470"])
         self.assertFalse(lock["same_as_cycle471"])
         self.assertFalse(lock["same_as_cycle472"])
@@ -2776,7 +2776,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_relock_cycle430"])
         self.assertTrue(lock["do_not_relock_cycle429"])
         self.assertTrue(lock["do_not_relock_cycle428"])
-        self.assertTrue(lock["do_not_relock_cycle__KEEP470__"])
+        self.assertTrue(lock["do_not_relock_cycle469"])
         self.assertTrue(lock["do_not_relock_cycle468"])
         self.assertTrue(lock["do_not_relock_cycle467"])
         self.assertTrue(lock["do_not_relock_cycle468"])
@@ -3185,10 +3185,10 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
         ]
         self.assertEqual(prior_470b["cycle"], 470)
-        prior_470 = self.survey[
+        prior_469 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_extra_i_next3_4grams_i_only"
         ]
-        self.assertEqual(prior_470["cycle"], 470)
+        self.assertEqual(prior_469["cycle"], 469)
         prior_468 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next3_i_only"
         ]
