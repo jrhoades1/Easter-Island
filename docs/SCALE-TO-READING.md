@@ -4,14 +4,15 @@ One-page map for Jimmy and later agents. This repo runs a **computational deciph
 
 Search lock, not a merge, and not a translation. Rongorongo stays undeciphered until a claim survives the gates below.
 
-## Status (2026-09-17)
+## Status (2026-09-18)
 
 | Item | Lock |
 |------|------|
-| Recurse routine | **PAUSED** after Cycle 593 next-65; next resume leftover-6 **prev-65 I-only**. |
+| Recurse routine | **PAUSED** after Cycle 594 prev-65; next resume leftover-6 **next-66 I-only**. |
 | Cursor Models | Included only. **On-demand stays OFF.** Never enable it. |
 | Resume spend | After included resets **or** Jimmy’s explicit go. |
-| Last merged | Cycle 593 leftover-6 remaining-after-076-010 **next-65 I-only** → **incomplete-set LOSE** (12/18; existing next-65 are I-only, `N_leak=0`; same next-45 six-hole set; leftover-n5 overlap 8). |
+| Last merged | Cycle 594 leftover-6 remaining-after-076-010 **prev-65 I-only** → **incomplete-set LOSE** (6/18; existing prev-65 are I-only, `N_leak=0`; same prev-64 twelve-hole set; leftover-n5 overlap 4). |
+| Cycle 594 | **incomplete-set LOSE** 6/18 (same holes as Cycle 592 prev-64: Ia1[63]/Ia1[62]/Ia1[61]/Ia9[3]/Ia9[2]/Ia9[1] plus early-line Ia8[30]/Ia8[29]/Ia8[28]/Ia9[32]/Ia9[31]/Ia9[30]; no new hole). |
 | Cycle 593 | **incomplete-set LOSE** 12/18 (same holes as Cycle 591 next-64 / Cycle 589 next-63 / Cycle 553 next-45: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals). |
 | Cycle 592 | **incomplete-set LOSE** 6/18 (new Ia1[63] hole; prev-63 had held 7/18 after Ia1[62]). PREV-SIDE REGIME CHANGE continuing 9→8→7→6. |
 | Cycle 591 | **incomplete-set LOSE** 12/18 (same holes as Cycle 589 next-63 / Cycle 587 next-62 / Cycle 553 next-45: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals). |
