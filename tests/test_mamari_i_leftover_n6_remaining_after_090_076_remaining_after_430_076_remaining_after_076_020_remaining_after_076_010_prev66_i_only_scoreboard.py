@@ -825,7 +825,7 @@ STANDING_NO_PREV51_SITES = (
         ('Ia', 'Ia9', 30),
     )
 STANDING_LINE_INITIAL_SITES = STANDING_NO_PREV51_SITES
-STANDING_ALL_SITES_HAVE_PREV_65GRAM = False
+STANDING_ALL_SITES_HAVE_PREV_66GRAM = False
 STANDING_IB_HITS = 0
 STANDING_IB_SITES = ()
 STANDING_N_OFF_I_EACH = (0,) * STANDING_N_SEQUENCES
@@ -1439,7 +1439,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leftover_matching_prev66_of_leftover2(), ())
         self.assertEqual(STANDING_N_NO_PREV51, 12)
         self.assertEqual(STANDING_N_LINE_INITIAL, 3)
-        self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_65GRAM)
+        self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_66GRAM)
         self.assertTrue(STANDING_DO_NOT_REPEEL_LEFTOVER2)
         self.assertTrue(STANDING_LABELED_G_DOES_NOT_COUNT)
         self.assertTrue(STANDING_PEEL_LABELED_G_IS_TAUTOLOGY)
@@ -1634,12 +1634,12 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.n_no_prev66, 12)
         self.assertEqual(STANDING_N_LINE_INITIAL, 3)
         self.assertEqual(STANDING_NO_PREV51_SITES, (('Ia', 'Ia1', 63), ('Ia', 'Ia1', 62), ('Ia', 'Ia1', 61), ('Ia', 'Ia9', 3), ('Ia', 'Ia9', 2), ('Ia', 'Ia9', 1), ('Ia', 'Ia8', 30), ('Ia', 'Ia8', 29), ('Ia', 'Ia8', 28), ('Ia', 'Ia9', 32), ('Ia', 'Ia9', 31), ('Ia', 'Ia9', 30)))
-        self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_65GRAM)
+        self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_66GRAM)
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[102:167]), STANDING_SEQUENCES[3])
-        self.assertEqual(tuple(ia8[101:166]), STANDING_SEQUENCES[4])
-        self.assertEqual(tuple(ia8[100:165]), STANDING_SEQUENCES[5])
+        self.assertEqual(tuple(ia8[101:167]), STANDING_SEQUENCES[3])
+        self.assertEqual(tuple(ia8[100:166]), STANDING_SEQUENCES[4])
+        self.assertEqual(tuple(ia8[99:165]), STANDING_SEQUENCES[5])
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
@@ -1806,7 +1806,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_IB_SITES, ())
         self.assertTrue(STANDING_NOT_ASSUMED_HAPAX)
         self.assertTrue(STANDING_HAPAX_NOT_REQUIRED)
-        self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_65GRAM)
+        self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_66GRAM)
         tablet_t = VENDORED_TABLETS.index("T")
         for gram, sites, matching, leftover6, extra, n_on, n_off, n_ex, n_t, parent, hits, hapax in zip(
             STANDING_SEQUENCES,
