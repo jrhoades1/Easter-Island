@@ -2911,7 +2911,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["n8"], 8)
         self.assertEqual(lock["n46"], 46)
         self.assertEqual(lock["n67"], STANDING_N67)
-        self.assertEqual(lock["n67"], 66)
+        self.assertEqual(lock["n67"], 67)
         self.assertEqual(lock["n63"], STANDING_N63)
         self.assertEqual(lock["n63"], 63)
         self.assertFalse(lock["same_as_cycle476"])
