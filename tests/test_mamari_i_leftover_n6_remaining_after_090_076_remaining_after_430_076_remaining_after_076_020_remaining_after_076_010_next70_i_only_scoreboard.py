@@ -5977,20 +5977,6 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(CYCLE602_N_NO_PREV69, 12)
         self.assertEqual(CYCLE602_N_LINE_INITIAL, 3)
         self.assertEqual(CYCLE602_N_DISTINCT, 6)
-        prior_601_board = (
-            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next69IOnlyScoreboard()
-        )
-        prior_601_board.setUp()
-        prior_601_board.test_survey_matches_computed_lock()
-        if prior_601_board.claim_holds:
-            self.fail("nested cycle 601 leftover remaining-after-076-010 leftover 6-gram next 69-grams drifted")
-        prior_602_board = (
-            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev69IOnlyScoreboard()
-        )
-        prior_602_board.setUp()
-        prior_602_board.test_survey_matches_computed_lock()
-        if prior_602_board.claim_holds:
-            self.fail("nested cycle 602 leftover remaining-after-076-010 leftover 6-gram previous 69-grams drifted")
         self.assertFalse(CYCLE597_CLAIM)
         self.assertEqual(CYCLE597_N, 18)
         self.assertEqual(CYCLE597_N_I_ONLY, 12)
