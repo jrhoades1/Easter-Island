@@ -231,7 +231,7 @@ All six previous 91-grams are hapax. Claim that can lose:
 i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev_91grams_all_i_only.
 True iff leftover matching leftover-6 remaining sites still
 compute as those 18, every leftover matching leftover-6
-remaining site has ninety-one-one previous tokens so the 83-gram set is
+remaining site has ninety-one previous tokens so the 83-gram set is
 complete relative to N=18 (N_with_prev91=18 N_no_prev91=0), and
 every such 83-gram has N_I ≥ 1 and N_off_I = 0 (N_leak=0 per
 60-gram). HOLD requires every previous 91-gram N_off_I=0 /
@@ -1139,7 +1139,7 @@ STANDING_CYCLE340_DOES_NOT_COUNT = True
 def prev_81gram_site(
     leftover_site: tuple[str, str, int],
 ) -> tuple[str, str, int]:
-    """Previous 91-gram starts ninety-one-one tokens immediately before leftover 6-gram."""
+    """Previous 91-gram starts ninety-one tokens immediately before leftover 6-gram."""
     side, line, index = leftover_site
     return (side, line, index - STANDING_N91)
 
@@ -1380,7 +1380,7 @@ def i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_afte
 
     Claim holds only if leftover matching leftover-6 remaining sites
     still compute as those 18, every leftover matching leftover-6
-    remaining site has ninety-one-one previous tokens so the 83-gram set is
+    remaining site has ninety-one previous tokens so the 83-gram set is
     complete relative to N=18, the eighteen leftover 6-grams still
     compute, and every previous 91-gram has N_I>=1 and N_off_I=0. Extra
     I does not make the claim lose. Incomplete set is LOSE. Nested
@@ -1422,7 +1422,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
     """Helpers on leftover remaining-after-076-010 leftover 6-gram previous 91-grams. No CV, no LLM."""
 
     def test_counts_require_exact_tokens(self):
-        """Previous 91-grams are ninety-one-one tokens immediately before leftover 6-grams, not leftover-inside tokens."""
+        """Previous 91-grams are ninety-one tokens immediately before leftover 6-grams, not leftover-inside tokens."""
         provider = MockProvider()
         self.assertEqual(leftover_remaining_prev91(), STANDING_SEQUENCES)
         self.assertEqual(len(leftover_6gram_prev_91grams()), STANDING_N)
