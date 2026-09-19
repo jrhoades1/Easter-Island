@@ -8,10 +8,11 @@ Search lock, not a merge, and not a translation. Rongorongo stays undeciphered u
 
 | Item | Lock |
 |------|------|
-| Recurse routine | **PAUSED** after Cycle 621 next-79; next resume leftover-6 **prev-79 I-only**. |
+| Recurse routine | **PAUSED** after Cycle 622 prev-79; next resume leftover-6 **next-80 I-only**. |
 | Cursor Models | Included only. **On-demand stays OFF.** Never enable it. |
 | Resume spend | After included resets **or** Jimmy’s explicit go. |
-| Last merged | Cycle 621 leftover-6 remaining-after-076-010 **next-79 I-only** → **incomplete-set LOSE** (12/18; existing next-79 are I-only, `N_leak=0`; same next-78 / Cycle 553 six-hole set; leftover-n5 overlap 8). |
+| Last merged | Cycle 622 leftover-6 remaining-after-076-010 **prev-79 I-only** → **incomplete-set LOSE** (6/18; existing prev-79 are I-only, `N_leak=0`; same prev-78 / Cycle 592 twelve-hole set; leftover-n5 overlap 4). |
+| Cycle 622 | **incomplete-set LOSE** 6/18 (same holes as Cycle 620 prev-78 / Cycle 618 prev-77 / Cycle 592 prev-64: Ia1[63]/Ia1[62]/Ia1[61]/Ia9[3]/Ia9[2]/Ia9[1] plus early-line Ia8[30]/Ia8[29]/Ia8[28]/Ia9[32]/Ia9[31]/Ia9[30]; no new hole). |
 | Cycle 621 | **incomplete-set LOSE** 12/18 (same holes as Cycle 619 next-78 / Cycle 617 next-77 / Cycle 553 next-45: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals; no new hole). |
 | Cycle 620 | **incomplete-set LOSE** 6/18 (same holes as Cycle 618 prev-77 / Cycle 616 prev-76 / Cycle 592 prev-64: Ia1[63]/Ia1[62]/Ia1[61]/Ia9[3]/Ia9[2]/Ia9[1] plus early-line Ia8[30]/Ia8[29]/Ia8[28]/Ia9[32]/Ia9[31]/Ia9[30]; no new hole). |
 | Cycle 619 | **incomplete-set LOSE** 12/18 (same holes as Cycle 617 next-77 / Cycle 615 next-76 / Cycle 553 next-45: Ia10[142]/Ia10[143]/Ia10[144] plus Ia8 line-finals; no new hole). |
@@ -169,10 +170,10 @@ Until then: we are mapping structure, not reading.
 
 Resume **only** after included Models reset or explicit go. First cycle back:
 
-1. Leftover-6 **prev-79 I-only** (pair with Cycle 621 next-79 LOSE 12/18; analog Cycle 620 prev-78 LOSE 6/18).
+1. Leftover-6 **next-80 I-only** (pair with Cycle 622 prev-79 LOSE 6/18; analog Cycle 621 next-79 LOSE 12/18).
 2. Keep leftover-6 next/prev peels until the incomplete-set ceiling is stable, then **leftover-7** / other tablets — not from this pause.
 3. Vision reopen (phase 2) only after tablet-local leftover-6 is exhausted **or** Jimmy names it.
 4. Cross-tablet identity (phase 3) on a *locked* leftover pattern, not on an open peel.
 5. Lexicon-with-refusal (phase 4) last.
 
-Does not launch leftover-7, leftover-6 prev-79 from this document’s pause note, leftover-6 next-79 again, leftover-6 prev-78 again, leftover-6 next-78 again, leftover-6 prev-77 again, leftover-6 next-77 again, leftover-6 prev-76 again, leftover-6 next-76 again, leftover-6 prev-75 again, leftover-6 next-75 again, leftover-6 prev-74 again, leftover-6 next-74 again, leftover-6 prev-73 again, leftover-6 next-73 again, leftover-6 prev-72 again, leftover-6 next-72 again, leftover-6 prev-71 again, leftover-6 next-71 again, leftover-6 prev-70 again, leftover-6 next-70 again, leftover-6 prev-69 again, leftover-6 next-69 again, leftover-6 prev-68 again, leftover-6 next-68 again, extra-I peels, detector retune, or a new tablet from this document.
+Does not launch leftover-7, leftover-6 next-80 from this document’s pause note, leftover-6 prev-79 again, leftover-6 next-79 again, leftover-6 prev-78 again, leftover-6 next-78 again, leftover-6 prev-77 again, leftover-6 next-77 again, leftover-6 prev-76 again, leftover-6 next-76 again, leftover-6 prev-75 again, leftover-6 next-75 again, leftover-6 prev-74 again, leftover-6 next-74 again, leftover-6 prev-73 again, leftover-6 next-73 again, leftover-6 prev-72 again, leftover-6 next-72 again, leftover-6 prev-71 again, leftover-6 next-71 again, leftover-6 prev-70 again, leftover-6 next-70 again, leftover-6 prev-69 again, leftover-6 next-69 again, leftover-6 prev-68 again, leftover-6 next-68 again, extra-I peels, detector retune, or a new tablet from this document.
