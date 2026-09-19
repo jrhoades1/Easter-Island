@@ -3381,7 +3381,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         for gram, tok1, tok2, tok3, tok4, tok5, tok6, tok7, tok8, tok9, tok10, tok11, tok12, tok13, tok14, tok15, tok16, tok17, tok18, tok19, tok20, tok22, tok23, tok28, tok29, tok30, tok31, tok33, tok39, tok44, tok45 in zip(
             STANDING_SEQUENCES, prior_next1, prior_next2, prior_next3, prior_next4, prior_next5, prior_next6, prior_next7, prior_next8, prior_next9, prior_next10, prior_next11, prior_next12, prior_next13, prior_next14, prior_next15, prior_next16, prior_next17, prior_next18, prior_next19, prior_next20, prior_next22, prior_next23, prior_next28, prior_next29, prior_next30, prior_next31, prior_next33, prior_next43, prior_next44, prior_next45, strict=True
         ):
-            self.assertEqual(len(gram), STANDING_N91)
+            self.assertEqual(len(gram), STANDING_N92)
             self.assertEqual(gram[:1], tok1)
             self.assertEqual(gram[:2], tok2)
             self.assertEqual(gram[:3], tok3)
@@ -3718,22 +3718,22 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
         self.assertEqual(tuple(ia8[173:]), ("070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[173:]), STANDING_N91)
+        self.assertLess(len(ia8[173:]), STANDING_N92)
         self.assertEqual(tuple(ia8[166:172]), ("087", "700", "076", "076", "053", "720"))
         self.assertEqual(tuple(ia8[172:]), ("076", "070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[172:]), STANDING_N91)
+        self.assertLess(len(ia8[172:]), STANDING_N92)
         self.assertEqual(tuple(ia8[165:171]), ("600", "087", "700", "076", "076", "053"))
         self.assertEqual(tuple(ia8[171:]), ("720", "076", "070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[171:]), STANDING_N91)
+        self.assertLess(len(ia8[171:]), STANDING_N92)
 
         ia10 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia10")]
         self.assertEqual(len(ia10), 192)
         self.assertEqual(len(ia10[150:]), 42)
-        self.assertLess(len(ia10[150:]), STANDING_N91)
+        self.assertLess(len(ia10[150:]), STANDING_N92)
         self.assertEqual(len(ia10[149:]), 43)
-        self.assertLess(len(ia10[149:]), STANDING_N91)
+        self.assertLess(len(ia10[149:]), STANDING_N92)
         self.assertEqual(len(ia10[148:]), 44)
-        self.assertLess(len(ia10[148:]), STANDING_N91)
+        self.assertLess(len(ia10[148:]), STANDING_N92)
         prior_478 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_prev7_i_only"
         ]
