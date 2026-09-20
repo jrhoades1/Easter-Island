@@ -179,7 +179,7 @@ from tests.test_mamari_i_leftover_n4_remaining_after_090_076_remaining_after_430
     STANDING_N_EXTRA as CYCLE340_N_EXTRA,
     STANDING_N_I_ONLY as CYCLE340_N_I_ONLY,
     STANDING_SEQUENCES as CYCLE340_SEQUENCES,
-    TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760105gramsIOnlyScoreboard,
+    TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760104gramsIOnlyScoreboard,
     leftover_remaining_grams,
 )
 from tests.test_mamari_i_leftover_n4_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_2gram_scoreboard import (
@@ -4845,7 +4845,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         if prior_349.claim_holds:
             self.fail("nested cycle 349 leftover remaining-after-076-010 leftover 2-grams drifted")
         prior_340 = (
-            TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760105gramsIOnlyScoreboard()
+            TestMamariILeftoverN4RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760104gramsIOnlyScoreboard()
         )
         prior_340.setUp()
         prior_340.test_survey_matches_computed_lock()
