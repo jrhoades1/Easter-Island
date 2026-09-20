@@ -3635,7 +3635,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
             (),
         )
         self.assertEqual(
-            extra_i_sites_of_20gram(STANDING_I_SITES[10], STANDING_LEFTOVER_MATCHING_SITES_EACH[10]),
+            extra_i_sites_of_20gram(STANDING_I_SITES[9], STANDING_LEFTOVER_MATCHING_SITES_EACH[9]),
             (),
         )
         self.assertEqual(provider.get_call_history(), [])
