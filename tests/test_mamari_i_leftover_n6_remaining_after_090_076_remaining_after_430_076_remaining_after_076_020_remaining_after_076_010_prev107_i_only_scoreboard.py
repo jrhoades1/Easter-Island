@@ -409,7 +409,7 @@ from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430
     STANDING_N_LEAK as CYCLE457_N_LEAK,
     STANDING_N_LISTINGS as CYCLE457_N_LISTINGS,
     STANDING_SEQUENCES as CYCLE457_SEQUENCES,
-    TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760107gramsIOnlyScoreboard,
+    TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760106gramsIOnlyScoreboard,
     leftover_matching_6gram_sites,
     leftover_remaining_6grams_distinct,
 )
@@ -2262,7 +2262,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         if prior_458.claim_holds:
             self.fail("nested cycle 458 leftover remaining-after-076-010 leftover 6-gram next 1-grams drifted")
         prior_457 = (
-            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760107gramsIOnlyScoreboard()
+            TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter0760106gramsIOnlyScoreboard()
         )
         prior_457.setUp()
         prior_457.test_survey_matches_computed_lock()
