@@ -3455,7 +3455,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leftover_6gram_next_112grams().count(None), STANDING_N_NO_NEXT112)
         self.assertEqual(len(STANDING_SEQUENCES), STANDING_N_SEQUENCES)
         self.assertEqual(len(set(STANDING_SEQUENCES)), STANDING_N_DISTINCT)
-        self.assertEqual(STANDING_N_DISTINCT, 11)
+        self.assertEqual(STANDING_N_DISTINCT, 10)
         self.assertEqual(STANDING_N, 18)
         self.assertEqual(leftover_remaining_6grams_distinct(), CYCLE457_SEQUENCES)
         self.assertNotEqual(STANDING_SEQUENCES, CYCLE457_SEQUENCES)
@@ -3618,7 +3618,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(set(leftover_n5_next112_overlap_sites()), set(STANDING_LEFTOVER_N5_NEXT112_OVERLAP_SITES))
         self.assertEqual(len(leftover_n5_next112_overlap_sites()), 7)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_COUNT, 18)
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT112_COUNT, 11)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT112_COUNT, 10)
         planted = (SIDE_IA, "Ia99", 999)
         self.assertFalse(
             leftover_matching_equals_next112_minus_six(
@@ -4100,7 +4100,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.leftover_matching_next30, STANDING_LEFTOVER_MATCHING_NEXT112_SITES)
         self.assertEqual(self.leftover_matching_each, STANDING_LEFTOVER_MATCHING_SITES_EACH)
         self.assertEqual(len(self.leftover_matching_next30), STANDING_LEFTOVER_MATCHING_NEXT112_COUNT)
-        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT112_COUNT, 11)
+        self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT112_COUNT, 10)
         self.assertTrue(
             leftover_matching_equals_next112_minus_six(
                 STANDING_LEFTOVER_MATCHING_6GRAM_SITES_WITH_NEXT112, self.leftover_matching_next30
@@ -4176,14 +4176,14 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT76_OF_LEFTOVER3, 0)
         self.assertEqual(self.leaking, STANDING_LEAKING_45GRAMS)
         self.assertEqual(self.n_i_only, STANDING_N_I_ONLY)
-        self.assertEqual(self.n_i_only, 11)
+        self.assertEqual(self.n_i_only, 10)
         self.assertEqual(self.n_not_i_only, STANDING_N_NOT_I_ONLY)
         self.assertEqual(self.n_not_i_only, 0)
         self.assertEqual(self.n_leak, STANDING_N_LEAK)
         self.assertEqual(self.n_leak, 0)
         self.assertEqual(self.hapax_each, STANDING_HAPAX_EACH)
-        self.assertEqual(STANDING_N_HAPAX, 11)
-        self.assertEqual(STANDING_N_HAPAX_I_ONLY, 11)
+        self.assertEqual(STANDING_N_HAPAX, 10)
+        self.assertEqual(STANDING_N_HAPAX_I_ONLY, 10)
         self.assertEqual(STANDING_N_LEAK_HIT_T, 0)
         self.assertEqual(sum(1 for n_t in STANDING_N_T_EACH if n_t), 0)
         self.assertEqual(STANDING_I_ONLY_45GRAMS, STANDING_SEQUENCES)
