@@ -3448,7 +3448,7 @@ def i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_afte
     )
 
 
-class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next109IOnlyHelpers(
+class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next110IOnlyHelpers(
     unittest.TestCase
 ):
     """Helpers on leftover remaining-after-076-010 leftover 6-gram next 110-grams. No CV, no LLM."""
@@ -3647,7 +3647,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(provider.get_call_history(), [])
 
 
-class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next109IOnlyScoreboard(
+class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next110IOnlyScoreboard(
     unittest.TestCase
 ):
     """Cited-fixture leftover remaining-after-076-010 leftover 6-gram next 110-grams I-only. Mock only."""
@@ -5456,7 +5456,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["n92"], STANDING_N92)
         self.assertEqual(lock["n92"], 92)
         self.assertEqual(lock["n110"], STANDING_N110)
-        self.assertEqual(lock["n110"], 109)
+        self.assertEqual(lock["n110"], 110)
         self.assertEqual(lock["n89"], STANDING_N89)
         self.assertEqual(lock["n89"], 89)
         self.assertEqual(lock["n88"], STANDING_N88)
@@ -8400,7 +8400,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.provider.get_call_history(), [])
 
 
-class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next109IOnlyImageSnapshot(
+class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Next110IOnlyImageSnapshot(
     unittest.TestCase
 ):
     """Cycle 615 does not touch clustering. 83/62 / Hamming 6 stays."""
