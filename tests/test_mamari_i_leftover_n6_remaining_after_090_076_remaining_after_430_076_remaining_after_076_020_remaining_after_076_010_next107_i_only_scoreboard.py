@@ -2775,7 +2775,7 @@ STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT96 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT97 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT105 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT107 = False
-STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT107 = True
+STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT108 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_PREV75 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT32 = True
 STANDING_RESULT = (
@@ -3038,7 +3038,7 @@ STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT96 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT97 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT105 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT107 = False
-STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT107 = True
+STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT108 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_PREV75 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT24 = True
 STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT26 = True
@@ -4052,7 +4052,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT97)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT105)
         self.assertFalse(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT107)
-        self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT107)
+        self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT108)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_PREV75)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_LEFTOVER_N6_NEXT74)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREVIOUS_19GRAMS)
@@ -6222,7 +6222,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_launch_leftover_n6_next97"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next105"])
         self.assertFalse(lock["do_not_launch_leftover_n6_next107"])
-        self.assertTrue(lock["do_not_launch_leftover_n6_next107"])
+        self.assertTrue(lock["do_not_launch_leftover_n6_next108"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev75"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev45"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev46"])
@@ -6908,7 +6908,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_launch_leftover_n6_next97"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next105"])
         self.assertFalse(lock["do_not_launch_leftover_n6_next107"])
-        self.assertTrue(lock["do_not_launch_leftover_n6_next107"])
+        self.assertTrue(lock["do_not_launch_leftover_n6_next108"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev75"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev71"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev73"])
@@ -7633,7 +7633,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_launch_leftover_n6_next97"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next105"])
         self.assertFalse(lock["do_not_launch_leftover_n6_next107"])
-        self.assertTrue(lock["do_not_launch_leftover_n6_next107"])
+        self.assertTrue(lock["do_not_launch_leftover_n6_next108"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev75"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev77"])
         self.assertTrue(
@@ -7890,7 +7890,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_launch_leftover_n6_next97"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next105"])
         self.assertFalse(lock["do_not_launch_leftover_n6_next107"])
-        self.assertTrue(lock["do_not_launch_leftover_n6_next107"])
+        self.assertTrue(lock["do_not_launch_leftover_n6_next108"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev75"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev73"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev73"])
