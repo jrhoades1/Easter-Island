@@ -1642,14 +1642,14 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_NO_PREV51_SITES, (('Ia', 'Ia1', 63), ('Ia', 'Ia1', 62), ('Ia', 'Ia1', 61), ('Ia', 'Ia9', 3), ('Ia', 'Ia9', 2), ('Ia', 'Ia9', 1), ('Ia', 'Ia8', 30), ('Ia', 'Ia8', 29), ('Ia', 'Ia8', 28), ('Ia', 'Ia9', 32), ('Ia', 'Ia9', 31), ('Ia', 'Ia9', 30)))
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_80GRAM)
         ia10 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia10")]
-        self.assertEqual(tuple(ia10[35:144]), STANDING_SEQUENCES[0])
-        self.assertEqual(tuple(ia10[34:143]), STANDING_SEQUENCES[1])
-        self.assertEqual(tuple(ia10[33:142]), STANDING_SEQUENCES[2])
+        self.assertEqual(tuple(ia10[34:144]), STANDING_SEQUENCES[0])
+        self.assertEqual(tuple(ia10[33:143]), STANDING_SEQUENCES[1])
+        self.assertEqual(tuple(ia10[32:142]), STANDING_SEQUENCES[2])
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[58:167]), STANDING_SEQUENCES[3])
-        self.assertEqual(tuple(ia8[57:166]), STANDING_SEQUENCES[4])
-        self.assertEqual(tuple(ia8[56:165]), STANDING_SEQUENCES[5])
+        self.assertEqual(tuple(ia8[57:167]), STANDING_SEQUENCES[3])
+        self.assertEqual(tuple(ia8[56:166]), STANDING_SEQUENCES[4])
+        self.assertEqual(tuple(ia8[55:165]), STANDING_SEQUENCES[5])
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
@@ -2431,7 +2431,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_survey_matches_computed_lock(self):
         """CORPUS_SURVEY.json records the cycle-684 leftover 6-gram previous 110-gram I-only lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 682)
+        self.assertEqual(lock["cycle"], 684)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
@@ -2920,8 +2920,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["n8"], STANDING_N8)
         self.assertEqual(lock["n8"], 8)
         self.assertEqual(lock["n46"], 46)
-        self.assertEqual(lock["n109"], STANDING_N110)
+        self.assertEqual(lock["n110"], STANDING_N110)
         self.assertEqual(lock["n76"], STANDING_N76)
+        self.assertEqual(lock["n110"], 110)
         self.assertEqual(lock["n109"], 109)
         self.assertEqual(lock["n108"], 108)
         self.assertEqual(lock["n107"], 107)
