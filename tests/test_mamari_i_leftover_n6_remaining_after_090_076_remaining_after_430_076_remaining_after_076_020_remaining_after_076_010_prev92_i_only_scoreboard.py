@@ -2546,7 +2546,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["N_hapax"], 6)
         self.assertEqual(lock["N_hapax_i_only"], 6)
         self.assertEqual(
-            lock["i_only_91grams"],
+            lock["i_only_92grams"],
             [list(gram) for gram in STANDING_I_ONLY_57GRAMS],
         )
         self.assertTrue(lock["nested_cycle475_next_6grams_all_i_only"] is False)
@@ -3132,7 +3132,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertTrue(lock["do_not_relock_cycle612"])
         self.assertFalse(lock["nested_cycle613_next_75grams_all_i_only"])
         self.assertFalse(lock["nested_cycle638_prev_87grams_all_i_only"])
-        self.assertFalse(lock["nested_cycle639_next_91grams_all_i_only"])
+        self.assertFalse(lock["nested_cycle639_next_92grams_all_i_only"])
         self.assertEqual(lock["nested_cycle605_N_i_only"], 12)
         self.assertEqual(lock["nested_cycle605_N_leak"], 0)
         self.assertEqual(lock["nested_cycle605_N_extra"], 0)
@@ -3190,7 +3190,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(prior_624["N_i_only"], 6)
         self.assertEqual(prior_624["N_leak"], 0)
         prior_625 = self.survey[
-            "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next91_i_only"
+            "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next92_i_only"
         ]
         self.assertEqual(prior_625["cycle"], 647)
         self.assertEqual(prior_625["N_i_only"], 12)
