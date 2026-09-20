@@ -3464,36 +3464,36 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leftover_remaining_6grams_distinct(), CYCLE457_SEQUENCES)
         self.assertNotEqual(STANDING_SEQUENCES, CYCLE457_SEQUENCES)
         self.assertEqual(len(STANDING_PARENT_6GRAMS), STANDING_N_SEQUENCES)
-        prior_next33 = tuple(gram for i, gram in enumerate(CYCLE529_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next31 = tuple(gram for i, gram in enumerate(CYCLE525_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next30 = tuple(gram for i, gram in enumerate(CYCLE523_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next29 = tuple(gram for i, gram in enumerate(CYCLE521_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next28 = tuple(gram for i, gram in enumerate(CYCLE519_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next23 = tuple(gram for i, gram in enumerate(CYCLE509_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next22 = tuple(gram for i, gram in enumerate(CYCLE507_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next20 = tuple(gram for i, gram in enumerate(CYCLE503_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next19 = tuple(gram for i, gram in enumerate(CYCLE501_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next18 = tuple(gram for i, gram in enumerate(CYCLE499_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next17 = tuple(gram for i, gram in enumerate(CYCLE497_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next16 = tuple(gram for i, gram in enumerate(CYCLE495_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next15 = tuple(gram for i, gram in enumerate(CYCLE493_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next14 = tuple(gram for i, gram in enumerate(CYCLE491_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next13 = tuple(gram for i, gram in enumerate(CYCLE489_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next12 = tuple(gram for i, gram in enumerate(CYCLE487_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next11 = tuple(gram for i, gram in enumerate(CYCLE485_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next10 = tuple(gram for i, gram in enumerate(CYCLE483_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next9 = tuple(gram for i, gram in enumerate(CYCLE481_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next8 = tuple(gram for i, gram in enumerate(CYCLE479_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next7 = tuple(gram for i, gram in enumerate(CYCLE477_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT7)
-        prior_next6 = tuple(gram for i, gram in enumerate(CYCLE475_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT6)
+        prior_next33 = tuple(gram for i, gram in enumerate(CYCLE529_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next31 = tuple(gram for i, gram in enumerate(CYCLE525_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next30 = tuple(gram for i, gram in enumerate(CYCLE523_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next29 = tuple(gram for i, gram in enumerate(CYCLE521_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next28 = tuple(gram for i, gram in enumerate(CYCLE519_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next23 = tuple(gram for i, gram in enumerate(CYCLE509_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next22 = tuple(gram for i, gram in enumerate(CYCLE507_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next20 = tuple(gram for i, gram in enumerate(CYCLE503_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next19 = tuple(gram for i, gram in enumerate(CYCLE501_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next18 = tuple(gram for i, gram in enumerate(CYCLE499_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next17 = tuple(gram for i, gram in enumerate(CYCLE497_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next16 = tuple(gram for i, gram in enumerate(CYCLE495_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next15 = tuple(gram for i, gram in enumerate(CYCLE493_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next14 = tuple(gram for i, gram in enumerate(CYCLE491_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next13 = tuple(gram for i, gram in enumerate(CYCLE489_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next12 = tuple(gram for i, gram in enumerate(CYCLE487_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next11 = tuple(gram for i, gram in enumerate(CYCLE485_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next10 = tuple(gram for i, gram in enumerate(CYCLE483_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next9 = tuple(gram for i, gram in enumerate(CYCLE481_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next8 = tuple(gram for i, gram in enumerate(CYCLE479_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next7 = tuple(gram for i, gram in enumerate(CYCLE477_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT7 and i != 0)
+        prior_next6 = tuple(gram for i, gram in enumerate(CYCLE475_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT6 and i != 0)
         prior_next5 = tuple(gram for i, gram in enumerate(CYCLE473_SEQUENCES) if i not in STANDING_DROP_INDICES)
         prior_next4 = tuple(gram for i, gram in enumerate(CYCLE470_SEQUENCES) if i not in STANDING_DROP_INDICES)
         prior_next3 = tuple(gram for i, gram in enumerate(CYCLE468_SEQUENCES) if i not in STANDING_DROP_INDICES)
         prior_next2 = tuple(gram for i, gram in enumerate(CYCLE463_SEQUENCES) if i not in STANDING_DROP_INDICES)
         prior_next1 = tuple(gram for i, gram in enumerate(CYCLE458_SEQUENCES) if i not in STANDING_DROP_INDICES)
-        prior_next43 = tuple(gram for i, gram in enumerate(CYCLE549_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT43)
-        prior_next44 = tuple(gram for i, gram in enumerate(CYCLE551_SEQUENCES) if i != STANDING_DROP_INDEX_FROM_NEXT44)
-        prior_next45 = CYCLE553_SEQUENCES
+        prior_next43 = tuple(gram for i, gram in enumerate(CYCLE549_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT43 and i != 0)
+        prior_next44 = tuple(gram for i, gram in enumerate(CYCLE551_SEQUENCES) if i != STANDING_DROP_INDEX_FROM_NEXT44 and i != 0)
+        prior_next45 = CYCLE553_SEQUENCES[1:]
         for gram, tok1, tok2, tok3, tok4, tok5, tok6, tok7, tok8, tok9, tok10, tok11, tok12, tok13, tok14, tok15, tok16, tok17, tok18, tok19, tok20, tok22, tok23, tok28, tok29, tok30, tok31, tok33, tok39, tok44, tok45 in zip(
             STANDING_SEQUENCES, prior_next1, prior_next2, prior_next3, prior_next4, prior_next5, prior_next6, prior_next7, prior_next8, prior_next9, prior_next10, prior_next11, prior_next12, prior_next13, prior_next14, prior_next15, prior_next16, prior_next17, prior_next18, prior_next19, prior_next20, prior_next22, prior_next23, prior_next28, prior_next29, prior_next30, prior_next31, prior_next33, prior_next43, prior_next44, prior_next45, strict=True
         ):
@@ -3724,28 +3724,28 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.grams, STANDING_SEQUENCES)
         self.assertEqual(self.next30_or_none.count(None), STANDING_N_NO_NEXT111)
         self.assertEqual(self.stems, CYCLE458_NEXT_STEMS)
-        prior_next33 = tuple(gram for i, gram in enumerate(CYCLE529_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next31 = tuple(gram for i, gram in enumerate(CYCLE525_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next30 = tuple(gram for i, gram in enumerate(CYCLE523_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next29 = tuple(gram for i, gram in enumerate(CYCLE521_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next28 = tuple(gram for i, gram in enumerate(CYCLE519_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next23 = tuple(gram for i, gram in enumerate(CYCLE509_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next22 = tuple(gram for i, gram in enumerate(CYCLE507_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next20 = tuple(gram for i, gram in enumerate(CYCLE503_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next19 = tuple(gram for i, gram in enumerate(CYCLE501_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next18 = tuple(gram for i, gram in enumerate(CYCLE499_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next17 = tuple(gram for i, gram in enumerate(CYCLE497_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next16 = tuple(gram for i, gram in enumerate(CYCLE495_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next15 = tuple(gram for i, gram in enumerate(CYCLE493_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next14 = tuple(gram for i, gram in enumerate(CYCLE491_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next13 = tuple(gram for i, gram in enumerate(CYCLE489_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next12 = tuple(gram for i, gram in enumerate(CYCLE487_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next11 = tuple(gram for i, gram in enumerate(CYCLE485_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next10 = tuple(gram for i, gram in enumerate(CYCLE483_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next9 = tuple(gram for i, gram in enumerate(CYCLE481_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next8 = tuple(gram for i, gram in enumerate(CYCLE479_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15)
-        prior_next7 = tuple(gram for i, gram in enumerate(CYCLE477_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT7)
-        prior_next6 = tuple(gram for i, gram in enumerate(CYCLE475_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT6)
+        prior_next33 = tuple(gram for i, gram in enumerate(CYCLE529_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next31 = tuple(gram for i, gram in enumerate(CYCLE525_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next30 = tuple(gram for i, gram in enumerate(CYCLE523_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next29 = tuple(gram for i, gram in enumerate(CYCLE521_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next28 = tuple(gram for i, gram in enumerate(CYCLE519_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next23 = tuple(gram for i, gram in enumerate(CYCLE509_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next22 = tuple(gram for i, gram in enumerate(CYCLE507_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next20 = tuple(gram for i, gram in enumerate(CYCLE503_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next19 = tuple(gram for i, gram in enumerate(CYCLE501_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next18 = tuple(gram for i, gram in enumerate(CYCLE499_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next17 = tuple(gram for i, gram in enumerate(CYCLE497_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next16 = tuple(gram for i, gram in enumerate(CYCLE495_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next15 = tuple(gram for i, gram in enumerate(CYCLE493_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next14 = tuple(gram for i, gram in enumerate(CYCLE491_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next13 = tuple(gram for i, gram in enumerate(CYCLE489_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next12 = tuple(gram for i, gram in enumerate(CYCLE487_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next11 = tuple(gram for i, gram in enumerate(CYCLE485_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next10 = tuple(gram for i, gram in enumerate(CYCLE483_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next9 = tuple(gram for i, gram in enumerate(CYCLE481_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next8 = tuple(gram for i, gram in enumerate(CYCLE479_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT15 and i != 0)
+        prior_next7 = tuple(gram for i, gram in enumerate(CYCLE477_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT7 and i != 0)
+        prior_next6 = tuple(gram for i, gram in enumerate(CYCLE475_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT6 and i != 0)
         prior_next5 = tuple(gram for i, gram in enumerate(CYCLE473_SEQUENCES) if i not in STANDING_DROP_INDICES)
         prior_next4 = tuple(gram for i, gram in enumerate(CYCLE470_SEQUENCES) if i not in STANDING_DROP_INDICES)
         prior_next3 = tuple(gram for i, gram in enumerate(CYCLE468_SEQUENCES) if i not in STANDING_DROP_INDICES)
@@ -3778,48 +3778,48 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(tuple(gram[:30] for gram in self.grams), prior_next30)
         self.assertEqual(tuple(gram[:31] for gram in self.grams), prior_next31)
         self.assertEqual(tuple(gram[:33] for gram in self.grams), prior_next33)
-        prior_next43 = tuple(gram for i, gram in enumerate(CYCLE549_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT43)
-        prior_next44 = tuple(gram for i, gram in enumerate(CYCLE551_SEQUENCES) if i != STANDING_DROP_INDEX_FROM_NEXT44)
+        prior_next43 = tuple(gram for i, gram in enumerate(CYCLE549_SEQUENCES) if i not in STANDING_DROP_INDICES_FROM_NEXT43 and i != 0)
+        prior_next44 = tuple(gram for i, gram in enumerate(CYCLE551_SEQUENCES) if i != STANDING_DROP_INDEX_FROM_NEXT44 and i != 0)
         self.assertEqual(tuple(gram[:43] for gram in self.grams), prior_next43)
-        prior_next44 = tuple(gram for i, gram in enumerate(CYCLE551_SEQUENCES) if i != STANDING_DROP_INDEX_FROM_NEXT44)
+        prior_next44 = tuple(gram for i, gram in enumerate(CYCLE551_SEQUENCES) if i != STANDING_DROP_INDEX_FROM_NEXT44 and i != 0)
         self.assertEqual(tuple(gram[:44] for gram in self.grams), prior_next44)
-        prior_next45 = CYCLE553_SEQUENCES
+        prior_next45 = CYCLE553_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:45] for gram in self.grams), prior_next45)
-        prior_next46 = CYCLE555_SEQUENCES
+        prior_next46 = CYCLE555_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:46] for gram in self.grams), prior_next46)
-        prior_next47 = CYCLE557_SEQUENCES
+        prior_next47 = CYCLE557_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:47] for gram in self.grams), prior_next47)
-        prior_next48 = CYCLE559_SEQUENCES
+        prior_next48 = CYCLE559_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:48] for gram in self.grams), prior_next48)
-        prior_next49 = CYCLE561_SEQUENCES
+        prior_next49 = CYCLE561_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:49] for gram in self.grams), prior_next49)
-        prior_next50 = CYCLE563_SEQUENCES
+        prior_next50 = CYCLE563_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:50] for gram in self.grams), prior_next50)
-        prior_next51 = CYCLE565_SEQUENCES
+        prior_next51 = CYCLE565_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:51] for gram in self.grams), prior_next51)
-        prior_next52 = CYCLE567_SEQUENCES
+        prior_next52 = CYCLE567_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:52] for gram in self.grams), prior_next52)
-        prior_next53 = CYCLE569_SEQUENCES
+        prior_next53 = CYCLE569_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:53] for gram in self.grams), prior_next53)
-        prior_next54 = CYCLE571_SEQUENCES
+        prior_next54 = CYCLE571_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:54] for gram in self.grams), prior_next54)
-        prior_next55 = CYCLE573_SEQUENCES
+        prior_next55 = CYCLE573_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:55] for gram in self.grams), prior_next55)
-        prior_next56 = CYCLE575_SEQUENCES
+        prior_next56 = CYCLE575_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:56] for gram in self.grams), prior_next56)
-        prior_next57 = CYCLE577_SEQUENCES
+        prior_next57 = CYCLE577_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:57] for gram in self.grams), prior_next57)
-        prior_next58 = CYCLE579_SEQUENCES
+        prior_next58 = CYCLE579_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:58] for gram in self.grams), prior_next58)
-        prior_next59 = CYCLE581_SEQUENCES
+        prior_next59 = CYCLE581_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:59] for gram in self.grams), prior_next59)
-        prior_next60 = CYCLE583_SEQUENCES
+        prior_next60 = CYCLE583_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:60] for gram in self.grams), prior_next60)
-        prior_next65 = CYCLE593_SEQUENCES
+        prior_next65 = CYCLE593_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:65] for gram in self.grams), prior_next65)
-        prior_next67 = CYCLE597_SEQUENCES
+        prior_next67 = CYCLE597_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:67] for gram in self.grams), prior_next67)
-        prior_next68 = CYCLE599_SEQUENCES
+        prior_next68 = CYCLE599_SEQUENCES[1:]
         self.assertEqual(tuple(gram[:68] for gram in self.grams), prior_next68)
         self.assertEqual(tuple(gram[0] for gram in self.grams), STANDING_NEXT_STEMS)
         self.assertEqual(len(self.grams), STANDING_N_SEQUENCES)
@@ -3829,7 +3829,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.n_with_next30, 11)
         self.assertEqual(self.n_no_next30, 7)
         self.assertEqual(STANDING_N_LINE_FINAL, 7)
-        self.assertEqual(STANDING_NO_NEXT111_SITES, ((SIDE_IA, "Ia10", 144), (SIDE_IA, "Ia10", 143), (SIDE_IA, "Ia10", 142), (SIDE_IA, "Ia8", 167), (SIDE_IA, "Ia8", 166), (SIDE_IA, "Ia8", 165)))
+        self.assertEqual(STANDING_NO_NEXT111_SITES, ((SIDE_IA, "Ia1", 63), (SIDE_IA, "Ia10", 144), (SIDE_IA, "Ia10", 143), (SIDE_IA, "Ia10", 142), (SIDE_IA, "Ia8", 167), (SIDE_IA, "Ia8", 166), (SIDE_IA, "Ia8", 165)))
         self.assertFalse(STANDING_ALL_SITES_HAVE_NEXT_55GRAM)
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
