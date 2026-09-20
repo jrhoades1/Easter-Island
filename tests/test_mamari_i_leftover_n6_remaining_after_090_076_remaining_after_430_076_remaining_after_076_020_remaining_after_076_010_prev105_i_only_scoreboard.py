@@ -1344,7 +1344,7 @@ def leftover_prev105_survey_rows() -> list[dict]:
     ):
         rows.append(
             {
-                "tokens104_prev": list(gram),
+                "tokens105_prev": list(gram),
                 "parent_6gram": list(parent),
                 "leftover_matching_prev105_sites": [list(site) for site in matching],
                 "leftover_matching_6gram_site": list(leftover6),
@@ -1642,14 +1642,14 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_NO_PREV51_SITES, (('Ia', 'Ia1', 63), ('Ia', 'Ia1', 62), ('Ia', 'Ia1', 61), ('Ia', 'Ia9', 3), ('Ia', 'Ia9', 2), ('Ia', 'Ia9', 1), ('Ia', 'Ia8', 30), ('Ia', 'Ia8', 29), ('Ia', 'Ia8', 28), ('Ia', 'Ia9', 32), ('Ia', 'Ia9', 31), ('Ia', 'Ia9', 30)))
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_80GRAM)
         ia10 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia10")]
-        self.assertEqual(tuple(ia10[40:144]), STANDING_SEQUENCES[0])
-        self.assertEqual(tuple(ia10[39:143]), STANDING_SEQUENCES[1])
-        self.assertEqual(tuple(ia10[38:142]), STANDING_SEQUENCES[2])
+        self.assertEqual(tuple(ia10[39:144]), STANDING_SEQUENCES[0])
+        self.assertEqual(tuple(ia10[38:143]), STANDING_SEQUENCES[1])
+        self.assertEqual(tuple(ia10[37:142]), STANDING_SEQUENCES[2])
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[63:167]), STANDING_SEQUENCES[3])
-        self.assertEqual(tuple(ia8[62:166]), STANDING_SEQUENCES[4])
-        self.assertEqual(tuple(ia8[61:165]), STANDING_SEQUENCES[5])
+        self.assertEqual(tuple(ia8[62:167]), STANDING_SEQUENCES[3])
+        self.assertEqual(tuple(ia8[61:166]), STANDING_SEQUENCES[4])
+        self.assertEqual(tuple(ia8[60:165]), STANDING_SEQUENCES[5])
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
@@ -2458,7 +2458,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         measured_6 = [list(gram) for gram in CYCLE457_SEQUENCES]
         self.assertEqual(lock["tokens6"], measured_6)
         measured_5 = [list(gram) for gram in STANDING_SEQUENCES]
-        self.assertEqual(lock["tokens104_prev"], measured_5)
+        self.assertEqual(lock["tokens105_prev"], measured_5)
         self.assertEqual(lock["prev_stems"], list(STANDING_PREV_STEMS))
         self.assertEqual(
             tuple(tuple(site_row) for site_row in lock["leftover_matching_sites"]),
