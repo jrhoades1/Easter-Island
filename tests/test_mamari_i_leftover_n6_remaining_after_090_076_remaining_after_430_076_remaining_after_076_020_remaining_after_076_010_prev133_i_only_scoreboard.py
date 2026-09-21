@@ -869,7 +869,7 @@ STANDING_N_NOT_HAPAX = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER3_OF_PREV51 = 0
 STANDING_LEFTOVER_MATCHING_PREV51_OF_LEFTOVER3 = 0
 STANDING_LEFTOVER_MATCHING_LEFTOVER2_OF_PREV51 = 0
-STANDING_LEFTOVER_MATCHING_PREV51_OF_LEFTOVER2 = 0
+STANDING_LEFTOVER_MATCHING_PREV51_OF_LEFTOVER2 = 1
 STANDING_NOT_ASSUMED_HAPAX = True
 STANDING_HAPAX_NOT_REQUIRED = True
 STANDING_KNOWN_DISTINCT = True
@@ -1442,7 +1442,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leftover_matching_leftover3_of_prev55(), ())
         self.assertEqual(leftover_matching_prev133_of_leftover3(), ())
         self.assertEqual(leftover_matching_leftover2_of_prev55(), ())
-        self.assertEqual(leftover_matching_prev133_of_leftover2(), ())
+        self.assertEqual(leftover_matching_prev133_of_leftover2(), (("Ia", "Ia8", 32),))
         self.assertEqual(STANDING_N_NO_PREV51, 12)
         self.assertEqual(STANDING_N_LINE_INITIAL, 3)
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_80GRAM)
@@ -1861,7 +1861,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(leftover_matching_leftover3_of_prev55(), ())
         self.assertEqual(leftover_matching_prev133_of_leftover3(), ())
         self.assertEqual(leftover_matching_leftover2_of_prev55(), ())
-        self.assertEqual(leftover_matching_prev133_of_leftover2(), ())
+        self.assertEqual(leftover_matching_prev133_of_leftover2(), (("Ia", "Ia8", 32),))
         self.assertEqual(STANDING_LEFTOVER_MATCHING_LEFTOVER3_OF_PREV51, 0)
         self.assertEqual(STANDING_LEFTOVER_MATCHING_PREV51_OF_LEFTOVER3, 0)
         self.assertEqual(self.leaking, STANDING_LEAKING_57GRAMS)
@@ -2500,7 +2500,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(lock["leftover_matching_leftover3_of_prev133"], 0)
         self.assertEqual(lock["leftover_matching_prev133_of_leftover3"], 0)
         self.assertEqual(lock["leftover_matching_leftover2_of_prev133"], 0)
-        self.assertEqual(lock["leftover_matching_prev133_of_leftover2"], 0)
+        self.assertEqual(lock["leftover_matching_prev133_of_leftover2"], 1)
         self.assertEqual(lock["N_extra"], STANDING_N_EXTRA)
         self.assertEqual(lock["N_extra"], 0)
         self.assertEqual(lock["extra_I_total"], 0)
