@@ -1642,14 +1642,14 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_NO_PREV51_SITES, (('Ia', 'Ia1', 63), ('Ia', 'Ia1', 62), ('Ia', 'Ia1', 61), ('Ia', 'Ia9', 3), ('Ia', 'Ia9', 2), ('Ia', 'Ia9', 1), ('Ia', 'Ia8', 30), ('Ia', 'Ia8', 29), ('Ia', 'Ia8', 28), ('Ia', 'Ia9', 32), ('Ia', 'Ia9', 31), ('Ia', 'Ia9', 30)))
         self.assertFalse(STANDING_ALL_SITES_HAVE_PREV_80GRAM)
         ia10 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia10")]
-        self.assertEqual(tuple(ia10[19:144]), STANDING_SEQUENCES[0])
-        self.assertEqual(tuple(ia10[18:143]), STANDING_SEQUENCES[1])
-        self.assertEqual(tuple(ia10[17:142]), STANDING_SEQUENCES[2])
+        self.assertEqual(tuple(ia10[18:144]), STANDING_SEQUENCES[0])
+        self.assertEqual(tuple(ia10[17:143]), STANDING_SEQUENCES[1])
+        self.assertEqual(tuple(ia10[16:142]), STANDING_SEQUENCES[2])
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
         self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[42:167]), STANDING_SEQUENCES[3])
-        self.assertEqual(tuple(ia8[41:166]), STANDING_SEQUENCES[4])
-        self.assertEqual(tuple(ia8[40:165]), STANDING_SEQUENCES[5])
+        self.assertEqual(tuple(ia8[41:167]), STANDING_SEQUENCES[3])
+        self.assertEqual(tuple(ia8[40:166]), STANDING_SEQUENCES[4])
+        self.assertEqual(tuple(ia8[39:165]), STANDING_SEQUENCES[5])
         ia9 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia9")]
         prior_470 = self.survey[
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next4_i_only"
