@@ -1416,7 +1416,7 @@ def i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_afte
     )
 
 
-class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev116IOnlyHelpers(
+class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev117IOnlyHelpers(
     unittest.TestCase
 ):
     """Helpers on leftover remaining-after-076-010 leftover 6-gram previous 117-grams. No CV, no LLM."""
@@ -1553,7 +1553,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(provider.get_call_history(), [])
 
 
-class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev116IOnlyScoreboard(
+class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev117IOnlyScoreboard(
     unittest.TestCase
 ):
     """Cited-fixture leftover remaining-after-076-010 leftover 6-gram previous 117-grams I-only. Mock only."""
@@ -3294,7 +3294,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(self.provider.get_call_history(), [])
 
 
-class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev116IOnlyImageSnapshot(
+class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter076020RemainingAfter076010Prev117IOnlyImageSnapshot(
     unittest.TestCase
 ):
     """Cycle 698 does not touch clustering. 83/62 / Hamming 6 stays."""
