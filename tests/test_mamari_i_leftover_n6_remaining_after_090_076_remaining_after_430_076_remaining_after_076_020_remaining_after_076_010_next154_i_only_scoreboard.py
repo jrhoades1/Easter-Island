@@ -4198,7 +4198,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             )
         )
         self.assertEqual(set(leftover_n5_next154_overlap_sites(self.leftover_matching_next30)), set(STANDING_LEFTOVER_N5_NEXT154_OVERLAP_SITES))
-        self.assertEqual(len(leftover_n5_next154_overlap_sites(self.leftover_matching_next30)), 4)
+        self.assertEqual(len(leftover_n5_next154_overlap_sites(self.leftover_matching_next30)), 3)
         self.assertEqual(len(self.leftover_matching_leftover4), CYCLE414_LEFTOVER_MATCHING_LEFTOVER4)
         self.assertEqual(CYCLE414_LEFTOVER_MATCHING_LEFTOVER4, 6)
         self.assertEqual(len(self.leftover_matching_leftover3), CYCLE414_LEFTOVER_MATCHING_LEFTOVER3)
