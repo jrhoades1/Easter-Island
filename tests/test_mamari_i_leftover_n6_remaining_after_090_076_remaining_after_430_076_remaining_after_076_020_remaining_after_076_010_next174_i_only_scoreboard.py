@@ -3916,9 +3916,9 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_NO_NEXT164_SITES, ((SIDE_IA, "Ia1", 63), (SIDE_IA, "Ia1", 62), (SIDE_IA, "Ia1", 61), (SIDE_IA, "Ia8", 30), (SIDE_IA, "Ia8", 29), (SIDE_IA, "Ia8", 28), (SIDE_IA, "Ia10", 144), (SIDE_IA, "Ia10", 143), (SIDE_IA, "Ia10", 142), (SIDE_IA, "Ia8", 167), (SIDE_IA, "Ia8", 166), (SIDE_IA, "Ia8", 165), (SIDE_IA, "Ia9", 32), (SIDE_IA, "Ia9", 31), (SIDE_IA, "Ia9", 30)))
         self.assertFalse(STANDING_ALL_SITES_HAVE_NEXT_55GRAM)
         ia8 = self.i_sides[SIDE_IA][IA_LINE_NAMES.index("Ia8")]
-        self.assertEqual(tuple(ia8[167:174]), ("700", "076", "076", "053", "720", "076"))
-        self.assertEqual(tuple(ia8[174:]), ("070", "701", "214", "076", "298"))
-        self.assertLess(len(ia8[174:]), STANDING_N174)
+        self.assertEqual(tuple(ia8[167:173]), ("700", "076", "076", "053", "720", "076"))
+        self.assertEqual(tuple(ia8[173:]), ("070", "701", "214", "076", "298"))
+        self.assertLess(len(ia8[173:]), STANDING_N174)
         self.assertEqual(tuple(ia8[166:172]), ("087", "700", "076", "076", "053", "720"))
         self.assertEqual(tuple(ia8[172:]), ("076", "070", "701", "214", "076", "298"))
         self.assertLess(len(ia8[172:]), STANDING_N174)
