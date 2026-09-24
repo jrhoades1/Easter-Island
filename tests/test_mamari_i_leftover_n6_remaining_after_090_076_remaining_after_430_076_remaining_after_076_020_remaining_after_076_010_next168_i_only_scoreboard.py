@@ -5502,7 +5502,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
     def test_survey_matches_computed_lock(self):
         """CORPUS_SURVEY.json records the cycle-799 leftover 6-gram next 168-gram I-only incomplete-set lose."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 797)
+        self.assertEqual(lock["cycle"], 799)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertTrue(lock["hypothesis_all_i_only"])
         self.assertEqual(lock["hypothesis_all_i_only"], HYPOTHESIS_ALL_I_ONLY)
