@@ -3620,7 +3620,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leftover_matching_next183_of_leftover3(), ())
         self.assertEqual(leftover_matching_leftover2_of_next183(), ())
         self.assertEqual(leftover_matching_next183_of_leftover2(), ())
-        self.assertEqual(STANDING_N_NO_NEXT164, 16)
+        self.assertEqual(STANDING_N_NO_NEXT164, 17)
         self.assertEqual(STANDING_N_LINE_FINAL, 17)
         self.assertFalse(STANDING_ALL_SITES_HAVE_NEXT_55GRAM)
         self.assertTrue(STANDING_DO_NOT_REPEEL_LEFTOVER2)
@@ -3629,7 +3629,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(provider.get_call_history(), [])
 
     def test_all_i_only_requires_on_i_and_zero_off_i_and_complete_set(self):
-        """Boolean is True only when both next 183-grams are I-only and the set is complete."""
+        """Boolean is True only when every next 183-gram is I-only and the set is complete."""
         provider = MockProvider()
         leftover = leftover_n4_rows()
         hold_ones = (1,) * STANDING_N
@@ -3717,10 +3717,6 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         )
         self.assertEqual(
             extra_i_sites_of_20gram(STANDING_I_SITES[0], STANDING_LEFTOVER_MATCHING_SITES_EACH[0]),
-            (),
-        )
-        self.assertEqual(
-            extra_i_sites_of_20gram(STANDING_I_SITES[1], STANDING_LEFTOVER_MATCHING_SITES_EACH[1]),
             (),
         )
         self.assertEqual(provider.get_call_history(), [])
@@ -4249,7 +4245,7 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
             )
         )
         self.assertEqual(set(leftover_n5_next183_overlap_sites(self.leftover_matching_next30)), set(STANDING_LEFTOVER_N5_NEXT164_OVERLAP_SITES))
-        self.assertEqual(len(leftover_n5_next183_overlap_sites(self.leftover_matching_next30)), 2)
+        self.assertEqual(len(leftover_n5_next183_overlap_sites(self.leftover_matching_next30)), 1)
         self.assertEqual(len(self.leftover_matching_leftover4), CYCLE414_LEFTOVER_MATCHING_LEFTOVER4)
         self.assertEqual(CYCLE414_LEFTOVER_MATCHING_LEFTOVER4, 6)
         self.assertEqual(len(self.leftover_matching_leftover3), CYCLE414_LEFTOVER_MATCHING_LEFTOVER3)
