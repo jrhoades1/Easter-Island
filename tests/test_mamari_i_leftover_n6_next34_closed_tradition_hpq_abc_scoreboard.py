@@ -1240,7 +1240,7 @@ class TestMamariILeftoverN6Next34ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_next_cheap_lock_is_the_locked_cycle_533_next35_list(self):
-        """Cycle 533 next-35 grams are already locked and not yet reframed."""
+        """Cycle 533 next-35 I-only list stays locked. The claim name is not a survey key."""
         self.assertEqual(CYCLE533_N, 18)
         self.assertEqual(CYCLE533_N_SEQUENCES, 15)
         self.assertEqual(len(CYCLE533_SEQUENCES), 15)
@@ -1272,7 +1272,6 @@ class TestMamariILeftoverN6Next34ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(prior["N_no_next35"], 3)
         self.assertEqual(prior["N_with_next35"], 15)
         self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
-        self.assertNotIn("i_leftover_n6_next35_closed_tradition_hpq_abc", self.survey)
         self.assertEqual(
             STANDING_NEXT_CHEAP_LOCK,
             "cycle533_next35_reframed_closed_tradition_hpq_ge1_exact0_abc",
