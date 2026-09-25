@@ -457,10 +457,7 @@ class TestMamariILeftoverN6Next6ClosedTraditionHpqAbcScoreboard(unittest.TestCas
         self.assertEqual(prior["N_leak"], 0)
         self.assertEqual(prior["N_no_next7"], 2)
         self.assertEqual(prior["N_with_next7"], 16)
-        self.assertNotIn(
-            "i_leftover_n6_next7_closed_tradition_hpq_abc",
-            self.survey,
-        )
+        self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
         self.assertEqual(
             STANDING_NEXT_CHEAP_LOCK,
             "cycle477_next7_reframed_closed_tradition_hpq_ge1_exact0_abc",
