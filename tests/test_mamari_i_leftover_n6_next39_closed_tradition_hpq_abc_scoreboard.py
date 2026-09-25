@@ -1413,7 +1413,7 @@ class TestMamariILeftoverN6Next39ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_next_cheap_lock_is_the_locked_cycle_543_next40_list(self):
-        """Cycle 543 next-40 I-only list stays locked. The claim name is not a survey key."""
+        """Cycle 543 next-40 I-only list stays locked. The reframed result key has landed; the claim id is not a survey key."""
         self.assertEqual(CYCLE543_N, 18)
         self.assertEqual(CYCLE543_N_SEQUENCES, 15)
         self.assertEqual(len(CYCLE543_SEQUENCES), 15)
@@ -1444,8 +1444,8 @@ class TestMamariILeftoverN6Next39ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(prior["N_leak"], 0)
         self.assertEqual(prior["N_no_next40"], 3)
         self.assertEqual(prior["N_with_next40"], 15)
+        self.assertIn("i_leftover_n6_next40_closed_tradition_hpq_abc", self.survey)
         self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
-        self.assertNotIn("i_leftover_n6_next40_closed_tradition_hpq_abc", self.survey)
         self.assertEqual(
             STANDING_NEXT_CHEAP_LOCK,
             "cycle543_next40_reframed_closed_tradition_hpq_ge1_exact0_abc",
