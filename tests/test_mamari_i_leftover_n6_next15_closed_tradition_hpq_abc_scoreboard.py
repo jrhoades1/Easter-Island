@@ -620,7 +620,7 @@ class TestMamariILeftoverN6Next15ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_next_cheap_lock_is_the_locked_cycle_495_next16_list(self):
-        """Cycle 495 next-16 grams are already locked and not yet reframed."""
+        """Cycle 495 next-16 I-only stays locked. Cycle 849 holds the reframed score."""
         self.assertEqual(CYCLE495_N, 18)
         self.assertEqual(CYCLE495_N_SEQUENCES, 15)
         self.assertEqual(len(CYCLE495_SEQUENCES), 15)
@@ -652,7 +652,11 @@ class TestMamariILeftoverN6Next15ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(prior["N_no_next16"], 3)
         self.assertEqual(prior["N_with_next16"], 15)
         self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
-        self.assertNotIn("i_leftover_n6_next16_closed_tradition_hpq_abc", self.survey)
+        successor = self.survey["i_leftover_n6_next16_closed_tradition_hpq_abc"]
+        self.assertEqual(successor["cycle"], 849)
+        self.assertEqual(successor["verdict"], "incomplete-set LOSE")
+        self.assertEqual(successor["N_hold"], 0)
+        self.assertEqual(successor["N_leak"], 0)
         self.assertEqual(
             STANDING_NEXT_CHEAP_LOCK,
             "cycle495_next16_reframed_closed_tradition_hpq_ge1_exact0_abc",
