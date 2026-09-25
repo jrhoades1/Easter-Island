@@ -3539,14 +3539,14 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
     """Helpers on leftover remaining-after-076-010 leftover 6-gram next 182-grams. No CV, no LLM."""
 
     def test_counts_require_exact_tokens(self):
-        """Next 182-grams are thirty-six tokens after leftover 6-grams, not leftover-inside tokens."""
+        """Next 182-grams are one hundred eighty-two tokens after leftover 6-grams, not leftover-inside tokens."""
         provider = MockProvider()
         self.assertEqual(leftover_remaining_next182(), STANDING_SEQUENCES)
         self.assertEqual(len(leftover_6gram_next_182grams()), STANDING_N)
         self.assertEqual(leftover_6gram_next_182grams().count(None), STANDING_N_NO_NEXT164)
         self.assertEqual(len(STANDING_SEQUENCES), STANDING_N_SEQUENCES)
         self.assertEqual(len(set(STANDING_SEQUENCES)), STANDING_N_DISTINCT)
-        self.assertEqual(STANDING_N_DISTINCT, 3)
+        self.assertEqual(STANDING_N_DISTINCT, 2)
         self.assertEqual(STANDING_N, 18)
         self.assertEqual(leftover_remaining_6grams_distinct(), CYCLE457_SEQUENCES)
         self.assertNotEqual(STANDING_SEQUENCES, CYCLE457_SEQUENCES)
@@ -3622,7 +3622,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(leftover_matching_next182_of_leftover3(), ())
         self.assertEqual(leftover_matching_leftover2_of_next182(), ())
         self.assertEqual(leftover_matching_next182_of_leftover2(), ())
-        self.assertEqual(STANDING_N_NO_NEXT164, 15)
+        self.assertEqual(STANDING_N_NO_NEXT164, 16)
         self.assertEqual(STANDING_N_LINE_FINAL, 16)
         self.assertFalse(STANDING_ALL_SITES_HAVE_NEXT_55GRAM)
         self.assertTrue(STANDING_DO_NOT_REPEEL_LEFTOVER2)
@@ -3631,7 +3631,7 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         self.assertEqual(provider.get_call_history(), [])
 
     def test_all_i_only_requires_on_i_and_zero_off_i_and_complete_set(self):
-        """Boolean is True only when all three next 182-grams are I-only and the set is complete."""
+        """Boolean is True only when both next 182-grams are I-only and the set is complete."""
         provider = MockProvider()
         leftover = leftover_n4_rows()
         hold_ones = (1,) * STANDING_N
@@ -3719,10 +3719,6 @@ class TestILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfter07602
         )
         self.assertEqual(
             extra_i_sites_of_20gram(STANDING_I_SITES[0], STANDING_LEFTOVER_MATCHING_SITES_EACH[0]),
-            (),
-        )
-        self.assertEqual(
-            extra_i_sites_of_20gram(STANDING_I_SITES[2], STANDING_LEFTOVER_MATCHING_SITES_EACH[2]),
             (),
         )
         self.assertEqual(
@@ -4323,18 +4319,20 @@ class TestMamariILeftoverN6RemainingAfter090076RemainingAfter430076RemainingAfte
         self.assertEqual(STANDING_LEFTOVER_MATCHING_NEXT76_OF_LEFTOVER3, 0)
         self.assertEqual(self.leaking, STANDING_LEAKING_45GRAMS)
         self.assertEqual(self.n_i_only, STANDING_N_I_ONLY)
-        self.assertEqual(self.n_i_only, 3)
+        self.assertEqual(self.n_i_only, 2)
         self.assertEqual(self.n_not_i_only, STANDING_N_NOT_I_ONLY)
         self.assertEqual(self.n_not_i_only, 0)
         self.assertEqual(self.n_leak, STANDING_N_LEAK)
         self.assertEqual(self.n_leak, 0)
         self.assertEqual(self.hapax_each, STANDING_HAPAX_EACH)
-        self.assertEqual(STANDING_N_HAPAX, 3)
-        self.assertEqual(STANDING_N_HAPAX_I_ONLY, 3)
+        self.assertEqual(STANDING_N_HAPAX, 2)
+        self.assertEqual(STANDING_N_HAPAX_I_ONLY, 2)
         self.assertEqual(STANDING_N_LEAK_HIT_T, 0)
         self.assertEqual(sum(1 for n_t in STANDING_N_T_EACH if n_t), 0)
         self.assertEqual(STANDING_I_ONLY_45GRAMS, STANDING_SEQUENCES)
-        self.assertIn((SIDE_IA, "Ia9", 9), self.leftover_matching_next30)
+        self.assertIn((SIDE_IA, "Ia9", 8), self.leftover_matching_next30)
+        self.assertIn((SIDE_IA, "Ia9", 7), self.leftover_matching_next30)
+        self.assertNotIn((SIDE_IA, "Ia9", 9), self.leftover_matching_next30)
         self.assertNotIn((SIDE_IA, "Ia8", 171), self.leftover_matching_next30)
         self.assertEqual(
             i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next_182grams_all_i_only(
