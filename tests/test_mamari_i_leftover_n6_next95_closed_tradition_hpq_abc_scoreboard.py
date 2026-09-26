@@ -3401,7 +3401,7 @@ class TestMamariILeftoverN6Next95ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         prior = self.survey[CYCLE655_RESULT]
         all_i_only_key = (
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_"
-            "remaining_after_076_020_remaining_after_076_010_next_95grams_all_i_only"
+            "remaining_after_076_020_remaining_after_076_010_next_96grams_all_i_only"
         )
         self.assertEqual(CYCLE655_RESULT, (
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_"
