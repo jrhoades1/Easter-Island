@@ -545,11 +545,11 @@ from tests.test_mamari_i_leftover_n6_next58_closed_tradition_hpq_abc_scoreboard 
     STANDING_SITES as CYCLE891_SITES,
     STANDING_VERDICT as CYCLE891_VERDICT,
 )
-from tests.test_mamari_i_leftover_n6_next60_closed_tradition_hpq_abc_scoreboard import (
+from tests.test_mamari_i_leftover_n6_next59_closed_tradition_hpq_abc_scoreboard import (
     STANDING_HITS_I as CYCLE892_HITS_I,
     STANDING_N_HOLD as CYCLE892_N_HOLD,
     STANDING_N_LEAK as CYCLE892_N_LEAK,
-    STANDING_NO_NEXT60_SITES as CYCLE892_NO_NEXT60_SITES,
+    STANDING_NO_NEXT59_SITES as CYCLE892_NO_NEXT59_SITES,
     STANDING_RESULT as CYCLE892_RESULT,
     STANDING_SEQUENCES as CYCLE892_SEQUENCES,
     STANDING_SITES as CYCLE892_SITES,
