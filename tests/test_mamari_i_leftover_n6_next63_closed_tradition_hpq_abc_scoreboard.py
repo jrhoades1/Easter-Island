@@ -1039,7 +1039,7 @@ class TestMamariILeftoverN6Next63ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertFalse(CYCLE589_ALL_I_ONLY_CLAIM)
         self.assertEqual(CYCLE589_N_I_ONLY, 12)
         self.assertEqual(CYCLE589_N_LEAK, 0)
-        self.assertEqual(STANDING_FROM_CYCLE, 587)
+        self.assertEqual(STANDING_FROM_CYCLE, 589)
         self.assertEqual(len(self.rows), 12)
         for row, tokens, site in zip(self.rows, STANDING_SEQUENCES, STANDING_SITES, strict=True):
             self.assertEqual(row.tokens, tokens)
