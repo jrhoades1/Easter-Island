@@ -2784,7 +2784,7 @@ class TestMamariILeftoverN6Next77ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(prior["N_no_next78"], 6)
         self.assertEqual(prior["N_with_next78"], 12)
         self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
-        self.assertNotIn("i_leftover_n6_next78_closed_tradition_hpq_abc", self.survey)
+        self.assertIn("i_leftover_n6_next78_closed_tradition_hpq_abc", self.survey)
         self.assertEqual(
             STANDING_NEXT_CHEAP_LOCK,
             "cycle619_next78_reframed_closed_tradition_hpq_ge1_exact0_abc",
