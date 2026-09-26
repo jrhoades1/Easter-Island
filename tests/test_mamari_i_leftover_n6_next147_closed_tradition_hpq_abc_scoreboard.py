@@ -4996,14 +4996,14 @@ class TestMamariILeftoverN6Next147ClosedTraditionHpqAbcScoreboard(unittest.TestC
             self.assertEqual(hpq_tablets_hit(hits), 0)
             self.assertEqual(absent_hit_sum(hits), 0)
             self.assertIn(index, STANDING_INCOMPLETE_INDEXES)
-        self.assertTrue(STANDING_NEXT147_ALL_EXTEND)
+        self.assertTrue(STANDING_NEXT146_ALL_EXTEND)
         for n146, n147, site146, site147 in zip(
             CYCLE979_SEQUENCES, STANDING_SEQUENCES, CYCLE979_SITES, STANDING_SITES, strict=True
         ):
             self.assertEqual(n147[:146], n146)
             self.assertEqual(len(n147), 147)
             self.assertEqual(site147, site146)
-        still = self.rows[STANDING_NEXT147_HAPAX_STILL_HAPAX[0]]
+        still = self.rows[STANDING_NEXT146_HAPAX_STILL_HAPAX[0]]
         self.assertEqual(
             still.tokens,
             (
@@ -5244,10 +5244,10 @@ class TestMamariILeftoverN6Next147ClosedTraditionHpqAbcScoreboard(unittest.TestC
         self.assertFalse(CYCLE759_ALL_I_ONLY_CLAIM)
         self.assertEqual(CYCLE759_N_I_ONLY, 6)
         self.assertEqual(CYCLE759_N_LEAK, 0)
-        self.assertEqual(CYCLE759_N_WITH_NEXT147, 6)
-        self.assertEqual(CYCLE759_N_NO_NEXT147, 12)
+        self.assertEqual(CYCLE759_N_WITH_NEXT148, 6)
+        self.assertEqual(CYCLE759_N_NO_NEXT148, 12)
         self.assertEqual(
-            CYCLE759_NO_NEXT147_SITES,
+            CYCLE759_NO_NEXT148_SITES,
             (
                 ("Ia", "Ia1", 63),
                 ("Ia", "Ia1", 62),
