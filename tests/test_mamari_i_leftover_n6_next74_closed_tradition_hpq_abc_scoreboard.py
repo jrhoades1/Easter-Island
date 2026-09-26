@@ -1,42 +1,42 @@
-"""Reframed closed-tradition hold-out of the locked leftover-6 next-73 grams.
+"""Reframed closed-tradition hold-out of the locked leftover-6 next-74 grams.
 
-Cycle 906 text-search lock. Uses already-vendored A–V and the
-cycle-609 leftover n=6 remaining remaining-after-090-076
+Cycle 907 text-search lock. Uses already-vendored A–V and the
+cycle-611 leftover n=6 remaining remaining-after-090-076
 remaining-after-430-076 remaining-after-076-020 remaining-
-after-076-010 next 73-grams (12 sequences; parent N=18; six
+after-076-010 next 74-grams (12 sequences; parent N=18; six
 holes at Ia10[144], Ia10[143], Ia10[142], Ia8[167], Ia8[166],
 and Ia8[165]). HEAD-check: that gram list exists and is not yet
-locked under this reframed rule. Cycle 609 already locked the
-I-only claim on these 73-grams as incomplete-set LOSE
-(N_with_next73=12, N_no_next73=6, N_i_only=12, N_leak=0). Cycle
-905 already locked the reframed claim on the cycle-607 next-72
+locked under this reframed rule. Cycle 611 already locked the
+I-only claim on these 74-grams as incomplete-set LOSE
+(N_with_next74=12, N_no_next74=6, N_i_only=12, N_leak=0). Cycle
+906 already locked the reframed claim on the cycle-609 next-73
 grams as incomplete-set LOSE. This cycle does not re-lock either
-claim, and does not re-lock Cycles 832–905.
+claim, and does not re-lock Cycles 832–906.
 
-Claim that can lose: each existing next-73 gram is an exact
+Claim that can lose: each existing next-74 gram is an exact
 contiguous hit on ≥1 of H/P/Q and exact-0 on A/B/C. hits_I is
 recorded and is not a leak. HOLD needs that claim true for a
 complete population with zero A/B/C leak. Leak onto A/B/C is
 leak LOSE. An empty H/P/Q hit set, or a parent set that still
 has a hole, is incomplete-set LOSE.
 
-Named claim: cycle609_next73_reframed_closed_tradition_hpq_ge1_exact0_abc.
+Named claim: cycle611_next74_reframed_closed_tradition_hpq_ge1_exact0_abc.
 
-Measured on the 12 with-next73 grams: N=12, N_hpq_ge1=0,
+Measured on the 12 with-next74 grams: N=12, N_hpq_ge1=0,
 N_hpq_ge2=0, N_exact0_abc=12, N_i_ge1=12, N_exact0_i=0,
-N_leak=0, N_hold=0, hits_I=12. Parent N=18, N_with_next73=12,
-N_no_next73=6 (Ia10[144], Ia10[143], Ia10[142], Ia8[167],
+N_leak=0, N_hold=0, hits_I=12. Parent N=18, N_with_next74=12,
+N_no_next74=6 (Ia10[144], Ia10[143], Ia10[142], Ia8[167],
 Ia8[166], Ia8[165]). Every scored gram is exact-0 on H/P/Q and
-on A/B/C and an exact contiguous hit once on I. The next-72 hapax
+on A/B/C and an exact contiguous hit once on I. The next-73 hapax
 604 076 071 600 999 050 076 000 002 999 076 092 535 999 208 076 532 244 999
 090 076 057 600 700 076 076 053 177 700 076 057 741 430 076 532 200 059 076
 074 379 002 076 244 280 001 076 532 071 065 071 999 700 076 480 600 005 076
-420 519 999 006 076 073 430 076 006 006 040 999 002 076 240 at Ia9[9] extends
+420 519 999 006 076 073 430 076 006 006 040 999 002 076 240 382 at Ia9[9] extends
 to 604 076 071 600 999 050 076 000 002 999 076 092 535 999 208 076 532 244 999
 090 076 057 600 700 076 076 053 177 700 076 057 741 430 076 532 200 059 076
 074 379 002 076 244 280 001 076 532 071 065 071 999 700 076 480 600 005 076
-420 519 999 006 076 073 430 076 006 006 040 999 002 076 240 382 at Ia9[9]
-and hits I once. All twelve next-72 grams extend; no new hole.
+420 519 999 006 076 073 430 076 006 006 040 999 002 076 240 382 999 at Ia9[9]
+and hits I once. All twelve next-73 grams extend; no new hole.
 Verdict: incomplete-set LOSE.
 
 Does not vendor a new tablet. Does not scrape X. W has no
@@ -45,8 +45,8 @@ next/prev window peels (next-side exhausted at cycle 831;
 prev-side eighteen-hole 0/18 since cycle 800). Leftover-6
 prev-1 has no locked gram list; do not invent that peel.
 Do not launch leftover-6 previous 10-grams, leftover 10-grams,
-next 73-grams as a peel, next 74-grams as a peel, prev-184, or
-next-185. The cycle-611 next-74 I-only list stays the named
+next 74-grams as a peel, next 75-grams as a peel, prev-184, or
+next-185. The cycle-613 next-75 I-only list stays the named
 next lock and is not re-scored. Raw stems. No invented Barthel.
 No G00n→Barthel map. No type merge. No detector retune. No CV.
 No new agents. Not a meaning dictionary.
@@ -690,25 +690,22 @@ from tests.test_mamari_i_leftover_n6_next72_closed_tradition_hpq_abc_scoreboard 
     STANDING_SITES as CYCLE905_SITES,
     STANDING_VERDICT as CYCLE905_VERDICT,
 )
-from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next73_i_only_scoreboard import (
-    HYPOTHESIS_ALL_I_ONLY as CYCLE609_HYPOTHESIS_ALL_I_ONLY,
-    STANDING_I_LEFTOVER_N6_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_NEXT73_I_ONLY as CYCLE609_ALL_I_ONLY_CLAIM,
-    STANDING_LEFTOVER_MATCHING_NEXT73_SITES as CYCLE609_SITES,
-    STANDING_N as CYCLE609_N,
-    STANDING_N_I_EACH as CYCLE609_N_I_EACH,
-    STANDING_N_I_ONLY as CYCLE609_N_I_ONLY,
-    STANDING_N_LEAK as CYCLE609_N_LEAK,
-    STANDING_N_NO_NEXT73 as CYCLE609_N_NO_NEXT73,
-    STANDING_N_SEQUENCES as CYCLE609_N_SEQUENCES,
-    STANDING_N_WITH_NEXT73 as CYCLE609_N_WITH_NEXT73,
-    STANDING_NO_NEXT73_SITES as CYCLE609_NO_NEXT73_SITES,
-    STANDING_RESULT as CYCLE609_RESULT,
-    STANDING_SEQUENCES as CYCLE609_SEQUENCES,
+from tests.test_mamari_i_leftover_n6_next73_closed_tradition_hpq_abc_scoreboard import (
+    STANDING_HITS_I as CYCLE906_HITS_I,
+    STANDING_N_HOLD as CYCLE906_N_HOLD,
+    STANDING_N_LEAK as CYCLE906_N_LEAK,
+    STANDING_NO_NEXT73_SITES as CYCLE906_NO_NEXT73_SITES,
+    STANDING_RESULT as CYCLE906_RESULT,
+    STANDING_SEQUENCES as CYCLE906_SEQUENCES,
+    STANDING_SITES as CYCLE906_SITES,
+    STANDING_VERDICT as CYCLE906_VERDICT,
 )
 from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next74_i_only_scoreboard import (
     HYPOTHESIS_ALL_I_ONLY as CYCLE611_HYPOTHESIS_ALL_I_ONLY,
     STANDING_I_LEFTOVER_N6_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_NEXT74_I_ONLY as CYCLE611_ALL_I_ONLY_CLAIM,
+    STANDING_LEFTOVER_MATCHING_NEXT74_SITES as CYCLE611_SITES,
     STANDING_N as CYCLE611_N,
+    STANDING_N_I_EACH as CYCLE611_N_I_EACH,
     STANDING_N_I_ONLY as CYCLE611_N_I_ONLY,
     STANDING_N_LEAK as CYCLE611_N_LEAK,
     STANDING_N_NO_NEXT74 as CYCLE611_N_NO_NEXT74,
@@ -718,19 +715,32 @@ from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430
     STANDING_RESULT as CYCLE611_RESULT,
     STANDING_SEQUENCES as CYCLE611_SEQUENCES,
 )
+from tests.test_mamari_i_leftover_n6_remaining_after_090_076_remaining_after_430_076_remaining_after_076_020_remaining_after_076_010_next75_i_only_scoreboard import (
+    HYPOTHESIS_ALL_I_ONLY as CYCLE613_HYPOTHESIS_ALL_I_ONLY,
+    STANDING_I_LEFTOVER_N6_REMAINING_AFTER_090_076_REMAINING_AFTER_430_076_REMAINING_AFTER_076_020_REMAINING_AFTER_076_010_NEXT75_I_ONLY as CYCLE613_ALL_I_ONLY_CLAIM,
+    STANDING_N as CYCLE613_N,
+    STANDING_N_I_ONLY as CYCLE613_N_I_ONLY,
+    STANDING_N_LEAK as CYCLE613_N_LEAK,
+    STANDING_N_NO_NEXT75 as CYCLE613_N_NO_NEXT75,
+    STANDING_N_SEQUENCES as CYCLE613_N_SEQUENCES,
+    STANDING_N_WITH_NEXT75 as CYCLE613_N_WITH_NEXT75,
+    STANDING_NO_NEXT75_SITES as CYCLE613_NO_NEXT75_SITES,
+    STANDING_RESULT as CYCLE613_RESULT,
+    STANDING_SEQUENCES as CYCLE613_SEQUENCES,
+)
 from tests.test_mamari_second_passage_scoreboard import load_corpus_survey
 
 
 STANDING_N = 12
 STANDING_N_PARENT = 18
-STANDING_N_WITH_NEXT73 = 12
-STANDING_N_NO_NEXT73 = 6
-STANDING_NO_NEXT73_SITES = CYCLE609_NO_NEXT73_SITES
+STANDING_N_WITH_NEXT74 = 12
+STANDING_N_NO_NEXT74 = 6
+STANDING_NO_NEXT74_SITES = CYCLE611_NO_NEXT74_SITES
 STANDING_PARENT_COMPLETE = False
 STANDING_HITS_EACH = (0, 0, 0, 0, 0, 0, 1)
 STANDING_HITS = (STANDING_HITS_EACH,) * STANDING_N
-STANDING_SITES = CYCLE609_SITES
-STANDING_SEQUENCES = CYCLE609_SEQUENCES
+STANDING_SITES = CYCLE611_SITES
+STANDING_SEQUENCES = CYCLE611_SEQUENCES
 STANDING_N_HPQ_GE1 = 0
 STANDING_N_HPQ_GE2 = 0
 STANDING_N_EXACT0_ABC = 12
@@ -741,8 +751,8 @@ STANDING_N_HOLD = 0
 STANDING_HOLD_INDEXES = ()
 STANDING_INCOMPLETE_INDEXES = tuple(range(STANDING_N))
 STANDING_I_GT1_INDEXES = ()
-STANDING_NEXT72_HAPAX_STILL_HAPAX = (3,)
-STANDING_NEXT72_ALL_EXTEND = True
+STANDING_NEXT73_HAPAX_STILL_HAPAX = (3,)
+STANDING_NEXT73_ALL_EXTEND = True
 STANDING_HITS_H = 0
 STANDING_HITS_P = 0
 STANDING_HITS_Q = 0
@@ -752,12 +762,12 @@ STANDING_HITS_C = 0
 STANDING_HITS_I = 12
 STANDING_VERDICT = "incomplete-set LOSE"
 STANDING_CLAIM_HOLDS = False
-STANDING_CLAIM = "leftover6_next73_reframed_closed_tradition_hpq_ge1_and_exact0_abc"
-STANDING_RESULT = "i_leftover_n6_next73_closed_tradition_hpq_abc"
+STANDING_CLAIM = "leftover6_next74_reframed_closed_tradition_hpq_ge1_and_exact0_abc"
+STANDING_RESULT = "i_leftover_n6_next74_closed_tradition_hpq_abc"
 STANDING_AXIS = "closed-tradition-reframed"
-STANDING_FROM_CYCLE = 609
+STANDING_FROM_CYCLE = 611
 STANDING_I_ONLY_ALREADY_LOCKED = True
-STANDING_I_ONLY_CYCLE = 609
+STANDING_I_ONLY_CYCLE = 611
 STANDING_PARENT_I_LOCAL_CYCLE = 457
 STANDING_NEXT1_REFRAMED_CYCLE = 834
 STANDING_NEXT2_REFRAMED_CYCLE = 835
@@ -831,6 +841,7 @@ STANDING_NEXT69_REFRAMED_CYCLE = 902
 STANDING_NEXT70_REFRAMED_CYCLE = 903
 STANDING_NEXT71_REFRAMED_CYCLE = 904
 STANDING_NEXT72_REFRAMED_CYCLE = 905
+STANDING_NEXT73_REFRAMED_CYCLE = 906
 STANDING_DO_NOT_RELOCK_I_ONLY = True
 STANDING_DO_NOT_RELOCK_PARENT_I_LOCAL = True
 STANDING_DO_NOT_RELOCK_NEXT1_REFRAMED = True
@@ -905,7 +916,8 @@ STANDING_DO_NOT_RELOCK_NEXT69_REFRAMED = True
 STANDING_DO_NOT_RELOCK_NEXT70_REFRAMED = True
 STANDING_DO_NOT_RELOCK_NEXT71_REFRAMED = True
 STANDING_DO_NOT_RELOCK_NEXT72_REFRAMED = True
-STANDING_DO_NOT_RELOCK_CYCLES_832_905 = True
+STANDING_DO_NOT_RELOCK_NEXT73_REFRAMED = True
+STANDING_DO_NOT_RELOCK_CYCLES_832_906 = True
 STANDING_WINDOW_PEELS_CLOSED = True
 STANDING_PREV1_GRAM_LIST_ABSENT = True
 STANDING_DO_NOT_LAUNCH_PREV1_PEEL = True
@@ -973,6 +985,7 @@ STANDING_DO_NOT_LAUNCH_NEXT71 = True
 STANDING_DO_NOT_LAUNCH_NEXT72 = True
 STANDING_DO_NOT_LAUNCH_NEXT73 = True
 STANDING_DO_NOT_LAUNCH_NEXT74 = True
+STANDING_DO_NOT_LAUNCH_NEXT75 = True
 STANDING_DO_NOT_LAUNCH_PREV184 = True
 STANDING_DO_NOT_LAUNCH_NEXT185 = True
 STANDING_NEW_TABLET = False
@@ -1136,8 +1149,11 @@ STANDING_NAMED_BY_CYCLE904 = (
 STANDING_NAMED_BY_CYCLE905 = (
     "cycle609_next73_reframed_closed_tradition_hpq_ge1_exact0_abc"
 )
-STANDING_NEXT_CHEAP_LOCK = (
+STANDING_NAMED_BY_CYCLE906 = (
     "cycle611_next74_reframed_closed_tradition_hpq_ge1_exact0_abc"
+)
+STANDING_NEXT_CHEAP_LOCK = (
+    "cycle613_next75_reframed_closed_tradition_hpq_ge1_exact0_abc"
 )
 
 STANDING_ORDER_ALREADY_LOCKED = (
@@ -1156,8 +1172,8 @@ STANDING_INVENTORY_ALREADY_LOCKED = (
 
 
 
-class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCase):
-    """Cycle 906 reframed closed-tradition lock on the cycle-609 next-73 population."""
+class TestMamariILeftoverN6Next74ClosedTraditionHpqAbcScoreboard(unittest.TestCase):
+    """Cycle 907 reframed closed-tradition lock on the cycle-611 next-74 population."""
 
     @classmethod
     def setUpClass(cls):
@@ -1175,19 +1191,19 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.provider = MockProvider()
 
 
-    def test_population_is_the_locked_cycle_609_next73_grams(self):
-        """Twelve next-73 sequences and sites come from cycle 609. None invented."""
+    def test_population_is_the_locked_cycle_611_next74_grams(self):
+        """Twelve next-74 sequences and sites come from cycle 611. None invented."""
         self.assertEqual(len(STANDING_SEQUENCES), STANDING_N)
         self.assertEqual(len(STANDING_SITES), STANDING_N)
-        self.assertEqual(STANDING_SEQUENCES, CYCLE609_SEQUENCES)
-        self.assertEqual(STANDING_SITES, CYCLE609_SITES)
-        self.assertEqual(CYCLE609_N, STANDING_N_PARENT)
-        self.assertEqual(CYCLE609_N, 18)
-        self.assertEqual(CYCLE609_N_SEQUENCES, 12)
-        self.assertEqual(STANDING_N_WITH_NEXT73, CYCLE609_N_WITH_NEXT73)
-        self.assertEqual(STANDING_N_NO_NEXT73, CYCLE609_N_NO_NEXT73)
+        self.assertEqual(STANDING_SEQUENCES, CYCLE611_SEQUENCES)
+        self.assertEqual(STANDING_SITES, CYCLE611_SITES)
+        self.assertEqual(CYCLE611_N, STANDING_N_PARENT)
+        self.assertEqual(CYCLE611_N, 18)
+        self.assertEqual(CYCLE611_N_SEQUENCES, 12)
+        self.assertEqual(STANDING_N_WITH_NEXT74, CYCLE611_N_WITH_NEXT74)
+        self.assertEqual(STANDING_N_NO_NEXT74, CYCLE611_N_NO_NEXT74)
         self.assertEqual(
-            STANDING_NO_NEXT73_SITES,
+            STANDING_NO_NEXT74_SITES,
             (
                 ("Ia", "Ia10", 144),
                 ("Ia", "Ia10", 143),
@@ -1197,43 +1213,43 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
                 ("Ia", "Ia8", 165),
             ),
         )
-        self.assertEqual(STANDING_NO_NEXT73_SITES, CYCLE905_NO_NEXT72_SITES)
+        self.assertEqual(STANDING_NO_NEXT74_SITES, CYCLE906_NO_NEXT73_SITES)
         self.assertFalse(STANDING_PARENT_COMPLETE)
-        self.assertTrue(CYCLE609_HYPOTHESIS_ALL_I_ONLY)
-        self.assertFalse(CYCLE609_ALL_I_ONLY_CLAIM)
-        self.assertEqual(CYCLE609_N_I_ONLY, 12)
-        self.assertEqual(CYCLE609_N_LEAK, 0)
-        self.assertEqual(STANDING_FROM_CYCLE, 609)
+        self.assertTrue(CYCLE611_HYPOTHESIS_ALL_I_ONLY)
+        self.assertFalse(CYCLE611_ALL_I_ONLY_CLAIM)
+        self.assertEqual(CYCLE611_N_I_ONLY, 12)
+        self.assertEqual(CYCLE611_N_LEAK, 0)
+        self.assertEqual(STANDING_FROM_CYCLE, 611)
         self.assertEqual(len(self.rows), 12)
         for row, tokens, site in zip(self.rows, STANDING_SEQUENCES, STANDING_SITES, strict=True):
             self.assertEqual(row.tokens, tokens)
             self.assertEqual(row.site, site)
-            self.assertEqual(len(row.tokens), 73)
-        prior = self.survey[CYCLE609_RESULT]
+            self.assertEqual(len(row.tokens), 74)
+        prior = self.survey[CYCLE611_RESULT]
         all_i_only_key = (
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_"
-            "remaining_after_076_020_remaining_after_076_010_next_73grams_all_i_only"
+            "remaining_after_076_020_remaining_after_076_010_next_74grams_all_i_only"
         )
-        self.assertEqual(CYCLE609_RESULT, (
+        self.assertEqual(CYCLE611_RESULT, (
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_"
-            "remaining_after_076_020_remaining_after_076_010_next73_i_only"
+            "remaining_after_076_020_remaining_after_076_010_next74_i_only"
         ))
-        self.assertEqual(prior["cycle"], 609)
+        self.assertEqual(prior["cycle"], 611)
         self.assertEqual(prior["N"], 18)
         self.assertEqual(prior["N_sequences"], 12)
         self.assertEqual(prior["N_6grams"], 18)
         self.assertTrue(prior["hypothesis_all_i_only"])
         self.assertFalse(prior[all_i_only_key])
-        self.assertFalse(prior[CYCLE609_RESULT])
+        self.assertFalse(prior[CYCLE611_RESULT])
         self.assertEqual(prior["N_i_only"], 12)
         self.assertEqual(prior["N_leak"], 0)
-        self.assertEqual(prior["N_no_next73"], 6)
-        self.assertEqual(prior["N_with_next73"], 12)
-        self.assertNotIn(STANDING_NAMED_BY_CYCLE905, self.survey)
+        self.assertEqual(prior["N_no_next74"], 6)
+        self.assertEqual(prior["N_with_next74"], 12)
+        self.assertNotIn(STANDING_NAMED_BY_CYCLE906, self.survey)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_prior_locks_stay_locked(self):
-        """Do not re-lock cycle 609 I-only or the cycle 832–905 boards."""
+        """Do not re-lock cycle 611 I-only or the cycle 832–906 boards."""
         parent = self.survey[CYCLE457_RESULT]
         self.assertEqual(parent["cycle"], STANDING_PARENT_I_LOCAL_CYCLE)
         self.assertTrue(parent["hypothesis_all_i_only"])
@@ -1242,7 +1258,7 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertTrue(STANDING_DO_NOT_RELOCK_PARENT_I_LOCAL)
         self.assertTrue(STANDING_I_ONLY_ALREADY_LOCKED)
         self.assertTrue(STANDING_DO_NOT_RELOCK_I_ONLY)
-        self.assertEqual(STANDING_I_ONLY_CYCLE, 609)
+        self.assertEqual(STANDING_I_ONLY_CYCLE, 611)
         self.assertFalse(STANDING_I_IN_ABSENT_SET)
         self.assertEqual(ABSENT_TABLETS, ("A", "B", "C"))
         cycle489 = self.survey[CYCLE489_RESULT]
@@ -2412,7 +2428,24 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(next72["next_cheap_lock"], STANDING_NAMED_BY_CYCLE905)
         self.assertNotIn(STANDING_NAMED_BY_CYCLE905, self.survey)
         self.assertTrue(STANDING_DO_NOT_RELOCK_NEXT72_REFRAMED)
-        self.assertTrue(STANDING_DO_NOT_RELOCK_CYCLES_832_905)
+        next73 = self.survey[CYCLE906_RESULT]
+        self.assertEqual(next73["cycle"], STANDING_NEXT73_REFRAMED_CYCLE)
+        self.assertEqual(next73["verdict"], CYCLE906_VERDICT)
+        self.assertEqual(next73["verdict"], "incomplete-set LOSE")
+        self.assertEqual(next73["N_hold"], CYCLE906_N_HOLD)
+        self.assertEqual(next73["N_hold"], 0)
+        self.assertEqual(next73["N_leak"], CYCLE906_N_LEAK)
+        self.assertEqual(next73["N_leak"], 0)
+        self.assertEqual(next73["hits_I"], CYCLE906_HITS_I)
+        self.assertEqual(next73["hits_I"], 12)
+        self.assertEqual(next73["N_hpq_ge1"], 0)
+        self.assertEqual(next73["N_exact0_abc"], 12)
+        self.assertEqual(next73["N_with_next73"], 12)
+        self.assertEqual(next73["N_no_next73"], 6)
+        self.assertEqual(next73["next_cheap_lock"], STANDING_NAMED_BY_CYCLE906)
+        self.assertNotIn(STANDING_NAMED_BY_CYCLE906, self.survey)
+        self.assertTrue(STANDING_DO_NOT_RELOCK_NEXT73_REFRAMED)
+        self.assertTrue(STANDING_DO_NOT_RELOCK_CYCLES_832_906)
         self.assertEqual(self.provider.get_call_history(), [])
 
     def test_measured_table_is_incomplete_set_lose(self):
@@ -2436,8 +2469,8 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(self.summary["N_leak"], 0)
         self.assertEqual(self.summary["N_hold"], 0)
         self.assertEqual(self.summary["hits_I"], 12)
-        self.assertEqual(tuple(row.hits[-1] for row in self.rows), CYCLE609_N_I_EACH)
-        self.assertEqual(CYCLE609_N_I_EACH, (1,) * STANDING_N)
+        self.assertEqual(tuple(row.hits[-1] for row in self.rows), CYCLE611_N_I_EACH)
+        self.assertEqual(CYCLE611_N_I_EACH, (1,) * STANDING_N)
         for index, row in enumerate(self.rows):
             self.assertEqual(row.hits, STANDING_HITS[index])
             hits = row.as_map()
@@ -2453,13 +2486,13 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
             self.assertEqual(hpq_tablets_hit(hits), 0)
             self.assertEqual(absent_hit_sum(hits), 0)
             self.assertIn(index, STANDING_INCOMPLETE_INDEXES)
-        self.assertTrue(STANDING_NEXT72_ALL_EXTEND)
-        for n72, n73, site72, site73 in zip(
-            CYCLE905_SEQUENCES, STANDING_SEQUENCES, CYCLE905_SITES, STANDING_SITES, strict=True
+        self.assertTrue(STANDING_NEXT73_ALL_EXTEND)
+        for n73, n74, site73, site74 in zip(
+            CYCLE906_SEQUENCES, STANDING_SEQUENCES, CYCLE906_SITES, STANDING_SITES, strict=True
         ):
-            self.assertEqual(n73[:72], n72)
-            self.assertEqual(site73, site72)
-        still = self.rows[STANDING_NEXT72_HAPAX_STILL_HAPAX[0]]
+            self.assertEqual(n74[:73], n73)
+            self.assertEqual(site74, site73)
+        still = self.rows[STANDING_NEXT73_HAPAX_STILL_HAPAX[0]]
         self.assertEqual(
             still.tokens,
             (
@@ -2481,12 +2514,13 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
                 "076",
                 "240",
                 "382",
+                "999",
             )
         )
         self.assertEqual(still.site, ("Ia", "Ia9", 9))
         self.assertEqual(still.as_map()["I"], 1)
-        self.assertEqual(still.tokens[:72], CYCLE905_SEQUENCES[3])
-        self.assertEqual(CYCLE905_SITES[3], ("Ia", "Ia9", 9))
+        self.assertEqual(still.tokens[:73], CYCLE906_SEQUENCES[3])
+        self.assertEqual(CYCLE906_SITES[3], ("Ia", "Ia9", 9))
         dropped_tokens = CYCLE840_SEQUENCES[CYCLE841_NEXT7_DROPPED_INDEX]
         dropped_site = CYCLE840_SITES[CYCLE841_NEXT7_DROPPED_INDEX]
         self.assertEqual(
@@ -2495,12 +2529,12 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         )
         self.assertEqual(dropped_site, ("Ia", "Ia8", 171))
         self.assertFalse(any(tokens[:7] == dropped_tokens for tokens in STANDING_SEQUENCES))
-        self.assertIn(("Ia", "Ia10", 144), STANDING_NO_NEXT73_SITES)
-        self.assertIn(("Ia", "Ia10", 143), STANDING_NO_NEXT73_SITES)
-        self.assertIn(("Ia", "Ia10", 142), STANDING_NO_NEXT73_SITES)
-        self.assertIn(("Ia", "Ia8", 167), STANDING_NO_NEXT73_SITES)
-        self.assertIn(("Ia", "Ia8", 166), STANDING_NO_NEXT73_SITES)
-        self.assertIn(("Ia", "Ia8", 165), STANDING_NO_NEXT73_SITES)
+        self.assertIn(("Ia", "Ia10", 144), STANDING_NO_NEXT74_SITES)
+        self.assertIn(("Ia", "Ia10", 143), STANDING_NO_NEXT74_SITES)
+        self.assertIn(("Ia", "Ia10", 142), STANDING_NO_NEXT74_SITES)
+        self.assertIn(("Ia", "Ia8", 167), STANDING_NO_NEXT74_SITES)
+        self.assertIn(("Ia", "Ia8", 166), STANDING_NO_NEXT74_SITES)
+        self.assertIn(("Ia", "Ia8", 165), STANDING_NO_NEXT74_SITES)
         self.assertEqual(STANDING_HOLD_INDEXES, ())
         self.assertEqual(STANDING_I_GT1_INDEXES, ())
         self.assertEqual(len(STANDING_INCOMPLETE_INDEXES), STANDING_N)
@@ -2508,7 +2542,7 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(self.verdict, "incomplete-set LOSE")
         self.assertFalse(STANDING_CLAIM_HOLDS)
         self.assertFalse(STANDING_PARENT_COMPLETE)
-        self.assertEqual(STANDING_N_NO_NEXT73, 6)
+        self.assertEqual(STANDING_N_NO_NEXT74, 6)
         self.assertEqual(STANDING_AXIS, "closed-tradition-reframed")
         self.assertEqual(MIN_HPQ_TABLETS, 1)
         self.assertEqual(PROBE_TABLETS, HPQ_TABLETS + ABSENT_TABLETS + ("I",))
@@ -2595,25 +2629,26 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertTrue(STANDING_DO_NOT_LAUNCH_NEXT72)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_NEXT73)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_NEXT74)
+        self.assertTrue(STANDING_DO_NOT_LAUNCH_NEXT75)
         self.assertTrue(STANDING_PREV1_GRAM_LIST_ABSENT)
         self.assertTrue(STANDING_DO_NOT_LAUNCH_PREV1_PEEL)
         self.assertFalse(PREV1_N6_SCOREBOARD.exists())
         self.assertEqual(self.provider.get_call_history(), [])
 
-    def test_next_cheap_lock_is_the_locked_cycle_611_next74_list(self):
-        """Cycle 611 next-74 I-only list stays locked. The claim name is not a survey key."""
-        self.assertEqual(CYCLE611_N, 18)
-        self.assertEqual(CYCLE611_N_SEQUENCES, 12)
-        self.assertEqual(len(CYCLE611_SEQUENCES), 12)
-        self.assertTrue(all(len(tokens) == 74 for tokens in CYCLE611_SEQUENCES))
-        self.assertTrue(CYCLE611_HYPOTHESIS_ALL_I_ONLY)
-        self.assertFalse(CYCLE611_ALL_I_ONLY_CLAIM)
-        self.assertEqual(CYCLE611_N_I_ONLY, 12)
-        self.assertEqual(CYCLE611_N_LEAK, 0)
-        self.assertEqual(CYCLE611_N_WITH_NEXT74, 12)
-        self.assertEqual(CYCLE611_N_NO_NEXT74, 6)
+    def test_next_cheap_lock_is_the_locked_cycle_613_next75_list(self):
+        """Cycle 613 next-75 I-only list stays locked. The claim name is not a survey key."""
+        self.assertEqual(CYCLE613_N, 18)
+        self.assertEqual(CYCLE613_N_SEQUENCES, 12)
+        self.assertEqual(len(CYCLE613_SEQUENCES), 12)
+        self.assertTrue(all(len(tokens) == 75 for tokens in CYCLE613_SEQUENCES))
+        self.assertTrue(CYCLE613_HYPOTHESIS_ALL_I_ONLY)
+        self.assertFalse(CYCLE613_ALL_I_ONLY_CLAIM)
+        self.assertEqual(CYCLE613_N_I_ONLY, 12)
+        self.assertEqual(CYCLE613_N_LEAK, 0)
+        self.assertEqual(CYCLE613_N_WITH_NEXT75, 12)
+        self.assertEqual(CYCLE613_N_NO_NEXT75, 6)
         self.assertEqual(
-            CYCLE611_NO_NEXT74_SITES,
+            CYCLE613_NO_NEXT75_SITES,
             (
                 ("Ia", "Ia10", 144),
                 ("Ia", "Ia10", 143),
@@ -2623,39 +2658,39 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
                 ("Ia", "Ia8", 165),
             ),
         )
-        prior = self.survey[CYCLE611_RESULT]
+        prior = self.survey[CYCLE613_RESULT]
         all_i_only_key = (
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_"
-            "remaining_after_076_020_remaining_after_076_010_next_74grams_all_i_only"
+            "remaining_after_076_020_remaining_after_076_010_next_75grams_all_i_only"
         )
-        self.assertEqual(CYCLE611_RESULT, (
+        self.assertEqual(CYCLE613_RESULT, (
             "i_leftover_n6_remaining_after_090_076_remaining_after_430_076_"
-            "remaining_after_076_020_remaining_after_076_010_next74_i_only"
+            "remaining_after_076_020_remaining_after_076_010_next75_i_only"
         ))
-        self.assertEqual(prior["cycle"], 611)
+        self.assertEqual(prior["cycle"], 613)
         self.assertEqual(prior["N"], 18)
         self.assertEqual(prior["N_sequences"], 12)
         self.assertEqual(prior["N_6grams"], 18)
         self.assertTrue(prior["hypothesis_all_i_only"])
         self.assertFalse(prior[all_i_only_key])
-        self.assertFalse(prior[CYCLE611_RESULT])
+        self.assertFalse(prior[CYCLE613_RESULT])
         self.assertEqual(prior["N_i_only"], 12)
         self.assertEqual(prior["N_leak"], 0)
-        self.assertEqual(prior["N_no_next74"], 6)
-        self.assertEqual(prior["N_with_next74"], 12)
+        self.assertEqual(prior["N_no_next75"], 6)
+        self.assertEqual(prior["N_with_next75"], 12)
         self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
-        self.assertIn("i_leftover_n6_next74_closed_tradition_hpq_abc", self.survey)
+        self.assertNotIn("i_leftover_n6_next75_closed_tradition_hpq_abc", self.survey)
         self.assertEqual(
             STANDING_NEXT_CHEAP_LOCK,
-            "cycle611_next74_reframed_closed_tradition_hpq_ge1_exact0_abc",
+            "cycle613_next75_reframed_closed_tradition_hpq_ge1_exact0_abc",
         )
         self.assertEqual(self.provider.get_call_history(), [])
 
 
     def test_survey_matches_computed_lock(self):
-        """CORPUS_SURVEY.json records the cycle-906 incomplete-set LOSE table."""
+        """CORPUS_SURVEY.json records the cycle-907 incomplete-set LOSE table."""
         lock = self.survey[STANDING_RESULT]
-        self.assertEqual(lock["cycle"], 906)
+        self.assertEqual(lock["cycle"], 907)
         self.assertEqual(lock["result"], STANDING_RESULT)
         self.assertEqual(lock["axis"], STANDING_AXIS)
         self.assertEqual(lock["claim"], STANDING_CLAIM)
@@ -2665,12 +2700,12 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(lock["claim_holds"], STANDING_CLAIM_HOLDS)
         self.assertEqual(lock["N"], self.summary["N"])
         self.assertEqual(lock["N_parent"], STANDING_N_PARENT)
-        self.assertEqual(lock["N_with_next73"], STANDING_N_WITH_NEXT73)
-        self.assertEqual(lock["N_no_next73"], STANDING_N_NO_NEXT73)
+        self.assertEqual(lock["N_with_next74"], STANDING_N_WITH_NEXT74)
+        self.assertEqual(lock["N_no_next74"], STANDING_N_NO_NEXT74)
         self.assertFalse(lock["parent_complete"])
         self.assertEqual(
-            tuple(tuple(site) for site in lock["no_next73_sites"]),
-            STANDING_NO_NEXT73_SITES,
+            tuple(tuple(site) for site in lock["no_next74_sites"]),
+            STANDING_NO_NEXT74_SITES,
         )
         self.assertEqual(lock["N_hpq_ge1"], self.summary["N_hpq_ge1"])
         self.assertEqual(lock["N_hpq_ge2"], self.summary["N_hpq_ge2"])
@@ -2839,7 +2874,9 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertTrue(lock["do_not_relock_next71_reframed"])
         self.assertEqual(lock["next72_reframed_cycle"], STANDING_NEXT72_REFRAMED_CYCLE)
         self.assertTrue(lock["do_not_relock_next72_reframed"])
-        self.assertTrue(lock["do_not_relock_cycles_832_905"])
+        self.assertEqual(lock["next73_reframed_cycle"], STANDING_NEXT73_REFRAMED_CYCLE)
+        self.assertTrue(lock["do_not_relock_next73_reframed"])
+        self.assertTrue(lock["do_not_relock_cycles_832_906"])
         self.assertTrue(lock["window_peels_closed"])
         self.assertTrue(lock["prev1_gram_list_absent"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev1"])
@@ -2907,6 +2944,7 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertTrue(lock["do_not_launch_leftover_n6_next72"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next73"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next74"])
+        self.assertTrue(lock["do_not_launch_leftover_n6_next75"])
         self.assertTrue(lock["do_not_launch_leftover_n6_prev184"])
         self.assertTrue(lock["do_not_launch_leftover_n6_next185"])
         self.assertEqual(lock["named_by_cycle872"], STANDING_NAMED_BY_CYCLE872)
@@ -2943,16 +2981,17 @@ class TestMamariILeftoverN6Next73ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(lock["named_by_cycle903"], STANDING_NAMED_BY_CYCLE903)
         self.assertEqual(lock["named_by_cycle904"], STANDING_NAMED_BY_CYCLE904)
         self.assertEqual(lock["named_by_cycle905"], STANDING_NAMED_BY_CYCLE905)
+        self.assertEqual(lock["named_by_cycle906"], STANDING_NAMED_BY_CYCLE906)
         self.assertEqual(lock["next_cheap_lock"], STANDING_NEXT_CHEAP_LOCK)
         self.assertEqual(tuple(lock["hold_indexes"]), STANDING_HOLD_INDEXES)
         self.assertEqual(tuple(lock["incomplete_indexes"]), STANDING_INCOMPLETE_INDEXES)
         self.assertEqual(tuple(lock["i_gt1_indexes"]), STANDING_I_GT1_INDEXES)
         self.assertEqual(
-            tuple(lock["next72_hapax_still_hapax"]),
-            STANDING_NEXT72_HAPAX_STILL_HAPAX,
+            tuple(lock["next73_hapax_still_hapax"]),
+            STANDING_NEXT73_HAPAX_STILL_HAPAX,
         )
-        self.assertTrue(lock["next72_all_extend"])
-        self.assertEqual(lock["next72_all_extend"], STANDING_NEXT72_ALL_EXTEND)
+        self.assertTrue(lock["next73_all_extend"])
+        self.assertEqual(lock["next73_all_extend"], STANDING_NEXT73_ALL_EXTEND)
         self.assertNotIn("leak_index", lock)
         self.assertNotIn(STANDING_NAMED_BY_CYCLE886, self.survey)
         self.assertNotIn(STANDING_NEXT_CHEAP_LOCK, self.survey)
