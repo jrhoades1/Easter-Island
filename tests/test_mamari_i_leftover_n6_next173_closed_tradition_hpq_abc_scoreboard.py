@@ -2782,8 +2782,8 @@ class TestMamariILeftoverN6Next173ClosedTraditionHpqAbcScoreboard(unittest.TestC
         self.assertEqual(CYCLE809_N, STANDING_N_PARENT)
         self.assertEqual(CYCLE809_N, 18)
         self.assertEqual(CYCLE809_N_SEQUENCES, 3)
-        self.assertEqual(STANDING_N_WITH_NEXT173, CYCLE809_N_WITH_NEXT172)
-        self.assertEqual(STANDING_N_NO_NEXT173, CYCLE809_N_NO_NEXT172)
+        self.assertEqual(STANDING_N_WITH_NEXT173, CYCLE809_N_WITH_NEXT173)
+        self.assertEqual(STANDING_N_NO_NEXT173, CYCLE809_N_NO_NEXT173)
         self.assertEqual(
             STANDING_NO_NEXT173_SITES,
             (
