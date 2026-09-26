@@ -744,7 +744,7 @@ from tests.test_mamari_i_leftover_n6_next78_closed_tradition_hpq_abc_scoreboard 
     STANDING_HITS_I as CYCLE911_HITS_I,
     STANDING_N_HOLD as CYCLE911_N_HOLD,
     STANDING_N_LEAK as CYCLE911_N_LEAK,
-    STANDING_NO_NEXT79_SITES as CYCLE911_NO_NEXT78_SITES,
+    STANDING_NO_NEXT78_SITES as CYCLE911_NO_NEXT78_SITES,
     STANDING_RESULT as CYCLE911_RESULT,
     STANDING_SEQUENCES as CYCLE911_SEQUENCES,
     STANDING_SITES as CYCLE911_SITES,
@@ -1282,8 +1282,8 @@ class TestMamariILeftoverN6Next79ClosedTraditionHpqAbcScoreboard(unittest.TestCa
         self.assertEqual(CYCLE621_N, STANDING_N_PARENT)
         self.assertEqual(CYCLE621_N, 18)
         self.assertEqual(CYCLE621_N_SEQUENCES, 12)
-        self.assertEqual(STANDING_N_WITH_NEXT79, CYCLE621_N_WITH_NEXT78)
-        self.assertEqual(STANDING_N_NO_NEXT79, CYCLE621_N_NO_NEXT78)
+        self.assertEqual(STANDING_N_WITH_NEXT79, CYCLE621_N_WITH_NEXT79)
+        self.assertEqual(STANDING_N_NO_NEXT79, CYCLE621_N_NO_NEXT79)
         self.assertEqual(
             STANDING_NO_NEXT79_SITES,
             (
