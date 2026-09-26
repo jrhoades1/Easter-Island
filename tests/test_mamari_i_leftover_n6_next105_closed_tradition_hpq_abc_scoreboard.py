@@ -3707,10 +3707,10 @@ class TestMamariILeftoverN6Next105ClosedTraditionHpqAbcScoreboard(unittest.TestC
         self.assertFalse(CYCLE675_ALL_I_ONLY_CLAIM)
         self.assertEqual(CYCLE675_N_I_ONLY, 12)
         self.assertEqual(CYCLE675_N_LEAK, 0)
-        self.assertEqual(CYCLE675_N_WITH_NEXT105, 12)
-        self.assertEqual(CYCLE675_N_NO_NEXT105, 6)
+        self.assertEqual(CYCLE675_N_WITH_NEXT106, 12)
+        self.assertEqual(CYCLE675_N_NO_NEXT106, 6)
         self.assertEqual(
-            CYCLE675_NO_NEXT105_SITES,
+            CYCLE675_NO_NEXT106_SITES,
             (
                 ("Ia", "Ia10", 144),
                 ("Ia", "Ia10", 143),
