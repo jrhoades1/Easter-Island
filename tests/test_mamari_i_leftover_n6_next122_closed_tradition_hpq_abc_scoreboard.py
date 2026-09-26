@@ -1935,7 +1935,7 @@ class TestMamariILeftoverN6Next122ClosedTraditionHpqAbcScoreboard(unittest.TestC
         self.assertFalse(CYCLE707_ALL_I_ONLY_CLAIM)
         self.assertEqual(CYCLE707_N_I_ONLY, 9)
         self.assertEqual(CYCLE707_N_LEAK, 0)
-        self.assertEqual(STANDING_FROM_CYCLE, 705)
+        self.assertEqual(STANDING_FROM_CYCLE, 707)
         self.assertEqual(len(self.rows), 9)
         for row, tokens, site in zip(self.rows, STANDING_SEQUENCES, STANDING_SITES, strict=True):
             self.assertEqual(row.tokens, tokens)
@@ -1974,7 +1974,7 @@ class TestMamariILeftoverN6Next122ClosedTraditionHpqAbcScoreboard(unittest.TestC
         self.assertTrue(STANDING_DO_NOT_RELOCK_PARENT_I_LOCAL)
         self.assertTrue(STANDING_I_ONLY_ALREADY_LOCKED)
         self.assertTrue(STANDING_DO_NOT_RELOCK_I_ONLY)
-        self.assertEqual(STANDING_I_ONLY_CYCLE, 705)
+        self.assertEqual(STANDING_I_ONLY_CYCLE, 707)
         self.assertFalse(STANDING_I_IN_ABSENT_SET)
         self.assertEqual(ABSENT_TABLETS, ("A", "B", "C"))
         cycle489 = self.survey[CYCLE489_RESULT]
