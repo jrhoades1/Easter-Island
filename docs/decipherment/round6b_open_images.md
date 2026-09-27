@@ -67,4 +67,23 @@ The other headline objects have no holder-stated CC0 or CC BY photograph at all.
 | Bird substitutions in that stretch | 2 | 2 |
 | Bird substitutions in the stored parallels | 18 | 18 |
 
+## Who to write to
+
+These lines were copied from the holders' own pages on 27 September 2026. Where a page prints `[at]`, the address below uses `@`.
+
+**Tablet O. Ethnologisches Museum, Staatliche Museen zu Berlin.**
+
+The scholarly-enquiries page labels the research desk and the photo archive. [Point of contact for research and scholarly inquiries](https://www.smb.museum/en/museums-institutions/ethnologisches-museum/about-us/point-of-contact-for-research-and-scholarly-inquiries/).
+
+- Research, printed as "General Research: em[at]smb.spk-berlin.de": `em@smb.spk-berlin.de`. The object page prints the same address with an at-sign, under "E-Mail". [obj-998513](https://search.smb.museum/object/obj-998513).
+- Photographs held by the museum, printed as "Photo Archive: photo-em[at]smb.spk-berlin.de": `photo-em@smb.spk-berlin.de`. Same scholarly-enquiries page.
+- Image rights and reproductions. The Staatliche Museen research-contact page does not give an email. It says: "For questions relating to image rights and reproductions of images, please visit the website of the Stiftung Preussischer Kulturbesitz’s Picture Agency (bpk-Bildagentur)." That link is [bpk-bildagentur.de](https://www.bpk-bildagentur.de/?LCID=2). Source: [Research: Contact](https://www.smb.museum/en/research/contact/).
+
+**Staff I and tablet G. Museo Nacional de Historia Natural, Santiago.**
+
+- Academic photographs, interviews, and recordings. The page says the letter is sent to the words `comunicaciones@mnhn.cl`. The link on those words is `mailto:comunicaciones.mnhn@mnhn.cl`. A separate "Emails" field on the same page is `comunicaciones@mnhn.gob.cl`. The page says access is only to the public areas of the museum. [Trabajos académicos en el MNHN](https://www.mnhn.gob.cl/servicios/trabajos-academicos-en-el-mnhn).
+- Research that needs the collections. Complete the sponsorship form and send it to `comunicaciones@mnhn.gob.cl`. The page says sponsorship can include access to collections. Page: [Obtener patrocinio del MNHN](https://www.mnhn.gob.cl/servicios/obtener-patrocinio-del-mnhn). Form: [Formulario solicitud de Patrocinio MNHN](https://www.mnhn.gob.cl/sites/www.mnhn.gob.cl/files/2021-05/articles-49177_archivo_01.doc).
+
+The anthropology page, which describes the Rapa Nui ethnographic collections, lists Julieta Elizaga as Curadora Jefe at `julieta.elizaga@mnhn.gob.cl`. [Antropología](https://www.mnhn.gob.cl/antropologia). The staff page lists the same role at `julieta.elizaga@mnhn.cl`. [Equipo](https://www.mnhn.gob.cl/equipo). Neither page says that image or research requests go to that address.
+
 The machine-readable record is `data/decipherment/round6b_open_images.json`.
