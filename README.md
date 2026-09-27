@@ -4,6 +4,8 @@ A computational approach to analyzing the undeciphered Rongorongo script of East
 
 > **Research Status**: This toolkit produces *hypothetical* mappings for scholarly exploration. Rongorongo remains undeciphered, and all outputs should be treated as research tools rather than definitive translations. How the scoreboard loop scales toward a first partial reading (and what not to scale) is in [docs/SCALE-TO-READING.md](docs/SCALE-TO-READING.md).
 
+A plain-English account of rounds 1–5, for readers outside this repository, is in [docs/decipherment/README.md](docs/decipherment/README.md).
+
 ---
 
 ## Table of Contents
