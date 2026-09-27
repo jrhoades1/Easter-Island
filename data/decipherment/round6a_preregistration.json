@@ -1,0 +1,1430 @@
+{
+  "track": "round6a",
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "readings_assigned": false,
+  "reading": null,
+  "images_fetched": false,
+  "transcription_updated": false,
+  "inscribe": {
+    "tablets": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "M",
+      "N"
+    ],
+    "source": "docs/round4e_image_sources.md",
+    "viewer": "https://www.inscribercproject.com/Rongorongo.php",
+    "rome_models": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "downsampled_vienna_meshes": [
+      "M",
+      "N"
+    ],
+    "tablets_with_a_model_and_no_logged_disagreement": [
+      "A",
+      "B",
+      "D",
+      "M",
+      "N"
+    ],
+    "statement": "The six models were not opened and were not copied into this repository. An INSCRIBE verdict may select a non-baseline code only for a disagreement whose tablets are all in this list."
+  },
+  "counting_rules": {
+    "delimiter_openers": [
+      "390"
+    ],
+    "star690_is_not_an_opener": "Guy's *690 keeps its asterisk and is not catalog 690. A delimiter still has to open on 390. Round 3 printed the gaps that remain if *690 is added to the opener set; this script does not add it.",
+    "parallel_match": "exact stem equality, the same rule as decipherment.track_c_parallels._column_counts",
+    "headline_passage": {
+      "id": "P001",
+      "section": "stem",
+      "left": "Hr2:36..Hr4:0",
+      "right": "Qr2:0..Qr3:65"
+    },
+    "bird_pair": "400–409 opposite 600–699, or the reverse, and the hundreds digits differ",
+    "gv6_phrase": "200, then a group without 200 or 076, then a group whose last stem is 076",
+    "gv6_handoff": "the father stems of one phrase are the child stems of the next phrase",
+    "staff": "a pure 999 group, then whether the next group contains 076",
+    "corpus_birds": "every stem passage in data/decipherment/substitution_classes.json"
+  },
+  "verdict_schema": {
+    "provider": "MockProvider",
+    "evidence": [
+      "inscribe",
+      "counterfactual",
+      "later_image"
+    ],
+    "image_note": "Required only when evidence is later_image. The script does not fetch it.",
+    "choices": "Object of disagreement id to alternative id. Omitted ids keep the baseline.",
+    "rejects": "Unknown ids, a non-baseline choice on a tablet outside the INSCRIBE list when evidence is inscribe, and any code that is not registered here."
+  },
+  "baseline": {
+    "calendar_040": 28,
+    "calendar_040_before_152": 13,
+    "calendar_040_after_152": 13,
+    "calendar_040_gaps": [
+      2,
+      6,
+      3,
+      2,
+      5,
+      3,
+      5
+    ],
+    "calendar_full_delimiters": 6,
+    "calendar_152": 1,
+    "calendar_143": 1,
+    "gv6_phrases": 4,
+    "gv6_handoffs": 3,
+    "staff_076_after_999": 91,
+    "staff_pure_999": 96,
+    "staff_076_after_999_rate": 0.9479166666666666,
+    "parallel_span": 125,
+    "parallel_matches": 107,
+    "parallel_mismatches": 16,
+    "parallel_bird_substitutions": 2,
+    "corpus_bird_substitutions": 18
+  },
+  "disagreement_ids_on_inscribe_tablets": [
+    "D01",
+    "D02",
+    "D03",
+    "D04"
+  ],
+  "disagreement_ids_outside_inscribe": [
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10",
+    "D11",
+    "D12"
+  ],
+  "disagreements": [
+    {
+      "id": "D01",
+      "passage": "Ca7",
+      "position": "the group after 152, one horizontal slot",
+      "repo_code": "600.390.041",
+      "tablets": [
+        "C"
+      ],
+      "inscribe_covered": true,
+      "baseline": "barthel_600_390_041",
+      "alternatives": [
+        {
+          "id": "barthel_600_390_041",
+          "sign_codes": "600.390.041",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "The calendar fixture keeps the group as three stems: 600, 390, 041."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "guy_1990_star690",
+          "sign_codes": "*690.041",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "Guy 1990",
+              "detail": "Guy calls the stack one sign, *690, and says catalog 690 is a different sign. Round 3 recorded the replacement as *690.041. The asterisk stays, so the stem is not catalog 690."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              7,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 5,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {
+            "calendar_040_gaps": {
+              "before": [
+                2,
+                6,
+                3,
+                2,
+                5,
+                3,
+                5
+              ],
+              "after": [
+                2,
+                6,
+                3,
+                7,
+                3,
+                5
+              ]
+            },
+            "calendar_full_delimiters": {
+              "before": 6,
+              "after": 5,
+              "by": -1
+            }
+          },
+          "other_passage_match_changes": [],
+          "matches_baseline": false
+        }
+      ],
+      "no_other_code": [
+        "The CEIPP outline shows 600 and 390 sharing one slot, with crescent 041 in the next slot. The outline does not print *690.",
+        "Horley 2011 and Pozdniakov do not renumber this group in the sources used in Round 3 and Round 5B."
+      ]
+    },
+    {
+      "id": "D02",
+      "passage": "Ca7",
+      "position": "the group 044.040, before 143 and 152",
+      "repo_code": "044.040",
+      "tablets": [
+        "C"
+      ],
+      "inscribe_covered": true,
+      "baseline": "barthel_044_040",
+      "alternatives": [
+        {
+          "id": "barthel_044_040",
+          "sign_codes": "044.040",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "The fixture token is 044.040. The crescent is the second piece."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "guy_1990_078_040",
+          "sign_codes": "078.040",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "Guy 1990",
+              "detail": "Guy proposes 078.040 and keeps the crescent. Round 3 adopted that pair as a published replacement of one group. Round 5B left the vendored code in place."
+            },
+            {
+              "name": "CEIPP outline",
+              "detail": "Round 5B: a non-crescent figure sits beside a tall crescent. The outline fits 044 or 078 and was not given a third number."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        }
+      ],
+      "no_other_code": [
+        "Horley and Pozdniakov do not supply a different number for this group in the sources already used."
+      ]
+    },
+    {
+      "id": "D03",
+      "passage": "Ca7 and Ca8",
+      "position": "the two signs coded 041h inside delimiter groups",
+      "repo_code": "041h",
+      "tablets": [
+        "C"
+      ],
+      "inscribe_covered": true,
+      "baseline": "barthel_041",
+      "alternatives": [
+        {
+          "id": "barthel_041",
+          "sign_codes": "041",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "041h stems to 041. One token sits in the Ca7 delimiter and one in the Ca8 delimiter."
+            },
+            {
+              "name": "Horley 2011",
+              "detail": "Horley says the two small superscript crescents have a paleographic explanation. He does not replace the Barthel number."
+            },
+            {
+              "name": "Guy 1990",
+              "detail": "Guy treats delimiter crescents as distinct from night crescents. The code stays 041."
+            },
+            {
+              "name": "Pozdniakov",
+              "detail": "No renumbering of these two signs is recorded in the sources already used."
+            },
+            {
+              "name": "CEIPP outline",
+              "detail": "Both outlines are short crescents. The check did not print a second catalog number."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        }
+      ],
+      "no_other_code": [
+        "No source used here names a second Barthel number. A scan verdict cannot relabel these crescents."
+      ]
+    },
+    {
+      "id": "D04",
+      "passage": "Ca7",
+      "position": "an extra path overlapping the first 378",
+      "repo_code": "378",
+      "tablets": [
+        "C"
+      ],
+      "inscribe_covered": true,
+      "baseline": "not_a_separate_sign",
+      "alternatives": [
+        {
+          "id": "not_a_separate_sign",
+          "sign_codes": "378",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "The delimiter token is 378. No extra group is stored between 041 and 378."
+            },
+            {
+              "name": "CEIPP vector edition",
+              "detail": "A narrow path labeled _ sits inside the horizontal span of 378. Round 5B did not treat it as a new slot."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        }
+      ],
+      "no_other_code": [
+        "No published correction inserts a sign at this slot. Fischer's reported extra glyph at the start of line 7 is a different claim and is not this path. That glyph was not given a number in the sources used here, so it is not a choice."
+      ]
+    },
+    {
+      "id": "D05",
+      "passage": "Hr3",
+      "position": "offset 37, parallel column with Qr3:17",
+      "repo_code": "064",
+      "tablets": [
+        "H"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_064",
+      "alternatives": [
+        {
+          "id": "barthel_064",
+          "sign_codes": "064",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "Hr3 offset 37 is 064. The same column on Q, Qr3 offset 17, is 064 in the vendored text and in the vector labels."
+            },
+            {
+              "name": "Pozdniakov 1996 and Guy 2006",
+              "detail": "Both describe 006 and 064 as alternating hands. Neither source corrects this column. The match rule remains exact stem equality."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "ceipp_outline_006",
+          "sign_codes": "006",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "CEIPP vector label",
+              "detail": "The vector label on this H outline is 006?, an uncertain hand. The replacement used here is 006. The question mark is the edition's uncertainty mark, not a third code."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 106,
+            "parallel_mismatches": 17,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {
+            "parallel_matches": {
+              "before": 107,
+              "after": 106,
+              "by": -1
+            },
+            "parallel_mismatches": {
+              "before": 16,
+              "after": 17,
+              "by": 1
+            }
+          },
+          "other_passage_match_changes": [
+            {
+              "id": "P007",
+              "label": "H–P",
+              "locus_left": "Hr3:15-57",
+              "locus_right": "Pr3:2-48",
+              "matches_before": 38,
+              "matches_after": 37,
+              "by": -1,
+              "headline": false
+            }
+          ],
+          "matches_baseline": false
+        }
+      ],
+      "no_other_code": [
+        "The hand-pair merge that maps every isolated 064 to 006 is a Round 2 inventory test. It is not applied to any other 064."
+      ]
+    },
+    {
+      "id": "D06",
+      "passage": "Hr3",
+      "position": "offsets 43-44",
+      "repo_code": "006 then 042",
+      "tablets": [
+        "H"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_006_then_042",
+      "alternatives": [
+        {
+          "id": "barthel_006_then_042",
+          "sign_codes": "006 then 042",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "Hr3 offsets 43 and 44 are 006 then 042. The parallel Q stems at Qr3 offsets 23 and 24 are the same pair in the same order."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "ceipp_vector_042_then_006",
+          "sign_codes": "042 then 006",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "CEIPP vector edition",
+              "detail": "The two outlines share one slot. The vector lists 042 then 006. Round 5B kept the vendored order. No published correction deletes either stem."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 105,
+            "parallel_mismatches": 18,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {
+            "parallel_matches": {
+              "before": 107,
+              "after": 105,
+              "by": -2
+            },
+            "parallel_mismatches": {
+              "before": 16,
+              "after": 18,
+              "by": 2
+            }
+          },
+          "other_passage_match_changes": [
+            {
+              "id": "P007",
+              "label": "H–P",
+              "locus_left": "Hr3:15-57",
+              "locus_right": "Pr3:2-48",
+              "matches_before": 38,
+              "matches_after": 37,
+              "by": -1,
+              "headline": false
+            }
+          ],
+          "matches_baseline": false
+        }
+      ],
+      "no_other_code": [
+        "Guy 1982 and Pozdniakov 1996 read stacks bottom to top. The allograph note records that convention and does not reorder. This recheck did not record which outline is the lower one, so that convention is not a third sequence.",
+        "Guy's equation of glyph 42 with glyph 40 is the stacked pair on Br1. It is not applied to this Hr3 pair."
+      ]
+    },
+    {
+      "id": "D07",
+      "passage": "Qr3",
+      "position": "the stacked pair inside the H/Q stretch",
+      "repo_code": "006 then 042",
+      "tablets": [
+        "Q"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_006_then_042",
+      "alternatives": [
+        {
+          "id": "barthel_006_then_042",
+          "sign_codes": "006 then 042",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "Qr3 offsets 23 and 24 are 006 then 042."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "ceipp_vector_042_then_006",
+          "sign_codes": "042 then 006",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "CEIPP vector edition",
+              "detail": "The outlines overlap, and the vector lists the short sign first: 042 then 006."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 105,
+            "parallel_mismatches": 18,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {
+            "parallel_matches": {
+              "before": 107,
+              "after": 105,
+              "by": -2
+            },
+            "parallel_mismatches": {
+              "before": 16,
+              "after": 18,
+              "by": 2
+            }
+          },
+          "other_passage_match_changes": [
+            {
+              "id": "P020",
+              "label": "P–Q",
+              "locus_left": "Pr3:14-45",
+              "locus_right": "Qr3:7-34",
+              "matches_before": 26,
+              "matches_after": 25,
+              "by": -1,
+              "headline": false
+            }
+          ],
+          "matches_baseline": false
+        }
+      ],
+      "no_other_code": [
+        "No published correction changes the pair. The same bottom-to-top note as on Hr3 adds no third sequence."
+      ]
+    },
+    {
+      "id": "D08",
+      "passage": "Hr2:66 / Qr2:30 and Hr3:26 / Qr3:6",
+      "position": "the two bird-substitution columns in the Great Tradition stretch",
+      "repo_code": "600 opposite 400, and 607 opposite 407",
+      "tablets": [
+        "H",
+        "Q"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_and_ceipp_labels",
+      "alternatives": [
+        {
+          "id": "barthel_and_ceipp_labels",
+          "sign_codes": "600 opposite 400, and 607 opposite 407",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "The stored P001 columns are 600/400 and 607/407. The uncertainty mark on 400! strips to 400, and 607a strips to 607."
+            },
+            {
+              "name": "CEIPP vector labels",
+              "detail": "Round 5B: the vector labels match those codes, including the uncertain mark on Q's 400!."
+            },
+            {
+              "name": "Guy 2006",
+              "detail": "Guy classes series 400–409 and 600–699 as birds. That class is the bird-count rule. It does not rename either sign."
+            },
+            {
+              "name": "Pozdniakov and Pozdniakov 2007",
+              "detail": "The 2007 inventory still lists 400 apart from 600. It does not rewrite these two columns."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "pozdniakov_1996_series_400_as_600",
+          "sign_codes": "600 opposite 600, and 607 opposite 607",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "Pozdniakov 1996",
+              "detail": "Pozdniakov treats series 400 as variants of series 600 (the gaping-mouth note's hundreds rewrite, Pozdniakov 1996: 297, as recorded in decipherment/allographs.py). Applied only at the two logged columns: Qr2:30 400 becomes 600, and Qr3:6 407 becomes 607. Other 400-series signs stay as coded."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 109,
+            "parallel_mismatches": 14,
+            "parallel_bird_substitutions": 0,
+            "corpus_bird_substitutions": 16
+          },
+          "headline_delta": {
+            "parallel_matches": {
+              "before": 107,
+              "after": 109,
+              "by": 2
+            },
+            "parallel_mismatches": {
+              "before": 16,
+              "after": 14,
+              "by": -2
+            },
+            "parallel_bird_substitutions": {
+              "before": 2,
+              "after": 0,
+              "by": -2
+            },
+            "corpus_bird_substitutions": {
+              "before": 18,
+              "after": 16,
+              "by": -2
+            }
+          },
+          "other_passage_match_changes": [],
+          "matches_baseline": false
+        }
+      ],
+      "no_other_code": [
+        "Round 5B did not move either sign out of the pair. A corpus-wide hundreds rewrite remains the Round 2 inventory test and is not rerun."
+      ]
+    },
+    {
+      "id": "D09",
+      "passage": "Gv6",
+      "position": "each of the six 076 outlines",
+      "repo_code": "Y.076",
+      "tablets": [
+        "G"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_suffix_attachment",
+      "alternatives": [
+        {
+          "id": "barthel_suffix_attachment",
+          "sign_codes": "076 stays the last stem of its group",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "Six Gv6 groups end in 076. Four of them are the Y.076 groups in the 200 X Y.076 phrases."
+            },
+            {
+              "name": "CEIPP outline",
+              "detail": "Each 076 outline overlaps the previous sign and is separated from the next sign by a gap."
+            },
+            {
+              "name": "Guy and Horley",
+              "detail": "Round 5B: Guy and Horley do not renumber these groups."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "davletshin_2012_076_opens_next_group",
+          "sign_codes": "each suffix 076 is prefixed to the following group",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "Davletshin 2012",
+              "detail": "Davletshin says 076 may be read as opening the next name even though the drawing attaches it to the previous sign. The counterfactual moves all six suffix 076s onto the next group. The Barthel numbers themselves do not change. This is a regrouping, not a new catalog number, and it is not a reading."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 0,
+            "gv6_handoffs": 0,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {
+            "gv6_phrases": {
+              "before": 4,
+              "after": 0,
+              "by": -4
+            },
+            "gv6_handoffs": {
+              "before": 3,
+              "after": 0,
+              "by": -3
+            }
+          },
+          "other_passage_match_changes": [],
+          "matches_baseline": false
+        }
+      ],
+      "no_other_code": [
+        "No source used here replaces 076 with another number on this line."
+      ]
+    },
+    {
+      "id": "D10",
+      "passage": "Ia1-Ia14",
+      "position": "all 97 strokes coded 999, and the group after each pure 999",
+      "repo_code": "999, then a group that usually contains 076",
+      "tablets": [
+        "I"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_999_bar",
+      "alternatives": [
+        {
+          "id": "barthel_999_bar",
+          "sign_codes": "999, and 076 remains inside the following group",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "The Staff census counts pure 999 groups and whether the next group contains 076."
+            },
+            {
+              "name": "CEIPP outline",
+              "detail": "Every outline coded 999 is a narrow stroke. Where the vector order inside a ligature differs (Ia5 021:290.076, Ia8 and Ia13 021:090.076), 076 is still in that group. The differing order was not stored digit by digit."
+            },
+            {
+              "name": "Horley, Pozdniakov, and Guy",
+              "detail": "They do not publish a replacement list for these Staff bars in the sources already used."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        }
+      ],
+      "no_other_code": [
+        "A few other vector labels differ by a digit. Those digits were not recorded. A verdict cannot supply them."
+      ]
+    },
+    {
+      "id": "D11",
+      "passage": "Pr2",
+      "position": "two unnumbered paths",
+      "repo_code": "202s and 306s",
+      "tablets": [
+        "P"
+      ],
+      "inscribe_covered": false,
+      "baseline": "not_a_new_token",
+      "alternatives": [
+        {
+          "id": "not_a_new_token",
+          "sign_codes": "202 and 306, with no inserted sign",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "The paths are not tokens in the vendored line."
+            },
+            {
+              "name": "CEIPP vector edition",
+              "detail": "Each path labeled _ sits inside the horizontal span of the sign before it."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        }
+      ],
+      "no_other_code": [
+        "No published correction inserts them. A verdict cannot invent a number for an unnumbered path."
+      ]
+    },
+    {
+      "id": "D12",
+      "passage": "Hr4",
+      "position": "offset 71, after the Great Tradition stretch that ends at Hr4:0",
+      "repo_code": "042",
+      "tablets": [
+        "H"
+      ],
+      "inscribe_covered": false,
+      "baseline": "barthel_042",
+      "alternatives": [
+        {
+          "id": "barthel_042",
+          "sign_codes": "042",
+          "baseline": true,
+          "sources": [
+            {
+              "name": "Barthel 1958, vendored CEIPP text",
+              "detail": "Hr4 offset 71 is 042. The headline H/Q stretch ends at Hr4 offset 0, so this stem is outside that stretch."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [],
+          "matches_baseline": true
+        },
+        {
+          "id": "ceipp_outline_048",
+          "sign_codes": "048",
+          "baseline": false,
+          "sources": [
+            {
+              "name": "CEIPP vector label",
+              "detail": "The vector label at this outline is 048. Round 5B did not match it to a catalog cell and did not adopt it."
+            }
+          ],
+          "headline_after": {
+            "calendar_040": 28,
+            "calendar_040_before_152": 13,
+            "calendar_040_after_152": 13,
+            "calendar_040_gaps": [
+              2,
+              6,
+              3,
+              2,
+              5,
+              3,
+              5
+            ],
+            "calendar_full_delimiters": 6,
+            "calendar_152": 1,
+            "calendar_143": 1,
+            "gv6_phrases": 4,
+            "gv6_handoffs": 3,
+            "staff_076_after_999": 91,
+            "staff_pure_999": 96,
+            "staff_076_after_999_rate": 0.9479166666666666,
+            "parallel_span": 125,
+            "parallel_matches": 107,
+            "parallel_mismatches": 16,
+            "parallel_bird_substitutions": 2,
+            "corpus_bird_substitutions": 18
+          },
+          "headline_delta": {},
+          "other_passage_match_changes": [
+            {
+              "id": "P015",
+              "label": "H–Q",
+              "locus_left": "Hr4:61..Hr5:15",
+              "locus_right": "Qr4:24-58",
+              "matches_before": 30,
+              "matches_after": 31,
+              "by": 1,
+              "headline": false
+            }
+          ],
+          "matches_baseline": true
+        }
+      ],
+      "no_other_code": [
+        "Horley's 049-to-048 suggestion is a different sign. It is not applied here."
+      ]
+    }
+  ],
+  "checked_combinations": [
+    {
+      "label": "D01 and D02 together",
+      "choices": {
+        "D01": "guy_1990_star690",
+        "D02": "guy_1990_078_040"
+      },
+      "headline_delta": {
+        "calendar_040_gaps": {
+          "before": [
+            2,
+            6,
+            3,
+            2,
+            5,
+            3,
+            5
+          ],
+          "after": [
+            2,
+            6,
+            3,
+            7,
+            3,
+            5
+          ]
+        },
+        "calendar_full_delimiters": {
+          "before": 6,
+          "after": 5,
+          "by": -1
+        }
+      },
+      "other_passage_match_changes": []
+    },
+    {
+      "label": "D06 and D07 together",
+      "choices": {
+        "D06": "ceipp_vector_042_then_006",
+        "D07": "ceipp_vector_042_then_006"
+      },
+      "headline_delta": {},
+      "other_passage_match_changes": [
+        {
+          "id": "P007",
+          "label": "H–P",
+          "locus_left": "Hr3:15-57",
+          "locus_right": "Pr3:2-48",
+          "matches_before": 38,
+          "matches_after": 37,
+          "by": -1,
+          "headline": false
+        },
+        {
+          "id": "P020",
+          "label": "P–Q",
+          "locus_left": "Pr3:14-45",
+          "locus_right": "Qr3:7-34",
+          "matches_before": 26,
+          "matches_after": 25,
+          "by": -1,
+          "headline": false
+        }
+      ]
+    },
+    {
+      "label": "D05, D06, and D08 together",
+      "choices": {
+        "D05": "ceipp_outline_006",
+        "D06": "ceipp_vector_042_then_006",
+        "D08": "pozdniakov_1996_series_400_as_600"
+      },
+      "headline_delta": {
+        "parallel_matches": {
+          "before": 107,
+          "after": 106,
+          "by": -1
+        },
+        "parallel_mismatches": {
+          "before": 16,
+          "after": 17,
+          "by": 1
+        },
+        "parallel_bird_substitutions": {
+          "before": 2,
+          "after": 0,
+          "by": -2
+        },
+        "corpus_bird_substitutions": {
+          "before": 18,
+          "after": 16,
+          "by": -2
+        }
+      },
+      "other_passage_match_changes": [
+        {
+          "id": "P007",
+          "label": "H–P",
+          "locus_left": "Hr3:15-57",
+          "locus_right": "Pr3:2-48",
+          "matches_before": 38,
+          "matches_after": 36,
+          "by": -2,
+          "headline": false
+        }
+      ]
+    }
+  ],
+  "round5b_record": "data/decipherment/round5b_ceipp_recheck.json"
+}
