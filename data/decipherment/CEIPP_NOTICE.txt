@@ -1,0 +1,19 @@
+C.E.I.P.P. drawings used for the Round 5 Track B transcription check
+
+Drawings and transliteration of the rongorongo corpus: C.E.I.P.P.
+(Cercle d'Études sur l'Île de Pâques et la Polynésie), from Thomas
+Barthel's materials, published on rongorongo.org and mirrored at
+kohaumotu.org.
+
+Licence, as stated on http://kohaumotu.org/rongorongo_org/copy.html
+(the mirror of the CEIPP copyright page):
+
+"There are no restrictions on copying and distributing the contents of
+this site as long as the sources are acknowledged and the distribution
+is non-profit."
+
+This repository does not commit the raster strips or the vector pages.
+It stores URLs, SHA-256 hashes, and the notes in
+docs/decipherment/round5b_ceipp_recheck.md and
+data/decipherment/round5b_ceipp_recheck.json. The repository licence
+does not replace the CEIPP terms.

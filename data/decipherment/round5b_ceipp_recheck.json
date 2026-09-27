@@ -1,0 +1,444 @@
+{
+  "track": "round5b",
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "readings_assigned": false,
+  "adopted_corrections": [],
+  "licence": {
+    "holder": "C.E.I.P.P.",
+    "url": "http://kohaumotu.org/rongorongo_org/copy.html",
+    "statement": "There are no restrictions on copying and distributing the contents of this site as long as the sources are acknowledged and the distribution is non-profit.",
+    "source": "Drawings and transliteration: C.E.I.P.P. (Cercle d'Études sur l'Île de Pâques et la Polynésie), from Thomas Barthel's materials, as published on rongorongo.org and mirrored at kohaumotu.org.",
+    "stored_in_git": "Hashes, URLs, and this note. The raster strips and the vector pages were fetched for the check and were not committed. The repository licence is not the CEIPP licence."
+  },
+  "raster_strips": [
+    {
+      "file": "Ca0603.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0603.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "9b00475d09f04698b24287ec5030c06c90edbc1672b1628ab488f3d7ff883acf"
+    },
+    {
+      "file": "Ca0701.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0701.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "1446d6208480df3a88de95f5baccf63f729a3e0c4448fa0a2d17a214c1e85f58"
+    },
+    {
+      "file": "Ca0702.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0702.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "fb8f6babc2cee306662945e7645f2cff561e4179b6c1f6edf1dcd495a76298db"
+    },
+    {
+      "file": "Ca0703.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0703.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "3a455b639daa210adc474cfccaf63c0a45169b23d4528d1cdfb8fdb7599d91f7"
+    },
+    {
+      "file": "sca0701.gif",
+      "url": "http://kohaumotu.org/rongorongo_org/mamari/sca0701.gif",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "d24f2b41e36607cafec2fb1245ac3336ee57bc0fce8c5732a7abe5022c693e2b"
+    },
+    {
+      "file": "Gv0601.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/G/Gv0601.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "2c5c1c5d2760459dab8e04bc68cd0fd16185305b8126e91acc5fbb1c7ff594ad"
+    },
+    {
+      "file": "Gv0602.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/G/Gv0602.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "8fae737e1dd5a1fc009a0696737976e66ddc7cf260c5b4dcf51126544cbae794"
+    },
+    {
+      "file": "Hr0204.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/H/Hr0204.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "b452718d508984e6ce7a74a323d7209b6b3e2d3a42714576060e5a0c531ae647"
+    },
+    {
+      "file": "Hr0302.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/H/Hr0302.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "8000e2d56819d29a9ba7dee779553026b4c2a79af27566606b5918ab75d8e8f4"
+    },
+    {
+      "file": "Qr0202.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/Q/Qr0202.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "9c59f0b94568c84b3bdacb6b4b2b80f2e0a7ad94324f6dee6528591b403f4814"
+    },
+    {
+      "file": "Qr0301.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/Q/Qr0301.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "e49e7134c6604b2757ddd644e47eb9df70527acc68a65f9aacbb6bf877bb0065"
+    },
+    {
+      "file": "Ia0503.png",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/I/Ia0503.png",
+      "pixels": [
+        622,
+        74
+      ],
+      "sha256": "daa8144ec575cfc67825ef658d4fb02881cf1194250939b2169ca087abcf1304"
+    }
+  ],
+  "vector_pages": [
+    {
+      "tablet": "C",
+      "url": "http://kohaumotu.org/Rongorongo/svg/C_svg_codes_b.html",
+      "sha256": "f1c8d80d8e090f35696f67ac2024cfb9ccb96ed3cd9dba9ac3fcb8b9cf71c202"
+    },
+    {
+      "tablet": "G",
+      "url": "http://kohaumotu.org/Rongorongo/svg/G_svg_codes_b.html",
+      "sha256": "6771f804e6f1b133697174edbe561e0395b55b5bef5b3e8bad666a15f1c9ab57"
+    },
+    {
+      "tablet": "H",
+      "url": "http://kohaumotu.org/Rongorongo/svg/H_svg_codes_b.html",
+      "sha256": "bc7f50cb125bb671f9952336f205cd827b547a30d131b3478b1a8600eb3a688b"
+    },
+    {
+      "tablet": "P",
+      "url": "http://kohaumotu.org/Rongorongo/svg/P_svg_codes_b.html",
+      "sha256": "27a19f29b23e085a519ccc064e2133ebf6a875e57185f3bb0f681955c6def1a3"
+    },
+    {
+      "tablet": "Q",
+      "url": "http://kohaumotu.org/Rongorongo/svg/Q_svg_codes_b.html",
+      "sha256": "eae7d28c88d7931d13ada03b50a3d0fcd9f7b8ef6bddfdaad8d7f67bf642bc5e"
+    },
+    {
+      "tablet": "I",
+      "url": "http://kohaumotu.org/Rongorongo/svg/I_svg_codes_b.html",
+      "sha256": "cf6418e104f5d904f7983266296d804c74c89c8cf1b924d4bffa8e818c57ccc3"
+    }
+  ],
+  "geometry": {
+    "calendar_040_tall_crescents": 28,
+    "calendar_040_expected": 28,
+    "crescent_143_width": 39.1,
+    "crescent_143_height": 78.1,
+    "sign_152_width": 46.6,
+    "sign_152_height": 76.8,
+    "small_041h": [
+      {
+        "line": "Ca7",
+        "index": 23,
+        "width": 17.2,
+        "height": 23.3
+      },
+      {
+        "line": "Ca8",
+        "index": 6,
+        "width": 15.4,
+        "height": 32.0
+      }
+    ],
+    "post_152_stack": {
+      "line": "Ca7",
+      "repo_group": "600.390.041",
+      "shared_slot": [
+        "390",
+        "600"
+      ],
+      "shared_slot_heights": [
+        53.6,
+        31.8
+      ],
+      "following_crescent": "041"
+    },
+    "staff_999_count": 97,
+    "staff_999_width_min": 2.38,
+    "staff_999_width_max": 7.62,
+    "gv6_076_overlaps_previous": 6,
+    "gv6_076_gap_before_next_sign": 6,
+    "bird_sites": [
+      {
+        "left": "Hr2:66",
+        "left_label": "600",
+        "right": "Qr2:30",
+        "right_label": "400!",
+        "both_full_height": true
+      },
+      {
+        "left": "Hr3:26",
+        "left_label": "607a",
+        "right": "Qr3:6",
+        "right_label": "407",
+        "both_full_height": true
+      }
+    ]
+  },
+  "disagreements": [
+    {
+      "passage": "Ca7",
+      "position": "the group after 152, one horizontal slot",
+      "repo_code": "600.390.041",
+      "drawing": "The outlines labeled 600 and 390 share one horizontal slot and are both shorter than the full-height signs beside them. The crescent 041 is the next slot, not part of that stack.",
+      "confidence": "high that this is one slot plus a crescent; the catalog number of the stack was not re-read",
+      "horley_pozdniakov_guy": "Guy 1990 calls the stack one sign, *690, and says catalog 690 is a different sign. Round 3 already recorded that proposal. Horley 2011 and Pozdniakov do not renumber this group in the sources used there. This recheck does not adopt *690, because the outline does not name that number.",
+      "adopted": false
+    },
+    {
+      "passage": "Ca7",
+      "position": "the group 044.040, before 143 and 152",
+      "repo_code": "044.040",
+      "drawing": "A non-crescent figure sits beside a tall crescent. The figure is not a second crescent.",
+      "confidence": "high for figure-plus-crescent; low for choosing 044 or 078",
+      "horley_pozdniakov_guy": "Guy 1990 proposes 078.040 and keeps the crescent. The outline fits either 044 or 078. Horley and Pozdniakov do not supply a different number in the sources already used. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Ca7 and Ca8",
+      "position": "the two signs coded 041h inside delimiter groups",
+      "repo_code": "041h",
+      "drawing": "Both outlines are short crescents, about a quarter to a third the height of the ordinary 041 crescents on the same lines.",
+      "confidence": "high that they are small crescents",
+      "horley_pozdniakov_guy": "Horley 2011 says the two small superscript crescents have a paleographic explanation. He does not replace the Barthel number. Pozdniakov does not renumber them here. Guy 1990 treats delimiter crescents as distinct from night crescents. The code stays 041.",
+      "adopted": false
+    },
+    {
+      "passage": "Ca7",
+      "position": "an extra path overlapping the first 378",
+      "repo_code": "378",
+      "drawing": "The vector edition traces a narrow unnumbered path, labeled _, inside the horizontal span of 378. It is not a separate slot between 041 and 378.",
+      "confidence": "high that it is not a new hyphen-group",
+      "horley_pozdniakov_guy": "No published correction inserts a sign at this slot. Fischer's reported extra glyph at the start of line 7 is a different claim and is not this path. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Hr3",
+      "position": "offset 37, parallel column with Qr3:17",
+      "repo_code": "064",
+      "drawing": "The vector label on H is 006?, an uncertain hand. The same column on Q is 064 in both the vendored text and the vector labels. The outline is a full-height sign, not a bar or a crescent.",
+      "confidence": "low for replacing 064",
+      "horley_pozdniakov_guy": "Pozdniakov 1996 treats hands 006 and 064 as alternating in repeated phrases. Guy 2006 describes the same alternation. Neither source corrects this column. Adopting 006 would create a mismatch with Q, which still reads 064. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Hr3",
+      "position": "offsets 43-44",
+      "repo_code": "006 then 042",
+      "drawing": "The two outlines share one horizontal slot. One is short and one is taller. The vector lists 042 then 006. The vendored text lists 006 then 042. The pair of stems is the same.",
+      "confidence": "high that the slot is shared; the internal order is the edition's stacking order",
+      "horley_pozdniakov_guy": "No published correction splits or deletes this pair. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Qr3",
+      "position": "the stacked pair inside the H/Q stretch",
+      "repo_code": "006 then 042",
+      "drawing": "Same situation as Hr3: the outlines overlap, and the vector lists the short sign first.",
+      "confidence": "high that the slot is shared",
+      "horley_pozdniakov_guy": "No published correction changes the pair. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Hr2:66 / Qr2:30 and Hr3:26 / Qr3:6",
+      "position": "the two bird-substitution columns in the Great Tradition stretch that starts on recto line 2",
+      "repo_code": "600 opposite 400, and 607 opposite 407",
+      "drawing": "Each outline is a full-height figure between a human figure and a fish sign, or in the same kind of parallel slot. The vector labels match the vendored codes, including the uncertain mark on Q's 400!.",
+      "confidence": "high that the labels match and that neither sign is a bar or a crescent; not a new species reading",
+      "horley_pozdniakov_guy": "Guy 2006 classes series 400-409 and 600-699 as birds. Pozdniakov had treated gaping-mouth and bird heads as variants. Nothing here moves a sign out of that pair. Not adopted as a code change.",
+      "adopted": false
+    },
+    {
+      "passage": "Gv6",
+      "position": "each of the six 076 outlines",
+      "repo_code": "Y.076",
+      "drawing": "Each 076 outline overlaps the previous sign and is separated from the next sign by a gap. The 200 outlines are full figures, not bars. All 38 stems match the vendored line.",
+      "confidence": "high for suffix attachment",
+      "horley_pozdniakov_guy": "Davletshin 2012 says 076 may be read as opening the next name even though the drawing attaches it to the previous sign. The outlines attach it to the previous sign. Guy and Horley do not renumber these groups. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Ia1-Ia14",
+      "position": "all 97 strokes coded 999, and the group after each pure 999",
+      "repo_code": "999, then a group that usually contains 076",
+      "drawing": "Every outline coded 999 is a narrow stroke, width between 2.4 and 7.6 user units. No 999 is a full figure. Where the vector component order inside a ligature differs from the vendored colon order (Ia5 021:290.076, Ia8 and Ia13 021:090.076), 076 is still in that group. A few other vector labels differ by a digit from the vendored code; those outlines were not given a new number.",
+      "confidence": "high that 999 is a bar and that the 076-after-999 count is unchanged; low for the one-digit label conflicts",
+      "horley_pozdniakov_guy": "Horley, Pozdniakov, and Guy do not publish a replacement list for these Staff bars in the sources already used. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Pr2",
+      "position": "two unnumbered paths",
+      "repo_code": "202s and 306s",
+      "drawing": "Each path labeled _ sits inside the horizontal span of the sign before it. Neither opens a new slot.",
+      "confidence": "high that they are not new tokens",
+      "horley_pozdniakov_guy": "No published correction inserts them. Not adopted.",
+      "adopted": false
+    },
+    {
+      "passage": "Hr4",
+      "position": "offset 71, after the Great Tradition stretch that ends at Hr4:0",
+      "repo_code": "042",
+      "drawing": "The vector label is 048. The outline is a separate tall narrow sign. It was not matched to a catalog cell.",
+      "confidence": "low",
+      "horley_pozdniakov_guy": "Outside the counted stretch. No published correction of this sign was applied. Not adopted.",
+      "adopted": false
+    }
+  ],
+  "stats_before": {
+    "calendar_040": 28,
+    "calendar_040_before_152": 13,
+    "calendar_040_after_152": 13,
+    "calendar_040_gaps": [
+      2,
+      6,
+      3,
+      2,
+      5,
+      3,
+      5
+    ],
+    "calendar_full_delimiters": 6,
+    "calendar_152": 1,
+    "calendar_143": 1,
+    "gv6_phrases": 4,
+    "gv6_handoffs": 3,
+    "staff_076_after_999": 91,
+    "staff_pure_999": 96,
+    "staff_076_after_999_rate": 0.9479166666666666,
+    "parallel_span": 125,
+    "parallel_matches": 107,
+    "parallel_mismatches": 16,
+    "parallel_bird_substitutions": 2,
+    "corpus_bird_substitutions": 18
+  },
+  "stats_after": {
+    "calendar_040": 28,
+    "calendar_040_before_152": 13,
+    "calendar_040_after_152": 13,
+    "calendar_040_gaps": [
+      2,
+      6,
+      3,
+      2,
+      5,
+      3,
+      5
+    ],
+    "calendar_full_delimiters": 6,
+    "calendar_152": 1,
+    "calendar_143": 1,
+    "gv6_phrases": 4,
+    "gv6_handoffs": 3,
+    "staff_076_after_999": 91,
+    "staff_pure_999": 96,
+    "staff_076_after_999_rate": 0.9479166666666666,
+    "parallel_span": 125,
+    "parallel_matches": 107,
+    "parallel_mismatches": 16,
+    "parallel_bird_substitutions": 2,
+    "corpus_bird_substitutions": 18
+  },
+  "what_changed": "Nothing in the headline counts. No Barthel code was replaced. Crescent totals, delimiter gaps, Gv6 handoffs, the Staff 076-after-999 count, the H/Q span, and the bird-substitution counts stay at the vendored Barthel figures.",
+  "calendar_detail": {
+    "stems": 101,
+    "040": 28,
+    "040_before_after_152": [
+      13,
+      13
+    ],
+    "040_gaps": [
+      2,
+      6,
+      3,
+      2,
+      5,
+      3,
+      5
+    ],
+    "full_delimiters_opening_390": 6,
+    "152": 1,
+    "143": 1
+  },
+  "genealogy_detail": {
+    "gv6_groups": [
+      [
+        "200",
+        "000!",
+        "280.076"
+      ],
+      [
+        "200",
+        "280",
+        "730.076"
+      ],
+      [
+        "200",
+        "730",
+        "517a.076"
+      ],
+      [
+        "200",
+        "517a",
+        "222.076"
+      ]
+    ],
+    "gv6_stem_count": 38,
+    "staff_076_suffix": 85,
+    "staff_076_bare": 3
+  },
+  "parallel_detail": {
+    "corpus_bird_cross_hundred": 18,
+    "stretch_id": "P001",
+    "stretch_locus_left": "Hr2:36..Hr4:0",
+    "stretch_locus_right": "Qr2:0..Qr3:65",
+    "stretch_span": 125,
+    "stretch_matches": 107,
+    "stretch_mismatches": 16,
+    "stretch_bird_pairs": 2,
+    "stretch_bird_columns": [
+      {
+        "left": "600",
+        "right": "400"
+      },
+      {
+        "left": "607",
+        "right": "407"
+      }
+    ]
+  }
+}
