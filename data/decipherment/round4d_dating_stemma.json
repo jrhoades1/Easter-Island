@@ -1,0 +1,1817 @@
+{
+  "catalog": [
+    {
+      "carving": "Inscribed on a European or American oar blade (Ferrara et al. 2024). No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "A",
+      "condition": "Fine (Kohaumotu). Ferrara et al.: good preservation, no apparent damage.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "dimensions_mm": "Kohaumotu 909\u00d7115\u00d726; Ferrara et al. 912\u00d7115\u00d728",
+      "in_transcription": true,
+      "name": "Tahua (the Oar)",
+      "provenance": "Congregazione dei Sacri Cuori, Rome. Collected with B\u2013D in 1869 and sent to Bishop Tepano Jaussen.",
+      "provenance_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "radiocarbon": "ETH-125842 / BRA-6125, 122\u00b113 BP. With a felling offset of 50\u00b15 years, the unmodelled 68.3% range is 1862\u20131977 cal AD. Ferrara et al. discard 1934\u20131977 because the tablet was collected in 1869, and they keep 1862\u20131887 (19.7%). Inside their Bayesian Rongorongo phase the felling-adjusted 68.3% range is 1752\u20131773 cal AD. The date is a terminus post quem for the board, not a carving date.",
+      "radiocarbon_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "whole_text_forms": {
+        "ligature_rate": 0.482702,
+        "mean_parts": 1.604064,
+        "modification_rate": 0.165294,
+        "pictorial_rate": 0.362987,
+        "rarefied_types_k80": 52.379506,
+        "stem_types": 291,
+        "stems": 1821,
+        "surface_type_token": 0.310269,
+        "surface_types": 565,
+        "type_token": 0.159802
+      },
+      "wood": "Fraxinus excelsior (European ash)",
+      "wood_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Ferrara et al. 2024 call the carving masterful. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "B",
+      "condition": "Fine (Kohaumotu). Ferrara et al.: masterfully carved, about a dozen lines each side.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "dimensions_mm": "Kohaumotu 415\u00d7152\u00d729; Ferrara et al. 415\u00d7152\u00d731",
+      "in_transcription": true,
+      "name": "Aruku Kurenga",
+      "provenance": "Congregazione dei Sacri Cuori, Rome. Same 1869 Jaussen collection as A, C, and D.",
+      "provenance_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "radiocarbon": "ETH-125843 / BRA-6126, 125\u00b113 BP. Felling offset 20\u00b15 years: unmodelled 1732\u20131947 cal AD (68.3%). Ferrara et al. discard 1903\u20131947 (45.5%) as after the collection, and treat 1832\u20131857 (20.7%) as the prominent remaining slice, with a small 1732\u20131736 slice (2.1%). Terminus post quem.",
+      "radiocarbon_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "whole_text_forms": {
+        "ligature_rate": 0.501164,
+        "mean_parts": 1.622188,
+        "modification_rate": 0.114818,
+        "pictorial_rate": 0.366951,
+        "rarefied_types_k80": 54.28154,
+        "stem_types": 237,
+        "stems": 1289,
+        "surface_type_token": 0.217223,
+        "surface_types": 280,
+        "type_token": 0.183863
+      },
+      "wood": "Thespesia populnea (Pacific rosewood, makoi)",
+      "wood_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7; Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Ferrara et al. 2024: signs cut into a pre-existing cavity. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "C",
+      "condition": "Fine (Kohaumotu). Ferrara et al.: damaged in places; some signs are carved inside a cavity, so the inscription is later than that damage.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "dimensions_mm": "Kohaumotu 290\u00d7196\u00d725; Ferrara et al. 290\u00d7194\u00d723",
+      "in_transcription": true,
+      "name": "Mamari",
+      "provenance": "Congregazione dei Sacri Cuori, Rome. Same 1869 Jaussen collection.",
+      "provenance_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "radiocarbon": "ETH-125845 / BRA-6129, 189\u00b113 BP. Felling offset 25\u00b15 years: 1694\u20131840 cal AD (68.3%), in four slices: 1694\u20131727 (32.4%), 1744\u20131770 (18.2%), 1819\u20131840 (5.3%), 1781\u20131789 (2.4%). Terminus post quem. Orliac 2005, as cited by Wieczorek et al. 2021, argues the trunk was about 20 cm across and the tree about 15 m, larger than the trees European visitors described.",
+      "radiocarbon_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7; Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874 citing Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x",
+      "whole_text_forms": {
+        "ligature_rate": 0.427411,
+        "mean_parts": 1.511675,
+        "modification_rate": 0.097462,
+        "pictorial_rate": 0.340102,
+        "rarefied_types_k80": 48.164676,
+        "stem_types": 185,
+        "stems": 985,
+        "surface_type_token": 0.230457,
+        "surface_types": 227,
+        "type_token": 0.187817
+      },
+      "wood": "Thespesia populnea",
+      "wood_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7; Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Ferrara et al. 2024, citing Fischer 1997: two hands are suggested. Notches for a cord are later than the inscription. The cutting tool is not identified in that paper. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones.",
+      "code": "D",
+      "condition": "Good (Kohaumotu). Ferrara et al., citing Fischer 1997: one side smoothed and well engraved, the other rougher, possibly two scribes. After the text, notches were cut into the long sides and the board was reused as a spool.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7 citing Fischer 1997, Rongorongo: The Easter Island Script (Clarendon)",
+      "dimensions_mm": "Kohaumotu 241\u00d7121\u00d726; Ferrara et al. 239\u00d7123\u00d724",
+      "in_transcription": true,
+      "name": "\u00c9chancr\u00e9e",
+      "provenance": "Congregazione dei Sacri Cuori, Rome. Ferrara et al.: the four Rome tablets were sent to Jaussen in 1869. The public corpus survey identifies D as the board Jaussen was given with a cord of hair wound on it.",
+      "provenance_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "ETH-125844 / BRA-6127, 474\u00b113 BP. Felling offset 50\u00b15 years: 1493\u20131509 cal AD (68.3%) and 1483\u20131520 (95.4%). This is the early outlier. Ferrara et al. warn that foreign wood can be driftwood or ship timber, and that a radiocarbon age of the wood is only a terminus post quem for the carving.",
+      "radiocarbon_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "whole_text_forms": {
+        "ligature_rate": 0.470833,
+        "mean_parts": 1.616667,
+        "modification_rate": 0.125,
+        "pictorial_rate": 0.425,
+        "rarefied_types_k80": 46.395088,
+        "stem_types": 90,
+        "stems": 240,
+        "surface_type_token": 0.416667,
+        "surface_types": 100,
+        "type_token": 0.375
+      },
+      "wood": "Podocarpus latifolia in Ferrara et al. 2024 (citing Orliac 2010); Kohaumotu writes Podocarpus sp. cf. Latifolia. Not native to Rapa Nui. Orliac 2007 groups this wood with N, P, and S.",
+      "wood_citation": "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7; Orliac 2007, Rapa Nui Journal 21:7\u201310; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "E",
+      "condition": "Destroyed (Kohaumotu). The transcription used here is the published copy, not a surviving board.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 390\u00d7130\u00d725",
+      "in_transcription": true,
+      "name": "Keiti",
+      "provenance": "Kohaumotu condition is Destroyed. The public corpus survey places the lost tablet at Leuven and says it burned in the First World War. Secondary.",
+      "provenance_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.510227,
+        "mean_parts": 1.568182,
+        "modification_rate": 0.125,
+        "pictorial_rate": 0.3625,
+        "rarefied_types_k80": 46.372231,
+        "stem_types": 162,
+        "stems": 880,
+        "surface_type_token": 0.223864,
+        "surface_types": 197,
+        "type_token": 0.184091
+      },
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "The public corpus survey calls the glyphs crudely executed. Secondary. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "F",
+      "condition": "Good (Kohaumotu), but only a fragment: 51 signs in that table.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 111\u00d780\u00d715",
+      "in_transcription": true,
+      "name": "Stephen-Chauvet fragment",
+      "provenance": "The public corpus survey places the fragment in New York. Secondary. Kohaumotu does not name a museum on the tablets table.",
+      "provenance_citation": "Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.177778,
+        "mean_parts": 1.177778,
+        "modification_rate": 0.111111,
+        "pictorial_rate": 0.422222,
+        "rarefied_types_k80": null,
+        "stem_types": 30,
+        "stems": 45,
+        "surface_type_token": 0.733333,
+        "surface_types": 33,
+        "type_token": 0.666667
+      },
+      "wood": "Unidentified in the Kohaumotu table. The public corpus survey guesses palm and marks the guess with a question mark. Secondary.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary."
+    },
+    {
+      "carving": "Horley 2007 treats London K as a copy of G recto (Track C citation). No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "G",
+      "condition": "Fine (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 319\u00d7122\u00d722",
+      "in_transcription": true,
+      "name": "Small Santiago",
+      "provenance": "Named Small Santiago on the vendored Kohaumotu pages. Museum accession was not re-read beyond that name.",
+      "provenance_citation": "tests/fixtures/small_santiago_gr_html/Gr.html item title",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.545455,
+        "mean_parts": 1.798295,
+        "modification_rate": 0.090909,
+        "pictorial_rate": 0.353693,
+        "rarefied_types_k80": 46.464088,
+        "stem_types": 161,
+        "stems": 704,
+        "surface_type_token": 0.274148,
+        "surface_types": 193,
+        "type_token": 0.228693
+      },
+      "wood": "Thespesia populnea",
+      "wood_citation": "Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html (Orliac 2010 note)"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "H",
+      "condition": "Good (Kohaumotu). The public corpus survey, attributing the observation to Orliac, describes a fire-plow groove on the recto. That page of Orliac was not re-read here. Secondary.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "dimensions_mm": "Kohaumotu 449\u00d7125, thickness n/a",
+      "in_transcription": true,
+      "name": "Great Santiago",
+      "provenance": "Named Great Santiago on the vendored Kohaumotu pages.",
+      "provenance_citation": "tests/fixtures/large_santiago_hr_html/Hr.html item title",
+      "radiocarbon": "Not radiocarbon dated in the sources read for this track. It is one witness of the Great Tradition with P and Q.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.471178,
+        "mean_parts": 1.541353,
+        "modification_rate": 0.189223,
+        "pictorial_rate": 0.384712,
+        "rarefied_types_k80": 55.303748,
+        "stem_types": 262,
+        "stems": 1596,
+        "surface_type_token": 0.324561,
+        "surface_types": 518,
+        "type_token": 0.16416
+      },
+      "wood": "Thespesia populnea",
+      "wood_citation": "Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Track 3 of this repository records Barthel 999 as the staff's vertical stroke, from the Kohaumotu digitization note. That stroke is not a carving-tool identification. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "I",
+      "condition": "Good (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu length 1260, diameter 60",
+      "in_transcription": true,
+      "name": "Santiago Staff",
+      "provenance": "Named Santiago Staff on the vendored Kohaumotu pages. A chief's staff, not a flat tablet.",
+      "provenance_citation": "tests/fixtures/santiago_ia_html/I_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.560263,
+        "mean_parts": 1.640889,
+        "modification_rate": 0.083916,
+        "pictorial_rate": 0.304813,
+        "rarefied_types_k80": 44.435344,
+        "stem_types": 279,
+        "stems": 2431,
+        "surface_type_token": 0.149733,
+        "surface_types": 364,
+        "type_token": 0.114768
+      },
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "A pectoral, not a tablet. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "J",
+      "condition": "Good (Kohaumotu). Two signs in that table.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu length 700",
+      "in_transcription": true,
+      "name": "Reimiro 1",
+      "provenance": "The public corpus survey places the large reimiro in London. Secondary.",
+      "provenance_citation": "Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.0,
+        "mean_parts": 1.0,
+        "modification_rate": 0.0,
+        "pictorial_rate": 0.5,
+        "rarefied_types_k80": null,
+        "stem_types": 2,
+        "stems": 2,
+        "surface_type_token": 1.0,
+        "surface_types": 2,
+        "type_token": 1.0
+      },
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Horley 2007, Rapa Nui Journal 21(1), as cited in this repository's Round 2 Track C for the G/K relationship. The public corpus survey calls the glyphs crude and lists K among pieces suspected of a steel blade. That suspicion is secondary. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "K",
+      "condition": "Good (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 218\u00d768\u00d720",
+      "in_transcription": true,
+      "name": "Small London",
+      "provenance": "British Museum, from the link on the vendored K index page.",
+      "provenance_citation": "tests/fixtures/small_london_kr_html/K_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.572093,
+        "mean_parts": 1.865116,
+        "modification_rate": 0.037209,
+        "pictorial_rate": 0.372093,
+        "rarefied_types_k80": 39.909223,
+        "stem_types": 76,
+        "stems": 215,
+        "surface_type_token": 0.386047,
+        "surface_types": 83,
+        "type_token": 0.353488
+      },
+      "wood": "Thespesia populnea with a question mark in the Kohaumotu table (Orliac 2010 note).",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "A pectoral. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "L",
+      "condition": "Fine (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 423\u00d7178\u00d715",
+      "in_transcription": true,
+      "name": "Reimiro 2",
+      "provenance": "The public corpus survey places the small reimiro in London. Secondary.",
+      "provenance_citation": "Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.27451,
+        "mean_parts": 1.27451,
+        "modification_rate": 0.137255,
+        "pictorial_rate": 0.352941,
+        "rarefied_types_k80": null,
+        "stem_types": 31,
+        "stems": 51,
+        "surface_type_token": 0.666667,
+        "surface_types": 34,
+        "type_token": 0.607843
+      },
+      "wood": "Kohaumotu: unidentified. Orliac 2005 examined a reimiro with the tablets and found Thespesia; the public corpus survey assigns that pectoral to L. The letter assignment is secondary.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary."
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "M",
+      "condition": "Poor (Kohaumotu). Side b destroyed in that table; 54 signs remain on side a.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 285\u00d7145\u00d723",
+      "in_transcription": true,
+      "name": "Great Vienna",
+      "provenance": "Museum f\u00fcr V\u00f6lkerkunde, Wien, from the link on the vendored M index page.",
+      "provenance_citation": "tests/fixtures/vienna_ma_html/M_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.125,
+        "mean_parts": 1.125,
+        "modification_rate": 0.041667,
+        "pictorial_rate": 0.208333,
+        "rarefied_types_k80": null,
+        "stem_types": 26,
+        "stems": 48,
+        "surface_type_token": 0.5625,
+        "surface_types": 27,
+        "type_token": 0.541667
+      },
+      "wood": "Thespesia populnea in the Kohaumotu table (no Orliac 2010 footnote on that cell). Lavachery 1934 is the earlier identification, cited by Orliac 2005.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x citing Lavachery 1934"
+    },
+    {
+      "carving": "The public corpus survey, citing Haberlandt, says the grooves look like a sharpened bone and that details were retouched with obsidian. Secondary; Haberlandt was not re-read. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones.",
+      "code": "N",
+      "condition": "Good (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 260\u00d753\u00d721",
+      "in_transcription": true,
+      "name": "Small Vienna",
+      "provenance": "Museum f\u00fcr V\u00f6lkerkunde, Wien, from the vendored N index link. Wieczorek et al. 2021: the Vienna tablets came with the Schlubach shipment.",
+      "provenance_citation": "tests/fixtures/vienna_na_html/N_index.html; Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874 citing Fischer 1997, Rongorongo: The Easter Island Script (Clarendon)",
+      "radiocarbon": "Not separately dated. Orliac 2007 hypothesizes that D, N, P, and S were cut from one board. HYPOTHESIS, not a radiocarbon result.",
+      "radiocarbon_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310",
+      "whole_text_forms": {
+        "ligature_rate": 0.559829,
+        "mean_parts": 1.675214,
+        "modification_rate": 0.051282,
+        "pictorial_rate": 0.367521,
+        "rarefied_types_k80": 44.385965,
+        "stem_types": 81,
+        "stems": 234,
+        "surface_type_token": 0.367521,
+        "surface_types": 86,
+        "type_token": 0.346154
+      },
+      "wood": "Podocarpus sp. (cf. latifolia). Same identification Orliac 2007 gives for D, P, and S.",
+      "wood_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Wieczorek et al. 2021: a sharp implement cut the signs inside shallow flutes. They say the flutes were perhaps polished with shark skin. The shark-skin step is their suggestion, marked as uncertain by them.",
+      "code": "O",
+      "condition": "Poor (Kohaumotu). Wieczorek et al.: cave storage destroyed about 90% of the inscription; woodlice and wormholes; a few carbonized spots. Flutes survive on the eroded side.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874",
+      "dimensions_mm": "Wieczorek et al. 1030\u00d7125\u00d760, weight 2.6 kg; Kohaumotu length 1030, width 130",
+      "in_transcription": true,
+      "name": "Berlin tablet (Boomerang)",
+      "provenance": "Ethnologisches Museum, Berlin, VI 4878. Acquired after HMS Hy\u00e4ne's 1882 visit, via Salmon and Schlubach; arrived April 1883.",
+      "provenance_citation": "Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874; tests/fixtures/boomerang_oa_html/O_index.html",
+      "radiocarbon": "117\u00b114 BP (University of Waikato). SHCal20 95% ranges: 1706\u20131721 (5.5%), 1811\u20131838 (23.1%), 1848\u20131868 (5.5%), 1878\u20131928 (61.4%). Collected in 1882, so the post-1882 tail is impossible. The authors' conservative window is 1706\u20131870, most likely the nineteenth century; the abstract says about 1830\u20131870. Old-wood inbuilt age for this species is unlikely to exceed about 40 years (their discussion).",
+      "radiocarbon_citation": "Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874",
+      "whole_text_forms": {
+        "ligature_rate": 0.293478,
+        "mean_parts": 1.326087,
+        "modification_rate": 0.054348,
+        "pictorial_rate": 0.369565,
+        "rarefied_types_k80": 44.363858,
+        "stem_types": 48,
+        "stems": 92,
+        "surface_type_token": 0.543478,
+        "surface_types": 50,
+        "type_token": 0.521739
+      },
+      "wood": "Thespesia populnea, identified anatomically by Wieczorek et al. 2021. The 2012 Kohaumotu table still says unidentified. They reject the driftwood identification in Fischer 1997.",
+      "wood_citation": "Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "P",
+      "condition": "Fine (Kohaumotu). The public corpus survey says P and S were later cut as canoe planking. Secondary, attributed there to the story of Niari.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "dimensions_mm": "Kohaumotu 620\u00d7144\u00d727",
+      "in_transcription": true,
+      "name": "Great St. Petersburg",
+      "provenance": "Museum of Anthropology and Ethnology, St. Petersburg, the large tablet of that collection (Orliac 2007; Kohaumotu item title).",
+      "provenance_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310; tests/fixtures/large_st_petersburg_pr_html/Pr.html",
+      "radiocarbon": "Not radiocarbon dated in the sources read for this track. Orliac 2007 hypothesizes one board for D, N, P, and S. HYPOTHESIS. Ferrara et al. 2024 repeat that N, P, and S may be contemporary with D, as a suggestion, not as a date.",
+      "radiocarbon_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310; Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "whole_text_forms": {
+        "ligature_rate": 0.481386,
+        "mean_parts": 1.617458,
+        "modification_rate": 0.177792,
+        "pictorial_rate": 0.402439,
+        "rarefied_types_k80": 55.341262,
+        "stem_types": 268,
+        "stems": 1558,
+        "surface_type_token": 0.372914,
+        "surface_types": 581,
+        "type_token": 0.172015
+      },
+      "wood": "Podocarpus, same group as D, N, and S (Orliac 2007). Kohaumotu: Podocarpus sp. cf. Latifolia. The public corpus survey, citing Fischer, calls it a reshaped European or American oar. That oar description is secondary.",
+      "wood_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary. citing Fischer 1997, Rongorongo: The Easter Island Script (Clarendon)"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "Q",
+      "condition": "Good (Kohaumotu). Wieczorek et al., citing Orliac 2005: wood degradation and insect damage. The public corpus survey adds clay, a cut end, gouges, and burns. Those extra details are secondary.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "dimensions_mm": "Kohaumotu 418\u00d7112\u00d728",
+      "in_transcription": true,
+      "name": "Small St. Petersburg",
+      "provenance": "Museum of Anthropology and Ethnology, St. Petersburg. Collected by Nicholai Miklouho-Maclay in 1871 from Rapanui expatriates on Mangareva or Tahiti.",
+      "provenance_citation": "Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874",
+      "radiocarbon": "Orliac 2005: 80\u00b140 BP. The 95% ranges quoted by Wieczorek et al. 2021 are 1680\u20131740, 1800\u20131930, and 1950\u20131960. Ferrara et al. 2024 say a SHCal20 recalibration's most reliable slice is 1812\u20131836, citing Horley 2021. Orliac notes the poor condition could allow an earlier manufacture (Wieczorek et al. citing Orliac 2005: 118). Terminus post quem.",
+      "radiocarbon_citation": "Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874; Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+      "whole_text_forms": {
+        "ligature_rate": 0.446429,
+        "mean_parts": 1.540179,
+        "modification_rate": 0.15067,
+        "pictorial_rate": 0.410714,
+        "rarefied_types_k80": 54.144892,
+        "stem_types": 193,
+        "stems": 896,
+        "surface_type_token": 0.381696,
+        "surface_types": 342,
+        "type_token": 0.215402
+      },
+      "wood": "Thespesia populnea. Orliac 2005 dated this tablet; Wieczorek et al. 2021 describe it as Pacific rosewood.",
+      "wood_citation": "Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x; Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "Horley 2007 reports a parallel with Tahua after recoding signs into glyph elements (Track C). That parallel did not clear the stem gate. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "R",
+      "condition": "Good (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 245\u00d795\u00d718",
+      "in_transcription": true,
+      "name": "Atua Mata Riri (Small Washington)",
+      "provenance": "Smithsonian A129773-0, from the link on the vendored R index page.",
+      "provenance_citation": "tests/fixtures/atua_ra_html/R_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.407895,
+        "mean_parts": 1.5,
+        "modification_rate": 0.100877,
+        "pictorial_rate": 0.359649,
+        "rarefied_types_k80": 46.299491,
+        "stem_types": 117,
+        "stems": 456,
+        "surface_type_token": 0.298246,
+        "surface_types": 136,
+        "type_token": 0.256579
+      },
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "S",
+      "condition": "Good (Kohaumotu). The public corpus survey says it was later cut for planking, with P. Secondary.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "dimensions_mm": "Kohaumotu 642\u00d7122\u00d718",
+      "in_transcription": true,
+      "name": "Great Washington",
+      "provenance": "Smithsonian, from the link on the vendored S index page.",
+      "provenance_citation": "tests/fixtures/washington_sa_html/S_index.html",
+      "radiocarbon": "Not separately dated. Same one-board hypothesis as N and P (Orliac 2007). HYPOTHESIS.",
+      "radiocarbon_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310",
+      "whole_text_forms": {
+        "ligature_rate": 0.428571,
+        "mean_parts": 1.534045,
+        "modification_rate": 0.133511,
+        "pictorial_rate": 0.321762,
+        "rarefied_types_k80": 51.576075,
+        "stem_types": 167,
+        "stems": 749,
+        "surface_type_token": 0.263017,
+        "surface_types": 197,
+        "type_token": 0.222964
+      },
+      "wood": "Podocarpus sp. (cf. latifolia), with D, N, and P (Orliac 2007).",
+      "wood_citation": "Orliac 2007, Rapa Nui Journal 21:7\u201310; Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "T",
+      "condition": "Poor (Kohaumotu). One inscribed side in that table.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 305\u00d795\u00d720",
+      "in_transcription": true,
+      "name": "Honolulu 1 (B.03629)",
+      "provenance": "Bishop Museum B.03629, from the vendored T index link.",
+      "provenance_citation": "tests/fixtures/honolulu_ta_html/T_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.486301,
+        "mean_parts": 1.506849,
+        "modification_rate": 0.041096,
+        "pictorial_rate": 0.30137,
+        "rarefied_types_k80": 42.307277,
+        "stem_types": 61,
+        "stems": 146,
+        "surface_type_token": 0.438356,
+        "surface_types": 64,
+        "type_token": 0.417808
+      },
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "The public corpus survey says the two sides are different hands. Secondary. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "U",
+      "condition": "Poor (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 680\u00d780\u00d722",
+      "in_transcription": true,
+      "name": "Honolulu 2 (B.03623)",
+      "provenance": "Bishop Museum B.03623, from the vendored U index link.",
+      "provenance_citation": "tests/fixtures/honolulu_ua_html/U_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.375,
+        "mean_parts": 1.5,
+        "modification_rate": 0.041667,
+        "pictorial_rate": 0.208333,
+        "rarefied_types_k80": null,
+        "stem_types": 19,
+        "stems": 24,
+        "surface_type_token": 0.833333,
+        "surface_types": 20,
+        "type_token": 0.791667
+      },
+      "wood": "Unidentified in the Kohaumotu table. The public corpus survey calls it a European or American beam. Secondary.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary."
+    },
+    {
+      "carving": "The public corpus survey lists V among texts suspected of a steel blade. Secondary. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "V",
+      "condition": "Poor (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 710\u00d788\u00d730",
+      "in_transcription": true,
+      "name": "Honolulu 3 (B.03622)",
+      "provenance": "Bishop Museum B.03622, from the vendored V index link.",
+      "provenance_citation": "tests/fixtures/honolulu_va_html/V_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": {
+        "ligature_rate": 0.423077,
+        "mean_parts": 1.538462,
+        "modification_rate": 0.0,
+        "pictorial_rate": 0.346154,
+        "rarefied_types_k80": null,
+        "stem_types": 15,
+        "stems": 26,
+        "surface_type_token": 0.576923,
+        "surface_types": 15,
+        "type_token": 0.576923
+      },
+      "wood": "Unidentified in the Kohaumotu table. The public corpus survey, citing Fischer, groups it with the European or American oars. Secondary.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary. citing Fischer 1997, Rongorongo: The Easter Island Script (Clarendon)"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "W",
+      "condition": "Splinter (Kohaumotu). The vendored page says the fragment is in very poor condition.",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; tests/fixtures/honolulu_w_html/W.html",
+      "dimensions_mm": "Kohaumotu 63\u00d720\u00d715",
+      "in_transcription": false,
+      "name": "Honolulu 4 (B.00445)",
+      "provenance": "Bishop Museum B.00445, from the vendored W index link. No digit transcription is in the parallel-passage corpus.",
+      "provenance_citation": "tests/fixtures/honolulu_w_html/W_index.html",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": null,
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "A statuette. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "X",
+      "condition": "Fine (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu length 440",
+      "in_transcription": false,
+      "name": "Tangata manu",
+      "provenance": "The public corpus survey places a birdman statuette in New York. Secondary. No digit transcription is in the parallel-passage corpus.",
+      "provenance_citation": "Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": null,
+      "wood": "Toromiro, in the Kohaumotu table only. Not one of the microscope identifications cited above.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "The public corpus survey calls the glyphs crude and lists a steel-blade suspicion. Secondary. No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "Y",
+      "condition": "Fine (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 71\u00d750\u00d729",
+      "in_transcription": false,
+      "name": "Paris snuffbox",
+      "provenance": "The public corpus survey places it in Paris and says it was pieced together from a tablet. Secondary. Not in the parallel-passage corpus.",
+      "provenance_citation": "Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": null,
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    },
+    {
+      "carving": "No tablet-specific tool identification was read for this object. Eyraud 1866, quoted by Wieczorek et al. 2021: the signs were drawn with sharp stones. The public corpus survey also reports an oral tradition of obsidian flakes and shark teeth, and Barthel's two-stage account (sketch, then deepen). That survey was not re-checked against Barthel's own pages here.",
+      "code": "Z",
+      "condition": "Worn (Kohaumotu).",
+      "condition_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+      "dimensions_mm": "Kohaumotu 106\u00d760\u00d727",
+      "in_transcription": false,
+      "name": "Poike",
+      "provenance": "Named Poike in the Kohaumotu table. The public corpus survey says Fischer does not treat the legible layer as genuine. Secondary. Not in the parallel-passage corpus.",
+      "provenance_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html; Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary.",
+      "radiocarbon": "Not dated in the sources read for this track.",
+      "radiocarbon_citation": null,
+      "whole_text_forms": null,
+      "wood": "Unidentified in the Kohaumotu table.",
+      "wood_citation": "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html"
+    }
+  ],
+  "deduped_columns": 2080,
+  "distances": [
+    {
+      "a": "A",
+      "b": "H",
+      "columns": 38,
+      "differences": 7,
+      "gaps": 3,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 4,
+      "p_distance": 0.184211
+    },
+    {
+      "a": "A",
+      "b": "P",
+      "columns": 26,
+      "differences": 5,
+      "gaps": 3,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 2,
+      "p_distance": 0.192308
+    },
+    {
+      "a": "A",
+      "b": "Q",
+      "columns": 20,
+      "differences": 4,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 3,
+      "p_distance": 0.2
+    },
+    {
+      "a": "B",
+      "b": "E",
+      "columns": 11,
+      "differences": 2,
+      "gaps": 0,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 2,
+      "p_distance": 0.181818
+    },
+    {
+      "a": "B",
+      "b": "G",
+      "columns": 14,
+      "differences": 3,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 2,
+      "p_distance": 0.214286
+    },
+    {
+      "a": "B",
+      "b": "H",
+      "columns": 26,
+      "differences": 4,
+      "gaps": 3,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 1,
+      "p_distance": 0.153846
+    },
+    {
+      "a": "B",
+      "b": "K",
+      "columns": 12,
+      "differences": 0,
+      "gaps": 0,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.0
+    },
+    {
+      "a": "B",
+      "b": "Q",
+      "columns": 15,
+      "differences": 2,
+      "gaps": 2,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.133333
+    },
+    {
+      "a": "B",
+      "b": "R",
+      "columns": 8,
+      "differences": 1,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.125
+    },
+    {
+      "a": "C",
+      "b": "E",
+      "columns": 10,
+      "differences": 1,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.1
+    },
+    {
+      "a": "E",
+      "b": "G",
+      "columns": 10,
+      "differences": 2,
+      "gaps": 2,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.2
+    },
+    {
+      "a": "E",
+      "b": "H",
+      "columns": 11,
+      "differences": 2,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 1,
+      "p_distance": 0.181818
+    },
+    {
+      "a": "E",
+      "b": "P",
+      "columns": 15,
+      "differences": 3,
+      "gaps": 2,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 1,
+      "p_distance": 0.2
+    },
+    {
+      "a": "E",
+      "b": "R",
+      "columns": 11,
+      "differences": 2,
+      "gaps": 2,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.181818
+    },
+    {
+      "a": "G",
+      "b": "K",
+      "columns": 178,
+      "differences": 32,
+      "gaps": 15,
+      "imputed": false,
+      "in_tree": true,
+      "mismatches": 17,
+      "p_distance": 0.179775
+    },
+    {
+      "a": "G",
+      "b": "R",
+      "columns": 8,
+      "differences": 1,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.125
+    },
+    {
+      "a": "H",
+      "b": "P",
+      "columns": 753,
+      "differences": 143,
+      "gaps": 40,
+      "imputed": false,
+      "in_tree": true,
+      "mismatches": 103,
+      "p_distance": 0.189907
+    },
+    {
+      "a": "H",
+      "b": "Q",
+      "columns": 534,
+      "differences": 95,
+      "gaps": 25,
+      "imputed": false,
+      "in_tree": true,
+      "mismatches": 70,
+      "p_distance": 0.177903
+    },
+    {
+      "a": "H",
+      "b": "R",
+      "columns": 11,
+      "differences": 1,
+      "gaps": 1,
+      "imputed": false,
+      "in_tree": false,
+      "mismatches": 0,
+      "p_distance": 0.090909
+    },
+    {
+      "a": "P",
+      "b": "Q",
+      "columns": 369,
+      "differences": 68,
+      "gaps": 22,
+      "imputed": false,
+      "in_tree": true,
+      "mismatches": 46,
+      "p_distance": 0.184282
+    }
+  ],
+  "form_test": {
+    "aligned_rates": {
+      "H": {
+        "aligned_stems": 968,
+        "ligature_rate": 0.489669,
+        "mean_parts": 1.570248,
+        "modified_rate": 0.168388,
+        "pictorial_rate": 0.370868
+      },
+      "P": {
+        "aligned_stems": 851,
+        "ligature_rate": 0.497062,
+        "mean_parts": 1.619271,
+        "modified_rate": 0.153937,
+        "pictorial_rate": 0.349001
+      },
+      "Q": {
+        "aligned_stems": 618,
+        "ligature_rate": 0.461165,
+        "mean_parts": 1.566343,
+        "modified_rate": 0.135922,
+        "pictorial_rate": 0.385113
+      }
+    },
+    "comparable_sites": 28,
+    "derivedness_singleton_rate": {
+      "H": 0.285714,
+      "P": 0.428571,
+      "Q": 0.285714
+    },
+    "gk_ligature": {
+      "bootstrap_replicates": 1000,
+      "ci95": [
+        -0.042945,
+        0.030675
+      ],
+      "ci_excludes_zero": false,
+      "columns": 163,
+      "difference_left_minus_right": -0.006135,
+      "flag": "ligature",
+      "left": "G",
+      "left_rate": 0.644172,
+      "right": "K",
+      "right_rate": 0.650307
+    },
+    "gk_pictorial": {
+      "bootstrap_replicates": 1000,
+      "ci95": [
+        0.0,
+        0.030675
+      ],
+      "ci_excludes_zero": false,
+      "columns": 163,
+      "difference_left_minus_right": 0.01227,
+      "flag": "pictorial",
+      "left": "G",
+      "left_rate": 0.404908,
+      "right": "K",
+      "right_rate": 0.392638
+    },
+    "hp_ligature": {
+      "bootstrap_replicates": 1000,
+      "ci95": [
+        -0.032258,
+        0.01683
+      ],
+      "ci_excludes_zero": false,
+      "columns": 713,
+      "difference_left_minus_right": -0.00561,
+      "flag": "ligature",
+      "left": "H",
+      "left_rate": 0.510519,
+      "right": "P",
+      "right_rate": 0.516129
+    },
+    "hq_ligature": {
+      "bootstrap_replicates": 1000,
+      "ci95": [
+        -0.001965,
+        0.045187
+      ],
+      "ci_excludes_zero": false,
+      "columns": 509,
+      "difference_left_minus_right": 0.021611,
+      "flag": "ligature",
+      "left": "H",
+      "left_rate": 0.506876,
+      "right": "Q",
+      "right_rate": 0.485265
+    },
+    "p_ligature": 1.0,
+    "p_modification": 0.666667,
+    "p_pictorial": 0.333333,
+    "pq_ligature": {
+      "bootstrap_replicates": 1000,
+      "ci95": [
+        -0.037464,
+        0.028818
+      ],
+      "ci_excludes_zero": false,
+      "columns": 347,
+      "difference_left_minus_right": -0.005764,
+      "flag": "ligature",
+      "left": "P",
+      "left_rate": 0.495677,
+      "right": "Q",
+      "right_rate": 0.501441
+    },
+    "prediction": "HYPOTHESIS: the witness with more unique variants (higher derivedness) has the lower ligature rate, the lower pictorial rate, and the lower modification rate inside the shared passages. One-sided exact permutation p on three witnesses.",
+    "singleton_counts": {
+      "H": 8,
+      "P": 12,
+      "Q": 8
+    },
+    "spearman_derived_vs_ligature": 0.866025,
+    "spearman_derived_vs_modification": 0.0,
+    "spearman_derived_vs_pictorial": -0.866025
+  },
+  "great_tradition": {
+    "alignment_conflicts": 5,
+    "column_bootstrap_support": {
+      "H\u2013P": 0.125,
+      "H\u2013Q": 0.679,
+      "P\u2013Q": 0.097,
+      "unresolved": 0.099
+    },
+    "column_bootstrap_votes": {
+      "H\u2013P": 125,
+      "H\u2013Q": 679,
+      "P\u2013Q": 97,
+      "unresolved": 99
+    },
+    "distance_bootstrap_support": {
+      "H\u2013P": 0.036,
+      "H\u2013Q": 0.663,
+      "P\u2013Q": 0.301
+    },
+    "distance_bootstrap_votes": {
+      "H\u2013P": 36,
+      "H\u2013Q": 663,
+      "P\u2013Q": 301
+    },
+    "distance_closest_pair": "H\u2013Q",
+    "examples": {
+      "H_P_agree": [
+        {
+          "H": "205",
+          "H_locus": "Hr5:48",
+          "P": "205",
+          "P_locus": "Pr5:21",
+          "Q": "305",
+          "Q_locus": "Qr5:26"
+        },
+        {
+          "H": "205",
+          "H_locus": "Hr5:49",
+          "P": "205",
+          "P_locus": "Pr5:22",
+          "Q": "305",
+          "Q_locus": "Qr5:27"
+        },
+        {
+          "H": "386",
+          "H_locus": "Hr6:58",
+          "P": "386",
+          "P_locus": "Pr6:22",
+          "Q": "381",
+          "Q_locus": "Qr6:24"
+        },
+        {
+          "H": "074",
+          "H_locus": "Hr7:0",
+          "P": "074",
+          "P_locus": "Pr6:36",
+          "Q": "045",
+          "Q_locus": "Qr6:38"
+        },
+        {
+          "H": "376",
+          "H_locus": "Hr7:1",
+          "P": "376",
+          "P_locus": "Pr6:37",
+          "Q": "379",
+          "Q_locus": "Qr6:39"
+        }
+      ],
+      "H_Q_agree": [
+        {
+          "H": "048",
+          "H_locus": "Hr5:62",
+          "P": "049",
+          "P_locus": "Pr5:36",
+          "Q": "048",
+          "Q_locus": "Qr5:43"
+        },
+        {
+          "H": "006",
+          "H_locus": "Hr3:43",
+          "P": "061",
+          "P_locus": "Pr3:31",
+          "Q": "006",
+          "Q_locus": "Qr3:23"
+        },
+        {
+          "H": "093",
+          "H_locus": "Hr3:48",
+          "P": "006",
+          "P_locus": "Pr3:39",
+          "Q": "093",
+          "Q_locus": "Qr3:28"
+        },
+        {
+          "H": "084",
+          "H_locus": "Hr1:26",
+          "P": "056",
+          "P_locus": "Pr1:26",
+          "Q": "084",
+          "Q_locus": "Qr1:5"
+        },
+        {
+          "H": "254",
+          "H_locus": "Hr1:31",
+          "P": "256",
+          "P_locus": "Pr1:31",
+          "Q": "254",
+          "Q_locus": "Qr1:10"
+        }
+      ],
+      "P_Q_agree": [
+        {
+          "H": "201",
+          "H_locus": "Hr3:38",
+          "P": "202",
+          "P_locus": "Pr3:25",
+          "Q": "202",
+          "Q_locus": "Qr3:18"
+        },
+        {
+          "H": "324",
+          "H_locus": "Hr6:54",
+          "P": "326",
+          "P_locus": "Pr6:19",
+          "Q": "326",
+          "Q_locus": "Qr6:21"
+        },
+        {
+          "H": "011",
+          "H_locus": "Hr7:58",
+          "P": "001",
+          "P_locus": "Pr7:22",
+          "Q": "001",
+          "Q_locus": "Qr7:40"
+        },
+        {
+          "H": "041",
+          "H_locus": "Hr7:64",
+          "P": "022",
+          "P_locus": "Pr7:28",
+          "Q": "022",
+          "Q_locus": "Qr7:46"
+        },
+        {
+          "H": "710",
+          "H_locus": "Hv2:40",
+          "P": "450",
+          "P_locus": "Pv4:58",
+          "Q": "450",
+          "Q_locus": "Qv5:19"
+        }
+      ],
+      "gap_H": [
+        {
+          "H": null,
+          "H_locus": null,
+          "P": "060",
+          "P_locus": "Pr9:14",
+          "Q": "060",
+          "Q_locus": "Qr9:47"
+        }
+      ],
+      "gap_P": [
+        {
+          "H": "440",
+          "H_locus": "Hr5:47",
+          "P": null,
+          "P_locus": null,
+          "Q": "440",
+          "Q_locus": "Qr5:25"
+        }
+      ],
+      "gap_Q": [
+        {
+          "H": "060",
+          "H_locus": "Hr5:6",
+          "P": "060",
+          "P_locus": "Pr4:71",
+          "Q": null,
+          "Q_locus": null
+        },
+        {
+          "H": "008",
+          "H_locus": "Hr5:28",
+          "P": "008",
+          "P_locus": "Pr4:94",
+          "Q": null,
+          "Q_locus": null
+        },
+        {
+          "H": "020",
+          "H_locus": "Hr5:46",
+          "P": "020",
+          "P_locus": "Pr5:20",
+          "Q": null,
+          "Q_locus": null
+        },
+        {
+          "H": "206",
+          "H_locus": "Hr3:19",
+          "P": "206",
+          "P_locus": "Pr3:6",
+          "Q": null,
+          "Q_locus": null
+        },
+        {
+          "H": "060",
+          "H_locus": "Hr1:22",
+          "P": "077",
+          "P_locus": "Pr1:22",
+          "Q": null,
+          "Q_locus": null
+        }
+      ]
+    },
+    "exclusive_agreement_closest": "H\u2013Q",
+    "pairwise": {
+      "H\u2013P": {
+        "columns": 753,
+        "differences": 143,
+        "gaps": 40,
+        "mismatches": 103,
+        "p_distance": 0.189907
+      },
+      "H\u2013Q": {
+        "columns": 534,
+        "differences": 95,
+        "gaps": 25,
+        "mismatches": 70,
+        "p_distance": 0.177903
+      },
+      "P\u2013Q": {
+        "columns": 369,
+        "differences": 68,
+        "gaps": 22,
+        "mismatches": 46,
+        "p_distance": 0.184282
+      }
+    },
+    "patterns": {
+      "H_P_agree": 8,
+      "H_Q_agree": 12,
+      "P_Q_agree": 8,
+      "all_agree": 176,
+      "all_differ": 6,
+      "gap_H": 1,
+      "gap_P": 1,
+      "gap_Q": 7,
+      "only_H": 2,
+      "only_P": 5
+    },
+    "published_reference_hypotheses": {
+      "P_singleton_rate": 0.428571,
+      "davletshin_2017_P_as_reference": "Davletshin 2017, Journal of the Polynesian Society 126, as cited in Round 2 Track C: P is his reference copy against H and Q",
+      "lowest_singleton": [
+        "H",
+        "Q"
+      ],
+      "singleton_counts": {
+        "H": 8,
+        "P": 12,
+        "Q": 8
+      }
+    },
+    "triple_sign_sites": 210,
+    "triple_sites": 226
+  },
+  "passage_source": "Round 2 Track C gated passages recomputed with find_passages. Track C's shuffle null peaked at 0, so every gated passage is the significant set of 99. Columns are not stored in substitution_classes.json and are rebuilt here.",
+  "passages": 99,
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "readings_assigned": false,
+  "sources": [
+    "Ferrara, Tassoni, Kromer, Wacker, Friedrich, Tonini, Lastilla, Ravanelli, and Talamo 2024, Scientific Reports 14:2794, doi:10.1038/s41598-024-53063-7",
+    "Orliac 2005, Archaeology in Oceania 40:115\u2013119, doi:10.1002/j.1834-4453.2005.tb00597.x",
+    "Orliac 2007, Rapa Nui Journal 21:7\u201310",
+    "Orliac 2010, in Wallin and Martinsson-Wallin (eds.), The Gotland Papers, pp. 125\u2013140, as cited by Ferrara et al. 2024 and by the Kohaumotu material note",
+    "Wieczorek, Frankiewicz, Oskolski, and Horley 2021, Journal of Island and Coastal Archaeology, doi:10.1080/15564894.2021.1950874",
+    "Fischer 1997, Rongorongo: The Easter Island Script (Clarendon)",
+    "Horley 2007, Rapa Nui Journal 21(1), as cited in this repository's Round 2 Track C for the G/K relationship",
+    "Davletshin 2017, Journal of the Polynesian Society 126, as cited in Round 2 Track C: P is his reference copy against H and Q",
+    "Saitou and Nei 1987, Molecular Biology and Evolution 4:406\u2013425.",
+    "Felsenstein 1985, Evolution 39:783\u2013791.",
+    "Sproat 2003, as cited in Round 2 Track C, for the 125-sign H/Q match this tree is built on.",
+    "Pozdniakov 1996, Journal de la Soci\u00e9t\u00e9 des Oc\u00e9anistes 103:289\u2013303, the parallel-text study Track C cites.",
+    "Kudrjavtsev 1949, as cited by Track C via Barthel 1958 and Davletshin 2017, for the H/P/Q collation.",
+    "Vendored Kohaumotu tablets.html (P. Spaelti, last updated 2012-02-22; material footnote cites Orliac 2010), tests/fixtures/tahua_aa_html/tablets.html",
+    "Public corpus survey (the English Wikipedia article 'Rongorongo', read for this track). Used only where a primary page was not re-read, and labeled secondary."
+  ],
+  "stemma": {
+    "bipartitions": [
+      {
+        "support": 0.663,
+        "tablets": [
+          "H",
+          "Q"
+        ]
+      }
+    ],
+    "gk_gaps": {
+      "aligned_both": 163,
+      "extra_G": 12,
+      "extra_K": 3
+    },
+    "hp_gaps": {
+      "aligned_both": 713,
+      "extra_H": 22,
+      "extra_P": 18
+    },
+    "hq_gaps": {
+      "aligned_both": 509,
+      "extra_H": 15,
+      "extra_Q": 10
+    },
+    "imputed_pairs": [],
+    "method": "Neighbor-joining (Saitou and Nei 1987) on p-distances. A difference is a mismatch or a gap. Overlapping passages of one tablet pair contribute a column once, from the higher-scoring passage. The same stem may still be compared with a second tablet. A pair is drawn only when it has at least 40 aligned columns. Shorter parallels are reported and do not connect tablets. Tablets that share no such pair, even through a chain, stay in separate trees. Inside one connected group, a pair with no direct passage is filled by the shortest path and marked imputed. Bootstrap (Felsenstein 1985): passages drawn with replacement, 1000 replicates, seed 4. The closest-pair vote uses every drawn Great Tradition column. A branch is counted only when the replicate still has at least 40 columns on the pairs that define it. Support is the fraction of replicates that contain that set of tablets on one side of an edge.",
+    "newick": "(G:0.089888,K:0.089888); (P:0.049072,(H:0.091764,Q:0.086139)0.663:0.049072);",
+    "newicks": [
+      "(G:0.089888,K:0.089888);",
+      "(P:0.049072,(H:0.091764,Q:0.086139)0.663:0.049072);"
+    ],
+    "pq_gaps": {
+      "aligned_both": 347,
+      "extra_P": 14,
+      "extra_Q": 8
+    }
+  },
+  "substitution_direction": {
+    "binomial_p_two_sided": 0.6875,
+    "by_pair": {
+      "001\u2013011": {
+        "H:011": 1,
+        "P:001": 1
+      },
+      "056\u2013084": {
+        "P:056": 1
+      },
+      "254\u2013256": {
+        "P:256": 1
+      },
+      "280\u2013290": {
+        "H:280": 1,
+        "P:290": 1
+      }
+    },
+    "examples": [
+      {
+        "kind": "singleton_has_rarer",
+        "loci": {
+          "H": "Hr1:26",
+          "P": "Pr1:26",
+          "Q": "Qr1:5"
+        },
+        "majority": "084",
+        "minority_sign": "056",
+        "minority_witness": "P",
+        "pair": "056\u2013084"
+      },
+      {
+        "kind": "singleton_has_rarer",
+        "loci": {
+          "H": "Hr1:31",
+          "P": "Pr1:31",
+          "Q": "Qr1:10"
+        },
+        "majority": "254",
+        "minority_sign": "256",
+        "minority_witness": "P",
+        "pair": "254\u2013256"
+      },
+      {
+        "kind": "singleton_has_rarer",
+        "loci": {
+          "H": "Hr7:4",
+          "P": "Pr6:40",
+          "Q": "Qr6:42"
+        },
+        "majority": "280",
+        "minority_sign": "290",
+        "minority_witness": "P",
+        "pair": "280\u2013290"
+      },
+      {
+        "kind": "singleton_has_commoner",
+        "loci": {
+          "H": "Hr7:57",
+          "P": "Pr7:21",
+          "Q": "Qr7:39"
+        },
+        "majority": "011",
+        "minority_sign": "001",
+        "minority_witness": "P",
+        "pair": "001\u2013011"
+      },
+      {
+        "kind": "singleton_has_rarer",
+        "loci": {
+          "H": "Hr7:58",
+          "P": "Pr7:22",
+          "Q": "Qr7:40"
+        },
+        "majority": "001",
+        "minority_sign": "011",
+        "minority_witness": "H",
+        "pair": "001\u2013011"
+      },
+      {
+        "kind": "singleton_has_commoner",
+        "loci": {
+          "H": "Hv2:46",
+          "P": "Pv4:64",
+          "Q": "Qv5:25"
+        },
+        "majority": "290",
+        "minority_sign": "280",
+        "minority_witness": "H",
+        "pair": "280\u2013290"
+      }
+    ],
+    "hypothesis": "HYPOTHESIS under test: a later copy levels variants toward the commoner corpus form, so the witness that stands alone should carry the commoner member of a Track C pair. The opposite count means the lone witness carries the rarer form.",
+    "lone_witness_counts": {
+      "H": 2,
+      "P": 4
+    },
+    "pairwise_orientations": {
+      "A\u2013H": {
+        "A:002>H:021": 1
+      },
+      "G\u2013K": {
+        "G:600>K:400": 2
+      },
+      "H\u2013P": {
+        "H:002>P:021": 1,
+        "H:008>P:081": 1,
+        "H:011>P:001": 3,
+        "H:021>P:002": 2,
+        "H:084>P:056": 4,
+        "H:254>P:256": 3,
+        "H:256>P:254": 1,
+        "H:280>P:290": 2,
+        "H:385>P:381": 1
+      },
+      "H\u2013Q": {
+        "H:002>Q:021": 3,
+        "H:011>Q:001": 1,
+        "H:081>Q:008": 2,
+        "H:256>Q:254": 1,
+        "H:280>Q:290": 1,
+        "H:381>Q:385": 1,
+        "H:385>Q:381": 1,
+        "H:400>Q:600": 1,
+        "H:600>Q:400": 2
+      },
+      "P\u2013Q": {
+        "P:001>Q:011": 2,
+        "P:056>Q:084": 1,
+        "P:081>Q:008": 1,
+        "P:256>Q:254": 1,
+        "P:290>Q:280": 1,
+        "P:600>Q:400": 4
+      }
+    },
+    "singleton_has_commoner": 2,
+    "singleton_has_rarer": 4
+  },
+  "systematic_pairs": [
+    {
+      "a": "400",
+      "b": "600",
+      "commoner": "600",
+      "corpus_count_a": 81,
+      "corpus_count_b": 342,
+      "corpus_note": "Track C systematic pair",
+      "count": 9
+    },
+    {
+      "a": "002",
+      "b": "021",
+      "commoner": "002",
+      "corpus_count_a": 442,
+      "corpus_count_b": 93,
+      "corpus_note": "Track C systematic pair",
+      "count": 7
+    },
+    {
+      "a": "001",
+      "b": "011",
+      "commoner": "001",
+      "corpus_count_a": 769,
+      "corpus_count_b": 114,
+      "corpus_note": "Track C systematic pair",
+      "count": 6
+    },
+    {
+      "a": "254",
+      "b": "256",
+      "commoner": "254",
+      "corpus_count_a": 58,
+      "corpus_count_b": 25,
+      "corpus_note": "Track C systematic pair",
+      "count": 6
+    },
+    {
+      "a": "056",
+      "b": "084",
+      "commoner": "084",
+      "corpus_count_a": 19,
+      "corpus_count_b": 24,
+      "corpus_note": "Track C systematic pair",
+      "count": 5
+    },
+    {
+      "a": "008",
+      "b": "081",
+      "commoner": "008",
+      "corpus_count_a": 149,
+      "corpus_count_b": 60,
+      "corpus_note": "Track C systematic pair",
+      "count": 4
+    },
+    {
+      "a": "280",
+      "b": "290",
+      "commoner": "280",
+      "corpus_count_a": 124,
+      "corpus_count_b": 56,
+      "corpus_note": "Track C systematic pair",
+      "count": 4
+    },
+    {
+      "a": "381",
+      "b": "385",
+      "commoner": "381",
+      "corpus_count_a": 87,
+      "corpus_count_b": 41,
+      "corpus_note": "Track C systematic pair",
+      "count": 3
+    }
+  ],
+  "track": "round4_trackD",
+  "tree_labels": [
+    "G",
+    "H",
+    "K",
+    "P",
+    "Q"
+  ],
+  "tree_min_columns": 40,
+  "whole_text_forms": {
+    "A": {
+      "ligature_rate": 0.482702,
+      "mean_parts": 1.604064,
+      "modification_rate": 0.165294,
+      "pictorial_rate": 0.362987,
+      "rarefied_types_k80": 52.379506,
+      "stem_types": 291,
+      "stems": 1821,
+      "surface_type_token": 0.310269,
+      "surface_types": 565,
+      "type_token": 0.159802
+    },
+    "B": {
+      "ligature_rate": 0.501164,
+      "mean_parts": 1.622188,
+      "modification_rate": 0.114818,
+      "pictorial_rate": 0.366951,
+      "rarefied_types_k80": 54.28154,
+      "stem_types": 237,
+      "stems": 1289,
+      "surface_type_token": 0.217223,
+      "surface_types": 280,
+      "type_token": 0.183863
+    },
+    "C": {
+      "ligature_rate": 0.427411,
+      "mean_parts": 1.511675,
+      "modification_rate": 0.097462,
+      "pictorial_rate": 0.340102,
+      "rarefied_types_k80": 48.164676,
+      "stem_types": 185,
+      "stems": 985,
+      "surface_type_token": 0.230457,
+      "surface_types": 227,
+      "type_token": 0.187817
+    },
+    "D": {
+      "ligature_rate": 0.470833,
+      "mean_parts": 1.616667,
+      "modification_rate": 0.125,
+      "pictorial_rate": 0.425,
+      "rarefied_types_k80": 46.395088,
+      "stem_types": 90,
+      "stems": 240,
+      "surface_type_token": 0.416667,
+      "surface_types": 100,
+      "type_token": 0.375
+    },
+    "E": {
+      "ligature_rate": 0.510227,
+      "mean_parts": 1.568182,
+      "modification_rate": 0.125,
+      "pictorial_rate": 0.3625,
+      "rarefied_types_k80": 46.372231,
+      "stem_types": 162,
+      "stems": 880,
+      "surface_type_token": 0.223864,
+      "surface_types": 197,
+      "type_token": 0.184091
+    },
+    "F": {
+      "ligature_rate": 0.177778,
+      "mean_parts": 1.177778,
+      "modification_rate": 0.111111,
+      "pictorial_rate": 0.422222,
+      "rarefied_types_k80": null,
+      "stem_types": 30,
+      "stems": 45,
+      "surface_type_token": 0.733333,
+      "surface_types": 33,
+      "type_token": 0.666667
+    },
+    "G": {
+      "ligature_rate": 0.545455,
+      "mean_parts": 1.798295,
+      "modification_rate": 0.090909,
+      "pictorial_rate": 0.353693,
+      "rarefied_types_k80": 46.464088,
+      "stem_types": 161,
+      "stems": 704,
+      "surface_type_token": 0.274148,
+      "surface_types": 193,
+      "type_token": 0.228693
+    },
+    "H": {
+      "ligature_rate": 0.471178,
+      "mean_parts": 1.541353,
+      "modification_rate": 0.189223,
+      "pictorial_rate": 0.384712,
+      "rarefied_types_k80": 55.303748,
+      "stem_types": 262,
+      "stems": 1596,
+      "surface_type_token": 0.324561,
+      "surface_types": 518,
+      "type_token": 0.16416
+    },
+    "I": {
+      "ligature_rate": 0.560263,
+      "mean_parts": 1.640889,
+      "modification_rate": 0.083916,
+      "pictorial_rate": 0.304813,
+      "rarefied_types_k80": 44.435344,
+      "stem_types": 279,
+      "stems": 2431,
+      "surface_type_token": 0.149733,
+      "surface_types": 364,
+      "type_token": 0.114768
+    },
+    "J": {
+      "ligature_rate": 0.0,
+      "mean_parts": 1.0,
+      "modification_rate": 0.0,
+      "pictorial_rate": 0.5,
+      "rarefied_types_k80": null,
+      "stem_types": 2,
+      "stems": 2,
+      "surface_type_token": 1.0,
+      "surface_types": 2,
+      "type_token": 1.0
+    },
+    "K": {
+      "ligature_rate": 0.572093,
+      "mean_parts": 1.865116,
+      "modification_rate": 0.037209,
+      "pictorial_rate": 0.372093,
+      "rarefied_types_k80": 39.909223,
+      "stem_types": 76,
+      "stems": 215,
+      "surface_type_token": 0.386047,
+      "surface_types": 83,
+      "type_token": 0.353488
+    },
+    "L": {
+      "ligature_rate": 0.27451,
+      "mean_parts": 1.27451,
+      "modification_rate": 0.137255,
+      "pictorial_rate": 0.352941,
+      "rarefied_types_k80": null,
+      "stem_types": 31,
+      "stems": 51,
+      "surface_type_token": 0.666667,
+      "surface_types": 34,
+      "type_token": 0.607843
+    },
+    "M": {
+      "ligature_rate": 0.125,
+      "mean_parts": 1.125,
+      "modification_rate": 0.041667,
+      "pictorial_rate": 0.208333,
+      "rarefied_types_k80": null,
+      "stem_types": 26,
+      "stems": 48,
+      "surface_type_token": 0.5625,
+      "surface_types": 27,
+      "type_token": 0.541667
+    },
+    "N": {
+      "ligature_rate": 0.559829,
+      "mean_parts": 1.675214,
+      "modification_rate": 0.051282,
+      "pictorial_rate": 0.367521,
+      "rarefied_types_k80": 44.385965,
+      "stem_types": 81,
+      "stems": 234,
+      "surface_type_token": 0.367521,
+      "surface_types": 86,
+      "type_token": 0.346154
+    },
+    "O": {
+      "ligature_rate": 0.293478,
+      "mean_parts": 1.326087,
+      "modification_rate": 0.054348,
+      "pictorial_rate": 0.369565,
+      "rarefied_types_k80": 44.363858,
+      "stem_types": 48,
+      "stems": 92,
+      "surface_type_token": 0.543478,
+      "surface_types": 50,
+      "type_token": 0.521739
+    },
+    "P": {
+      "ligature_rate": 0.481386,
+      "mean_parts": 1.617458,
+      "modification_rate": 0.177792,
+      "pictorial_rate": 0.402439,
+      "rarefied_types_k80": 55.341262,
+      "stem_types": 268,
+      "stems": 1558,
+      "surface_type_token": 0.372914,
+      "surface_types": 581,
+      "type_token": 0.172015
+    },
+    "Q": {
+      "ligature_rate": 0.446429,
+      "mean_parts": 1.540179,
+      "modification_rate": 0.15067,
+      "pictorial_rate": 0.410714,
+      "rarefied_types_k80": 54.144892,
+      "stem_types": 193,
+      "stems": 896,
+      "surface_type_token": 0.381696,
+      "surface_types": 342,
+      "type_token": 0.215402
+    },
+    "R": {
+      "ligature_rate": 0.407895,
+      "mean_parts": 1.5,
+      "modification_rate": 0.100877,
+      "pictorial_rate": 0.359649,
+      "rarefied_types_k80": 46.299491,
+      "stem_types": 117,
+      "stems": 456,
+      "surface_type_token": 0.298246,
+      "surface_types": 136,
+      "type_token": 0.256579
+    },
+    "S": {
+      "ligature_rate": 0.428571,
+      "mean_parts": 1.534045,
+      "modification_rate": 0.133511,
+      "pictorial_rate": 0.321762,
+      "rarefied_types_k80": 51.576075,
+      "stem_types": 167,
+      "stems": 749,
+      "surface_type_token": 0.263017,
+      "surface_types": 197,
+      "type_token": 0.222964
+    },
+    "T": {
+      "ligature_rate": 0.486301,
+      "mean_parts": 1.506849,
+      "modification_rate": 0.041096,
+      "pictorial_rate": 0.30137,
+      "rarefied_types_k80": 42.307277,
+      "stem_types": 61,
+      "stems": 146,
+      "surface_type_token": 0.438356,
+      "surface_types": 64,
+      "type_token": 0.417808
+    },
+    "U": {
+      "ligature_rate": 0.375,
+      "mean_parts": 1.5,
+      "modification_rate": 0.041667,
+      "pictorial_rate": 0.208333,
+      "rarefied_types_k80": null,
+      "stem_types": 19,
+      "stems": 24,
+      "surface_type_token": 0.833333,
+      "surface_types": 20,
+      "type_token": 0.791667
+    },
+    "V": {
+      "ligature_rate": 0.423077,
+      "mean_parts": 1.538462,
+      "modification_rate": 0.0,
+      "pictorial_rate": 0.346154,
+      "rarefied_types_k80": null,
+      "stem_types": 15,
+      "stems": 26,
+      "surface_type_token": 0.576923,
+      "surface_types": 15,
+      "type_token": 0.576923
+    }
+  }
+}
