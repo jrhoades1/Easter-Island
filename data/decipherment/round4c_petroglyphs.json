@@ -1,0 +1,3168 @@
+{
+  "round": 4,
+  "track": "C",
+  "provider": "mock",
+  "provider_calls": 0,
+  "reading": null,
+  "corpus_tokens": 14488,
+  "tablet_count": 22,
+  "tablets": [
+    {
+      "tablet": "A",
+      "tokens": 1821
+    },
+    {
+      "tablet": "B",
+      "tokens": 1289
+    },
+    {
+      "tablet": "C",
+      "tokens": 985
+    },
+    {
+      "tablet": "D",
+      "tokens": 240
+    },
+    {
+      "tablet": "E",
+      "tokens": 880
+    },
+    {
+      "tablet": "F",
+      "tokens": 45
+    },
+    {
+      "tablet": "G",
+      "tokens": 704
+    },
+    {
+      "tablet": "H",
+      "tokens": 1596
+    },
+    {
+      "tablet": "I",
+      "tokens": 2431
+    },
+    {
+      "tablet": "J",
+      "tokens": 2
+    },
+    {
+      "tablet": "K",
+      "tokens": 215
+    },
+    {
+      "tablet": "L",
+      "tokens": 51
+    },
+    {
+      "tablet": "M",
+      "tokens": 48
+    },
+    {
+      "tablet": "N",
+      "tokens": 234
+    },
+    {
+      "tablet": "O",
+      "tokens": 92
+    },
+    {
+      "tablet": "P",
+      "tokens": 1558
+    },
+    {
+      "tablet": "Q",
+      "tokens": 896
+    },
+    {
+      "tablet": "R",
+      "tokens": 456
+    },
+    {
+      "tablet": "S",
+      "tokens": 749
+    },
+    {
+      "tablet": "T",
+      "tokens": 146
+    },
+    {
+      "tablet": "U",
+      "tokens": 24
+    },
+    {
+      "tablet": "V",
+      "tokens": 26
+    }
+  ],
+  "method": {
+    "inventory": "Barthel stem, vendored Kohaumotu pages",
+    "null": "For a sign with k hits, k positions are drawn at random among the stems. The statistic is the chi-square of tablet counts against tablet length. The p-value is (hits + 1) / (trials + 1), one sided, greater than the observed statistic.",
+    "trials": 2000,
+    "seed": 4,
+    "minimum_count": 20,
+    "alpha": 0.05,
+    "bonferroni_signs": [
+      "074",
+      "660",
+      "680",
+      "007",
+      "240"
+    ],
+    "bonferroni_threshold": 0.01,
+    "control_signs": [
+      "001",
+      "076",
+      "002",
+      "003",
+      "004",
+      "600",
+      "006",
+      "022"
+    ],
+    "control_median_p": 0.0004997501249375312,
+    "what_would_count": "A sign is called more concentrated than chance only if it has at least 20 hits, its p-value clears 0.05 divided by the number of such signs, and that p-value is also smaller than the median p-value of the eight most common signs that are not in the petroglyph set. That status is about where the sign sits. It is not a meaning."
+  },
+  "adopted_matches": [
+    {
+      "match_id": "mata_ngarau_fish_tail_bulb",
+      "medium": "petroglyph",
+      "motif": "fish with a bulb at the base of the tail",
+      "location": "Inside a house at Mata Ngarau, 'Orongo. The same tail bulb is rare in rock art; Lee records it on a marine creature north of 'Anakena, a sea creature at 'Anakena, needlefish and tuna at Hau Koka, and a tuna at Papa Tataku Poki.",
+      "site_function": "Mata Ngarau is the ceremonial court of the birdman competition. Its houses were used by the rongorongo men. The carving itself is a fish.",
+      "context_implies": "The sign is being compared to a fish. Horley and Lee do not say it means a fishing chant. Lee later leaves the purpose of sea petroglyphs open.",
+      "barthel_signs": [
+        "700b",
+        "721",
+        "733"
+      ],
+      "surface_note": "The source writes 700b, 721, and 733. 700b is one allograph, not every sign whose stem is 700. The test uses 700b itself. The plain stem 700 is counted beside it and is not treated as the tail-bulb sign.",
+      "published_count": null,
+      "citation": "Horley and Lee 2008, Rapa Nui Journal 22(2): 114, fig. 6a, citing Lee 1992: 93, 94, 164, 165, 185. Fish and turtle counts in the rock art, without a Barthel number, are Lee 2004, Rapa Nui Journal 18(1): 36, drawing on Lee 1992."
+    },
+    {
+      "match_id": "orongo_house_44_gourd",
+      "medium": "petroglyph",
+      "motif": "hook-shaped or gourd-shaped figure with a komari cut on it",
+      "location": "'Orongo house 44, Mata Ngarau.",
+      "site_function": "House interior at the birdman precinct, occupied by rongorongo men. Routledge called the figure hook-shaped. Horley and Lee call it a gourd. Komari were cut during later fertility ceremonies and often overlie birdmen.",
+      "context_implies": "The matched outline is the hook or gourd, not the vulva cut on it. A fertility reading of sign 074 is a hypothesis, not what the paper states.",
+      "barthel_signs": [
+        "074"
+      ],
+      "surface_note": null,
+      "published_count": {
+        "074": {
+          "count": 94,
+          "corpus": 14552,
+          "citation": "Barthel 1958: 109, as cited by Horley and Lee 2008: 114."
+        }
+      },
+      "citation": "Horley and Lee 2008: 114, fig. 6b. Routledge 1920: 447 ('a figure shaped like a hook'). Komari and the fertility ceremonies: Routledge 1919: 263, cited by Horley and Lee 2008: 111."
+    },
+    {
+      "match_id": "orongo_house_40_long_beak",
+      "medium": "petroglyph",
+      "motif": "long-beaked bird",
+      "location": "'Orongo house 40 (Koll's group), and loci 31 and 17 at Mata Ngarau.",
+      "site_function": "Birdman precinct. The long-beaked bird is one motif among birdmen, not a label for the whole cult.",
+      "context_implies": "The sign is being compared to a long-beaked bird. Equating it with the word manu, with the sooty tern, or with Makemake is a hypothesis.",
+      "barthel_signs": [
+        "660"
+      ],
+      "surface_note": "Horley and Lee say the beak is usually closed, and that open-beak forms occur on lines Br2, Br7, Pr2, and Ua3.",
+      "published_count": {
+        "660": {
+          "count": 29,
+          "corpus": null,
+          "citation": "Barthel 1958: 144, as cited by Horley and Lee 2008: 114."
+        }
+      },
+      "citation": "Horley and Lee 2008: 114, fig. 6d, citing Koll 1991: fig. 1 and Lee 1992: figs. 4.48 and 4.97."
+    },
+    {
+      "match_id": "mata_ngarau_two_headed_bird",
+      "medium": "petroglyph",
+      "motif": "two-headed long-beaked bird",
+      "location": "Mata Ngarau loci 6 and 31.",
+      "site_function": "Same birdman precinct as the single long-beaked bird.",
+      "context_implies": "The sign is being compared to a two-headed long-beaked bird. No name is attached.",
+      "barthel_signs": [
+        "680"
+      ],
+      "surface_note": null,
+      "published_count": {
+        "680": {
+          "count": 23,
+          "corpus": null,
+          "citation": "Barthel 1958: 145, as cited by Horley and Lee 2008: 114."
+        }
+      },
+      "citation": "Horley and Lee 2008: 114, citing Lee 1992: figs. 4.45 and 4.48."
+    },
+    {
+      "match_id": "locus_17_reimiro",
+      "medium": "petroglyph",
+      "motif": "rei miro",
+      "location": "Mata Ngarau locus 17.",
+      "site_function": "The rei miro is a breast ornament. The petroglyph is the ornament's crescent, carved at the birdman court. It is not the text cut on the wooden rei miro in museum collections.",
+      "context_implies": "The sign has the outline of a rei miro. That does not say which word, if any, the sign spells.",
+      "barthel_signs": [
+        "007"
+      ],
+      "surface_note": null,
+      "published_count": null,
+      "citation": "Horley and Lee 2008: 114, on locus 17 (Lee 1992: fig. 4.97)."
+    },
+    {
+      "match_id": "locus_17_sitting_man",
+      "medium": "petroglyph",
+      "motif": "sitting man",
+      "location": "Mata Ngarau locus 17.",
+      "site_function": "A human figure at the birdman court, grouped with the rei miro, an eye mask, and a bird.",
+      "context_implies": "A seated person. No personal name and no title is given by the source.",
+      "barthel_signs": [
+        "240"
+      ],
+      "surface_note": null,
+      "published_count": null,
+      "citation": "Horley and Lee 2008: 114. They put the words sitting man in quotation marks."
+    },
+    {
+      "match_id": "locus_17_eye_mask",
+      "medium": "petroglyph",
+      "motif": "eye mask",
+      "location": "Mata Ngarau locus 17.",
+      "site_function": "Eye masks and Makemake faces are both carved at 'Orongo. Horley and Lee identify this petroglyph as an eye mask, not as a portrait of the god.",
+      "context_implies": "An eye mask. Calling sign 513 'Makemake' is a hypothesis. Lee's Makemake faces are a larger class and are not given this number.",
+      "barthel_signs": [
+        "513"
+      ],
+      "surface_note": null,
+      "published_count": null,
+      "citation": "Horley and Lee 2008: 114."
+    },
+    {
+      "match_id": "locus_17_bird_with_star",
+      "medium": "petroglyph",
+      "motif": "bird with a star around its head",
+      "location": "Mata Ngarau locus 17.",
+      "site_function": "Bird image at the birdman court, on the same boulder as the rei miro, sitting man, and eye mask.",
+      "context_implies": "A bird with a star-like form at the head. No star name and no bird species is assigned.",
+      "barthel_signs": [
+        "550"
+      ],
+      "surface_note": null,
+      "published_count": null,
+      "citation": "Horley and Lee 2008: 114."
+    }
+  ],
+  "unnumbered": [
+    {
+      "match_id": "orongo_birdman",
+      "medium": "petroglyph",
+      "motif": "tangata manu, the birdman",
+      "location": "Mata Ngarau and the 'Orongo houses. Horley and Lee, citing Lee 1990: 69, give 375 birdmen at the precinct. A large bas-relief birdman on locus 45 is partly hidden by a house wall.",
+      "site_function": "The birdman competition decided a ritual office. The village was occupied seasonally. Rongorongo men chanted at Mata Ngarau.",
+      "context_implies": "The cult is well documented. No source used here prints one Barthel number for the full birdman body. McLaughlin 2004's two-column page pairs the words tangata manu with glyph 638, but the columns collide in the text and that number is not adopted.",
+      "barthel_signs": null,
+      "citation": "Lee 1992: 36, 67, 70; Horley and Lee 2008: 110–112, citing Routledge 1919: 260 and 1920: 426, 446, and Métraux 1940: 331–332, 335. Dorsal birdmen on Hoa Hakananai'a: Horley and Lee 2008: 112, fig. 4, citing Routledge 1919: 261 and Métraux 1940: 298."
+    },
+    {
+      "match_id": "komari",
+      "medium": "petroglyph",
+      "motif": "komari, the vulva form",
+      "location": "Across the island, and in quantity at Mata Ngarau: 195 on the precinct (Lee 1990: 69, via Horley and Lee) and 130 of 173 motifs inside 'Orongo houses (Koll 1991).",
+      "site_function": "Routledge ties the komari to later fertility ceremonies. They are cut over earlier birdmen.",
+      "context_implies": "Fertility is the published function of the rock-art motif. It is not a reading of a Barthel sign. House 43 has an anthropomorph whose head is replaced by a komari; Horley and Lee say it may resemble a sign on Tahua and do not give a number. McLaughlin's glyph 51 is not adopted, for the same layout reason as glyph 638.",
+      "barthel_signs": null,
+      "citation": "Routledge 1919: 263; Horley and Lee 2008: 111, 114, fig. 6c; Koll 1991: 61–62; Lee 1992."
+    },
+    {
+      "match_id": "makemake_faces",
+      "medium": "petroglyph",
+      "motif": "Makemake faces",
+      "location": "Mata Ngarau, where Lee counted 140 faces, and elsewhere including panels that also carry komari and turtles.",
+      "site_function": "Makemake is the creator god tied to the birdman cult. The faces are a rock-art class, often large-eyed.",
+      "context_implies": "The god's name belongs to the faces in the ethnographic literature. It is not transferred to sign 513, which Horley and Lee call an eye mask.",
+      "barthel_signs": null,
+      "citation": "Lee 1990: 69 as cited by Horley and Lee 2008: 112; Lee 2004, Rapa Nui Journal 18(1), on Makemake faces beside sea creatures; Métraux 1940 for the cult setting as used by Horley and Lee."
+    },
+    {
+      "match_id": "turtle_petroglyphs",
+      "medium": "petroglyph",
+      "motif": "turtle",
+      "location": "Tongariki, the coast from Omohe to La Perouse, one example at 'Orongo, and at least three on the canoe panel near Ahu Ra'ai. Lee's 1992 count is 34 turtle images.",
+      "site_function": "Lee reviews Polynesian turtle ritual and an island legend in which a turtle is Makemake in disguise. She does not assign the petroglyphs to a rongorongo sign. Horley 2005, fig. 1, draws a turtle-shaped glyph and does not print its number in the caption text used here.",
+      "context_implies": "No sign is tested. A turtle reading of any glyph would be a hypothesis.",
+      "barthel_signs": null,
+      "citation": "Lee 2004, Rapa Nui Journal 18(1): 36, citing Lee 1992: figs. 4.65–4.70 and fig. 4.107. Horley 2005, Rapa Nui Journal 19(2): 107–116, fig. 1."
+    },
+    {
+      "match_id": "canoe_petroglyphs",
+      "medium": "petroglyph",
+      "motif": "canoe",
+      "location": "The great canoe panel near Ahu Ra'ai, with fishhooks and turtles, and a panel at Pua Tivaka that also has canoe shapes.",
+      "site_function": "Lee documents the canoes as rock art. No Barthel number is printed with them in the sources read for this round.",
+      "context_implies": "No sign is tested. A canoe reading would be a hypothesis.",
+      "barthel_signs": null,
+      "citation": "Lee 2004, citing Lee 1992: fig. 4.72 and fig. 4.107."
+    },
+    {
+      "match_id": "hoa_hakananai_a_back",
+      "medium": "carved_stone",
+      "motif": "birdmen, sooty tern, dance paddles, and komari on the back of Hoa Hakananai'a",
+      "location": "The moai removed from 'Orongo in 1868, now in the British Museum. The carvings were painted red on white.",
+      "site_function": "An 'Orongo statue whose back carries the same motifs as the village: manu piri birdmen, manutara, ao or rapa, and komari.",
+      "context_implies": "The motifs are identified. They are not given Barthel numbers on this statue. McLaughlin leaves the rapa paddle unnumbered.",
+      "barthel_signs": null,
+      "citation": "Horley and Lee 2008: 112–113, figs. 4 and 5, citing Routledge 1919: 257, 261, Métraux 1940: 298, and Orliac and Orliac 2008. McLaughlin 2004: 90–93 lists a rapa among petroglyph matches and gives it no glyph number."
+    },
+    {
+      "match_id": "peabody_birdman_stones",
+      "medium": "carved_stone",
+      "motif": "birdman stones removed from 'Orongo",
+      "location": "Peabody Museum of Archaeology and Ethnology, Cambridge, Massachusetts. The stones came from the 'Orongo birdman site.",
+      "site_function": "Portable or removed stones carrying birdman carvings. This round did not verify a Barthel number from the article text.",
+      "context_implies": "No sign is tested from this paper.",
+      "barthel_signs": null,
+      "citation": "Horley and Lee 2012, Rapa Nui Journal 26(1): 5–20, 'Easter Island's birdman stones in the collection of the Peabody Museum of Archaeology and Ethnology, Cambridge, Massachusetts.'"
+    },
+    {
+      "match_id": "tahonga",
+      "medium": "carved_object",
+      "motif": "tahonga pendant",
+      "location": "Museum examples of the spherical wooden pendant. About two dozen survive. No inscription with a published Barthel number was verified here.",
+      "site_function": "A neck pendant. Orliac and Orliac argue the shape follows a seabird egg, in the birdman and creation setting, rather than a coconut. Some designs used on figurine heads also appear on tahonga.",
+      "context_implies": "The egg interpretation belongs to the pendant. It is not a reading of a sign. No sign is tested.",
+      "barthel_signs": null,
+      "citation": "Orliac and Orliac 2008, as summarized from their Treasures of Easter Island in the Museum of Cultural History, Oslo, note on the Arup tahonga; Forment 1993: 212, cited by Wieczorek and Horley 2023, Archaeometry, for designs shared onto tahonga; Orliac 2010 on makoi wood as the preferred material for tahonga and rei miro."
+    },
+    {
+      "match_id": "moai_kavakava_handlike",
+      "medium": "carved_object",
+      "motif": "hand-like forms on the neck of a moai kavakava, under a hairdo of lozenges",
+      "location": "Moai kavakava E 18646, Peabody Essex Museum, Salem. Collected in the mid nineteenth century.",
+      "site_function": "Moai kavakava are emaciated male figures treated as akuaku. Cranial carvings sit where the hair would be. Orliac and Orliac warn that those carvings are not literal portraits. Red pigment in the nostrils is described as the breath of life.",
+      "context_implies": "Wieczorek and Horley say the hand-like forms are similar to signs 052, 52x, or 162. Similarity to three signs is not an identification, so none of the three is adopted as the carving's sign. No confirmatory test is attached.",
+      "barthel_signs": null,
+      "candidate_signs_not_adopted": [
+        "052",
+        "162"
+      ],
+      "citation": "Wieczorek and Horley 2023, Archaeometry (cranial unwrapping), on E 18646, citing Barthel 1958, Formentafel 1–2, and Horley, Davletshin and Wieczorek 2018: 380, fig. 16. Akuaku and the non-literal reading of cranial glyphs: Orliac and Orliac 2008: 106, quoted by Wieczorek and Horley. Red nostrils: Orliac and Orliac 2008: 113, cited by Horley and Lee 2008: 115. Métraux 1940: 252–253 is the ethnographic discussion they point to."
+    },
+    {
+      "match_id": "moai_kavakava_e5306",
+      "medium": "carved_object",
+      "motif": "bird heads, star or starfish shapes, and a rotated crescent on a figurine's cranium",
+      "location": "Moai kavakava E 5306, Peabody Essex Museum. A second example is Kunstkamera 3707-1.",
+      "site_function": "Same figurine type. Horley 2005 had already noted a possible relation to the script.",
+      "context_implies": "No Barthel number is printed for this composition. Nothing is tested.",
+      "barthel_signs": null,
+      "citation": "Wieczorek and Horley 2023, on E 5306, citing Horley 2005: 114, fig. 20d, and Butinov and Rozina 1962 for the St Petersburg figure."
+    },
+    {
+      "match_id": "reimiro_pectorals",
+      "medium": "carved_object",
+      "motif": "inscribed rei miro pectorals",
+      "location": "Item J, rei miro 1, British Museum, and item L, rei miro 2, also London. J is a short text. L is a longer one. Both are already inside the Barthel corpus, so their signs are the script, not an outside picture of it.",
+      "site_function": "Breast ornaments. The crescent shape, as a petroglyph, is the separate match to sign 007.",
+      "context_implies": "The object class does not tell us the meaning of the signs cut on J or L. Those signs are listed from the vendored pages and are not given implications.",
+      "barthel_signs": null,
+      "citation": "Horley, Davletshin and Wieczorek 2018, corpus table: J is RR20, two glyphs; L is RR21. Vendored Kohaumotu pages Ja.html and La.html. Fischer 1997 is the catalog that paper updates. The shape parallel is Horley and Lee 2008, sign 007, not these inscriptions."
+    },
+    {
+      "match_id": "new_york_birdman_figure",
+      "medium": "carved_object",
+      "motif": "tangata manu wood figure with short incised texts",
+      "location": "Item X, American Museum of Natural History, New York. Not in the vendored Kohaumotu pages used here.",
+      "site_function": "A sculpture of a man with a bird's head. The 2018 corpus table gives it about 37 glyphs in several short texts.",
+      "context_implies": "Signs were cut on a birdman figure. Which signs, and whether the text is about the birdman, is not tested. The transcription is not vendored, so the sign list is null.",
+      "barthel_signs": null,
+      "citation": "Horley, Davletshin and Wieczorek 2018, corpus table, item X / RR25, citing Fischer 1997. Kohaumotu corpus list: item X is a tangata manu."
+    }
+  ],
+  "signs": {
+    "700b": {
+      "stem": "700b",
+      "stem_count": 1,
+      "corpus_tokens": 14488,
+      "rate": 6.902263942573165e-05,
+      "tablets": [
+        {
+          "tablet": "P",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "700b",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [],
+        "right": [
+          {
+            "sign": "010",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": null,
+      "confirmatory": false,
+      "reason": "below the pre-set count of 20",
+      "distribution_status": "not_tested",
+      "lexical_reading": null
+    },
+    "721": {
+      "stem": "721",
+      "stem_count": 7,
+      "corpus_tokens": 14488,
+      "rate": 0.0004831584759801215,
+      "tablets": [
+        {
+          "tablet": "P",
+          "count": 2
+        },
+        {
+          "tablet": "E",
+          "count": 1
+        },
+        {
+          "tablet": "F",
+          "count": 1
+        },
+        {
+          "tablet": "H",
+          "count": 1
+        },
+        {
+          "tablet": "Q",
+          "count": 1
+        },
+        {
+          "tablet": "R",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "721",
+          "count": 4
+        },
+        {
+          "surface": "721b",
+          "count": 1
+        },
+        {
+          "surface": "721c",
+          "count": 1
+        },
+        {
+          "surface": "721d",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "099",
+            "count": 3
+          },
+          {
+            "sign": "044",
+            "count": 1
+          },
+          {
+            "sign": "675",
+            "count": 1
+          },
+          {
+            "sign": "006",
+            "count": 1
+          },
+          {
+            "sign": "011",
+            "count": 1
+          }
+        ],
+        "right": [
+          {
+            "sign": "022",
+            "count": 3
+          },
+          {
+            "sign": "415",
+            "count": 1
+          },
+          {
+            "sign": "079",
+            "count": 1
+          },
+          {
+            "sign": "065",
+            "count": 1
+          },
+          {
+            "sign": "040",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": null,
+      "confirmatory": false,
+      "reason": "below the pre-set count of 20",
+      "distribution_status": "not_tested",
+      "lexical_reading": null
+    },
+    "733": {
+      "stem": "733",
+      "stem_count": 4,
+      "corpus_tokens": 14488,
+      "rate": 0.0002760905577029266,
+      "tablets": [
+        {
+          "tablet": "B",
+          "count": 1
+        },
+        {
+          "tablet": "H",
+          "count": 1
+        },
+        {
+          "tablet": "K",
+          "count": 1
+        },
+        {
+          "tablet": "P",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "733",
+          "count": 2
+        },
+        {
+          "surface": "733a",
+          "count": 2
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "144",
+            "count": 2
+          },
+          {
+            "sign": "727",
+            "count": 1
+          },
+          {
+            "sign": "001",
+            "count": 1
+          }
+        ],
+        "right": [
+          {
+            "sign": "384",
+            "count": 2
+          },
+          {
+            "sign": "001",
+            "count": 1
+          },
+          {
+            "sign": "670",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": null,
+      "confirmatory": false,
+      "reason": "below the pre-set count of 20",
+      "distribution_status": "not_tested",
+      "lexical_reading": null
+    },
+    "074": {
+      "stem": "074",
+      "stem_count": 135,
+      "corpus_tokens": 14488,
+      "rate": 0.009318056322473772,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 31
+        },
+        {
+          "tablet": "B",
+          "count": 16
+        },
+        {
+          "tablet": "H",
+          "count": 16
+        },
+        {
+          "tablet": "P",
+          "count": 15
+        },
+        {
+          "tablet": "I",
+          "count": 11
+        },
+        {
+          "tablet": "G",
+          "count": 9
+        },
+        {
+          "tablet": "Q",
+          "count": 9
+        },
+        {
+          "tablet": "C",
+          "count": 7
+        },
+        {
+          "tablet": "S",
+          "count": 7
+        },
+        {
+          "tablet": "E",
+          "count": 4
+        },
+        {
+          "tablet": "R",
+          "count": 4
+        },
+        {
+          "tablet": "N",
+          "count": 3
+        },
+        {
+          "tablet": "D",
+          "count": 1
+        },
+        {
+          "tablet": "O",
+          "count": 1
+        },
+        {
+          "tablet": "T",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "074",
+          "count": 46
+        },
+        {
+          "surface": "074a",
+          "count": 5
+        },
+        {
+          "surface": "074af",
+          "count": 9
+        },
+        {
+          "surface": "074bf",
+          "count": 1
+        },
+        {
+          "surface": "074c",
+          "count": 1
+        },
+        {
+          "surface": "074f",
+          "count": 50
+        },
+        {
+          "surface": "074fhx",
+          "count": 1
+        },
+        {
+          "surface": "074fx",
+          "count": 1
+        },
+        {
+          "surface": "074fy",
+          "count": 1
+        },
+        {
+          "surface": "074hx",
+          "count": 5
+        },
+        {
+          "surface": "074hy",
+          "count": 1
+        },
+        {
+          "surface": "074x",
+          "count": 10
+        },
+        {
+          "surface": "074xy",
+          "count": 1
+        },
+        {
+          "surface": "074y",
+          "count": 3
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "006",
+            "count": 29
+          },
+          {
+            "sign": "001",
+            "count": 6
+          },
+          {
+            "sign": "064",
+            "count": 4
+          },
+          {
+            "sign": "204",
+            "count": 4
+          },
+          {
+            "sign": "065",
+            "count": 3
+          }
+        ],
+        "right": [
+          {
+            "sign": "001",
+            "count": 7
+          },
+          {
+            "sign": "007",
+            "count": 5
+          },
+          {
+            "sign": "006",
+            "count": 5
+          },
+          {
+            "sign": "004",
+            "count": 5
+          },
+          {
+            "sign": "040",
+            "count": 4
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 27.60561087367169,
+        "trials": 2000,
+        "ge": 329,
+        "p_greater": 0.16491754122938532
+      },
+      "confirmatory": true,
+      "reason": null,
+      "distribution_status": "ordinary",
+      "lexical_reading": null
+    },
+    "660": {
+      "stem": "660",
+      "stem_count": 32,
+      "corpus_tokens": 14488,
+      "rate": 0.0022087244616234127,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 11
+        },
+        {
+          "tablet": "S",
+          "count": 9
+        },
+        {
+          "tablet": "C",
+          "count": 6
+        },
+        {
+          "tablet": "H",
+          "count": 2
+        },
+        {
+          "tablet": "Q",
+          "count": 2
+        },
+        {
+          "tablet": "I",
+          "count": 1
+        },
+        {
+          "tablet": "O",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "660",
+          "count": 24
+        },
+        {
+          "surface": "660o",
+          "count": 2
+        },
+        {
+          "surface": "660x",
+          "count": 5
+        },
+        {
+          "surface": "660y",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "004",
+            "count": 7
+          },
+          {
+            "sign": "064",
+            "count": 4
+          },
+          {
+            "sign": "022",
+            "count": 3
+          },
+          {
+            "sign": "009",
+            "count": 2
+          },
+          {
+            "sign": "002",
+            "count": 2
+          }
+        ],
+        "right": [
+          {
+            "sign": "081",
+            "count": 4
+          },
+          {
+            "sign": "600",
+            "count": 3
+          },
+          {
+            "sign": "005",
+            "count": 3
+          },
+          {
+            "sign": "002",
+            "count": 2
+          },
+          {
+            "sign": "380",
+            "count": 2
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 71.85672666716208,
+        "trials": 2000,
+        "ge": 19,
+        "p_greater": 0.009995002498750625
+      },
+      "confirmatory": true,
+      "reason": null,
+      "distribution_status": "nominal_only",
+      "lexical_reading": null
+    },
+    "680": {
+      "stem": "680",
+      "stem_count": 24,
+      "corpus_tokens": 14488,
+      "rate": 0.0016565433462175593,
+      "tablets": [
+        {
+          "tablet": "R",
+          "count": 9
+        },
+        {
+          "tablet": "A",
+          "count": 4
+        },
+        {
+          "tablet": "C",
+          "count": 2
+        },
+        {
+          "tablet": "D",
+          "count": 2
+        },
+        {
+          "tablet": "E",
+          "count": 2
+        },
+        {
+          "tablet": "G",
+          "count": 1
+        },
+        {
+          "tablet": "H",
+          "count": 1
+        },
+        {
+          "tablet": "I",
+          "count": 1
+        },
+        {
+          "tablet": "P",
+          "count": 1
+        },
+        {
+          "tablet": "Q",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "680",
+          "count": 23
+        },
+        {
+          "surface": "680a",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "002",
+            "count": 4
+          },
+          {
+            "sign": "662",
+            "count": 3
+          },
+          {
+            "sign": "005",
+            "count": 2
+          },
+          {
+            "sign": "014",
+            "count": 1
+          },
+          {
+            "sign": "301",
+            "count": 1
+          }
+        ],
+        "right": [
+          {
+            "sign": "002",
+            "count": 3
+          },
+          {
+            "sign": "005",
+            "count": 3
+          },
+          {
+            "sign": "400",
+            "count": 2
+          },
+          {
+            "sign": "011",
+            "count": 1
+          },
+          {
+            "sign": "065",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 106.33603360496822,
+        "trials": 2000,
+        "ge": 7,
+        "p_greater": 0.00399800099950025
+      },
+      "confirmatory": true,
+      "reason": null,
+      "distribution_status": "nominal_only",
+      "lexical_reading": null
+    },
+    "007": {
+      "stem": "007",
+      "stem_count": 171,
+      "corpus_tokens": 14488,
+      "rate": 0.01180287134180011,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 35
+        },
+        {
+          "tablet": "H",
+          "count": 18
+        },
+        {
+          "tablet": "P",
+          "count": 15
+        },
+        {
+          "tablet": "S",
+          "count": 14
+        },
+        {
+          "tablet": "G",
+          "count": 12
+        },
+        {
+          "tablet": "R",
+          "count": 12
+        },
+        {
+          "tablet": "B",
+          "count": 10
+        },
+        {
+          "tablet": "D",
+          "count": 10
+        },
+        {
+          "tablet": "E",
+          "count": 10
+        },
+        {
+          "tablet": "I",
+          "count": 10
+        },
+        {
+          "tablet": "C",
+          "count": 9
+        },
+        {
+          "tablet": "Q",
+          "count": 7
+        },
+        {
+          "tablet": "K",
+          "count": 4
+        },
+        {
+          "tablet": "O",
+          "count": 2
+        },
+        {
+          "tablet": "F",
+          "count": 1
+        },
+        {
+          "tablet": "N",
+          "count": 1
+        },
+        {
+          "tablet": "U",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "007",
+          "count": 168
+        },
+        {
+          "surface": "007a",
+          "count": 2
+        },
+        {
+          "surface": "007y",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "600",
+            "count": 15
+          },
+          {
+            "sign": "001",
+            "count": 14
+          },
+          {
+            "sign": "010",
+            "count": 13
+          },
+          {
+            "sign": "004",
+            "count": 8
+          },
+          {
+            "sign": "098",
+            "count": 7
+          }
+        ],
+        "right": [
+          {
+            "sign": "600",
+            "count": 14
+          },
+          {
+            "sign": "010",
+            "count": 11
+          },
+          {
+            "sign": "002",
+            "count": 9
+          },
+          {
+            "sign": "004",
+            "count": 8
+          },
+          {
+            "sign": "067",
+            "count": 8
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 64.03993028370053,
+        "trials": 2000,
+        "ge": 10,
+        "p_greater": 0.005497251374312844
+      },
+      "confirmatory": true,
+      "reason": null,
+      "distribution_status": "nominal_only",
+      "lexical_reading": null
+    },
+    "240": {
+      "stem": "240",
+      "stem_count": 24,
+      "corpus_tokens": 14488,
+      "rate": 0.0016565433462175593,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 6
+        },
+        {
+          "tablet": "I",
+          "count": 5
+        },
+        {
+          "tablet": "D",
+          "count": 4
+        },
+        {
+          "tablet": "B",
+          "count": 3
+        },
+        {
+          "tablet": "H",
+          "count": 3
+        },
+        {
+          "tablet": "Q",
+          "count": 2
+        },
+        {
+          "tablet": "P",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "240",
+          "count": 23
+        },
+        {
+          "surface": "240k",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "008",
+            "count": 3
+          },
+          {
+            "sign": "001",
+            "count": 3
+          },
+          {
+            "sign": "052",
+            "count": 3
+          },
+          {
+            "sign": "025",
+            "count": 1
+          },
+          {
+            "sign": "446",
+            "count": 1
+          }
+        ],
+        "right": [
+          {
+            "sign": "008",
+            "count": 4
+          },
+          {
+            "sign": "069",
+            "count": 3
+          },
+          {
+            "sign": "004",
+            "count": 2
+          },
+          {
+            "sign": "076",
+            "count": 2
+          },
+          {
+            "sign": "025",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 45.08798790574256,
+        "trials": 2000,
+        "ge": 65,
+        "p_greater": 0.03298350824587706
+      },
+      "confirmatory": true,
+      "reason": null,
+      "distribution_status": "nominal_only",
+      "lexical_reading": null
+    },
+    "513": {
+      "stem": "513",
+      "stem_count": 2,
+      "corpus_tokens": 14488,
+      "rate": 0.0001380452788514633,
+      "tablets": [
+        {
+          "tablet": "I",
+          "count": 2
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "513",
+          "count": 1
+        },
+        {
+          "surface": "513a",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "047",
+            "count": 1
+          },
+          {
+            "sign": "071",
+            "count": 1
+          }
+        ],
+        "right": [
+          {
+            "sign": "049",
+            "count": 1
+          },
+          {
+            "sign": "001",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": null,
+      "confirmatory": false,
+      "reason": "below the pre-set count of 20",
+      "distribution_status": "not_tested",
+      "lexical_reading": null
+    },
+    "550": {
+      "stem": "550",
+      "stem_count": 2,
+      "corpus_tokens": 14488,
+      "rate": 0.0001380452788514633,
+      "tablets": [
+        {
+          "tablet": "C",
+          "count": 1
+        },
+        {
+          "tablet": "U",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "550",
+          "count": 2
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "036",
+            "count": 1
+          },
+          {
+            "sign": "008",
+            "count": 1
+          }
+        ],
+        "right": [
+          {
+            "sign": "022",
+            "count": 1
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": null,
+      "confirmatory": false,
+      "reason": "below the pre-set count of 20",
+      "distribution_status": "not_tested",
+      "lexical_reading": null
+    }
+  },
+  "stem_700_not_cited": {
+    "stem": "700",
+    "stem_count": 288,
+    "corpus_tokens": 14488,
+    "rate": 0.019878520154610713,
+    "tablets": [
+      {
+        "tablet": "I",
+        "count": 62
+      },
+      {
+        "tablet": "H",
+        "count": 34
+      },
+      {
+        "tablet": "G",
+        "count": 24
+      },
+      {
+        "tablet": "P",
+        "count": 22
+      },
+      {
+        "tablet": "S",
+        "count": 21
+      },
+      {
+        "tablet": "B",
+        "count": 20
+      },
+      {
+        "tablet": "A",
+        "count": 19
+      },
+      {
+        "tablet": "C",
+        "count": 17
+      },
+      {
+        "tablet": "R",
+        "count": 16
+      },
+      {
+        "tablet": "E",
+        "count": 13
+      },
+      {
+        "tablet": "D",
+        "count": 10
+      },
+      {
+        "tablet": "Q",
+        "count": 10
+      },
+      {
+        "tablet": "K",
+        "count": 4
+      },
+      {
+        "tablet": "O",
+        "count": 4
+      },
+      {
+        "tablet": "N",
+        "count": 3
+      },
+      {
+        "tablet": "T",
+        "count": 3
+      },
+      {
+        "tablet": "L",
+        "count": 2
+      },
+      {
+        "tablet": "V",
+        "count": 2
+      },
+      {
+        "tablet": "F",
+        "count": 1
+      },
+      {
+        "tablet": "M",
+        "count": 1
+      }
+    ],
+    "surfaces": [
+      {
+        "surface": "700",
+        "count": 225
+      },
+      {
+        "surface": "700a",
+        "count": 7
+      },
+      {
+        "surface": "700b",
+        "count": 1
+      },
+      {
+        "surface": "700bx",
+        "count": 1
+      },
+      {
+        "surface": "700c",
+        "count": 4
+      },
+      {
+        "surface": "700cx",
+        "count": 4
+      },
+      {
+        "surface": "700d",
+        "count": 1
+      },
+      {
+        "surface": "700e",
+        "count": 1
+      },
+      {
+        "surface": "700f",
+        "count": 23
+      },
+      {
+        "surface": "700g",
+        "count": 1
+      },
+      {
+        "surface": "700h",
+        "count": 1
+      },
+      {
+        "surface": "700t",
+        "count": 1
+      },
+      {
+        "surface": "700x",
+        "count": 18
+      }
+    ],
+    "neighbors": {
+      "left": [
+        {
+          "sign": "006",
+          "count": 25
+        },
+        {
+          "sign": "700",
+          "count": 18
+        },
+        {
+          "sign": "076",
+          "count": 14
+        },
+        {
+          "sign": "022",
+          "count": 10
+        },
+        {
+          "sign": "010",
+          "count": 10
+        }
+      ],
+      "right": [
+        {
+          "sign": "076",
+          "count": 26
+        },
+        {
+          "sign": "700",
+          "count": 18
+        },
+        {
+          "sign": "001",
+          "count": 14
+        },
+        {
+          "sign": "600",
+          "count": 11
+        },
+        {
+          "sign": "010",
+          "count": 11
+        }
+      ],
+      "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+    },
+    "reading": null,
+    "concentration": null,
+    "confirmatory": false,
+    "reason": "not in the confirmatory set",
+    "distribution_status": "not_the_cited_allograph",
+    "lexical_reading": null,
+    "note": "Stem 700 pools every allograph. Horley and Lee named 700b. A surface such as 700bx is not counted as 700b. This count is context, not the test."
+  },
+  "controls": {
+    "001": {
+      "stem": "001",
+      "stem_count": 769,
+      "corpus_tokens": 14488,
+      "rate": 0.053078409718387634,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 95
+        },
+        {
+          "tablet": "P",
+          "count": 78
+        },
+        {
+          "tablet": "C",
+          "count": 77
+        },
+        {
+          "tablet": "E",
+          "count": 76
+        },
+        {
+          "tablet": "H",
+          "count": 72
+        },
+        {
+          "tablet": "G",
+          "count": 68
+        },
+        {
+          "tablet": "S",
+          "count": 58
+        },
+        {
+          "tablet": "B",
+          "count": 46
+        },
+        {
+          "tablet": "Q",
+          "count": 43
+        },
+        {
+          "tablet": "K",
+          "count": 39
+        },
+        {
+          "tablet": "R",
+          "count": 39
+        },
+        {
+          "tablet": "I",
+          "count": 31
+        },
+        {
+          "tablet": "N",
+          "count": 29
+        },
+        {
+          "tablet": "D",
+          "count": 9
+        },
+        {
+          "tablet": "O",
+          "count": 3
+        },
+        {
+          "tablet": "F",
+          "count": 2
+        },
+        {
+          "tablet": "M",
+          "count": 2
+        },
+        {
+          "tablet": "L",
+          "count": 1
+        },
+        {
+          "tablet": "T",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "001",
+          "count": 666
+        },
+        {
+          "surface": "001V",
+          "count": 32
+        },
+        {
+          "surface": "001a",
+          "count": 27
+        },
+        {
+          "surface": "001bf",
+          "count": 1
+        },
+        {
+          "surface": "001c",
+          "count": 3
+        },
+        {
+          "surface": "001d",
+          "count": 2
+        },
+        {
+          "surface": "001f",
+          "count": 18
+        },
+        {
+          "surface": "001h",
+          "count": 2
+        },
+        {
+          "surface": "001t",
+          "count": 18
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "380",
+            "count": 105
+          },
+          {
+            "sign": "006",
+            "count": 29
+          },
+          {
+            "sign": "001",
+            "count": 29
+          },
+          {
+            "sign": "002",
+            "count": 28
+          },
+          {
+            "sign": "010",
+            "count": 22
+          }
+        ],
+        "right": [
+          {
+            "sign": "003",
+            "count": 62
+          },
+          {
+            "sign": "006",
+            "count": 39
+          },
+          {
+            "sign": "009",
+            "count": 32
+          },
+          {
+            "sign": "001",
+            "count": 29
+          },
+          {
+            "sign": "062",
+            "count": 26
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 257.5963342591111,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "076": {
+      "stem": "076",
+      "stem_count": 682,
+      "corpus_tokens": 14488,
+      "rate": 0.047073440088348975,
+      "tablets": [
+        {
+          "tablet": "I",
+          "count": 564
+        },
+        {
+          "tablet": "G",
+          "count": 45
+        },
+        {
+          "tablet": "T",
+          "count": 32
+        },
+        {
+          "tablet": "B",
+          "count": 8
+        },
+        {
+          "tablet": "H",
+          "count": 8
+        },
+        {
+          "tablet": "Q",
+          "count": 7
+        },
+        {
+          "tablet": "P",
+          "count": 6
+        },
+        {
+          "tablet": "E",
+          "count": 5
+        },
+        {
+          "tablet": "A",
+          "count": 3
+        },
+        {
+          "tablet": "S",
+          "count": 3
+        },
+        {
+          "tablet": "N",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "076",
+          "count": 665
+        },
+        {
+          "surface": "076f",
+          "count": 3
+        },
+        {
+          "surface": "076t",
+          "count": 9
+        },
+        {
+          "surface": "076y",
+          "count": 5
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "090",
+            "count": 72
+          },
+          {
+            "sign": "430",
+            "count": 46
+          },
+          {
+            "sign": "700",
+            "count": 26
+          },
+          {
+            "sign": "071",
+            "count": 22
+          },
+          {
+            "sign": "001",
+            "count": 18
+          }
+        ],
+        "right": [
+          {
+            "sign": "071",
+            "count": 43
+          },
+          {
+            "sign": "011",
+            "count": 29
+          },
+          {
+            "sign": "006",
+            "count": 24
+          },
+          {
+            "sign": "070",
+            "count": 24
+          },
+          {
+            "sign": "530",
+            "count": 20
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 2312.4096074563568,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "002": {
+      "stem": "002",
+      "stem_count": 442,
+      "corpus_tokens": 14488,
+      "rate": 0.030508006626173385,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 78
+        },
+        {
+          "tablet": "C",
+          "count": 64
+        },
+        {
+          "tablet": "B",
+          "count": 49
+        },
+        {
+          "tablet": "H",
+          "count": 47
+        },
+        {
+          "tablet": "I",
+          "count": 34
+        },
+        {
+          "tablet": "P",
+          "count": 32
+        },
+        {
+          "tablet": "S",
+          "count": 28
+        },
+        {
+          "tablet": "E",
+          "count": 27
+        },
+        {
+          "tablet": "R",
+          "count": 18
+        },
+        {
+          "tablet": "Q",
+          "count": 17
+        },
+        {
+          "tablet": "D",
+          "count": 13
+        },
+        {
+          "tablet": "G",
+          "count": 13
+        },
+        {
+          "tablet": "N",
+          "count": 4
+        },
+        {
+          "tablet": "T",
+          "count": 4
+        },
+        {
+          "tablet": "K",
+          "count": 3
+        },
+        {
+          "tablet": "L",
+          "count": 3
+        },
+        {
+          "tablet": "M",
+          "count": 3
+        },
+        {
+          "tablet": "O",
+          "count": 2
+        },
+        {
+          "tablet": "U",
+          "count": 2
+        },
+        {
+          "tablet": "V",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "002",
+          "count": 309
+        },
+        {
+          "surface": "002V",
+          "count": 15
+        },
+        {
+          "surface": "002Va",
+          "count": 1
+        },
+        {
+          "surface": "002Vaxy",
+          "count": 2
+        },
+        {
+          "surface": "002Vc",
+          "count": 2
+        },
+        {
+          "surface": "002Vd",
+          "count": 2
+        },
+        {
+          "surface": "002Vh",
+          "count": 1
+        },
+        {
+          "surface": "002a",
+          "count": 86
+        },
+        {
+          "surface": "002b",
+          "count": 1
+        },
+        {
+          "surface": "002c",
+          "count": 3
+        },
+        {
+          "surface": "002d",
+          "count": 15
+        },
+        {
+          "surface": "002e",
+          "count": 4
+        },
+        {
+          "surface": "002g",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "002",
+            "count": 30
+          },
+          {
+            "sign": "010",
+            "count": 19
+          },
+          {
+            "sign": "004",
+            "count": 19
+          },
+          {
+            "sign": "001",
+            "count": 14
+          },
+          {
+            "sign": "003",
+            "count": 12
+          }
+        ],
+        "right": [
+          {
+            "sign": "010",
+            "count": 39
+          },
+          {
+            "sign": "002",
+            "count": 30
+          },
+          {
+            "sign": "001",
+            "count": 28
+          },
+          {
+            "sign": "076",
+            "count": 14
+          },
+          {
+            "sign": "200",
+            "count": 11
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 100.93219539727365,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "003": {
+      "stem": "003",
+      "stem_count": 432,
+      "corpus_tokens": 14488,
+      "rate": 0.02981778023191607,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 72
+        },
+        {
+          "tablet": "H",
+          "count": 48
+        },
+        {
+          "tablet": "P",
+          "count": 47
+        },
+        {
+          "tablet": "C",
+          "count": 43
+        },
+        {
+          "tablet": "G",
+          "count": 42
+        },
+        {
+          "tablet": "B",
+          "count": 41
+        },
+        {
+          "tablet": "Q",
+          "count": 41
+        },
+        {
+          "tablet": "K",
+          "count": 22
+        },
+        {
+          "tablet": "S",
+          "count": 21
+        },
+        {
+          "tablet": "R",
+          "count": 18
+        },
+        {
+          "tablet": "D",
+          "count": 11
+        },
+        {
+          "tablet": "E",
+          "count": 11
+        },
+        {
+          "tablet": "N",
+          "count": 5
+        },
+        {
+          "tablet": "I",
+          "count": 3
+        },
+        {
+          "tablet": "F",
+          "count": 2
+        },
+        {
+          "tablet": "U",
+          "count": 2
+        },
+        {
+          "tablet": "L",
+          "count": 1
+        },
+        {
+          "tablet": "M",
+          "count": 1
+        },
+        {
+          "tablet": "O",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "003",
+          "count": 223
+        },
+        {
+          "surface": "003a",
+          "count": 193
+        },
+        {
+          "surface": "003ax",
+          "count": 13
+        },
+        {
+          "surface": "003x",
+          "count": 3
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "001",
+            "count": 62
+          },
+          {
+            "sign": "306",
+            "count": 27
+          },
+          {
+            "sign": "065",
+            "count": 16
+          },
+          {
+            "sign": "003",
+            "count": 15
+          },
+          {
+            "sign": "004",
+            "count": 14
+          }
+        ],
+        "right": [
+          {
+            "sign": "001",
+            "count": 19
+          },
+          {
+            "sign": "004",
+            "count": 17
+          },
+          {
+            "sign": "003",
+            "count": 15
+          },
+          {
+            "sign": "600",
+            "count": 14
+          },
+          {
+            "sign": "065",
+            "count": 12
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 167.67085478901373,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "004": {
+      "stem": "004",
+      "stem_count": 422,
+      "corpus_tokens": 14488,
+      "rate": 0.029127553837658752,
+      "tablets": [
+        {
+          "tablet": "A",
+          "count": 86
+        },
+        {
+          "tablet": "H",
+          "count": 51
+        },
+        {
+          "tablet": "P",
+          "count": 45
+        },
+        {
+          "tablet": "B",
+          "count": 43
+        },
+        {
+          "tablet": "E",
+          "count": 39
+        },
+        {
+          "tablet": "C",
+          "count": 31
+        },
+        {
+          "tablet": "R",
+          "count": 27
+        },
+        {
+          "tablet": "Q",
+          "count": 26
+        },
+        {
+          "tablet": "S",
+          "count": 23
+        },
+        {
+          "tablet": "I",
+          "count": 15
+        },
+        {
+          "tablet": "G",
+          "count": 12
+        },
+        {
+          "tablet": "N",
+          "count": 8
+        },
+        {
+          "tablet": "K",
+          "count": 6
+        },
+        {
+          "tablet": "O",
+          "count": 3
+        },
+        {
+          "tablet": "D",
+          "count": 2
+        },
+        {
+          "tablet": "M",
+          "count": 2
+        },
+        {
+          "tablet": "L",
+          "count": 1
+        },
+        {
+          "tablet": "T",
+          "count": 1
+        },
+        {
+          "tablet": "U",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "004",
+          "count": 391
+        },
+        {
+          "surface": "004a",
+          "count": 9
+        },
+        {
+          "surface": "004ax",
+          "count": 1
+        },
+        {
+          "surface": "004ay",
+          "count": 1
+        },
+        {
+          "surface": "004b",
+          "count": 1
+        },
+        {
+          "surface": "004f",
+          "count": 13
+        },
+        {
+          "surface": "004t",
+          "count": 4
+        },
+        {
+          "surface": "004x",
+          "count": 1
+        },
+        {
+          "surface": "004y",
+          "count": 1
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "600",
+            "count": 24
+          },
+          {
+            "sign": "004",
+            "count": 20
+          },
+          {
+            "sign": "003",
+            "count": 17
+          },
+          {
+            "sign": "080",
+            "count": 14
+          },
+          {
+            "sign": "001",
+            "count": 13
+          }
+        ],
+        "right": [
+          {
+            "sign": "064",
+            "count": 81
+          },
+          {
+            "sign": "600",
+            "count": 27
+          },
+          {
+            "sign": "004",
+            "count": 20
+          },
+          {
+            "sign": "002",
+            "count": 19
+          },
+          {
+            "sign": "430",
+            "count": 17
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 99.59737513656836,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "600": {
+      "stem": "600",
+      "stem_count": 342,
+      "corpus_tokens": 14488,
+      "rate": 0.02360574268360022,
+      "tablets": [
+        {
+          "tablet": "I",
+          "count": 56
+        },
+        {
+          "tablet": "A",
+          "count": 55
+        },
+        {
+          "tablet": "P",
+          "count": 49
+        },
+        {
+          "tablet": "H",
+          "count": 42
+        },
+        {
+          "tablet": "Q",
+          "count": 31
+        },
+        {
+          "tablet": "B",
+          "count": 27
+        },
+        {
+          "tablet": "R",
+          "count": 16
+        },
+        {
+          "tablet": "G",
+          "count": 14
+        },
+        {
+          "tablet": "S",
+          "count": 13
+        },
+        {
+          "tablet": "D",
+          "count": 11
+        },
+        {
+          "tablet": "C",
+          "count": 9
+        },
+        {
+          "tablet": "N",
+          "count": 9
+        },
+        {
+          "tablet": "O",
+          "count": 3
+        },
+        {
+          "tablet": "E",
+          "count": 2
+        },
+        {
+          "tablet": "T",
+          "count": 2
+        },
+        {
+          "tablet": "U",
+          "count": 2
+        },
+        {
+          "tablet": "M",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "600",
+          "count": 282
+        },
+        {
+          "surface": "600V",
+          "count": 14
+        },
+        {
+          "surface": "600Vy",
+          "count": 1
+        },
+        {
+          "surface": "600a",
+          "count": 27
+        },
+        {
+          "surface": "600af",
+          "count": 1
+        },
+        {
+          "surface": "600as",
+          "count": 1
+        },
+        {
+          "surface": "600ay",
+          "count": 1
+        },
+        {
+          "surface": "600b",
+          "count": 1
+        },
+        {
+          "surface": "600co",
+          "count": 1
+        },
+        {
+          "surface": "600f",
+          "count": 6
+        },
+        {
+          "surface": "600o",
+          "count": 2
+        },
+        {
+          "surface": "600s",
+          "count": 1
+        },
+        {
+          "surface": "600y",
+          "count": 4
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "004",
+            "count": 27
+          },
+          {
+            "sign": "001",
+            "count": 23
+          },
+          {
+            "sign": "076",
+            "count": 17
+          },
+          {
+            "sign": "600",
+            "count": 15
+          },
+          {
+            "sign": "003",
+            "count": 14
+          }
+        ],
+        "right": [
+          {
+            "sign": "004",
+            "count": 24
+          },
+          {
+            "sign": "007",
+            "count": 15
+          },
+          {
+            "sign": "600",
+            "count": 15
+          },
+          {
+            "sign": "200",
+            "count": 14
+          },
+          {
+            "sign": "001",
+            "count": 13
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 62.600262553725265,
+        "trials": 2000,
+        "ge": 1,
+        "p_greater": 0.0009995002498750624
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "006": {
+      "stem": "006",
+      "stem_count": 337,
+      "corpus_tokens": 14488,
+      "rate": 0.023260629486471562,
+      "tablets": [
+        {
+          "tablet": "I",
+          "count": 51
+        },
+        {
+          "tablet": "B",
+          "count": 39
+        },
+        {
+          "tablet": "A",
+          "count": 29
+        },
+        {
+          "tablet": "P",
+          "count": 29
+        },
+        {
+          "tablet": "E",
+          "count": 25
+        },
+        {
+          "tablet": "C",
+          "count": 24
+        },
+        {
+          "tablet": "G",
+          "count": 24
+        },
+        {
+          "tablet": "H",
+          "count": 23
+        },
+        {
+          "tablet": "S",
+          "count": 20
+        },
+        {
+          "tablet": "D",
+          "count": 13
+        },
+        {
+          "tablet": "Q",
+          "count": 12
+        },
+        {
+          "tablet": "M",
+          "count": 10
+        },
+        {
+          "tablet": "N",
+          "count": 10
+        },
+        {
+          "tablet": "O",
+          "count": 8
+        },
+        {
+          "tablet": "K",
+          "count": 7
+        },
+        {
+          "tablet": "R",
+          "count": 6
+        },
+        {
+          "tablet": "F",
+          "count": 3
+        },
+        {
+          "tablet": "T",
+          "count": 2
+        },
+        {
+          "tablet": "U",
+          "count": 2
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "006",
+          "count": 307
+        },
+        {
+          "surface": "006V",
+          "count": 5
+        },
+        {
+          "surface": "006a",
+          "count": 1
+        },
+        {
+          "surface": "006b",
+          "count": 1
+        },
+        {
+          "surface": "006h",
+          "count": 1
+        },
+        {
+          "surface": "006x",
+          "count": 12
+        },
+        {
+          "surface": "006xy",
+          "count": 2
+        },
+        {
+          "surface": "006y",
+          "count": 8
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "073",
+            "count": 44
+          },
+          {
+            "sign": "001",
+            "count": 39
+          },
+          {
+            "sign": "076",
+            "count": 24
+          },
+          {
+            "sign": "062",
+            "count": 11
+          },
+          {
+            "sign": "020",
+            "count": 8
+          }
+        ],
+        "right": [
+          {
+            "sign": "001",
+            "count": 29
+          },
+          {
+            "sign": "074",
+            "count": 29
+          },
+          {
+            "sign": "700",
+            "count": 25
+          },
+          {
+            "sign": "003",
+            "count": 10
+          },
+          {
+            "sign": "076",
+            "count": 10
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 136.00345751582978,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    },
+    "022": {
+      "stem": "022",
+      "stem_count": 316,
+      "corpus_tokens": 14488,
+      "rate": 0.021811154058531197,
+      "tablets": [
+        {
+          "tablet": "E",
+          "count": 47
+        },
+        {
+          "tablet": "A",
+          "count": 45
+        },
+        {
+          "tablet": "H",
+          "count": 43
+        },
+        {
+          "tablet": "B",
+          "count": 38
+        },
+        {
+          "tablet": "P",
+          "count": 34
+        },
+        {
+          "tablet": "S",
+          "count": 20
+        },
+        {
+          "tablet": "C",
+          "count": 19
+        },
+        {
+          "tablet": "G",
+          "count": 17
+        },
+        {
+          "tablet": "I",
+          "count": 15
+        },
+        {
+          "tablet": "Q",
+          "count": 15
+        },
+        {
+          "tablet": "R",
+          "count": 8
+        },
+        {
+          "tablet": "N",
+          "count": 5
+        },
+        {
+          "tablet": "M",
+          "count": 3
+        },
+        {
+          "tablet": "O",
+          "count": 3
+        },
+        {
+          "tablet": "K",
+          "count": 2
+        },
+        {
+          "tablet": "D",
+          "count": 1
+        },
+        {
+          "tablet": "T",
+          "count": 1
+        }
+      ],
+      "surfaces": [
+        {
+          "surface": "022",
+          "count": 139
+        },
+        {
+          "surface": "022a",
+          "count": 1
+        },
+        {
+          "surface": "022bf",
+          "count": 24
+        },
+        {
+          "surface": "022bfty",
+          "count": 1
+        },
+        {
+          "surface": "022bfy",
+          "count": 43
+        },
+        {
+          "surface": "022cf",
+          "count": 21
+        },
+        {
+          "surface": "022cfy",
+          "count": 1
+        },
+        {
+          "surface": "022df",
+          "count": 1
+        },
+        {
+          "surface": "022dfy",
+          "count": 2
+        },
+        {
+          "surface": "022f",
+          "count": 68
+        },
+        {
+          "surface": "022h",
+          "count": 13
+        },
+        {
+          "surface": "022t",
+          "count": 2
+        }
+      ],
+      "neighbors": {
+        "left": [
+          {
+            "sign": "015",
+            "count": 21
+          },
+          {
+            "sign": "022",
+            "count": 20
+          },
+          {
+            "sign": "430",
+            "count": 16
+          },
+          {
+            "sign": "001",
+            "count": 11
+          },
+          {
+            "sign": "200",
+            "count": 10
+          }
+        ],
+        "right": [
+          {
+            "sign": "022",
+            "count": 20
+          },
+          {
+            "sign": "380",
+            "count": 13
+          },
+          {
+            "sign": "008",
+            "count": 12
+          },
+          {
+            "sign": "243",
+            "count": 11
+          },
+          {
+            "sign": "700",
+            "count": 10
+          }
+        ],
+        "note": "Neighbor lists are descriptive. The most common neighbor was not tested, because picking the maximum after looking would inflate a p-value."
+      },
+      "reading": null,
+      "concentration": {
+        "observed": 90.20776224511117,
+        "trials": 2000,
+        "ge": 0,
+        "p_greater": 0.0004997501249375312
+      },
+      "confirmatory": true,
+      "reason": null
+    }
+  },
+  "preset_pairs": [
+    {
+      "observed_lines": 1,
+      "lines_with_first": 17,
+      "lines_with_second": 16,
+      "trials": 2000,
+      "ge": 1269,
+      "p_greater": 0.6346826586706646,
+      "adjacent_either_order": 0,
+      "pair": [
+        "660",
+        "680"
+      ],
+      "label": "two long-beaked bird forms",
+      "reading": null
+    },
+    {
+      "observed_lines": 0,
+      "lines_with_first": 1,
+      "lines_with_second": 7,
+      "trials": 2000,
+      "ge": 2000,
+      "p_greater": 1.0,
+      "adjacent_either_order": 0,
+      "pair": [
+        "700b",
+        "721"
+      ],
+      "label": "tail-bulb marine signs",
+      "reading": null
+    },
+    {
+      "observed_lines": 0,
+      "lines_with_first": 1,
+      "lines_with_second": 4,
+      "trials": 2000,
+      "ge": 2000,
+      "p_greater": 1.0,
+      "adjacent_either_order": 0,
+      "pair": [
+        "700b",
+        "733"
+      ],
+      "label": "tail-bulb marine signs",
+      "reading": null
+    },
+    {
+      "observed_lines": 0,
+      "lines_with_first": 7,
+      "lines_with_second": 4,
+      "trials": 2000,
+      "ge": 2000,
+      "p_greater": 1.0,
+      "adjacent_either_order": 0,
+      "pair": [
+        "721",
+        "733"
+      ],
+      "label": "tail-bulb marine signs",
+      "reading": null
+    }
+  ],
+  "themes": [
+    {
+      "theme_id": "long_beaked_birds",
+      "label": "long-beaked birds at the birdman court",
+      "signs": [
+        "660",
+        "680"
+      ],
+      "stem_count": 56,
+      "reading": null,
+      "concentration": {
+        "observed": 80.02731931952066,
+        "trials": 2000,
+        "ge": 19,
+        "p_greater": 0.009995002498750625
+      },
+      "distribution_status": "nominal_only"
+    },
+    {
+      "theme_id": "tail_bulb_marine",
+      "label": "the tail-bulb forms named by Horley and Lee",
+      "signs": [
+        "700b",
+        "721",
+        "733"
+      ],
+      "stem_count": 12,
+      "reading": null,
+      "concentration": null,
+      "distribution_status": "not_tested"
+    },
+    {
+      "theme_id": "locus_17_panel",
+      "label": "the four signs Horley and Lee name on locus 17",
+      "signs": [
+        "007",
+        "240",
+        "513",
+        "550"
+      ],
+      "stem_count": 199,
+      "reading": null,
+      "concentration": {
+        "observed": 79.76970689544201,
+        "trials": 2000,
+        "ge": 3,
+        "p_greater": 0.001999000499750125
+      },
+      "distribution_status": "nominal_only"
+    }
+  ],
+  "open_beak_audit": [
+    {
+      "line": "Br2",
+      "present_in_vendored_text": false,
+      "line_found": true,
+      "beak_series_stems": [
+        "600",
+        "630",
+        "670"
+      ],
+      "note": "Other signs in Barthel's 600s are listed so the line can be checked. They are not renamed as open-beak 660."
+    },
+    {
+      "line": "Br7",
+      "present_in_vendored_text": false,
+      "line_found": true,
+      "beak_series_stems": [
+        "600",
+        "624",
+        "638",
+        "678"
+      ],
+      "note": "Other signs in Barthel's 600s are listed so the line can be checked. They are not renamed as open-beak 660."
+    },
+    {
+      "line": "Pr2",
+      "present_in_vendored_text": false,
+      "line_found": true,
+      "beak_series_stems": [
+        "600",
+        "670",
+        "675"
+      ],
+      "note": "Other signs in Barthel's 600s are listed so the line can be checked. They are not renamed as open-beak 660."
+    },
+    {
+      "line": "Ua3",
+      "present_in_vendored_text": false,
+      "line_found": true,
+      "beak_series_stems": [
+        "600"
+      ],
+      "note": "Other signs in Barthel's 600s are listed so the line can be checked. They are not renamed as open-beak 660."
+    }
+  ],
+  "inscribed_reimiro": {
+    "rei_miro_1": {
+      "tablet": "J",
+      "stems": [
+        "522",
+        "088"
+      ],
+      "stem_count": 2,
+      "implication": null,
+      "reading": null
+    },
+    "rei_miro_2": {
+      "tablet": "L",
+      "stems": [
+        "607",
+        "607",
+        "066",
+        "071",
+        "002",
+        "306",
+        "003",
+        "002",
+        "376",
+        "004",
+        "780",
+        "072",
+        "048",
+        "048",
+        "048",
+        "001",
+        "010",
+        "380",
+        "048",
+        "216",
+        "034",
+        "124",
+        "545",
+        "678",
+        "430",
+        "408",
+        "400",
+        "193",
+        "607",
+        "700",
+        "115",
+        "670",
+        "115",
+        "470",
+        "051",
+        "002",
+        "678",
+        "051",
+        "079",
+        "051",
+        "700",
+        "051",
+        "020",
+        "010",
+        "051",
+        "011",
+        "051",
+        "011",
+        "051",
+        "048",
+        "051"
+      ],
+      "stem_count": 51,
+      "implication": null,
+      "reading": null
+    }
+  },
+  "supported_distribution": [],
+  "supported_lexical_readings": []
+}
