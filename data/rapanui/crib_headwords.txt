@@ -1,0 +1,70 @@
+# Crib headwords for Round 2 Track B. One word per line, then a tab, then the citation.
+# Not running text. Track 2 does not read this file.
+#
+# A word is kept only when it is strictly (C)V under decipherment.rapanui.phonemes
+# (every consonant is an onset). Circumflex vowels in the Track 1 night table
+# are written here without the circumflex (hâ → ha).
+#
+# Night names are the aligned Englert / Thomson / Métraux list already printed
+# in docs/decipherment/track1_mamari_calendar.md, which cites Thomson 1891
+# p. 546, Métraux 1940 p. 50, and Englert 1948 pp. 311–312. Englert's dictionary
+# was not copied (see SOURCES.md). Churchill 1912 is public domain and is not
+# vendored here, so none of these lines is a Churchill headword. Fuentes 1960
+# is not used.
+#
+# Metoro lines are vocabulary only. Track 4 found that Metoro's words do not
+# label Barthel signs. tagata in those lines is the same word as tangata once
+# g is mapped to ng; the strict form stored here is tangata.
+
+po	Wikipedia lang=rap span pō; Thomson 1891 lexicon examples raa-po-tahi, raa-po-rua, raa-po-toru
+marama	Metoro vocabulary, data/readings/metoro_jaussen/lines/ca06.html (te marama); also ca07, ca08, ca09
+mahina	Metoro vocabulary, data/readings/metoro_jaussen/lines/br03.html (e puhi mahina te ahi)
+poki	Thomson 1891 Ka ihi uiga (auwe te poki); Wikipedia lang=rap span poki; Metoro aa01.html (tona poki)
+tama	Metoro vocabulary, data/readings/metoro_jaussen/lines/br04.html (ki to tama) and ev03.html (tama)
+tamaiti	Metoro vocabulary, data/readings/metoro_jaussen/lines/br01.html (ki te tamaiti)
+tamahine	Thomson 1891 lexicon examples, puaka tamahine
+tamaroa	Thomson 1891 lexicon examples, puaka tamaroa
+ure	Thomson 1891 Apai (ia ure roroi); Metoro ca08.html (te ure o te henua)
+tangata	Thomson 1891 Apai (e tangata)
+ko	Wikipedia lang=rap spans ko and Ko te aroha
+ki	Wikipedia lang=rap span ki; Thomson 1891 Atua Matariri (Ki ai Kiroto)
+ai	Wikipedia lang=rap span ai; Thomson 1891 Atua Matariri (Ki ai Kiroto)
+kiroto	Thomson 1891 Atua Matariri, printed as one token Kiroto after Ki ai
+oata	Track 1 night table: Englert oata, Thomson oata
+ohiro	Track 1 night table: Englert ohiro
+oari	Track 1 night table: Thomson oari
+ari	Track 1 night table: Thomson/Métraux ari
+ata	Track 1 night table: Métraux ata
+kokore	Track 1 night table: Englert, Thomson, and Métraux kokore series
+tahi	Track 1 night table: kokore tahi
+rua	Track 1 night table: kokore rua
+toru	Track 1 night table: kokore toru
+ha	Track 1 night table: kokore hâ / ha
+rima	Track 1 night table: kokore rima
+ono	Track 1 night table: kokore ono
+maharu	Track 1 night table: maharu
+ohua	Track 1 night table: Englert/Thomson ohua
+hua	Track 1 night table: Métraux hua
+otua	Track 1 night table: Englert/Thomson otua
+atua	Track 1 night table: Métraux atua; also Thomson 1891 lexicon examples
+maure	Track 1 night table: maure
+ina-ira	Track 1 night table: ina-ira
+rakau	Track 1 night table: rakau, the night before omotohi in that alignment
+omotohi	Track 1 night table: Englert/Thomson omotohi, the full-moon night
+motohi	Track 1 night table: Métraux motohi
+ohotu	Track 1 night table: Thomson ohotu
+hotu	Track 1 night table: Métraux hotu
+hiro	Track 1 night table: Englert ohiro / Métraux hiro
+tapume	Track 1 night table: tapume
+matua	Track 1 night table: matua
+orongo	Track 1 night table: Englert/Thomson orongo
+rongo	Track 1 night table: Métraux rongo
+taane	Track 1 night table: Englert orongo taane
+tane	Track 1 night table: Thomson/Métraux tane
+mauri	Track 1 night table: mauri
+nui	Track 1 night table: mauri nui
+karo	Track 1 night table: Englert mauri karo
+kero	Track 1 night table: Thomson/Métraux mauri kero
+omutu	Track 1 night table: omutu
+mutu	Track 1 night table: Métraux mutu
+tireo	Track 1 night table: tireo

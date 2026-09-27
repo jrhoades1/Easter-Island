@@ -56,10 +56,33 @@ running-text bigrams.
   ceiling is an assumption (every consonant with every vowel, plus bare
   vowels), not a count Wikipedia prints.
 
+## Crib headwords (Round 2 Track B only)
+
+- File: `crib_headwords.txt`
+- What it is: the closed list of moon-night and kinship words the anchor crib
+  is allowed to spell. It is not running text, and Track 2 does not read it.
+- Night names: the short aligned list already printed in
+  `docs/decipherment/track1_mamari_calendar.md` (Thomson 1891 p. 546,
+  Métraux 1940 p. 50, Englert 1948 pp. 311–312). That list is proper names
+  already in this repository. Englert's dictionary is still not copied.
+- Other rows cite a vendored Thomson line, a Wikipedia `lang=rap` span, or
+  one Metoro word-token already under `data/readings/metoro_jaussen/`.
+  Metoro's words are vocabulary only. Track 4 found they do not label
+  Barthel signs.
+- William Churchill, *Easter Island: The Rapanui Speech and the Peopling of
+  Southeast Polynesia* (Carnegie Institution of Washington, Publication 174,
+  1912) is a public-domain book. It is not vendored here, and no headword
+  was copied from it.
+- Jordi Fuentes, *Diccionario y gramática de la lengua de la Isla de Pascua*
+  (Santiago, 1960) is not used. This repository does not treat it as a
+  public-domain source.
+
 ## Not used
 
 - Sebastian Englert's dictionary and grammar. Englert died in 1969; Chilean
   copyright runs for 70 years after death, so those books were not copied.
+  The night-name spellings in `crib_headwords.txt` are the short list already
+  aligned in the Track 1 note, not entries transcribed from the dictionary.
 - A Rapa Nui Bible. No public-domain edition was identified. Modern Bible
   translations are copyrighted and were not copied.
 - Omniglot and Glosbe pages already under `tests/fixtures/`. Those sites were
