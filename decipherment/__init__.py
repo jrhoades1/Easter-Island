@@ -6,6 +6,7 @@ It does not assign readings.
 
 from decipherment.round2_tracka import run_round2_tracka
 from decipherment.round3_trackb import run_round3_trackb
+from decipherment.round3_trackc import run_round3_trackc
 from decipherment.track2 import run_track2
 
-__all__ = ["run_round2_tracka", "run_round3_trackb", "run_track2"]
+__all__ = ["run_round2_tracka", "run_round3_trackb", "run_round3_trackc", "run_track2"]

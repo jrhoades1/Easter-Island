@@ -71,8 +71,9 @@ running-text bigrams.
   Barthel signs.
 - William Churchill, *Easter Island: The Rapanui Speech and the Peopling of
   Southeast Polynesia* (Carnegie Institution of Washington, Publication 174,
-  1912) is a public-domain book. It is not vendored here, and no headword
-  was copied from it.
+  1912) is a public-domain book. Round 2 did not copy it. Round 3 vendored
+  the Rapanui headwords: `churchill_1912_headwords.txt`. They are lexicon,
+  not running text, and Track 2 still does not read them.
 - Jordi Fuentes, *Diccionario y gramática de la lengua de la Isla de Pascua*
   (Santiago, 1960) is not used. This repository does not treat it as a
   public-domain source.
@@ -87,6 +88,41 @@ running-text bigrams.
   translations are copyrighted and were not copied.
 - Omniglot and Glosbe pages already under `tests/fixtures/`. Those sites were
   not treated as a source for running text.
+
+## Round 3 running text and lexicon
+
+Round 3 keeps the Thomson chants above as running text and adds the sources
+below. Lexicon files are not concatenated into running-text bigrams.
+Normalization rules are the list in `decipherment/old_rapanui.py`
+(`NORMALIZATION_RULES`). Primary orthography is `mapped`.
+
+### Included
+
+| File | Source | URL | License / date | Role |
+|---|---|---|---|---|
+| `thomson_1891_chants.txt` | Thomson 1891, pp. 517–526 | https://archive.org/details/tepitotehenuaor00thomgoog | US government report, 1891. Public domain | Running text. Love song excluded from the primary sample |
+| `thomson_1891_lexicon_examples.txt` | Thomson 1891, pp. 546–547 | same scan | Public domain, 1891 | Lexicon examples already vendored |
+| Metoro lines under `data/readings/metoro_jaussen/lines/` | Jaussen's notebook of Metoro Tauʻa Ure, 1870s; Kohaumotu transcription | http://kohaumotu.org/rongorongo_org/metoro/index.html | Jaussen died 1891. Notebook wording is public domain. Kohaumotu: copy with attribution, non-profit, not MIT | Running text. One line per tablet line. Tablets C and E are the elliptical "essential word" lines |
+| `routledge_1919_chants.txt` | Katherine Routledge, *The Mystery of Easter Island* (London, 1919), the printed timo formula | https://archive.org/details/mysteryofeaster00rout | Published 1919. Author died 1935. UK copyright expired end of 2005. US public domain | Running text, two short lines |
+| `routledge_1919_names.txt` | Same book, quoted compounds | same scan | Public domain, as above | Lexicon |
+| `churchill_1912_headwords.txt` | William Churchill, *Easter Island* (Carnegie Institution of Washington, Publication 174, 1912), Rapanui–English vocabulary | https://archive.org/details/easterislandrapa00churrich and https://www.loc.gov/item/12027217/ | Published 1912, no copyright notice. Library of Congress: public domain, free to use. Author died 1920 | Lexicon. `T` marks a Thomson suffix that survived OCR. `Q` marks Geiseler |
+
+Churchill's vocabulary is his English edition of Hippolyte Roussel, "Vocabulaire de la langue de l'Île-de-Pâques ou Rapanui," *Le Muséon*, nouvelle série, vol. 9 (Louvain, 1908), plus Thomson's and Geiseler's shorter lists where he marked them. Roussel died in 1898, so the 1908 printing is public domain (author's life plus 70 years ended in 1968; the US term ended long before that). The *Le Muséon* scan (https://archive.org/stream/in.ernet.dli.2015.56369/) was inspected. Its Rapanui column is too damaged by OCR to syllabify (`liaka` for `haka`, and similar), so the French printing was not turned into a second word list.
+
+Geiseler's list is the vocabulary in *Die Oster-Insel* (Berlin, 1883), public domain by publication date. It is not a separate file. Entries Churchill marked `Q` are the ones the parser could see.
+
+Thomson's two-column vocabulary (pp. 546–552 of the same 1891 report) was inspected in the Internet Archive OCR. The columns interleave and the Rapanui spellings are corrupted (`Gooli`, `Heniati`, `Hang 11`). Those OCR tokens were not added. The chant file and the short lexicon examples remain the Thomson running text and the hand-checked examples. Churchill's `T` marks are the Thomson entries his edition still identifies.
+
+### Excluded after a copyright check
+
+- Alfred Métraux, *Ethnology of Easter Island* (Bernice P. Bishop Museum Bulletin 160, Honolulu, 1940). Métraux died in 1963. France and Switzerland protect works for 70 years after death, so the book is protected there through 2033. This repository already excludes Englert on that life-plus-70 standard. HathiTrust opens a University of Michigan full view and labels it public domain, which is consistent with a US renewal not being found, but the texts were not copied. Night names already printed in the Track 1 note stay as that short list.
+- Roussel's catechism *E katekimo katorika Rapanui* (1866–67) and the gospel extracts *Evangerio*. The manuscripts (Pinart copies at Berkeley, Sacred Hearts archives in Rome) were not published in a public-domain edition this search could copy. A 2014 scholarly discussion of them is copyrighted and was not used as a source of text.
+- Routledge's 1914–15 field notebook string-figure chant. It is not printed in the 1919 book. A later article transcribes it and was not copied.
+- Jaussen's 1893 sign repertoire (*L'île de Pâques: historique, écriture, et répertoire des signes*, Paris, edited by Alazard) is public domain and is a sign list, not a running text. It was not re-keyed. The line-by-line Metoro notebook is the Jaussen language sample.
+- Sebastian Englert's dictionary and grammar. Englert died in 1969. Chilean copyright runs 70 years after death.
+- Fuentes 1960, as above.
+- A Rapa Nui Bible. No public-domain edition was identified.
+- Modern dictionaries and Wikipedia running text. Wikipedia `lang=rap` spans stay a CC BY-SA 4.0 modern check. They are not part of the old running text. The Round 3 crib open list still contains them, so the open list is a superset of Round 2 rather than a deletion of modern forms.
 
 ## Syllable encoding
 

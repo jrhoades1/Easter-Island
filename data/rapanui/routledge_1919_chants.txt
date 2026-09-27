@@ -1,0 +1,9 @@
+# Routledge 1919 printed chant formulae. Running text, not a lexicon.
+# Katherine Routledge, The Mystery of Easter Island (London: Hazell, Watson and Viney, 1919).
+# Public domain: published 1919; author died 1935; UK copyright expired 2005; US term expired.
+# Scan: https://archive.org/details/mysteryofeaster00rout
+# The 1914–15 field notebook string-figure chant was not printed in this book and is not copied.
+# section: timo
+He timo te ako-ako, he ako-ako tena
+# section: timo_short
+He timo te ako-ako

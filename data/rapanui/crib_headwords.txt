@@ -8,13 +8,14 @@
 # Night names are the aligned Englert / Thomson / Métraux list already printed
 # in docs/decipherment/track1_mamari_calendar.md, which cites Thomson 1891
 # p. 546, Métraux 1940 p. 50, and Englert 1948 pp. 311–312. Englert's dictionary
-# was not copied (see SOURCES.md). Churchill 1912 is public domain and is not
-# vendored here, so none of these lines is a Churchill headword. Fuentes 1960
-# is not used.
+# was not copied (see SOURCES.md). None of these lines is a Churchill headword.
+# Fuentes 1960 is not used.
 #
 # Metoro lines are vocabulary only. Track 4 found that Metoro's words do not
 # label Barthel signs. tagata in those lines is the same word as tangata once
 # g is mapped to ng; the strict form stored here is tangata.
+# Churchill 1912 is public domain. Round 2 did not copy it. Round 3 stores
+# headwords in churchill_1912_headwords.txt and does not put them on these lines.
 
 po	Wikipedia lang=rap span pō; Thomson 1891 lexicon examples raa-po-tahi, raa-po-rua, raa-po-toru
 marama	Metoro vocabulary, data/readings/metoro_jaussen/lines/ca06.html (te marama); also ca07, ca08, ca09
