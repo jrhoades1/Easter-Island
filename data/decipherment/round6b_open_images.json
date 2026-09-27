@@ -1,0 +1,747 @@
+{
+  "track": "round6b",
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "readings_assigned": false,
+  "adopted_corrections": [],
+  "surveyed_on": "2026-09-27",
+  "images_committed": false,
+  "images_committed_reason": "No photograph was both CC0 or CC BY on the holder's own page and clearly sharp enough to read sign details. Non-commercial and all-rights-reserved files were measured for size where the holder serves them, and were not committed.",
+  "recheck": {
+    "performed": false,
+    "reason": "The headline passages are the Mamari calendar on C, Gv6 on G, the Staff bars on I, the Great Tradition on H, P, and Q, and the absence of sign 076 on R. None of those objects has a holder-stated CC0 or CC BY photograph that resolves a catalog number. No Barthel code was compared with a photograph, so there is no disagreement to log."
+  },
+  "disagreements": [],
+  "objects": [
+    {
+      "code": "A",
+      "name": "Tahua",
+      "holder": "Archives of the Congregazione dei Sacri Cuori di Gesù e di Maria (SSCC), Rome",
+      "catalog": null,
+      "institution_page": "https://www.inscribercproject.com/Rongorongo.php",
+      "institution_page_note": "The congregation does not publish a catalog page that was found in this survey. The INSCRIBE viewer names this archive as the holder of tablets A–D and states the licence of the 3D models.",
+      "public_image": true,
+      "license_class": "all rights reserved",
+      "license_as_stated": "The 3D models of artifacts presented in the database of INSCRIBE are for scientific, non profit use of scientists. All such 3D models are subject to copyright laws with all rights reserved. Reproduction, publication or commercial use of these 3D datasets is strictly prohibited without prior written permission.",
+      "license_source": "https://www.inscribercproject.com/Rongorongo.php",
+      "images": [
+        {
+          "url": "https://www.inscribercproject.com/Rongorongo.php",
+          "pixels": null,
+          "what": "INSCRIBE 3D model of Tahua, viewable in the browser. Mesh not downloaded."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The holder-side file is an all-rights-reserved 3D model, not a CC0 or CC BY photograph."
+    },
+    {
+      "code": "B",
+      "name": "Aruku Kurenga",
+      "holder": "SSCC archives, Rome",
+      "catalog": null,
+      "institution_page": "https://www.inscribercproject.com/Rongorongo.php",
+      "institution_page_note": "Same INSCRIBE page as A. The 2024 Scientific Reports article prints a render of this model.",
+      "public_image": true,
+      "license_class": "all rights reserved",
+      "license_as_stated": "All such 3D models are subject to copyright laws with all rights reserved. Reproduction, publication or commercial use of these 3D datasets is strictly prohibited without prior written permission.",
+      "license_source": "https://www.inscribercproject.com/Rongorongo.php",
+      "images": [
+        {
+          "url": "https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41598-024-53063-7/MediaObjects/41598_2024_53063_Fig2_HTML.png",
+          "pixels": [
+            1200,
+            383
+          ],
+          "what": "Figure 2 of Ferrara et al. 2024, a render of the INSCRIBE model. The caption points at the INSCRIBE viewer. The article is CC BY 4.0, and it says third-party images stay under that licence unless a credit line indicates otherwise."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The published frame is a render of a model the INSCRIBE page marks all rights reserved, and it is 1200 by 383 pixels."
+    },
+    {
+      "code": "C",
+      "name": "Mamari",
+      "holder": "SSCC archives, Rome",
+      "catalog": null,
+      "institution_page": "https://www.inscribercproject.com/Rongorongo.php",
+      "institution_page_note": "Mamari is one of the four Rome tablets on the INSCRIBE page. No SSCC photograph page was found.",
+      "public_image": true,
+      "license_class": "all rights reserved",
+      "license_as_stated": "All such 3D models are subject to copyright laws with all rights reserved.",
+      "license_source": "https://www.inscribercproject.com/Rongorongo.php",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_C-a_Mamari.jpg",
+          "pixels": [
+            2040,
+            1424
+          ],
+          "what": "Commons file already in this repository. The Commons page says CC BY-SA 3.0 and GFDL. That is the uploader's statement for a Chauvet 1935 photograph, not a licence stated by the SSCC. Round 3 already found it too coarse for a catalog number."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The calendar is the headline passage on C. No CC0 or CC BY photograph of that passage was stated by the holder."
+    },
+    {
+      "code": "D",
+      "name": "Échancrée",
+      "holder": "SSCC archives, Rome",
+      "catalog": null,
+      "institution_page": "https://www.inscribercproject.com/Rongorongo.php",
+      "institution_page_note": "The older CEIPP table says Musée de Papeete. The INSCRIBE page and Ferrara et al. 2024 place the wood in the Rome archive.",
+      "public_image": true,
+      "license_class": "all rights reserved",
+      "license_as_stated": "All such 3D models are subject to copyright laws with all rights reserved.",
+      "license_source": "https://www.inscribercproject.com/Rongorongo.php",
+      "images": [
+        {
+          "url": "https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41598-024-53063-7/MediaObjects/41598_2024_53063_Fig1_HTML.png",
+          "pixels": [
+            1762,
+            1812
+          ],
+          "what": "Figure 1 of Ferrara et al. 2024: a 3D model of Échancrée, an enlargement, and a map. The article licence is CC BY 4.0 at https://www.nature.com/articles/s41598-024-53063-7. The picture is a model render, not a photograph stated CC0 or CC BY by the congregation."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "D does not carry a headline count, and the published frame is a 3D render under the INSCRIBE reservation."
+    },
+    {
+      "code": "E",
+      "name": "Keiti",
+      "holder": "Destroyed in 1914 at the library of the Catholic University of Leuven",
+      "catalog": null,
+      "institution_page": null,
+      "institution_page_note": "There is no wood and no current holder catalog page.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": null,
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_E-r_Keiti.jpg",
+          "pixels": [
+            2008,
+            688
+          ],
+          "what": "Commons labels this CC BY-SA 3.0 from Chauvet 1935. No holding institution states that licence."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No holder page states a CC0 or CC BY photograph."
+    },
+    {
+      "code": "F",
+      "name": "Stephen-Chauvet fragment",
+      "holder": "Private collection",
+      "catalog": null,
+      "institution_page": null,
+      "institution_page_note": "The CEIPP table still says Arman Collection, New York. No museum catalog page was found.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": null,
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_F-a_Stephen-Chauvet_fragment.jpg",
+          "pixels": [
+            1352,
+            920
+          ],
+          "what": "Commons says CC BY-SA 3.0 from Chauvet 1935. Not an institution licence."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No holder page states a CC0 or CC BY photograph."
+    },
+    {
+      "code": "G",
+      "name": "Small Santiago",
+      "holder": "Museo Nacional de Historia Natural, Santiago",
+      "catalog": null,
+      "institution_page": "https://www.mnhn.gob.cl/colecciones",
+      "institution_page_note": "The museum's digital-collections page was opened. It does not list a rongorongo tablet or state a photograph licence.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Chile-03432_-_Rongorongo,_Mu%27a_Au_Mingo_Ata%27i_Hoa_Au.jpg",
+          "pixels": [
+            6000,
+            4000
+          ],
+          "what": "Dennis G. Jarvis, Flickr, CC BY-SA 2.0. The file description says it is a reproduction of Small Santiago at the Museo Antropológico Padre Sebastián Englert, Hanga Roa, not the wood in Santiago."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "Gv6 is a headline passage. The sharp public frame is a copy in another museum, and its licence is the photographer's CC BY-SA, not a CC0 or CC BY statement by the Museo Nacional."
+    },
+    {
+      "code": "H",
+      "name": "Great Santiago",
+      "holder": "Museo Nacional de Historia Natural, Santiago",
+      "catalog": "5.498, as printed on secondary pages; not confirmed on mnhn.gob.cl",
+      "institution_page": "https://www.mnhn.gob.cl/colecciones",
+      "institution_page_note": "Same collections page as G. No tablet photograph and no licence line.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_H-r_Great_Santiago.jpg",
+          "pixels": [
+            831,
+            256
+          ],
+          "what": "Commons calls this a plate from Thomson 1891 and labels it public domain. The Santiago museum page does not."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The Great Tradition on H has no CC0 or CC BY photograph stated by the holder."
+    },
+    {
+      "code": "I",
+      "name": "Santiago Staff",
+      "holder": "Museo Nacional de Historia Natural, Santiago",
+      "catalog": null,
+      "institution_page": "https://www.mnhn.gob.cl/colecciones",
+      "institution_page_note": "Same collections page as G and H. No staff photograph.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_I_Santiago_Staff_(color).jpg",
+          "pixels": [
+            885,
+            523
+          ],
+          "what": "Commons labels the file public domain and credits a tourism site. The museum page does not."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The Staff bar count has no CC0 or CC BY photograph stated by the holder."
+    },
+    {
+      "code": "J",
+      "name": "Reimiro 1",
+      "holder": "British Museum, London",
+      "catalog": "AOA 6847 is the number on the usual text-J page. The URL tried for it, E_Oc6847, returned the museum's 'Page not found'.",
+      "institution_page": "https://www.britishmuseum.org/terms-use/copyright-and-permissions",
+      "institution_page_note": "The museum copyright page was read. A rendered object record for reimiro 1, with an image and a per-image licence, was not.",
+      "public_image": false,
+      "license_class": "non-commercial",
+      "license_as_stated": "For this purpose, we increasingly intend to release content on our website under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) licence. The Creative Commons licence does not apply to everything on our website. Content that is published under the Creative Commons licence will be marked with the following logo:",
+      "license_source": "https://www.britishmuseum.org/terms-use/copyright-and-permissions",
+      "images": [],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No CC0 or CC BY image was on a rendered object page."
+    },
+    {
+      "code": "K",
+      "name": "Small London",
+      "holder": "British Museum, London",
+      "catalog": "Oc1903,150",
+      "institution_page": "https://www.britishmuseum.org/collection/object/E_Oc1903-150",
+      "institution_page_note": "The object URL returns a page titled 'tablet'. The record body, any image, and any per-image licence did not render in the text retrieved on this date. The museum-wide copyright page is the licence text that did render.",
+      "public_image": true,
+      "license_class": "non-commercial",
+      "license_as_stated": "For this purpose, we increasingly intend to release content on our website under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) licence. The Creative Commons licence does not apply to everything on our website. Content that is published under the Creative Commons licence will be marked with the following logo:",
+      "license_source": "https://www.britishmuseum.org/terms-use/copyright-and-permissions",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_K-v_Small_London.jpg",
+          "pixels": [
+            1824,
+            648
+          ],
+          "what": "Commons says CC BY-SA 3.0 from Chauvet 1935. The British Museum page retrieved here does not."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The museum's own licence for marked website images is non-commercial, and no pixel size was stated on the object page."
+    },
+    {
+      "code": "L",
+      "name": "Reimiro 2",
+      "holder": "British Museum, London",
+      "catalog": "AOA 9295 is the number on the usual text-L page. The URL tried for it, E_Oc9295, returned 'Page not found'.",
+      "institution_page": "https://www.britishmuseum.org/terms-use/copyright-and-permissions",
+      "institution_page_note": "Same copyright page as J. No rendered object photograph.",
+      "public_image": true,
+      "license_class": "non-commercial",
+      "license_as_stated": "For this purpose, we increasingly intend to release content on our website under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) licence. The Creative Commons licence does not apply to everything on our website. Content that is published under the Creative Commons licence will be marked with the following logo:",
+      "license_source": "https://www.britishmuseum.org/terms-use/copyright-and-permissions",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_L_rei_miro_2.jpg",
+          "pixels": [
+            1831,
+            916
+          ],
+          "what": "Commons says CC BY-SA 3.0 from Chauvet 1935. Not stated on the museum page retrieved here."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No CC0 or CC BY image on a rendered British Museum object page."
+    },
+    {
+      "code": "M",
+      "name": "Great Vienna",
+      "holder": "Weltmuseum Wien",
+      "catalog": "22869",
+      "institution_page": "https://www.weltmuseumwien.at/en/object/?detailID=530402",
+      "institution_page_note": "Object page for inventory 22869.",
+      "public_image": true,
+      "license_class": "non-commercial",
+      "license_as_stated": "You may download and use the image for private purposes. To request to use the image for commercial or academic purposes, please send us a reproduction request.",
+      "license_source": "https://www.weltmuseumwien.at/en/object/?detailID=530402",
+      "images": [
+        {
+          "url": "https://www.weltmuseumwien.at/pics/530402/VO_22869%20%282%29.jpg",
+          "pixels": [
+            3000,
+            2003
+          ],
+          "what": "Photograph on the object page. Europeana item https://www.europeana.eu/item/15504/VO_22869 names World Museum Vienna as the data provider and records http://creativecommons.org/licenses/by-nc-sa/4.0/."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The object page allows private use and sends academic use to a request. That is not CC0 or CC BY."
+    },
+    {
+      "code": "N",
+      "name": "Small Vienna",
+      "holder": "Weltmuseum Wien",
+      "catalog": "22870",
+      "institution_page": "https://www.weltmuseumwien.at/en/object/?detailID=530403",
+      "institution_page_note": "Object page for inventory 22870. The page text includes 'Invs. 22870'.",
+      "public_image": true,
+      "license_class": "non-commercial",
+      "license_as_stated": "You may download and use the image for private purposes. To request to use the image for commercial or academic purposes, please send us a reproduction request.",
+      "license_source": "https://www.weltmuseumwien.at/en/object/?detailID=530403",
+      "images": [
+        {
+          "url": "https://www.weltmuseumwien.at/pics/530403/VO_22870%20%282%29.jpg",
+          "pixels": [
+            3000,
+            2003
+          ],
+          "what": "Photograph on the object page. Europeana item https://www.europeana.eu/item/15504/VO_22870 records CC BY-NC-SA 4.0 for the World Museum Vienna provider."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "Same private-use terms as M. Not CC0 or CC BY."
+    },
+    {
+      "code": "O",
+      "name": "Berlin tablet",
+      "holder": "Ethnologisches Museum, Staatliche Museen zu Berlin",
+      "catalog": "VI 4878",
+      "institution_page": "https://search.smb.museum/object/obj-998513",
+      "institution_page_note": "Permalink https://id.smb.museum/object/998513. Seven photographs, credit line repeated on the page.",
+      "public_image": true,
+      "license_class": "non-commercial",
+      "license_as_stated": "Fotonachweis: Staatliche Museen zu Berlin, Ethnologisches Museum / Claudia Obrocki CC BY-NC-SA 4.0",
+      "license_source": "https://search.smb.museum/object/obj-998513",
+      "images": [
+        {
+          "url": "https://search.smb.museum/media/images/originals/612/003/3612292.VI%204878.jpg",
+          "pixels": [
+            1772,
+            1329
+          ],
+          "what": "Overview."
+        },
+        {
+          "url": "https://search.smb.museum/media/images/originals/613/003/3613180.VI%204878%20-A.jpg",
+          "pixels": [
+            1772,
+            1329
+          ],
+          "what": "Frame A."
+        },
+        {
+          "url": "https://search.smb.museum/media/images/originals/613/003/3613184.VI%204878%20-B.jpg",
+          "pixels": [
+            1772,
+            1329
+          ],
+          "what": "Frame B."
+        },
+        {
+          "url": "https://search.smb.museum/media/images/originals/613/003/3613191.VI%204878%20-C.jpg",
+          "pixels": [
+            1654,
+            1240
+          ],
+          "what": "Frame C."
+        },
+        {
+          "url": "https://search.smb.museum/media/images/originals/613/003/3613193.VI%204878%20-D.jpg",
+          "pixels": [
+            1575,
+            1181
+          ],
+          "what": "Frame D."
+        },
+        {
+          "url": "https://search.smb.museum/media/images/originals/613/003/3613195.VI%204878%20-E.jpg",
+          "pixels": [
+            1575,
+            1181
+          ],
+          "what": "Frame E."
+        },
+        {
+          "url": "https://search.smb.museum/media/images/originals/613/003/3613199.VI%204878%20-F.jpg",
+          "pixels": [
+            788,
+            591
+          ],
+          "what": "Frame F."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "CC BY-NC-SA 4.0 is non-commercial. The widest frame is 1772 pixels across a tablet the page measures as 103 cm long."
+    },
+    {
+      "code": "P",
+      "name": "Great St Petersburg",
+      "holder": "Peter the Great Museum of Anthropology and Ethnography (Kunstkamera), St Petersburg",
+      "catalog": null,
+      "institution_page": null,
+      "institution_page_note": "collection.kunstkamera.ru did not respond. No holder page was read.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": null,
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_P-r_Great_St_Petersburg.jpg",
+          "pixels": [
+            1744,
+            472
+          ],
+          "what": "Commons labels the file public domain and credits a 1988 book. The Kunstkamera did not state that."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No holder page stated a CC0 or CC BY photograph of the Great Tradition copy on P."
+    },
+    {
+      "code": "Q",
+      "name": "Small St Petersburg",
+      "holder": "Kunstkamera, St Petersburg",
+      "catalog": null,
+      "institution_page": null,
+      "institution_page_note": "Same unreachable catalog as P.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": null,
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_Q-v_Small_St_Petersburg.jpg",
+          "pixels": [
+            1824,
+            568
+          ],
+          "what": "Commons labels the file public domain and credits the same 1988 book. The museum page was not read."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The H/Q parallel has no CC0 or CC BY photograph stated by the Kunstkamera."
+    },
+    {
+      "code": "R",
+      "name": "Small Washington (Atua Mata Riri)",
+      "holder": "National Museum of Natural History, Smithsonian Institution",
+      "catalog": "A129773-0",
+      "institution_page": "https://www.si.edu/object/inscribed-wooden-tablet:nmnhanthropology_8010183",
+      "institution_page_note": "Open Access API record edanmdm:nmnhanthropology_8010183. metadata_usage.access is CC0. online_media is empty in that payload even though online_media_type lists Images. The IIIF manifest NMNH-NHB2012-00003-000002 sets license to https://www.si.edu/termsofuse and repeats Metadata Usage CC0. Its one canvas is 1280 by 959 and is not the glyph board.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": "The image viewer prints 'CC0', then 'Usage Conditions Apply', then 'There are restrictions for re-using this media.' A separate heading, 'Metadata Usage', is CC0. The IIIF license field is the Terms of Use URL, not a CC0 deed.",
+      "license_source": "https://www.si.edu/object/inscribed-wooden-tablet:nmnhanthropology_8010183",
+      "images": [
+        {
+          "url": "https://ids.si.edu/ids/deliveryService?id=ark:/65665/m3d67b406c22524eb59e6092295aae36ef",
+          "pixels": [
+            1280,
+            352
+          ],
+          "what": "One side of the board, as served by the IDS default. Eight lines of glyphs in 352 pixels of height."
+        },
+        {
+          "url": "https://ids.si.edu/ids/deliveryService?id=ark:/65665/m379dccb76ebfe4eb2ad916e28e45ed469",
+          "pixels": [
+            1280,
+            350
+          ],
+          "what": "The other side, same delivery size."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The page does not state a clean CC0 or CC BY licence for the media. The board frames are 1280 by about 350 pixels. Round 5B already found that a line about 74 pixels tall can separate a crescent from a bar and cannot settle a catalog number. These frames are coarser than that. The headline claim that tablet R has no sign 076 was not re-read off them."
+    },
+    {
+      "code": "S",
+      "name": "Great Washington",
+      "holder": "National Museum of Natural History, Smithsonian Institution",
+      "catalog": "A129774-0",
+      "institution_page": "https://www.si.edu/object/inscribed-wooden-tablet:nmnhanthropology_8010185",
+      "institution_page_note": "Open Access API record edanmdm:nmnhanthropology_8010185 confirms USNM A129774-0, length 62.9 cm, and metadata_usage.access CC0. online_media is empty. The object page itself returned a verification wall on this date, so the image-viewer sentence was not read and is not copied from tablet R.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": "Metadata usage on the Open Access API is CC0. No image licence was read on the object page.",
+      "license_source": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:nmnhanthropology_8010185",
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_S-a_Great_Washington.jpg",
+          "pixels": [
+            1014,
+            256
+          ],
+          "what": "Commons credits Thomson 1891 and labels the file public domain. Not a Smithsonian image-viewer statement, and not sharp."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No institution photograph with a stated CC0 or CC BY licence and a measured size was retrieved."
+    },
+    {
+      "code": "T",
+      "name": "Honolulu 1",
+      "holder": "Bernice Pauahi Bishop Museum, Honolulu",
+      "catalog": "B.03629",
+      "institution_page": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.03629",
+      "institution_page_note": "The page shows images/nophoto.jpg. Dimensions on the page: 31 x 12.5 x 2.5 cm.",
+      "public_image": false,
+      "license_class": "all rights reserved",
+      "license_as_stated": "Bishop Museum. All Rights Reserved. All media are for the personal use of students, scholars, and the public. Any commercial use or publication of them is strictly prohibited.",
+      "license_source": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.03629",
+      "images": [],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "The museum page has no photograph. A Flickr CC BY 2.0 picture of this tablet exists; that licence is the photographer's, not the museum's."
+    },
+    {
+      "code": "U",
+      "name": "Honolulu 2",
+      "holder": "Bernice Pauahi Bishop Museum, Honolulu",
+      "catalog": "B.03623",
+      "institution_page": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.03623",
+      "institution_page_note": "No photograph. Dimensions on the page: 71 x 8.7 cm.",
+      "public_image": false,
+      "license_class": "all rights reserved",
+      "license_as_stated": "Bishop Museum. All Rights Reserved. All media are for the personal use of students, scholars, and the public. Any commercial use or publication of them is strictly prohibited.",
+      "license_source": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.03623",
+      "images": [],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No photograph on the museum page."
+    },
+    {
+      "code": "V",
+      "name": "Honolulu 3",
+      "holder": "Bernice Pauahi Bishop Museum, Honolulu",
+      "catalog": "B.03622",
+      "institution_page": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.03622",
+      "institution_page_note": "No photograph. Dimensions on the page: 71.9 x 9.4 cm.",
+      "public_image": false,
+      "license_class": "all rights reserved",
+      "license_as_stated": "Bishop Museum. All Rights Reserved. All media are for the personal use of students, scholars, and the public. Any commercial use or publication of them is strictly prohibited.",
+      "license_source": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.03622",
+      "images": [],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No photograph on the museum page."
+    },
+    {
+      "code": "W",
+      "name": "Honolulu fragment",
+      "holder": "Bernice Pauahi Bishop Museum, Honolulu",
+      "catalog": "B.00445",
+      "institution_page": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.00445",
+      "institution_page_note": "No photograph. Dimensions on the page: 6.7 x 2.3 cm. The page says the fragment is mounted in a sealed box.",
+      "public_image": false,
+      "license_class": "all rights reserved",
+      "license_as_stated": "Bishop Museum. All Rights Reserved. All media are for the personal use of students, scholars, and the public. Any commercial use or publication of them is strictly prohibited.",
+      "license_source": "https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.00445",
+      "images": [],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No photograph on the museum page."
+    },
+    {
+      "code": "X",
+      "name": "New York birdman",
+      "holder": "American Museum of Natural History, New York",
+      "catalog": "ST/5309, as printed on secondary pages. The AMNH URL returned a verification wall.",
+      "institution_page": "http://anthro.amnh.org/anthropology/databases/common/image_dup.cfm?database=pacific&catno=%20%20ST%2F%205309&site=P",
+      "institution_page_note": "The request was intercepted before any object record or licence line.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": null,
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_X_Birdman.jpg",
+          "pixels": [
+            680,
+            1424
+          ],
+          "what": "Commons says CC BY-SA 3.0 from Chauvet 1935. The AMNH page was not read."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No holder licence was read."
+    },
+    {
+      "code": "Y",
+      "name": "Paris snuffbox",
+      "holder": "Musée de l'Homme, Paris",
+      "catalog": "62-47-5, as printed on secondary pages. No Muséum page for that number was retrieved.",
+      "institution_page": null,
+      "institution_page_note": "A Quai Branly search URL returned 404. No object page was read.",
+      "public_image": true,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": null,
+      "images": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_Y_front.jpg",
+          "pixels": [
+            288,
+            96
+          ],
+          "what": "Commons labels a small file public domain and credits Fischer 1997. Not a museum licence, and not sharp."
+        }
+      ],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No holder page stated a CC0 or CC BY photograph."
+    },
+    {
+      "code": "Z",
+      "name": "Poike",
+      "holder": "Museo Nacional de Historia Natural, Santiago",
+      "catalog": null,
+      "institution_page": "https://www.mnhn.gob.cl/colecciones",
+      "institution_page_note": "Listed in the CEIPP corpus table. The museum collections page does not show it.",
+      "public_image": false,
+      "license_class": "not stated by the holder",
+      "license_as_stated": null,
+      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "images": [],
+      "sharp_enough_for_sign_detail": false,
+      "cc0_or_cc_by": false,
+      "rechecked": false,
+      "why_not_rechecked": "No public photograph with a holder-stated licence was found."
+    }
+  ],
+  "stats_before": {
+    "calendar_040": 28,
+    "calendar_040_before_152": 13,
+    "calendar_040_after_152": 13,
+    "calendar_040_gaps": [
+      2,
+      6,
+      3,
+      2,
+      5,
+      3,
+      5
+    ],
+    "calendar_full_delimiters": 6,
+    "calendar_152": 1,
+    "calendar_143": 1,
+    "gv6_phrases": 4,
+    "gv6_handoffs": 3,
+    "staff_076_after_999": 91,
+    "staff_pure_999": 96,
+    "staff_076_after_999_rate": 0.9479166666666666,
+    "parallel_span": 125,
+    "parallel_matches": 107,
+    "parallel_mismatches": 16,
+    "parallel_bird_substitutions": 2,
+    "corpus_bird_substitutions": 18
+  },
+  "stats_after": {
+    "calendar_040": 28,
+    "calendar_040_before_152": 13,
+    "calendar_040_after_152": 13,
+    "calendar_040_gaps": [
+      2,
+      6,
+      3,
+      2,
+      5,
+      3,
+      5
+    ],
+    "calendar_full_delimiters": 6,
+    "calendar_152": 1,
+    "calendar_143": 1,
+    "gv6_phrases": 4,
+    "gv6_handoffs": 3,
+    "staff_076_after_999": 91,
+    "staff_pure_999": 96,
+    "staff_076_after_999_rate": 0.9479166666666666,
+    "parallel_span": 125,
+    "parallel_matches": 107,
+    "parallel_mismatches": 16,
+    "parallel_bird_substitutions": 2,
+    "corpus_bird_substitutions": 18
+  },
+  "what_changed": "Nothing in the headline counts. No Barthel code was replaced. No open photograph was sharp enough, under a licence the holder stated as CC0 or CC BY, to re-read a passage."
+}
