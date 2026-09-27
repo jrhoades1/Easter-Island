@@ -1,0 +1,19 @@
+The photograph in this directory is not under the MIT license that covers
+the rest of this repository.
+
+File: rongorongo_c-a_mamari.jpg
+Work: side a of rongorongo tablet C (Mamari)
+Source page: https://commons.wikimedia.org/wiki/File:Rongorongo_C-a_Mamari.jpg
+File URL: https://upload.wikimedia.org/wikipedia/commons/1/14/Rongorongo_C-a_Mamari.jpg
+Description: Photograph taken in Papeete by Widow Hoare while the tablet
+  was in Jaussen's possession, published in Chauvet 1935, L'île de Pâques
+  et ses mystères. The Wikimedia file is from the 2004 Altman translation.
+Permission archive: Wikimedia VRT ticket 2008061210011949
+Licenses:
+  Creative Commons Attribution-ShareAlike 3.0 Unported
+  https://creativecommons.org/licenses/by-sa/3.0/
+  GNU Free Documentation License 1.2 or later
+  https://www.gnu.org/licenses/fdl-1.2.html
+
+Share-alike applies to adaptations of this photograph. It does not relicense
+the source code of this repository.
