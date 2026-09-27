@@ -1,0 +1,306 @@
+{
+  "tablet": "C",
+  "passage": "Ca6-Ca9",
+  "not_committed": [
+    {
+      "file": "Ca0601.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0601.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "5dcbdaf5b5314083d2dd12f41f3eb180542d1af188988ce25fb59ba806afe317",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0602.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0602.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "15a1a204b7c41686df7b39fe1ac46d92f2d4657f07f4f88ec566ac84181aafbd",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0603.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0603.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "9b00475d09f04698b24287ec5030c06c90edbc1672b1628ab488f3d7ff883acf",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0701.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0701.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "1446d6208480df3a88de95f5baccf63f729a3e0c4448fa0a2d17a214c1e85f58",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0702.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0702.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "fb8f6babc2cee306662945e7645f2cff561e4179b6c1f6edf1dcd495a76298db",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0703.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0703.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "3a455b639daa210adc474cfccaf63c0a45169b23d4528d1cdfb8fdb7599d91f7",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0801.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0801.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "65fdc2c4307c702e0e331c9977c88a42b5ac5344b703de726b9af08b38977e0f",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0802.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0802.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "7e448921bc56e0875e151c9f20ceab87299f77618de0296cf82f889dd85fc927",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0803.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0803.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "3b61c25063a34945602b1308cecc89e6a881ff239f25205bbc3342b5eff62f38",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0901.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0901.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "d57872fd672c41623e16962096482312ab3e7f8bf49f66d1ec3460340dded7f6",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0902.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0902.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "478f0cd0d9c7f84a679d341caec6bb20852dcbb5921bed8041e8d0a2c62dfc23",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0903.png",
+      "kind": "barthel_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/ba/C/Ca0903.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "664f7210a659abc80645349b688cc1967d489e11ce94c7ba06561b0933a05838",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0601.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0601.png",
+      "pixels": [
+        558,
+        74
+      ],
+      "sha256": "9d0a7edc67da67d135a9808176352b35a3a138d45b49213dfd8ce634fa2048f8",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0602.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0602.png",
+      "pixels": [
+        582,
+        74
+      ],
+      "sha256": "10b98159860631897d73b8ccc756e3e4ef2d32a7c435cbfdc6920729d85108d3",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0603.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0603.png",
+      "pixels": [
+        598,
+        74
+      ],
+      "sha256": "f0e669e4bff32fc311d5eecc6a408ca98bf807256341b149d5bc24d3c2604bde",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0701.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0701.png",
+      "pixels": [
+        638,
+        74
+      ],
+      "sha256": "6d8e6b53a84cc4def210436215ab4a1f78ea03a6c72dd2fc32f04190b5ee176a",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0702.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0702.png",
+      "pixels": [
+        551,
+        74
+      ],
+      "sha256": "c687ddee448b884ace5980c34beee3a52c21d88f9e609540b14ffc51e8c41d08",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0703.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0703.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "230f787e2d1cf6b9e662b346ed78fee9e4cad4a3323ad5d7a7d35c33dfb74c74",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0801.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0801.png",
+      "pixels": [
+        541,
+        74
+      ],
+      "sha256": "9cdb3dd95d973eac9d418834be6296adb83add015545b9e90ece02916464497e",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0802.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0802.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "16a2950c4127e06f059e0e2b5d5d432c1054413fa8988d703a09b85d5043d999",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0803.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0803.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "04978eea9cd1816533231ad54b8bd716e3791c1be6a1edee3eceb586cd396cab",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0901.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0901.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "d3c564e4bdc4b5b02cd4bcdcbed8894bed537760b4b9a72757cf8ba34f44d89f",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0902.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0902.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "ad8d686fe51212d414fa170fb447ef8ee0f6ba63c6c84be62844d8fc62e10954",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "Ca0903.png",
+      "kind": "fischer_tracing",
+      "url": "http://kohaumotu.org/Rongorongo/images/fi/C/Ca0903.png",
+      "pixels": [
+        522,
+        74
+      ],
+      "sha256": "83824f26a2f250e0c129b725eec376a2e748dcb93001baedd0dd7b5b72ee435a",
+      "license": "CEIPP / Kohaumotu: copy and distribute only if the source is acknowledged and the distribution is non-profit. http://kohaumotu.org/rongorongo_org/copy.html",
+      "committed": false
+    },
+    {
+      "file": "ca.jpg",
+      "kind": "whole_side_a",
+      "url": "http://kohaumotu.org/rongorongo_org/repro/ca.jpg",
+      "pixels": [
+        980,
+        630
+      ],
+      "sha256": "68fdff7e3e3f60533a7d43a6a5f5efcf3655424953dff5871db45d4d68f93a84",
+      "license": "CEIPP photograph unless otherwise indicated. Same non-profit terms.",
+      "committed": false
+    }
+  ]
+}
