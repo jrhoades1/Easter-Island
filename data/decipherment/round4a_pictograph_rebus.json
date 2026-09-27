@@ -1,0 +1,1068 @@
+{
+  "adoption_rule": "R1 total hits and R1 diverse hits (a hit window whose signs are not all the same word) both beat the assignment shuffle at 5%. R2 cannot be adopted. A pass is a statistical result, not a translation.",
+  "attestation_r1": [
+    {
+      "in_word_list": true,
+      "running_text_count": 100,
+      "sign": "040",
+      "syllables": [
+        "ma",
+        "ra",
+        "ma"
+      ],
+      "word": "marama"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 18,
+      "sign": "143",
+      "syllables": [
+        "ra",
+        "ka",
+        "u"
+      ],
+      "word": "rakau"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 0,
+      "sign": "152",
+      "syllables": [
+        "o",
+        "mo",
+        "to",
+        "hi"
+      ],
+      "word": "omotohi"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 432,
+      "sign": "200",
+      "syllables": [
+        "ta",
+        "nga",
+        "ta"
+      ],
+      "word": "tangata"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 271,
+      "sign": "600",
+      "syllables": [
+        "ma",
+        "nu"
+      ],
+      "word": "manu"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 0,
+      "sign": "680",
+      "syllables": [
+        "ma",
+        "ko",
+        "he"
+      ],
+      "word": "makohe"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 98,
+      "sign": "700",
+      "syllables": [
+        "i",
+        "ka"
+      ],
+      "word": "ika"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 125,
+      "sign": "006",
+      "syllables": [
+        "ri",
+        "ma"
+      ],
+      "word": "rima"
+    }
+  ],
+  "attestation_r2_extra": [
+    {
+      "in_word_list": true,
+      "running_text_count": 42,
+      "sign": "760",
+      "syllables": [
+        "mo",
+        "ko"
+      ],
+      "word": "moko"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 28,
+      "sign": "067",
+      "syllables": [
+        "ni",
+        "u"
+      ],
+      "word": "niu"
+    },
+    {
+      "in_word_list": true,
+      "running_text_count": 4,
+      "sign": "076",
+      "syllables": [
+        "u",
+        "re"
+      ],
+      "word": "ure"
+    }
+  ],
+  "calendar_stems": 101,
+  "class_tokens": {
+    "bird": 1053,
+    "hand": 757,
+    "human": 1256,
+    "human_gaping": 953,
+    "lizard": 39,
+    "moon": 208,
+    "plant": 84,
+    "sea": 839
+  },
+  "corpus_stems": 14841,
+  "cross_hundred_by_class": {
+    "bird": 18
+  },
+  "cross_hundred_pairs": [
+    {
+      "count": 9,
+      "signs": [
+        "400",
+        "600"
+      ]
+    },
+    {
+      "count": 2,
+      "signs": [
+        "400",
+        "605"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "407",
+        "607"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "400",
+        "633"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "405",
+        "605"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "400",
+        "680"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "409",
+        "609"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "401",
+        "600"
+      ]
+    },
+    {
+      "count": 1,
+      "signs": [
+        "405",
+        "600"
+      ]
+    }
+  ],
+  "gv6_phrases_r1": [
+    {
+      "groups": [
+        "200",
+        "000!",
+        "280.076"
+      ],
+      "kind": "strict",
+      "mapped": [
+        "200",
+        null,
+        null,
+        null
+      ],
+      "stems": [
+        "200",
+        "000",
+        "280",
+        "076"
+      ]
+    },
+    {
+      "groups": [
+        "200",
+        "280",
+        "730.076"
+      ],
+      "kind": "strict",
+      "mapped": [
+        "200",
+        null,
+        null,
+        null
+      ],
+      "stems": [
+        "200",
+        "280",
+        "730",
+        "076"
+      ]
+    },
+    {
+      "groups": [
+        "200",
+        "730",
+        "517a.076"
+      ],
+      "kind": "strict",
+      "mapped": [
+        "200",
+        null,
+        null,
+        null
+      ],
+      "stems": [
+        "200",
+        "730",
+        "517",
+        "076"
+      ]
+    },
+    {
+      "groups": [
+        "200",
+        "517a",
+        "222.076"
+      ],
+      "kind": "strict",
+      "mapped": [
+        "200",
+        null,
+        null,
+        null
+      ],
+      "stems": [
+        "200",
+        "517",
+        "222",
+        "076"
+      ]
+    },
+    {
+      "groups": [
+        "200",
+        "769",
+        "381",
+        "002.076"
+      ],
+      "kind": "quad",
+      "mapped": [
+        "200",
+        null,
+        null,
+        null,
+        null
+      ],
+      "stems": [
+        "200",
+        "769",
+        "381",
+        "002",
+        "076"
+      ]
+    }
+  ],
+  "omitted": [
+    {
+      "picture": "canoe",
+      "reason": "No Barthel number for a canoe is stated by Barthel 1958 as cited here, Guy 1990, Guy 2006, Horley 2011, Davletshin 2012, or the Wikipedia glyph notes used above. The Churchill headword vaka is not attached to a sign."
+    },
+    {
+      "picture": "sea turtle",
+      "reason": "Wikipedia mentions a sea-turtle glyph in a caption and does not give a Barthel number in the prose. Glyph 280 is described there with glyph 200 as a headed figure, and Horley 2005 decomposes 280 as 070.002. It is not entered as a turtle. The Churchill headword honu is not attached to a sign."
+    },
+    {
+      "picture": "Guy 2006 calendar phonograms atua, hua, hiro/ro",
+      "reason": "Guy 2006 proposes a feather-cloak sign for atua, a fruit or scrotum sign for hua, and glyph 3 or 30 for ro or hiro. The prose does not lock those pictures to a Barthel number that this track can separate from the plate. They are not encoded."
+    }
+  ],
+  "parallel_slice_signs": 2182,
+  "parallel_slots": {
+    "alignment": {
+      "passages": 99,
+      "published_mismatches": 254,
+      "realigned_columns": 2125,
+      "realigned_mismatches": 249
+    },
+    "cross_hundred": {
+      "classified_pairs": 34,
+      "holds": true,
+      "null_fraction": 0.046,
+      "null_ge": 23,
+      "observed": 18,
+      "p_add_one": 0.04790419161676647,
+      "rate": 0.5294117647058824
+    },
+    "same_class": {
+      "classified_pairs": 118,
+      "holds": false,
+      "note": "Includes substitutions inside one Barthel hundred. Not the semantic gate.",
+      "null_fraction": 0.0,
+      "null_ge": 0,
+      "observed": 101,
+      "p_add_one": 0.001996007984031936,
+      "rate": 0.8559322033898306
+    },
+    "seed": 41,
+    "trials": 500
+  },
+  "pictographs": [
+    {
+      "icon": "Crescent. In the Mamari calendar, the repeated night sign.",
+      "icon_confidence": "high",
+      "rebus": "R1",
+      "semantic_class": "moon",
+      "source": "Guy 1990, JSO 91: 135\u2013149: glyph 40A is the repeated night sign. Guy 2006, Rapa Nui Journal 20(1): glyph 40 is a crescent, and glyph 42 is that crescent rotated in one stacked pair (not applied to every 042). The word marama is the ordinary noun 'moon' (Metoro, vendored ca06\u2013ca09; Churchill 1912 headword). Guy does not read the sign as that word. HYPOTHESIS: object-noun for the picture.",
+      "stem": "040",
+      "tokens": 152,
+      "word": "marama",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Mirror-image crescent. Guy's calendar delimiter uses it; he does not count it as a night.",
+      "icon_confidence": "high",
+      "rebus": "",
+      "semantic_class": "moon",
+      "source": "Guy 2006, Rapa Nui Journal 20(1): the signs under 41 are the mirror image of those under 40. Guy 1990: delimiter crescents are not nights. No separate word is assigned.",
+      "stem": "041",
+      "tokens": 54,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Deep filled crescent, the night before the full-moon sign.",
+      "icon_confidence": "medium",
+      "rebus": "R1",
+      "semantic_class": "moon",
+      "source": "Guy 1990: a deep filled crescent immediately before glyph 152. Horley 2011, JSO 132: 17\u201338, agrees 152 is full moon. The Track 1 alignment of the Thomson / Englert / M\u00e9traux lists puts rakau on the night before omotohi. HYPOTHESIS: that night-name, not a phonetic proof.",
+      "stem": "143",
+      "tokens": 1,
+      "word": "rakau",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Figure seated in an oval: the full-moon sign, Guy's 'man in the moon'.",
+      "icon_confidence": "medium-high",
+      "rebus": "R1",
+      "semantic_class": "moon",
+      "source": "Guy 1990 and Horley 2011: sign 152 is full moon. Guy 2006: an anthropomorphic figure seated above a heap of stones inside an ovoid, the cook in the moon. The word omotohi is the recorded full-moon night name (Thomson 1891; Englert's list as already printed in Track 1). HYPOTHESIS: the night name at that slot.",
+      "stem": "152",
+      "tokens": 1,
+      "word": "omotohi",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Human figure with a lozenge head and side protrusions. Guy's 'Big Ears'.",
+      "icon_confidence": "high",
+      "rebus": "R1",
+      "semantic_class": "human",
+      "source": "Barthel 1958: 40\u201341, via Guy 2006: series 200\u2013299 are headed figures with ears or eyes. Wikipedia 'Rongorongo' groups glyph 200 with that head shape. Butinov and Knorozov 1957, JPS 66: 5\u201317, and Davletshin 2012, JSO 134: 95\u2013110, treat 200 as a man or a title. The word tangata is that proposal. Guy 2006 also argues the head behaves as a taxogram, which is a different claim.",
+      "stem": "200",
+      "tokens": 311,
+      "word": "tangata",
+      "word_label": "published_hypothesis"
+    },
+    {
+      "icon": "Anthropomorph with a round head and a gaping mouth, the head of Barthel's 300 series.",
+      "icon_confidence": "high",
+      "rebus": "",
+      "semantic_class": "human_gaping",
+      "source": "Barthel 1958: 40\u201341, via Guy 2006 and the kohaumotu summary already cited in decipherment/allographs.py: series 300\u2013399 have a round head and a gaping mouth. No agreed Rapanui word.",
+      "stem": "300",
+      "tokens": 112,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Bird-bodied figure. Guy: the first ten signs of series 400 are birds.",
+      "icon_confidence": "medium-high",
+      "rebus": "",
+      "semantic_class": "bird",
+      "source": "Guy 2006: glyph 400 has the head of series 300 and the body of a bird; glyphs 400\u2013409 are clear depictions of a bird. No separate word is assigned. Reading it as tangata manu would be an uncited extra.",
+      "stem": "400",
+      "tokens": 81,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Bird, the head of Barthel's ornithomorphic series.",
+      "icon_confidence": "high",
+      "rebus": "R1",
+      "semantic_class": "bird",
+      "source": "Barthel 1958: 40\u201341, via Guy 2006: series 600\u2013699 are ornithomorphic. Wikipedia 'Rongorongo': the hundreds digit 6 is figures with beaks. The word manu is the ordinary noun 'bird' (Churchill 1912 headword). HYPOTHESIS: object-noun. Not a claim that every 600-series sign is this one species.",
+      "stem": "600",
+      "tokens": 342,
+      "word": "manu",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Double-headed frigatebird.",
+      "icon_confidence": "medium-high",
+      "rebus": "R1",
+      "semantic_class": "bird",
+      "source": "Wikipedia 'Rongorongo', citing McLaughlin 2004, Rapa Nui Journal 18: 87\u201394, and Lee 1992: glyph 680 is a double-headed frigatebird, also on a moai topknot. Horley 2005 maps long-beak heads 661\u2013684 to 660, so 680 may be an allograph of a long-beaked bird rather than its own logogram. The word makohe is the Churchill 1912 headword for the frigatebird. HYPOTHESIS: object-noun.",
+      "stem": "680",
+      "tokens": 24,
+      "word": "makohe",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Fish.",
+      "icon_confidence": "high",
+      "rebus": "R1",
+      "semantic_class": "sea",
+      "source": "Guy 2006: 700 has been suggested as a fish. Wikipedia 'Rongorongo': hundreds digit 7 is fish, arthropods, and the like, and human skulls carry the single fish glyph 700, which may stand for ika 'war casualty; fish'. The homophone is the ethnographic name kohau ika in that article. HYPOTHESIS: the word ika (Churchill 1912; Wikipedia lang=rap). The casualty sense is the same word.",
+      "stem": "700",
+      "tokens": 288,
+      "word": "ika",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Shark. Guy reports the suggestion and does not name its author.",
+      "icon_confidence": "medium",
+      "rebus": "",
+      "semantic_class": "sea",
+      "source": "Guy 2006: 721 has been suggested as a shark. No Rapanui word is assigned. The English gloss is not turned into a headword that is absent from the vendored lexicon.",
+      "stem": "721",
+      "tokens": 7,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Lizard. Guy reports the suggestion and does not name its author.",
+      "icon_confidence": "medium",
+      "rebus": "R2",
+      "semantic_class": "lizard",
+      "source": "Guy 2006: 760 has been suggested as a lizard. Not in the widely agreed set, because he marks it as a suggestion. The word moko is the Churchill 1912 headword. HYPOTHESIS: object-noun. Sensitivity map R2 only.",
+      "stem": "760",
+      "tokens": 39,
+      "word": "moko",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Hand with three fingers and a thumb.",
+      "icon_confidence": "high",
+      "rebus": "R1",
+      "semantic_class": "hand",
+      "source": "Guy 2006: isolated glyph 6 is the same shape as hand 6 (lifted, three fingers and a thumb). Pozdniakov 1996, JSO 103: 296: hands 6 and 64 substitute in repeated phrases. The word rima is the Churchill 1912 headword and the Track 1 numeral rima. HYPOTHESIS: object-noun 'hand', which is homophonous with the numeral five. Neither Guy nor Pozdniakov prints that reading.",
+      "stem": "006",
+      "tokens": 337,
+      "word": "rima",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Forked hand. Allograph of 006 in repeated phrases.",
+      "icon_confidence": "high",
+      "rebus": "alias",
+      "semantic_class": "hand",
+      "source": "Pozdniakov 1996: 296 and Guy 2006: hand 4 alternates with hand 6. The rebus copies the word assigned to 006. 064 is not its own permutation item.",
+      "stem": "064",
+      "tokens": 130,
+      "word": "rima",
+      "word_label": "HYPOTHESIS"
+    },
+    {
+      "icon": "Lifted hand, turned inward, three fingers. Guy's hand shape 1.",
+      "icon_confidence": "high",
+      "rebus": "",
+      "semantic_class": "hand",
+      "source": "Guy 2006, Figure 10d: glyphs 61\u201364 are the same shapes as hands 1\u20134. No separate word. Isolated digits 1\u20135 and 7 are different signs, and they are not put in this class.",
+      "stem": "061",
+      "tokens": 90,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Lifted hand clenched in a fist. Guy's hand shape 2.",
+      "icon_confidence": "high",
+      "rebus": "",
+      "semantic_class": "hand",
+      "source": "Guy 2006, Figure 10d: glyph 62 is hand shape 2, a lifted fist. No separate Rapanui word is assigned.",
+      "stem": "062",
+      "tokens": 100,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Lifted hand pointing down. Guy's hand shape 3.",
+      "icon_confidence": "high",
+      "rebus": "",
+      "semantic_class": "hand",
+      "source": "Guy 2006, Figure 10d. No separate word. Not read as an adze.",
+      "stem": "063",
+      "tokens": 100,
+      "word": "",
+      "word_label": ""
+    },
+    {
+      "icon": "Palm. Barthel's identification, later tied to the Jaussen list's niu.",
+      "icon_confidence": "medium",
+      "rebus": "R2",
+      "semantic_class": "plant",
+      "source": "Wikipedia 'Rongorongo', note 6, citing Barthel 1958: 66: glyph 67 is thought to represent the extinct Easter Island palm. The same note says the Jaussen list identified it as the niu coconut palm, a species introduced after contact. Contested. Sensitivity map R2 only. niu is not a Churchill headword in the vendored list.",
+      "stem": "067",
+      "tokens": 84,
+      "word": "niu",
+      "word_label": "contested"
+    },
+    {
+      "icon": "Phallus, if Fischer is right. Guy treats the genealogy suffix as a patronym instead.",
+      "icon_confidence": "low",
+      "rebus": "R2",
+      "semantic_class": "contested",
+      "source": "Fischer 1995 and 1997: 076 is a phallic suffix. Davletshin 2012: patronymic ure. Guy 1998, Anthropos 93: 552\u2013555, rejects Fischer's cosmogonic reading. The picture is not widely agreed. Sensitivity map R2 only. The word ure is in Thomson and in Churchill 1912.",
+      "stem": "076",
+      "tokens": 682,
+      "word": "ure",
+      "word_label": "published_hypothesis"
+    },
+    {
+      "icon": "Conflicting nicknames: Guy's flower, Fischer's sun in one Staff triad.",
+      "icon_confidence": "low",
+      "rebus": "",
+      "semantic_class": "",
+      "source": "Guy 2006 uses glyph 8 as a nickname 'flower'. Fischer's Staff example, already locked in Track 3 as 606.076 700 008, glosses one 008 as the sun. The two claims disagree. No class and no word.",
+      "stem": "008",
+      "tokens": 149,
+      "word": "",
+      "word_label": ""
+    }
+  ],
+  "provider": "mock",
+  "provider_calls": 0,
+  "reading": "R1",
+  "rebus_r1": {
+    "adopted": true,
+    "contexts": [
+      {
+        "context": "calendar",
+        "diverse_hits": 0,
+        "examples": [
+          {
+            "phrase": "marama marama",
+            "running_text": 1,
+            "windows": 16
+          }
+        ],
+        "hit_rate": 0.36363636363636365,
+        "hits": 16,
+        "holds_bonferroni": false,
+        "null_fraction": 0.468,
+        "null_ge": 234,
+        "p_add_one": 0.469061876247505,
+        "phrase_hits": 16,
+        "strict_formula_hits": 0,
+        "windows": 44,
+        "word_hits": 0
+      },
+      {
+        "context": "gv6",
+        "diverse_hits": 0,
+        "examples": [],
+        "hit_rate": 0.0,
+        "hits": 0,
+        "holds_bonferroni": false,
+        "null_fraction": 1.0,
+        "null_ge": 500,
+        "p_add_one": 1.0,
+        "phrase_hits": 0,
+        "strict_formula_hits": 0,
+        "windows": 0,
+        "word_hits": 0
+      },
+      {
+        "context": "parallels",
+        "diverse_hits": 15,
+        "examples": [
+          {
+            "phrase": "tangata tangata",
+            "running_text": 1,
+            "windows": 9
+          },
+          {
+            "phrase": "ika manu",
+            "running_text": 2,
+            "windows": 8
+          },
+          {
+            "phrase": "manu manu",
+            "running_text": 4,
+            "windows": 4
+          },
+          {
+            "phrase": "tangata manu",
+            "running_text": 1,
+            "windows": 2
+          },
+          {
+            "phrase": "ika tangata",
+            "running_text": 1,
+            "windows": 2
+          },
+          {
+            "phrase": "tangata rima",
+            "running_text": 10,
+            "windows": 1
+          },
+          {
+            "phrase": "rima tangata",
+            "running_text": 3,
+            "windows": 1
+          },
+          {
+            "phrase": "tangata ika",
+            "running_text": 1,
+            "windows": 1
+          }
+        ],
+        "hit_rate": 0.6829268292682927,
+        "hits": 28,
+        "holds_bonferroni": true,
+        "null_fraction": 0.016,
+        "null_ge": 8,
+        "p_add_one": 0.017964071856287425,
+        "phrase_hits": 28,
+        "strict_formula_hits": 5,
+        "windows": 41,
+        "word_hits": 1
+      }
+    ],
+    "diverse_hits": 15,
+    "diverse_holds": true,
+    "diverse_null_fraction": 0.03,
+    "diverse_null_ge": 15,
+    "diverse_p_add_one": 0.031936127744510975,
+    "hit_rate": 0.5176470588235295,
+    "hits": 44,
+    "holds": true,
+    "null_fraction": 0.008,
+    "null_ge": 4,
+    "null_mean_hits": 19.3,
+    "p_add_one": 0.00998003992015968,
+    "seed": 42,
+    "signs": [
+      "040",
+      "143",
+      "152",
+      "200",
+      "600",
+      "680",
+      "700",
+      "006"
+    ],
+    "trials": 500,
+    "windows": 85,
+    "words": {
+      "006": "rima",
+      "040": "marama",
+      "143": "rakau",
+      "152": "omotohi",
+      "200": "tangata",
+      "600": "manu",
+      "680": "makohe",
+      "700": "ika"
+    }
+  },
+  "rebus_r2": {
+    "adopted": false,
+    "contexts": [
+      {
+        "context": "calendar",
+        "diverse_hits": 0,
+        "examples": [
+          {
+            "phrase": "marama marama",
+            "running_text": 1,
+            "windows": 16
+          }
+        ],
+        "hit_rate": 0.36363636363636365,
+        "hits": 16,
+        "holds_bonferroni": false,
+        "null_fraction": 0.56,
+        "null_ge": 280,
+        "p_add_one": 0.5608782435129741,
+        "phrase_hits": 16,
+        "strict_formula_hits": 0,
+        "windows": 44,
+        "word_hits": 0
+      },
+      {
+        "context": "gv6",
+        "diverse_hits": 0,
+        "examples": [],
+        "hit_rate": 0.0,
+        "hits": 0,
+        "holds_bonferroni": false,
+        "null_fraction": 1.0,
+        "null_ge": 500,
+        "p_add_one": 1.0,
+        "phrase_hits": 0,
+        "strict_formula_hits": 0,
+        "windows": 4,
+        "word_hits": 0
+      },
+      {
+        "context": "parallels",
+        "diverse_hits": 16,
+        "examples": [
+          {
+            "phrase": "tangata tangata",
+            "running_text": 1,
+            "windows": 9
+          },
+          {
+            "phrase": "ika manu",
+            "running_text": 2,
+            "windows": 8
+          },
+          {
+            "phrase": "manu manu",
+            "running_text": 4,
+            "windows": 4
+          },
+          {
+            "phrase": "tangata manu",
+            "running_text": 1,
+            "windows": 2
+          },
+          {
+            "phrase": "ika tangata",
+            "running_text": 1,
+            "windows": 2
+          },
+          {
+            "phrase": "tangata rima",
+            "running_text": 10,
+            "windows": 1
+          },
+          {
+            "phrase": "rima tangata",
+            "running_text": 3,
+            "windows": 1
+          },
+          {
+            "phrase": "ure ure",
+            "running_text": 0,
+            "windows": 1
+          }
+        ],
+        "hit_rate": 0.5882352941176471,
+        "hits": 30,
+        "holds_bonferroni": true,
+        "null_fraction": 0.01,
+        "null_ge": 5,
+        "p_add_one": 0.011976047904191617,
+        "phrase_hits": 29,
+        "strict_formula_hits": 5,
+        "windows": 51,
+        "word_hits": 2
+      }
+    ],
+    "diverse_hits": 16,
+    "diverse_holds": true,
+    "diverse_null_fraction": 0.036,
+    "diverse_null_ge": 18,
+    "diverse_p_add_one": 0.03792415169660679,
+    "hit_rate": 0.46464646464646464,
+    "hits": 46,
+    "holds": true,
+    "null_fraction": 0.012,
+    "null_ge": 6,
+    "null_mean_hits": 21.892,
+    "p_add_one": 0.013972055888223553,
+    "seed": 43,
+    "signs": [
+      "040",
+      "143",
+      "152",
+      "200",
+      "600",
+      "680",
+      "700",
+      "006",
+      "760",
+      "067",
+      "076"
+    ],
+    "trials": 500,
+    "windows": 99,
+    "words": {
+      "006": "rima",
+      "040": "marama",
+      "067": "niu",
+      "076": "ure",
+      "143": "rakau",
+      "152": "omotohi",
+      "200": "tangata",
+      "600": "manu",
+      "680": "makohe",
+      "700": "ika",
+      "760": "moko"
+    }
+  },
+  "round": 4,
+  "semantic_cooccurrence": {
+    "by_class": [
+      {
+        "adjacent_different_signs": 6,
+        "class": "moon",
+        "holds_bonferroni": false,
+        "null_fraction": 0.974,
+        "null_ge": 487,
+        "p_add_one": 0.9740518962075848
+      },
+      {
+        "adjacent_different_signs": 41,
+        "class": "hand",
+        "holds_bonferroni": false,
+        "null_fraction": 0.02,
+        "null_ge": 10,
+        "p_add_one": 0.021956087824351298
+      },
+      {
+        "adjacent_different_signs": 80,
+        "class": "bird",
+        "holds_bonferroni": false,
+        "null_fraction": 0.068,
+        "null_ge": 34,
+        "p_add_one": 0.06986027944111776
+      },
+      {
+        "adjacent_different_signs": 35,
+        "class": "sea",
+        "holds_bonferroni": false,
+        "null_fraction": 0.94,
+        "null_ge": 470,
+        "p_add_one": 0.9401197604790419
+      },
+      {
+        "adjacent_different_signs": 91,
+        "class": "human",
+        "holds_bonferroni": false,
+        "null_fraction": 0.88,
+        "null_ge": 440,
+        "p_add_one": 0.8802395209580839
+      },
+      {
+        "adjacent_different_signs": 50,
+        "class": "human_gaping",
+        "holds_bonferroni": false,
+        "null_fraction": 0.964,
+        "null_ge": 482,
+        "p_add_one": 0.9640718562874252
+      }
+    ],
+    "holds": false,
+    "null_fraction": 0.778,
+    "null_ge": 389,
+    "observed": 303,
+    "p_add_one": 0.7784431137724551,
+    "seed": 40,
+    "statistic": "adjacent different signs of the same class, summed",
+    "step2": {
+      "by_class": [
+        {
+          "class": "moon",
+          "null_fraction": 0.258,
+          "null_ge": 129,
+          "pairs": 13
+        },
+        {
+          "class": "hand",
+          "null_fraction": 0.166,
+          "null_ge": 83,
+          "pairs": 34
+        },
+        {
+          "class": "bird",
+          "null_fraction": 0.0,
+          "null_ge": 0,
+          "pairs": 107
+        },
+        {
+          "class": "sea",
+          "null_fraction": 0.23,
+          "null_ge": 115,
+          "pairs": 48
+        },
+        {
+          "class": "human",
+          "null_fraction": 0.0,
+          "null_ge": 0,
+          "pairs": 131
+        },
+        {
+          "class": "human_gaping",
+          "null_fraction": 0.514,
+          "null_ge": 257,
+          "pairs": 61
+        }
+      ],
+      "gated": false,
+      "holds_if_it_were_gated": true,
+      "null_fraction": 0.0,
+      "null_ge": 0,
+      "observed": 394,
+      "p_add_one": 0.001996007984031936,
+      "statistic": "same, two signs apart, secondary, same draws"
+    },
+    "trials": 500
+  },
+  "semantic_cooccurrence_calendar_removed": {
+    "by_class": [
+      {
+        "adjacent_different_signs": 4,
+        "class": "moon",
+        "holds_bonferroni": false,
+        "null_fraction": 0.048,
+        "null_ge": 24,
+        "p_add_one": 0.0499001996007984
+      },
+      {
+        "adjacent_different_signs": 41,
+        "class": "hand",
+        "holds_bonferroni": false,
+        "null_fraction": 0.028,
+        "null_ge": 14,
+        "p_add_one": 0.029940119760479042
+      },
+      {
+        "adjacent_different_signs": 80,
+        "class": "bird",
+        "holds_bonferroni": false,
+        "null_fraction": 0.066,
+        "null_ge": 33,
+        "p_add_one": 0.06786427145708583
+      },
+      {
+        "adjacent_different_signs": 35,
+        "class": "sea",
+        "holds_bonferroni": false,
+        "null_fraction": 0.942,
+        "null_ge": 471,
+        "p_add_one": 0.9421157684630739
+      },
+      {
+        "adjacent_different_signs": 91,
+        "class": "human",
+        "holds_bonferroni": false,
+        "null_fraction": 0.898,
+        "null_ge": 449,
+        "p_add_one": 0.8982035928143712
+      },
+      {
+        "adjacent_different_signs": 50,
+        "class": "human_gaping",
+        "holds_bonferroni": false,
+        "null_fraction": 0.92,
+        "null_ge": 460,
+        "p_add_one": 0.9201596806387226
+      }
+    ],
+    "holds": false,
+    "null_fraction": 0.624,
+    "null_ge": 312,
+    "observed": 301,
+    "p_add_one": 0.624750499001996,
+    "seed": 40,
+    "statistic": "adjacent different signs of the same class, summed",
+    "step2": {
+      "by_class": [
+        {
+          "class": "moon",
+          "null_fraction": 0.0,
+          "null_ge": 0,
+          "pairs": 6
+        },
+        {
+          "class": "hand",
+          "null_fraction": 0.156,
+          "null_ge": 78,
+          "pairs": 34
+        },
+        {
+          "class": "bird",
+          "null_fraction": 0.0,
+          "null_ge": 0,
+          "pairs": 107
+        },
+        {
+          "class": "sea",
+          "null_fraction": 0.27,
+          "null_ge": 135,
+          "pairs": 48
+        },
+        {
+          "class": "human",
+          "null_fraction": 0.0,
+          "null_ge": 0,
+          "pairs": 131
+        },
+        {
+          "class": "human_gaping",
+          "null_fraction": 0.796,
+          "null_ge": 398,
+          "pairs": 53
+        }
+      ],
+      "gated": false,
+      "holds_if_it_were_gated": true,
+      "null_fraction": 0.0,
+      "null_ge": 0,
+      "observed": 379,
+      "p_add_one": 0.001996007984031936,
+      "statistic": "same, two signs apart, secondary, same draws"
+    },
+    "trials": 500
+  },
+  "significant_passages": 99,
+  "single_sign_adjacency": {
+    "067": 4,
+    "760": 0
+  },
+  "track": "A"
+}
