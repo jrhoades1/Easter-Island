@@ -1,0 +1,2330 @@
+{
+  "track": "round4b",
+  "reading": null,
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "segmenter": "mdl_cued",
+  "sources": [
+    {
+      "id": "thomson_1891",
+      "citation": "William J. Thomson, Te Pito te Henua, Report of the U.S. National Museum for 1889 (Washington, 1891), pp. 520–521.",
+      "role": "Ure Vaeiko's Atua Matariri, the printed creation chant."
+    },
+    {
+      "id": "fischer_1995_jps",
+      "citation": "Steven Roger Fischer, Preliminary Evidence for Cosmogonic Texts in Rapanui's Rongorongo Inscriptions, Journal of the Polynesian Society 104 (1995): 303–321.",
+      "role": "Hypothesis: the Santiago Staff repeats the chant's procreation verse, with glyph 76 as the copula."
+    },
+    {
+      "id": "fischer_1995_rnj",
+      "citation": "Steven Roger Fischer, Further Evidence for Cosmogonic Texts in the Rongorongo Inscriptions of Easter Island, Rapa Nui Journal 9(4) (December 1995).",
+      "role": "Hypothesis: the oral frame is X ki 'ai ki roto ki 'a Y: ka pu te Z, and Mamari (his RR 2) is among the tablets said to carry the same kind of text, often without the phallic suffix."
+    },
+    {
+      "id": "guy_1998",
+      "citation": "Jacques B. M. Guy, Anthropos 93 (1998): 552–555; Journal de la Société des Océanistes 107 (1998): 57–63.",
+      "role": "Rejection of Fischer's cosmogonic reading. If the Gv genealogy is real, 076 is a patronymic mark."
+    },
+    {
+      "id": "barthel_1958_calendar",
+      "citation": "Thomas S. Barthel, Grundlagen zur Entzifferung der Osterinselschrift (Hamburg, 1958), pp. 242–247.",
+      "role": "Structural claim actually published for Mamari in the sources used here: Ca6–Ca9 is a lunar calendar. Not the creation chant. Already tested in Track 1."
+    },
+    {
+      "id": "barthel_metoro",
+      "citation": "Barthel 1958 and Barthel 1963, Anthropos 58: 372–436, as cited by Fischer 1995 RNJ note 6; Kohaumotu rosetta/i.html.",
+      "role": "Secondary statement that Barthel took Metoro's sign-words and read glyph 76 as a phallus. Hypothesis. This track does not apply those values."
+    },
+    {
+      "id": "butinov_1956",
+      "citation": "N. A. Butinov and Y. V. Knorozov 1956, as reported by Davletshin 2012, Journal de la Société des Océanistes 134: 95–110; Guy 2003, Rapa Nui Journal 17(1); http://kohaumotu.org/rongorongo_org/rosetta/g.html.",
+      "role": "Hypothesis: Gv6 is a genealogy, 200 a name introducer, 076 a patronymic. The handoff is what this track uses. The glosses are not applied."
+    },
+    {
+      "id": "round3_formulas",
+      "citation": "Round 3 Track C, data and docs in this repository. 577 three-word formulas at count at least 4. The most frequent is ki te henua.",
+      "role": "The formula inventory and the ki te frame. Structure only."
+    }
+  ],
+  "preregistration": {
+    "formula_width": 3,
+    "formula_min_count": 4,
+    "min_family": 8,
+    "zipf_slope_tolerance": 0.15,
+    "adopt_fraction": 0.05,
+    "null_trials": 400,
+    "sign_null_seed": 0,
+    "language_null_seed": 1,
+    "skeleton_trials": 400,
+    "skeleton_seed": 2,
+    "handoff_trials": 400,
+    "handoff_seed": 3,
+    "skeleton_min_cycles": 4,
+    "skeleton_ttr_min": 0.75,
+    "handoff_min_links": 3,
+    "child_ttr_min": 0.75,
+    "primary_pairs": [
+      [
+        "all_recurring",
+        "all_trigrams"
+      ],
+      [
+        "all_recurring",
+        "words_min4"
+      ],
+      [
+        "monosign",
+        "all_trigrams"
+      ],
+      [
+        "monosign",
+        "words_min4"
+      ],
+      [
+        "multisign",
+        "all_trigrams"
+      ],
+      [
+        "multisign",
+        "words_min4"
+      ],
+      [
+        "gt_only",
+        "all_trigrams"
+      ],
+      [
+        "also_outside",
+        "all_trigrams"
+      ],
+      [
+        "all_recurring",
+        "productive_frame"
+      ],
+      [
+        "all_recurring",
+        "ko_initial"
+      ],
+      [
+        "multisign",
+        "productive_frame"
+      ],
+      [
+        "multisign",
+        "ko_initial"
+      ],
+      [
+        "all_recurring",
+        "ki_te_initial"
+      ],
+      [
+        "multisign",
+        "ki_te_initial"
+      ]
+    ],
+    "skeleton_sides": [
+      "Ca",
+      "Cb",
+      "Ra",
+      "Rb",
+      "Ia",
+      "Gv",
+      "Gr",
+      "Hr",
+      "Hv",
+      "Pr",
+      "Pv",
+      "Qr",
+      "Qv"
+    ]
+  },
+  "signs": {
+    "segmenter": "mdl_cued",
+    "types": 267,
+    "monosign": 244,
+    "multisign": 23,
+    "multi_tablet_types": 244,
+    "lines": 64,
+    "top": [
+      {
+        "id": "001",
+        "signs": [
+          "001"
+        ],
+        "length": 1,
+        "count": 211,
+        "corpus_count": 746,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "600",
+        "signs": [
+          "600"
+        ],
+        "length": 1,
+        "count": 139,
+        "corpus_count": 418,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "200",
+        "signs": [
+          "200"
+        ],
+        "length": 1,
+        "count": 126,
+        "corpus_count": 293,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "002",
+        "signs": [
+          "002"
+        ],
+        "length": 1,
+        "count": 118,
+        "corpus_count": 507,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "003",
+        "signs": [
+          "003"
+        ],
+        "length": 1,
+        "count": 111,
+        "corpus_count": 346,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "004",
+        "signs": [
+          "004"
+        ],
+        "length": 1,
+        "count": 83,
+        "corpus_count": 317,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "010",
+        "signs": [
+          "010"
+        ],
+        "length": 1,
+        "count": 81,
+        "corpus_count": 217,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "008",
+        "signs": [
+          "008"
+        ],
+        "length": 1,
+        "count": 74,
+        "corpus_count": 197,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "022",
+        "signs": [
+          "022"
+        ],
+        "length": 1,
+        "count": 71,
+        "corpus_count": 276,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "700",
+        "signs": [
+          "700"
+        ],
+        "length": 1,
+        "count": 65,
+        "corpus_count": 283,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "381",
+        "signs": [
+          "381"
+        ],
+        "length": 1,
+        "count": 62,
+        "corpus_count": 126,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      },
+      {
+        "id": "050",
+        "signs": [
+          "050"
+        ],
+        "length": 1,
+        "count": 59,
+        "corpus_count": 142,
+        "tablets": [
+          "H",
+          "P",
+          "Q"
+        ],
+        "reading": null
+      }
+    ],
+    "mdl_rounds": 138
+  },
+  "language": {
+    "rejected": 115,
+    "formula_types": 577,
+    "lines": 88,
+    "top_formulas": [
+      {
+        "formula": "ki te henua",
+        "count": 87
+      },
+      {
+        "formula": "ko te tangata",
+        "count": 80
+      },
+      {
+        "formula": "te hau tea",
+        "count": 61
+      },
+      {
+        "formula": "te henua te",
+        "count": 57
+      },
+      {
+        "formula": "i te henua",
+        "count": 53
+      },
+      {
+        "formula": "ki te rangi",
+        "count": 49
+      },
+      {
+        "formula": "te tangata kua",
+        "count": 46
+      },
+      {
+        "formula": "te henua kua",
+        "count": 44
+      },
+      {
+        "formula": "mau i te",
+        "count": 42
+      },
+      {
+        "formula": "ki ai kiroto",
+        "count": 41
+      },
+      {
+        "formula": "ko te manu",
+        "count": 41
+      },
+      {
+        "formula": "oho ki te",
+        "count": 39
+      }
+    ]
+  },
+  "chant": {
+    "verses": 48,
+    "full_formula": 41,
+    "adjacent_gaps": 38,
+    "adjacent_gap_histogram": {
+      "3": 18,
+      "4": 15,
+      "5": 3,
+      "6": 1,
+      "7": 1
+    },
+    "sequences": [
+      {
+        "pattern": "ki ai kiroto",
+        "total": 41,
+        "by_source": {
+          "thomson_1891": 41
+        },
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "kia ai kiroto",
+        "total": 0,
+        "by_source": {},
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "ki ai ki roto",
+        "total": 0,
+        "by_source": {},
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "ki ai ki roto ki",
+        "total": 0,
+        "by_source": {},
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "ka pu te",
+        "total": 5,
+        "by_source": {
+          "metoro_jaussen": 5
+        },
+        "metoro_mamari": 2
+      },
+      {
+        "pattern": "kapu te",
+        "total": 38,
+        "by_source": {
+          "thomson_1891": 38
+        },
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "ka pu to",
+        "total": 0,
+        "by_source": {},
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "kapu to",
+        "total": 2,
+        "by_source": {
+          "thomson_1891": 2
+        },
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "mapu te",
+        "total": 1,
+        "by_source": {
+          "thomson_1891": 1
+        },
+        "metoro_mamari": 0
+      },
+      {
+        "pattern": "ma pu te",
+        "total": 0,
+        "by_source": {},
+        "metoro_mamari": 0
+      }
+    ],
+    "mapped_verse_lines": [
+      {
+        "source": "thomson_1891",
+        "line_id": "atua_matariri",
+        "hits": 41
+      }
+    ],
+    "printed_slot_width_counts": {
+      "x:1": 26,
+      "x:2": 15,
+      "y:1": 32,
+      "y:2": 6,
+      "y:3": 2,
+      "y:4": 1,
+      "z:1": 40,
+      "z:2": 1
+    },
+    "fischer_spelling": "X ki 'ai ki roto ki 'a Y: ka pu te Z",
+    "status": "hypothesis"
+  },
+  "matches": {
+    "bonferroni": 0.003571,
+    "pairs": [
+      {
+        "sign_family": "all_recurring",
+        "language_family": "all_trigrams",
+        "tested": true,
+        "distance": 0.102648,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 24,
+        "language_null_hits": 238,
+        "trials": 400,
+        "sign_p": 0.06,
+        "language_p": 0.595,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "all_recurring",
+        "language_family": "words_min4",
+        "tested": true,
+        "distance": 0.24345,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 397,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.9925,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "monosign",
+        "language_family": "all_trigrams",
+        "tested": true,
+        "distance": 0.098552,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 17,
+        "language_null_hits": 249,
+        "trials": 400,
+        "sign_p": 0.0425,
+        "language_p": 0.6225,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "monosign",
+        "language_family": "words_min4",
+        "tested": true,
+        "distance": 0.225946,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 397,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.9925,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "multisign",
+        "language_family": "all_trigrams",
+        "tested": true,
+        "distance": 0.1721,
+        "features": [
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 278,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.695,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "multisign",
+        "language_family": "words_min4",
+        "tested": true,
+        "distance": 0.166588,
+        "features": [
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 399,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.9975,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "gt_only",
+        "language_family": "all_trigrams",
+        "tested": true,
+        "distance": 0.109588,
+        "features": [
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 399,
+        "language_null_hits": 278,
+        "trials": 400,
+        "sign_p": 0.9975,
+        "language_p": 0.695,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "also_outside",
+        "language_family": "all_trigrams",
+        "tested": true,
+        "distance": 0.108559,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 30,
+        "language_null_hits": 262,
+        "trials": 400,
+        "sign_p": 0.075,
+        "language_p": 0.655,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "all_recurring",
+        "language_family": "productive_frame",
+        "tested": true,
+        "distance": 0.074256,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 24,
+        "language_null_hits": 104,
+        "trials": 400,
+        "sign_p": 0.06,
+        "language_p": 0.26,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "all_recurring",
+        "language_family": "ko_initial",
+        "tested": true,
+        "distance": 0.119374,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 24,
+        "language_null_hits": 21,
+        "trials": 400,
+        "sign_p": 0.06,
+        "language_p": 0.0525,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "multisign",
+        "language_family": "productive_frame",
+        "tested": true,
+        "distance": 0.170309,
+        "features": [
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 214,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.535,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "multisign",
+        "language_family": "ko_initial",
+        "tested": true,
+        "distance": 0.174703,
+        "features": [
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 4,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.01,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "all_recurring",
+        "language_family": "ki_te_initial",
+        "tested": true,
+        "distance": 0.236925,
+        "features": [
+          "burstiness",
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 85,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.2125,
+        "clears_uncorrected": false,
+        "match": false
+      },
+      {
+        "sign_family": "multisign",
+        "language_family": "ki_te_initial",
+        "tested": true,
+        "distance": 0.16669,
+        "features": [
+          "p_initial",
+          "p_final",
+          "abutting_repeat"
+        ],
+        "sign_null_hits": 400,
+        "language_null_hits": 23,
+        "trials": 400,
+        "sign_p": 1.0,
+        "language_p": 0.0575,
+        "clears_uncorrected": false,
+        "match": false
+      }
+    ],
+    "sign_profiles": {
+      "all_recurring": {
+        "means": {
+          "burstiness": -0.294775,
+          "p_initial": 0.023703,
+          "p_final": 0.021207,
+          "abutting_repeat": 0.022492
+        },
+        "support": {
+          "burstiness": 111,
+          "p_initial": 267,
+          "p_final": 267,
+          "abutting_repeat": 267
+        },
+        "types": 267
+      },
+      "monosign": {
+        "means": {
+          "burstiness": -0.288071,
+          "p_initial": 0.019149,
+          "p_final": 0.016988,
+          "abutting_repeat": 0.020465
+        },
+        "support": {
+          "burstiness": 106,
+          "p_initial": 244,
+          "p_final": 244,
+          "abutting_repeat": 244
+        },
+        "types": 244
+      },
+      "multisign": {
+        "means": {
+          "burstiness": null,
+          "p_initial": 0.072015,
+          "p_final": 0.065963,
+          "abutting_repeat": 0.043996
+        },
+        "support": {
+          "burstiness": 5,
+          "p_initial": 23,
+          "p_final": 23,
+          "abutting_repeat": 23
+        },
+        "types": 23
+      },
+      "gt_only": {
+        "means": {
+          "burstiness": null,
+          "p_initial": 0.04321,
+          "p_final": 0.057734,
+          "abutting_repeat": 0.018519
+        },
+        "support": {
+          "burstiness": 5,
+          "p_initial": 27,
+          "p_final": 27,
+          "abutting_repeat": 27
+        },
+        "types": 27
+      },
+      "also_outside": {
+        "means": {
+          "burstiness": -0.283007,
+          "p_initial": 0.021509,
+          "p_final": 0.017098,
+          "abutting_repeat": 0.022939
+        },
+        "support": {
+          "burstiness": 106,
+          "p_initial": 240,
+          "p_final": 240,
+          "abutting_repeat": 240
+        },
+        "types": 240
+      },
+      "ends_076": {
+        "means": {
+          "burstiness": null,
+          "p_initial": 0.0,
+          "p_final": 0.029412,
+          "abutting_repeat": 0.25
+        },
+        "support": {
+          "burstiness": 2,
+          "p_initial": 2,
+          "p_final": 2,
+          "abutting_repeat": 2
+        },
+        "types": 2
+      },
+      "marker_095": {
+        "means": {
+          "burstiness": null,
+          "p_initial": 0.0,
+          "p_final": 0.0,
+          "abutting_repeat": 0.0
+        },
+        "support": {
+          "burstiness": 1,
+          "p_initial": 1,
+          "p_final": 1,
+          "abutting_repeat": 1
+        },
+        "types": 1
+      }
+    },
+    "language_profiles": {
+      "all_trigrams": {
+        "means": {
+          "burstiness": -0.339894,
+          "p_initial": 0.005671,
+          "p_final": 0.003622,
+          "abutting_repeat": 0.000582
+        },
+        "support": {
+          "burstiness": 249,
+          "p_initial": 577,
+          "p_final": 577,
+          "abutting_repeat": 577
+        },
+        "types": 577
+      },
+      "productive_frame": {
+        "means": {
+          "burstiness": -0.313293,
+          "p_initial": 0.006599,
+          "p_final": 0.004301,
+          "abutting_repeat": 0.000765
+        },
+        "support": {
+          "burstiness": 181,
+          "p_initial": 439,
+          "p_final": 439,
+          "abutting_repeat": 439
+        },
+        "types": 439
+      },
+      "ko_initial": {
+        "means": {
+          "burstiness": -0.354018,
+          "p_initial": 0.006536,
+          "p_final": 0.000735,
+          "abutting_repeat": 0.0
+        },
+        "support": {
+          "burstiness": 11,
+          "p_initial": 17,
+          "p_final": 17,
+          "abutting_repeat": 17
+        },
+        "types": 17
+      },
+      "ki_te_initial": {
+        "means": {
+          "burstiness": -0.109968,
+          "p_initial": 0.007699,
+          "p_final": 0.007585,
+          "abutting_repeat": 0.0
+        },
+        "support": {
+          "burstiness": 12,
+          "p_initial": 27,
+          "p_final": 27,
+          "abutting_repeat": 27
+        },
+        "types": 27
+      },
+      "words_min4": {
+        "means": {
+          "burstiness": -0.103341,
+          "p_initial": 0.003465,
+          "p_final": 0.008209,
+          "abutting_repeat": 0.003712
+        },
+        "support": {
+          "burstiness": 204,
+          "p_initial": 292,
+          "p_final": 292,
+          "abutting_repeat": 292
+        },
+        "types": 292
+      }
+    },
+    "family_sizes": {
+      "signs": {
+        "all_recurring": 267,
+        "monosign": 244,
+        "multisign": 23,
+        "gt_only": 27,
+        "also_outside": 240,
+        "ends_076": 2,
+        "marker_095": 1
+      },
+      "language": {
+        "all_trigrams": 577,
+        "productive_frame": 439,
+        "ko_initial": 17,
+        "ki_te_initial": 27
+      },
+      "words_min4": 292
+    },
+    "zipf": {
+      "sign_units": -1.078071,
+      "sign_units_floor4": -0.950197,
+      "formulas": -0.579969,
+      "words_min4": -1.289418,
+      "words_all": -1.358456,
+      "absolute_gap_signs_formulas": 0.370229,
+      "tolerance": 0.15,
+      "null_hits": 0,
+      "undefined": 0,
+      "valid": 400,
+      "informative": true,
+      "trials": 400,
+      "p": 0.0,
+      "null_mean_gap": 0.444024,
+      "match": false,
+      "word_slope_null": "Within-line shuffle keeps word frequencies, so the word Zipf slope has no order-null."
+    },
+    "productivity": {
+      "sign_frames": 47,
+      "sign_frame_rate": 0.012803,
+      "sign_bigram_tokens": 3671,
+      "language_frames": 466,
+      "language_frame_rate": 0.028926,
+      "language_bigram_tokens": 16110,
+      "rate_gap": 0.016123,
+      "sign_closer_hits": 395,
+      "language_closer_hits": 0,
+      "sign_richness_hits": 395,
+      "language_richness_hits": 400,
+      "trials": 400,
+      "sign_closer_p": 0.9875,
+      "language_closer_p": 0.0,
+      "match": false
+    },
+    "any_match": false,
+    "any_uncorrected": false
+  },
+  "skeleton": {
+    "bonferroni_texts": 0.003571,
+    "elided_bonferroni": 0.005556,
+    "stem_076": {
+      "Ca": 0,
+      "Cb": 0,
+      "Ra": 0,
+      "Rb": 0,
+      "Ia": 564,
+      "Gv": 43,
+      "Gr": 2,
+      "Hr": 7,
+      "Hv": 1,
+      "Pr": 5,
+      "Pv": 1,
+      "Qr": 7,
+      "Qv": 0
+    },
+    "suffixed_076": [
+      {
+        "text": "Ca",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "Cb",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "Ra",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "Rb",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "Ia",
+        "tested": true,
+        "reason": null,
+        "gaps": 550,
+        "histogram": {
+          "0": 14,
+          "1": 57,
+          "2": 59,
+          "3": 197,
+          "4": 137,
+          "5": 43,
+          "6": 15,
+          "7": 13,
+          "8": 9,
+          "9": 3,
+          "10": 2,
+          "11": 1
+        },
+        "null": {
+          "observed": 0.529187,
+          "null_mean": 1.39626,
+          "hits": 0,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.0,
+          "lower_tail": true
+        },
+        "match": true
+      },
+      {
+        "text": "Gv",
+        "tested": true,
+        "reason": null,
+        "gaps": 35,
+        "histogram": {
+          "1": 2,
+          "2": 1,
+          "3": 5,
+          "4": 13,
+          "5": 5,
+          "6": 2,
+          "8": 1,
+          "9": 4,
+          "10": 1,
+          "22": 1
+        },
+        "null": {
+          "observed": 0.760902,
+          "null_mean": 1.446617,
+          "hits": 0,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.0,
+          "lower_tail": true
+        },
+        "match": true
+      },
+      {
+        "text": "Gr",
+        "tested": true,
+        "reason": null,
+        "gaps": 1,
+        "histogram": {
+          "13": 1
+        },
+        "null": {
+          "observed": 2.0,
+          "null_mean": 1.930526,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": true
+        },
+        "match": false
+      },
+      {
+        "text": "Hr",
+        "tested": true,
+        "reason": null,
+        "gaps": 3,
+        "histogram": {
+          "0": 1,
+          "1": 1,
+          "8": 1
+        },
+        "null": {
+          "observed": 2.0,
+          "null_mean": 1.702719,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": true
+        },
+        "match": false
+      },
+      {
+        "text": "Hv",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "Pr",
+        "tested": true,
+        "reason": null,
+        "gaps": 2,
+        "histogram": {
+          "1": 1,
+          "26": 1
+        },
+        "null": {
+          "observed": 2.0,
+          "null_mean": 1.920921,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": true
+        },
+        "match": false
+      },
+      {
+        "text": "Pv",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "Qr",
+        "tested": true,
+        "reason": null,
+        "gaps": 4,
+        "histogram": {
+          "0": 1,
+          "1": 1,
+          "8": 1,
+          "26": 1
+        },
+        "null": {
+          "observed": 2.0,
+          "null_mean": 1.749868,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": true
+        },
+        "match": false
+      },
+      {
+        "text": "Qv",
+        "tested": false,
+        "reason": "no_delimiter",
+        "gaps": 0,
+        "histogram": {},
+        "match": false
+      },
+      {
+        "text": "GT-units",
+        "tested": true,
+        "reason": null,
+        "gaps": 9,
+        "histogram": {
+          "0": 4,
+          "1": 1,
+          "7": 2,
+          "25": 1,
+          "26": 1
+        },
+        "null": {
+          "observed": 1.947368,
+          "null_mean": 1.690015,
+          "hits": 379,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.9475,
+          "lower_tail": true
+        },
+        "match": false
+      }
+    ],
+    "top_token_gaps": [
+      {
+        "text": "Ca",
+        "tested": true,
+        "reason": null,
+        "gaps": 30,
+        "histogram": {
+          "1": 5,
+          "2": 6,
+          "3": 4,
+          "4": 3,
+          "5": 3,
+          "6": 3,
+          "8": 2,
+          "9": 3,
+          "13": 1
+        },
+        "null": {
+          "observed": 1.322807,
+          "null_mean": 1.461272,
+          "hits": 69,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.1725,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      },
+      {
+        "text": "Cb",
+        "tested": true,
+        "reason": null,
+        "gaps": 30,
+        "histogram": {
+          "0": 4,
+          "1": 8,
+          "2": 6,
+          "3": 3,
+          "4": 1,
+          "5": 3,
+          "6": 1,
+          "8": 2,
+          "9": 1,
+          "11": 1
+        },
+        "null": {
+          "observed": 1.522807,
+          "null_mean": 1.471193,
+          "hits": 254,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.635,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      },
+      {
+        "text": "Ra",
+        "tested": true,
+        "reason": null,
+        "gaps": 10,
+        "histogram": {
+          "0": 2,
+          "1": 2,
+          "3": 1,
+          "4": 2,
+          "6": 1,
+          "11": 1,
+          "12": 1
+        },
+        "null": {
+          "observed": 1.347368,
+          "null_mean": 1.544053,
+          "hits": 85,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.2125,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      },
+      {
+        "text": "Rb",
+        "tested": true,
+        "reason": null,
+        "gaps": 13,
+        "histogram": {
+          "0": 2,
+          "1": 1,
+          "2": 4,
+          "3": 1,
+          "4": 1,
+          "6": 1,
+          "7": 1,
+          "9": 1,
+          "18": 1
+        },
+        "null": {
+          "observed": 1.587045,
+          "null_mean": 1.518644,
+          "hits": 248,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.62,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      },
+      {
+        "text": "Ia",
+        "tested": true,
+        "reason": null,
+        "gaps": 550,
+        "histogram": {
+          "0": 14,
+          "1": 57,
+          "2": 59,
+          "3": 197,
+          "4": 137,
+          "5": 43,
+          "6": 15,
+          "7": 13,
+          "8": 9,
+          "9": 3,
+          "10": 2,
+          "11": 1
+        },
+        "null": {
+          "observed": 0.529187,
+          "null_mean": 1.394833,
+          "hits": 0,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.0,
+          "lower_tail": true
+        },
+        "delimiter": "076",
+        "match": true
+      },
+      {
+        "text": "Gv",
+        "tested": true,
+        "reason": null,
+        "gaps": 35,
+        "histogram": {
+          "1": 2,
+          "2": 1,
+          "3": 5,
+          "4": 13,
+          "5": 5,
+          "6": 2,
+          "8": 1,
+          "9": 4,
+          "10": 1,
+          "22": 1
+        },
+        "null": {
+          "observed": 0.760902,
+          "null_mean": 1.446117,
+          "hits": 0,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.0,
+          "lower_tail": true
+        },
+        "delimiter": "076",
+        "match": true
+      },
+      {
+        "text": "Gr",
+        "tested": true,
+        "reason": null,
+        "gaps": 47,
+        "histogram": {
+          "0": 1,
+          "1": 8,
+          "2": 8,
+          "3": 10,
+          "4": 7,
+          "5": 3,
+          "6": 3,
+          "7": 2,
+          "8": 1,
+          "9": 1,
+          "10": 2,
+          "16": 1
+        },
+        "null": {
+          "observed": 1.043673,
+          "null_mean": 1.435162,
+          "hits": 0,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.0,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": true
+      },
+      {
+        "text": "Hr",
+        "tested": true,
+        "reason": null,
+        "gaps": 30,
+        "histogram": {
+          "0": 1,
+          "1": 6,
+          "2": 5,
+          "3": 2,
+          "4": 3,
+          "5": 1,
+          "9": 1,
+          "11": 2,
+          "12": 1,
+          "13": 1,
+          "17": 1,
+          "18": 1
+        },
+        "null": {
+          "observed": 1.6,
+          "null_mean": 1.555974,
+          "hits": 232,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.58,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      },
+      {
+        "text": "Hv",
+        "tested": true,
+        "reason": null,
+        "gaps": 24,
+        "histogram": {
+          "0": 1,
+          "1": 7,
+          "2": 1,
+          "3": 2,
+          "4": 2,
+          "5": 1,
+          "6": 2,
+          "7": 1,
+          "8": 1,
+          "9": 2,
+          "32": 1,
+          "33": 2
+        },
+        "null": {
+          "observed": 1.47807,
+          "null_mean": 1.642303,
+          "hits": 55,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.1375,
+          "lower_tail": true
+        },
+        "delimiter": "010",
+        "match": false
+      },
+      {
+        "text": "Pr",
+        "tested": true,
+        "reason": null,
+        "gaps": 40,
+        "histogram": {
+          "0": 2,
+          "1": 4,
+          "2": 6,
+          "3": 3,
+          "4": 3,
+          "7": 5,
+          "8": 2,
+          "9": 1,
+          "10": 4,
+          "14": 1,
+          "17": 1,
+          "18": 1
+        },
+        "null": {
+          "observed": 1.647368,
+          "null_mean": 1.567974,
+          "hits": 332,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.83,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      },
+      {
+        "text": "Pv",
+        "tested": true,
+        "reason": null,
+        "gaps": 28,
+        "histogram": {
+          "0": 1,
+          "1": 7,
+          "2": 1,
+          "3": 3,
+          "4": 2,
+          "5": 1,
+          "6": 3,
+          "7": 1,
+          "9": 1,
+          "11": 1,
+          "17": 1,
+          "18": 1
+        },
+        "null": {
+          "observed": 1.466165,
+          "null_mean": 1.612744,
+          "hits": 57,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.1425,
+          "lower_tail": true
+        },
+        "delimiter": "010",
+        "match": false
+      },
+      {
+        "text": "Qr",
+        "tested": true,
+        "reason": null,
+        "gaps": 27,
+        "histogram": {
+          "1": 17,
+          "4": 2,
+          "5": 2,
+          "6": 2,
+          "7": 1,
+          "16": 1,
+          "22": 1,
+          "31": 1
+        },
+        "null": {
+          "observed": 1.598441,
+          "null_mean": 1.521355,
+          "hits": 295,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.7375,
+          "lower_tail": true
+        },
+        "delimiter": "003",
+        "match": false
+      },
+      {
+        "text": "Qv",
+        "tested": true,
+        "reason": null,
+        "gaps": 16,
+        "histogram": {
+          "0": 10,
+          "2": 2,
+          "9": 1,
+          "17": 1,
+          "21": 1,
+          "24": 1
+        },
+        "null": {
+          "observed": 2.0,
+          "null_mean": 1.616842,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": true
+        },
+        "delimiter": "000",
+        "match": false
+      },
+      {
+        "text": "GT-units",
+        "tested": true,
+        "reason": null,
+        "gaps": 156,
+        "histogram": {
+          "0": 6,
+          "1": 16,
+          "2": 21,
+          "3": 13,
+          "4": 12,
+          "5": 9,
+          "6": 3,
+          "7": 10,
+          "8": 12,
+          "9": 7,
+          "10": 5,
+          "11": 3
+        },
+        "null": {
+          "observed": 1.473009,
+          "null_mean": 1.536861,
+          "hits": 66,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.165,
+          "lower_tail": true
+        },
+        "delimiter": "001",
+        "match": false
+      }
+    ],
+    "two_frame_tiles": [
+      {
+        "text": "Ca",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0125,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Cb",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Ra",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Rb",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.005,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Ia",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0225,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Gv",
+        "tiled_lines": 1,
+        "null": {
+          "observed": 1.0,
+          "null_mean": 0.01,
+          "hits": 4,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.01,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Gr",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Hr",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0325,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Hv",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.0475,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Pr",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.03,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Pv",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.045,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Qr",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.015,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "Qv",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.005,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      },
+      {
+        "text": "GT-units",
+        "tiled_lines": 0,
+        "null": {
+          "observed": 0.0,
+          "null_mean": 0.1275,
+          "hits": 400,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 1.0,
+          "lower_tail": false
+        },
+        "match": false
+      }
+    ],
+    "elided_triples": [
+      {
+        "text": "Ca",
+        "modal_slot_rate": 0.10119,
+        "null": {
+          "observed": 0.10119,
+          "null_mean": 0.098644,
+          "hits": 174,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.435,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Cb",
+        "modal_slot_rate": 0.100671,
+        "null": {
+          "observed": 0.100671,
+          "null_mean": 0.1041,
+          "hits": 271,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.6775,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Hr",
+        "modal_slot_rate": 0.068273,
+        "null": {
+          "observed": 0.068273,
+          "null_mean": 0.068247,
+          "hits": 215,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.5375,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Hv",
+        "modal_slot_rate": 0.05303,
+        "null": {
+          "observed": 0.05303,
+          "null_mean": 0.056205,
+          "hits": 296,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.74,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Pr",
+        "modal_slot_rate": 0.076923,
+        "null": {
+          "observed": 0.076923,
+          "null_mean": 0.076386,
+          "hits": 168,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.42,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Pv",
+        "modal_slot_rate": 0.063559,
+        "null": {
+          "observed": 0.063559,
+          "null_mean": 0.063236,
+          "hits": 193,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.4825,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Qr",
+        "modal_slot_rate": 0.084848,
+        "null": {
+          "observed": 0.084848,
+          "null_mean": 0.087663,
+          "hits": 264,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.66,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "Qv",
+        "modal_slot_rate": 0.068182,
+        "null": {
+          "observed": 0.068182,
+          "null_mean": 0.069511,
+          "hits": 241,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.6025,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      },
+      {
+        "text": "GT-units",
+        "modal_slot_rate": 0.066892,
+        "null": {
+          "observed": 0.066892,
+          "null_mean": 0.063288,
+          "hits": 54,
+          "undefined": 0,
+          "trials": 400,
+          "fraction": 0.135,
+          "lower_tail": false
+        },
+        "more_constant_than_chance": false
+      }
+    ],
+    "any_spacing_match": true,
+    "any_tile_match": false,
+    "any_elided_marker": false,
+    "note": "A spacing or tile hit is a repeat-structure resemblance. reading stays null. Fischer's elided triad, with the function words unwritten, predicts variable slots and is not confirmed by a non-significant constancy test."
+  },
+  "genealogy": {
+    "bonferroni": 0.016667,
+    "threshold_links": 3,
+    "abstract_chains": [
+      {
+        "stream": "rapanui_words",
+        "longest_links": 1,
+        "example": {
+          "line_index": 1,
+          "start": 389,
+          "opener": "te",
+          "links": 1,
+          "children": [
+            "toto",
+            "o"
+          ],
+          "fathers": [
+            "o",
+            "korare"
+          ]
+        },
+        "trials": 400,
+        "shuffles_reaching_gv6_length": 0,
+        "p_gv6_length": 0.0,
+        "shuffles_reaching_observed": 400,
+        "p_at_least_observed": 1.0,
+        "lines_up": false
+      },
+      {
+        "stream": "gt_units",
+        "longest_links": 0,
+        "example": null,
+        "trials": 400,
+        "shuffles_reaching_gv6_length": 0,
+        "p_gv6_length": 0.0,
+        "shuffles_reaching_observed": 400,
+        "p_at_least_observed": 1.0,
+        "lines_up": false
+      },
+      {
+        "stream": "gt_stems",
+        "longest_links": 1,
+        "example": {
+          "line_index": 4,
+          "start": 3,
+          "opener": "060",
+          "links": 1,
+          "children": [
+            "001",
+            "069"
+          ],
+          "fathers": [
+            "069",
+            "162"
+          ]
+        },
+        "trials": 400,
+        "shuffles_reaching_gv6_length": 0,
+        "p_gv6_length": 0.0,
+        "shuffles_reaching_observed": 339,
+        "p_at_least_observed": 0.8475,
+        "lines_up": false
+      }
+    ],
+    "bracket_by_side": {
+      "Gv": {
+        "phrases": 4,
+        "links": 3,
+        "max_run": 3,
+        "examples": [
+          {
+            "line": "Gv6",
+            "index": 5,
+            "groups": [
+              "200",
+              "000!",
+              "280.076"
+            ],
+            "child": [
+              "000"
+            ],
+            "father": [
+              "280"
+            ]
+          },
+          {
+            "line": "Gv6",
+            "index": 8,
+            "groups": [
+              "200",
+              "280",
+              "730.076"
+            ],
+            "child": [
+              "280"
+            ],
+            "father": [
+              "730"
+            ]
+          },
+          {
+            "line": "Gv6",
+            "index": 11,
+            "groups": [
+              "200",
+              "730",
+              "517a.076"
+            ],
+            "child": [
+              "730"
+            ],
+            "father": [
+              "517"
+            ]
+          },
+          {
+            "line": "Gv6",
+            "index": 14,
+            "groups": [
+              "200",
+              "517a",
+              "222.076"
+            ],
+            "child": [
+              "517"
+            ],
+            "father": [
+              "222"
+            ]
+          }
+        ]
+      },
+      "Gr": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Ia": {
+        "phrases": 5,
+        "links": 0,
+        "max_run": 0,
+        "examples": [
+          {
+            "line": "Ia11",
+            "index": 117,
+            "groups": [
+              "200",
+              "726",
+              "571.076"
+            ],
+            "child": [
+              "726"
+            ],
+            "father": [
+              "571"
+            ]
+          },
+          {
+            "line": "Ia8",
+            "index": 94,
+            "groups": [
+              "200f",
+              "023",
+              "440.076"
+            ],
+            "child": [
+              "023"
+            ],
+            "father": [
+              "440"
+            ]
+          },
+          {
+            "line": "Ia3",
+            "index": 45,
+            "groups": [
+              "200",
+              "690.090",
+              "129.076"
+            ],
+            "child": [
+              "690",
+              "090"
+            ],
+            "father": [
+              "129"
+            ]
+          },
+          {
+            "line": "Ia14",
+            "index": 92,
+            "groups": [
+              "200",
+              "700",
+              "071.076"
+            ],
+            "child": [
+              "700"
+            ],
+            "father": [
+              "071"
+            ]
+          },
+          {
+            "line": "Ia12",
+            "index": 68,
+            "groups": [
+              "200?",
+              "380.061x",
+              "002V:076"
+            ],
+            "child": [
+              "380",
+              "061"
+            ],
+            "father": [
+              "002"
+            ]
+          }
+        ]
+      },
+      "Ca": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Cb": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Hr": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Hv": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Pr": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Pv": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Qr": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      },
+      "Qv": {
+        "phrases": 0,
+        "links": 0,
+        "max_run": 0,
+        "examples": []
+      }
+    },
+    "gv6": {
+      "phrases": 4,
+      "links": 3,
+      "max_run": 3,
+      "examples": [
+        {
+          "line": "Gv6",
+          "index": 5,
+          "groups": [
+            "200",
+            "000!",
+            "280.076"
+          ],
+          "child": [
+            "000"
+          ],
+          "father": [
+            "280"
+          ]
+        },
+        {
+          "line": "Gv6",
+          "index": 8,
+          "groups": [
+            "200",
+            "280",
+            "730.076"
+          ],
+          "child": [
+            "280"
+          ],
+          "father": [
+            "730"
+          ]
+        },
+        {
+          "line": "Gv6",
+          "index": 11,
+          "groups": [
+            "200",
+            "730",
+            "517a.076"
+          ],
+          "child": [
+            "730"
+          ],
+          "father": [
+            "517"
+          ]
+        },
+        {
+          "line": "Gv6",
+          "index": 14,
+          "groups": [
+            "200",
+            "517a",
+            "222.076"
+          ],
+          "child": [
+            "517"
+          ],
+          "father": [
+            "222"
+          ]
+        }
+      ],
+      "trials": 400,
+      "shuffles_with_at_least_3_links": 0,
+      "p": 0.0,
+      "prior_null": "Track 3 already reported 0 of 5000 Gv6 shuffles with 3 handoffs."
+    },
+    "great_tradition_bracket": {
+      "phrases": 0,
+      "links": 0,
+      "max_run": 0,
+      "trials": 400,
+      "shuffles_with_at_least_3_links": 0,
+      "p": 0.0,
+      "lines_up": false
+    },
+    "any_oral_lineup": false,
+    "any_gt_lineup": false
+  },
+  "verdict_code": "spacing_only",
+  "verdict": "The formula profiles do not match. No sign-unit family is closer to a Rapanui formula family, or to the words, than both shuffles allow, and the Zipf slopes stay outside the pre-registered gap. Gv6's genealogy handoff is real on that one line and does not line up with a genealogical formula in the chant corpus or with the repeated units on H, P, and Q. Mamari has no glyph 076 and no two-frame tile. The Great Tradition units do not have that tile either. Fischer's elided triad is not distinguished from a shuffle. A gap histogram is closer to the chant's verse gaps than its own shuffle on Ia stem 076, Gv stem 076, Gr sign 001. The chant's gaps peak at 3 and 4 words. The sign gaps that clear the bar also peak on short distances. Track 4 already found this for Staff glyph 076 and did not treat it as a reading. The same limit holds here. Where the most frequent sign is 076, the second row repeats the first test. No sign is given the copula."
+}
