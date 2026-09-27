@@ -42,15 +42,19 @@ Sources, already stored:
 
 Rule, applied by the code, not by hand:
 
-1. Draw an edge between two tablets when a significant stem passage joins them.
-2. The discovery set is the connected component with the most such passages. A tie would go to the component whose sorted letters come first. The published counts are H–P 32, H–Q 18, P–Q 19, and G–K 6, and no other pair. That rule therefore selects H, P, and Q.
-3. The held-out set is every other tablet in `load_lines()`. G and K are held out. So is Mamari (C), the calendar tablet. So is every tablet that shares no significant passage with anybody.
+1. Draw an edge between two tablets when a significant stem passage joins them. A short passage counts. Track C marked it significant, so the two tablets share a parallel.
+2. The discovery set is the connected component with the most such passages. A tie would go to the component whose sorted letters come first.
+3. The held-out set is every other tablet in `load_lines()`.
 
-The code recomputes the components and stops without a p-value if discovery is not exactly H, P, Q, or if any significant passage has one tablet in discovery and the other held out, or if a stemma pair (G–K, H–P, H–Q, P–Q) is split across the two sets.
+The Round 2 prose names only H–P (32), H–Q (18), P–Q (19), and G–K (6). The stored JSON also has 24 significant passages Track C labels uncited, spans 8 to 16. Round 4 Track D lists those same pairs under the 40-column cutoff and says they are real matches but too short to draw on the copying tree. They are still shared passages. Keeping them as edges, the component with the passages is A, B, C, E, G, H, K, P, Q, R. Held-out, the tablets in `load_lines()` with no significant passage, is D, F, I, J, L, M, N, O, S, T, U, V, W. W is the Honolulu splinter. Track D says the parallel-passage corpus has no digit transcription for it; `load_lines()` still has the side, and it shares no significant passage, so it stays held out. This correction was written after reading that passage list and before any held-out rebus, two-apart, or substitution count.
 
-G and K are both held out, and they copy each other. Scoring both full texts would count that copy twice. For the rebus test and the two-apart test, G is kept whole (it comes first in the alphabet) and the stems on K that sit inside a significant G–K passage are removed. A removal splits the line, so a window cannot jump the gap. The bird-substitution test is the exception: it needs both copies, so it still aligns G with K.
+The code recomputes the components and stops without a p-value if discovery is not exactly those ten tablets, if held-out is not exactly those thirteen, if any significant passage crosses the split, or if a stemma pair (G–K, H–P, H–Q, P–Q) is split. Those stemma pairs all sit inside discovery. They are not scored.
 
-Round 4 already counted every tablet, including these held-out lines, in the corpus-wide two-apart shuffle, and it counted G–K inside the 99 passages. R1 and the classes were fixed from the citations before those scores. This round does not change them. The held-out numbers are a second look at text that is not a copy of H, P, or Q. They are not a sample Round 4 never saw. The Holm correction below is what keeps that second look from getting a fresh 5% gate.
+If two held-out tablets shared a significant passage, the rebus test and the two-apart test would keep the alphabetically earlier tablet whole and drop the later tablet's stems inside that passage, so a window cannot jump the gap. The bird test would still align both copies. Under this split that removal drops nothing, because no held-out pair shares a passage.
+
+Test (c) needs a significant passage with both tablets held out. There is none. Test (c) is not available and stays out of the Holm family. That follows from the split. It is not a look at the class of any mismatch.
+
+Round 4 already counted every tablet, including these held-out lines, in the corpus-wide two-apart shuffle. R1 and the classes were fixed from the citations before those scores. This round does not change them. The held-out numbers are a second look at texts that share no significant passage with the parallel component. They are not a sample Round 4 never saw. The Holm correction below is what keeps that second look from getting a fresh 5% gate.
 
 ## Tests on the held-out text only
 
@@ -58,7 +62,7 @@ Three tests. 500 draws each. One-sided: the null has to reach the observed count
 
 ### (a) Mixed-word rebus hits
 
-Scored on the held-out lines after the K-copy removal.
+Scored on the held-out lines after the later-copy removal. Under this split that removal drops nothing.
 
 A window counts only when all three of these are true:
 
@@ -81,7 +85,7 @@ On the same held-out lines. Count positions i and i+2 when the two signs differ,
 
 ### (c) Bird-class substitutions, where the held-out text has them
 
-Use significant passages whose two tablets are both held out. Under the split above, that is G–K only. Align each pair again with the same Smith-Waterman scorer Round 4 used, on the same slices (`start` through `end` inclusive).
+Use significant passages whose two tablets are both held out. Under the split above there are none, so this test is not run. The procedure, if a later corpus had such a passage, would align each pair again with the same Smith-Waterman scorer Round 4 used, on the same slices (`start` through `end` inclusive).
 
 The statistic is Round 4's cross-hundred count: both signs classified, hundreds digits different, classes equal.
 
