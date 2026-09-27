@@ -1,0 +1,14 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='760' height='440'>
+<rect width='100%' height='100%' fill='#fbfaf6'/>
+<text x='64' y='22' font-family='sans-serif' font-size='16'>Laplace conditional entropy by token-set size</text>
+<line x1='64' y1='36' x2='64' y2='368' stroke='#333'/>
+<line x1='64' y1='368' x2='744' y2='368' stroke='#333'/>
+<text x='404.0' y='422' text-anchor='middle' font-family='sans-serif' font-size='12'>Most frequent types kept (k)</text>
+<text x='16' y='202.0' transform='rotate(-90 16 202.0)' text-anchor='middle' font-family='sans-serif' font-size='12'>h2 (bits)</text>
+<polyline fill='none' stroke='#1b4f72' stroke-width='1.6' points='64.0,346.9 86.2,290.6 108.4,250.2 130.6,222.1 152.7,201.1 174.9,184.1 197.1,170.3 219.3,158.3 241.5,148.3 263.7,139.5 285.9,131.4 308.0,124.2 330.2,117.6 352.4,111.6 374.6,106.0 396.8,100.8 419.0,95.9 441.2,91.3 463.3,87.0 485.5,83.0 507.7,79.2 529.9,75.6 552.1,72.2 574.3,69.0 596.5,65.9 618.6,62.9 640.8,60.1 663.0,57.3 685.2,54.7 707.4,52.1 729.6,49.6 740.7,48.6'/>
+<text x='72' y='50' fill='#1b4f72' font-family='sans-serif' font-size='11'>Barthel stems</text>
+<polyline fill='none' stroke='#0e6655' stroke-width='1.6' points='64.0,300.9 86.2,254.8 96.2,244.8'/>
+<text x='72' y='64' fill='#0e6655' font-family='sans-serif' font-size='11'>Rapanui syllables</text>
+<polyline fill='none' stroke='#922b21' stroke-width='1.6' points='64.0,368.0 86.2,303.7 108.4,263.7 130.6,236.5 152.7,214.6 174.9,196.5 197.1,179.8 219.3,165.0 241.5,151.9 263.7,141.0 285.9,131.9 308.0,123.3 330.2,115.2 352.4,107.9 374.6,101.1 396.8,95.2 419.0,89.3 441.2,83.3 463.3,78.2 485.5,73.3 507.7,68.7 529.9,64.7 552.1,60.7 574.3,57.0 596.5,53.7 618.6,50.6 640.8,47.6 663.0,44.8 685.2,42.2 707.4,39.7 729.6,37.4 744.0,36.0'/>
+<text x='72' y='78' fill='#922b21' font-family='sans-serif' font-size='11'>Rapanui words</text>
+</svg>

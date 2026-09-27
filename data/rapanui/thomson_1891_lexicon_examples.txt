@@ -1,0 +1,27 @@
+# Isolated words cited in Thomson 1891, pp. 546–547.
+# Not running text. Not used in Track 2 sequence statistics.
+iti
+iti-iti
+poki iti-iti
+kai
+kai-kai
+mea-mea
+uri-uri
+tea-tea
+ura-ura
+oru
+puaka
+puaka tamahine
+puaka tamaroa
+manga-manga
+manga-manga vae
+kiri
+kiri vae
+ivi
+atua
+ko-ia
+rana
+pouro
+raa-po-tahi
+raa-po-rua
+raa-po-toru

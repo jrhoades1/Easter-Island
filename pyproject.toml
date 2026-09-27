@@ -61,7 +61,7 @@ catalog-glyphs = "glyph_cataloger:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["models*", "parsers*", "processors*"]
+include = ["models*", "parsers*", "processors*", "decipherment*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
