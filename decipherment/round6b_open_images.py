@@ -774,6 +774,90 @@ OBJECTS: tuple[dict[str, Any], ...] = (
 )
 
 
+# Addresses copied from the holders' pages on 27 September 2026. Where a page
+# prints "[at]" the address below uses "@".
+REQUEST_CONTACTS: tuple[dict[str, Any], ...] = (
+    {
+        "objects": ["O"],
+        "holder": "Ethnologisches Museum, Staatliche Museen zu Berlin",
+        "purpose": "research",
+        "kind": "email",
+        "address": "em@smb.spk-berlin.de",
+        "as_printed": "em[at]smb.spk-berlin.de",
+        "label": "General Research",
+        "page": (
+            "https://www.smb.museum/en/museums-institutions/ethnologisches-museum/"
+            "about-us/point-of-contact-for-research-and-scholarly-inquiries/"
+        ),
+        "also_on": {
+            "as_printed": "em@smb.spk-berlin.de",
+            "label": "E-Mail",
+            "page": "https://search.smb.museum/object/obj-998513",
+        },
+    },
+    {
+        "objects": ["O"],
+        "holder": "Ethnologisches Museum, Staatliche Museen zu Berlin",
+        "purpose": "photo archive",
+        "kind": "email",
+        "address": "photo-em@smb.spk-berlin.de",
+        "as_printed": "photo-em[at]smb.spk-berlin.de",
+        "label": "Photo Archive",
+        "page": (
+            "https://www.smb.museum/en/museums-institutions/ethnologisches-museum/"
+            "about-us/point-of-contact-for-research-and-scholarly-inquiries/"
+        ),
+    },
+    {
+        "objects": ["O"],
+        "holder": "Staatliche Museen zu Berlin",
+        "purpose": "image rights and reproductions",
+        "kind": "website",
+        "address": None,
+        "url": "https://www.bpk-bildagentur.de/?LCID=2",
+        "as_printed": (
+            "For questions relating to image rights and reproductions of images, "
+            "please visit the website of the Stiftung Preussischer Kulturbesitz’s "
+            "Picture Agency (bpk-Bildagentur)."
+        ),
+        "page": "https://www.smb.museum/en/research/contact/",
+    },
+    {
+        "objects": ["G", "I"],
+        "holder": "Museo Nacional de Historia Natural, Santiago",
+        "purpose": "academic photographs, interviews, and recordings",
+        "kind": "email",
+        "address": "comunicaciones.mnhn@mnhn.cl",
+        "as_printed": "comunicaciones@mnhn.cl",
+        "note": (
+            "The visible words are comunicaciones@mnhn.cl. The link on those "
+            "words is mailto:comunicaciones.mnhn@mnhn.cl. A separate Emails "
+            "field on the same page is comunicaciones@mnhn.gob.cl. The page "
+            "says access is only to the public areas of the museum."
+        ),
+        "also_printed": ["comunicaciones@mnhn.gob.cl"],
+        "page": "https://www.mnhn.gob.cl/servicios/trabajos-academicos-en-el-mnhn",
+    },
+    {
+        "objects": ["G", "I"],
+        "holder": "Museo Nacional de Historia Natural, Santiago",
+        "purpose": "research access to collections",
+        "kind": "form",
+        "address": "comunicaciones@mnhn.gob.cl",
+        "as_printed": "comunicaciones@mnhn.gob.cl",
+        "form_url": (
+            "https://www.mnhn.gob.cl/sites/www.mnhn.gob.cl/files/"
+            "2021-05/articles-49177_archivo_01.doc"
+        ),
+        "note": (
+            "The sponsorship form is sent to that address. The page says "
+            "sponsorship can include access to collections."
+        ),
+        "page": "https://www.mnhn.gob.cl/servicios/obtener-patrocinio-del-mnhn",
+    },
+)
+
+
 def headline_stats() -> dict[str, Any]:
     """The same headline counts as Round 5B, recomputed from the vendored text."""
     calendar = calendar_stats()
@@ -834,6 +918,7 @@ def build_report(provider: MockProvider | None = None) -> dict[str, Any]:
             ),
         },
         "disagreements": [],
+        "request_contacts": [dict(row) for row in REQUEST_CONTACTS],
         "objects": objects,
         "stats_before": stats,
         "stats_after": stats,

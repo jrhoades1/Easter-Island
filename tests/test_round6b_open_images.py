@@ -82,3 +82,19 @@ class TestRound6bOpenImages(unittest.TestCase):
         self.assertIn("private purposes", doc)
         self.assertIn("MockProvider", doc)
         self.assertEqual(self.provider.get_call_history(), [])
+        contacts = self.report["request_contacts"]
+        by_purpose = {(row["purpose"], tuple(row["objects"])): row for row in contacts}
+        berlin_research = by_purpose[("research", ("O",))]
+        self.assertEqual(berlin_research["address"], "em@smb.spk-berlin.de")
+        self.assertIn(berlin_research["page"], doc)
+        self.assertIn("photo-em@smb.spk-berlin.de", doc)
+        self.assertIn("https://www.bpk-bildagentur.de/?LCID=2", doc)
+        self.assertIn("https://www.smb.museum/en/research/contact/", doc)
+        photos = by_purpose[("academic photographs, interviews, and recordings", ("G", "I"))]
+        self.assertEqual(photos["address"], "comunicaciones.mnhn@mnhn.cl")
+        self.assertEqual(photos["as_printed"], "comunicaciones@mnhn.cl")
+        self.assertIn(photos["page"], doc)
+        research = by_purpose[("research access to collections", ("G", "I"))]
+        self.assertEqual(research["address"], "comunicaciones@mnhn.gob.cl")
+        self.assertIn(research["form_url"], doc)
+        self.assertIn(research["page"], doc)
