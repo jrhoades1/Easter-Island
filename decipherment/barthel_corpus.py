@@ -54,6 +54,34 @@ def _line_chunks(html: str) -> list[tuple[int, str]]:
     return chunks
 
 
+def _tokens_in_chunk(chunk: str) -> tuple[str, ...]:
+    """Hyphen-separated Barthel tokens from one line's HTML.
+
+    Image cells and cells with no digit are skipped. Parenthetical lacuna
+    ranges such as ``(6-8)!`` are kept here as raw tokens; the inventory
+    encoder drops them.
+    """
+    tokens: list[str] = []
+    for cell in _TD.findall(chunk):
+        text = unescape(cell).strip()
+        if not text or not any(character.isdigit() for character in text):
+            continue
+        for part in text.split("-"):
+            part = part.strip()
+            if part:
+                tokens.append(part)
+    return tuple(tokens)
+
+
+def numbered_tokens_from_html(html: str) -> tuple[tuple[int, tuple[str, ...]], ...]:
+    """``(line_number, tokens)`` in published order.
+
+    Line numbers are the Kohaumotu ``Line_N`` anchors. Empty lines are kept
+    so a missing anchor is still visible to the caller.
+    """
+    return tuple((number, _tokens_in_chunk(chunk)) for number, chunk in _line_chunks(html))
+
+
 def tokens_from_html(html: str) -> tuple[tuple[str, ...], ...]:
     """Hyphen-separated Barthel tokens from <td> text.
 
@@ -61,35 +89,62 @@ def tokens_from_html(html: str) -> tuple[tuple[str, ...], ...]:
     ranges such as ``(6-8)!`` are kept here as raw tokens; the inventory
     encoder drops them.
     """
-    lines: list[tuple[str, ...]] = []
-    for _number, chunk in _line_chunks(html):
-        tokens: list[str] = []
-        for cell in _TD.findall(chunk):
-            text = unescape(cell).strip()
-            if not text or not any(character.isdigit() for character in text):
-                continue
-            for part in text.split("-"):
-                part = part.strip()
-                if part:
-                    tokens.append(part)
-        lines.append(tuple(tokens))
-    return tuple(lines)
+    return tuple(tokens for _number, tokens in numbered_tokens_from_html(html))
 
 
-def load_barthel_sides(fixtures: Path = FIXTURES) -> tuple[BarthelSide, ...]:
-    """Every vendored side HTML that contains at least one Barthel token."""
-    sides: list[BarthelSide] = []
+@dataclass(frozen=True)
+class LocatedSide:
+    """One inscribed side with Kohaumotu line numbers kept."""
+
+    side: str
+    path: str
+    lines: tuple[tuple[int, tuple[str, ...]], ...]
+
+    @property
+    def token_count(self) -> int:
+        return sum(len(tokens) for _number, tokens in self.lines)
+
+
+def _load_raw_sides(fixtures: Path) -> list[tuple[str, str, tuple[tuple[int, tuple[str, ...]], ...]]]:
+    """Side code, repo-relative path, and numbered raw tokens.
+
+    Index pages and sides with no digit transcription are omitted. ``L.html``
+    beside ``La.html`` is an index page and contributes no tokens.
+    """
+    found: list[tuple[str, str, tuple[tuple[int, tuple[str, ...]], ...]]] = []
     if not fixtures.is_dir():
-        return ()
+        return found
     for path in sorted(fixtures.rglob("*.html")):
         if not _SIDE_FILENAME.match(path.name):
             continue
         html = path.read_text(encoding="utf-8", errors="replace")
-        lines = tokens_from_html(html)
-        if not any(lines):
+        lines = numbered_tokens_from_html(html)
+        if not any(tokens for _number, tokens in lines):
             continue
-        side = path.stem
         relative = path.relative_to(fixtures.parent.parent).as_posix()
-        sides.append(BarthelSide(side=side, path=relative, lines=lines))
+        found.append((path.stem, relative, lines))
+    return found
+
+
+def load_located_sides(fixtures: Path = FIXTURES) -> tuple[LocatedSide, ...]:
+    """Every vendored side, with published line numbers."""
+    sides = [
+        LocatedSide(side=side, path=path, lines=lines)
+        for side, path, lines in _load_raw_sides(fixtures)
+    ]
+    sides.sort(key=lambda item: item.side)
+    return tuple(sides)
+
+
+def load_barthel_sides(fixtures: Path = FIXTURES) -> tuple[BarthelSide, ...]:
+    """Every vendored side HTML that contains at least one Barthel token."""
+    sides = [
+        BarthelSide(
+            side=side,
+            path=path,
+            lines=tuple(tokens for _number, tokens in lines),
+        )
+        for side, path, lines in _load_raw_sides(fixtures)
+    ]
     sides.sort(key=lambda item: item.side)
     return tuple(sides)
