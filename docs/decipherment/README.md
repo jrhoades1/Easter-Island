@@ -54,6 +54,10 @@ The CEIPP raster strips used for the check are about 74 pixels tall (Mamari stri
 
 That is why the next useful step is imagery that resolves the incised line, for example the three-dimensional models of the INSCRIBE project. The present drawings can confirm that a coded crescent is a crescent and that a coded bar is a bar. They cannot settle a disputed catalog number, and this study does not invent one.
 
+## Round 6B: photographs the holders have put online
+
+The headline counts do not move. On 27 September 2026 the holding institutions' own pages were opened for Barthel A–Y. Open, for a recheck of a sign, means CC0 or CC BY on the holder's page. Santiago's Sketchfab models of Small Santiago (G) and Great Santiago (H) state CC0, with texture metadata 6000×6000 and 4096×4096, and Sketchfab did not serve the texture files without a login, so the pixels were not seen. The staff model (I) states CC BY-NC-SA 4.0. Berlin's seven photographs of VI 4878 state CC BY-NC-SA 4.0; the largest is 1772×1329. The Smithsonian usage line on R and S is "Not determined". No image was committed. The disagreement list is empty. The record is [round6b_open_images.md](round6b_open_images.md) and `data/decipherment/round6b_open_images.json`.
+
 ## Where things live
 
 The notes in this directory are the prose record, one file per track. Machine-readable counts are in `data/decipherment/`. The programs that recompute them are in `decipherment/`. The tests that lock the numbers are in `tests/`, named `test_track*.py` and `test_round*.py`. The Barthel pages themselves are the HTML files under `tests/fixtures/`. The old Rapanui sample (Thomson 1891, Metoro’s recitations for Jaussen, Routledge 1919, and the public-domain word lists) is in `data/rapanui/` and `data/readings/`, with the copyright notes in `data/rapanui/SOURCES.md`. The CEIPP copying terms, as stored for the drawing check, are in `data/decipherment/CEIPP_NOTICE.txt`.
@@ -74,8 +78,9 @@ The notes in this directory are the prose record, one file per track. Machine-re
 | Pictograph package | [round4a_pictograph_rebus.md](round4a_pictograph_rebus.md) | `decipherment/round4_tracka.py` | `tests/test_round4_tracka_pictograph_rebus.py` |
 | Held-out retest | [round5a_heldout_pictograph.md](round5a_heldout_pictograph.md) | `decipherment/round5_tracka.py` | `tests/test_round5_tracka_heldout_pictograph.py` |
 | CEIPP drawing recheck | [round5b_ceipp_recheck.md](round5b_ceipp_recheck.md) | `decipherment/round5b_ceipp.py` | `tests/test_round5b_ceipp_recheck.py` |
+| Open photographs | [round6b_open_images.md](round6b_open_images.md) | `decipherment/round6b_open_images.py` | `tests/test_round6b_open_images.py` |
 
-The substitution table consumed by later tracks is `data/decipherment/substitution_classes.json`. The held-out scores are `data/decipherment/round5a_heldout_pictograph.json`. The drawing-recheck record, including the 12 unadopted disagreements, is `data/decipherment/round5b_ceipp_recheck.json`.
+The substitution table consumed by later tracks is `data/decipherment/substitution_classes.json`. The held-out scores are `data/decipherment/round5a_heldout_pictograph.json`. The drawing-recheck record, including the 12 unadopted disagreements, is `data/decipherment/round5b_ceipp_recheck.json`. The photograph survey, with an empty disagreement list, is `data/decipherment/round6b_open_images.json`.
 
 ## Credits and sources
 

@@ -1,0 +1,674 @@
+"""Round 6 Track B: holder-page licenses for the inscribed corpus.
+
+The survey below is what the holding institutions' own pages stated when
+they were opened on 27 September 2026. A license that appeared only on
+Wikimedia Commons is not copied in as the holder's license.
+
+``MockProvider`` is accepted and never called. No Barthel number is
+replaced. No reading is assigned.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+from agents.base.providers import MockProvider
+from decipherment.round5b_ceipp import (
+    bird_substitution_counts,
+    calendar_stats,
+    genealogy_and_staff,
+)
+
+OUTPUT_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "data"
+    / "decipherment"
+    / "round6b_open_images.json"
+)
+DOC_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "docs"
+    / "decipherment"
+    / "round6b_open_images.md"
+)
+
+CHECKED = "2026-09-27"
+
+BERLIN_CONTACT = {
+    "institution": "Ethnologisches Museum, Staatliche Museen zu Berlin",
+    "object_page": "https://id.smb.museum/object/998513",
+    "object_page_also": "https://search.smb.museum/object/obj-998513",
+    "research_page": "https://www.smb.museum/en/museums-institutions/ethnologisches-museum/about-us/point-of-contact-for-research-and-scholarly-inquiries/",
+    "emails": {
+        "object_record_and_general_research": "em@smb.spk-berlin.de",
+        "photo_archive": "photo-em@smb.spk-berlin.de",
+        "sound_archive": "sound-em@smb.spk-berlin.de",
+    },
+    "how_printed": (
+        "The object record prints em@smb.spk-berlin.de. The research-enquiries "
+        "page prints General Research em[at]smb.spk-berlin.de and Photo Archive "
+        "photo-em[at]smb.spk-berlin.de."
+    ),
+}
+
+SANTIAGO_CONTACT = {
+    "institution": "Museo Nacional de Historia Natural, Santiago",
+    "anthropology_page": "https://www.mnhn.gob.cl/antropologia",
+    "academic_access_page": "https://www.mnhn.gob.cl/servicios/trabajos-academicos-en-el-mnhn",
+    "collections_policy": "https://www.mnhn.gob.cl/sites/www.mnhn.gob.cl/files/images/articles-51090_archivo_01.pdf",
+    "emails": {
+        "curatorial_head": "cristian.becker@mnhn.gob.cl",
+        "curator_veronica_silva": "veronica.silva@mnhn.gob.cl",
+        "curator_francisco_garrido": "francisco.garrido@mnhn.gob.cl",
+        "curator_julieta_elizaga": "julieta.elizaga@mnhn.gob.cl",
+        "collections_administrator": "yasna.sepulveda@mnhn.gob.cl",
+        "collections_conservator": "guillermo.castillo@mnhn.gob.cl",
+        "communications_public_area_academic_visits": "comunicaciones@mnhn.gob.cl",
+    },
+    "how_printed": (
+        "The anthropology page lists those six collection addresses. "
+        "comunicaciones@mnhn.gob.cl is the address for a student letter asking "
+        "to photograph in the public galleries, and that page says only public "
+        "areas are opened. The collections policy says images of the collection "
+        "are for a research project of interest to the museum and that commercial "
+        "use is prohibited. It does not print a separate photo-desk address."
+    ),
+}
+
+
+def _object(**kwargs: Any) -> dict[str, Any]:
+    kwargs.setdefault("open_cc0_or_cc_by", False)
+    kwargs.setdefault("used_for_sign_recheck", False)
+    kwargs.setdefault("images_committed", False)
+    return kwargs
+
+
+OBJECTS: list[dict[str, Any]] = [
+    _object(
+        sign="A",
+        name="Tahua",
+        holder="Archives of the Congregazione dei Sacri Cuori (SSCC), Rome",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy=(
+            "INSCRIBE structured-light model, all rights reserved, scientific "
+            "non-profit use. Not a CC0 or CC BY photograph."
+        ),
+        url="https://www.inscribercproject.com/Rongorongo.php",
+        resolution="Not measured. The viewer serves a mesh, not a still photograph.",
+        image_request="archiviogenerale@ssccpicpus.com",
+        image_request_page="https://www.ssccpicpus.com/en/contact-us-80",
+        note="The congregation contact page prints archiviogenerale@ssccpicpus.com for the General Archives. The INSCRIBE viewer page prints all rights reserved and s.ferrara@unibo.it for the mesh, which is not the wood.",
+    ),
+    _object(
+        sign="B",
+        name="Aruku Kurenga",
+        holder="SSCC archives, Rome",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="INSCRIBE model, all rights reserved.",
+        url="https://www.inscribercproject.com/Rongorongo.php",
+        resolution="Not measured. Mesh, not a still photograph.",
+        image_request="archiviogenerale@ssccpicpus.com",
+        image_request_page="https://www.ssccpicpus.com/en/contact-us-80",
+        note="Same split as Tahua.",
+    ),
+    _object(
+        sign="C",
+        name="Mamari",
+        holder="SSCC archives, Rome",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy=(
+            "INSCRIBE model, all rights reserved. A separate Wikimedia file, "
+            "File:Rongorongo_C-a_Mamari.jpg, 2040×1424, is CC BY-SA 3.0 and "
+            "GFDL on the Commons file page. That is not the SSCC license. "
+            "Round 3 already found that plate illegible at catalog precision."
+        ),
+        url="https://www.inscribercproject.com/Rongorongo.php",
+        resolution="Commons plate 2040×1424, about 6.4 pixels per millimetre. Not CC BY.",
+        image_request="archiviogenerale@ssccpicpus.com",
+        image_request_page="https://www.ssccpicpus.com/en/contact-us-80",
+        note="Headline passage Ca6–Ca9. No CC0 or CC BY photograph was used to re-read it.",
+    ),
+    _object(
+        sign="D",
+        name="Échancrée",
+        holder="SSCC archives, Rome",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="INSCRIBE model, all rights reserved.",
+        url="https://www.inscribercproject.com/Rongorongo.php",
+        resolution="Not measured. Mesh, not a still photograph.",
+        image_request="archiviogenerale@ssccpicpus.com",
+        image_request_page="https://www.ssccpicpus.com/en/contact-us-80",
+        note="Older tables still say Papeete. INSCRIBE places the wood in Rome. No Tahiti photograph was opened.",
+    ),
+    _object(
+        sign="E",
+        name="Keiti",
+        holder="Destroyed in the Leuven university library fire, 1914. No holding museum.",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="Photographs and rubbings only. No Bancroft image was opened in this survey, so no Bancroft license was copied.",
+        url="https://www.bancroft.berkeley.edu/info/",
+        resolution="No file measured.",
+        image_request="bancphot-library@berkeley.edu",
+        image_request_page="https://www.bancroft.berkeley.edu/info/",
+        note="The Bancroft info page prints bancphot-library@berkeley.edu under Duplication inquiries. There is no wood to photograph. Smithsonian cast E151490 is a cast of Small Santiago, not text E.",
+    ),
+    _object(
+        sign="F",
+        name="Stephen-Chauvet fragment",
+        holder="Private collection. Not confirmed on a museum page in this survey.",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="CEIPP hosts a tracing and photographs under its own non-profit terms. That is not a museum open license.",
+        url=None,
+        resolution="No holder file.",
+        image_request=None,
+        image_request_page=None,
+        note="No museum was written to. The old 'Arman Collection, New York' row is not a current address.",
+    ),
+    _object(
+        sign="G",
+        name="Small Santiago",
+        holder="Museo Nacional de Historia Natural, Santiago",
+        catalog="5497 on the museum's Sketchfab model",
+        holder_public_image=True,
+        holder_license="CC0 1.0",
+        open_cc0_or_cc_by=True,
+        holder_license_source="https://sketchfab.com/3d-models/tablilla-rongo-rongo-1-090408c682e348a0ab00d904ae850628",
+        other_public_copy=(
+            "The model is a mesh with one texture, not a still photograph. "
+            "Sketchfab license URL http://creativecommons.org/publicdomain/zero/1.0/. "
+            "The museum news page also calls the Sketchfab release CC0, including "
+            "tablillas rongo rongo: https://www.mnhn.gob.cl/noticias/el-mnhn-integra-lista-de-instituciones-que-liberaron-modelos-3d-con-licencia-dedicada-al"
+        ),
+        url="https://sketchfab.com/3d-models/tablilla-rongo-rongo-1-090408c682e348a0ab00d904ae850628",
+        resolution="Texture metadata 6000×6000 JPEG. Mesh 178,884 faces, 89,444 vertices. File not downloaded.",
+        image_request="yasna.sepulveda@mnhn.gob.cl",
+        image_request_page="https://www.mnhn.gob.cl/antropologia",
+        note=(
+            "The model text says 720 glyphs and the 1870 O'Higgins voyage, which is "
+            "the usual description of Barthel G. Sketchfab returned mayDownloadThisModel "
+            "false without a login, and the download API returned 401. The pixels were "
+            "not seen, so Gv6 was not re-read. Headline passage Gv6."
+        ),
+    ),
+    _object(
+        sign="H",
+        name="Great Santiago",
+        holder="Museo Nacional de Historia Natural, Santiago",
+        catalog="Not printed on the model page. Source filename on the model is 058AR_H_MK1.",
+        holder_public_image=True,
+        holder_license="CC0 1.0",
+        open_cc0_or_cc_by=True,
+        holder_license_source="https://sketchfab.com/3d-models/tablilla-rongo-rongo-2-6727d5933a6f4097a678f6ee8b3d1de0",
+        other_public_copy="Museum Sketchfab account MNHNcl. Same CC0 news page as G.",
+        url="https://sketchfab.com/3d-models/tablilla-rongo-rongo-2-6727d5933a6f4097a678f6ee8b3d1de0",
+        resolution="Texture metadata 4096×4096. Mesh 499,994 faces. File not downloaded.",
+        image_request="yasna.sepulveda@mnhn.gob.cl",
+        image_request_page="https://www.mnhn.gob.cl/antropologia",
+        note="The model text says 1,580 glyphs. That is the usual count for Barthel H. Pixels were not obtained. The Great Tradition stretch was not re-read.",
+    ),
+    _object(
+        sign="I",
+        name="Santiago staff",
+        holder="Museo Nacional de Historia Natural, Santiago",
+        catalog="5499 on the museum's Sketchfab model",
+        holder_public_image=True,
+        holder_license="CC BY-NC-SA 4.0",
+        holder_license_source="https://sketchfab.com/3d-models/baston-rongo-rongo-99b909306182444d82ebcbd9f04ec8af",
+        other_public_copy="License URL on the model: http://creativecommons.org/licenses/by-nc-sa/4.0/",
+        url="https://sketchfab.com/3d-models/baston-rongo-rongo-99b909306182444d82ebcbd9f04ec8af",
+        resolution="Mesh 899,994 faces. Texture pixel size was not retrieved. Not CC0 or CC BY.",
+        image_request="yasna.sepulveda@mnhn.gob.cl",
+        image_request_page="https://www.mnhn.gob.cl/antropologia",
+        note="Non-commercial. The 076-after-999 count was not re-read from this mesh. The 2020 CC0 news post predates this 2021 model and does not override the model page.",
+    ),
+    _object(
+        sign="J",
+        name="London reimiro 1",
+        holder="British Museum, London",
+        catalog="Not confirmed. The collection site did not load.",
+        holder_public_image=None,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="No British Museum object page was retrieved. No license was copied from a third party.",
+        url=None,
+        resolution="Not measured.",
+        image_request=None,
+        image_request_page=None,
+        note="britishmuseum.org answered with a Cloudflare verification page. No image-request address was taken from a page this survey could open.",
+    ),
+    _object(
+        sign="K",
+        name="London tablet",
+        holder="British Museum, London",
+        catalog="Not confirmed on the museum site. A Google Arts page prints Oc1903,-.150 and 'Photo: © Trustees of the British Museum'. That page is not the museum's.",
+        holder_public_image=None,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="Google Arts copyright line is all-rights language, not a CC0 or CC BY grant, and it was not read on britishmuseum.org.",
+        url="https://artsandculture.google.com/asset/wooden-tablet-with-rongorongo-inscription/YQFZoZpx2-hP1Q",
+        resolution="Not measured.",
+        image_request=None,
+        image_request_page=None,
+        note="Same Cloudflare block as J. The registration number is recorded only as what Google Arts prints.",
+    ),
+    _object(
+        sign="L",
+        name="London reimiro 2",
+        holder="British Museum, London",
+        catalog="Not confirmed on the museum site.",
+        holder_public_image=None,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="No holder page loaded.",
+        url=None,
+        resolution="Not measured.",
+        image_request=None,
+        image_request_page=None,
+        note="Same Cloudflare block as J.",
+    ),
+    _object(
+        sign="M",
+        name="Great Vienna",
+        holder="Weltmuseum Wien",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="INSCRIBE downsampled mesh, all rights reserved.",
+        url="https://www.inscribercproject.com/Rongorongo.php",
+        resolution="Not measured. The INSCRIBE note already says the Vienna meshes are downsampled.",
+        image_request="info.repro@khm.at",
+        image_request_page="https://www.weltmuseumwien.at/en/museum#rights-reproduction",
+        note="The museum page prints info.repro@khm.at for Bildrechte & Reproduktionen. No object photograph on that site was opened.",
+    ),
+    _object(
+        sign="N",
+        name="Small Vienna",
+        holder="Weltmuseum Wien",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="INSCRIBE downsampled mesh, all rights reserved.",
+        url="https://www.inscribercproject.com/Rongorongo.php",
+        resolution="Not measured.",
+        image_request="info.repro@khm.at",
+        image_request_page="https://www.weltmuseumwien.at/en/museum#rights-reproduction",
+        note="Same desk as Great Vienna.",
+    ),
+    _object(
+        sign="O",
+        name="Berlin tablet",
+        holder="Ethnologisches Museum, Staatliche Museen zu Berlin",
+        catalog="VI 4878",
+        holder_public_image=True,
+        holder_license="CC BY-NC-SA 4.0",
+        holder_license_source="https://id.smb.museum/object/998513",
+        other_public_copy=(
+            "Seven photographs. Credit line on the object page: "
+            "'Fotonachweis: Staatliche Museen zu Berlin, Ethnologisches Museum / "
+            "Claudia Obrocki CC BY-NC-SA 4.0'."
+        ),
+        url="https://id.smb.museum/object/998513",
+        resolution=(
+            "Public originals, measured from the files: 1772×1329 (three), "
+            "1654×1240 (one), 1575×1181 (two), 788×591 (one). "
+            "The object record gives 6 × 103 × 12.5 cm. The long frame is about "
+            "1.7 pixels per millimetre."
+        ),
+        image_request="photo-em@smb.spk-berlin.de",
+        image_request_page=BERLIN_CONTACT["research_page"],
+        note=(
+            "Non-commercial. Files were fetched to a temp directory to read pixel "
+            "size and were not committed. Not sharp enough, and not CC0 or CC BY, "
+            "so the inscription was not re-read. Also em@smb.spk-berlin.de on the object page."
+        ),
+        measured_files=[
+            {"file": "3612292.VI 4878.jpg", "pixels": [1772, 1329]},
+            {"file": "3613180.VI 4878 -A.jpg", "pixels": [1772, 1329]},
+            {"file": "3613184.VI 4878 -B.jpg", "pixels": [1772, 1329]},
+            {"file": "3613191.VI 4878 -C.jpg", "pixels": [1654, 1240]},
+            {"file": "3613193.VI 4878 -D.jpg", "pixels": [1575, 1181]},
+            {"file": "3613195.VI 4878 -E.jpg", "pixels": [1575, 1181]},
+            {"file": "3613199.VI 4878 -F.jpg", "pixels": [788, 591]},
+        ],
+    ),
+    _object(
+        sign="P",
+        name="Great St Petersburg",
+        holder="Peter the Great Museum of Anthropology and Ethnography (Kunstkamera), St Petersburg",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="No Kunstkamera object photograph was opened.",
+        url="https://www.kunstkamera.ru/museums_structure/research_departments/department_of_australia_oceania_indonesia/",
+        resolution="No file.",
+        image_request="australia@kunstkamera.ru",
+        image_request_page="https://www.kunstkamera.ru/museums_structure/research_departments/department_of_australia_oceania_indonesia/",
+        note="The department page prints australia@kunstkamera.ru. No public INSCRIBE model for P.",
+    ),
+    _object(
+        sign="Q",
+        name="Small St Petersburg",
+        holder="Kunstkamera, St Petersburg",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="No Kunstkamera object photograph was opened.",
+        url="https://www.kunstkamera.ru/museums_structure/research_departments/department_of_australia_oceania_indonesia/",
+        resolution="No file.",
+        image_request="australia@kunstkamera.ru",
+        image_request_page="https://www.kunstkamera.ru/museums_structure/research_departments/department_of_australia_oceania_indonesia/",
+        note="Same desk as P. Headline parallel with H. Not re-read from a photograph.",
+    ),
+    _object(
+        sign="R",
+        name="Small Washington (Atua Mata Riri)",
+        holder="National Museum of Natural History, Smithsonian Institution",
+        catalog="A129773-0",
+        holder_public_image=True,
+        holder_license="Not determined",
+        holder_license_source="https://collections.nmnh.si.edu/search/anth/?irn=8010183",
+        other_public_copy=(
+            "The collections record's usage statement on every specimen photograph "
+            "is 'Not determined'. The page script's default line is that an image "
+            "may be protected by copyright unless otherwise noted. www.si.edu did "
+            "not load (verification wall), so a CC0 badge was not confirmed and is "
+            "not recorded."
+        ),
+        url="https://collections.nmnh.si.edu/search/anth/?irn=8010183",
+        resolution=(
+            "Largest public JPEG derivative of the 2012 Donald E. Hurlbert "
+            "photographs: 1500×1124. The record says the original TIFF is on file "
+            "with NMNH Imaging and is not the public file."
+        ),
+        image_request="rimere@si.edu",
+        image_request_page="https://naturalhistory.si.edu/research/anthropology/collections-and-archives-access/rights-and-reproductions",
+        note=(
+            "A direct fetch of the rights page was stopped by a verification wall. "
+            "A retrieval of that URL prints Esther Rimer, rimere@si.edu, for a "
+            "higher-resolution copy of an image already online, and "
+            "AnthroCollections@si.edu for collections questions "
+            "(https://naturalhistory.si.edu/research/anthropology/collections-and-archives-access). "
+            "Not used to re-read signs. Tablet R is not a headline glyph passage; "
+            "the chant note is that 076 occurs zero times."
+        ),
+    ),
+    _object(
+        sign="S",
+        name="Great Washington",
+        holder="National Museum of Natural History, Smithsonian Institution",
+        catalog="A129774-0",
+        holder_public_image=True,
+        holder_license="Not determined",
+        holder_license_source="https://collections.nmnh.si.edu/search/anth/?irn=8010185",
+        other_public_copy="Same usage statement as R. Not recorded as CC0.",
+        url="https://collections.nmnh.si.edu/search/anth/?irn=8010185",
+        resolution="Largest public JPEG of the 2012 Hurlbert set: 1500×653. Original TIFF on file, not public.",
+        image_request="rimere@si.edu",
+        image_request_page="https://naturalhistory.si.edu/research/anthropology/collections-and-archives-access/rights-and-reproductions",
+        note="Same rights desk as R. Not used to re-read signs.",
+    ),
+    _object(
+        sign="T",
+        name="Honolulu 3629",
+        holder="Bernice Pauahi Bishop Museum, Honolulu",
+        catalog="B.3629 in the usual text. The public ethnology database returned an empty record for that number.",
+        holder_public_image=False,
+        holder_license="All rights reserved, on the database pages that did load",
+        holder_license_source="https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.00445",
+        other_public_copy=(
+            "The ethnology department page shows a photograph captioned "
+            "'ROŊOROŊO TABLET – Rapa Nui' with 'Photo Credit: David Franzen' and "
+            "no license. The database footer says all rights reserved and that "
+            "commercial use or publication is strictly prohibited."
+        ),
+        url="https://www.bishopmuseum.org/explore/ethnology/",
+        resolution="No file measured. The captioned photograph's pixel size was not on the page.",
+        image_request="ethnology@bishopmuseum.org",
+        image_request_page="https://www.bishopmuseum.org/explore/ethnology/",
+        note=(
+            "The same page also prints Ethnology@bishopmusem.org, missing a u, as "
+            "the visit address, and Ethnology@bishopmuseum.org for other inquiries. "
+            "The spelled address ethnology@bishopmuseum.org is the one recorded. "
+            "B.3623, B.3622, and B.3628 also returned empty records. B.00445 is a "
+            "separate 6.7 × 2.3 cm fragment and is not assigned to T, U, V, or W."
+        ),
+    ),
+    _object(
+        sign="U",
+        name="Honolulu 2",
+        holder="Bishop Museum, Honolulu",
+        catalog="Not confirmed on the database. The usual number did not return a record.",
+        holder_public_image=False,
+        holder_license="All rights reserved, database footer",
+        holder_license_source="https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.00445",
+        other_public_copy="No object photograph tied to U was measured.",
+        url="https://www.bishopmuseum.org/explore/ethnology/",
+        resolution="No file.",
+        image_request="ethnology@bishopmuseum.org",
+        image_request_page="https://www.bishopmuseum.org/explore/ethnology/",
+        note="Same desk as T.",
+    ),
+    _object(
+        sign="V",
+        name="Honolulu 3",
+        holder="Bishop Museum, Honolulu",
+        catalog="Not confirmed on the database.",
+        holder_public_image=False,
+        holder_license="All rights reserved, database footer",
+        holder_license_source="https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.00445",
+        other_public_copy="No object photograph tied to V was measured.",
+        url="https://www.bishopmuseum.org/explore/ethnology/",
+        resolution="No file.",
+        image_request="ethnology@bishopmuseum.org",
+        image_request_page="https://www.bishopmuseum.org/explore/ethnology/",
+        note="Same desk as T.",
+    ),
+    _object(
+        sign="W",
+        name="Honolulu fragment",
+        holder="Bishop Museum, Honolulu",
+        catalog="Not confirmed. This repository has no Barthel page for W.",
+        holder_public_image=False,
+        holder_license="All rights reserved, database footer",
+        holder_license_source="https://data.bishopmuseum.org/ethnologydb/detailed.php?ARTNO=B.00445",
+        other_public_copy="B.00445 is a fragment in the same museum and is not identified here as W.",
+        url="https://www.bishopmuseum.org/explore/ethnology/",
+        resolution="No file.",
+        image_request="ethnology@bishopmuseum.org",
+        image_request_page="https://www.bishopmuseum.org/explore/ethnology/",
+        note="Same desk as T.",
+    ),
+    _object(
+        sign="X",
+        name="New York birdman",
+        holder="American Museum of Natural History, New York",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="No AMNH object photograph was opened. The research-policy HTML returned 403.",
+        url="https://www.amnh.org/content/download/38812/569150/file/exhibition-loans%3A-information-for-borrowers.pdf",
+        resolution="No file.",
+        image_request="anthro_imaging@amnh.org",
+        image_request_page="https://www.amnh.org/content/download/38812/569150/file/exhibition-loans%3A-information-for-borrowers.pdf",
+        note=(
+            "The loan PDF prints anthro_imaging@amnh.org for photographic reproduction. "
+            "A retrieval of the research-policy page prints anthro@amnh.org for "
+            "collections queries: https://www.amnh.org/research/anthropology/policies-links/research-policy"
+        ),
+    ),
+    _object(
+        sign="Y",
+        name="Paris snuffbox",
+        holder="Musée de l'Homme, Paris, in the usual corpus table. Current building not confirmed on an object record.",
+        catalog=None,
+        holder_public_image=False,
+        holder_license=None,
+        holder_license_source=None,
+        other_public_copy="The quai Branly collections app did not return an object record without JavaScript.",
+        url="https://quaibranly.fr/fr/professionnels/commande-de-photographies",
+        resolution="No file.",
+        image_request="contact-icono@quaibranly.fr",
+        image_request_page="https://quaibranly.fr/fr/professionnels/commande-de-photographies",
+        note=(
+            "That page also prints agence.photo@rmngp.fr for the Réunion des musées "
+            "nationaux photo agency, and presse@quaibranly.fr for press photographs. "
+            "No license for a snuffbox photograph was stated."
+        ),
+    ),
+]
+
+
+# Same keys as data/decipherment/round5b_ceipp_recheck.json. This round's
+# list is empty because no open photograph was re-read.
+DISAGREEMENT_FIELDS = [
+    "passage",
+    "position",
+    "repo_code",
+    "drawing",
+    "confidence",
+    "horley_pozdniakov_guy",
+    "adopted",
+]
+
+
+NOT_RECHECKED = [
+    {
+        "sign": "C",
+        "passage": "Ca6–Ca9 calendar",
+        "why": "No CC0 or CC BY photograph from the holder. The Commons plate is CC BY-SA and was already illegible at catalog precision.",
+    },
+    {
+        "sign": "G",
+        "passage": "Gv6",
+        "why": "CC0 mesh. Texture metadata is 6000×6000, but the file was not downloaded (Sketchfab login required) and was not seen, so it was not clearly sharp enough to re-read signs.",
+    },
+    {
+        "sign": "H",
+        "passage": "Hr2–Hr4 Great Tradition stretch",
+        "why": "CC0 mesh. Texture metadata is 4096×4096. File not downloaded. Signs not re-read.",
+    },
+    {
+        "sign": "I",
+        "passage": "999 bars and the following 076",
+        "why": "Holder model is CC BY-NC-SA 4.0, not CC0 or CC BY.",
+    },
+    {
+        "sign": "O",
+        "passage": "No headline passage. Checked because the brief names Berlin.",
+        "why": "CC BY-NC-SA 4.0 photographs, largest 1772×1329, about 1.7 pixels per millimetre on a 103 cm tablet. Not open, and not sharp enough for a catalog number.",
+    },
+    {
+        "sign": "P",
+        "passage": "Great Tradition parallel",
+        "why": "No holder photograph.",
+    },
+    {
+        "sign": "Q",
+        "passage": "Qr2–Qr3 parallel of H",
+        "why": "No holder photograph.",
+    },
+    {
+        "sign": "R",
+        "passage": "No glyph headline. 076 count on R is already zero in the vendored text.",
+        "why": "Usage statement 'Not determined'. Largest public JPEG 1500 px. Not confirmed CC0.",
+    },
+    {
+        "sign": "S",
+        "passage": "None of the headline passages.",
+        "why": "Same usage statement as R. Largest public JPEG 1500×653.",
+    },
+]
+
+
+def _stats(provider: MockProvider) -> dict[str, Any]:
+    if not isinstance(provider, MockProvider):
+        raise TypeError("MockProvider is required")
+    calendar = calendar_stats()
+    staff = genealogy_and_staff()
+    birds = bird_substitution_counts()
+    return {
+        "calendar_040": calendar["040"],
+        "calendar_040_before_152": calendar["040_before_after_152"][0],
+        "calendar_040_after_152": calendar["040_before_after_152"][1],
+        "calendar_040_gaps": calendar["040_gaps"],
+        "calendar_full_delimiters": calendar["full_delimiters_opening_390"],
+        "calendar_152": calendar["152"],
+        "calendar_143": calendar["143"],
+        "gv6_phrases": staff["gv6_phrase_count"],
+        "gv6_handoffs": staff["gv6_handoffs"],
+        "staff_076_after_999": staff["staff_076_after_999"],
+        "staff_pure_999": staff["staff_pure_999"],
+        "staff_076_after_999_rate": staff["staff_076_after_999"] / staff["staff_pure_999"],
+        "parallel_span": birds["stretch_span"],
+        "parallel_matches": birds["stretch_matches"],
+        "parallel_mismatches": birds["stretch_mismatches"],
+        "parallel_bird_substitutions": birds["stretch_bird_pairs"],
+        "corpus_bird_substitutions": birds["corpus_bird_cross_hundred"],
+    }
+
+
+def build_report(provider: MockProvider | None = None) -> dict[str, Any]:
+    """Holder-page survey. Headline counts are recomputed and not edited."""
+    if provider is None:
+        provider = MockProvider()
+    stats = _stats(provider)
+    report = {
+        "track": "round6b",
+        "provider": "MockProvider",
+        "provider_calls": len(provider.get_call_history()),
+        "readings_assigned": False,
+        "checked": CHECKED,
+        "corpus": "Barthel A–Y, 25 objects. Published counts of about 26 refer to this set.",
+        "open_means": "CC0 or CC BY stated on the holding institution's own page. CC BY-SA, CC BY-NC, CC BY-NC-SA, all rights reserved, and 'Not determined' are not open for the recheck.",
+        "images_committed": False,
+        "images_downloaded_for_recheck": [],
+        "adopted_corrections": [],
+        "disagreement_record_fields": DISAGREEMENT_FIELDS,
+        "disagreements": [],
+        "not_rechecked": NOT_RECHECKED,
+        "contacts": {
+            "berlin": BERLIN_CONTACT,
+            "santiago": SANTIAGO_CONTACT,
+        },
+        "objects": OBJECTS,
+        "stats_before": stats,
+        "stats_after": stats,
+        "what_changed": (
+            "Nothing in the headline counts. No CC0 or CC BY photograph was both "
+            "retrieved and clearly sharp enough to re-read a sign. No Barthel code "
+            "was replaced. No reading was assigned."
+        ),
+    }
+    return json.loads(json.dumps(report))
+
+
+def write_report(path: Path = OUTPUT_PATH, provider: MockProvider | None = None) -> dict[str, Any]:
+    report = build_report(provider if provider is not None else MockProvider())
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return report
