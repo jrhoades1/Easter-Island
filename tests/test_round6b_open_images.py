@@ -11,8 +11,8 @@ from pathlib import Path
 
 from agents.base.providers import MockProvider
 from decipherment.round6b_open_images import (
-    CLASS_CC_BY,
     CLASS_CC0,
+    CLASS_CC_BY,
     OUTPUT_PATH,
     build_report,
 )
@@ -42,11 +42,20 @@ class TestRound6bOpenImages(unittest.TestCase):
     def test_no_holder_stated_cc0_or_cc_by_frame_was_sharp_enough(self) -> None:
         codes = [row["code"] for row in self.report["objects"]]
         self.assertEqual(codes, list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+        open_codes = []
         for row in self.report["objects"]:
             self.assertFalse(row["rechecked"])
-            self.assertFalse(row["cc0_or_cc_by"])
             self.assertFalse(row["sharp_enough_for_sign_detail"])
-            self.assertNotIn(row["license_class"], {CLASS_CC0, CLASS_CC_BY})
+            if row["cc0_or_cc_by"]:
+                open_codes.append(row["code"])
+                self.assertEqual(row["license_class"], CLASS_CC0)
+            else:
+                self.assertNotIn(row["license_class"], {CLASS_CC0, CLASS_CC_BY})
+        self.assertEqual(open_codes, ["G", "H"])
+        by_code = {row["code"]: row for row in self.report["objects"]}
+        self.assertEqual(by_code["I"]["license_class"], "non-commercial")
+        self.assertEqual(by_code["O"]["license_class"], "non-commercial")
+        self.assertIn("CC BY-NC-SA 4.0", by_code["O"]["license_as_stated"])
 
     def test_headline_counts_do_not_move(self) -> None:
         before = self.report["stats_before"]
@@ -81,4 +90,32 @@ class TestRound6bOpenImages(unittest.TestCase):
         self.assertIn("There are restrictions for re-using this media.", doc)
         self.assertIn("private purposes", doc)
         self.assertIn("MockProvider", doc)
+        self.assertIn("photo-em@smb.spk-berlin.de", doc)
+        self.assertIn("em@smb.spk-berlin.de", doc)
+        self.assertIn("yasna.sepulveda@mnhn.gob.cl", doc)
+        self.assertIn("julieta.elizaga@mnhn.gob.cl", doc)
+        self.assertIn("CC0 Public Domain", doc)
+        blob = json.dumps(self.report)
+        for address in (
+            "photo-em@smb.spk-berlin.de",
+            "em@smb.spk-berlin.de",
+            "yasna.sepulveda@mnhn.gob.cl",
+            "julieta.elizaga@mnhn.gob.cl",
+            "veronica.silva@mnhn.gob.cl",
+            "francisco.garrido@mnhn.gob.cl",
+            "guillermo.castillo@mnhn.gob.cl",
+        ):
+            self.assertIn(address, blob)
+        self.assertEqual(
+            self.report["disagreement_record_fields"],
+            [
+                "passage",
+                "position",
+                "repo_code",
+                "drawing",
+                "confidence",
+                "horley_pozdniakov_guy",
+                "adopted",
+            ],
+        )
         self.assertEqual(self.provider.get_call_history(), [])

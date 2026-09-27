@@ -6,12 +6,135 @@
   "adopted_corrections": [],
   "surveyed_on": "2026-09-27",
   "images_committed": false,
-  "images_committed_reason": "No photograph was both CC0 or CC BY on the holder's own page and clearly sharp enough to read sign details. Non-commercial and all-rights-reserved files were measured for size where the holder serves them, and were not committed.",
+  "images_committed_reason": "No photograph was both CC0 or CC BY on the holder's own page and clearly sharp enough to read sign details. The Santiago meshes of G and H state CC0, and their texture files were not downloaded. Non-commercial and all-rights-reserved files were measured for size where the holder serves them, and were not committed.",
   "recheck": {
     "performed": false,
-    "reason": "The headline passages are the Mamari calendar on C, Gv6 on G, the Staff bars on I, the Great Tradition on H, P, and Q, and the absence of sign 076 on R. None of those objects has a holder-stated CC0 or CC BY photograph that resolves a catalog number. No Barthel code was compared with a photograph, so there is no disagreement to log."
+    "reason": "The headline passages are the Mamari calendar on C, Gv6 on G, the Staff bars on I, the Great Tradition on H, P, and Q, and the absence of sign 076 on R. G and H state CC0 on the museum's Sketchfab meshes. Those texture files were not downloaded, so the pixels were not seen. I is CC BY-NC-SA. No Barthel code was compared with an image, so there is no disagreement to log."
   },
+  "disagreement_record_fields": [
+    "passage",
+    "position",
+    "repo_code",
+    "drawing",
+    "confidence",
+    "horley_pozdniakov_guy",
+    "adopted"
+  ],
   "disagreements": [],
+  "image_requests": [
+    {
+      "objects": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "institution": "SSCC General Archives, Rome",
+      "page": "https://www.ssccpicpus.com/en/contact-us-80",
+      "addresses": [
+        "archiviogenerale@ssccpicpus.com"
+      ],
+      "as_printed": "archiviogenerale@ssccpicpus.com (General Archives)",
+      "note": "The INSCRIBE viewer, which holds the meshes, prints s.ferrara@unibo.it and r.ravanelli@unibo.it. Those addresses are for the models, not for the wood."
+    },
+    {
+      "objects": [
+        "E"
+      ],
+      "institution": "Bancroft Library, University of California, Berkeley",
+      "page": "https://www.bancroft.berkeley.edu/info/",
+      "addresses": [
+        "bancphot-library@berkeley.edu"
+      ],
+      "as_printed": "Duplication inquiries bancphot-library@berkeley.edu",
+      "note": "Keiti was destroyed in 1914. This address is for copies of surviving photographs and rubbings, not for the wood."
+    },
+    {
+      "objects": [
+        "G",
+        "H",
+        "I",
+        "Z"
+      ],
+      "institution": "Museo Nacional de Historia Natural, Santiago",
+      "page": "https://www.mnhn.gob.cl/antropologia",
+      "addresses": [
+        "julieta.elizaga@mnhn.gob.cl",
+        "veronica.silva@mnhn.gob.cl",
+        "francisco.garrido@mnhn.gob.cl",
+        "yasna.sepulveda@mnhn.gob.cl",
+        "guillermo.castillo@mnhn.gob.cl"
+      ],
+      "as_printed": "Julieta Elizaga Coulombié, Curadora Jefe de Antropología, julieta.elizaga@mnhn.gob.cl. Verónica Silva Pinto, Curadora, veronica.silva@mnhn.gob.cl. Francisco Garrido, Curador, francisco.garrido@mnhn.gob.cl. Yasna Sepúlveda, Administradora de Colecciones, yasna.sepulveda@mnhn.gob.cl. Guillermo Castillo, Conservador de Colecciones, guillermo.castillo@mnhn.gob.cl.",
+      "note": "The collections administrator is the image-request address recorded for G, H, I, and Z. The museum footer prints comunicaciones@mnhn.gob.cl. The 2020 news post is https://www.mnhn.gob.cl/noticias/el-mnhn-integra-lista-de-instituciones-que-liberaron-modelos-3d-con-licencia-dedicada-al"
+    },
+    {
+      "objects": [
+        "M",
+        "N"
+      ],
+      "institution": "Weltmuseum Wien",
+      "page": "https://www.weltmuseumwien.at/en/museum",
+      "addresses": [
+        "info.repro@khm.at"
+      ],
+      "as_printed": "Bildrechte & Reproduktionen, KHM-Museumsverband, Burgring 5, 1010 Wien, info.repro@khm.at",
+      "note": "The object pages send academic use to a reproduction request. This is the address on the rights block."
+    },
+    {
+      "objects": [
+        "O"
+      ],
+      "institution": "Ethnologisches Museum, Staatliche Museen zu Berlin",
+      "page": "https://www.smb.museum/en/museums-institutions/ethnologisches-museum/about-us/point-of-contact-for-research-and-scholarly-inquiries/",
+      "addresses": [
+        "photo-em@smb.spk-berlin.de",
+        "em@smb.spk-berlin.de"
+      ],
+      "as_printed": "The research page prints Photo Archive photo-em[at]smb.spk-berlin.de, General Research em[at]smb.spk-berlin.de, and Sound Archive sound-em[at]smb.spk-berlin.de. The object record prints em@smb.spk-berlin.de.",
+      "note": "The photo-archive address is the image request. sound-em@smb.spk-berlin.de is the sound archive, not the photographs."
+    },
+    {
+      "objects": [
+        "P",
+        "Q"
+      ],
+      "institution": "Kunstkamera, St Petersburg",
+      "page": "https://www.kunstkamera.ru/museums_structure/research_departments/department_of_australia_oceania_indonesia/",
+      "addresses": [
+        "australia@kunstkamera.ru"
+      ],
+      "as_printed": "E-mail: australia@kunstkamera.ru",
+      "note": "The same page also prints the museum switchboard address info@kunstkamera.ru."
+    },
+    {
+      "objects": [
+        "T",
+        "U",
+        "V",
+        "W"
+      ],
+      "institution": "Bernice Pauahi Bishop Museum, Honolulu",
+      "page": "https://www.bishopmuseum.org/explore/ethnology/",
+      "addresses": [
+        "ethnology@bishopmuseum.org"
+      ],
+      "as_printed": "contact us at ethnology@bishopmuseum.org. The same page also prints Ethnology@bishopmuseum.org and, for a visit, Ethnology@bishopmusem.org (missing a u).",
+      "note": "The spelled address ethnology@bishopmuseum.org is the one recorded."
+    },
+    {
+      "objects": [
+        "Y"
+      ],
+      "institution": "Musée du quai Branly, photograph orders",
+      "page": "https://quaibranly.fr/fr/professionnels/commande-de-photographies",
+      "addresses": [
+        "contact-icono@quaibranly.fr"
+      ],
+      "as_printed": "contact-icono@quaibranly.fr",
+      "note": "The usual corpus table places Y at the Musée de l'Homme. No object record was retrieved. The same order page also prints agence.photo@rmngp.fr and presse@quaibranly.fr. This address is the iconography desk, not a confirmed snuffbox record."
+    }
+  ],
   "objects": [
     {
       "code": "A",
@@ -170,14 +293,22 @@
       "code": "G",
       "name": "Small Santiago",
       "holder": "Museo Nacional de Historia Natural, Santiago",
-      "catalog": null,
-      "institution_page": "https://www.mnhn.gob.cl/colecciones",
-      "institution_page_note": "The museum's digital-collections page was opened. It does not list a rongorongo tablet or state a photograph licence.",
+      "catalog": "5497, on the museum Sketchfab model",
+      "institution_page": "https://sketchfab.com/3d-models/tablilla-rongo-rongo-1-090408c682e348a0ab00d904ae850628",
+      "institution_page_note": "The model is on the museum account MNHNcl, display name Museo Nacional de Historia Natural de Chile. The model page prints License: CC0 Public Domain and links http://creativecommons.org/publicdomain/zero/1.0/. The collections page https://www.mnhn.gob.cl/colecciones does not list the tablet. A 2020 museum news post names tablillas rongo rongo among Sketchfab models released under CC0.",
       "public_image": true,
-      "license_class": "not stated by the holder",
-      "license_as_stated": null,
-      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "license_class": "CC0",
+      "license_as_stated": "CC0 Public Domain",
+      "license_source": "https://sketchfab.com/3d-models/tablilla-rongo-rongo-1-090408c682e348a0ab00d904ae850628",
       "images": [
+        {
+          "url": "https://sketchfab.com/3d-models/tablilla-rongo-rongo-1-090408c682e348a0ab00d904ae850628",
+          "pixels": [
+            6000,
+            6000
+          ],
+          "what": "Texture metadata on the model page: one RGB image, 6000×6000, filepath 057AR.1001. Mesh 178,884 faces, 89,444 vertices. The download API returned 401 without a login, so the texture file was not retrieved and the glyphs were not seen. Model text: 720 glyphs, inventory 5497, corbeta O'Higgins, 1870."
+        },
         {
           "url": "https://commons.wikimedia.org/wiki/File:Chile-03432_-_Rongorongo,_Mu%27a_Au_Mingo_Ata%27i_Hoa_Au.jpg",
           "pixels": [
@@ -188,22 +319,30 @@
         }
       ],
       "sharp_enough_for_sign_detail": false,
-      "cc0_or_cc_by": false,
+      "cc0_or_cc_by": true,
       "rechecked": false,
-      "why_not_rechecked": "Gv6 is a headline passage. The sharp public frame is a copy in another museum, and its licence is the photographer's CC BY-SA, not a CC0 or CC BY statement by the Museo Nacional."
+      "why_not_rechecked": "Gv6 is a headline passage. The museum states CC0 on the mesh. The 6000×6000 texture was not downloaded, and the pixels were not seen, so it was not clearly sharp enough to re-read a sign. The Hanga Roa photograph is the photographer's CC BY-SA."
     },
     {
       "code": "H",
       "name": "Great Santiago",
       "holder": "Museo Nacional de Historia Natural, Santiago",
-      "catalog": "5.498, as printed on secondary pages; not confirmed on mnhn.gob.cl",
-      "institution_page": "https://www.mnhn.gob.cl/colecciones",
-      "institution_page_note": "Same collections page as G. No tablet photograph and no licence line.",
+      "catalog": "Not printed on the Sketchfab model. Secondary pages say 5.498; that number was not on mnhn.gob.cl.",
+      "institution_page": "https://sketchfab.com/3d-models/tablilla-rongo-rongo-2-6727d5933a6f4097a678f6ee8b3d1de0",
+      "institution_page_note": "Same museum Sketchfab account as G. The model page prints License: CC0 Public Domain.",
       "public_image": true,
-      "license_class": "not stated by the holder",
-      "license_as_stated": null,
-      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "license_class": "CC0",
+      "license_as_stated": "CC0 Public Domain",
+      "license_source": "https://sketchfab.com/3d-models/tablilla-rongo-rongo-2-6727d5933a6f4097a678f6ee8b3d1de0",
       "images": [
+        {
+          "url": "https://sketchfab.com/3d-models/tablilla-rongo-rongo-2-6727d5933a6f4097a678f6ee8b3d1de0",
+          "pixels": [
+            4096,
+            4096
+          ],
+          "what": "Texture metadata: one RGB image, 4096×4096. Mesh 499,994 faces. The download API returned 401. The pixels were not seen. Model text: 1,580 glyphs, corbeta O'Higgins, 1870."
+        },
         {
           "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_H-r_Great_Santiago.jpg",
           "pixels": [
@@ -214,22 +353,30 @@
         }
       ],
       "sharp_enough_for_sign_detail": false,
-      "cc0_or_cc_by": false,
+      "cc0_or_cc_by": true,
       "rechecked": false,
-      "why_not_rechecked": "The Great Tradition on H has no CC0 or CC BY photograph stated by the holder."
+      "why_not_rechecked": "The Great Tradition on H. The museum states CC0 on the mesh. The 4096×4096 texture was not downloaded, and the pixels were not seen."
     },
     {
       "code": "I",
       "name": "Santiago Staff",
       "holder": "Museo Nacional de Historia Natural, Santiago",
-      "catalog": null,
-      "institution_page": "https://www.mnhn.gob.cl/colecciones",
-      "institution_page_note": "Same collections page as G and H. No staff photograph.",
+      "catalog": "5499, on the museum Sketchfab model",
+      "institution_page": "https://sketchfab.com/3d-models/baston-rongo-rongo-99b909306182444d82ebcbd9f04ec8af",
+      "institution_page_note": "Same museum Sketchfab account. The model page prints CC Attribution-NonCommercial-ShareAlike and links http://creativecommons.org/licenses/by-nc-sa/4.0/. Published 2021-09-10, after the 2020 CC0 news post. That post does not replace the licence on this model.",
       "public_image": true,
-      "license_class": "not stated by the holder",
-      "license_as_stated": null,
-      "license_source": "https://www.mnhn.gob.cl/colecciones",
+      "license_class": "non-commercial",
+      "license_as_stated": "CC Attribution-NonCommercial-ShareAlike",
+      "license_source": "https://sketchfab.com/3d-models/baston-rongo-rongo-99b909306182444d82ebcbd9f04ec8af",
       "images": [
+        {
+          "url": "https://sketchfab.com/3d-models/baston-rongo-rongo-99b909306182444d82ebcbd9f04ec8af",
+          "pixels": [
+            4096,
+            4096
+          ],
+          "what": "Texture metadata: one RGB image, 4096×4096. Mesh 899,994 faces. Inventory 5499. Not CC0 or CC BY. Not downloaded."
+        },
         {
           "url": "https://commons.wikimedia.org/wiki/File:Rongorongo_I_Santiago_Staff_(color).jpg",
           "pixels": [
@@ -242,7 +389,7 @@
       "sharp_enough_for_sign_detail": false,
       "cc0_or_cc_by": false,
       "rechecked": false,
-      "why_not_rechecked": "The Staff bar count has no CC0 or CC BY photograph stated by the holder."
+      "why_not_rechecked": "The Staff bar count. The holder model is CC BY-NC-SA 4.0."
     },
     {
       "code": "J",
@@ -743,5 +890,5 @@
     "parallel_bird_substitutions": 2,
     "corpus_bird_substitutions": 18
   },
-  "what_changed": "Nothing in the headline counts. No Barthel code was replaced. No open photograph was sharp enough, under a licence the holder stated as CC0 or CC BY, to re-read a passage."
+  "what_changed": "Nothing in the headline counts. No Barthel code was replaced. The Santiago meshes of G and H state CC0, and the texture files were not retrieved, so no passage was re-read."
 }
