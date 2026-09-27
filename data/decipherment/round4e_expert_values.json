@@ -1,0 +1,703 @@
+{
+  "adopted": [],
+  "holm": {
+    "davletshin_2012_names": 1.0,
+    "davletshin_2012_numerals": 1.0,
+    "fischer_1995": 0.75,
+    "hypothesis_200_tangata": 0.25806451612903225
+  },
+  "language": {
+    "formula_shapes": 27950,
+    "syllable_types": 50,
+    "word_shapes": 2723
+  },
+  "lines": 294,
+  "not_scored": [
+    {
+      "author": "Davletshin 2022",
+      "citation": "Davletshin 2022, Waka Kuaka 131(2): 185\u2013220.",
+      "reason": "No published sign-sound list was retrieved. None was invented.",
+      "scored": false,
+      "set_id": "davletshin_2022_cross_readings",
+      "summary": "The abstract says twenty provisional values, eleven of them checked by cross-reading (seven logograms, four syllables). The sign-by-sign table was not in an open copy retrieved here, and it was not reconstructed.",
+      "values": []
+    },
+    {
+      "author": "Pozdniakov and Pozdniakov 2007",
+      "citation": "Pozdniakov and Pozdniakov 2007, Forum for Anthropology and Culture 3. They reduce the inventory to about 52 signs and argue that the script is mostly syllabic. They do not publish a sign-to-syllable map.",
+      "reason": "No published sign-sound list was retrieved. None was invented.",
+      "scored": false,
+      "set_id": "pozdniakov_pozdniakov_2007",
+      "summary": "No sign-sound pairs to apply. A map was not invented for them.",
+      "values": []
+    },
+    {
+      "author": "Horley",
+      "citation": "Horley 2005, Rapa Nui Journal 19(2), is an allograph paper already tested as an inventory. Later Horley papers used here discuss the calendar and the staff. No sign-sound list was found in the open text.",
+      "reason": "No published sign-sound list was retrieved. None was invented.",
+      "scored": false,
+      "set_id": "horley",
+      "summary": "No sign-sound pairs to apply. A map was not invented.",
+      "values": []
+    },
+    {
+      "author": "Guy 1990",
+      "citation": "Guy 1990, Journal de la Soci\u00e9t\u00e9 des Oc\u00e9anistes 91(2): 135\u2013149.",
+      "reason": "No published sign-sound list was retrieved. None was invented.",
+      "scored": false,
+      "set_id": "guy_1990",
+      "summary": "Guy says some adjunct glyphs on the Mamari crescents may be syllabic rebuses for night names. The open text retrieved from Pers\u00e9e does not include the itemized list, so those values were not reconstructed.",
+      "values": []
+    },
+    {
+      "author": "Barthel 1958",
+      "citation": "Barthel 1958, Grundlagen zur Entzifferung der Osterinselschrift.",
+      "reason": "No published sign-sound list was retrieved. None was invented.",
+      "scored": false,
+      "set_id": "barthel_1958",
+      "summary": "The retrievable Barthel claim used in this repository is that Ca6\u2013Ca9 is a lunar calendar, including a full-moon figure. That is a content claim, not a sign-sound table, and it was not turned into syllables.",
+      "values": []
+    }
+  ],
+  "protocol": {
+    "adopt_fraction": 0.05,
+    "descriptive_slices": "Calendar Ca6 from stem 24 through Ca8 and the first two stems of Ca9; Gv6; tablets H, P, and Q. Slice counts are reported and are not separate tests.",
+    "empty_sets": "A published argument that names no sign-to-sound pair is not given invented values and is not entered in the Holm family.",
+    "fixed_before_scores": true,
+    "formula_hit": "The syllables of the span are exactly the pronunciation of one contiguous sequence of 2, 3, or 4 words on one primary running-text line. Free segmentation is not allowed.",
+    "id": "round4e_expert_values",
+    "multiple_comparison": "Holm on the worse of the two null p-values, across every scored set including the tangata retest. A set is not adopted unless the observed score is above zero, both uncorrected p-values are at or under 0.05, and the Holm-adjusted worse p-value is at or under 0.05.",
+    "null_a": "Shuffled assignment. Two or more values are reassigned to the same signs in every order. One value has nothing to permute, so that value is reassigned to each of the 30 most frequent other stems on the same lines (tie broken by the sign id). p = (1 + alternatives at least as high) / (1 + alternatives).",
+    "null_b": "Random values of the same size and the same kind, 500 draws, seed 41. A syllable is drawn from attested syllable types. A word is drawn from attested words with the same syllable count. A phrase is drawn from attested running-text sequences with the same number of words. The published syllable string is left out of its own draw. Draws that repeat a syllable string inside one map are retried. Word and phrase lists are sorted before the draw, so seed 41 names one sequence.",
+    "p_value": "Fraction of null trials whose primary score is at least the observed score.",
+    "permutation_floor": "With k distinct values there are k! assignments. If 1/k! is above 0.05, the shuffle null cannot clear the gate. That limit is part of the test, not a reason to add trials after the fact.",
+    "primary_lines": "Vendored Barthel tablets A\u2013V, every line.",
+    "primary_score": "The number of spans that are a word hit or a formula hit. A span counts once.",
+    "provider": "MockProvider",
+    "random_seed": 41,
+    "random_trials": 500,
+    "tangata_retest": "Hypothesis, not a new proposal: sign 200 reads as the word tangata. Scored only on tablets H\u2013V. Tablets A\u2013G, which include the Gv6 genealogy, are not in the confirmatory count. The same two nulls are used. This hypothesis was already looked at on the pooled corpus in Round 3, so the hold-out is a confirmation slice, not an untouched sample.",
+    "windows": "On one Barthel line, every span of 2, 3, or 4 stems in which every stem has a value in the map. A stem with no value ends the span. Overlapping spans are each counted.",
+    "word_hit": "The syllables of the span are exactly one attested word of two or more syllables. Attested words are mapped (C)V shapes from the Round 3 lexicon and from the primary running text."
+  },
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "reading": null,
+  "scored": [
+    {
+      "adopted": false,
+      "author": "Davletshin 2012",
+      "citation": "Davletshin 2012, Journal de la Soci\u00e9t\u00e9 des Oc\u00e9anistes (https://journals.openedition.org/jso/6658).",
+      "holm_p": 1.0,
+      "not_scored": [
+        {
+          "note": "He considers a syllabic (te), so that 076-200 would be ko te, and says he will not draw a conclusion about TB200.",
+          "sign": "200",
+          "status": "declined"
+        }
+      ],
+      "observed": {
+        "examples": [
+          {
+            "kind": "formula",
+            "line": "Ia3",
+            "signs": "530 076",
+            "syllables": "a-ri-ki-ko"
+          },
+          {
+            "kind": "formula",
+            "line": "Gv8",
+            "signs": "530 076",
+            "syllables": "a-ri-ki-ko"
+          }
+        ],
+        "formula_hits": 2,
+        "primary": 2,
+        "slices": {
+          "calendar": 0,
+          "corpus": 2,
+          "great_tradition": 0,
+          "gv6": 0,
+          "holdout": 1
+        },
+        "spans": 54,
+        "word_hits": 0
+      },
+      "random": {
+        "clears_uncorrected": false,
+        "ge": 457,
+        "method": "random_values",
+        "observed": 2,
+        "p": 0.914,
+        "trials": 500
+      },
+      "scored": true,
+      "set_id": "davletshin_2012_names",
+      "shuffle": {
+        "clears_uncorrected": false,
+        "ge": 4,
+        "method": "permute_values",
+        "observed": 2,
+        "p": 0.6666666666666666,
+        "trials": 6
+      },
+      "summary": "Three sound values he states. He does not settle sign 200.",
+      "values": [
+        {
+          "citation": "Davletshin 2012, Journal de la Soci\u00e9t\u00e9 des Oc\u00e9anistes (https://journals.openedition.org/jso/6658). TB076 is (ko), the focus marker.",
+          "kind": "syllable",
+          "sign": "076",
+          "status": "proposed",
+          "syllables": [
+            "ko"
+          ],
+          "words": [
+            "ko"
+          ]
+        },
+        {
+          "citation": "Davletshin 2012, Journal de la Soci\u00e9t\u00e9 des Oc\u00e9anistes (https://journals.openedition.org/jso/6658). If the ariki reading is right, TB021 spells ('a).",
+          "kind": "syllable",
+          "sign": "021",
+          "status": "tentative",
+          "syllables": [
+            "'a"
+          ],
+          "words": [
+            "'a"
+          ]
+        },
+        {
+          "citation": "Davletshin 2012, Journal de la Soci\u00e9t\u00e9 des Oc\u00e9anistes (https://journals.openedition.org/jso/6658). Tentative logogram ('ARIKI) for TB530.",
+          "kind": "word",
+          "sign": "530",
+          "status": "tentative",
+          "syllables": [
+            "a",
+            "ri",
+            "ki"
+          ],
+          "words": [
+            "ariki"
+          ]
+        }
+      ],
+      "worse_p": 0.914
+    },
+    {
+      "adopted": false,
+      "author": "Davletshin 2012",
+      "citation": "Davletshin 2012, Journal of the Polynesian Society 121(3): 243\u2013274, Numerals and phonetic complements in the Kohau rongorongo script.",
+      "holm_p": 1.0,
+      "not_scored": [
+        {
+          "note": "The Standing Man phonetic complement is hi or i. He does not choose, so neither syllable is scored.",
+          "sign": "standing-man",
+          "status": "unresolved"
+        },
+        {
+          "note": "A possible ru complement is one of three explanations he does not decide.",
+          "sign": "falling-squares",
+          "status": "unresolved"
+        }
+      ],
+      "observed": {
+        "examples": [],
+        "formula_hits": 0,
+        "primary": 0,
+        "slices": {
+          "calendar": 0,
+          "corpus": 0,
+          "great_tradition": 0,
+          "gv6": 0,
+          "holdout": 0
+        },
+        "spans": 41,
+        "word_hits": 0
+      },
+      "random": {
+        "clears_uncorrected": false,
+        "ge": 500,
+        "method": "random_values",
+        "observed": 0,
+        "p": 1.0,
+        "trials": 500
+      },
+      "scored": true,
+      "set_id": "davletshin_2012_numerals",
+      "shuffle": {
+        "alternatives": [
+          "001",
+          "076",
+          "002",
+          "003",
+          "004",
+          "600",
+          "006",
+          "022",
+          "200",
+          "010",
+          "700",
+          "005",
+          "009",
+          "090",
+          "007",
+          "430",
+          "380",
+          "008",
+          "070",
+          "050",
+          "020",
+          "074",
+          "064",
+          "280",
+          "071",
+          "048",
+          "065",
+          "011",
+          "300",
+          "670"
+        ],
+        "clears_uncorrected": false,
+        "ge": 31,
+        "method": "reassign_to_frequent_signs",
+        "observed": 0,
+        "p": 1.0,
+        "trials": 31
+      },
+      "summary": "The crescent of the Mamari passage is the word tahi 'one'.",
+      "values": [
+        {
+          "citation": "Davletshin 2012, Journal of the Polynesian Society 121(3): 243\u2013274, Numerals and phonetic complements in the Kohau rongorongo script. The Crescent in Ca6\u2013Ca9, stemmed 040 in this corpus, reads tahi / e-tahi.",
+          "kind": "word",
+          "sign": "040",
+          "status": "proposed",
+          "syllables": [
+            "ta",
+            "hi"
+          ],
+          "words": [
+            "tahi"
+          ]
+        }
+      ],
+      "worse_p": 1.0
+    },
+    {
+      "adopted": false,
+      "author": "Fischer 1995",
+      "citation": "Fischer 1995, Journal of the Polynesian Society 104: 303\u2013321; the same sign values are restated in Fischer's further cosmogonic-text note.",
+      "holm_p": 0.75,
+      "not_scored": [],
+      "observed": {
+        "examples": [
+          {
+            "kind": "formula",
+            "line": "Br9",
+            "signs": "700 600",
+            "syllables": "i-ka-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Bv6",
+            "signs": "600 600",
+            "syllables": "ma-nu-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Bv12",
+            "signs": "700 600",
+            "syllables": "i-ka-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Ra5",
+            "signs": "700 600",
+            "syllables": "i-ka-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Da5",
+            "signs": "700 600",
+            "syllables": "i-ka-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Ev6",
+            "signs": "700 600",
+            "syllables": "i-ka-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Hr4",
+            "signs": "600 600",
+            "syllables": "ma-nu-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Hr8",
+            "signs": "600 600",
+            "syllables": "ma-nu-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Hv1",
+            "signs": "600 600",
+            "syllables": "ma-nu-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Hv12",
+            "signs": "700 600",
+            "syllables": "i-ka-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Pr3",
+            "signs": "600 600",
+            "syllables": "ma-nu-ma-nu"
+          },
+          {
+            "kind": "formula",
+            "line": "Pr4",
+            "signs": "600 600",
+            "syllables": "ma-nu-ma-nu"
+          }
+        ],
+        "formula_hits": 26,
+        "primary": 26,
+        "slices": {
+          "calendar": 0,
+          "corpus": 26,
+          "great_tradition": 14,
+          "gv6": 0,
+          "holdout": 17
+        },
+        "spans": 181,
+        "word_hits": 0
+      },
+      "random": {
+        "clears_uncorrected": false,
+        "ge": 39,
+        "method": "random_values",
+        "observed": 26,
+        "p": 0.078,
+        "trials": 500
+      },
+      "scored": true,
+      "set_id": "fischer_1995",
+      "shuffle": {
+        "clears_uncorrected": false,
+        "ge": 30,
+        "method": "permute_values",
+        "observed": 26,
+        "p": 0.25,
+        "trials": 120
+      },
+      "summary": "Word and phrase values from the Santiago Staff example 606.76 700 8.",
+      "values": [
+        {
+          "citation": "Fischer 1995, Journal of the Polynesian Society 104: 303\u2013321; the same sign values are restated in Fischer's further cosmogonic-text note. Glyph 600 is manu 'bird'.",
+          "kind": "word",
+          "sign": "600",
+          "status": "tentative",
+          "syllables": [
+            "ma",
+            "nu"
+          ],
+          "words": [
+            "manu"
+          ]
+        },
+        {
+          "citation": "Fischer 1995, Journal of the Polynesian Society 104: 303\u2013321; the same sign values are restated in Fischer's further cosmogonic-text note. 606 is manu with the hand read mau.",
+          "kind": "phrase",
+          "sign": "606",
+          "status": "tentative",
+          "syllables": [
+            "ma",
+            "nu",
+            "ma",
+            "u"
+          ],
+          "words": [
+            "manu",
+            "mau"
+          ]
+        },
+        {
+          "citation": "Fischer 1995, Journal of the Polynesian Society 104: 303\u2013321; the same sign values are restated in Fischer's further cosmogonic-text note. Glyph 700 is ika 'fish'.",
+          "kind": "word",
+          "sign": "700",
+          "status": "tentative",
+          "syllables": [
+            "i",
+            "ka"
+          ],
+          "words": [
+            "ika"
+          ]
+        },
+        {
+          "citation": "Fischer 1995, Journal of the Polynesian Society 104: 303\u2013321; the same sign values are restated in Fischer's further cosmogonic-text note. Glyph 8 is ra'a 'sun'.",
+          "kind": "word",
+          "sign": "008",
+          "status": "tentative",
+          "syllables": [
+            "ra",
+            "'a"
+          ],
+          "words": [
+            "ra'a"
+          ]
+        },
+        {
+          "citation": "Fischer 1995, Journal of the Polynesian Society 104: 303\u2013321; the same sign values are restated in Fischer's further cosmogonic-text note. The phallus in the triad is the phrase ki 'ai ki roto ki.",
+          "kind": "phrase",
+          "sign": "076",
+          "status": "tentative",
+          "syllables": [
+            "ki",
+            "a",
+            "i",
+            "ki",
+            "ro",
+            "to",
+            "ki"
+          ],
+          "words": [
+            "ki",
+            "ai",
+            "ki",
+            "roto",
+            "ki"
+          ]
+        }
+      ],
+      "worse_p": 0.25
+    }
+  ],
+  "tangata": {
+    "adopted": false,
+    "caveat": "Hypothesis, not a new proposal: sign 200 reads as the word tangata. Scored only on tablets H\u2013V. Tablets A\u2013G, which include the Gv6 genealogy, are not in the confirmatory count. The same two nulls are used. This hypothesis was already looked at on the pooled corpus in Round 3, so the hold-out is a confirmation slice, not an untouched sample.",
+    "citation": "HYPOTHESIS. Round 3 Track C map H1 read sign 200 as Thomson's word tangata. Davletshin 2012 does not adopt a sound for TB200. Butinov and Knorozov read the sign as a title or as ko, not as this word.",
+    "confirmatory": {
+      "examples": [
+        {
+          "kind": "formula",
+          "line": "Ra1",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Ra1",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Oa5",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Va1",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Hr5",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Hr5",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Hr7",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Hr11",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Pr4",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Pr4",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Pr6",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Pv1",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        }
+      ],
+      "formula_hits": 16,
+      "primary": 16,
+      "slices": {
+        "calendar": 0,
+        "corpus": 16,
+        "great_tradition": 11,
+        "gv6": 0,
+        "holdout": 16
+      },
+      "spans": 20,
+      "word_hits": 0
+    },
+    "explore_not_used_for_p": {
+      "examples": [
+        {
+          "kind": "formula",
+          "line": "Bv1",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Ca4",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Ca4",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Ca9",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Ca13",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Ca13",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Gr8",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Gv5",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        },
+        {
+          "kind": "formula",
+          "line": "Aa5",
+          "signs": "200 200",
+          "syllables": "ta-nga-ta-ta-nga-ta"
+        }
+      ],
+      "formula_hits": 9,
+      "primary": 9,
+      "slices": {
+        "calendar": 0,
+        "corpus": 9,
+        "great_tradition": 0,
+        "gv6": 0,
+        "holdout": 0
+      },
+      "spans": 11,
+      "word_hits": 0
+    },
+    "holdout_tablets": "HIJKLMNOPQRSTUV",
+    "holm_p": 0.25806451612903225,
+    "label": "HYPOTHESIS",
+    "random": {
+      "clears_uncorrected": true,
+      "ge": 7,
+      "method": "random_words_on_200",
+      "observed": 16,
+      "p": 0.014,
+      "trials": 500
+    },
+    "set_id": "hypothesis_200_tangata",
+    "shuffle": {
+      "alternatives": [
+        "076",
+        "001",
+        "600",
+        "003",
+        "004",
+        "010",
+        "002",
+        "700",
+        "006",
+        "090",
+        "022",
+        "005",
+        "071",
+        "070",
+        "999",
+        "009",
+        "020",
+        "430",
+        "050",
+        "064",
+        "007",
+        "280",
+        "011",
+        "021",
+        "048",
+        "069",
+        "074",
+        "027",
+        "062",
+        "008"
+      ],
+      "clears_uncorrected": false,
+      "ge": 2,
+      "method": "reassign_on_holdout",
+      "observed": 16,
+      "p": 0.06451612903225806,
+      "trials": 31
+    },
+    "sign": "200",
+    "syllables": [
+      "ta",
+      "nga",
+      "ta"
+    ],
+    "words": [
+      "tangata"
+    ],
+    "worse_p": 0.06451612903225806
+  }
+}
