@@ -1236,6 +1236,36 @@ def _fraction(ge_count: int, trials: int) -> str:
     return f"{ge_count + 1}/{trials + 1}"
 
 
+def _pair_row(subs: dict[str, Any], left: str, right: str) -> dict[str, Any] | None:
+    a, b = sorted((left, right))
+    for row in subs["pairs"]:
+        if row["a"] == a and row["b"] == b:
+            return row
+    return None
+
+
+def _class_holding(subs: dict[str, Any], left: str, right: str) -> dict[str, Any] | None:
+    wanted = {left, right}
+    for item in subs["classes"]:
+        if wanted <= set(item["members"]):
+            return item
+    return None
+
+
+def _pair_phrase(subs: dict[str, Any], left: str, right: str) -> str:
+    row = _pair_row(subs, left, right)
+    label = f"{left}/{right}"
+    if row is None:
+        return f"{label} is absent from pairs that occur at least twice"
+    held = _class_holding(subs, left, right)
+    detail = f"{label} has count {row['count']} and kind `{row['kind']}`"
+    if held is not None:
+        detail += (
+            f" (class {held['id']}, representative {held['representative']})"
+        )
+    return detail
+
+
 def render_markdown(result: dict[str, Any]) -> str:
     stem = result["stem"]
     ligature = result["ligature_atomic"]
@@ -1479,6 +1509,58 @@ def render_markdown(result: dict[str, Any]) -> str:
     else:
         lines.append("The merge table is empty.")
         lines.append("")
+    lines.append("### Comparison with the Track A cited merges")
+    lines.append("")
+    lines.append(
+        "Track A (`docs/decipherment/round2_trackA_variant_merge.md`, `decipherment/allographs.py`) "
+        "applies published equivalences and reruns the syllabary test. This section places those rules "
+        "next to the pairs above. The merge table stays the systematic classes from the alignments. "
+        "A cited rule that misses the count or probability gate is left out of `merge_table`."
+    )
+    lines.append("")
+    lines.append(
+        f"{_pair_phrase(subs, '056', '084')}. Track A's `abstract_56_and_84` maps 084 to 056 "
+        "(Guy 2006, citing Pozdniakov 1997, on the Pr1/Hr1 parallel; marked uncertain, one pair). "
+        "The representative here is the more frequent stem, so the arrow in `merge_table` points at 084."
+    )
+    lines.append("")
+    lines.append(
+        f"{_pair_phrase(subs, '254', '256')}. That is one units-digit 4/6 pair inside codes 200–399, "
+        "the range of Track A's uncertain `hand_digit_4_to_6` (Pozdniakov 1996: 296–297, as illustrated "
+        f"by Guy 2006). {_pair_phrase(subs, '244', '246')}. {_pair_phrase(subs, '304', '306')}. "
+        f"{_pair_phrase(subs, '045', '046')}. Series 000 is outside the range Track A rewrites."
+    )
+    lines.append("")
+    lines.append(
+        f"{_pair_phrase(subs, '400', '600')}. Track A's `gaping_mouth_to_bird` would rewrite every "
+        "hundreds digit 3 or 4 as 6 (Pozdniakov 1996: 297). Track A marks that rewrite uncertain and "
+        "keeps it out of the 2007 scheme, which still lists 380 and 400 as separate signs. The systematic "
+        "edge here is this one pair."
+    )
+    lines.append("")
+    lines.append(
+        f"{_pair_phrase(subs, '006', '064')}. Track A's `hand_6_and_64` maps isolated 064 to 006 "
+        "(Pozdniakov 1996: 296). The hand sentence above records the same absence; the pair is not added by hand."
+    )
+    lines.append("")
+    lines.append(
+        f"{_pair_phrase(subs, '048', '049')}. Track A's `horley_one_to_one` includes the suggested map "
+        "049→048 (Horley 2005). The probability gate keeps it out of the merge table."
+    )
+    lines.append("")
+    lines.append(
+        f"{_pair_phrase(subs, '280', '290')}. Track A's `horley_expansions` writes 280 as the sequence "
+        "070 002 when ligatures are split (Horley 2005). Class S07 is a substitution of two intact stems. "
+        f"{_pair_phrase(subs, '381', '386')}. The same Horley note replaces 386 with 073 006 in one cited "
+        "passage; this alignment keeps 386 as one stem."
+    )
+    lines.append("")
+    lines.append(
+        "Systematic pairs with no one-to-one rule in the Track A catalog: "
+        f"{_pair_phrase(subs, '002', '021')}; {_pair_phrase(subs, '001', '011')}; "
+        f"{_pair_phrase(subs, '008', '081')}; {_pair_phrase(subs, '381', '385')}."
+    )
+    lines.append("")
     lines.append("## Insertions and deletions")
     lines.append("")
     lines.append(
@@ -1536,6 +1618,12 @@ def render_markdown(result: dict[str, Any]) -> str:
     )
     lines.append(
         "- Davletshin, Albert. 2017. “Allographs, Graphic Variants and Iconic Formulae in the Kohau Rongorongo Script of Rapa Nui (Easter Island).” *Journal of the Polynesian Society* 126."
+    )
+    lines.append(
+        "- Guy, Jacques B. M. 2006. “General Properties of the Rongorongo Writing.” *Rapa Nui Journal* 20(1). Cited for the hand-digit examples and the 56/84 alternation, via Track A."
+    )
+    lines.append(
+        "- Horley, Paul. 2005. *Rapa Nui Journal* 19(2): 107–116. The one-to-one suggestions and the 280 and 386 expansions, as encoded in Track A."
     )
     lines.append(
         "- Horley, Paul. 2007. “Structural Analysis of Rongorongo Inscriptions.” *Rapa Nui Journal* 21(1)."

@@ -276,6 +276,11 @@ class TestTrackCCorpus(unittest.TestCase):
         self.assertIn("Hr2:36", text)
         self.assertIn("095", text)
         self.assertIn("400", text)
+        self.assertIn("Comparison with the Track A cited merges", text)
+        self.assertIn("abstract_56_and_84", text)
+        self.assertIn("hand_digit_4_to_6", text)
+        self.assertIn("gaping_mouth_to_bird", text)
+        self.assertIn("horley_one_to_one", text)
 
 
 if __name__ == "__main__":

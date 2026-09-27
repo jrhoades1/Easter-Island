@@ -273,6 +273,24 @@ Hand pair 006/064: observed count 0, kind `absent`, in a systematic class: false
 | 400 | 600 |
 | 600 | 600 |
 
+### Comparison with the Track A cited merges
+
+Track A (`docs/decipherment/round2_trackA_variant_merge.md`, `decipherment/allographs.py`) applies published equivalences and reruns the syllabary test. This section places those rules next to the pairs above. The merge table stays the systematic classes from the alignments. A cited rule that misses the count or probability gate is left out of `merge_table`.
+
+056/084 has count 5 and kind `systematic` (class S05, representative 084). Track A's `abstract_56_and_84` maps 084 to 056 (Guy 2006, citing Pozdniakov 1997, on the Pr1/Hr1 parallel; marked uncertain, one pair). The representative here is the more frequent stem, so the arrow in `merge_table` points at 084.
+
+254/256 has count 6 and kind `systematic` (class S04, representative 254). That is one units-digit 4/6 pair inside codes 200–399, the range of Track A's uncertain `hand_digit_4_to_6` (Pozdniakov 1996: 296–297, as illustrated by Guy 2006). 244/246 has count 2 and kind `double`. 304/306 is absent from pairs that occur at least twice. 045/046 has count 4 and kind `recurrent`. Series 000 is outside the range Track A rewrites.
+
+400/600 has count 9 and kind `systematic` (class S01, representative 600). Track A's `gaping_mouth_to_bird` would rewrite every hundreds digit 3 or 4 as 6 (Pozdniakov 1996: 297). Track A marks that rewrite uncertain and keeps it out of the 2007 scheme, which still lists 380 and 400 as separate signs. The systematic edge here is this one pair.
+
+006/064 is absent from pairs that occur at least twice. Track A's `hand_6_and_64` maps isolated 064 to 006 (Pozdniakov 1996: 296). The hand sentence above records the same absence; the pair is not added by hand.
+
+048/049 has count 3 and kind `recurrent`. Track A's `horley_one_to_one` includes the suggested map 049→048 (Horley 2005). The probability gate keeps it out of the merge table.
+
+280/290 has count 4 and kind `systematic` (class S07, representative 280). Track A's `horley_expansions` writes 280 as the sequence 070 002 when ligatures are split (Horley 2005). Class S07 is a substitution of two intact stems. 381/386 has count 3 and kind `recurrent`. The same Horley note replaces 386 with 073 006 in one cited passage; this alignment keeps 386 as one stem.
+
+Systematic pairs with no one-to-one rule in the Track A catalog: 002/021 has count 7 and kind `systematic` (class S02, representative 002); 001/011 has count 6 and kind `systematic` (class S03, representative 001); 008/081 has count 4 and kind `systematic` (class S06, representative 008); 381/385 has count 3 and kind `systematic` (class S08, representative 381).
+
 ## Insertions and deletions
 
 A gap with a neighbor on both sides is an optional sign relative to the other copy: the parallel continues without it. The pattern is the inserted sign plus those two neighbors. The null shuffles inserted signs across the observed neighbor pairs (400 trials, seed 11). The busiest pattern in any trial reached 3. Events: 128. Hapax patterns: 100. A pattern is systematic on the same count and probability gates as a substitution. That pattern is the distributional candidate for an optional particle, a determinative, or a boundary mark. This track does not choose among those functions.
@@ -301,6 +319,8 @@ A gap with a neighbor on both sides is an optional sign relative to the other co
 
 - Barthel, Thomas S. 1958. *Grundlagen zur Entzifferung der Osterinselschrift*. Hamburg: Cram, de Gruyter.
 - Davletshin, Albert. 2017. “Allographs, Graphic Variants and Iconic Formulae in the Kohau Rongorongo Script of Rapa Nui (Easter Island).” *Journal of the Polynesian Society* 126.
+- Guy, Jacques B. M. 2006. “General Properties of the Rongorongo Writing.” *Rapa Nui Journal* 20(1). Cited for the hand-digit examples and the 56/84 alternation, via Track A.
+- Horley, Paul. 2005. *Rapa Nui Journal* 19(2): 107–116. The one-to-one suggestions and the 280 and 386 expansions, as encoded in Track A.
 - Horley, Paul. 2007. “Structural Analysis of Rongorongo Inscriptions.” *Rapa Nui Journal* 21(1).
 - Kudrjavtsev, Boris. 1949. Cited by Davletshin 2017 for the St. Petersburg collation and a sign count on P and Q. The article title is not re-copied here.
 - Pozdniakov, Konstantin. 1996. “Les bases du déchiffrement de l’écriture de l’île de Pâques.” *Journal de la Société des Océanistes* 103: 289–303.
