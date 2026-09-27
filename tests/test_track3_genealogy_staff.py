@@ -245,7 +245,10 @@ class TestTrack3GenealogyHelpers(unittest.TestCase):
     def test_a_stroke_is_not_a_name_slot_and_a_ligature_is_not_a_break(self):
         """999 inside a name slot is not a phrase. 999.440.076 is not pure."""
         groups = ["200", "999", "280.076", "200", "010", "011.076"]
-        self.assertEqual(extract_strict_phrases(groups), ())
+        phrases = extract_strict_phrases(groups)
+        self.assertEqual(len(phrases), 1)
+        self.assertEqual(phrases[0].index, 3)
+        self.assertEqual(phrases[0].groups, ("200", "010", "011.076"))
         self.assertEqual(extract_quad_phrases(["200", "001", "999", "002.076"]), ())
         self.assertEqual(group_stems("999.440.076"), ("999", "440", "076"))
         self.assertNotEqual(group_stems("999.440.076"), (STEM_999,))
