@@ -1,0 +1,503 @@
+{
+  "round": 5,
+  "track": "A",
+  "provider": "mock",
+  "provider_calls": 0,
+  "reading": null,
+  "plan": "docs/decipherment/round5a_preregistration.md",
+  "noun_pool_label": "HYPOTHESIS: Churchill 1912 headwords that parse as (C)V, minus the closed particle and pronoun list in the pre-registration. The vocabulary file does not mark nouns. One headword is kept per mapped pronunciation, the first in alphabetical order.",
+  "split": {
+    "rule": "Discovery is the significant-passage component with the most passages. Held-out is every other tablet. The alphabetically later copy of a held-out parallel is removed before the rebus and two-apart counts.",
+    "discovery": [
+      "A",
+      "B",
+      "C",
+      "E",
+      "G",
+      "H",
+      "K",
+      "P",
+      "Q",
+      "R"
+    ],
+    "heldout": [
+      "D",
+      "F",
+      "I",
+      "J",
+      "L",
+      "M",
+      "N",
+      "O",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W"
+    ],
+    "components_with_passages": [
+      {
+        "tablets": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "G",
+          "H",
+          "K",
+          "P",
+          "Q",
+          "R"
+        ],
+        "significant_passages": 99
+      }
+    ],
+    "stemma_newick": "(G:0.089888,K:0.089888); (P:0.049072,(H:0.091764,Q:0.086139)0.663:0.049072);",
+    "stemma_edges": [
+      "G–K",
+      "H–P",
+      "H–Q",
+      "P–Q"
+    ],
+    "later_copy_stems_removed": 0,
+    "heldout_lines": 88,
+    "heldout_stems": 4088,
+    "discovery_tablets_not_scored": [
+      "A",
+      "B",
+      "C",
+      "E",
+      "G",
+      "H",
+      "K",
+      "P",
+      "Q",
+      "R"
+    ]
+  },
+  "r1": {
+    "040": "marama",
+    "143": "rakau",
+    "152": "omotohi",
+    "200": "tangata",
+    "600": "manu",
+    "680": "makohe",
+    "700": "ika",
+    "006": "rima"
+  },
+  "rebus": {
+    "observed": {
+      "mapped_windows": 58,
+      "pure_sign_repeats": 18,
+      "doubled_word_windows": 4,
+      "eligible_windows": 36,
+      "hits": 6,
+      "hit_rate": 0.16666666666666666,
+      "examples": [
+        {
+          "phrase": "ika manu",
+          "windows": 2
+        },
+        {
+          "phrase": "rima tangata",
+          "windows": 1
+        },
+        {
+          "phrase": "tangata ika",
+          "windows": 1
+        },
+        {
+          "phrase": "tangata manu",
+          "windows": 1
+        },
+        {
+          "phrase": "ika tangata",
+          "windows": 1
+        }
+      ]
+    },
+    "sign_shuffle": {
+      "observed": 6,
+      "trials": 500,
+      "null_ge": 500,
+      "null_fraction": 1.0,
+      "p_add_one": 1.0,
+      "null_mean": 18.356,
+      "null_sd": 4.033517571549677,
+      "effect_size": -3.063331144793508,
+      "null_min": 7,
+      "null_max": 31,
+      "null_mean_rate": 0.4683487905104734,
+      "null_mean_eligible": 39.288,
+      "seed": 50,
+      "null": "sign shuffle within line, adjacent repeats kept as blocks"
+    },
+    "noun_map": {
+      "observed": 6,
+      "trials": 500,
+      "null_ge": 152,
+      "null_fraction": 0.304,
+      "p_add_one": 0.30538922155688625,
+      "null_mean": 5.224,
+      "null_sd": 5.1890099248315185,
+      "effect_size": 0.14954683287201376,
+      "null_min": 0,
+      "null_max": 25,
+      "null_mean_rate": 0.1451111111111111,
+      "null_mean_eligible": 36.0,
+      "seed": 51,
+      "replacement_draws": 0,
+      "null": "random same-size maps from the Churchill content-word proxy, matched on syllable length and running-text bin"
+    },
+    "pools": [
+      {
+        "sign": "006",
+        "word": "rima",
+        "length": 2,
+        "target_bin": 3,
+        "bins_used": [
+          3
+        ],
+        "pool_size": 11,
+        "expanded": false
+      },
+      {
+        "sign": "040",
+        "word": "marama",
+        "length": 3,
+        "target_bin": 2,
+        "bins_used": [
+          1,
+          2,
+          3
+        ],
+        "pool_size": 69,
+        "expanded": true
+      },
+      {
+        "sign": "143",
+        "word": "rakau",
+        "length": 3,
+        "target_bin": 1,
+        "bins_used": [
+          1
+        ],
+        "pool_size": 63,
+        "expanded": false
+      },
+      {
+        "sign": "152",
+        "word": "omotohi",
+        "length": 4,
+        "target_bin": 0,
+        "bins_used": [
+          0
+        ],
+        "pool_size": 609,
+        "expanded": false
+      },
+      {
+        "sign": "200",
+        "word": "tangata",
+        "length": 3,
+        "target_bin": 4,
+        "bins_used": [
+          2,
+          3,
+          4
+        ],
+        "pool_size": 8,
+        "expanded": true
+      },
+      {
+        "sign": "600",
+        "word": "manu",
+        "length": 2,
+        "target_bin": 3,
+        "bins_used": [
+          3
+        ],
+        "pool_size": 11,
+        "expanded": false
+      },
+      {
+        "sign": "680",
+        "word": "makohe",
+        "length": 3,
+        "target_bin": 0,
+        "bins_used": [
+          0
+        ],
+        "pool_size": 508,
+        "expanded": false
+      },
+      {
+        "sign": "700",
+        "word": "ika",
+        "length": 2,
+        "target_bin": 2,
+        "bins_used": [
+          2
+        ],
+        "pool_size": 39,
+        "expanded": false
+      }
+    ],
+    "catalog_size": 2023,
+    "closed_class_size": 38
+  },
+  "two_apart": {
+    "observed": 65,
+    "trials": 500,
+    "null_ge": 110,
+    "null_fraction": 0.22,
+    "p_add_one": 0.2215568862275449,
+    "null_mean": 59.096,
+    "null_sd": 7.1726413544802305,
+    "effect_size": 0.8231277305273602,
+    "null_min": 33,
+    "null_max": 78,
+    "seed": 52,
+    "by_class": [
+      {
+        "class": "moon",
+        "pairs": 0
+      },
+      {
+        "class": "hand",
+        "pairs": 7
+      },
+      {
+        "class": "bird",
+        "pairs": 21
+      },
+      {
+        "class": "sea",
+        "pairs": 5
+      },
+      {
+        "class": "human",
+        "pairs": 26
+      },
+      {
+        "class": "human_gaping",
+        "pairs": 6
+      }
+    ],
+    "null": "sign shuffle within line, adjacent repeats kept as blocks"
+  },
+  "bird": {
+    "available": false,
+    "passages": 0,
+    "classified_mismatch_pairs": 0,
+    "same_class": 0,
+    "cross_hundred_classified": 0,
+    "cross_hundred_same_class": 0,
+    "by_class": {},
+    "label_shuffle": null,
+    "sign_shuffle": null
+  },
+  "family": [
+    {
+      "id": "r4_calendar_two_apart_sum",
+      "round": 4,
+      "p_add_one": 0.001996007984031936,
+      "holm_rank": 1,
+      "holm_p": 0.04790419161676646,
+      "survives_holm": true
+    },
+    {
+      "id": "r4_two_apart_sum",
+      "round": 4,
+      "p_add_one": 0.001996007984031936,
+      "holm_rank": 2,
+      "holm_p": 0.04790419161676646,
+      "survives_holm": true
+    },
+    {
+      "id": "r4_r1_hits",
+      "round": 4,
+      "p_add_one": 0.00998003992015968,
+      "holm_rank": 3,
+      "holm_p": 0.21956087824351297,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r2_parallels",
+      "round": 4,
+      "p_add_one": 0.011976047904191617,
+      "holm_rank": 4,
+      "holm_p": 0.251497005988024,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r2_hits",
+      "round": 4,
+      "p_add_one": 0.013972055888223553,
+      "holm_rank": 5,
+      "holm_p": 0.27944111776447106,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r1_parallels",
+      "round": 4,
+      "p_add_one": 0.017964071856287425,
+      "holm_rank": 6,
+      "holm_p": 0.34131736526946105,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_hand",
+      "round": 4,
+      "p_add_one": 0.021956087824351298,
+      "holm_rank": 7,
+      "holm_p": 0.39520958083832336,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r1_diverse",
+      "round": 4,
+      "p_add_one": 0.031936127744510975,
+      "holm_rank": 8,
+      "holm_p": 0.5429141716566865,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r2_diverse",
+      "round": 4,
+      "p_add_one": 0.03792415169660679,
+      "holm_rank": 9,
+      "holm_p": 0.6067864271457086,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_cross_hundred",
+      "round": 4,
+      "p_add_one": 0.04790419161676647,
+      "holm_rank": 10,
+      "holm_p": 0.718562874251497,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_bird",
+      "round": 4,
+      "p_add_one": 0.06986027944111776,
+      "holm_rank": 11,
+      "holm_p": 0.9780439121756487,
+      "survives_holm": false
+    },
+    {
+      "id": "r5_two_apart_sign_shuffle",
+      "round": 5,
+      "p_add_one": 0.2215568862275449,
+      "holm_rank": 12,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r5_rebus_noun_map",
+      "round": 5,
+      "p_add_one": 0.30538922155688625,
+      "holm_rank": 13,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r1_calendar",
+      "round": 4,
+      "p_add_one": 0.469061876247505,
+      "holm_rank": 14,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r2_calendar",
+      "round": 4,
+      "p_add_one": 0.5608782435129741,
+      "holm_rank": 15,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_calendar_neighbor_sum",
+      "round": 4,
+      "p_add_one": 0.624750499001996,
+      "holm_rank": 16,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_sum",
+      "round": 4,
+      "p_add_one": 0.7784431137724551,
+      "holm_rank": 17,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_human",
+      "round": 4,
+      "p_add_one": 0.8802395209580839,
+      "holm_rank": 18,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_sea",
+      "round": 4,
+      "p_add_one": 0.9401197604790419,
+      "holm_rank": 19,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_human_gaping",
+      "round": 4,
+      "p_add_one": 0.9640718562874252,
+      "holm_rank": 20,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_neighbor_moon",
+      "round": 4,
+      "p_add_one": 0.9740518962075848,
+      "holm_rank": 21,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r1_gv6",
+      "round": 4,
+      "p_add_one": 1.0,
+      "holm_rank": 22,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r4_r2_gv6",
+      "round": 4,
+      "p_add_one": 1.0,
+      "holm_rank": 23,
+      "holm_p": 1.0,
+      "survives_holm": false
+    },
+    {
+      "id": "r5_rebus_sign_shuffle",
+      "round": 5,
+      "p_add_one": 1.0,
+      "holm_rank": 24,
+      "holm_p": 1.0,
+      "survives_holm": false
+    }
+  ],
+  "family_size": 24,
+  "holm_floor_note": "500 draws cannot produce an add-one p smaller than 1/501. Holm's first cutoff is 0.05 divided by the family size. A family of 26 or more cannot pass any test at that floor.",
+  "verdict": {
+    "rebus": "dies",
+    "two_apart": "dies",
+    "bird": "not_tested",
+    "package": "dies"
+  },
+  "package": "dies"
+}

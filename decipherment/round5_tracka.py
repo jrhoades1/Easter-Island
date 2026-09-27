@@ -847,6 +847,11 @@ def render_round5_tracka(result: dict[str, Any]) -> str:
             f"slice-shuffle mean {_fmt(sliced['null_mean'])}, effect {_fmt(sliced['effect_size'])}, "
             f"add-one p {_fmt(sliced['p_add_one'], 4)}, Holm p {_fmt(_holm(result, 'r5_bird_sign_shuffle'), 4)})."
         )
+    elif bird["passages"] == 0:
+        bird_sentence = (
+            "Bird-class substitutions were not tested: no significant passage has both tablets "
+            "in the held-out set."
+        )
     else:
         bird_sentence = (
             "Bird-class substitutions were not tested: the held-out parallels have no "
@@ -888,7 +893,7 @@ Rebus {verdict['rebus']}. Two-apart {verdict['two_apart']}. Bird substitutions: 
 
 The plan is `{result['plan']}`. It was committed before these counts. R1 stays marama, rakau, omotohi, tangata, manu, makohe, ika, and rima, with `064` copying `006`. The six classes stay the Round 4 classes. No word was added. {result['noun_pool_label']}
 
-Round 4 had already counted these held-out lines inside the corpus-wide shuffles, and it had counted the G–K passages inside the 99 parallels. This is a second look at text that is not a copy of the Great Tradition tablets H, P, and Q. Holm is applied to the Round 4 pictograph tests and these Round 5 tests together so the second look does not get its own 5% gate.
+Round 4 had already counted these held-out lines inside the corpus-wide shuffles. This is a second look at texts that share no significant passage with the discovery tablets. Holm is applied to the Round 4 pictograph tests and these Round 5 tests together so the second look does not get its own 5% gate. The two Round 4 two-apart rows can still clear Holm, because those counts were taken on the whole corpus. The package rule asks whether the held-out tests clear it. They are the ones that decide survives or dies.
 
 ## The split
 

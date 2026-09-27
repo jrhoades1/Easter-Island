@@ -235,6 +235,32 @@ class Round5RunTests(unittest.TestCase):
         for row in self.result["rebus"]["pools"]:
             self.assertGreaterEqual(row["pool_size"], 1)
 
+    def test_heldout_counts_are_the_pre_registered_run(self):
+        """Locks the confirmation. These numbers were not chosen in advance."""
+        rebus = self.result["rebus"]["observed"]
+        sign = self.result["rebus"]["sign_shuffle"]
+        noun = self.result["rebus"]["noun_map"]
+        two = self.result["two_apart"]
+        self.assertEqual(self.result["package"], "dies")
+        self.assertEqual(self.result["verdict"]["bird"], "not_tested")
+        self.assertFalse(self.result["bird"]["available"])
+        self.assertEqual(self.result["bird"]["passages"], 0)
+        self.assertEqual(self.result["family_size"], 24)
+        self.assertEqual(self.result["split"]["heldout_stems"], 4088)
+        self.assertEqual(self.result["split"]["later_copy_stems_removed"], 0)
+        self.assertEqual(rebus["hits"], 6)
+        self.assertEqual(rebus["eligible_windows"], 36)
+        self.assertEqual(rebus["pure_sign_repeats"], 18)
+        self.assertEqual(rebus["doubled_word_windows"], 4)
+        self.assertEqual(sign["null_ge"], 500)
+        self.assertEqual(noun["null_ge"], 152)
+        self.assertEqual(noun["replacement_draws"], 0)
+        self.assertEqual(two["observed"], 65)
+        self.assertEqual(two["null_ge"], 110)
+        self.assertLess(sign["effect_size"], 0)
+        self.assertLess(two["p_add_one"], 0.5)
+        self.assertGreater(two["p_add_one"], 0.05)
+
     def test_written_report_matches_the_run(self):
         self.assertTrue(JSON_PATH.is_file())
         self.assertTrue(DOC_PATH.is_file())
