@@ -1,0 +1,10 @@
+# Quoted Rapanui compounds from Routledge 1919. Lexicon, not running text.
+# Same book and license as routledge_1919_chants.txt.
+tangata-ika
+ivi-atua
+kohau-rongo-rongo
+tangata-rongo-rongo
+kohau-o-te-pure
+hare-a-te-atua
+ana-kai-tangata
+hotu-matua
