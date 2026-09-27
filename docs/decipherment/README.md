@@ -1,6 +1,6 @@
 # Rongorongo decipherment: what held, and what failed
 
-This note is a plain-English account of an independent, non-profit computational study of rongorongo, the undeciphered script of Rapa Nui (Easter Island), covering rounds 1 through 5. The sign numbers are Thomas Barthel’s 1958 catalog, taken from the transcription prepared by the Cercle d’Études sur l’Île de Pâques et la Polynésie (CEIPP) and published on [rongorongo.org](http://kohaumotu.org/rongorongo_org/copy.html), with a working mirror at kohaumotu.org. CEIPP’s own notice allows those materials to be copied when the source is acknowledged and the distribution is non-profit. The structural patterns below survive the tests that were fixed before the scores were read. Every attempt to turn a sign into a sound or a word failed on text that had been held out of the choice.
+This note is a plain-English account of an independent, non-profit computational study of rongorongo, the undeciphered script of Rapa Nui (Easter Island), covering rounds 1 through 6. The sign numbers are Thomas Barthel’s 1958 catalog, taken from the transcription prepared by the Cercle d’Études sur l’Île de Pâques et la Polynésie (CEIPP) and published on [rongorongo.org](http://kohaumotu.org/rongorongo_org/copy.html), with a working mirror at kohaumotu.org. CEIPP’s own notice allows those materials to be copied when the source is acknowledged and the distribution is non-profit. The structural patterns below survive the tests that were fixed before the scores were read. Every attempt to turn a sign into a sound or a word failed on text that had been held out of the choice.
 
 A Barthel code is a three-digit sign number. A ligature is two or more signs written as one group; the transcription joins them with a dot or a colon. In the counts below, a sign is that number after a ligature has been split and after the small letters Barthel used for variants have been removed. The detailed notes call that unit a stem. A shuffle null keeps the same signs and randomly reorders them, then asks how often the pattern still appears. When none of the random draws matches the real text, the pattern is rarer than that rearrangement produces. A held-out check is a second look at tablets or lines that were not used to choose the claim.
 
@@ -54,6 +54,10 @@ The CEIPP raster strips used for the check are about 74 pixels tall (Mamari stri
 
 That is why the next useful step is imagery that resolves the incised line, for example the three-dimensional models of the INSCRIBE project. The present drawings can confirm that a coded crescent is a crescent and that a coded bar is a bar. They cannot settle a disputed catalog number, and this study does not invent one.
 
+## Round 6B: photographs the holders have put online
+
+The same headline counts were left in place after a survey of public photographs of the 26 objects. No holder states a CC0 or CC BY licence on a photograph that is sharp enough to read a catalog number. Berlin publishes seven frames of tablet O under CC BY-NC-SA 4.0. Vienna’s pages for M and N allow private use and send academic use to a reproduction request; Europeana records CC BY-NC-SA 4.0 for that provider. The Smithsonian page for R prints CC0 beside a line that there are restrictions on re-using the media, and the board frames that the image service returned are 1280 by about 350 pixels. The INSCRIBE models of the Rome tablets are all rights reserved. No disagreement was logged, because no passage was re-read off a qualifying photograph. Detail: [round6b_open_images.md](round6b_open_images.md).
+
 ## Where things live
 
 The notes in this directory are the prose record, one file per track. Machine-readable counts are in `data/decipherment/`. The programs that recompute them are in `decipherment/`. The tests that lock the numbers are in `tests/`, named `test_track*.py` and `test_round*.py`. The Barthel pages themselves are the HTML files under `tests/fixtures/`. The old Rapanui sample (Thomson 1891, Metoro’s recitations for Jaussen, Routledge 1919, and the public-domain word lists) is in `data/rapanui/` and `data/readings/`, with the copyright notes in `data/rapanui/SOURCES.md`. The CEIPP copying terms, as stored for the drawing check, are in `data/decipherment/CEIPP_NOTICE.txt`.
@@ -74,8 +78,9 @@ The notes in this directory are the prose record, one file per track. Machine-re
 | Pictograph package | [round4a_pictograph_rebus.md](round4a_pictograph_rebus.md) | `decipherment/round4_tracka.py` | `tests/test_round4_tracka_pictograph_rebus.py` |
 | Held-out retest | [round5a_heldout_pictograph.md](round5a_heldout_pictograph.md) | `decipherment/round5_tracka.py` | `tests/test_round5_tracka_heldout_pictograph.py` |
 | CEIPP drawing recheck | [round5b_ceipp_recheck.md](round5b_ceipp_recheck.md) | `decipherment/round5b_ceipp.py` | `tests/test_round5b_ceipp_recheck.py` |
+| Open photographs | [round6b_open_images.md](round6b_open_images.md) | `decipherment/round6b_open_images.py` | `tests/test_round6b_open_images.py` |
 
-The substitution table consumed by later tracks is `data/decipherment/substitution_classes.json`. The held-out scores are `data/decipherment/round5a_heldout_pictograph.json`. The drawing-recheck record, including the 12 unadopted disagreements, is `data/decipherment/round5b_ceipp_recheck.json`.
+The substitution table consumed by later tracks is `data/decipherment/substitution_classes.json`. The held-out scores are `data/decipherment/round5a_heldout_pictograph.json`. The drawing-recheck record, including the 12 unadopted disagreements, is `data/decipherment/round5b_ceipp_recheck.json`. The open-photograph survey, with an empty disagreement list, is `data/decipherment/round6b_open_images.json`.
 
 ## Credits and sources
 
