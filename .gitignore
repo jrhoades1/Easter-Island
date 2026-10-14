@@ -22,3 +22,6 @@ data/*.db-journal
 memory/logs/
 .tmp/
 nul
+
+# Retest harness output (python -m decipherment.retest)
+data/decipherment/retest/
