@@ -1,0 +1,285 @@
+{
+  "nulls_run": true,
+  "provider": "MockProvider",
+  "provider_calls": 0,
+  "sides": [
+    "Aa",
+    "Ab",
+    "Br",
+    "Bv",
+    "Ca",
+    "Cb",
+    "Da",
+    "Db",
+    "Er",
+    "Ev",
+    "Fa",
+    "Fb",
+    "Gr",
+    "Gv",
+    "Hr",
+    "Hv",
+    "Ia",
+    "Ja",
+    "Kr",
+    "Kv",
+    "La",
+    "Ma",
+    "Na",
+    "Nb",
+    "Oa",
+    "Pr",
+    "Pv",
+    "Qr",
+    "Qv",
+    "Ra",
+    "Rb",
+    "Sa",
+    "Sb",
+    "Ta",
+    "Ua",
+    "Va",
+    "Wa"
+  ],
+  "signs": 14841,
+  "source": "barthel_ceipp",
+  "tablets": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W"
+  ],
+  "tests": {
+    "bird_swaps": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "class_label_shuffle": {
+          "fraction": 0.046,
+          "ge": 23,
+          "observed": 18,
+          "p_add_one": 0.04790419161676647,
+          "seed": 41,
+          "trials": 500
+        }
+      },
+      "reason": null,
+      "values": {
+        "corpus_bird_substitutions_fixed_alignment": 18,
+        "cross_hundred_bird": 18,
+        "cross_hundred_classified": 34,
+        "cross_hundred_same_class": 18
+      }
+    },
+    "calendar_040": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "kokore_shuffle": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": true,
+          "p_add_one": 0.0001999600079984003,
+          "seed": 0,
+          "trials": 5000
+        }
+      },
+      "reason": null,
+      "values": {
+        "143_immediately_before_152": true,
+        "calendar_040": 28,
+        "calendar_040_after_152": 13,
+        "calendar_040_before_152": 13,
+        "calendar_143": 1,
+        "calendar_152": 1,
+        "calendar_stems": 101,
+        "kokore_runs_6_before_5_after": true
+      }
+    },
+    "calendar_delimiters": {
+      "computable": true,
+      "notes": [],
+      "nulls": {},
+      "reason": null,
+      "values": {
+        "calendar_040_gaps": [
+          2,
+          6,
+          3,
+          2,
+          5,
+          3,
+          5
+        ],
+        "calendar_full_delimiters": 6
+      }
+    },
+    "group_final_076": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "other_random_slot": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": 97,
+          "p_add_one": 0.001996007984031936,
+          "seed": 5,
+          "trials": 500
+        },
+        "staff_random_slot": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": 393,
+          "p_add_one": 0.001996007984031936,
+          "seed": 5,
+          "trials": 500
+        }
+      },
+      "reason": null,
+      "values": {
+        "other_eligible_groups": 105,
+        "other_final_076": 97,
+        "staff_eligible_groups": 408,
+        "staff_final_076": 393
+      }
+    },
+    "gv6_handoff": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "gv6_group_shuffle": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": 3,
+          "p_add_one": 0.0001999600079984003,
+          "seed": 0,
+          "trials": 5000
+        },
+        "gv_verso_shuffle": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": 3,
+          "p_add_one": 0.0004997501249375312,
+          "seed": 1,
+          "trials": 2000
+        }
+      },
+      "reason": null,
+      "values": {
+        "gv6_child_names": [
+          "000",
+          "280",
+          "730",
+          "517"
+        ],
+        "gv6_groups": 28,
+        "gv6_handoffs": 3,
+        "gv6_phrases": 4
+      }
+    },
+    "hq_headline": {
+      "computable": true,
+      "notes": [],
+      "nulls": {},
+      "reason": null,
+      "values": {
+        "alignment": "fixed",
+        "parallel_bird_substitutions": 2,
+        "parallel_matches": 107,
+        "parallel_mismatches": 16,
+        "parallel_span": 125
+      }
+    },
+    "parallels": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "within_side_shuffle_max_score": {
+          "fraction": 0.0,
+          "ge": 0,
+          "max_score": 0,
+          "observed": 99,
+          "seed": 0,
+          "trials": 24
+        }
+      },
+      "reason": null,
+      "values": {
+        "candidate_passages": 99,
+        "pair_400_600": 9,
+        "significant_passages": 99,
+        "systematic_pairs": [
+          "001-011x6",
+          "002-021x7",
+          "008-081x4",
+          "056-084x5",
+          "254-256x6",
+          "280-290x4",
+          "381-385x3",
+          "400-600x9"
+        ],
+        "systematic_substitution_pairs": 8
+      }
+    },
+    "staff_076_gaps": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "staff_line_shuffle_len3": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": 197,
+          "p_add_one": 0.000999000999000999,
+          "seed": 0,
+          "trials": 1000
+        }
+      },
+      "reason": null,
+      "values": {
+        "staff_076": 564,
+        "staff_076_gap_len3": 197,
+        "staff_076_gap_len4": 137,
+        "staff_076_gaps": 550
+      }
+    },
+    "staff_bar_076": {
+      "computable": true,
+      "notes": [],
+      "nulls": {
+        "staff_keep_bars_shuffle": {
+          "fraction": 0.0,
+          "ge": 0,
+          "observed": 91,
+          "p_add_one": 0.0004997501249375312,
+          "seed": 0,
+          "trials": 2000
+        }
+      },
+      "reason": null,
+      "values": {
+        "staff_076_after_999": 91,
+        "staff_076_after_999_rate": 0.947917,
+        "staff_pure_999": 96
+      }
+    }
+  }
+}
