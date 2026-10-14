@@ -19,13 +19,19 @@ import sys
 from collections import Counter
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 from agents.base.providers import MockProvider
 from decipherment.inventories import encode_lines
 from decipherment.round2_trackb import SLOT_SEED as SLOT076_SEED
 from decipherment.round2_trackb import SLOT_TRIALS as SLOT076_TRIALS
 from decipherment.round2_trackb import Anchors, LineText, _outside_076_groups, _slot_null
+from decipherment.round3_trackb import (
+    SHUFFLE_DRAWS as KOKORE_DRAWS,
+)
+from decipherment.round3_trackb import (
+    SHUFFLE_SEED as KOKORE_SEED,
+)
 from decipherment.round3_trackb import (
     between_delimiter_040,
     count_378_delimiters,
@@ -34,16 +40,20 @@ from decipherment.round3_trackb import (
     runs_around_152,
     shuffle_kokore_hits,
     stem_lines,
-    SHUFFLE_DRAWS as KOKORE_DRAWS,
-    SHUFFLE_SEED as KOKORE_SEED,
 )
 from decipherment.round4_tracka import (
     SLOT_SEED as BIRD_SEED,
+)
+from decipherment.round4_tracka import (
     SLOT_TRIALS as BIRD_TRIALS,
+)
+from decipherment.round4_tracka import (
     _classify_pairs,
-    _slot_null as _bird_slot_null,
     _slot_pairs,
     class_of,
+)
+from decipherment.round4_tracka import (
+    _slot_null as _bird_slot_null,
 )
 from decipherment.round5b_ceipp import _bird_pair
 from decipherment.track3_genealogy import (
@@ -63,7 +73,11 @@ from decipherment.track3_genealogy import (
 )
 from decipherment.track_c_parallels import (
     NULL_SEED as PARALLEL_NULL_SEED,
+)
+from decipherment.track_c_parallels import (
     NULL_TRIALS as PARALLEL_NULL_TRIALS,
+)
+from decipherment.track_c_parallels import (
     SideText,
     _column_counts,
     _passage_dict,
