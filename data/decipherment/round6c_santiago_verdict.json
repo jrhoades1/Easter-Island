@@ -1,0 +1,6 @@
+{
+  "provider": "MockProvider",
+  "evidence": "later_image",
+  "image_note": "MNHN Santiago official 3D models (Staff I RN02_L_MK1, CC BY-NC-SA, credit MNHN; tablet H 058AR_H_MK1, CC0; tablet G 057AR, CC0), rendered headless by decipherment/round6c_santiago/render.py. Every H/I/G row recorded undecidable at this mesh resolution; all rows keep the baseline code.",
+  "choices": {}
+}

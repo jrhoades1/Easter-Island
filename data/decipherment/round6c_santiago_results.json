@@ -1,0 +1,26 @@
+{
+  "track": "round6c_santiago_mnhn_models",
+  "protocol": "round6a_preregistration (unchanged; rules fixed before images were opened)",
+  "provider": "MockProvider",
+  "readings_assigned": false,
+  "sources": {
+    "I": {"model": "baston-rongo-rongo / RN02_L_MK1", "license": "CC BY-NC-SA", "credit": "Museo Nacional de Historia Natural (MNHN), Santiago de Chile", "vertices": 452182, "texture": "4096x4096"},
+    "H": {"model": "tablilla-rongo-rongo-2 / 058AR_H_MK1", "license": "CC0", "credit": "MNHN, Santiago de Chile", "vertices": 250847, "texture": "4096x4096"},
+    "G": {"model": "tablilla-rongo-rongo-1 / 057AR", "license": "CC0", "credit": "MNHN, Santiago de Chile", "vertices": 96377, "texture": "6000x6000"}
+  },
+  "raw_models_committed": false,
+  "face_identification": {"H_faceA": "Hr (recto): damaged upper-left area matches the short Barthel lines Hr9-Hr12; Hr3 shows the long run of dotted 003a groups and Hr2 does not", "H_faceB": "Hv (verso)"},
+  "resolution_note": "H mesh vertex spacing ~0.45 mm; signs ~10 mm tall. Dots and gross outlines resolve; hand/finger details, stack order and small strokes do not. Texture is not aligned with the carving relief well enough to add evidence. G mesh (96k vertices) shows no readable sign relief.",
+  "verdicts": {
+    "D05": {"tablet": "H", "position": "Hr3 stem offset 37 (group 24 020g.064b)", "alternatives": ["barthel_064", "ceipp_outline_006"], "verdict": "undecidable", "kept": "barthel_064", "why": "Region located only approximately (the dotted 003a run is visible but the count of dotted groups seen, 8, does not match the 10 expected, so group-level alignment is not certain); 064 vs 006 differ in hand detail below mesh resolution."},
+    "D06": {"tablet": "H", "position": "Hr3 stem offsets 43-44 (group 28 006:042.003a)", "alternatives": ["barthel_006_then_042", "ceipp_vector_042_then_006"], "verdict": "undecidable", "kept": "barthel_006_then_042", "why": "Same alignment uncertainty; the stacked pieces are not separable in the mesh relief."},
+    "D07": {"tablet": "Q", "verdict": "not_covered", "kept": "barthel_006_then_042", "why": "Q is not among the MNHN models."},
+    "D08": {"tablet": "H and Q", "alternatives": ["barthel_and_ceipp_labels", "pozdniakov_1996_series_400_as_600"], "verdict": "undecidable", "kept": "barthel_and_ceipp_labels", "why": "The disputed codes are on Q (Qr2:30, Qr3:6); H's 600/607 are not in question. Pozdniakov's 400-as-600 is a classification, not something a surface image of H can settle."},
+    "D09": {"tablet": "G", "alternatives": ["barthel_suffix_attachment", "davletshin_2012_076_opens_next_group"], "verdict": "undecidable", "kept": "barthel_suffix_attachment", "why": "G mesh does not resolve sign relief; Davletshin's regrouping is in any case an interpretive grouping that spacing alone would not settle."},
+    "D10": {"tablet": "I", "alternatives": ["barthel_999_bar"], "verdict": "no_registered_alternative", "kept": "barthel_999_bar", "why": "Pre-registration lists no second code; the renders cannot add one. Staff stays 91 of 96."},
+    "D12": {"tablet": "H", "position": "Hr4 stem offset 71 (group 50 042)", "alternatives": ["barthel_042", "ceipp_outline_048"], "verdict": "undecidable", "kept": "barthel_042", "why": "End of Hr4 located, but the dotted-group spacing does not match the expected sequence cleanly, and 042 vs 048 differ in a detail below mesh resolution."}
+  },
+  "verdict_file": "data/decipherment/round6c_santiago_verdict.json",
+  "headline_after": "unchanged: calendar 28, 13/13, gaps 2,6,3,2,5,3,5, full delimiters 6, Gv6 4 phrases / 3 handoffs, Staff 91 of 96, H/Q span 125 / 107 matches / 16 mismatches, birds 2 and 18",
+  "headline_delta": {}
+}
